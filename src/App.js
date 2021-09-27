@@ -5,8 +5,8 @@ import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="text-center">
+      <header className="App-header flex flex-col justify-center items-center">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
