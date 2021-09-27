@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.scss';
@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div>
-        <ul className='flex flex-row'>
+        <ul className="flex flex-row">
           <li>
             <Link to="/">Home</Link>
           </li>
