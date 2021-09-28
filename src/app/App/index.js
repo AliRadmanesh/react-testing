@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.scss';
+import { Counter } from '../../features/counter/Counter';
+import './style.scss';
 
 function App() {
   return (
@@ -45,7 +44,6 @@ function Home() {
   return (
     <div className="text-center">
       <header className="App-header flex flex-col justify-center items-center">
-        <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
           Edit <code>src/App.js</code> and save to reload.
