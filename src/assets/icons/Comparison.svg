@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Group_328" data-name="Group 328" transform="translate(-360 -8049)">
+    <rect id="Rectangle_51" data-name="Rectangle 51" width="48" height="48" transform="translate(360 8049)" fill="#118ab2" opacity="0"/>
+    <g id="Group_327" data-name="Group 327" transform="translate(5 -2.5)">
+      <path id="Rectangle_267" data-name="Rectangle 267" d="M5.125,3a2.028,2.028,0,0,0-2.05,2V27a2.028,2.028,0,0,0,2.05,2h12.3V3H5.125m0-3H20.5V32H5.125A5.064,5.064,0,0,1,0,27V5A5.064,5.064,0,0,1,5.125,0Z" transform="translate(360 8060)" fill="#118ab2"/>
+      <path id="Rectangle_268" data-name="Rectangle 268" d="M0,0H15.5a5,5,0,0,1,5,5V26.971a5,5,0,0,1-5,5H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(377.5 8060.016)" fill="#118ab2"/>
+      <path id="Rectangle_268_-_Outline" data-name="Rectangle 268 - Outline" d="M3,3V28.971H15.5a2,2,0,0,0,2-2V5a2,2,0,0,0-2-2H3M0,0H15.5a5,5,0,0,1,5,5V26.971a5,5,0,0,1-5,5H0Z" transform="translate(377.5 8060.016)" fill="#118ab2"/>
+      <path id="Line_12" data-name="Line 12" d="M0,41.5A1.5,1.5,0,0,1-1.5,40V0A1.5,1.5,0,0,1,0-1.5,1.5,1.5,0,0,1,1.5,0V40A1.5,1.5,0,0,1,0,41.5Z" transform="translate(379 8056)" fill="#118ab2"/>
+    </g>
+  </g>
+</svg>

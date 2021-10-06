@@ -1,0 +1,313 @@
+/**
+*
+*	Name:			Kalameh Fonts
+*	Version:			4.1
+*	Author:			Naser Khadem
+*	Created on:		March 11, 2019
+*	Updated on:		July 17, 2021
+*	Website:			http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونت کلمه یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+Kalameh fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+------------------------------------------------------------------------------------- ./-
+*
+**/
+
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 100;
+  src: url('./kalemeh/KalamehWeb-Thin.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('./kalemeh/KalamehWeb-Thin.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 200;
+  src: url('./kalemeh/KalamehWeb-ExtraLight.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('./kalemeh/KalamehWeb-ExtraLight.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 300;
+  src: url('./kalemeh/KalamehWeb-Light.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('./kalemeh/KalamehWeb-Light.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 500;
+  src: url('./kalemeh/KalamehWeb-Medium.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('./kalemeh/KalamehWeb-Medium.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 600;
+  src: url('./kalemeh/KalamehWeb-SemiBold.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('./kalemeh/KalamehWeb-SemiBold.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 800;
+  src: url('./kalemeh/KalamehWeb-ExtraBold.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('./kalemeh/KalamehWeb-ExtraBold.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 900;
+  src: url('./kalemeh/KalamehWeb-Black.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('./kalemeh/KalamehWeb-Black.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: bold;
+  src: url('./kalemeh/KalamehWeb-Bold.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('./kalemeh/KalamehWeb-Bold.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: normal;
+  src: url('./kalemeh/KalamehWeb-Regular.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('./kalemeh/KalamehWeb-Regular.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+/**
+*
+*	Name:			IRANYekan Font
+*	Version:			3.3
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		Sep 17, 2020
+*	Updated on:		Sep 17, 2020
+*	Website:			http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونت ایران یکان یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRANYekan fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+--------------------------------------------------------------------------------------
+*
+**/
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: bold;
+  src: url('./yekan/IRANYekanWebBold.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./yekan/IRANYekanWebBold.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 100;
+  src: url('./yekan/IRANYekanWebThin.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./yekan/IRANYekanWebThin.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 300;
+  src: url('./yekan/IRANYekanWebLight.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./yekan/IRANYekanWebLight.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: normal;
+  src: url('./yekan/IRANYekanWebRegular.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./yekan/IRANYekanWebRegular.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 500;
+  src: url('./yekan/IRANYekanWebMedium.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./yekan/IRANYekanWebMedium.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 800;
+  src: url('./yekan/IRANYekanWebExtraBlack.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./yekan/IRANYekanWebExtraBlack.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 850;
+  src: url('./yekan/IRANYekanWebBlack.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./yekan/IRANYekanWebBlack.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 900;
+  src: url('./yekan/IRANYekanWebExtraBlack.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./yekan/IRANYekanWebExtraBlack.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+/**
+*
+*	Name:			IRANYekan Font
+*	Version:			3.0
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		Dec 20, 2018
+*	Updated on:		Dec 20, 2018
+*	Website:			http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونت ایران یکان یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRANYekan fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+--------------------------------------------------------------------------------------
+*
+**/
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: bold;
+  src: url('./yekan/iranyekanwebboldfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 100;
+  src: url('./yekan/iranyekanwebthinfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 300;
+  src: url('./yekan/iranyekanweblightfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: normal;
+  src: url('./yekan/iranyekanwebregularfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 500;
+  src: url('./yekan/iranyekanwebmediumfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 800;
+  src: url('./yekan/iranyekanwebextraboldfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 850;
+  src: url('./yekan/iranyekanwebblackfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 900;
+  src: url('./yekan/iranyekanwebextrablackfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+/**
+*
+*	Name:			Kalameh Fonts
+*	Version:			4.1
+*	Author:			Naser Khadem
+*	Created on:		March 11, 2019
+*	Updated on:		July 17, 2021
+*	Website:			http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونت کلمه یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+Kalameh fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+------------------------------------------------------------------------------------- ./-
+*
+**/
+
+@font-face {
+  font-family: KalamehWebFaNum;
+  font-style: normal;
+  font-weight: 100;
+  src: url('./kalemeh/KalamehWebFaNum-Thin.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+@font-face {
+  font-family: KalamehWebFaNum;
+  font-style: normal;
+  font-weight: 200;
+  src: url('./kalemeh/KalamehWebFaNum-ExtraLight.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+@font-face {
+  font-family: KalamehWebFaNum;
+  font-style: normal;
+  font-weight: 300;
+  src: url('./kalemeh/KalamehWebFaNum-Light.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+@font-face {
+  font-family: KalamehWebFaNum;
+  font-style: normal;
+  font-weight: 500;
+  src: url('./kalemeh/KalamehWebFaNum-Medium.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+@font-face {
+  font-family: KalamehWebFaNum;
+  font-style: normal;
+  font-weight: 600;
+  src: url('./kalemeh/KalamehWebFaNum-SemiBold.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+
+@font-face {
+  font-family: KalamehWebFaNum;
+  font-style: normal;
+  font-weight: 800;
+  src: url('./kalemeh/KalamehWebFaNum-ExtraBold.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+@font-face {
+  font-family: KalamehWebFaNum;
+  font-style: normal;
+  font-weight: 900;
+  src: url('./kalemeh/KalamehWebFaNum-Black.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+@font-face {
+  font-family: KalamehWebFaNum;
+  font-style: normal;
+  font-weight: bold;
+  src: url('./kalemeh/KalamehWebFaNum-Bold.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}
+@font-face {
+  font-family: KalamehWebFaNum;
+  font-style: normal;
+  font-weight: normal;
+  src: url('./kalemeh/KalamehWebFaNum-Regular.woff2') format('woff2'); /* FF39+,Chrome36+, Opera24+*/
+}

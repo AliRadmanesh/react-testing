@@ -1,0 +1,114 @@
+.auth {
+  &-header {
+    &-mobile {
+      button {
+        padding: 8px;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    &-desktop {
+      &-back {
+        button {
+          padding: 16px;
+          background-color: transparent;
+          transition: background-color 0.3s ease-in-out;
+
+          img {
+            width: 24px;
+            height: 24px;
+          }
+
+          img.primary {
+            display: none;
+          }
+
+          img.white {
+            display: initial;
+          }
+
+          p {
+            font-weight: 700;
+            margin-top: 2px;
+            width: 139px;
+            z-index: -1;
+          }
+
+          .hoverer {
+            left: -120%;
+            // position: absolute;
+            transition: left 1s ease-out;
+            visibility: hidden;
+            width: 0;
+            transition: width 0.3s ease-out;
+          }
+
+          &:hover {
+            background-color: $karsaz-primary-pale;
+
+            img.primary {
+              display: initial;
+            }
+
+            img.white {
+              display: none;
+            }
+
+            .hoverer {
+              visibility: visible;
+              left: 0;
+              width: 139px;
+              display: block;
+              // position: static;
+            }
+
+            p {
+              z-index: -1;
+            }
+          }
+        }
+      }
+
+      &-search {
+        background-color: $karsaz-primary-pale;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+
+        button {
+          padding: 0 16px;
+        }
+
+        input {
+          background-color: transparent !important;
+          border: none !important;
+          outline: none !important;
+          box-shadow: none !important;
+          padding: 17px 4px !important;
+
+          transition: width 0.7s ease-in-out;
+
+          &:focus,
+          &:hover {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+          }
+        }
+
+        &.input {
+          width: 220px !important;
+          transition: width 0.3s ease-in-out !important;
+        }
+
+        &.input.hide {
+          width: 0 !important;
+        }
+      }
+    }
+  }
+}

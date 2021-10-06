@@ -1,0 +1,32 @@
+@import 'variables';
+
+.page-header {
+  background: url('../assets/illustrations/pattern.svg') repeat, $karsaz-primary;
+
+  &-content {
+    background: linear-gradient(
+      to left,
+      rgba(17, 138, 178, 1),
+      rgba(17, 138, 178, 1),
+      rgba(17, 138, 178, 0.2)
+    );
+    // background: $karsaz-primary;
+    // box-shadow: 10px 0 50 10px $karsaz-primary;
+    @media screen and (min-width: $text-breakpoint-lg) {
+      background: linear-gradient(
+        to left,
+        rgba(17, 138, 178, 1),
+        rgba(17, 138, 178, 1),
+        rgba(17, 138, 178, 0.6),
+        rgba(17, 138, 178, 0.2)
+      );
+    }
+  }
+  &-title {
+    font-size: 1.375rem;
+
+    @media screen and (min-width: $text-breakpoint-lg) {
+      font-size: 1.75rem;
+    }
+  }
+}

@@ -1,0 +1,681 @@
+/* MAIN CSS */
+/* DEVELOPED BY: MILAD KHORRAMIAN */
+
+@import 'variables';
+@import 'colors';
+@import 'utilities';
+
+ul,
+ol {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+}
+
+a {
+  box-sizing: border-box;
+}
+
+.font-kalameh {
+  font-family: KalamehWeb;
+}
+
+.font-iranyekan {
+  font-family: IRANYekan;
+}
+
+/* MOBILE TYPEFACE */
+h1,
+.h1,
+.title-primary {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: 800;
+  font-family: KalamehWeb;
+}
+
+h2,
+.h2,
+.title-secondary {
+  font-size: 26px;
+  line-height: 39px;
+  font-weight: 700;
+  font-family: KalamehWeb;
+}
+
+h3,
+.h3,
+.title-tertiary {
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 800;
+  font-family: KalamehWeb;
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: KalamehWeb;
+}
+
+h4,
+.h4 {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.text-primary {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  font-family: IRANYekan;
+}
+
+.text-secondary {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  font-family: IRANYekan;
+}
+
+form,
+.form,
+.text-guide,
+label,
+input,
+.input {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  font-family: KalamehWeb;
+}
+
+button,
+.tab,
+input[type='button'],
+input[type='submit'] {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  font-family: KalamehWeb;
+}
+
+caption,
+.caption {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  font-family: IRANYekan;
+}
+
+p,
+.paragraph {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  font-family: IRANYekan;
+}
+
+/* DESKTOP TYPEFACE */
+@media screen and (min-width: 1536px) {
+  h1,
+  .h1,
+  .title-primary {
+    font-size: 48px;
+    line-height: 62px;
+    font-weight: 700;
+  }
+
+  h2,
+  .h2,
+  .title-secondary {
+    font-size: 34px;
+    line-height: 44px;
+    font-weight: 800;
+  }
+
+  h3,
+  .h3,
+  .title-tertiary {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 700;
+  }
+
+  h4,
+  .h4 {
+    font-weight: 600;
+    font-size: 20px;
+    font-family: KalamehWeb;
+  }
+
+  .text-primary {
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 400;
+  }
+
+  h5,
+  .h5 {
+    font-family: KalamehWeb;
+  }
+
+  h6 {
+    font-family: KalamehWeb;
+  }
+
+  .text-secondary {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 500;
+  }
+
+  button,
+  input[type='button'],
+  input[type='submit'] {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  form,
+  .form,
+  .tab {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  button,
+  input[type='button'],
+  input[type='submit'],
+  form,
+  .form,
+  .tab {
+    font-weight: 600;
+  }
+
+  form,
+  .form,
+  .text-guide,
+  input,
+  .input {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  caption {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 400;
+  }
+}
+
+input,
+button,
+.input {
+  padding: 14px 8px;
+  border-radius: 12px;
+
+  @media screen and (min-width: 768px) {
+  }
+}
+
+input,
+.input {
+  color: $karsaz-secondary;
+
+  &.mobile-menu-search {
+    width: 100vh;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 328px;
+  }
+}
+
+button,
+input,
+textarea {
+  //margin-bottom: .75rem;
+  // display: block;
+}
+
+input:not(input.mobile-menu-search, input.landing-search, #auth-header-desktop-search input),
+.input {
+  background-color: #f0f2f2;
+  outline: none;
+  border: 1px solid transparent;
+  width: 100%;
+  max-width: 328px;
+
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+  @media screen and (min-width: 768px) {
+    padding: 22px 12px;
+    width: 360px;
+  }
+
+  &:-moz-placeholder,
+  &:-ms-input-placeholder,
+  ::-moz-placeholder,
+  &::-webkit-input-placeholder {
+    color: #878787;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px $karsaz-primary;
+  }
+
+  /*&:valid {
+    background-color: #F2FBF7;
+    border-color: $karsaz-success;
+  }*/
+
+  &:focus,
+  &.focus {
+    background-color: #f0f2f2;
+    box-shadow: 0 0 0 2px $karsaz-primary;
+  }
+
+  &.error {
+    background-color: #fbf2f2;
+    box-shadow: 0 0 0 1px $karsaz-error;
+  }
+
+  &.success {
+    background-color: #f2fbf7;
+    box-shadow: 0 0 0 1px $karsaz-success;
+  }
+
+  &.warning {
+    background-color: #fbf8f2;
+    box-shadow: 0 0 0 1px $karsaz-warning;
+  }
+
+  &:disabled {
+    background-color: #e2e2e2;
+    border-color: transparent;
+  }
+}
+
+textarea,
+.textarea {
+  @extend input;
+  height: 132px;
+}
+
+button {
+  transition: background-color 0.3s, border 0.3s;
+  cursor: pointer;
+  padding: 18px;
+}
+
+.button-primary {
+  @extend button;
+  border: none;
+  color: white;
+  background-color: $karsaz-primary;
+
+  &:hover {
+    background-color: #139ecc;
+  }
+
+  &:focus {
+    background-color: #0f7799;
+  }
+
+  &:disabled {
+    background-color: #e2e2e2;
+    color: #878787;
+  }
+}
+
+.button-secondary {
+  @extend button;
+  border: 2px solid $karsaz-primary;
+  @extend .bg-light;
+  color: $karsaz-primary;
+
+  &:hover {
+    background-color: #e6f3f7;
+    border-color: transparent;
+  }
+
+  &:focus {
+    background-color: #cfe8f0;
+    border-color: transparent;
+  }
+
+  &:disabled {
+    background-color: #fbfbfb;
+    color: #878787;
+    border-color: #878787;
+  }
+}
+
+.button-error {
+  @extend button;
+  border: 2px solid $karsaz-error;
+  background-color: $karsaz-error-pale;
+  color: $karsaz-error;
+
+  &:hover {
+    background-color: $karsaz-error-pale;
+    border-color: transparent;
+  }
+
+  &:focus {
+    background-color: $karsaz-error-pale;
+    border-color: transparent;
+  }
+
+  &:disabled {
+    background-color: #fbfbfb;
+    color: #878787;
+    border-color: #878787;
+  }
+}
+
+.button-square {
+  width: 66px;
+  height: 66px;
+  border-radius: 12px;
+}
+
+.button-circle {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+}
+
+.button-padding {
+  &.button-primary,
+  &.button {
+    padding: 17.5px 32.5px;
+
+    @media screen and (min-width: 768px) {
+      padding: 20px 40px;
+      min-width: 232px;
+      text-align: center;
+    }
+  }
+
+  &.button-secondary {
+    padding: 15.5px 30.5px;
+
+    @media screen and (min-width: 768px) {
+      padding: 18px 38px;
+      //min-width: 230px;
+      text-align: center;
+    }
+  }
+}
+
+.p {
+  @extend p;
+}
+
+.caption {
+  @extend caption;
+}
+
+footer .copyright-container {
+  @media (min-height: 768px) {
+    max-width: 650px;
+    margin: auto;
+  }
+}
+
+footer .footer-grid {
+  font-family: IRANYekan;
+
+  /*@media (min-height: 768px) {
+    grid-template-columns: repeat(3, 1rem);
+  }*/
+}
+
+footer {
+  p,
+  li {
+    font-family: KalamehWeb;
+  }
+
+  ul {
+    padding-top: 0.5rem;
+  }
+
+  ul li {
+    margin: 0.5rem auto;
+  }
+
+  .footer-heading {
+    font-size: 16px;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 24px;
+    }
+  }
+}
+
+.down-chevron {
+  transform: rotate(-45deg);
+  color: #2c2c2c;
+  width: 10px;
+}
+
+.container {
+  padding-right: 16px;
+  padding-left: 16px;
+
+  @media screen and (min-width: 1024px) {
+  }
+
+  @media screen and (min-width: 1536px) {
+    //max-width: unset;
+    //width: auto;
+    //margin: auto 204px;
+    padding-right: 204px;
+    padding-left: 204px;
+  }
+}
+
+.top-shadow-inner {
+  box-shadow: 0 10px 20px -8px #ddd inset;
+}
+
+/* MENU SETTINGS */
+.search-button {
+  border: 2px solid $karsaz-primary;
+  background: transparent;
+  width: auto;
+  height: auto;
+  padding: 12px;
+  border-radius: 12px;
+  transition: background-color 0.3s, border 0.3s;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  &:hover {
+    background-color: #e6f3f7;
+    border-color: transparent;
+  }
+
+  &:focus {
+    background-color: #cfe8f0;
+    border-color: transparent;
+  }
+
+  &:disabled {
+    background-color: #fbfbfb;
+    color: #878787;
+    border-color: #878787;
+  }
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+
+  @media screen and (min-width: 1280px) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.mobile-menu-search-container,
+.landing-search-container {
+  padding: 0 0 0 8px;
+  display: -ms-grid;
+  display: grid;
+  align-items: center;
+  vertical-align: center;
+  background: #f0f2f2;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: box-shadow 0.3s;
+  box-shadow: 0 0 0 2px transparent;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $karsaz-primary;
+  }
+
+  &.focus {
+    box-shadow: 0 0 0 2px $karsaz-primary;
+  }
+
+  input.mobile-menu-search,
+  input.landing-search {
+    background: transparent !important;
+    border: none !important;
+    outline: none;
+    margin: 0;
+    width: 100%;
+
+    &:hover {
+      background-color: transparent !important;
+      border-color: transparent !important;
+    }
+
+    &:focus {
+      background-color: transparent !important;
+      border-color: transparent !important;
+    }
+
+    &:disabled {
+      background-color: transparent !important;
+      color: transparent !important;
+      border-color: transparent !important;
+    }
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.landing-search-container {
+  display: flex;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  button {
+    padding: 1rem;
+  }
+}
+
+.mobile-menu-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 999999;
+}
+
+.main-landing {
+  background: linear-gradient(rgba(251, 251, 251, 0.9), rgba(251, 251, 251, 0.7)),
+    url('../assets/images/domenico-loia-hGV2TfOh0ns-unsplash.jpg') no-repeat center/cover;
+
+  @media screen and (min-width: 1024px) {
+  }
+
+  &-content {
+    @media screen and (min-width: 1024px) {
+      //height: 70vh;
+      padding-top: 6rem;
+      padding-bottom: 4rem;
+    }
+    @media screen and (min-width: 1280px) {
+      padding-top: 8rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  &-info-card {
+    width: auto;
+    @media screen and (min-width: 1024px) {
+      //max-width: 232px;
+    }
+  }
+}
+
+.button {
+  @extend button;
+  width: initial;
+}
+
+.card-box-shadow {
+  box-shadow: rgb(221, 221, 221) 8px 8px 16px;
+}
+
+/* HOMEPAGE RECENT SLIDER */
+.swiper-container {
+  height: auto !important;
+  padding-bottom: 2rem !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+}
+
+.swiper-pagination-bullets {
+  position: absolute !important;
+  margin-top: 1.5rem;
+}
+
+.swiper-pagination-bullet {
+  width: 20px !important;
+  border-radius: 12px !important;
+  transition: width 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  width: 50px !important;
+  border-radius: 12px !important;
+  background: $karsaz-primary !important;
+}
+
+/* Features/Pages Scss */
+@import 'dashboard';
+@import 'pages';
+@import 'auth';

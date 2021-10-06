@@ -1,0 +1,35 @@
+.container {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .sm-col-1, .sm-col-2, .sm-col-3, .sm-col-4 {
+    padding: 16px;
+  }
+
+  .sm-col-1 {
+    width: 25%;
+  }
+
+  .sm-col-2 {
+    width: 50%;
+  }
+
+  .sm-col-3 {
+    width: 75%;
+  }
+
+  .sm-col-4 {
+    width: 100%
+  }
+
+  .sm-col-1, .sm-col-2, .sm-col-3, .sm-col-4 {
+    padding: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+

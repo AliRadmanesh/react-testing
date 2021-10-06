@@ -1,0 +1,88 @@
+@import 'variables';
+/* BACKGROUND COLORS */
+.bg-white {
+  background-color: #fefefe;
+}
+
+.bg-light {
+  background-color: #fbfbfb;
+}
+
+.bg-medium {
+  background-color: #f4f4f4;
+}
+
+.bg-gray {
+  background-color: #f6f9fb;
+}
+
+.bg-success {
+  background-color: $karsaz-success;
+}
+
+.bg-error {
+  background-color: $karsaz-error;
+}
+
+.bg-warning {
+  background-color: $karsaz-warning;
+}
+
+.bg-primary {
+  background-color: $karsaz-primary;
+}
+/* TEXT COLORS */
+.text-white {
+  color: #fefefe;
+}
+
+.text-light {
+  color: #fbfbfb;
+}
+
+.text-medium {
+  color: #e2e2e2;
+}
+
+.text-gray {
+  color: #878787;
+}
+
+.text-blue,
+.text-info {
+  color: $karsaz-primary;
+}
+
+.text-dark {
+  color: $karsaz-secondary;
+}
+
+.text-success {
+  color: $karsaz-success;
+}
+
+.text-error {
+  color: $karsaz-error;
+}
+
+.text-warning {
+  color: $karsaz-warning;
+}
+
+// Border Colors
+.border-error {
+  border-color: $karsaz-error;
+}
+
+.border-white {
+  border-color: #fbfbfb;
+}
+
+// Hover Effect
+.bg-primary-hover:hover {
+  background-color: $karsaz-primary;
+}
+
+.text-primary-hover:hover {
+  color: $karsaz-primary;
+}
