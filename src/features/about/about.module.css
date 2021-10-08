@@ -1,21 +1,20 @@
 .aboutContainer {
-  @apply tw-grid;
+  @apply tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-12;
 }
 
 .aboutMain {
-  grid-area: 'main';
+  grid-area: main;
   @apply tw-mb-4;
 }
 
 .aboutList {
-  grid-area: 'list';
+  grid-area: list;
   list-style: none;
   @apply tw-mb-4;
 }
 
 .aboutImage {
-  grid-area: 'image';
-  margin-bottom: 1rem;
+  @apply tw-w-auto tw-mb-4;
 }
 
 .aboutTitle {
@@ -24,4 +23,9 @@
 
 .aboutDescription {
   @apply tw-font-yekan tw-text-sm lg:tw-text-lg tw-font-normal;
+}
+
+@media screen and (min-width: 768px) {
+  .aboutContainer {
+  }
 }
