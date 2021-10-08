@@ -1087,4 +1087,42 @@ footer .footer-heading {
 .auth-header-desktop-search.input.hide {
   width: 0 !important;
 }
+
+.faq-item {
+  position: relative;
+}
+
+.faq-item button, .faq-item .button-primary, .faq-item .button-secondary, .faq-item .button-error, .faq-item .button {
+  background-color: #fefefe;
+  -webkit-transition: background-color 0.5s ease-in, color 0.5s ease-in;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+  color: #2c2c2c;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.faq-item button.expand, .faq-item .expand.button-primary, .faq-item .expand.button-secondary, .faq-item .expand.button-error, .faq-item .expand.button {
+  background-color: #118ab2;
+  color: #fefefe;
+}
+
+.faq-item button.expand img, .faq-item .expand.button-primary img, .faq-item .expand.button-secondary img, .faq-item .expand.button-error img, .faq-item .expand.button img {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.faq-item button + div, .faq-item .button-primary + div, .faq-item .button-secondary + div, .faq-item .button-error + div, .faq-item .button + div {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  -webkit-transition: top 0.5s ease-in-out, max-height 0.5s ease-in-out;
+  transition: top 0.5s ease-in-out, max-height 0.5s ease-in-out;
+}
+
+.faq-item button.expand + div, .faq-item .expand.button-primary + div, .faq-item .expand.button-secondary + div, .faq-item .expand.button-error + div, .faq-item .expand.button + div {
+  max-height: 120px;
+  top: 56px;
+}
 /*# sourceMappingURL=main.css.map */

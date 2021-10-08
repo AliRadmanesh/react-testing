@@ -7,7 +7,7 @@ import Footer from '../../components/global/Footer';
 import SearchBar from '../../components/home/SearchBar';
 
 import { getHomePageData } from '../../app/redux/actions/homeActions';
-import MenuDesktop from '../../components/global/MenuDesktop';
+import HomeMenuDesktop from '../../components/home/HomeMenuDesktop';
 import CategoryContainer from '../../components/home/CategoryContainer';
 import RecentPostsContainer from '../../components/home/RecentPostsContainer';
 import CoursesContainer from '../../components/home/CoursesContainer';
@@ -30,7 +30,7 @@ const Home = () => {
           height: 'auto',
         }}
       >
-        <MenuDesktop />
+        <HomeMenuDesktop />
         <div className="main-landing-content tw-w-full md:tw-w-1/2 md:tw-mx-auto tw-pt-6 lg:tw-pt-8 xl:tw-pt-12">
           <div className="" style={{}}>
             <h1 className="title-primary text-blue">کارساز، بستری برای یادگیری</h1>

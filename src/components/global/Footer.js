@@ -10,7 +10,7 @@ import logo from '../../assets/images/logo/karsaz/logo-small.svg';
 
 function Footer() {
   return (
-    <footer className="tw-pb-12" style={{}}>
+    <footer className="tw-pb-12 tw-mt-6 lg:tw-mt-16" style={{}}>
       <div className="tw-grid" style={{ gridTemplateColumns: '150px auto ' }}>
         <div
           className="tw-inline-flex tw-pr-4"

@@ -18,6 +18,9 @@ const MenuMobile = () => {
       style={{
         background: show ? 'rgba(251, 251, 251, 1)' : 'transparent',
         zIndex: '1000000',
+        // marginBottom: '88px',
+        top: '0',
+        position: 'sticky',
       }}
     >
       <div className="container bg-white tw-flex tw-justify-between tw-items-center tw-py-4">
@@ -32,7 +35,10 @@ const MenuMobile = () => {
           <Link href="https://google.com" className="tab tw-mx-4">
             ورود
           </Link>
-          <Link href="https://google.com" className="tab button-primary">
+          <Link
+            href="https://google.com"
+            className="tab tw-py-2 bg-primary font-kalameh text-white tw-px-4 tw-rounded-xl"
+          >
             ثبت نام
           </Link>
         </div>

@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="753201d2-a02c-45f7-93be-8398d691b097" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/redux/actions/homeActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/redux/actions/homeActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/redux/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/redux/actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/redux/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routes/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routes/Router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/icons/Bookmar.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/global/CourseCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/global/CourseCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/global/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/global/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/CoursesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/CoursesContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/_colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/global/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/global/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/global/MenuDesktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/global/MenuDesktop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/global/MenuMobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/global/MenuMobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/global/PageHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/global/PageHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/categories/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/categories/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/faq/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/faq/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/_variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sass/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/main.scss" afterDir="false" />
@@ -56,6 +52,9 @@
       <workItem from="1633266560137" duration="718000" />
       <workItem from="1633331860053" duration="127000" />
       <workItem from="1633341645865" duration="808000" />
+      <workItem from="1633684553097" duration="133000" />
+      <workItem from="1633684708254" duration="76000" />
+      <workItem from="1633684868092" duration="5000" />
     </task>
     <servers />
   </component>

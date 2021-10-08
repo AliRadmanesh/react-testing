@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logoLarge from '../../assets/images/logo/karsaz/logo-large.svg';
 import searchIcon from '../../assets/icons/Search.svg';
 
-export default function MenuDesktop() {
+const MenuDesktop = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener('scroll', (e) => {
+      setScrollY(window.scrollY);
+    });
+  });
+
   return (
-    <div className="tw-w-full tw-hidden lg:tw-block" style={{ marginBottom: '96px' }}>
+    <div className="tw-w-full" style={{}}>
       <div
         id="desktop-menu"
-        className="container tw-w-full tw-justify-between tw-flex tw-items-center tw-py-4"
+        className="tw-hidden container tw-w-full lg:tw-flex tw-justify-between tw-items-center tw-py-4 2xl:tw-py-8"
         style={{
           position: 'fixed',
           top: '0',
-          background: '#fbfbfb',
+          background: scrollY === 0 ? 'transparent' : '#fbfbfb',
           transition: 'background .7s',
           zIndex: '1000000',
         }}
@@ -91,4 +99,6 @@ export default function MenuDesktop() {
       </div>
     </div>
   );
-}
+};
+
+export default MenuDesktop;

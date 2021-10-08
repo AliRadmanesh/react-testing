@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import MenuMobile from '../../components/global/MenuMobile';
+import MenuDesktop from '../../components/home/HomeMenuDesktop';
 import PageHeader from '../../components/global/PageHeader';
+import Footer from '../../components/global/Footer';
+
 import CategoryCard from '../../components/global/CategoryCard';
 
 export default function Categories() {
