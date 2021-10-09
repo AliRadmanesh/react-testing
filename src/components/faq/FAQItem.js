@@ -5,10 +5,10 @@ import up from '../../assets/icons/Up Arrow White.svg';
 
 export default function FAQItem({ ask, ans }) {
   return (
-    <div>
-      <div className="faq-item tw-w-full tw-mb-6 tw-shadow-md">
+    <div className="tw-rounded-xl">
+      <div className="faq-item tw-w-full tw-mb-6 tw-shadow-md tw-rounded-xl">
         <button
-          className="tw-w-full tw-justify-between tw-items-center font-kalameh tw-text-sm xl:tw-text-base tw-font-normal tw-flex tw-px-4 tw-text-right tw-mt-4 lg:tw-mt-6"
+          className="tw-w-full tw-justify-between tw-items-center tw-rounded-xl font-kalameh tw-text-sm xl:tw-text-base tw-font-normal tw-flex tw-px-4"
           onClick={(e) => {
             if (e.target.className.includes('expand')) {
               e.target.classList.remove('expand');
