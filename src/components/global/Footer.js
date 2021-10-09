@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getTopCategories } from '../../app/redux/actions/footerActions';
+
 import bazaar from '../../assets/images/logo/bazaar@2x.png';
 import playstore from '../../assets/images/logo/play store@2x.png';
 import enamad from '../../assets/images/logo/enamad.fcc99d2.png';
@@ -9,6 +13,15 @@ import TW from '../../assets/svg/footer/TW.svg';
 import logo from '../../assets/images/logo/karsaz/logo-small.svg';
 
 function Footer() {
+  const top_categories = useSelector((state) => state.footer.top_categories);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (top_categories.length === 0) {
+      dispatch(getTopCategories());
+    }
+  }, []);
+
   return (
     <footer className="tw-pb-12 tw-mt-6 lg:tw-mt-16" style={{}}>
       <div className="tw-grid" style={{ gridTemplateColumns: '150px auto ' }}>

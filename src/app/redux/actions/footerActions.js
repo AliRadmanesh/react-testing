@@ -5,17 +5,16 @@ import { GET_TOP_CATEGORIES } from './types';
 
 export const getTopCategories = () => async (dispatch) => {
   try {
-    const res = axios.get('https://develop.karsazapp.ir/api/v1/web/content/courses/top-categories');
+    const res = await axios.get(
+      'https://develop.karsazapp.ir/api/v1/web/content/courses/top-categories',
+    );
+    console.log(res.data);
 
-    if (res.code === '200') {
+    if (res.data.code === 200) {
       dispatch({
         type: GET_TOP_CATEGORIES,
-        payload: res.data,
+        payload: res.data.data.top_categories,
       });
-    }
-
-    if (res.code >= 400) {
-      toast.error(res.message);
     }
   } catch (error) {
     toast.error(error);

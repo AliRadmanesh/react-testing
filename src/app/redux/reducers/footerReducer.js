@@ -9,7 +9,7 @@ export default (state = initial, action) => {
     case GET_TOP_CATEGORIES:
       return {
         ...state,
-        top_categories: action.payload.top_categories,
+        top_categories: action.payload,
       };
     default:
       return state;
