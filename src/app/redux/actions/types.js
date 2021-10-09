@@ -15,3 +15,6 @@ export const GET_COURSES_DATA = 'GET_COURSES_DATA';
 
 /* Header Content */
 export const SET_USER_CHECK = 'SET_USER_CHECK';
+
+/* Footer Content */
+export const GET_TOP_CATEGORIES = 'GET_TOP_CATEGORIES';

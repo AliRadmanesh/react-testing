@@ -1,19 +1,16 @@
-import { SET_USER_CHECK } from '../actions/types';
+import { GET_TOP_CATEGORIES } from '../actions/types';
 
 const initial = {
-  data: {},
-  meta: {},
+  top_categories: [],
 };
 
 export default (state = initial, action) => {
   switch (action.type) {
-    case SET_USER_CHECK:
+    case GET_TOP_CATEGORIES:
       return {
         ...state,
-        data: action.payload.data,
-        meta: action.payload.meta,
+        top_categories: action.payload.top_categories,
       };
-
     default:
       return state;
   }
