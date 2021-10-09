@@ -32,11 +32,11 @@ const MenuMobile = () => {
           <h3 className="tw-font-black text-blue">کارساز</h3>
         </div>
         <div className="tw-flex tw-items-center">
-          <Link href="https://google.com" className="tab tw-mx-4">
+          <Link to="https://google.com" className="tab tw-mx-4">
             ورود
           </Link>
           <Link
-            href="https://google.com"
+            to="https://google.com"
             className="tab tw-py-2 bg-primary font-kalameh text-white tw-px-4 tw-rounded-xl"
           >
             ثبت نام
@@ -72,10 +72,10 @@ const MenuMobile = () => {
               <h3 className="tab">منو</h3>
             </div>
             <div className="tw-flex tw-items-center">
-              <Link href="https://google.com" className="tab tw-mx-4">
+              <Link to="https://google.com" className="tab tw-mx-4">
                 ورود
               </Link>
-              <Link href="https://google.com" className="tab button-primary">
+              <Link to="https://google.com" className="tab button-primary">
                 ثبت نام
               </Link>
             </div>
@@ -94,10 +94,10 @@ const MenuMobile = () => {
             />
             <img src={searchIcon} alt="" />
           </div>
-          <Link href="https://google.com" className="tab tw-my-2">
+          <Link to="./" className="tab tw-my-2">
             خانه
           </Link>
-          <Link href="https://google.com" className="tab tw-my-2">
+          <Link to="https://google.com" className="tab tw-my-2">
             دسته‌بندی &nbsp; &nbsp;
             <span
               style={{
@@ -108,19 +108,19 @@ const MenuMobile = () => {
               &rsaquo;
             </span>
           </Link>
-          <Link href="https://google.com" className="tab tw-my-2">
+          <Link to="https://google.com" className="tab tw-my-2">
             فرصت‌های شغلی
           </Link>
-          <Link href="https://google.com" className="tab tw-my-2">
+          <Link to="https://google.com" className="tab tw-my-2">
             وبلاگ
           </Link>
-          <Link href="https://google.com" className="tab tw-my-2">
+          <Link to="./about" className="tab tw-my-2">
             درباره ما
           </Link>
-          <Link href="https://google.com" className="tab tw-my-2">
+          <Link to="./contact" className="tab tw-my-2">
             تماس با ما
           </Link>
-          <Link href="https://google.com" className="tab tw-my-2">
+          <Link to="./faq" className="tab tw-my-2">
             سوالات متداول
           </Link>
         </div>

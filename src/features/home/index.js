@@ -53,16 +53,3 @@ const Home = () => {
 };
 
 export default Home;
-
-/*
-    <div
-        className="bg-light border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 tw-w-auto tw-flex"
-        style={{gridArea: 'card-1'}}
-    >
-        <img className="tw-opacity-40" src={studentIcon} alt=""/>
-        <div className="tw-flex tw-flex-col tw-mr-6">
-            <h3 className="text-blue">{student}</h3>
-            <p className="text-primary">دانشجو</p>
-        </div>
-    </div>
-    */

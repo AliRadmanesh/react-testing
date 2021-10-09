@@ -16,8 +16,8 @@ function CategoryContainer() {
           <CategoryCard key={ee.id} courses={ee.courses} name={ee.name} sub={ee.sub} />
         ))}
       </div>
-      <div className="tw-pt-4 tw-mb-8">
-        <Link href="https://google.com" className="">
+      <div className="tw-pt-4 tw-mb-8 tw-flex tw-justify-center">
+        <Link to="./categories" className="">
           <button className="tw-mx-auto button-secondary">مشاهده همه</button>
         </Link>
       </div>
