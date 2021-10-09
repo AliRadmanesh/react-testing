@@ -11,6 +11,7 @@ import HomeMenuDesktop from '../../components/home/HomeMenuDesktop';
 import CategoryContainer from '../../components/home/CategoryContainer';
 import RecentPostsContainer from '../../components/home/RecentPostsContainer';
 import CoursesContainer from '../../components/home/CoursesContainer';
+import ScrollToTop from '../../components/global/ScrollToTop';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Home = () => {
 
   return (
     <div className="bg-light">
+      <ScrollToTop />
       <MenuMobile />
       <div
         id="main-landing"

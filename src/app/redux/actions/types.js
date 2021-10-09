@@ -12,3 +12,6 @@ export const CLEAR_POPUP = 'CLEAR_POPUP';
 
 /* Course List Page */
 export const GET_COURSES_DATA = 'GET_COURSES_DATA';
+
+/* Header Content */
+export const SET_USER_CHECK = 'SET_USER_CHECK';
