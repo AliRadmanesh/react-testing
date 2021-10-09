@@ -5,7 +5,10 @@ export const HOMEPAGE_ERROR = 'HOMEPAGE_ERROR';
 // export const SET_CATEGORIES = 'SET_CATEGORIES'
 // export const SET_STAT = 'SET_STAT'
 
-/* Dashboard Pate */
+/* Dashboard Page */
 export const ACTIVE_PART = 'ACTIVE_PART';
 export const SET_POPUP = 'SET_POPUP';
 export const CLEAR_POPUP = 'CLEAR_POPUP';
+
+/* Course List Page */
+export const GET_COURSES_DATA = 'GET_COURSES_DATA';

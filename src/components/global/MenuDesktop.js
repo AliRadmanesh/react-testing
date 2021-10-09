@@ -14,7 +14,7 @@ export default function MenuDesktop() {
           top: '0',
           background: '#fbfbfb',
           transition: 'background .7s',
-          zIndex: '1000000',
+          zIndex: '100',
         }}
       >
         <div className="tw-flex tw-items-center tw-py-2">

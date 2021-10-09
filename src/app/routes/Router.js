@@ -11,6 +11,7 @@ import Categories from '../../features/categories';
 import Contact from '../../features/contact';
 import About from '../../features/about';
 import FAQ from '../../features/faq';
+import CourseList from '../../features/courses';
 
 function AppRouter() {
   return (
@@ -26,6 +27,7 @@ function AppRouter() {
           <Route exact path="/faq" component={FAQ} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/courses" component={CourseList} />
         </Switch>
       </Router>
     </div>
