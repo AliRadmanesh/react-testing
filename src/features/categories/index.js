@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import toast from 'react-hot-toast';
 import axios from 'axios';
 import PageHeader from '../../components/global/PageHeader';
 import CategoryCard from '../../components/global/CategoryCard';
