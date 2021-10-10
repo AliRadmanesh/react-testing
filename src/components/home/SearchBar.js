@@ -24,12 +24,8 @@ const SearchBar = () => {
         <p className="text-primary tw-mb-2">بیشترین کلمات جستجو شده</p>
         <div className="tw-flex tw-flex-wrap">
           {top_search.map((ee) => (
-            <p
-              key={ee.id}
-              className="bg-medium tw-py-2 tw-px-4 tw-m-2"
-              style={{ borderRadius: '6px' }}
-            >
-              {ee.title}
+            <p key="1" className="bg-medium tw-py-2 tw-px-4 tw-m-2" style={{ borderRadius: '6px' }}>
+              {ee}
             </p>
           ))}
         </div>
