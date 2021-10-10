@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import Dropdown from '../../common/Dropdown';
-
 import messageIcon from '../../assets/icons/Message.svg';
 
 export default function Form() {
@@ -109,7 +107,6 @@ export default function Form() {
             />
           </label>
         </div>
-        <Dropdown />
       </div>
     </>
   );
