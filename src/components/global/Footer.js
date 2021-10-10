@@ -75,27 +75,9 @@ function Footer() {
           <div className="">
             <h4 className="text-blue">لینک‌های مفید</h4>
             <ul className="">
-              <li>
-                <p>خانه</p>
-              </li>
-              <li>
-                <p>دسته‌بندی</p>
-              </li>
-              <li>
-                <p>فرصت‌های شغلی</p>
-              </li>
-              <li>
-                <p>وبلاگ</p>
-              </li>
-              <li>
-                <p>درباره‌ی ما</p>
-              </li>
-              <li>
-                <p>تماس با ما</p>
-              </li>
-              <li>
-                <p>سئوالات متداول</p>
-              </li>
+              {top_categories.map((category) => (
+                <li key={category.id}>{category.name}</li>
+              ))}
             </ul>
           </div>
           <div className="">
