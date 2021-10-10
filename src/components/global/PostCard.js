@@ -19,11 +19,21 @@ function PostCard({ props }) {
 
   return (
     <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4">
-      <img src={image} alt="" className="border-smooth tw-w-full tw-h-auto tw-mb-4" />
+      {/* <img src={image} alt="" className="border-smooth tw-w-full tw-h-auto tw-mb-4" /> */}
+      <div
+        className="border-smooth tw-w-full tw-h-auto tw-mb-4"
+        style={{
+          width: '100%',
+          height: '250px',
+          background: `url("${image}") no-repeat center/cover`,
+        }}
+      />
       <p className="tw-font-bold tw-text-base 2xl:tw-text-xl text-dark tw-truncate">{title}</p>
       <div className="tw-mt-4">
-        <p className="text-gray tw-text-sm 2xl:tw-text-lg">{description}</p>
-        <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-end tw-mt-4">
+        <div style={{ height: '40px' }} className="tw-text-truncate">
+          <p className="text-gray tw-text-sm 2xl:tw-text-lg">{description}</p>
+        </div>
+        <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-end tw-mt-8">
           <div className="tw-flex tw-items-end">
             <img src={authorImage} alt="" className="tw-ml-2 border-smooth" />
             <p className="text-guide tw-truncate">
