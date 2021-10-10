@@ -5,7 +5,7 @@ import instance from '../../instance';
 
 export const getUserCheck = () => async (dispatch) => {
   try {
-    const res = await instance.post('https://develop.karsazapp.ir/api/v1/web/service/users/check');
+    const res = await instance.post('/api/v1/web/service/users/check');
 
     if (res.code === '200') {
       dispatch({

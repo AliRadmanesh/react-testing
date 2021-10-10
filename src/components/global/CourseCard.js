@@ -42,19 +42,21 @@ const CourseCard = ({ props }) => {
             </div>
             <div className="tw-flex tw-justify-between tw-items-end lg:tw-items-center tw-mt-4">
               <div className="tw-flex tw-justify-between tw-items-center">
-                <div className="tw-flex tw-items-center tw-ml-4">
-                  <img
-                    src={onlineIcon}
-                    alt=""
-                    className="tw-ml-2"
-                    style={{ width: '16px', height: '16px' }}
-                  />
-                  {type === 'online' ? (
+                {type === 'online' ? (
+                  <div className="tw-flex tw-items-center tw-ml-4">
+                    <img
+                      src={onlineIcon}
+                      alt=""
+                      className="tw-ml-2"
+                      style={{ width: '16px', height: '16px' }}
+                    />
                     <caption className="text-dark">آنلاین</caption>
-                  ) : (
+                  </div>
+                ) : (
+                  <div className="tw-flex tw-items-center tw-ml-4">
                     <caption className="text-dark font-kalameh">{type}</caption>
-                  )}
-                </div>
+                  </div>
+                )}
                 <div className="tw-flex tw-items-center">
                   <img
                     src={starFillIcon}

@@ -12,6 +12,7 @@ import CategoryContainer from '../../components/home/CategoryContainer';
 import RecentPostsContainer from '../../components/home/RecentPostsContainer';
 import CoursesContainer from '../../components/home/CoursesContainer';
 import ScrollToTop from '../../components/global/ScrollToTop';
+import RecommendedCoursesContainer from '../../components/home/RecommendedCoursesContainer';
 
 const Home = () => {
   const { user_recommended_courses } = useSelector((state) => state.home.data);
@@ -48,6 +49,7 @@ const Home = () => {
       </div>
       <SearchBar />
       <CategoryContainer />
+      {user_recommended_courses.length !== 0 && <RecommendedCoursesContainer />}
       <RecentPostsContainer />
       <CoursesContainer />
       <Footer />
