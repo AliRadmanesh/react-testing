@@ -13,9 +13,12 @@ import RecentPostsContainer from '../../components/home/RecentPostsContainer';
 import CoursesContainer from '../../components/home/CoursesContainer';
 import ScrollToTop from '../../components/global/ScrollToTop';
 import RecommendedCoursesContainer from '../../components/home/RecommendedCoursesContainer';
+import JobsContainer from '../../components/home/JobsContainer';
 
 const Home = () => {
-  const { user_recommended_courses } = useSelector((state) => state.home.data);
+  const { user_recommended_courses, user_recommended_jobs } = useSelector(
+    (state) => state.home.data,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -50,6 +53,7 @@ const Home = () => {
       <SearchBar />
       <CategoryContainer />
       {user_recommended_courses.length !== 0 && <RecommendedCoursesContainer />}
+      {user_recommended_jobs.length !== 0 && <JobsContainer />}
       <RecentPostsContainer />
       <CoursesContainer />
       <Footer />
