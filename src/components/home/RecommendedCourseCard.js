@@ -23,17 +23,15 @@ function PostCard({ props }) {
       <p className="tw-font-bold tw-text-base 2xl:tw-text-xl text-dark tw-truncate">{title}</p>
       <div className="tw-mt-4">
         <p className="text-gray tw-text-sm 2xl:tw-text-lg">{description}</p>
-        <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-end tw-mt-4">
+        <div className="tw-flex tw-justify-between tw-items-end tw-mt-4">
           <div className="tw-flex tw-items-end">
             <img src={authorImage} alt="" className="tw-ml-2 border-smooth" />
-            <p className="text-guide tw-truncate">
+            <p className="text-guide">
               {first_name} {last_name}
             </p>
           </div>
           <div>
-            <caption className="text-blue tw-block tw-text-left">
-              زمان مطالعه {estimated_time}
-            </caption>
+            <caption className="text-blue tw-block">زمان مطالعه {estimated_time} دقیقه</caption>
           </div>
         </div>
         <div className="tw-flex tw-justify-between tw-items-end tw-mt-4">

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import MenuMobile from '../../components/global/MenuMobile';
 import GridContainer from '../../components/home/GridContainer';
@@ -14,6 +14,7 @@ import CoursesContainer from '../../components/home/CoursesContainer';
 import ScrollToTop from '../../components/global/ScrollToTop';
 
 const Home = () => {
+  const { user_recommended_courses } = useSelector((state) => state.home.data);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -4,6 +4,8 @@ const initialState = {
   message: '',
   data: {
     categories: [],
+    user_recommended_courses: [],
+    user_recommended_jobs: [],
     recent_posts: [],
     top_search: [],
     stat: { users: 0, courses: 0, academies: 0 },

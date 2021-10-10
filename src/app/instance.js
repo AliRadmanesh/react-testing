@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const token = '76|dTdoqvjhU4uuaoclBVeUss25vpK2wZmwEQf5Rrm1';
+
 const instance = axios.create({
   headers: {
-    Bearer_Token: '76|dTdoqvjhU4uuaoclBVeUss25vpK2wZmwEQf5Rrm1',
+    Authorization: `Bearer ${token}`,
   },
 });
 

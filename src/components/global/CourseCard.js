@@ -14,7 +14,7 @@ const CourseCard = ({ props }) => {
     title,
     rating: { average, participants },
     description,
-    instructors: { image: instructorImage, first_name, last_name },
+    instructors: { image: avatar, first_name, last_name },
   } = props;
 
   return (
@@ -26,12 +26,12 @@ const CourseCard = ({ props }) => {
             <p className="tw-font-bold lg:tw-font-black font-kalameh tw-text-base lg:tw-text-lg text-dark tw-truncate">
               {title}
             </p>
-            <p className="text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg">{description}</p>
+            <p className="text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg tw-truncate">{description}</p>
           </div>
           <div className="tw-mt-4">
             <div className="tw-flex tw-justify-between tw-items-end tw-mt-4">
               <div className="tw-flex tw-items-end">
-                <img src={instructorImage} alt="" className="tw-ml-2 border-smooth" />
+                <img src={avatar} alt="" className="tw-ml-2 avatar border-smooth" />
                 <p className="text-guide">
                   {first_name} {last_name}
                 </p>
