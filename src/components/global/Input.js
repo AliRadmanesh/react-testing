@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Input({ type, value, placeholder, classes, regex, message }) {
+export default function Input({ type, value, placeholder, classes = '', regex, message }) {
   return (
     <div style={{ marginBottom: '1rem' }}>
       <input
