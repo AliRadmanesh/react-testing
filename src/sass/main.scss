@@ -243,10 +243,10 @@ input,
 
   &.mobile-menu-search {
     width: 100vh;
-  }
 
-  @media screen and (min-width: 768px) {
-    max-width: 328px;
+    @media screen and (min-width: 768px) {
+      max-width: 328px;
+    }
   }
 }
 
@@ -262,14 +262,11 @@ input:not(input.mobile-menu-search, input.landing-search, #auth-header-desktop-s
   background-color: #f0f2f2;
   outline: none;
   border: 1px solid transparent;
-  width: 100%;
-  max-width: 328px;
 
   transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s;
 
   @media screen and (min-width: 768px) {
     padding: 22px 12px;
-    width: 360px;
   }
 
   &:-moz-placeholder,
@@ -680,4 +677,4 @@ footer {
 @import 'pages';
 @import 'auth';
 @import 'faq';
-@import '_about';
+@import 'about';
