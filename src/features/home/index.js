@@ -52,8 +52,8 @@ const Home = () => {
       </div>
       <SearchBar />
       <CategoryContainer />
-      {user_recommended_courses.length !== 0 && <RecommendedCoursesContainer />}
-      {user_recommended_jobs.length !== 0 && <JobsContainer />}
+      {user_recommended_courses && <RecommendedCoursesContainer />}
+      {user_recommended_jobs && <JobsContainer />}
       <RecentPostsContainer />
       <CoursesContainer />
       <Footer />

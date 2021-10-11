@@ -2,6 +2,7 @@
 /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
 
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import bars from '../../assets/icons/bars.svg';
 import logoSmall from '../../assets/images/logo/karsaz/logo-small.svg';
@@ -10,6 +11,11 @@ import searchIcon from '../../assets/icons/Search.svg';
 
 const MenuMobile = () => {
   const [show, doShow] = useState(false);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    toast.success('Ths Search will begin');
+  };
 
   return (
     <div
@@ -80,19 +86,27 @@ const MenuMobile = () => {
               </Link>
             </div>
           </div>
-          <div className="tw-flex tw-items-center mobile-menu-search-container tw-mb-4">
-            <input
-              type="text"
-              className="mobile-menu-search tw-flex"
-              placeholder="نام آموزش، آموزشگاه یا مدرس را سرچ کنید..."
-              onFocus={() => {
-                document.querySelector('.mobile-menu-search-container').classList.add('focus');
-              }}
-              onBlur={() => {
-                document.querySelector('.mobile-menu-search-container').classList.remove('focus');
-              }}
-            />
-            <img src={searchIcon} alt="" />
+          <div>
+            <form
+              onSubmit={handleSearch}
+              className="tw-grid tw-items-center mobile-menu-search-container tw-mb-4"
+              style={{ gridTemplateColumns: 'auto 30px' }}
+            >
+              <input
+                type="text"
+                className="mobile-menu-search"
+                placeholder="نام آموزش، آموزشگاه یا مدرس را سرچ کنید..."
+                onFocus={() => {
+                  document.querySelector('.mobile-menu-search-container').classList.add('focus');
+                }}
+                onBlur={() => {
+                  document.querySelector('.mobile-menu-search-container').classList.remove('focus');
+                }}
+              />
+              <button type="submit" className="tw-p-0">
+                <img src={searchIcon} alt="" className="" />
+              </button>
+            </form>
           </div>
           <Link to="./" className="tab tw-my-2">
             خانه
