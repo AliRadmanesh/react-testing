@@ -6,11 +6,11 @@ import onlineIcon from '../../assets/icons/Online.svg';
 function RecommendedPostCard({ props }) {
   const {
     description,
-    image,
+    images: { cover },
     title,
     id,
     type,
-    instructors: { image: avatar, last_name, first_name },
+    academy: { avatar, name, id: academy_id },
     price,
     rating: { average, participants },
   } = props;
@@ -23,7 +23,7 @@ function RecommendedPostCard({ props }) {
         style={{
           width: '100%',
           height: '250px',
-          background: `url("${image}") no-repeat center/cover`,
+          background: `url("${cover}") no-repeat center/cover`,
         }}
       />
       <p className="tw-font-bold tw-text-base 2xl:tw-text-xl text-dark tw-truncate">{title}</p>
@@ -33,10 +33,13 @@ function RecommendedPostCard({ props }) {
         </div>
         <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-end tw-mt-8">
           <div className="tw-flex tw-items-end">
-            <img src={avatar} alt="" className="tw-ml-2 border-smooth avatar" />
-            <p className="text-guide tw-truncate">
-              {first_name} {last_name}
-            </p>
+            <img
+              src={avatar}
+              alt=""
+              className="tw-ml-2 border-smooth avatar"
+              style={{ borderRadius: '50%' }}
+            />
+            <p className="text-guide tw-truncate">{name}</p>
           </div>
           <div className="lg:tw-hidden">
             <p className="tab text-blue">{price}</p>

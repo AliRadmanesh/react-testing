@@ -10,7 +10,6 @@ function PostCard({ props }) {
     image,
     title,
     author: { last_name, first_name, image: authorImage },
-    // author,
     rating,
     created_at,
     description,

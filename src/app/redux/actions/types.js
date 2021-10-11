@@ -18,3 +18,4 @@ export const SET_USER_CHECK = 'SET_USER_CHECK';
 
 /* Footer Content */
 export const GET_TOP_CATEGORIES = 'GET_TOP_CATEGORIES';
+export const SHOW_USER_HEADER_DATA = 'SHOW_USER_HEADER_DATA';

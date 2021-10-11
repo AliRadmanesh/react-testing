@@ -2,7 +2,6 @@
 /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
 
 import React, { useState } from 'react';
-import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import bars from '../../assets/icons/bars.svg';
 import logoSmall from '../../assets/images/logo/karsaz/logo-small.svg';
@@ -14,7 +13,6 @@ const MenuMobile = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    toast.success('Ths Search will begin');
   };
 
   return (

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logoLarge from '../../assets/images/logo/karsaz/logo-large.svg';
 import searchIcon from '../../assets/icons/Search.svg';
+import HeaderUserSection from './HeaderUserSection';
 
 export default function MenuDesktop() {
   return (
@@ -81,12 +82,7 @@ export default function MenuDesktop() {
           <div className="search-button">
             <img src={searchIcon} alt="" style={{}} />
           </div>
-          <Link to="https://google.com" className="tab tw-mx-4">
-            ورود
-          </Link>
-          <Link to="https://google.com" className="tab button-primary">
-            ثبت نام
-          </Link>
+          <HeaderUserSection />
         </div>
       </div>
     </div>

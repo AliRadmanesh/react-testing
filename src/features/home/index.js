@@ -14,6 +14,7 @@ import CoursesContainer from '../../components/home/CoursesContainer';
 import ScrollToTop from '../../components/global/ScrollToTop';
 import RecommendedCoursesContainer from '../../components/home/RecommendedCoursesContainer';
 import JobsContainer from '../../components/home/JobsContainer';
+import { checkUser } from '../../app/redux/actions/headerActions';
 
 const Home = () => {
   const { user_recommended_courses, user_recommended_jobs } = useSelector(

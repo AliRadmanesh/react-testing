@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import JobCard from '../global/JobCard';
 
@@ -15,6 +16,9 @@ export default function JobsContainer() {
           <JobCard key={job.id} props={job} />
         ))}
       </div>
+      <Link to="./" className="button-secondary tw-mx-auto">
+        مشاهده همه
+      </Link>
     </div>
   );
 }
