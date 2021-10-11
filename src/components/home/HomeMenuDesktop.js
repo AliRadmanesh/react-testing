@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import HeaderUserSection from '../global/HeaderUserSection';
 import logoLarge from '../../assets/images/logo/karsaz/logo-large.svg';
 import searchIcon from '../../assets/icons/Search.svg';
 
 const MenuDesktop = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [show, doShow] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
@@ -86,15 +88,31 @@ const MenuDesktop = () => {
           </Link>
         </div>
         <div className="tw-flex tw-align-middle tw-items-center tw-justify-items-center">
-          <div className="search-button">
-            <img src={searchIcon} alt="" style={{}} />
+          <div
+            id="auth-header-desktop-search"
+            className="auth-header-desktop-search tw-flex tw-flex-row tw-items-center border-smooth tw-ml-4"
+          >
+            <div className="hoverer tw-z-0 tw-relative">
+              <input
+                ckassName="font-kalameh tw-block"
+                placeholder="دوره یا آموزشگاه را جستجو کنید..."
+                type="text"
+                style={{
+                  width: show ? '220px' : '0',
+                  // {display: show ? 'initial' : 'none',}
+                }}
+              />
+            </div>
+
+            <button
+              className="button-secondary"
+              style={{ border: 'none', background: 'transparent' }}
+              onClick={() => (show ? doShow(false) : doShow(true))}
+            >
+              <img src={searchIcon} alt="" className="" />
+            </button>
           </div>
-          <Link to="https://google.com" className="tab tw-mx-4">
-            ورود
-          </Link>
-          <Link to="https://google.com" className="tab button-primary">
-            ثبت نام
-          </Link>
+          <HeaderUserSection />
         </div>
       </div>
     </div>

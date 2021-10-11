@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -15,32 +15,34 @@ export default function HeaderUserSection() {
   }, []);
 
   return (
-    <div>
-      {!show ? (
-        <div className="tw-flex tw-items-center">
-          <Link to="https://google.com" className="tab tw-mx-4">
-            ورود
-          </Link>
-          <Link to="https://google.com" className="tab button-primary">
-            ثبت نام
-          </Link>
-        </div>
-      ) : (
-        <button className="tw-flex tw-py-0 tw-items-center">
-          <img
-            src={data.profile.image}
-            alt=""
-            className="tw-hidden md:tw-block tw-ml-2 user-avatar"
-            style={{ borderRadius: '50%' }}
-          />
-          <p className="tw-text-sm tw-font-normal font-kalameh xl:tw-text-xl">
-            {data.profile.first_name} {data.profile.last_name}{' '}
-            <span className="tw-mr-2">
-              <img src={downIcon} alt="" className="tw-inline-block icon" />
-            </span>
-          </p>
-        </button>
-      )}
-    </div>
+    <>
+      <div className="tw-justify-end">
+        {!show ? (
+          <div className="tw-flex tw-items-center">
+            <Link to="https://google.com" className="tab tw-mx-4">
+              ورود
+            </Link>
+            <Link to="https://google.com" className="tab button-primary">
+              ثبت نام
+            </Link>
+          </div>
+        ) : (
+          <button className="tw-flex tw-p-0 tw-items-center">
+            <img
+              src={data.profile.image}
+              alt=""
+              className="tw-hidden md:tw-block tw-ml-2 user-avatar"
+              style={{ borderRadius: '50%' }}
+            />
+            <p className="tw-text-sm tw-font-normal font-kalameh 2xl:tw-text-xl">
+              {data.profile.first_name} {data.profile.last_name}{' '}
+              <span className="tw-mr-2">
+                <img src={downIcon} alt="" className="tw-inline-block icon" />
+              </span>
+            </p>
+          </button>
+        )}
+      </div>
+    </>
   );
 }

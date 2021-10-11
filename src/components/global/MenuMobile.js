@@ -7,6 +7,7 @@ import bars from '../../assets/icons/bars.svg';
 import logoSmall from '../../assets/images/logo/karsaz/logo-small.svg';
 import close from '../../assets/icons/Close-Gray.svg';
 import searchIcon from '../../assets/icons/Search.svg';
+import HeaderUserSection from './HeaderUserSection';
 
 const MenuMobile = () => {
   const [show, doShow] = useState(false);
@@ -35,7 +36,8 @@ const MenuMobile = () => {
           <img src={logoSmall} className="tw-mx-4" alt="" />
           <h3 className="tw-font-black text-blue">کارساز</h3>
         </div>
-        <div className="tw-flex tw-items-center">
+        <HeaderUserSection />
+        {/* <div className="tw-flex tw-items-center">
           <Link to="https://google.com" className="tab tw-mx-4">
             ورود
           </Link>
@@ -45,7 +47,7 @@ const MenuMobile = () => {
           >
             ثبت نام
           </Link>
-        </div>
+        </div> */}
       </div>
       <div
         className="mobile-menu-container bg-white"
@@ -75,14 +77,15 @@ const MenuMobile = () => {
               </div>
               <h3 className="tab">منو</h3>
             </div>
-            <div className="tw-flex tw-items-center">
+            {/* <div className="tw-flex tw-items-center">
               <Link to="https://google.com" className="tab tw-mx-4">
                 ورود
               </Link>
               <Link to="https://google.com" className="tab button-primary">
                 ثبت نام
               </Link>
-            </div>
+            </div> */}
+            <HeaderUserSection />
           </div>
           <div>
             <form

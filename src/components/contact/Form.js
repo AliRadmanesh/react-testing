@@ -15,17 +15,17 @@ export default function Form() {
         <div className="tw-flex tw-items-center tw-mb-4">
           <img src={messageIcon} alt="" className="icon tw-ml-4" />
           <div>
-            <p className="tw-text-base text-dark xl:tw-text-xl font-kalameh tw-font-semibold">
+            <p className="tw-text-base text-dark 2xl:tw-text-xl font-kalameh tw-font-semibold">
               تماس با ما
             </p>
-            <p className="font-kalameh tw-text-xs xl:tw-text-lg">با ما در ارتباط باشید.</p>
+            <p className="font-kalameh tw-text-xs 2xl:tw-text-lg">با ما در ارتباط باشید.</p>
           </div>
         </div>
         <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-4">
           <div className="tw-mt-4">
             <label
               htmlFor="name"
-              className="tw-text-base xl:tw-text-lg tw-font-normal xl:tw-font-semibold tw-flex tw-flex-col"
+              className="tw-text-base 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold tw-flex tw-flex-col"
             >
               <span className="tw-mb-2">نام</span>
               <input
@@ -41,7 +41,7 @@ export default function Form() {
           <div className="tw-mt-4">
             <label
               htmlFor="email"
-              className="tw-text-base xl:tw-text-lg tw-font-normal xl:tw-font-semibold tw-flex tw-flex-col"
+              className="tw-text-base 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold tw-flex tw-flex-col"
             >
               <span className="tw-mb-2">ایمیل</span>
               <input
@@ -57,7 +57,7 @@ export default function Form() {
           <div className="tw-mt-4">
             <label
               htmlFor="title"
-              className="tw-text-base xl:tw-text-lg tw-font-normal xl:tw-font-semibold tw-flex tw-flex-col"
+              className="tw-text-base 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold tw-flex tw-flex-col"
             >
               <span className="tw-mb-2">موضوع</span>
               <input
@@ -73,7 +73,7 @@ export default function Form() {
           <div className="tw-mt-4">
             <label
               htmlFor="department"
-              className="tw-text-base xl:tw-text-lg tw-font-normal xl:tw-font-semibold tw-flex tw-flex-col"
+              className="tw-text-base 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold tw-flex tw-flex-col"
             >
               <span className="tw-mb-2">دپارتمان</span>
               <select
@@ -95,7 +95,7 @@ export default function Form() {
         <div className="tw-flex tw-w-full tw-mt-4">
           <label
             htmlFor="description"
-            className="tw-text-base xl:tw-text-lg tw-font-normal xl:tw-font-semibold tw-flex tw-flex-col tw-w-full"
+            className="tw-text-base 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold tw-flex tw-flex-col tw-w-full"
           >
             <span className="tw-mb-2">توضیحات</span>
             <textarea

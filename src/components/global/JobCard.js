@@ -17,23 +17,23 @@ export default function JobCard({ props }) {
       <img src={avatar} alt="" className="tw-ml-4" />
       <div className="tw-flex tw-flex-col">
         <div className="tw-mb-2">
-          <p className="font-yekan text-dark tw-text-base tw-font-normal xl:tw-text-xl xl:tw-font-bold">
+          <p className="font-yekan text-dark tw-text-base tw-font-normal 2xl:tw-text-xl 2xl:tw-font-bold">
             {title}
           </p>
         </div>
         <div className="tw-flex tw-items-center tw-justify-between tw-mb-2">
-          <p className="tw-text-xs xl:tw-text-base tw-font-normal tw-font-yakan text-blue">
+          <p className="tw-text-xs 2xl:tw-text-base tw-font-normal tw-font-yakan text-blue">
             {name_fa}
           </p>
-          <p className="tw-text-xs xl:tw-text-base tw-font-normal tw-font-yakan text-blue">
+          <p className="tw-text-xs 2xl:tw-text-base tw-font-normal tw-font-yakan text-blue">
             {salary_from}
           </p>
         </div>
         <div className="tw-flex tw-items-center tw-justify-between">
-          <p className="tw-text-xs xl:tw-text-base tw-font-normal tw-font-yakan text-gray">
+          <p className="tw-text-xs 2xl:tw-text-base tw-font-normal tw-font-yakan text-gray">
             {province}/{city} - {contract_type}
           </p>
-          <p className="tw-text-xs xl:tw-text-base tw-font-normal tw-font-yakan text-gray">
+          <p className="tw-text-xs 2xl:tw-text-base tw-font-normal tw-font-yakan text-gray">
             {created_at}
           </p>
         </div>

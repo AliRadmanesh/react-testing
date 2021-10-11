@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import ScrollToTop from './ScrollToTop';
 
 export default function PageHeader({ title, text = '', img = '' }) {
+  useEffect(() => {}, []);
+
   return (
     <>
       <Toaster
@@ -26,7 +28,7 @@ export default function PageHeader({ title, text = '', img = '' }) {
       />
       <MenuMobile />
       <MenuDesktop />
-      <div className="tw-w-full tw-h-auto page-header tw-mb-6 lg:tw-mb-16">
+      <div className="tw-w-full tw-h-auto page-header tw-mb-6 lg:tw-mb-16 tw-relative">
         <div className="container tw-flex tw-items-center tw-py-12 lg:tw-py-16 page-header-content tw-w-auto tw-pl-6">
           {img && <img src={img} alt="" />}
           <div>
