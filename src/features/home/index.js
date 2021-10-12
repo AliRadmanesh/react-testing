@@ -14,6 +14,8 @@ import CoursesContainer from '../../components/home/CoursesContainer';
 import ScrollToTop from '../../components/global/ScrollToTop';
 import RecommendedCoursesContainer from '../../components/home/RecommendedCoursesContainer';
 import JobsContainer from '../../components/home/JobsContainer';
+import HomeColleagues from '../../components/home/HomeColleagues';
+import ApplicationAd from '../../components/home/ApplicationAd';
 
 const Home = () => {
   const { user_recommended_courses, user_recommended_jobs } = useSelector(
@@ -56,6 +58,8 @@ const Home = () => {
       {user_recommended_jobs && <JobsContainer />}
       <RecentPostsContainer />
       <CoursesContainer />
+      <HomeColleagues />
+      <ApplicationAd />
       <Footer />
     </div>
   );

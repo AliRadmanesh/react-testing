@@ -336,18 +336,10 @@ textarea,
   color: #2c2c2c;
 }
 
-input.mobile-menu-search, textarea.mobile-menu-search,
-.mobile-menu-search.textarea,
-.input.mobile-menu-search {
-  width: 100vh;
-}
-
 @media screen and (min-width: 768px) {
-  
-  input,
-  textarea,
-  .textarea,
-  .input {
+  input.mobile-menu-search, textarea.mobile-menu-search,
+  .mobile-menu-search.textarea,
+  .input.mobile-menu-search {
     max-width: 328px;
   }
 }
@@ -358,8 +350,6 @@ input:not(input.mobile-menu-search):not(textarea.mobile-menu-search):not(.mobile
   background-color: #f0f2f2;
   outline: none;
   border: 1px solid transparent;
-  width: 100%;
-  max-width: 328px;
   -webkit-transition: border-color 0.3s, color 0.3s, background-color 0.3s, -webkit-box-shadow 0.3s;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s, -webkit-box-shadow 0.3s;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s;
@@ -375,7 +365,6 @@ input:not(input.mobile-menu-search):not(textarea.mobile-menu-search):not(.mobile
   .textarea:not(input.mobile-menu-search):not(textarea.mobile-menu-search):not(.mobile-menu-search.textarea):not(input.landing-search):not(textarea.landing-search):not(.landing-search.textarea),
   .input {
     padding: 22px 12px;
-    width: 360px;
   }
 }
 
@@ -550,6 +539,17 @@ button, .button-primary, .button-secondary, .button-error, .button {
   }
 }
 
+/* FOOTER SETTINGS */
+footer .tab-effect img {
+  padding-right: 16px;
+}
+
+@media screen and (min-width: 1536px) {
+  footer .tab-effect img {
+    padding-right: 204px;
+  }
+}
+
 @media (min-height: 768px) {
   footer .copyright-container {
     max-width: 650px;
@@ -704,7 +704,6 @@ footer .footer-heading {
   border: none !important;
   outline: none;
   margin: 0;
-  width: 100%;
 }
 
 .mobile-menu-search-container input.mobile-menu-search:hover, .mobile-menu-search-container textarea.mobile-menu-search:hover,
@@ -836,6 +835,13 @@ footer .footer-heading {
   width: 50px !important;
   border-radius: 12px !important;
   background: #118ab2 !important;
+}
+
+.home-colleagues .swiper-pagination-bullets {
+  margin-top: 0;
+  top: 0;
+  left: 0;
+  width: auto;
 }
 
 /* Features/Pages Scss */
@@ -975,6 +981,35 @@ footer .footer-heading {
   }
 }
 
+.avatar {
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (min-width: 1536px) {
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (min-width: 1536px) {
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .auth-header-mobile button, .auth-header-mobile .button-primary, .auth-header-mobile .button-secondary, .auth-header-mobile .button-error, .auth-header-mobile .button {
   padding: 8px;
 }
@@ -1007,7 +1042,7 @@ footer .footer-heading {
 .auth-header-desktop-back button p, .auth-header-desktop-back .button-primary p, .auth-header-desktop-back .button-secondary p, .auth-header-desktop-back .button-error p, .auth-header-desktop-back .button p, .auth-header-desktop-back button .p, .auth-header-desktop-back .button-primary .p, .auth-header-desktop-back .button-secondary .p, .auth-header-desktop-back .button-error .p, .auth-header-desktop-back .button .p {
   font-weight: 700;
   margin-top: 2px;
-  width: 139px;
+  width: 180px;
   z-index: -1;
 }
 
@@ -1036,7 +1071,7 @@ footer .footer-heading {
 .auth-header-desktop-back button:hover .hoverer, .auth-header-desktop-back .button-primary:hover .hoverer, .auth-header-desktop-back .button-secondary:hover .hoverer, .auth-header-desktop-back .button-error:hover .hoverer, .auth-header-desktop-back .button:hover .hoverer {
   visibility: visible;
   left: 0;
-  width: 139px;
+  width: 220px;
   display: block;
 }
 
@@ -1064,9 +1099,9 @@ footer .footer-heading {
   outline: none !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
-  padding: 17px 4px !important;
-  -webkit-transition: width 0.7s ease-in-out;
-  transition: width 0.7s ease-in-out;
+  padding: 17px 0 !important;
+  -webkit-transition: width 0.7s ease-in-out, padding 0.3s ease-in;
+  transition: width 0.7s ease-in-out, padding 0.3s ease-in;
 }
 
 .auth-header-desktop-search input:focus, .auth-header-desktop-search textarea:focus,
@@ -1076,6 +1111,7 @@ footer .footer-heading {
   outline: none !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+  padding: 17px 4px !important;
 }
 
 .auth-header-desktop-search.input {
@@ -1094,12 +1130,20 @@ footer .footer-heading {
 
 .faq-item button, .faq-item .button-primary, .faq-item .button-secondary, .faq-item .button-error, .faq-item .button {
   background-color: #fefefe;
-  -webkit-transition: background-color 0.5s ease-in, color 0.5s ease-in;
-  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+  -webkit-transition: background-color 0.5s ease-in, color 0.5s ease-in, padding 1s ease-in;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in, padding 1s ease-in;
   color: #2c2c2c;
   position: absolute;
   top: 0;
   z-index: 1;
+}
+
+.faq-item button img.up, .faq-item .button-primary img.up, .faq-item .button-secondary img.up, .faq-item .button-error img.up, .faq-item .button img.up {
+  display: none;
+}
+
+.faq-item button img.down, .faq-item .button-primary img.down, .faq-item .button-secondary img.down, .faq-item .button-error img.down, .faq-item .button img.down {
+  display: block;
 }
 
 .faq-item button.expand, .faq-item .expand.button-primary, .faq-item .expand.button-secondary, .faq-item .expand.button-error, .faq-item .expand.button {
@@ -1107,12 +1151,22 @@ footer .footer-heading {
   color: #fefefe;
 }
 
-.faq-item button.expand img, .faq-item .expand.button-primary img, .faq-item .expand.button-secondary img, .faq-item .expand.button-error img, .faq-item .expand.button img {
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
+.faq-item button.expand img.up, .faq-item .expand.button-primary img.up, .faq-item .expand.button-secondary img.up, .faq-item .expand.button-error img.up, .faq-item .expand.button img.up {
+  display: block;
+}
+
+.faq-item button.expand img.down, .faq-item .expand.button-primary img.down, .faq-item .expand.button-secondary img.down, .faq-item .expand.button-error img.down, .faq-item .expand.button img.down {
+  display: none;
 }
 
 .faq-item button + div, .faq-item .button-primary + div, .faq-item .button-secondary + div, .faq-item .button-error + div, .faq-item .button + div {
+  padding-top: 0;
+  padding-bottom: 0;
+  -webkit-transition: padding 0.5s ease-in;
+  transition: padding 0.5s ease-in;
+}
+
+.faq-item button + div > div, .faq-item .button-primary + div > div, .faq-item .button-secondary + div > div, .faq-item .button-error + div > div, .faq-item .button + div > div {
   max-height: 0;
   overflow: hidden;
   position: relative;
@@ -1122,7 +1176,41 @@ footer .footer-heading {
 }
 
 .faq-item button.expand + div, .faq-item .expand.button-primary + div, .faq-item .expand.button-secondary + div, .faq-item .expand.button-error + div, .faq-item .expand.button + div {
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+.faq-item button.expand + div > div, .faq-item .expand.button-primary + div > div, .faq-item .expand.button-secondary + div > div, .faq-item .expand.button-error + div > div, .faq-item .expand.button + div > div {
   max-height: 120px;
   top: 56px;
+}
+
+#about h3 {
+  color: #118ab2;
+}
+
+.application-ad h1 {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 33px;
+}
+
+.application-ad p, .application-ad .p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+@media screen and (min-width: 1536px) {
+  .application-ad h1 {
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 34px;
+  }
+  .application-ad p, .application-ad .p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

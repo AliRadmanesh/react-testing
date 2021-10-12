@@ -24,9 +24,9 @@ function Footer() {
 
   return (
     <footer className="tw-pb-12 tw-mt-6 lg:tw-mt-16" style={{}}>
-      <div className="tw-grid" style={{ gridTemplateColumns: '150px auto ' }}>
+      <div className="tw-flex" style={{ gridTemplateColumns: '150px auto ' }}>
         <div
-          className="tw-inline-flex tw-pr-4"
+          className="tw-inline-flex tab-effect tw-pr-4"
           style={{ clipPath: 'polygon()', background: 'white' }}
         >
           <img src={logo} alt="" />
