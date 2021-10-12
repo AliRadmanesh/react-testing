@@ -540,13 +540,27 @@ button, .button-primary, .button-secondary, .button-error, .button {
 }
 
 /* FOOTER SETTINGS */
-footer .tab-effect img {
+footer .tab-effect-container {
+  -webkit-box-shadow: 30px -10px 5px -8px #eee;
+          box-shadow: 30px -10px 5px -8px #eee;
   padding-right: 16px;
 }
 
 @media screen and (min-width: 1536px) {
-  footer .tab-effect img {
+  footer .tab-effect-container {
     padding-right: 204px;
+  }
+}
+
+footer .tab-effect {
+  -webkit-clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@media screen and (min-width: 1536px) {
+  footer .tab-effect {
+    -webkit-clip-path: polygon(90% 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(90% 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 

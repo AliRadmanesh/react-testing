@@ -23,38 +23,49 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="tw-pb-12 tw-mt-6 lg:tw-mt-16" style={{}}>
-      <div className="tw-flex" style={{ gridTemplateColumns: '150px auto ' }}>
+    <footer className="tw-pb-12 bg-light tw-mt-6 lg:tw-mt-16" style={{}}>
+      <div className="tw-grid bg-white container" style={{ gridTemplateColumns: '150px auto ' }}>
         <div
-          className="tw-inline-flex tab-effect tw-pr-4"
-          style={{ clipPath: 'polygon()', background: 'white' }}
+          className=""
+          style={{
+            boxShadow: '0 -10px 8px -8px #eee',
+          }}
         >
-          <img src={logo} alt="" />
-          <h3 className="tw-font-black text-blue tw-mr-2 tw-self-center tw-ml-4">کارساز</h3>
-        </div>
-        <div className="tw-flex" style={{ background: '' }}>
           <div
-            className=""
+            className="tw-inline-flex tab-effect tw-py-8 bg-white tw-px-4"
+            style={{
+              clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0 100%)',
+              boxShadow: '-10px 0 5px -8px #eee',
+            }}
+          >
+            <img src={logo} alt="" />
+            <h3 className="tw-font-black text-blue tw-mr-2 tw-self-center tw-ml-4">کارساز</h3>
+          </div>
+          {/* <div
+            className="bg-white"
             style={{
               clipPath: 'polygon(20% 0, 100% 0, 80% 100%, 0 100%)',
               width: '40px',
               height: '100px',
-              background:
-                'linear-gradient(to right, #fff, rgba(225, 225, 225, 1)), linear-gradient(to bottom, #fff, rgba(225, 225, 225, 1))',
+              position: 'relative',
+              right: '-1rem',
+              boxShadow: '10px 0 15px -8px #eee',
+              // background: 'red',
             }}
-          />
-          <div
-            style={{
-              display: 'flex',
-              background: 'white',
-              width: '100%',
-              boxShadow: '0 -20px 5px -2px rgba(225, 225, 225, 1) inset',
-            }}
-          />
+          /> */}
+        </div>
+        <div
+          className="tw-flex tw-w-full bg-light"
+          style={{
+            // background: 'linear-gradient(to bottom, rgba(251, 251, 251, .5), rgba(251, 251, 251, .1))',
+            boxShadow: '0 -10px 8px -8px #eee inset',
+          }}
+        >
+          <div className="" />
         </div>
       </div>
       <div
-        className=" tw-px-4 tw-pt-12 tw-grid tw-grid-cols-1  md:tw-grid-cols-3 md:tw-gap-x-4 footer-grid"
+        className="bg-white container tw-px-4 tw-pt-12 tw-grid tw-grid-cols-1  md:tw-grid-cols-3 md:tw-gap-x-4"
         style={{}}
       >
         <div className="tw-my-8 tw-text-justify">
@@ -110,7 +121,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="tw-my-8 lg:tw-px-4 lg:tw-flex lg:tw-flex-col lg:tw-justify-evenly lg:tw-mx-8">
+        <div className="tw-my-8 lg:tw-px-4 lg:tw-flex lg:tw-flex-col lg:tw-justify-evenly lg:tw-mx-8 bg-white">
           <h4 className="text-blue">اپلیکیشن کارساز</h4>
           <p className="tw-my-4 tw-text-justify">
             دسترسی آسان و راحت به دوره های آموزشی و فرصت های شغلی. با استفاده از اپلیکیشن کارساز،
@@ -129,7 +140,7 @@ function Footer() {
         </div>
       </div>
       <div
-        className="tw-flex tw-justify-around tw-flex-col lg:tw-flex-row-reverse tw-pt-8 lg:tw-items-center"
+        className="bg-white tw-flex tw-justify-around tw-flex-col lg:tw-flex-row-reverse tw-pt-8 lg:tw-items-center"
         style={{ borderTop: '1px solid #E2E2E2' }}
       >
         <div
