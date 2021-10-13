@@ -1,0 +1,77 @@
+/* Inputs */
+.template {
+  width: 100% !important;
+}
+
+::-moz-placeholder,
+.template input:-moz-placeholder,
+.template input:-ms-input-placeholder,
+.template input::-webkit-input-placeholder,
+.template textarea:-moz-placeholder,
+.template textarea:-ms-input-placeholder,
+.template textarea::-webkit-input-placeholder {
+  color: #878787;
+}
+
+.template input {
+  margin: 0 !important;
+  padding: 14px 8px !important;
+  background-color: #f0f2f2 !important;
+  outline: none !important;
+  color: #2c2c2c !important;
+  font-weight: 400 !important;
+  line-height: 26 !important;
+  font-size: 1rem !important;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s !important;
+  width: 500px !important;
+}
+
+@media screen and (min-width: 1280px) {
+  .template input {
+    padding: 22px 12px !important;
+  }
+}
+
+.template input:focus {
+  background-color: #f0f2f2 !important;
+  -webkit-box-shadow: 0 0 0 2px #118ab2 !important;
+  box-shadow: 0 0 0 2px #118ab2 !important;
+}
+
+.template input:hover {
+  -webkit-box-shadow: 0 0 0 1px #118ab2 !important;
+  box-shadow: 0 0 0 1px #118ab2 !important;
+}
+
+.template input.success,
+.template input.success:hover,
+.template input.success:focus {
+  background-color: #f2fbf7 !important;
+  -webkit-box-shadow: 0 0 0 1px #11b262 !important;
+  box-shadow: 0 0 0 1px #11b262 !important;
+}
+
+.template input.error,
+.template input.error:hover,
+.template input.error:focus {
+  background-color: #fbf2f2 !important;
+  -webkit-box-shadow: 0 0 0 1px #b21111 !important;
+  box-shadow: 0 0 0 1px #b21111 !important;
+}
+
+.template input.warning,
+.template input.warning:hover,
+.template input.warning:focus {
+  background-color: #fbf8f2 !important;
+  -webkit-box-shadow: 0 0 0 1px #b26f11 !important;
+  box-shadow: 0 0 0 1px #b26f11 !important;
+}
+
+.template input:disabled,
+.template input.error:disabled,
+.template input.success:disabled,
+.template input.warning:disabled {
+  background-color: #e2e2e2 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
