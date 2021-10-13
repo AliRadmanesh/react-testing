@@ -9,6 +9,8 @@ export function TextArea({
   classes,
   state,
   onChange,
+  onBlur,
+  onFocus,
   message,
 }) {
   return (
@@ -20,6 +22,8 @@ export function TextArea({
         style={{ marginBottom: '-10px', width: '100%' }}
         onChange={onChange}
         disabled={disabled}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
       <p
         className=""

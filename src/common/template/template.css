@@ -14,8 +14,8 @@
 }
 
 .template p {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 400;
 }
 
@@ -56,7 +56,8 @@
 
 .template input.success,
 .template input.success:hover,
-.template input.success:focus {
+.template input.success:focus,
+.template .dropdown.success {
   background-color: #f2fbf7 !important;
   -webkit-box-shadow: 0 0 0 1px #11b262 !important;
   box-shadow: 0 0 0 1px #11b262 !important;
@@ -64,7 +65,8 @@
 
 .template input.error,
 .template input.error:hover,
-.template input.error:focus {
+.template input.error:focus,
+.template .dropdown.error {
   background-color: #fbf2f2 !important;
   -webkit-box-shadow: 0 0 0 1px #b21111 !important;
   box-shadow: 0 0 0 1px #b21111 !important;
@@ -72,7 +74,8 @@
 
 .template input.warning,
 .template input.warning:hover,
-.template input.warning:focus {
+.template input.warning:focus,
+.template .dropdown.warning {
   background-color: #fbf8f2 !important;
   -webkit-box-shadow: 0 0 0 1px #b26f11 !important;
   box-shadow: 0 0 0 1px #b26f11 !important;
@@ -81,7 +84,8 @@
 .template input:disabled,
 .template input.error:disabled,
 .template input.success:disabled,
-.template input.warning:disabled {
+.template input.warning:disabled,
+.template .dropdown.disabled {
   background-color: #e2e2e2 !important;
   border-color: transparent !important;
   box-shadow: none !important;
@@ -89,8 +93,15 @@
 
 /* DROPDOWN */
 
-.template .dropdown p {
+.template .dropdown {
   font-size: 1rem;
+}
+
+.template .dropdown input,
+.template .dropdown input:hover,
+.template .dropdown input:focus {
+  box-shadow: none;
+  border: none;
 }
 
 .template .dropdown {

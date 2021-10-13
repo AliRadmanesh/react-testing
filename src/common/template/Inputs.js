@@ -9,6 +9,8 @@ export function TextInput({
   classes,
   state,
   onChange,
+  onFocus,
+  onBlur,
   message,
 }) {
   return (
@@ -20,6 +22,8 @@ export function TextInput({
         className={`${classes} ${state}`}
         style={{ marginBottom: '-10px', width: '100%' }}
         onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
         disabled={disabled}
       />
       <p
@@ -48,6 +52,7 @@ export function EmailInput({
   classes,
   state,
   onChange,
+  onBlur,
   message,
 }) {
   return (
@@ -56,10 +61,11 @@ export function EmailInput({
         type="email"
         defaultValue={defaultValue}
         placeholder={placeholder}
-        className={classes}
+        className={`${classes} ${state}`}
         style={{ marginBottom: '-10px', width: '100%' }}
         onChange={onChange}
         disabled={disabled}
+        onBlur={onBlur}
       />
       <p
         className=""
@@ -87,6 +93,7 @@ export function NumberInput({
   classes,
   state,
   onChange,
+  onBlur,
   message,
 }) {
   return (
@@ -95,10 +102,11 @@ export function NumberInput({
         type="number"
         defaultValue={defaultValue}
         placeholder={placeholder}
-        className={classes + (state === 'error' && ' error')}
+        className={`${classes} ${state}`}
         style={{ marginBottom: '-10px', width: '100%' }}
         onChange={onChange}
         disabled={disabled}
+        onBlur={onBlur}
       />
       <p
         className=""
