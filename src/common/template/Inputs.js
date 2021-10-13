@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import './template.module.css';
+import './template.css';
 
 export function TextInput({
   defaultValue,
@@ -23,7 +23,7 @@ export function TextInput({
         disabled={disabled}
       />
       <p
-        className="caption"
+        className=""
         style={{
           color:
             (!state && '#2c2c2c') ||
@@ -62,7 +62,7 @@ export function EmailInput({
         disabled={disabled}
       />
       <p
-        className="caption"
+        className=""
         style={{
           color:
             (!state && '#2c2c2c') ||
@@ -101,7 +101,7 @@ export function NumberInput({
         disabled={disabled}
       />
       <p
-        className="caption"
+        className=""
         style={{
           color:
             (!state && '#2c2c2c') ||

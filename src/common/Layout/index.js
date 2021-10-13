@@ -7,7 +7,7 @@ export default function Layout({ children, title, text = '', img = '' }) {
   return (
     <div className="bg-white">
       <PageHeader title={title} text={text} img={img} />
-      {children}
+      <div className="tw-py-6 lg:tw-py-16 bg-light">{children}</div>
       <Footer />
     </div>
   );

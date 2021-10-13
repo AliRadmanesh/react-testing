@@ -13,7 +13,6 @@ export const showUserHeaderData = (value) => (dispatch) => {
 export const checkUser = () => async (dispatch) => {
   try {
     const res = await instance.post('/api/v1/web/service/users/check');
-    console.log(res.data);
     if (res.data.code === 200 || res.data.code === '200') {
       dispatch({
         type: SET_USER_CHECK,

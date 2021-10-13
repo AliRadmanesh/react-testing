@@ -23,7 +23,7 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="tw-pb-12 bg-light tw-mt-6 lg:tw-mt-16" style={{}}>
+    <footer className="tw-pb-12 bg-light" style={{}}>
       <div className="tw-grid bg-white container" style={{ gridTemplateColumns: '150px auto ' }}>
         <div
           className=""
