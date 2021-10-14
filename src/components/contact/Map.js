@@ -1,9 +1,9 @@
 import React from 'react';
+import leaflet from 'leaflet';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
-export default function Map() {
-  return (
-    <div>
-      <h1>;alksd;lask;l</h1>
-    </div>
-  );
+import 'leaflet/dist/leaflet.css';
+
+export default function ContactMap() {
+  return <div>map</div>;
 }
