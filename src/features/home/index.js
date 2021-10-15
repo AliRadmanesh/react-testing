@@ -40,10 +40,10 @@ const Home = () => {
         }}
       >
         <HomeMenuDesktop />
-        <div className="main-landing-content tw-w-full md:tw-w-1/2 md:tw-mx-auto tw-pt-6 lg:tw-pt-8 xl:tw-pt-12">
-          <div className="" style={{}}>
+        <div className="main-landing-content tw-w-full md:tw-w-1/2 md:tw-mx-auto tw-pt-6 lg:tw-pt-12 3xl:tw-pt-16 xl:tw-pt-12">
+          <div className="tw-mt-0 3xl:tw-mt-16" style={{}}>
             <h1 className="title-primary text-blue">کارساز، بستری برای یادگیری</h1>
-            <p className="text-primary tw-mx-2 tw-mt-2 lg:tw-mt-4">
+            <p className="text-primary tw-mx-2 tw-mt-2 lg:tw-my-8">
               {' '}
               کارساز بستر جامع برای یادگیری میباشد، در کارساز در هر زمینه ای آموزش ببینید و از فرصت
               های شغلی کارساز برای اشتغال خود به سادگی استفاده کنید

@@ -22,7 +22,7 @@ const GridContainer = () => {
     >
       <div className="tw-flex tw-justify-center">
         <div
-          className="bg-white border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 tw-py-4 tw-w-auto tw-flex tw-text-right"
+          className="bg-white border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right"
           style={{ gridArea: 'card-1', boxShadow: '5px 5px 10px #ccc' }}
         >
           <img className="tw-opacity-40" src={studentIcon} alt="" />
@@ -32,7 +32,7 @@ const GridContainer = () => {
           </div>
         </div>
         <div
-          className="bg-white border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 tw-py-4 tw-w-auto tw-flex tw-text-right"
+          className="bg-white border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right"
           style={{ gridArea: 'card-1', boxShadow: '5px 5px 10px #ccc' }}
         >
           <img className="tw-opacity-40" src={schoolIcon} alt="" />
@@ -44,7 +44,7 @@ const GridContainer = () => {
       </div>
       <div className="tw-flex tw-justify-center">
         <div
-          className="bg-white border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 tw-py-4 tw-w-auto tw-flex tw-text-right"
+          className="bg-white border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right"
           style={{ gridArea: 'card-1', boxShadow: '5px 5px 10px #ccc' }}
         >
           <img className="tw-opacity-40" src={slideIcon} alt="" />

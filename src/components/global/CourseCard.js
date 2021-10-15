@@ -18,26 +18,33 @@ const CourseCard = ({ props }) => {
   } = props;
 
   return (
-    <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4">
-      <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2">
-        {/* <img src={cover} alt="" className="border-smooth tw-w-full lg:tw-order-2" /> */}
+    <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4 font-kalameh">
+      <div className="tw-grid tw-grid-cols-1 md:tw-grid-cols-2">
+        {/* <img src={cover} alt="" className="tw-block md:tw-hidden  border-smooth tw-w-full lg:tw-order-2" /> */}
         <div
           style={{
             background: `url("${cover}") no-repeat center/cover`,
             width: '100%',
-            height: '300px',
+            height: 'auto',
           }}
           className="border-smooth tw-w-full lg:tw-order-2"
         />
         <div className="tw-mt-4 lg:tw-mt-0 lg:tw-p-4 tw-p-0 lg:tw-order-1 lg:tw-flex lg:tw-flex-col tw-justify-between">
           <div>
-            <p className="tw-font-bold lg:tw-font-black font-kalameh tw-text-base lg:tw-text-lg text-dark tw-truncate">
+            <p className="tw-font-bold lg:tw-font-black font-kalameh tw-text-base lg:tw-text-lg text-dark">
               {title}
             </p>
-            <p className="text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg tw-truncate">{description}</p>
+            <div
+              className=""
+              style={{ maxHeight: '5.8rem', textOverflow: 'ellipses', overflowY: 'hidden' }}
+            >
+              <p className="text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg font-iranyekan">
+                {description}
+              </p>
+            </div>
           </div>
           <div className="tw-mt-4">
-            <div className="tw-flex tw-justify-between tw-items-end tw-mt-4">
+            <div className="tw-flex tw-justify-between tw-items-end tw-mb-4">
               <div className="tw-flex tw-items-end">
                 <img
                   src={avatar}
@@ -51,7 +58,7 @@ const CourseCard = ({ props }) => {
                 <p className="tab text-blue">{price}</p>
               </div>
             </div>
-            <div className="tw-flex tw-justify-between tw-items-end lg:tw-items-center tw-mt-4">
+            <div className="tw-flex tw-justify-between tw-items-end lg:tw-items-center">
               <div className="tw-flex tw-justify-between tw-items-center">
                 {type === 'online' ? (
                   <div className="tw-flex tw-items-center tw-ml-4">

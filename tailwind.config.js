@@ -8,7 +8,11 @@ module.exports = {
       kalameh: ['kalameh'],
       yekan: ['IRANYekan'],
     },
-    extend: {},
+    extend: {
+      screens: {
+        '3xl': '1920',
+      },
+    },
   },
   variants: {
     extend: {},

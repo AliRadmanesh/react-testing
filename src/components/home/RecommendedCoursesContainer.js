@@ -23,9 +23,9 @@ export default function RecommendedCoursesContainer() {
   }, []);
 
   return (
-    <div className="tw-py-4 tw-my-16 container">
+    <div className="tw-my-16 container tw-py-16">
       <h2 className="title-s econdary text-blue tw-text-center tw-mb-6">
-        دوره‌های پیشنهادی برای شما
+        آموزش‌های پیشنهادی برای شما
       </h2>
       <div id="" className="home-posts-container">
         <Swiper

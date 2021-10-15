@@ -18,7 +18,7 @@ const CoursesContainer = () => {
   };
 
   return (
-    <div className="tw-py-4 tw-my-16 container">
+    <div className="tw-py-16 tw-my-16 container">
       <h2 className="title-secondary text-blue tw-text-center tw-mb-6">دوره‌های پیشنهادی کارساز</h2>
       <div id="home-posts-container" className="home-posts-container">
         <Swiper pagination={pagination} spaceBetween={16} className="mySwiper">

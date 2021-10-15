@@ -7,11 +7,14 @@ import searchIcon from '../../assets/icons/Search.svg';
 const MenuDesktop = () => {
   const [scrollY, setScrollY] = useState(0);
   const [show, doShow] = useState(false);
+  const [width, setWidth] = useState('160px');
 
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
       setScrollY(window.scrollY);
     });
+
+    if (window.innerWidth >= 1280) setWidth('220px');
   });
 
   return (
@@ -28,22 +31,19 @@ const MenuDesktop = () => {
         }}
       >
         <div className="tw-flex tw-items-center tw-py-2">
-          <Link
-            to="https://google.com"
-            className="tab tw-ml-4 lg:tw-ml-8 2xl:tw-ml-12 tw-flex tw-items-center"
-          >
+          <Link to="https://google.com" className="tab tw-ml-4 lg:tw-ml-8 tw-flex tw-items-center">
             <img src={logoLarge} alt="" />
             <h3 className="tw-mr-4 tw-font-black text-blue">کارساز</h3>
           </Link>
           <Link
             to="https://google.com"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8 2xl:tw-ml-12"
+            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             خانه
           </Link>
           <Link
             to="https://google.com"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8 2xl:tw-ml-12"
+            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             دسته‌بندی &nbsp; &nbsp;
             <span
@@ -58,25 +58,25 @@ const MenuDesktop = () => {
           </Link>
           <Link
             to="https://google.com"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8 2xl:tw-ml-12"
+            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             فرصت‌های شغلی
           </Link>
           <Link
             to="https://google.com"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8 2xl:tw-ml-12"
+            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             وبلاگ
           </Link>
           <Link
             to="./about"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8 2xl:tw-ml-12"
+            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             درباره ما
           </Link>
           <Link
             to="./contact"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8 2xl:tw-ml-12"
+            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             تماس با ما
           </Link>
@@ -90,15 +90,15 @@ const MenuDesktop = () => {
         <div className="tw-flex tw-align-middle tw-items-center tw-justify-items-center">
           <div
             id="auth-header-desktop-search"
-            className="auth-header-desktop-search tw-flex tw-flex-row tw-items-center border-smooth tw-ml-4"
+            className="auth-header-desktop-search tw-flex tw-flex-row tw-items-center border-smooth tw-py-1 tw-ml-4"
           >
             <div className="hoverer tw-z-0 tw-relative">
               <input
                 ckassName="font-kalameh tw-block"
-                placeholder="دوره یا آموزشگاه را جستجو کنید..."
+                placeholder="جستجوی دوره، مدرس، آموزشگاه..."
                 type="text"
                 style={{
-                  width: show ? '220px' : '0',
+                  width: show ? width : '0',
                   // {display: show ? 'initial' : 'none',}
                 }}
               />

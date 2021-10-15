@@ -17,7 +17,7 @@ function PostCard({ props }) {
   } = props;
 
   return (
-    <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4">
+    <div className="tw-p-4 bg-white tw-my-4 tw-shadow-sm tw-rounded-xl font-iranyekan">
       {/* <img src={image} alt="" className="border-smooth tw-w-full tw-h-auto tw-mb-4" /> */}
       <div
         className="border-smooth tw-w-full tw-h-auto tw-mb-4"
@@ -40,7 +40,7 @@ function PostCard({ props }) {
             </p>
           </div>
           <div>
-            <caption className="text-blue tw-block tw-text-left">
+            <caption className="text-blue tw-block tw-text-left font-kalameh">
               زمان مطالعه {estimated_time}
             </caption>
           </div>
@@ -54,7 +54,7 @@ function PostCard({ props }) {
                 className="tw-ml-2"
                 style={{ width: '16px', height: '16px' }}
               />
-              <caption className="text-dark">{created_at}</caption>
+              <caption className="text-dark font-kalameh">{created_at}</caption>
             </div>
             <div className="tw-flex tw-items-center">
               <img
@@ -63,12 +63,12 @@ function PostCard({ props }) {
                 className="tw-ml-2"
                 style={{ width: '16px', height: '16px' }}
               />
-              <caption className="text-dark">{rating}</caption>
+              <caption className="text-dark font-kalameh">{rating}</caption>
             </div>
           </div>
           <div>
             <Link to="https://karsaz.app/" className="">
-              <button className="tw-mx-auto button-primary">مشاهده بیشتر</button>
+              <button className="tw-mx-auto button-primary font-kalameh">مشاهده بیشتر</button>
             </Link>
           </div>
         </div>
