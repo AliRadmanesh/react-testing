@@ -709,6 +709,12 @@ footer {
   }
 }
 
+.leaflet-container {
+  width: 100%;
+  min-height: 500px;
+  height: 100%;
+}
+
 /* Features/Pages Scss */
 @import 'dashboard';
 @import 'pages';

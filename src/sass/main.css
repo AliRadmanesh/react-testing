@@ -222,7 +222,7 @@ p, .p,
 }
 
 /* DESKTOP TYPEFACE */
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1536px) {
   h1,
   .h1,
   .title-primary {
@@ -544,7 +544,7 @@ footer .tab-effect-container {
   padding-right: 16px;
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1536px) {
   footer .tab-effect-container {
     padding-right: 204px;
   }
@@ -593,7 +593,7 @@ footer .footer-heading {
   font-size: 16px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   footer .footer-heading {
     font-size: 24px;
   }
@@ -611,13 +611,7 @@ footer .footer-heading {
   padding-left: 16px;
 }
 
-@media screen and (min-width: 1024px) {
-  .container {
-    padding: 20px;
-  }
-}
-
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1536px) {
   .container {
     padding-right: 204px;
     padding-left: 204px;
@@ -668,7 +662,7 @@ footer .footer-heading {
   height: 24px;
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1280px) {
   .menu-icon {
     width: 32px;
     height: 32px;
@@ -860,6 +854,12 @@ footer .footer-heading {
   top: 0;
   left: 0;
   width: auto;
+}
+
+.leaflet-container {
+  width: 100%;
+  min-height: 500px;
+  height: 100%;
 }
 
 /* Features/Pages Scss */
