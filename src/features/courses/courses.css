@@ -1,0 +1,11 @@
+.courses-grid {
+  grid-template-columns: repeat(1, 1fr);
+  -ms-grid-columns: repeat(1, 1fr);
+}
+
+@media screen and (min-width: 1024px) {
+  .courses-grid {
+    grid-template-columns: 25% auto;
+    -ms-grid-columns: 25% auto;
+  }
+}

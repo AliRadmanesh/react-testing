@@ -36,7 +36,7 @@ export default function PageHeader({ title, text = '', img = '' }) {
               {title}
             </p>
             <p
-              className="tw-text-xs lg:tw-text-sm tw-font-regular text-light tw-opacity-50"
+              className="tw-text-xs font-iranyekan lg:tw-text-sm tw-font-regular text-light tw-opacity-50"
               style={{
                 // visibility: text !== '' ? 'visible' : 'hidden',
                 display: text !== '' ? 'initial' : 'none',

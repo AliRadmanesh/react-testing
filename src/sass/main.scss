@@ -227,8 +227,7 @@ p,
 }
 
 input,
-button,
-.input {
+button {
   padding: 14px 8px;
   border-radius: 12px;
 
@@ -717,3 +716,4 @@ footer {
 @import 'faq';
 @import 'about';
 @import 'home';
+@import 'courses';
