@@ -189,7 +189,7 @@ textarea,
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
-  font-family: KalamehWeb;
+  font-family: inherit;
 }
 
 button, .button-primary, .button-secondary, .button-error, .button,
@@ -1238,7 +1238,7 @@ footer .footer-heading {
   }
 }
 
-.courses .search-container {
+.courses .search-container, .courses-mobile-filters .search-container {
   background: #f0f2f2;
   border-radius: 12px;
   -webkit-transition: border-color 0.3s, color 0.3s, background-color 0.3s, -webkit-box-shadow 0.3s;
@@ -1247,34 +1247,50 @@ footer .footer-heading {
   transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
-.courses .search-container:hover {
+.courses .search-container:hover, .courses-mobile-filters .search-container:hover {
   -webkit-box-shadow: 0 0 0 1px #118ab2;
           box-shadow: 0 0 0 1px #118ab2;
 }
 
-.courses .search-container.focus {
+.courses .search-container.focus, .courses-mobile-filters .search-container.focus {
   background-color: #f0f2f2;
   -webkit-box-shadow: 0 0 0 2px #118ab2;
           box-shadow: 0 0 0 2px #118ab2;
 }
 
-.courses .search-container input.search, .courses .search-container textarea.search,
+.courses .search-container input.search, .courses-mobile-filters .search-container input.search, .courses .search-container textarea.search, .courses-mobile-filters .search-container textarea.search,
 .courses .search-container .search.textarea,
+.courses-mobile-filters .search-container .search.textarea,
 .courses .search-container input.search:focus,
+.courses-mobile-filters .search-container input.search:focus,
 .courses .search-container textarea.search:focus,
+.courses-mobile-filters .search-container textarea.search:focus,
 .courses .search-container .search.textarea:focus,
+.courses-mobile-filters .search-container .search.textarea:focus,
 .courses .search-container input.search:hover,
+.courses-mobile-filters .search-container input.search:hover,
 .courses .search-container textarea.search:hover,
+.courses-mobile-filters .search-container textarea.search:hover,
 .courses .search-container .search.textarea:hover,
+.courses-mobile-filters .search-container .search.textarea:hover,
 .courses .search-container input.search.error,
+.courses-mobile-filters .search-container input.search.error,
 .courses .search-container textarea.search.error,
+.courses-mobile-filters .search-container textarea.search.error,
 .courses .search-container .search.error.textarea,
+.courses-mobile-filters .search-container .search.error.textarea,
 .courses .search-container input.search.success,
+.courses-mobile-filters .search-container input.search.success,
 .courses .search-container textarea.search.success,
+.courses-mobile-filters .search-container textarea.search.success,
 .courses .search-container .search.success.textarea,
+.courses-mobile-filters .search-container .search.success.textarea,
 .courses .search-container input.search.warning,
+.courses-mobile-filters .search-container input.search.warning,
 .courses .search-container textarea.search.warning,
-.courses .search-container .search.warning.textarea {
+.courses-mobile-filters .search-container textarea.search.warning,
+.courses .search-container .search.warning.textarea,
+.courses-mobile-filters .search-container .search.warning.textarea {
   background: transparent !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -1283,21 +1299,42 @@ footer .footer-heading {
   border-radius: 0;
 }
 
-.courses .search-container button img, .courses .search-container .button-primary img, .courses .search-container .button-secondary img, .courses .search-container .button-error img, .courses .search-container .button img {
+.courses .search-container button img, .courses-mobile-filters .search-container button img, .courses .search-container .button-primary img, .courses-mobile-filters .search-container .button-primary img, .courses .search-container .button-secondary img, .courses-mobile-filters .search-container .button-secondary img, .courses .search-container .button-error img, .courses-mobile-filters .search-container .button-error img, .courses .search-container .button img, .courses-mobile-filters .search-container .button img {
   width: 30px !important;
   height: 30px !important;
   margin: 0 !important;
 }
 
+.courses-desktop-filters .filters-section-items {
+  max-height: 320px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #118ab2 #f4f4f4;
+}
+
+.courses-desktop-filters .filters-section-items::-webkit-scrollbar {
+  width: 4px;
+}
+
+.courses-desktop-filters .filters-section-items::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 50px;
+}
+
+.courses-desktop-filters .filters-section-items::-webkit-scrollbar-thumb {
+  background: #118ab2;
+  border-radius: 50px;
+}
+
 .course-card {
-  -ms-grid-columns: (1fr)[1];
-      grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  -ms-grid-columns: repeat(1, 1fr);
 }
 
 @media screen and (min-width: 768px) {
   .course-card {
+    grid-template-columns: 33% auto;
     -ms-grid-columns: 33% auto;
-        grid-template-columns: 33% auto;
   }
 }
 
