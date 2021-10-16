@@ -34,12 +34,40 @@
   }
 }
 
+.courses-mobile-filters {
+  @extend .courses;
+}
+
+.courses-desktop-filters {
+  .filters-section {
+    &-items {
+      max-height: 320px;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: $karsaz-primary $karsaz-light-gray;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: $karsaz-light-gray;
+        border-radius: 50px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $karsaz-primary;
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
 .course {
   &-card {
     grid-template-columns: repeat(1, 1fr);
-
+    -ms-grid-columns: repeat(1, 1fr);
     @media screen and (min-width: 768px) {
       grid-template-columns: 33% auto;
+      -ms-grid-columns: 33% auto;
     }
 
     &-title {

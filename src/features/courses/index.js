@@ -1,16 +1,26 @@
 import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
-
 import Layout from '../../common/Layout';
 import SearchBar from '../../components/global/SearchBar';
 import Checkbox from '../../common/template/Checkbox';
+
 import CourseCard from '../../components/courses/CourseCard';
+import FilterMenuButton from '../../components/courses/FilterMenuButton';
+import FilterMenuMobile from '../../components/courses/FilterMenuMobile';
+import FilterMenuDesktop from '../../components/courses/FilterMenuDesktop';
+
+import { getSearchContent } from '../../app/redux/actions/coursesActions';
 
 import './courses.css';
 
 export default function CourseList() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     // toast('hello');
+    dispatch(getSearchContent());
+    console.log(window.innerHeight, window.innerWidth);
   }, []);
 
   return (
@@ -22,8 +32,8 @@ export default function CourseList() {
           </div>
         </div>
         <div className="tw-grid tw-gap-x-4 courses-grid tw-mb-4">
-          <div className="">
-            <Checkbox text="فرادرس" />
+          <div className="tw-hidden lg:tw-block">
+            <FilterMenuDesktop />
           </div>
           <div className="">
             <CourseCard
@@ -40,6 +50,10 @@ export default function CourseList() {
           </div>
         </div>
       </div>
+      <div>
+        <FilterMenuMobile />
+      </div>
+      <FilterMenuButton />
     </Layout>
   );
 }

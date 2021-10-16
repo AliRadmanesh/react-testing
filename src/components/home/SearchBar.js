@@ -9,7 +9,7 @@ const SearchBar = () => {
       <div className="tw-flex tw-justify-between tw-items-center tw-py-4 landing-search-container tw-mb-4 tw-w-full tw-max-w-screen-sm tw-mx-auto">
         <input
           type="text"
-          className="landing-search tw-flex"
+          className="landing-search tw-flex font-kalameh"
           placeholder="نام آموزش، آموزشگاه یا مدرس را سرچ کنید..."
           onFocus={() => {
             document.querySelector('.landing-search-container').classList.add('focus');
