@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48"><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-custom-link"/><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-general-link"/><style xmlns="" lang="en" type="text/css" id="dark-mode-custom-style"/><style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/>
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_630" data-name="Rectangle 630" width="48" height="48" transform="translate(1639 8993)" fill="#118ab2"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_126" data-name="Mask Group 126" transform="translate(-1639 -8993)" clip-path="url(#clip-path)">
+    <g id="Layer_2" data-name="Layer 2" transform="translate(1639 8993)">
+      <g id="invisible_box" data-name="invisible box">
+        <rect id="Rectangle_631" data-name="Rectangle 631" width="48" height="48" fill="none"/>
+      </g>
+      <g id="Health_Icons" data-name="Health Icons">
+        <path id="Path_958" data-name="Path 958" d="M27,44h-.7l-7-1.5a3.1,3.1,0,0,1-2.3-3V27L5,15.8a2.6,2.6,0,0,1-1-2.2V7A3,3,0,0,1,7,4H41a3,3,0,0,1,3,3v7.6a2.8,2.8,0,0,1-1.1,2.3L30,27.1V41a3.042,3.042,0,0,1-3,3Z" fill="#FEFEFE"/>
+      </g>
+    </g>
+  </g>
+</svg>
