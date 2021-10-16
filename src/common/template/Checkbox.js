@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import './template.css';
 import indicator from './checkbox-indicator.svg';
 
-export default function Checkbox({ onChange, text, disabled }) {
+export default function Checkbox({ onChange, text = '', disabled, classes }) {
   return (
-    <div className="template">
+    <div className={`template ${classes}`}>
       {/* eslint-disable-next-line */}
       <label class="checkbox-container">
         <span>{text}</span>
