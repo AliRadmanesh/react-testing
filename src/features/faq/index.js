@@ -2,7 +2,7 @@ import React from 'react';
 
 import MenuMobile from '../../components/global/MenuMobile';
 import MenuDesktop from '../../components/global/MenuDesktop';
-import PageHeader from '../../components/global/PageHeader';
+import PageHeaderPacific from '../../components/global/PageHeaderPacific';
 import Footer from '../../components/global/Footer';
 
 import FAQItem from '../../components/faq/FAQItem';
@@ -16,7 +16,10 @@ export default function FAQ() {
     <div className="bg-light">
       {/* <MenuMobile /> */}
       {/* <MenuDesktop /> */}
-      <PageHeader title="سئوالات متداول" text="شاید سئوال شما هم بین سئوالات متداول کارساز باشد" />
+      <PageHeaderPacific
+        title="سئوالات متداول"
+        text="شاید سئوال شما هم بین سئوالات متداول کارساز باشد"
+      />
       <div
         id="faq"
         className="container bg-light tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-8 xl:tw-gap-x-16 tw-py-4 lg:tw-py-6 faq"

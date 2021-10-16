@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import PageHeader from '../../components/global/PageHeader';
+import PageHeaderPacific from '../../components/global/PageHeaderPacific';
 import Footer from '../../components/global/Footer';
 import styles from './about.module.css';
 
@@ -12,7 +12,10 @@ export default function About() {
 
   return (
     <div className="bg-light" style={{ height, overflow: 'hidden' }}>
-      <PageHeader title="سئوالات متداول" text="شاید سئوال شما هم بین سئوالات متداول کارساز باشد" />
+      <PageHeaderPacific
+        title="سئوالات متداول"
+        text="شاید سئوال شما هم بین سئوالات متداول کارساز باشد"
+      />
       <div className="container">
         <div id="about" className={styles.aboutContainer}>
           <div>

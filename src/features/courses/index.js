@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
-import Layout from '../../common/Layout';
+import Layout from '../../common/Layout/chill';
 import SearchBar from '../../components/global/SearchBar';
 import Checkbox from '../../common/template/Checkbox';
 

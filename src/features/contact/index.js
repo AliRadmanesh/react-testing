@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from '../../common/Layout';
+import Layout from '../../common/Layout/pacific';
 import Form from '../../components/contact/Form';
 import ContactMap from '../../components/contact/Map';
 

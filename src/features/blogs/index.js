@@ -1,11 +1,11 @@
 import React from 'react';
 
-import PageHeader from '../../components/global/PageHeader';
+import PageHeaderChill from '../../components/global/PageHeaderChill';
 
 export default function Blogs() {
   return (
     <div>
-      <PageHeader title="وبلاگ کارساز" />
+      <PageHeaderChill title="وبلاگ کارساز" />
     </div>
   );
 }

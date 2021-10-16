@@ -29,7 +29,7 @@ export default function PageHeaderPacific({ title, text = '', img = '' }) {
       <MenuMobile />
       <MenuDesktop />
       <div className="tw-w-full tw-h-auto page-header-pacific tw-relative">
-        <div className="container tw-flex tw-items-center tw-py-12 lg:tw-py-16 page-header-content-pacific tw-w-auto tw-pl-6">
+        <div className="container tw-flex tw-items-center tw-git py-12 lg:tw-py-16 page-header-content-pacific tw-w-auto tw-pl-6">
           {img && <img src={img} alt="" />}
           <div>
             <p className="tw-font-extrabold page-header-title lg:tw-font-black font-kalameh text-white">

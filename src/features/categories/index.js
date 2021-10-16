@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PageHeader from '../../components/global/PageHeader';
+import PageHeaderChill from '../../components/global/PageHeaderChill';
 import CategoryCard from '../../components/global/CategoryCard';
 
 export default function Categories() {
@@ -26,7 +26,7 @@ export default function Categories() {
 
   return (
     <div className="bg-light">
-      <PageHeader title="دسته‌بندی‌ها" text="دسترسی به همه دسته‌بندی‌های کارساز" />
+      <PageHeaderChill title="دسته‌بندی‌ها" text="دسترسی به همه دسته‌بندی‌های کارساز" />
       <div className="tw-grid tw-my-6 tw-grid-cols-1 md:tw-grid-cols-3 xl:tw-grid-cols-4 tw-gap-x-4 tw-gap-y-6 tw-justify-center">
         {
           // map through categories in here.
