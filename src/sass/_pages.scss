@@ -1,16 +1,16 @@
 @import 'variables';
 
 .page-header {
-  &-blue {
+  &-chill {
     background: url('../assets/illustrations/pattern.svg') repeat, $karsaz-primary;
   }
 
-  &-green {
+  &-pacific {
     background: url('../assets/illustrations/pattern.svg') repeat, #00a7bc;
   }
 
   &-content {
-    &-blue {
+    &-chill {
       background: linear-gradient(
         to left,
         rgba(17, 138, 178, 1),
@@ -30,7 +30,7 @@
       }
     }
 
-    &-green {
+    &-pacific {
       background: linear-gradient(
         to left,
         rgba(0, 167, 188, 1),

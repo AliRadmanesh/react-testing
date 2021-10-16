@@ -973,33 +973,33 @@ footer .footer-heading {
   font-weight: auto;
 }
 
-.page-header-blue {
+.page-header-chill {
   background: url("../assets/illustrations/pattern.svg") repeat, #118ab2;
 }
 
-.page-header-green {
+.page-header-pacific {
   background: url("../assets/illustrations/pattern.svg") repeat, #00a7bc;
 }
 
-.page-header-content-blue {
+.page-header-content-chill {
   background: -webkit-gradient(linear, right top, left top, from(#118ab2), color-stop(#118ab2), to(rgba(17, 138, 178, 0.2)));
   background: linear-gradient(to left, #118ab2, #118ab2, rgba(17, 138, 178, 0.2));
 }
 
 @media screen and (min-width: 1024px) {
-  .page-header-content-blue {
+  .page-header-content-chill {
     background: -webkit-gradient(linear, right top, left top, from(#00a7bc), color-stop(#00a7bc), color-stop(rgba(0, 167, 188, 0.6)), to(rgba(0, 167, 188, 0.2)));
     background: linear-gradient(to left, #00a7bc, #00a7bc, rgba(0, 167, 188, 0.6), rgba(0, 167, 188, 0.2));
   }
 }
 
-.page-header-content-green {
+.page-header-content-pacific {
   background: -webkit-gradient(linear, right top, left top, from(#00a7bc), color-stop(#00a7bc), to(rgba(0, 167, 188, 0.2)));
   background: linear-gradient(to left, #00a7bc, #00a7bc, rgba(0, 167, 188, 0.2));
 }
 
 @media screen and (min-width: 1024px) {
-  .page-header-content-green {
+  .page-header-content-pacific {
     background: -webkit-gradient(linear, right top, left top, from(#00a7bc), color-stop(#00a7bc), color-stop(rgba(0, 167, 188, 0.6)), to(rgba(0, 167, 188, 0.2)));
     background: linear-gradient(to left, #00a7bc, #00a7bc, rgba(0, 167, 188, 0.6), rgba(0, 167, 188, 0.2));
   }
