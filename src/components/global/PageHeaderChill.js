@@ -53,6 +53,6 @@ export default function PageHeaderChill({ title, text = '', img = '' }) {
   );
 }
 
-PageHeader.propTypes = {
+PageHeaderChill.propTypes = {
   title: PropTypes.string.isRequired,
 };
