@@ -22,7 +22,7 @@ const MenuMobile = () => {
       className="tw-block lg:tw-hidden"
       style={{
         background: show ? 'rgba(251, 251, 251, 1)' : 'transparent',
-        zIndex: '100',
+        zIndex: '8888',
         // marginBottom: '88px',
         top: '0',
         position: 'sticky',

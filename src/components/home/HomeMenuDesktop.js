@@ -27,7 +27,7 @@ const MenuDesktop = () => {
           top: '0',
           background: scrollY === 0 ? 'transparent' : '#fbfbfb',
           transition: 'background .7s',
-          zIndex: '100',
+          zIndex: '8888',
         }}
       >
         <div className="tw-flex tw-items-center tw-py-2">

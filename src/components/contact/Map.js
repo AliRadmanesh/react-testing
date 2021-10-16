@@ -15,13 +15,13 @@ export default function ContactMap() {
   const position = [51.505, -0.09];
 
   return (
-    <div className="tw-h-auto tw-w-full tw-relative">
+    <div className="tw-h-auto tw-w-full tw-relative tw-order-first md:tw-order-last">
       <MapContainer
         center={position}
         zoom={13}
         scrollWheelZoom={false}
         dragging={false}
-        className="border-smooth"
+        className="border-smooth z-index-40"
         zoomControl={false}
       >
         <TileLayer
@@ -36,7 +36,7 @@ export default function ContactMap() {
       </MapContainer>
       <div
         className="tw-absolute tw-bottom-0 tw-mb-4 bg-white tw-rounded-xl tw-right-4 tw-left-4 tw-mx-auto font-kalameh"
-        style={{ zIndex: '99999' }}
+        style={{ zIndex: '999' }}
       >
         <div className="tw-flex tw-py-4 tw-flex-col">
           <div className="tw-flex tw-my-2 lg:tw-my-4 tw-items-center">
