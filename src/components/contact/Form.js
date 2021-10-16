@@ -93,7 +93,7 @@ export default function Form() {
 
   return (
     <>
-      <div className="tw-p-2 md:tw-p-4 border-smooth bg-white">
+      <div className="tw-p-2 md:tw-p-4 border-smooth bg-white tw-order-last md:tw-order-first">
         <div className="tw-flex tw-items-center tw-mb-4">
           <img src={messageIcon} alt="" className="icon tw-ml-4" />
           <div>
