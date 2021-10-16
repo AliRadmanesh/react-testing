@@ -17,7 +17,7 @@ export default function ScrollToTop() {
       style={{
         left: scroll !== (0, 0) ? '1rem' : '-10rem',
         transition: 'left .85s ease-out',
-        zIndex: '9999999999999999999999',
+        zIndex: '9999',
       }}
     >
       <img src={arrow} alt="" style={{ transform: 'rotate(90deg)' }} />

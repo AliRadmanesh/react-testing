@@ -2,7 +2,7 @@ import React from 'react';
 
 import onlineIcon from '../../assets/icons/Online.svg';
 import academyIcon from '../../assets/icons/School.svg';
-import starIcon from '../../assets/icons/Star.svg';
+import starIcon from '../../assets/icons/Star Fill.svg';
 import clockIcon from '../../assets/icons/Time Fill.svg';
 
 export default function CourseCard({
@@ -17,9 +17,9 @@ export default function CourseCard({
   description,
 }) {
   return (
-    <div className="course-card bg-white font-kalameh tw-grid tw-p-4 tw-rounded-xl tw-shadow-sm tw-w-full tw-items-center tw-gap-4">
+    <div className="course-card bg-white font-kalameh tw-grid tw-p-4 tw-rounded-xl tw-shadow tw-w-full tw-items-center tw-gap-4">
       <div>
-        <img src="" alt="" />
+        <img src={image} alt="" />
       </div>
       <div className="">
         <div className="tw-flex tw-items-center tw-justify-between tw-mb-4">
@@ -43,19 +43,19 @@ export default function CourseCard({
               </p>
             </div>
             <div className="tw-flex tw-flex-row-reverse md:tw-flex-row tw-items-center tw-justify-between">
-              <div className="tw-flex">
+              <div className="tw-hidden lg:tw-flex tw-items-center">
                 <img src={academyIcon} alt="" className="tw-ml-2 icon" />
                 <p>{academy}</p>
               </div>
-              <div className="tw-hidden md:tw-flex">
+              <div className="tw-hidden md:tw-flex tw-items-center">
                 <img src={clockIcon} alt="" className="tw-ml-2 icon" />
                 <p>{duration}</p>
               </div>
-              <div className="tw-hidden lg:tw-flex">
+              <div className="tw-flex tw-items-center">
                 <img src={starIcon} alt="" className="tw-ml-2 icon" />
                 <p>{rating}</p>
               </div>
-              <div className="tw-flex">
+              <div className="tw-flex tw-items-center">
                 <img src={onlineIcon} alt="" className="tw-ml-2 icon" />
                 <p>{type}</p>
               </div>

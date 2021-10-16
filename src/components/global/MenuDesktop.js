@@ -89,7 +89,7 @@ export default function MenuDesktop() {
           >
             <div className="hoverer tw-z-0 tw-relative">
               <input
-                ckassName="font-kalameh tw-block"
+                className="font-kalameh tw-block"
                 placeholder="دوره یا آموزشگاه را جستجو کنید..."
                 type="text"
                 style={{
