@@ -10,8 +10,10 @@ export const ACTIVE_PART = 'ACTIVE_PART';
 export const SET_POPUP = 'SET_POPUP';
 export const CLEAR_POPUP = 'CLEAR_POPUP';
 
-/* Course List Page */
+/* Courses List Page */
 export const GET_COURSES_DATA = 'GET_COURSES_DATA';
+export const GET_COURSES_SEARCH_DATA = 'GET_COURSES_SEARCH_DATA';
+export const DISPLAY_MOBILE_FILTER_MENU = 'DISPLAY_MOBILE_FILTER_MENU';
 
 /* Header Content */
 export const SET_USER_CHECK = 'SET_USER_CHECK';
