@@ -1,25 +1,53 @@
 @import 'variables';
 
 .page-header {
-  background: url('../assets/illustrations/pattern.svg') repeat, $karsaz-primary;
+  &-blue {
+    background: url('../assets/illustrations/pattern.svg') repeat, $karsaz-primary;
+  }
+
+  &-green {
+    background: url('../assets/illustrations/pattern.svg') repeat, #00a7bc;
+  }
 
   &-content {
-    background: linear-gradient(
-      to left,
-      rgba(17, 138, 178, 1),
-      rgba(17, 138, 178, 1),
-      rgba(17, 138, 178, 0.2)
-    );
-    // background: $karsaz-primary;
-    // box-shadow: 10px 0 50 10px $karsaz-primary;
-    @media screen and (min-width: $text-breakpoint-lg) {
+    &-blue {
       background: linear-gradient(
         to left,
         rgba(17, 138, 178, 1),
         rgba(17, 138, 178, 1),
-        rgba(17, 138, 178, 0.6),
         rgba(17, 138, 178, 0.2)
       );
+      // background: $karsaz-primary;
+      // box-shadow: 10px 0 50 10px $karsaz-primary;
+      @media screen and (min-width: $text-breakpoint-lg) {
+        background: linear-gradient(
+          to left,
+          rgba(0, 167, 188, 1),
+          rgba(0, 167, 188, 1),
+          rgba(0, 167, 188, 0.6),
+          rgba(0, 167, 188, 0.2)
+        );
+      }
+    }
+
+    &-green {
+      background: linear-gradient(
+        to left,
+        rgba(0, 167, 188, 1),
+        rgba(0, 167, 188, 1),
+        rgba(0, 167, 188, 0.2)
+      );
+      // background: $karsaz-primary;
+      // box-shadow: 10px 0 50 10px $karsaz-primary;
+      @media screen and (min-width: $text-breakpoint-lg) {
+        background: linear-gradient(
+          to left,
+          rgba(0, 167, 188, 1),
+          rgba(0, 167, 188, 1),
+          rgba(0, 167, 188, 0.6),
+          rgba(0, 167, 188, 0.2)
+        );
+      }
     }
   }
   &-title {
