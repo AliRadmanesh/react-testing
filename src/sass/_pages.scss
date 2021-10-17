@@ -84,28 +84,24 @@
   }
 }
 
-.detail-page-header {
+.detail-page-bg-fade {
+  height: 160px;
+  width: 100%;
+  background: $karsaz-primary;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.detail-page-bg-pattern {
   background: url('../assets/illustrations/pattern.svg') repeat, $karsaz-primary;
-  background-size: 100% 160px;
+  // background-size: 100% 160px;
+  height: 160px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
 
-  .page-header-content {
-    background: linear-gradient(
-      to left,
-      rgba(17, 138, 178, 1),
-      rgba(17, 138, 178, 1),
-      rgba(17, 138, 178, 0.2)
-    );
-    background-size: 100% 160px;
-
-    @media screen and (min-width: $text-breakpoint-lg) {
-      background: linear-gradient(
-        to left,
-        rgba(17, 138, 178, 1),
-        rgba(17, 138, 178, 1),
-        rgba(17, 138, 178, 0.6),
-        rgba(17, 138, 178, 0.2)
-      );
-      background-size: 100% 300px;
-    }
-  }
+.detail-page-content {
+  position: relative;
+  top: 1.2rem;
 }

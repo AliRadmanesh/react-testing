@@ -1044,23 +1044,25 @@ footer .footer-heading {
   }
 }
 
-.detail-page-header {
+.detail-page-bg-fade {
+  height: 160px;
+  width: 100%;
+  background: #118ab2;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.detail-page-bg-pattern {
   background: url("../assets/illustrations/pattern.svg") repeat, #118ab2;
-  background-size: 100% 160px;
+  height: 160px;
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
 
-.detail-page-header .page-header-content {
-  background: -webkit-gradient(linear, right top, left top, from(#118ab2), color-stop(#118ab2), to(rgba(17, 138, 178, 0.2)));
-  background: linear-gradient(to left, #118ab2, #118ab2, rgba(17, 138, 178, 0.2));
-  background-size: 100% 160px;
-}
-
-@media screen and (min-width: 1024px) {
-  .detail-page-header .page-header-content {
-    background: -webkit-gradient(linear, right top, left top, from(#118ab2), color-stop(#118ab2), color-stop(rgba(17, 138, 178, 0.6)), to(rgba(17, 138, 178, 0.2)));
-    background: linear-gradient(to left, #118ab2, #118ab2, rgba(17, 138, 178, 0.6), rgba(17, 138, 178, 0.2));
-    background-size: 100% 300px;
-  }
+.detail-page-content {
+  position: relative;
+  top: 1.2rem;
 }
 
 .auth-header-mobile button, .auth-header-mobile .button-primary, .auth-header-mobile .button-secondary, .auth-header-mobile .button-error, .auth-header-mobile .button {

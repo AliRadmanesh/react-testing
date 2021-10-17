@@ -1,9 +1,11 @@
 import React from 'react';
+import Layout from '../../common/Layout/detail';
+import Form from '../../components/contact/Form';
 
 export default function Course() {
   return (
-    <div>
-      <h1>Course page</h1>
-    </div>
+    <Layout>
+      <Form />
+    </Layout>
   );
 }

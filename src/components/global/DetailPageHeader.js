@@ -5,7 +5,7 @@ import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import ScrollToTop from './ScrollToTop';
 
-export default function DetailPageHeader({ title, text = '', img = '' }) {
+export default function DetailPageHeader() {
   return (
     <>
       <Toaster
@@ -26,31 +26,7 @@ export default function DetailPageHeader({ title, text = '', img = '' }) {
       />
       <MenuMobile />
       <MenuDesktop />
-      <div className="tw-w-full tw-h-auto detail-page-header tw-relative">
-        <div className="container tw-flex tw-items-center tw-py-12 lg:tw-py-16 page-header-content tw-w-auto tw-pl-6">
-          {img && <img src={img} alt="" />}
-          <div>
-            <p className="tw-font-extrabold page-header-title lg:tw-font-black font-kalameh text-white">
-              {title}
-            </p>
-            <p
-              className="tw-text-xs font-iranyekan lg:tw-text-sm tw-font-regular text-light tw-opacity-50"
-              style={{
-                // visibility: text !== '' ? 'visible' : 'hidden',
-                display: text !== '' ? 'initial' : 'none',
-                marginTop: text !== '' ? '1.5rem' : '0',
-              }}
-            >
-              {text}
-            </p>
-          </div>
-        </div>
-      </div>
       <ScrollToTop />
     </>
   );
 }
-
-DetailPageHeader.propTypes = {
-  title: PropTypes.string.isRequired,
-};

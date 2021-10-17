@@ -1,21 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import '../layout.css';
 
 import DetailPageHeader from '../../../components/global/DetailPageHeader';
 import Footer from '../../../components/global/Footer';
 
-export default function Layout({ children, title, text = '', img = '' }) {
+export default function Layout({ children }) {
   return (
-    <div className="bg-white">
-      <DetailPageHeader title={title} text={text} img={img} />
-      <div className="layout-content bg-light">{children}</div>
+    <div className="bg-light">
+      <DetailPageHeader />
+      <div className="" style={{ position: 'relative', paddingBottom: '1rem' }}>
+        <div className="detail-page-bg-pattern">
+          <div className="detail-page-bg-fade" />
+        </div>
+        <div className="detail-page-content container">{children}</div>
+      </div>
+      {/* <div className="detail-page-bg-fade" /> */}
       <Footer />
     </div>
   );
 }
-
-Layout.propTypes = {
-  title: PropTypes.string.isRequired,
-};
