@@ -26,7 +26,7 @@ export function TextArea({
         onBlur={onBlur}
       />
       <p
-        className=""
+        className="template-textarea-message"
         style={{
           color:
             (!state && '#2c2c2c') ||
@@ -34,8 +34,6 @@ export function TextArea({
             (state === 'warning' && '#B26F11') ||
             (state === 'success' && '#11B262'),
           visibility: state ? 'visible' : 'hidden',
-          marginTop: '1rem',
-          marginRight: '.5rem',
         }}
       >
         {message}
