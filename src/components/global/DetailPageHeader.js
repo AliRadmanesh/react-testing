@@ -5,9 +5,7 @@ import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import ScrollToTop from './ScrollToTop';
 
-export default function PageHeaderChill({ title, text = '', img = '' }) {
-  useEffect(() => {}, []);
-
+export default function DetailPageHeader({ title, text = '', img = '' }) {
   return (
     <>
       <Toaster
@@ -28,8 +26,8 @@ export default function PageHeaderChill({ title, text = '', img = '' }) {
       />
       <MenuMobile />
       <MenuDesktop />
-      <div className="tw-w-full tw-h-auto page-header-chill tw-relative">
-        <div className="container tw-flex tw-items-center tw-py-12 lg:tw-py-16 page-header-content-chill tw-w-auto tw-pl-6">
+      <div className="tw-w-full tw-h-auto detail-page-header tw-relative">
+        <div className="container tw-flex tw-items-center tw-py-12 lg:tw-py-16 page-header-content tw-w-auto tw-pl-6">
           {img && <img src={img} alt="" />}
           <div>
             <p className="tw-font-extrabold page-header-title lg:tw-font-black font-kalameh text-white">
@@ -53,6 +51,6 @@ export default function PageHeaderChill({ title, text = '', img = '' }) {
   );
 }
 
-PageHeaderChill.propTypes = {
+DetailPageHeader.propTypes = {
   title: PropTypes.string.isRequired,
 };
