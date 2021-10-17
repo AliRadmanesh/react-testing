@@ -12,6 +12,7 @@ import Contact from '../../features/contact';
 import About from '../../features/about';
 import FAQ from '../../features/faq';
 import CourseList from '../../features/courses';
+import Course from '../../features/course';
 
 function AppRouter() {
   return (
@@ -28,6 +29,7 @@ function AppRouter() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/about" component={About} />
           <Route exact path="/courses" component={CourseList} />
+          <Route exact path="/course" component={Course} />
         </Switch>
       </Router>
     </div>
