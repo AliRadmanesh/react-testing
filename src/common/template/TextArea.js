@@ -14,7 +14,7 @@ export function TextArea({
   message,
 }) {
   return (
-    <div style={{ marginBottom: '1rem' }} className="template">
+    <div style={{ marginBottom: '.5rem' }} className="template">
       <textarea
         defaultValue={defaultValue}
         placeholder={placeholder}

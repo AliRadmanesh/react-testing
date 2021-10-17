@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { TextInput, EmailInput } from '../../common/template/Inputs';
 import { TextArea } from '../../common/template/TextArea';
@@ -7,16 +7,17 @@ import icon from '../../common/template/icon.svg';
 import instance from '../../app/instance';
 
 export default function Form() {
+  const initialText = 'متن';
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [title, setTitle] = useState(null);
   const [department, setDepartment] = useState(null);
   const [description, setDescription] = useState(null);
-  const [nameMessage, setNameMessage] = useState(null);
-  const [emailMessage, setEmailMessage] = useState(null);
-  const [titleMessage, setTitleMessage] = useState(null);
-  const [departmentMessage, setDepartmentMessage] = useState(null);
-  const [descriptionMessage, setDescriptionMessage] = useState(null);
+  const [nameMessage, setNameMessage] = useState(initialText);
+  const [emailMessage, setEmailMessage] = useState(initialText);
+  const [titleMessage, setTitleMessage] = useState(initialText);
+  const [departmentMessage, setDepartmentMessage] = useState(initialText);
+  const [descriptionMessage, setDescriptionMessage] = useState(initialText);
   const [nameState, setNameState] = useState();
   const [emailState, setEmailState] = useState();
   const [titleState, setTitleState] = useState(null);
@@ -24,12 +25,17 @@ export default function Form() {
   const [descriptionState, setDescriptionState] = useState(null);
   const [showItems, doShowItems] = useState(false);
   const [dropdownText, setDropdownText] = useState();
+  const [dropdownWidth, setDropdownWidth] = useState(null);
 
   const options = [
     { id: 1, title: 'دپارتمان آموزشگاه‌ها' },
     { id: 2, title: 'دپارتمان شرکت‌ها' },
     { id: 3, title: 'پشتیبانی کارساز' },
   ];
+
+  useEffect(() => {
+    setDropdownWidth('100%');
+  }, []);
 
   const validateEmail = (add) => {
     const re =
@@ -112,7 +118,7 @@ export default function Form() {
         </div>
         <form onSubmit={onSubmit} noValidate>
           <div className="tw-h-auto tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-4 font-iranyekan">
-            <div className="tw-mt-4">
+            <div className="">
               {/* <label
               htmlFor="name"
               className="tw-text-base 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold tw-flex tw-flex-col"
@@ -142,11 +148,11 @@ export default function Form() {
                 state={nameState}
                 onBlur={(e) => {
                   checkValue(e, setNameState);
-                  if (name) setNameMessage('');
+                  if (name) setNameMessage(initialText);
                 }}
               />
             </div>
-            <div className="tw-mt-4">
+            <div className="">
               <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
                 ایمیل
               </p>
@@ -162,11 +168,11 @@ export default function Form() {
                 state={emailState}
                 onBlur={(e) => {
                   checkEmail(e, setEmailState);
-                  if (email) setEmailMessage('');
+                  if (email) setEmailMessage(initialText);
                 }}
               />
             </div>
-            <div className="tw-mt-4">
+            <div className="">
               <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
                 موضوع
               </p>
@@ -182,11 +188,11 @@ export default function Form() {
                 state={titleState}
                 onBlur={(e) => {
                   checkValue(e, setTitleState);
-                  if (title) setTitleMessage('');
+                  if (title) setTitleMessage(initialText);
                 }}
               />
             </div>
-            <div className="tw-mt-4">
+            <div className="">
               <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
                 دپارتمان
               </p>
@@ -207,7 +213,14 @@ export default function Form() {
                   <img src={icon} alt="" />
                 </div>
                 <div className="dropdown-container">
-                  <div className="dropdown-items" style={{ display: showItems ? 'block' : 'none' }}>
+                  <div
+                    className="dropdown-items"
+                    style={{
+                      display: showItems ? 'block' : 'none',
+                      width: dropdownWidth,
+                      position: 'absolute',
+                    }}
+                  >
                     {options.map((item) => (
                       <div
                         role="none"
@@ -245,7 +258,7 @@ export default function Form() {
             </div>
           </div>
 
-          <div className="template tw-flex tw-flex-col tw-w-full tw-mt-4 font-iranyekan">
+          <div className="template tw-flex tw-flex-col tw-w-full  font-iranyekan">
             <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
               پیام
             </p>
@@ -261,7 +274,7 @@ export default function Form() {
               state={descriptionState}
               onBlur={(e) => {
                 checkValue(e, setDescriptionState);
-                if (description) setDescriptionMessage('');
+                if (description) setDescriptionMessage(initialText);
               }}
             />
           </div>
