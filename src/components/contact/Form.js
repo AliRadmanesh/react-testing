@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
-
+import toast from 'react-hot-toast';
 import { TextInput, EmailInput } from '../../common/template/Inputs';
 import { TextArea } from '../../common/template/TextArea';
-
 import messageIcon from '../../assets/icons/Message.svg';
-
 import icon from '../../common/template/icon.svg';
-
 import instance from '../../app/instance';
 
 export default function Form() {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [title, setTitle] = useState(null);
-  const [department, setDepartment] = useState(1);
+  const [department, setDepartment] = useState(null);
   const [description, setDescription] = useState(null);
   const [nameMessage, setNameMessage] = useState(null);
   const [emailMessage, setEmailMessage] = useState(null);
@@ -26,8 +23,13 @@ export default function Form() {
   const [departmentState, setDepartmentState] = useState(null);
   const [descriptionState, setDescriptionState] = useState(null);
   const [showItems, doShowItems] = useState(false);
+  const [dropdownText, setDropdownText] = useState();
 
-  const options = ['دپارتمان آموزشگاه ها', 'دپارتمان مدیریت'];
+  const options = [
+    { id: 1, title: 'دپارتمان آموزشگاه‌ها' },
+    { id: 2, title: 'دپارتمان شرکت‌ها' },
+    { id: 3, title: 'پشتیبانی کارساز' },
+  ];
 
   const validateEmail = (add) => {
     const re =
@@ -50,6 +52,7 @@ export default function Form() {
     } else {
       handler('success');
     }
+    return result;
   };
 
   const onSubmit = async (e) => {
@@ -87,13 +90,17 @@ export default function Form() {
 
       const res = await instance.post('/api/v1/web/service/contact-us', data);
 
-      console.log(res);
+      if (res.data.code === 200 || res.data.code === 201) {
+        toast.success('پیام شما دریافت شذه است. قدردانتان هستیم.');
+      } else {
+        toast.error('ارسال درخواست با خطا مواجه شد.');
+      }
     }
   };
 
   return (
     <>
-      <div className="tw-p-2 md:tw-p-4 border-smooth bg-white tw-order-last md:tw-order-first">
+      <div className="tw-p-2 md:tw-p-4 border-smooth bg-white tw-order-last lg:tw-order-first">
         <div className="tw-flex tw-items-center tw-mb-4">
           <img src={messageIcon} alt="" className="icon tw-ml-4" />
           <div>
@@ -103,8 +110,8 @@ export default function Form() {
             <p className="font-kalameh tw-text-xs 2xl:tw-text-lg">با ما در ارتباط باشید.</p>
           </div>
         </div>
-        <form onSubmit={onSubmit}>
-          <div className="tw-h-auto tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-4">
+        <form onSubmit={onSubmit} noValidate>
+          <div className="tw-h-auto tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-4 font-iranyekan">
             <div className="tw-mt-4">
               {/* <label
               htmlFor="name"
@@ -133,7 +140,10 @@ export default function Form() {
                 }}
                 message={nameMessage}
                 state={nameState}
-                onBlur={(e) => checkValue(e, setNameState)}
+                onBlur={(e) => {
+                  checkValue(e, setNameState);
+                  if (name) setNameMessage('');
+                }}
               />
             </div>
             <div className="tw-mt-4">
@@ -150,7 +160,10 @@ export default function Form() {
                 }}
                 message={emailMessage}
                 state={emailState}
-                onBlur={(e) => checkEmail(e, setEmailState)}
+                onBlur={(e) => {
+                  checkEmail(e, setEmailState);
+                  if (email) setEmailMessage('');
+                }}
               />
             </div>
             <div className="tw-mt-4">
@@ -167,7 +180,10 @@ export default function Form() {
                 }}
                 message={titleMessage}
                 state={titleState}
-                onBlur={(e) => checkValue(e, setTitleState)}
+                onBlur={(e) => {
+                  checkValue(e, setTitleState);
+                  if (title) setTitleMessage('');
+                }}
               />
             </div>
             <div className="tw-mt-4">
@@ -182,7 +198,7 @@ export default function Form() {
                   onClick={() => doShowItems(!showItems)}
                 >
                   <p style={{ cursor: 'default' }}>
-                    {department || (
+                    {dropdownText || (
                       <span style={{ color: '#878787', opacity: '.7' }}>
                         یک گزینه را انتخاب کنید
                       </span>
@@ -198,18 +214,20 @@ export default function Form() {
                         key="item"
                         className="dropdown-item"
                         onClick={() => {
-                          setDepartment(item);
-                          setDepartmentState('success ');
+                          setDepartment(item.id);
+                          setDepartmentState('success');
                           doShowItems(false);
+                          setDropdownText(item.title);
+                          if (department) setDepartmentMessage('');
                         }}
                       >
-                        {item}
+                        {item.title}
                       </div>
                     ))}
                   </div>
                 </div>
                 <p
-                  className=""
+                  className="template-dropdown-message font-iranyekan"
                   style={{
                     color:
                       (!departmentState && '#2c2c2c') ||
@@ -227,7 +245,7 @@ export default function Form() {
             </div>
           </div>
 
-          <div className="tw-flex tw-flex-col tw-w-full tw-mt-4">
+          <div className="template tw-flex tw-flex-col tw-w-full tw-mt-4 font-iranyekan">
             <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
               پیام
             </p>
@@ -241,7 +259,10 @@ export default function Form() {
               }}
               message={descriptionMessage}
               state={descriptionState}
-              onBlur={(e) => checkValue(e, setDescriptionState)}
+              onBlur={(e) => {
+                checkValue(e, setDescriptionState);
+                if (description) setDescriptionMessage('');
+              }}
             />
           </div>
           <div className="tw-flex tw-justify-center md:tw-justify-end">

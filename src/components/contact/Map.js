@@ -7,32 +7,42 @@ import messageIcon from '../../assets/icons/Message.svg';
 
 import 'leaflet/dist/leaflet.css';
 
-const styles = {
-  minHeight: '400px',
-};
+import icon from './marker.svg';
+
+const marker = new leaflet.Icon({
+  iconUrl: icon,
+  iconRetinaUrl: icon,
+  iconAnchor: null,
+  popupAnchor: null,
+  shadowUrl: null,
+  shadowSize: null,
+  shadowAnchor: null,
+  iconSize: new leaflet.Point(60, 75),
+});
+
+export { marker };
+
+leaflet.Marker.prototype.icon = marker;
 
 export default function ContactMap() {
-  const position = [51.505, -0.09];
+  const pin = [35.73972, 51.57953];
+  const position = [35.7372, 51.579];
 
   return (
-    <div className="tw-h-auto tw-w-full tw-relative tw-order-first md:tw-order-last">
+    <div className="tw-h-auto tw-w-full tw-relative tw-order-first lg:tw-order-last">
       <MapContainer
         center={position}
-        zoom={13}
+        zoom={16}
         scrollWheelZoom={false}
         dragging={false}
-        className="border-smooth z-index-40"
+        className="border-smooth"
         zoomControl={false}
       >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        <Marker position={pin} icon={marker} />
       </MapContainer>
       <div
         className="tw-absolute tw-bottom-0 tw-mb-4 bg-white tw-rounded-xl tw-right-4 tw-left-4 tw-mx-auto font-kalameh"

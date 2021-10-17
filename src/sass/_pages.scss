@@ -83,3 +83,29 @@
     height: 32px;
   }
 }
+
+.detail-page-header {
+  background: url('../assets/illustrations/pattern.svg') repeat, $karsaz-primary;
+  background-size: 100% 160px;
+
+  .page-header-content {
+    background: linear-gradient(
+      to left,
+      rgba(17, 138, 178, 1),
+      rgba(17, 138, 178, 1),
+      rgba(17, 138, 178, 0.2)
+    );
+    background-size: 100% 160px;
+
+    @media screen and (min-width: $text-breakpoint-lg) {
+      background: linear-gradient(
+        to left,
+        rgba(17, 138, 178, 1),
+        rgba(17, 138, 178, 1),
+        rgba(17, 138, 178, 0.6),
+        rgba(17, 138, 178, 0.2)
+      );
+      background-size: 100% 300px;
+    }
+  }
+}

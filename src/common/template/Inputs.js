@@ -27,7 +27,7 @@ export function TextInput({
         disabled={disabled}
       />
       <p
-        className=""
+        className="template-input-message"
         style={{
           color:
             (!state && '#2c2c2c') ||
@@ -35,8 +35,6 @@ export function TextInput({
             (state === 'warning' && '#B26F11') ||
             (state === 'success' && '#11B262'),
           visibility: state ? 'visible' : 'hidden',
-          marginTop: '1rem',
-          marginRight: '.5rem',
         }}
       >
         {message}
@@ -68,7 +66,7 @@ export function EmailInput({
         onBlur={onBlur}
       />
       <p
-        className=""
+        className="template-input-message"
         style={{
           color:
             (!state && '#2c2c2c') ||
@@ -76,8 +74,6 @@ export function EmailInput({
             (state === 'warning' && '#B26F11') ||
             (state === 'success' && '#11B262'),
           visibility: state ? 'visible' : 'hidden',
-          marginTop: '1rem',
-          marginRight: '.5rem',
         }}
       >
         {message}
@@ -109,7 +105,7 @@ export function NumberInput({
         onBlur={onBlur}
       />
       <p
-        className=""
+        className="template-input-message"
         style={{
           color:
             (!state && '#2c2c2c') ||
@@ -117,8 +113,6 @@ export function NumberInput({
             (state === 'warning' && '#B26F11') ||
             (state === 'success' && '#11B262'),
           visibility: state ? 'visible' : 'hidden',
-          marginTop: '1rem',
-          marginRight: '.5rem',
         }}
       >
         {message}

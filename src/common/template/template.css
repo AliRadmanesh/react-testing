@@ -234,3 +234,18 @@
     font-size: 18px;
   }
 }
+
+.template .template-input-message,
+.template .template-dropdown-message,
+.template .template-textarea-message {
+  font-size: 12px;
+  margin: 0.5rem 0.5rem auto auto;
+}
+
+@media screen and (min-width: 1280px) {
+  .template .template-input-message,
+  .template .template-dropdown-message,
+  .template .template-textarea-message {
+    font-size: 14px;
+  }
+}
