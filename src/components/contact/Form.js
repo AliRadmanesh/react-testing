@@ -124,7 +124,7 @@ export default function Form() {
                 نام
               </p>
               <TextInput
-                className="tw-w-full"
+                classes="tw-w-full font-kalameh"
                 placeholder="نام و نام خانوادگی خود را وارد کنید."
                 value={name}
                 onChange={(e) => {
@@ -141,7 +141,7 @@ export default function Form() {
                 ایمیل
               </p>
               <EmailInput
-                className="tw-w-full"
+                classes="tw-w-full font-kalameh"
                 placeholder="برای مثال info@karsaz.app"
                 value={email}
                 onChange={(e) => {
@@ -158,7 +158,7 @@ export default function Form() {
                 موضوع
               </p>
               <TextInput
-                className="tw-w-full"
+                classes="tw-w-full font-kalameh"
                 placeholder="برای مثال همکاری"
                 value={title}
                 onChange={(e) => {
@@ -232,8 +232,8 @@ export default function Form() {
               پیام
             </p>
             <TextArea
-              className="tw-w-full"
-              placeholder="برای مثال همکاری"
+              classes="tw-w-full font-kalameh"
+              placeholder="پیام خود را در اینجا برایمان بنویسید..."
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
