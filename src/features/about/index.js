@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-
-import PageHeaderPacific from '../../components/global/PageHeaderPacific';
-import Footer from '../../components/global/Footer';
 import styles from './about.module.css';
-
 import arrow from '../../assets/icons/down arrow.svg';
 import image from '../../assets/illustrations/About us.svg';
+import Layout from '../../common/Layout/pacific';
 
 export default function About() {
   const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth] = useState(window.innerWidth);
 
   return (
-    <div className="bg-light" style={{ height, overflow: 'hidden' }}>
-      <PageHeaderPacific
-        title="سئوالات متداول"
-        text="شاید سئوال شما هم بین سئوالات متداول کارساز باشد"
-      />
-      <div className="container">
+    <Layout title="سئوالات متداول" text="شاید سئوال شما هم بین سئوالات متداول کارساز باشد">
+      <div
+        className="container"
+        style={{
+          height: width <= 768 ? '100vh' : 'auto',
+          overflowY: height === 'auto' ? 'scroll' : 'hidden',
+        }}
+      >
         <div id="about" className={styles.aboutContainer}>
           <div>
             <div className={styles.aboutMain}>
@@ -95,24 +95,24 @@ export default function About() {
         </div>
       </div>
       <div
-        className="tw-fixed tw-w-full tw-bottom-0 tw-p-4 text-blue tw-flex tw-justify-center tw-pt-4"
+        className="tw-fixed tw-w-full tw-bottom-0 tw-p-4 text-blue tw-flex sm:tw-hidden tw-justify-center tw-pt-4"
         style={{
           zIndex: '10000',
           background:
             'linear-gradient(to top, rgba(255,255,255, 1), rgba(255,255,255, 1), rgba(255,255,255, 1), rgba(255,255,255, .9), rgba(255, 255, 255, .8))',
-          visibility: height === 'auto' ? 'hidden' : 'visible',
+          display: height === 'auto' ? 'none' : 'flex',
         }}
       >
         <button
           className="tw-flex tw-justify-center tw-m-0 tw-p-2"
-          onClick={() => setHeight('auto')}
+          onClick={() => {
+            setHeight('auto');
+          }}
         >
           مشاهده همه
           <img src={arrow} alt="" className="tw-mr-4" style={{ width: '18px' }} />
         </button>
       </div>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }
