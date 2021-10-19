@@ -9,7 +9,7 @@ export default function About() {
   const [width, setWidth] = useState(window.innerWidth);
 
   return (
-    <Layout title="سئوالات متداول" text="شاید سئوال شما هم بین سئوالات متداول کارساز باشد">
+    <Layout title="درباره کارساز" text="کارساز پلتفرم آموزش و اشتغال">
       <div
         className="container"
         style={{
