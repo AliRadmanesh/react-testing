@@ -480,11 +480,13 @@ footer {
   }
 
   ul {
-    padding-top: 0.5rem;
   }
 
   ul li {
-    margin: 0.5rem auto;
+    margin-top: 0.3rem;
+
+    @media screen and (min-width: $breakpoint-xx) {
+    }
   }
 
   .footer-heading {
@@ -509,7 +511,7 @@ footer {
   @media screen and (min-width: 1024px) {
   }
 
-  @media screen and (min-width: 1536px) {
+  @media screen and (min-width: $text-breakpoint-3x) {
     //max-width: unset;
     //width: auto;
     //margin: auto 204px;
@@ -576,7 +578,7 @@ footer {
   border-radius: 12px;
   border: 1px solid transparent;
   transition: box-shadow 0.3s;
-  box-shadow: 0 0 0 2px transparent;
+  // box-shadow: 0 0 0 2px transparent;
 
   &:hover {
     box-shadow: 0 0 0 1px $karsaz-primary;
@@ -623,7 +625,7 @@ footer {
   padding-bottom: 0.5rem;
 
   button {
-    padding: 1rem;
+    padding: 0.6rem 2.2rem;
   }
 }
 
@@ -635,21 +637,68 @@ footer {
 }
 
 .main-landing {
+  position: relative;
   background: linear-gradient(rgba(251, 251, 251, 0.9), rgba(251, 251, 251, 0.7)),
     url('../assets/images/domenico-loia-hGV2TfOh0ns-unsplash.jpg') no-repeat center/cover;
+  clip-path: circle(90vh at center -28vh);
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $breakpoint-sm) {
+    clip-path: circle(90vh at center -22vh);
+    height: 65vh;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    clip-path: circle(150vh at center -75vh);
+    height: 70vh;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    clip-path: circle(230vh at center -128vh);
+    height: 100vh;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    clip-path: circle(330vh at center -250vh);
+    height: 80vh;
+  }
+
+  @media screen and (min-width: $breakpoint-xx) {
+    clip-path: circle(330vh at center -238vh);
+    height: 90vh;
+  }
+
+  @media screen and (min-width: $breakpoint-3x) {
+    clip-path: circle(360vh at center -278vh);
+    height: 80vh;
+  }
+
+  &::before {
+    // content: '';
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // width: 100%;
+    // height: 100%;
+    // background: linear-gradient(rgba(251, 251, 251, 0.9), rgba(251, 251, 251, 0.7)),
+    //   url('../assets/images/domenico-loia-hGV2TfOh0ns-unsplash.jpg') no-repeat center/cover;
+    // border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    // transform: scale(1.5);
   }
 
   &-content {
+    z-index: 1;
     @media screen and (min-width: 1024px) {
       //height: 70vh;
-      padding-top: 6rem;
-      padding-bottom: 4rem;
+      // padding-top: 6rem;
+      // padding-bottom: 4rem;
     }
     @media screen and (min-width: 1280px) {
-      padding-top: 8rem;
-      padding-bottom: 6rem;
+      // padding-top: 8rem;
+      // padding-bottom: 6rem;
     }
   }
 
@@ -695,18 +744,6 @@ footer {
   width: 50px !important;
   border-radius: 12px !important;
   background: $karsaz-primary !important;
-}
-
-.home-colleagues {
-  .swiper-container {
-  }
-  .swiper-pagination-bullets {
-    margin-top: 0;
-    // padding-top: 2rem;
-    top: 0;
-    left: 0;
-    width: auto;
-  }
 }
 
 .leaflet-container {

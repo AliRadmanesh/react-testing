@@ -1,15 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import searchWhiteIcon from '../../assets/icons/Search White.svg';
 
 const SearchBar = () => {
   const top_search = useSelector((state) => state.home.data.top_search);
 
   return (
-    <div className="container">
-      <div className="tw-flex tw-justify-between tw-items-center tw-py-4 landing-search-container tw-mb-4 tw-w-full tw-max-w-screen-sm tw-mx-auto">
+    <div className="container tw-relative" style={{ top: '-2rem' }}>
+      <div className="tw-flex tw-justify-between tw-items-center landing-search-container bg-light tw-mb-4 tw-w-full tw-max-w-lg 2xl:tw-max-w-2xl tw-mx-auto tw-shadow-xl">
         <input
           type="text"
-          className="landing-search tw-flex font-kalameh"
+          className="landing-search tw-flex font-kalameh tw-w-full tw-px-4 tw-py-0 tw-text-base tw-font-normal"
           placeholder="نام آموزش، آموزشگاه یا مدرس را سرچ کنید..."
           onFocus={() => {
             document.querySelector('.landing-search-container').classList.add('focus');
@@ -18,14 +19,28 @@ const SearchBar = () => {
             document.querySelector('.landing-search-container').classList.remove('focus');
           }}
         />
-        <button className="tw-m-0 button-primary">جستجو</button>
+        <button className="tw-m-0 tw-py-2 tw-px-6 button-primary tw-hidden lg:tw-block font-kalameh te-text-base tw-font-semibold 2xl:tw-text-xl">
+          جستجو
+        </button>
+        <button
+          className="tw-m-0 button-primary tw-block lg:tw-hidden"
+          style={{ padding: '.5rem' }}
+        >
+          <img src={searchWhiteIcon} alt="" />
+        </button>
       </div>
       <div className="tw-py-4 tw-mb-4 tw-w-full tw-max-w-screen-sm tw-mx-auto">
-        <p className="text-primary tw-mb-2">بیشترین کلمات جستجو شده</p>
+        <p className="text-black font-iranyekan tw-text-sm tw-font-medium 2xl:tw-text-xl tw-mb-2 ">
+          بیشترین کلمات جستجو شده
+        </p>
         <div className="tw-flex tw-flex-wrap">
-          {top_search.map((ee) => (
-            <p key="1" className="bg-medium tw-py-2 tw-px-4 tw-m-2" style={{ borderRadius: '6px' }}>
-              {ee}
+          {top_search.map((item) => (
+            <p
+              key="1"
+              className="bg-medium font-iranyekan tw-text-xs tw-font-normal 2xl:tw-text-sm tw-py-2 tw-px-4 tw-m-2"
+              style={{ borderRadius: '6px' }}
+            >
+              {item}
             </p>
           ))}
         </div>

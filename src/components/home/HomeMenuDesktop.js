@@ -31,19 +31,19 @@ const MenuDesktop = () => {
         }}
       >
         <div className="tw-flex tw-items-center tw-py-2">
-          <Link to="https://google.com" className="tab tw-ml-4 lg:tw-ml-8 tw-flex tw-items-center">
+          <Link to="https://google.com" className="tw-ml-4 lg:tw-ml-8 tw-flex tw-items-center">
             <img src={logoLarge} alt="" />
             <h3 className="tw-mr-4 tw-font-black text-blue">کارساز</h3>
           </Link>
           <Link
             to="https://google.com"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
+            className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             خانه
           </Link>
           <Link
             to="https://google.com"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
+            className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             دسته‌بندی &nbsp; &nbsp;
             <span
@@ -58,43 +58,43 @@ const MenuDesktop = () => {
           </Link>
           <Link
             to="https://google.com"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
+            className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             فرصت‌های شغلی
           </Link>
           <Link
             to="https://google.com"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
+            className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             وبلاگ
           </Link>
           <Link
             to="./about"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
+            className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             درباره ما
           </Link>
           <Link
             to="./contact"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
+            className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
           >
             تماس با ما
           </Link>
           <Link
             to="./faq"
-            className="tab tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover"
+            className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover"
           >
             سوالات متداول
           </Link>
         </div>
         <div className="tw-flex tw-align-middle tw-items-center tw-justify-items-center">
           <div
-            id="auth-header-desktop-search"
-            className="auth-header-desktop-search tw-flex tw-flex-row tw-items-center border-smooth tw-py-1 tw-ml-4"
+            id="page-header-desktop-search"
+            className="page-header-desktop-search tw-flex tw-flex-row tw-items-center border-smooth tw-py-1 tw-ml-4"
           >
-            <div className="hoverer tw-z-0 tw-relative">
+            <div className="hoverer tw-z-0 tw-relative" style={{ fontFamily: 'kalamehWeb' }}>
               <input
-                ckassName="font-kalameh tw-block"
+                className="tw-block"
                 placeholder="جستجوی دوره، مدرس، آموزشگاه..."
                 type="text"
                 style={{
@@ -106,7 +106,11 @@ const MenuDesktop = () => {
 
             <button
               className="button-secondary"
-              style={{ border: 'none', background: 'transparent' }}
+              style={{
+                background: 'transparent',
+                padding: '1rem',
+                borderColor: show && 'transparent',
+              }}
               onClick={() => (show ? doShow(false) : doShow(true))}
             >
               <img src={searchIcon} alt="" className="" />

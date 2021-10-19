@@ -24,13 +24,18 @@ export default function ApplicationAd() {
           background: `url("${bg}") no-repeat center right/cover`,
         }}
       >
-        <div className="tw-w-full md:tw-w-1/2 tw-mx-auto tw-px-4 md:tw-px-0">
-          <h1>اپلیکیشن کارساز</h1>
-          <p>
+        <div className="tw-w-full md:tw-w-2/3 tw-mx-auto tw-px-4 md:tw-px-0">
+          <h1
+            className="text-black tw-font-extrabold 2xl:tw-font-black"
+            style={{ fontSize: window.innerWidth <= 1536 ? '22px' : '34px' }}
+          >
+            اپلیکیشن کارساز
+          </h1>
+          <p className="tw-mt-4 text-black font-iranyekan tw-font-normal tw-text-xs 2xl:tw-text-lg">
             دسترسی آسان و راحت به دوره های آموزشی و فرصت های .شغلی، با استفاده از اپلیکیشن کارساز
             همه آموزش ها توی جیبته
           </p>
-          <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 tw-mt-2">
+          <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 tw-mt-4 tw-mx-auto tw-max-w-md lg:tw-mr-0">
             <img src={bazaar} alt="" />
             <img src={playstore} alt="" />
           </div>

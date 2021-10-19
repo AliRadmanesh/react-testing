@@ -16,6 +16,7 @@ import RecommendedCoursesContainer from '../../components/home/RecommendedCourse
 import JobsContainer from '../../components/home/JobsContainer';
 import HomeColleagues from '../../components/home/HomeColleagues';
 import ApplicationAd from '../../components/home/ApplicationAd';
+import './home.css';
 
 const Home = () => {
   const { user_recommended_courses, user_recommended_jobs } = useSelector(
@@ -32,18 +33,17 @@ const Home = () => {
     <div className="bg-light">
       <ScrollToTop />
       <MenuMobile />
+      <HomeMenuDesktop />
       <div
         id="main-landing"
-        className="tw-text-center main-landing top-shadow-inner tw-pt-4 tw-pb-2 md:tw-pt-16"
-        style={{
-          height: 'auto',
-        }}
+        className="tw-text-center main-landing top-shadow-inner tw-pt-4 tw-pb-2 md:tw-pt-16 tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-auto"
       >
-        <HomeMenuDesktop />
-        <div className="main-landing-content tw-w-full md:tw-w-1/2 md:tw-mx-auto tw-pt-6 lg:tw-pt-12 3xl:tw-pt-16 xl:tw-pt-12">
+        <div className="main-landing-content tw-w-full md:tw-w-1/2 md:tw-mx-auto">
           <div className="tw-mt-0 3xl:tw-mt-16" style={{}}>
-            <h1 className="title-primary text-blue">کارساز، بستری برای یادگیری</h1>
-            <p className="text-primary tw-mx-2 tw-mt-2 lg:tw-my-8">
+            <p className="text-blue tw-text-2xl 2xl:tw-text-5xl tw-font-extrabold font-kalameh tw-mb-8 2xl:tw-mb-16">
+              کارساز، بستری برای یادگیری
+            </p>
+            <p className="text-black tw-text-sm 2xl:tw-text-xl font-iranyekan tw-font-normal tw-w-4/5 tw-max-w-lg lg:tw-max-w-3xl tw-mx-auto tw-mb-8 2xl:tw-mb-16">
               {' '}
               کارساز بستر جامع برای یادگیری میباشد، در کارساز در هر زمینه ای آموزش ببینید و از فرصت
               های شغلی کارساز برای اشتغال خود به سادگی استفاده کنید

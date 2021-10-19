@@ -38,3 +38,46 @@
     }
   }
 }
+
+.home {
+  &-counter {
+    font-size: 22px;
+
+    @media screen and (min-width: 1536px) {
+      font-size: 28px;
+    }
+  }
+}
+
+.home-colleagues {
+  position: relative;
+
+  .swiper-container {
+    position: relative;
+  }
+
+  .swiper-wrapper {
+    padding-right: 1rem;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    img {
+      display: block;
+      width: auto !important;
+      height: 80px !important;
+      margin: auto !important;
+    }
+  }
+
+  .swiper-pagination-bullets {
+    // padding-top: 2rem;
+    top: 0;
+    left: 0;
+    width: auto;
+    margin-left: 1rem;
+  }
+}

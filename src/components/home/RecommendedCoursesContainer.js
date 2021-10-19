@@ -24,9 +24,9 @@ export default function RecommendedCoursesContainer() {
 
   return (
     <div className="tw-my-16 container tw-py-16">
-      <h2 className="title-s econdary text-blue tw-text-center tw-mb-6">
+      <p className="text-blue tw-text-center tw-mb-8 2xl:tw-mb-12 tw-font-extrabold 2xl:tw-font-black font-kalameh home-section-title">
         آموزش‌های پیشنهادی برای شما
-      </h2>
+      </p>
       <div id="" className="home-posts-container">
         <Swiper
           pagination={pagination}

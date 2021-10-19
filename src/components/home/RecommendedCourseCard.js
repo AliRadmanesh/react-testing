@@ -27,13 +27,17 @@ function RecommendedPostCard({ props }) {
           background: `url("${cover}") no-repeat center/cover`,
         }}
       />
-      <p className="tw-font-bold tw-text-base 2xl:tw-text-xl text-dark tw-truncate">{title}</p>
+      <p className="tw-font-bold text-black tw-text-base 2xl:tw-text-xl text-dark tw-truncate">
+        {title}
+      </p>
       <div className="tw-mt-4">
         <div style={{ maxHeight: '110px' }} className="tw-overflow-y-hidden tw-text-ellipses">
-          <p className="text-gray tw-text-sm 2xl:tw-text-lg">{description}</p>
+          <p className="text-gray font-iranyekan tw-font-normal tw-text-sm 2xl:tw-text-lg">
+            {description}
+          </p>
         </div>
-        <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-end tw-mt-8">
-          <div className="tw-flex tw-items-end">
+        <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-center tw-mt-4">
+          <div className="tw-flex tw-items-center">
             <img
               src={avatar}
               alt=""
@@ -42,11 +46,13 @@ function RecommendedPostCard({ props }) {
             />
             <p className="text-guide tw-truncate">{name}</p>
           </div>
-          <div className="lg:tw-hidden">
-            <p className="tab text-blue">{price}</p>
+          <div className="">
+            <p className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+              {price}
+            </p>
           </div>
         </div>
-        <div className="tw-flex tw-justify-between tw-items-end tw-mt-4">
+        <div className="tw-flex tw-justify-between tw-items-end tw-mt-2">
           <div className="tw-flex tw-justify-between tw-items-center">
             {type === 'online' ? (
               <div className="tw-flex tw-items-center tw-ml-4">
@@ -56,7 +62,9 @@ function RecommendedPostCard({ props }) {
                   className="tw-ml-2"
                   style={{ width: '16px', height: '16px' }}
                 />
-                <caption className="text-dark font-kalameh">آنلاین</caption>
+                <p className="text-dark font-kalameh tw-text-xs tw-font-normal 2xl:tw-text-base">
+                  آنلاین
+                </p>
               </div>
             ) : (
               <div className="tw-flex tw-items-center tw-ml-4">
@@ -66,7 +74,9 @@ function RecommendedPostCard({ props }) {
                   className="tw-ml-2"
                   style={{ width: '16px', height: '16px' }}
                 />
-                <caption className="text-dark font-kalameh">آفلاین</caption>
+                <p className="text-dark font-kalameh tw-text-xs tw-font-normal 2xl:tw-text-base">
+                  آفلاین
+                </p>
               </div>
             )}
             <div className="tw-flex tw-items-center">
@@ -76,13 +86,17 @@ function RecommendedPostCard({ props }) {
                 className="tw-ml-2"
                 style={{ width: '16px', height: '16px' }}
               />
-              <caption className="text-dark font-kalameh">{average}</caption>
+              <p className="text-dark font-kalameh tw-text-xs tw-font-normal 2xl:tw-text-base">
+                {average}
+              </p>
             </div>
           </div>
           <div className="lg:tw-flex lg:tw-items-center">
             <p className="tab text-blue tw-hidden lg:tw-block tw-ml-6 font-kalameh">{price}</p>
             <Link to="https://karsaz.app/" className="">
-              <button className="tw-mx-auto button-primary font-kalameh">مشاهده بیشتر</button>
+              <button className="tw-mx-auto button-primary font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                مشاهده بیشتر
+              </button>
             </Link>
           </div>
         </div>

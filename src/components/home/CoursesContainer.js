@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination } from 'swiper';
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/swiper.min.css';
+// import 'swiper/swiper-bundle.min.css';
+// import 'swiper/swiper.min.css';
 
 import CourseCard from '../global/CourseCard';
 
@@ -17,13 +17,36 @@ const CoursesContainer = () => {
     clickable: true,
   };
 
+  useEffect(() => {
+    if (window.innerWidth >= 1536) {
+      const wrapper = document.querySelector(
+        '#home-courses-container .swiper-container .swiper-wrapper',
+      );
+      console.log(wrapper);
+      const slides = wrapper.querySelectorAll('.swiper-slide');
+      console.log(slides);
+      for (let i = 0; i < slides.length; i += 1) {
+        console.log(slides[i].style.width);
+        slides[i].style.width = '90vw';
+      }
+    }
+  }, []);
+
   return (
     <div className="tw-py-16 tw-my-16 container">
-      <h2 className="title-secondary text-blue tw-text-center tw-mb-6">دوره‌های پیشنهادی کارساز</h2>
-      <div id="home-posts-container" className="home-posts-container">
-        <Swiper pagination={pagination} spaceBetween={16} className="mySwiper">
+      <p className="text-blue tw-text-center tw-mb-8 2xl:tw-mb-12 tw-font-extrabold 2xl:tw-font-black font-kalameh home-section-title">
+        دوره‌های پیشنهادی کارساز
+      </p>
+      <div id="home-courses-container" className="home-posts-container tw-relative">
+        {/* eslint-disable-next-line */}
+        <Swiper
+          pagination={pagination}
+          spaceBetween={16}
+          className="mySwiper"
+          centeredSlides={true}
+        >
           {recommended_courses.map((ee) => (
-            <SwiperSlide key={ee.id}>
+            <SwiperSlide key={ee.id} style={{ width: '80vw' }}>
               <CourseCard props={ee} />
             </SwiperSlide>
           ))}

@@ -581,12 +581,8 @@ footer li {
   font-family: KalamehWeb;
 }
 
-footer ul {
-  padding-top: 0.5rem;
-}
-
 footer ul li {
-  margin: 0.5rem auto;
+  margin-top: 0.3rem;
 }
 
 footer .footer-heading {
@@ -611,7 +607,7 @@ footer .footer-heading {
   padding-left: 16px;
 }
 
-@media screen and (min-width: 1536px) {
+@media screen and (min-width: 1920px) {
   .container {
     padding-right: 204px;
     padding-left: 204px;
@@ -685,8 +681,6 @@ footer .footer-heading {
   transition: -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s;
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
-  -webkit-box-shadow: 0 0 0 2px transparent;
-          box-shadow: 0 0 0 2px transparent;
 }
 
 .mobile-menu-search-container:hover,
@@ -779,7 +773,7 @@ footer .footer-heading {
 }
 
 .landing-search-container button, .landing-search-container .button-primary, .landing-search-container .button-secondary, .landing-search-container .button-error, .landing-search-container .button {
-  padding: 1rem;
+  padding: 0.6rem 2.2rem;
 }
 
 .mobile-menu-container {
@@ -790,22 +784,71 @@ footer .footer-heading {
 }
 
 .main-landing {
+  position: relative;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(251, 251, 251, 0.9)), to(rgba(251, 251, 251, 0.7))), url("../assets/images/domenico-loia-hGV2TfOh0ns-unsplash.jpg") no-repeat center/cover;
   background: linear-gradient(rgba(251, 251, 251, 0.9), rgba(251, 251, 251, 0.7)), url("../assets/images/domenico-loia-hGV2TfOh0ns-unsplash.jpg") no-repeat center/cover;
+  -webkit-clip-path: circle(90vh at center -28vh);
+          clip-path: circle(90vh at center -28vh);
+  height: 60vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 640px) {
+  .main-landing {
+    -webkit-clip-path: circle(90vh at center -22vh);
+            clip-path: circle(90vh at center -22vh);
+    height: 65vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-landing {
+    -webkit-clip-path: circle(150vh at center -75vh);
+            clip-path: circle(150vh at center -75vh);
+    height: 70vh;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .main-landing-content {
-    padding-top: 6rem;
-    padding-bottom: 4rem;
+  .main-landing {
+    -webkit-clip-path: circle(230vh at center -128vh);
+            clip-path: circle(230vh at center -128vh);
+    height: 100vh;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .main-landing-content {
-    padding-top: 8rem;
-    padding-bottom: 6rem;
+  .main-landing {
+    -webkit-clip-path: circle(330vh at center -250vh);
+            clip-path: circle(330vh at center -250vh);
+    height: 80vh;
   }
+}
+
+@media screen and (min-width: 1536px) {
+  .main-landing {
+    -webkit-clip-path: circle(330vh at center -238vh);
+            clip-path: circle(330vh at center -238vh);
+    height: 90vh;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .main-landing {
+    -webkit-clip-path: circle(360vh at center -278vh);
+            clip-path: circle(360vh at center -278vh);
+    height: 80vh;
+  }
+}
+
+.main-landing-content {
+  z-index: 1;
 }
 
 .main-landing-info-card {
@@ -847,13 +890,6 @@ footer .footer-heading {
   width: 50px !important;
   border-radius: 12px !important;
   background: #118ab2 !important;
-}
-
-.home-colleagues .swiper-pagination-bullets {
-  margin-top: 0;
-  top: 0;
-  left: 0;
-  width: auto;
 }
 
 .leaflet-container {
@@ -1065,6 +1101,126 @@ footer .footer-heading {
   top: 1.2rem;
 }
 
+.page-header-mobile button, .page-header-mobile .button-primary, .page-header-mobile .button-secondary, .page-header-mobile .button-error, .page-header-mobile .button {
+  padding: 8px;
+}
+
+.page-header-mobile button img, .page-header-mobile .button-primary img, .page-header-mobile .button-secondary img, .page-header-mobile .button-error img, .page-header-mobile .button img {
+  width: 24px;
+  height: 24px;
+}
+
+.page-header-desktop-back button, .page-header-desktop-back .button-primary, .page-header-desktop-back .button-secondary, .page-header-desktop-back .button-error, .page-header-desktop-back .button {
+  padding: 16px;
+  background-color: transparent;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.page-header-desktop-back button img, .page-header-desktop-back .button-primary img, .page-header-desktop-back .button-secondary img, .page-header-desktop-back .button-error img, .page-header-desktop-back .button img {
+  width: 24px;
+  height: 24px;
+}
+
+.page-header-desktop-back button img.primary, .page-header-desktop-back .button-primary img.primary, .page-header-desktop-back .button-secondary img.primary, .page-header-desktop-back .button-error img.primary, .page-header-desktop-back .button img.primary {
+  display: none;
+}
+
+.page-header-desktop-back button img.white, .page-header-desktop-back .button-primary img.white, .page-header-desktop-back .button-secondary img.white, .page-header-desktop-back .button-error img.white, .page-header-desktop-back .button img.white {
+  display: initial;
+}
+
+.page-header-desktop-back button p, .page-header-desktop-back .button-primary p, .page-header-desktop-back .button-secondary p, .page-header-desktop-back .button-error p, .page-header-desktop-back .button p, .page-header-desktop-back button .p, .page-header-desktop-back .button-primary .p, .page-header-desktop-back .button-secondary .p, .page-header-desktop-back .button-error .p, .page-header-desktop-back .button .p {
+  font-weight: 700;
+  margin-top: 2px;
+  width: 180px;
+  z-index: -1;
+}
+
+.page-header-desktop-back button .hoverer, .page-header-desktop-back .button-primary .hoverer, .page-header-desktop-back .button-secondary .hoverer, .page-header-desktop-back .button-error .hoverer, .page-header-desktop-back .button .hoverer {
+  left: -120%;
+  -webkit-transition: left 1s ease-out;
+  transition: left 1s ease-out;
+  visibility: hidden;
+  width: 0;
+  -webkit-transition: width 0.3s ease-out;
+  transition: width 0.3s ease-out;
+}
+
+.page-header-desktop-back button:hover, .page-header-desktop-back .button-primary:hover, .page-header-desktop-back .button-secondary:hover, .page-header-desktop-back .button-error:hover, .page-header-desktop-back .button:hover {
+  background-color: #fefefe;
+}
+
+.page-header-desktop-back button:hover img.primary, .page-header-desktop-back .button-primary:hover img.primary, .page-header-desktop-back .button-secondary:hover img.primary, .page-header-desktop-back .button-error:hover img.primary, .page-header-desktop-back .button:hover img.primary {
+  display: initial;
+}
+
+.page-header-desktop-back button:hover img.white, .page-header-desktop-back .button-primary:hover img.white, .page-header-desktop-back .button-secondary:hover img.white, .page-header-desktop-back .button-error:hover img.white, .page-header-desktop-back .button:hover img.white {
+  display: none;
+}
+
+.page-header-desktop-back button:hover .hoverer, .page-header-desktop-back .button-primary:hover .hoverer, .page-header-desktop-back .button-secondary:hover .hoverer, .page-header-desktop-back .button-error:hover .hoverer, .page-header-desktop-back .button:hover .hoverer {
+  visibility: visible;
+  left: 0;
+  width: 220px;
+  display: block;
+}
+
+.page-header-desktop-back button:hover p, .page-header-desktop-back .button-primary:hover p, .page-header-desktop-back .button-secondary:hover p, .page-header-desktop-back .button-error:hover p, .page-header-desktop-back .button:hover p, .page-header-desktop-back button:hover .p, .page-header-desktop-back .button-primary:hover .p, .page-header-desktop-back .button-secondary:hover .p, .page-header-desktop-back .button-error:hover .p, .page-header-desktop-back .button:hover .p {
+  z-index: -1;
+}
+
+.page-header-desktop-search {
+  background-color: #fefefe;
+}
+
+.page-header-desktop-search img {
+  width: 30px;
+  height: 30px;
+}
+
+.page-header-desktop-search button, .page-header-desktop-search .button-primary, .page-header-desktop-search .button-secondary, .page-header-desktop-search .button-error, .page-header-desktop-search .button {
+  padding: 0 16px;
+}
+
+.page-header-desktop-search input, .page-header-desktop-search textarea,
+.page-header-desktop-search .textarea {
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  padding: 17px 0 !important;
+  -webkit-transition: width 0.7s ease-in-out, padding 0.3s ease-in;
+  transition: width 0.7s ease-in-out, padding 0.3s ease-in;
+}
+
+.page-header-desktop-search input:focus, .page-header-desktop-search textarea:focus,
+.page-header-desktop-search .textarea:focus, .page-header-desktop-search input:hover, .page-header-desktop-search textarea:hover,
+.page-header-desktop-search .textarea:hover {
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  padding: 17px 4px !important;
+}
+
+.page-header-desktop-search.input {
+  width: 160px !important;
+  -webkit-transition: width 0.3s ease-in-out !important;
+  transition: width 0.3s ease-in-out !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .page-header-desktop-search.input {
+    width: 220px;
+  }
+}
+
+.page-header-desktop-search.input.hide {
+  width: 0 !important;
+}
+
 .auth-header-mobile button, .auth-header-mobile .button-primary, .auth-header-mobile .button-secondary, .auth-header-mobile .button-error, .auth-header-mobile .button {
   padding: 8px;
 }
@@ -1273,6 +1429,40 @@ footer .footer-heading {
     font-weight: 400;
     line-height: 30px;
   }
+}
+
+.home-counter {
+  font-size: 22px;
+}
+
+@media screen and (min-width: 1536px) {
+  .home-counter {
+    font-size: 28px;
+  }
+}
+
+.home-colleagues .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+}
+
+.home-colleagues .swiper-slide img {
+  display: block;
+  width: auto !important;
+  height: 100px !important;
+  margin: auto !important;
+}
+
+.home-colleagues .swiper-pagination-bullets {
+  margin-top: 0;
+  top: 0;
+  left: 0;
+  width: auto;
 }
 
 .courses .search-container, .courses-mobile-filters .search-container {

@@ -20,7 +20,9 @@ const RecentPostsContainer = () => {
 
   return (
     <div className="tw-py-4 tw-my-16 container">
-      <h2 className="title-secondary text-blue tw-text-center tw-mb-6">جدیدترین مقالات کارساز</h2>
+      <p className="text-blue tw-text-center tw-mb-8 2xl:tw-mb-12 tw-font-extrabold 2xl:tw-font-black font-kalameh home-section-title">
+        جدیدترین مقالات کارساز
+      </p>
       <div id="home-posts-container" className="">
         {
           // recent_posts.map(ee => <PostCard key={ee.id} props={ee} /> )

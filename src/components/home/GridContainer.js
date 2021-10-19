@@ -22,35 +22,47 @@ const GridContainer = () => {
     >
       <div className="tw-flex tw-justify-center">
         <div
-          className="bg-white border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right"
+          className="bg-white border-smooth tw-py-4 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right tw-items-center"
           style={{ gridArea: 'card-1', boxShadow: '5px 5px 10px #ccc' }}
         >
-          <img className="tw-opacity-40" src={studentIcon} alt="" />
+          <img className="tw-opacity-40 avatar" src={studentIcon} alt="" />
           <div className="tw-flex tw-flex-col tw-mr-6">
-            <h3 className="text-blue">{users}</h3>
-            <p className="text-primary">دانشجو</p>
+            <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh">
+              {users}
+            </p>
+            <p className="text-black font-iranyekan tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
+              دانشجو
+            </p>
           </div>
         </div>
         <div
-          className="bg-white border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right"
+          className="bg-white border-smooth tw-py-4 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right tw-items-center"
           style={{ gridArea: 'card-1', boxShadow: '5px 5px 10px #ccc' }}
         >
-          <img className="tw-opacity-40" src={schoolIcon} alt="" />
+          <img className="tw-opacity-40 avatar" src={schoolIcon} alt="" />
           <div className="tw-flex tw-flex-col tw-mr-6">
-            <h3 className="text-blue">{academies}</h3>
-            <p className="text-primary">آموزشگاه</p>
+            <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh">
+              {academies}
+            </p>
+            <p className="text-black font-iranyekan tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
+              آموزشگاه
+            </p>
           </div>
         </div>
       </div>
       <div className="tw-flex tw-justify-center">
         <div
-          className="bg-white border-smooth tw-py-2 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right"
+          className="bg-white border-smooth tw-py-4 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right tw-items-center"
           style={{ gridArea: 'card-1', boxShadow: '5px 5px 10px #ccc' }}
         >
-          <img className="tw-opacity-40" src={slideIcon} alt="" />
+          <img className="tw-opacity-40 avatar" src={slideIcon} alt="" />
           <div className="tw-flex tw-flex-col tw-mr-6">
-            <h3 className="text-blue">{courses}</h3>
-            <p className="text-primary">آموزش</p>
+            <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh">
+              {courses}
+            </p>
+            <p className="text-black font-iranyekan tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
+              آموزش
+            </p>
           </div>
         </div>
       </div>
