@@ -28,7 +28,7 @@ export default function PageHeaderChill({ title, text = '', img = '' }) {
       />
       <MenuMobile />
       <MenuDesktop />
-      <div className="tw-w-full tw-h-auto page-header-chill tw-relative">
+      <div className="tw-w-full tw-h-auto page-header-chill tw-relative md:tw-top-2">
         <div className="container tw-flex tw-items-center tw-py-12 lg:tw-py-16 page-header-content-chill tw-w-auto tw-pl-6">
           {img && <img src={img} alt="" />}
           <div>
