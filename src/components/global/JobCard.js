@@ -21,21 +21,29 @@ export default function JobCard({ props }) {
             {title}
           </p>
         </div>
-        <div className="tw-flex tw-items-center tw-justify-between tw-mb-2">
-          <p className="tw-text-xs 2xl:tw-text-base tw-font-normal tw-font-yakan text-blue">
-            {name_fa}
-          </p>
-          <p className="tw-text-xs 2xl:tw-text-base tw-font-normal tw-font-yakan text-blue">
-            {salary_from}
-          </p>
+        <div className="tw-flex tw-w-full tw-items-center tw-justify-between tw-mb-2">
+          <div>
+            <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh text-blue">
+              {name_fa}
+            </p>
+          </div>
+          <div>
+            <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh text-blue">
+              {salary_from}
+            </p>
+          </div>
         </div>
-        <div className="tw-flex tw-items-center tw-justify-between">
-          <p className="tw-text-xs 2xl:tw-text-base tw-font-normal tw-font-yakan text-gray">
-            {province}/{city} - {contract_type}
-          </p>
-          <p className="tw-text-xs 2xl:tw-text-base tw-font-normal tw-font-yakan text-gray">
-            {created_at}
-          </p>
+        <div className="tw-flex tw-w-full tw-items-center tw-justify-between">
+          <div>
+            <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh text-gray">
+              {province}/{city} - {contract_type}
+            </p>
+          </div>
+          <div className="tw-text-left">
+            <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh text-gray">
+              {created_at}
+            </p>
+          </div>
         </div>
       </div>
     </div>

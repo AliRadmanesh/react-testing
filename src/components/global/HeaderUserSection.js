@@ -19,10 +19,16 @@ export default function HeaderUserSection() {
       <div className="tw-justify-end">
         {!show ? (
           <div className="tw-flex tw-items-center">
-            <Link to="https://google.com" className="tab tw-mx-4">
+            <Link
+              to="https://google.com"
+              className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-mx-4"
+            >
               ورود
             </Link>
-            <Link to="https://google.com" className="tab button-primary">
+            <Link
+              to="https://google.com"
+              className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold button-primary"
+            >
               ثبت نام
             </Link>
           </div>
@@ -34,7 +40,7 @@ export default function HeaderUserSection() {
               className="tw-hidden md:tw-block tw-ml-2 user-avatar"
               style={{ borderRadius: '50%' }}
             />
-            <p className="tw-text-sm tw-font-normal font-kalameh 2xl:tw-text-xl">
+            <p className="tw-text-sm tw-font-normal font-kalameh 2xl:tw-text-lg text-black">
               {data.profile.first_name} {data.profile.last_name}{' '}
               <span className="tw-mr-2">
                 <img src={downIcon} alt="" className="tw-inline-block icon" />

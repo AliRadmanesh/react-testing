@@ -65,69 +65,88 @@ function Footer() {
         </div>
       </div>
       <div
-        className="bg-white container tw-px-4 tw-pt-12 tw-grid tw-grid-cols-1  md:tw-grid-cols-3 md:tw-gap-x-4"
+        className="bg-white container tw-px-4 tw-py-10 tw-grid tw-grid-cols-1 lg:tw-grid-cols-3 tw-gap-x-16 tw-gap-y-8"
         style={{}}
       >
-        <div className="tw-my-8 tw-text-justify">
-          <p>
+        <div className="">
+          <p
+            className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg leading-2"
+            style={{ lineHeight: window.innerWidth <= 1536 ? '25px' : '35px' }}
+          >
             {' '}
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
             است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
             فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
             کتابهای زیادی در شصت و سه درصد گذشته حال و آینده.
-            <span className="tw-hidden md:tw-inline">
+            <span className="tw-hidden md:tw-inline lg:tw-hidden xl:tw-inline">
               شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان
               رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت
               می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها حل شود.
             </span>
           </p>
         </div>
-        <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 tw-my-8 md:tw-px-8 md:tw-flex md:tw-justify-between">
+        <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 tw-px-8 tw-mx-auto tw-max-w-full xl:tw-max-w-sm ">
           <div className="">
-            <h4 className="text-blue">لینک‌های مفید</h4>
+            <h4 className="text-blue tw-mb-2">لینک‌های مفید</h4>
             <ul className="">
               <li>
-                <p>خانه</p>
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                  خانه
+                </p>
               </li>
               <li>
-                <p>دسته‌بندی</p>
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                  دسته‌بندی
+                </p>
               </li>
               <li>
-                <p>فرصت‌های شغلی</p>
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                  فرصت‌های شغلی
+                </p>
               </li>
               <li>
-                <p>وبلاگ</p>
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                  وبلاگ
+                </p>
               </li>
               <li>
-                <p>درباره‌ی ما</p>
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                  درباره‌ی ما
+                </p>
               </li>
               <li>
-                <p>تماس با ما</p>
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                  تماس با ما
+                </p>
               </li>
               <li>
-                <p>سئوالات متداول</p>
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                  سئوالات متداول
+                </p>
               </li>
             </ul>
           </div>
           <div className="">
-            <h4 className="text-blue">برترین دسته‌ها</h4>
+            <h4 className="text-blue tw-mb-2">برترین دسته‌ها</h4>
             <ul>
               {top_categories.map((category) => (
                 <li key={category.id}>
-                  <p>{category.name}</p>
+                  <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                    {category.name}
+                  </p>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="tw-my-8 lg:tw-px-4 lg:tw-flex lg:tw-flex-col lg:tw-justify-evenly lg:tw-mx-8 bg-white">
-          <h4 className="text-blue">اپلیکیشن کارساز</h4>
-          <p className="tw-my-4 tw-text-justify">
+        <div className="tw-px-8 tw-flex tw-flex-col tw-justify-between md:tw-justify-start">
+          <h4 className="text-blue tw-mb-2">اپلیکیشن کارساز</h4>
+          <p className=" tw-text-justify">
             دسترسی آسان و راحت به دوره های آموزشی و فرصت های شغلی. با استفاده از اپلیکیشن کارساز،
             همه آموزش ها توی جیبته.
           </p>
-          <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 tw-py-4">
+          <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 tw-py-4 tw-max-w-sm tw-mx-auto">
             <div className="">
               <img src={bazaar} alt="لینک بازار" style={{ width: '100%' }} />
               <div className="tw-my-3" />

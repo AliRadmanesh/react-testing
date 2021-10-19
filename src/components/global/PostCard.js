@@ -27,11 +27,13 @@ function PostCard({ props }) {
           background: `url("${image}") no-repeat center/cover`,
         }}
       />
-      <p className="tw-font-bold tw-text-base 2xl:tw-text-xl text-dark tw-truncate">{title}</p>
+      <p className="tw-font-bold text-black tw-text-base 2xl:tw-text-xl text-dark tw-truncate">
+        {title}
+      </p>
       <div className="tw-mt-4">
-        <div style={{ height: '40px' }} className="tw-text-truncate">
-          <p className="text-gray tw-text-sm 2xl:tw-text-lg">{description}</p>
-        </div>
+        <p className="text-gray font-iranyekan tw-font-normal tw-text-sm 2xl:tw-text-lg">
+          {description}
+        </p>
         <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-end tw-mt-8">
           <div className="tw-flex tw-items-end">
             <img src={authorImage} alt="" className="tw-ml-2 border-smooth" />
