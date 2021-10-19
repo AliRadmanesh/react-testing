@@ -1,5 +1,5 @@
 import toast from 'react-hot-toast';
-import { SET_USER_CHECK, SHOW_USER_HEADER_DATA } from './types';
+import { SET_USER_CHECK, SHOW_USER_HEADER_DATA, SHOW_USER_MENU } from './types';
 
 import instance from '../../instance';
 
@@ -13,6 +13,7 @@ export const showUserHeaderData = (value) => (dispatch) => {
 export const checkUser = () => async (dispatch) => {
   try {
     const res = await instance.post('/api/v1/web/service/users/check');
+    console.log(res.data);
     if (res.data.code === 200 || res.data.code === '200') {
       dispatch({
         type: SET_USER_CHECK,
@@ -28,4 +29,11 @@ export const checkUser = () => async (dispatch) => {
   } catch (error) {
     toast.error('خطا در ارسال درخواست برای دریافت اطلاعات کاربر');
   }
+};
+
+export const showUserMenu = (bool) => async (dispatch) => {
+  dispatch({
+    type: SHOW_USER_MENU,
+    payload: bool,
+  });
 };

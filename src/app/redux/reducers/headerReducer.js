@@ -1,9 +1,11 @@
-import { SET_USER_CHECK, SHOW_USER_HEADER_DATA } from '../actions/types';
+import { SET_USER_CHECK, SHOW_USER_HEADER_DATA, SHOW_USER_MENU } from '../actions/types';
 
 const initial = {
   show: false,
-  data: null,
+  data: { profile: { first_name: '', last_name: '', image: '' }, wallet: { balance: 0 } },
   meta: {},
+  fetched: false,
+  showMenu: false,
 };
 
 export default (state = initial, action) => {
@@ -14,12 +16,19 @@ export default (state = initial, action) => {
         data: action.payload.data.user,
         meta: action.payload.meta,
         show: true,
+        fetched: true,
       };
 
     case SHOW_USER_HEADER_DATA:
       return {
         ...state,
         show: action.payload,
+      };
+
+    case SHOW_USER_MENU:
+      return {
+        ...state,
+        showMenu: action.payload,
       };
 
     default:

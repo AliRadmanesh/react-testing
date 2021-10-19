@@ -17,6 +17,7 @@ export const DISPLAY_MOBILE_FILTER_MENU = 'DISPLAY_MOBILE_FILTER_MENU';
 
 /* Header Content */
 export const SET_USER_CHECK = 'SET_USER_CHECK';
+export const SHOW_USER_MENU = 'SHOW_USER_MENU';
 
 /* Footer Content */
 export const GET_TOP_CATEGORIES = 'GET_TOP_CATEGORIES';

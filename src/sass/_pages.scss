@@ -225,3 +225,31 @@
     }
   }
 }
+
+.user-menu-container,
+#user-menu-container {
+  margin-top: 67px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 82px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 106px;
+  }
+}
+
+.user-menu-content {
+  margin-left: 0;
+  border-radius: 0 0 0 12px;
+  float: left;
+
+  @media screen and (min-width: 1024px) {
+    margin-left: 16px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  @media screen and (min-width: $breakpoint-3x) {
+    margin-left: 204px;
+  }
+}

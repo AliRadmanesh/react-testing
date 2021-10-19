@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { checkUser, showUserHeaderData } from '../../app/redux/actions/headerActions';
+import { checkUser, showUserHeaderData, showUserMenu } from '../../app/redux/actions/headerActions';
 import downIcon from '../../assets/icons/down arrow.svg';
 
 export default function HeaderUserSection() {
-  const { show, data } = useSelector((state) => state.header);
+  const { show, data, fetched, showMenu } = useSelector((state) => state.header);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!data) dispatch(checkUser());
+    if (!fetched) dispatch(checkUser());
     // else dispatch(showUserHeaderData(true));
   }, []);
 
@@ -33,7 +33,10 @@ export default function HeaderUserSection() {
             </Link>
           </div>
         ) : (
-          <button className="tw-flex tw-p-0 tw-items-center">
+          <button
+            className="tw-flex tw-p-0 tw-items-center"
+            onClick={() => dispatch(showUserMenu(!showMenu))}
+          >
             <img
               src={data.profile.image}
               alt=""

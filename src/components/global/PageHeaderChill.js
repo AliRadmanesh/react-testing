@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import ScrollToTop from './ScrollToTop';
+import UserMenu from './UserMenu';
 
 export default function PageHeaderChill({ title, text = '', img = '' }) {
   useEffect(() => {}, []);
@@ -28,6 +29,7 @@ export default function PageHeaderChill({ title, text = '', img = '' }) {
       />
       <MenuMobile />
       <MenuDesktop />
+      <UserMenu />
       <div className="tw-w-full tw-h-auto page-header-chill tw-relative md:tw-top-2">
         <div className="container tw-flex tw-items-center tw-py-12 lg:tw-py-16 page-header-content-chill tw-w-auto tw-pl-6">
           {img && <img src={img} alt="" />}

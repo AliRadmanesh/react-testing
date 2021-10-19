@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Layout from '../../common/Layout/pacific';
 import FAQItem from '../../components/faq/FAQItem';
 

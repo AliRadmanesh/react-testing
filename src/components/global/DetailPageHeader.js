@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import ScrollToTop from './ScrollToTop';
+import UserMenu from './UserMenu';
 
 export default function DetailPageHeader() {
   return (
@@ -26,6 +27,7 @@ export default function DetailPageHeader() {
       />
       <MenuMobile />
       <MenuDesktop />
+      <UserMenu />
       <ScrollToTop />
     </>
   );
