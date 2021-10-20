@@ -9,7 +9,7 @@ export default function SearchBar({ onSearch, classes }) {
     >
       <input
         type="text"
-        className="search tw-flex tw-p-0  tw-pr-2  tw-w-full tw-text-sm font-kalameh"
+        className="search tw-flex tw-p-0  tw-pr-2  tw-w-full tw-text-sm font-kalameh-num"
         placeholder="نام آموزش، آموزشگاه یا مدرس را سرچ کنید..."
         onFocus={() => {
           document.querySelector('.search-container').classList.add('focus');

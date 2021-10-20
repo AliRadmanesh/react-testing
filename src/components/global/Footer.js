@@ -70,7 +70,7 @@ function Footer() {
       >
         <div className="">
           <p
-            className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg leading-2"
+            className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg leading-2"
             style={{ lineHeight: window.innerWidth <= 1536 ? '25px' : '35px' }}
           >
             {' '}
@@ -90,37 +90,37 @@ function Footer() {
             <h4 className="text-blue tw-mb-2">لینک‌های مفید</h4>
             <ul className="">
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                   خانه
                 </p>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                   دسته‌بندی
                 </p>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                   فرصت‌های شغلی
                 </p>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                   وبلاگ
                 </p>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                   درباره‌ی ما
                 </p>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                   تماس با ما
                 </p>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                   سئوالات متداول
                 </p>
               </li>
@@ -131,7 +131,7 @@ function Footer() {
             <ul>
               {top_categories.map((category) => (
                 <li key={category.id}>
-                  <p className="tw-text-sm tw-font-normal text-black font-kalameh 2xl:tw-text-lg tw-truncate">
+                  <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     {category.name}
                   </p>
                 </li>

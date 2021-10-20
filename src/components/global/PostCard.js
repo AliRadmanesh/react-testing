@@ -17,7 +17,7 @@ function PostCard({ props }) {
   } = props;
 
   return (
-    <div className="tw-p-4 bg-white tw-my-4 tw-shadow-sm tw-rounded-xl font-iranyekan">
+    <div className="tw-p-4 bg-white tw-my-4 tw-shadow-sm tw-rounded-xl font-iranyekan-num">
       {/* <img src={image} alt="" className="border-smooth tw-w-full tw-h-auto tw-mb-4" /> */}
       <div
         className="border-smooth tw-w-full tw-h-auto tw-mb-4"
@@ -31,7 +31,7 @@ function PostCard({ props }) {
         {title}
       </p>
       <div className="tw-mt-4">
-        <p className="text-gray font-iranyekan tw-font-normal tw-text-sm 2xl:tw-text-lg">
+        <p className="text-gray font-iranyekan-num tw-font-normal tw-text-sm 2xl:tw-text-lg">
           {description}
         </p>
         <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-end tw-mt-8">
@@ -42,7 +42,7 @@ function PostCard({ props }) {
             </p>
           </div>
           <div>
-            <caption className="text-blue tw-block tw-text-left font-kalameh">
+            <caption className="text-blue tw-block tw-text-left font-kalameh-num">
               زمان مطالعه {estimated_time}
             </caption>
           </div>
@@ -56,7 +56,7 @@ function PostCard({ props }) {
                 className="tw-ml-2"
                 style={{ width: '16px', height: '16px' }}
               />
-              <caption className="text-dark font-kalameh">{created_at}</caption>
+              <caption className="text-dark font-kalameh-num">{created_at}</caption>
             </div>
             <div className="tw-flex tw-items-center">
               <img
@@ -65,12 +65,12 @@ function PostCard({ props }) {
                 className="tw-ml-2"
                 style={{ width: '16px', height: '16px' }}
               />
-              <caption className="text-dark font-kalameh">{rating}</caption>
+              <caption className="text-dark font-kalameh-num">{rating}</caption>
             </div>
           </div>
           <div>
             <Link to="https://karsaz.app/" className="">
-              <button className="tw-mx-auto button-primary font-kalameh">مشاهده بیشتر</button>
+              <button className="tw-mx-auto button-primary font-kalameh-num">مشاهده بیشتر</button>
             </Link>
           </div>
         </div>

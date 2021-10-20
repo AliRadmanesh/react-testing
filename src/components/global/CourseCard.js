@@ -23,7 +23,7 @@ const CourseCard = ({ props }) => {
   if (description.length >= limit) uiDescription += '...';
 
   return (
-    <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4 font-kalameh">
+    <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4 font-kalameh-num">
       <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2">
         {/* <img src={cover} alt="" className="tw-block md:tw-hidden  border-smooth tw-w-full lg:tw-order-2" /> */}
         <div
@@ -35,12 +35,15 @@ const CourseCard = ({ props }) => {
           }}
           className="border-smooth tw-w-full tw-order-1 lg:tw-order-2"
         />
-        <div className="tw-mt-4 lg:tw-mt-0 lg:tw-p-4 tw-p-0 tw-order-1 lg:tw-order-1 lg:tw-flex lg:tw-flex-col tw-justify-between">
+        <div className="tw-mt-4 lg:tw-mt-0 lg:tw-px-4 tw-px-0 tw-order-1 lg:tw-order-1 lg:tw-flex lg:tw-flex-col tw-justify-between">
           <div>
-            <p className="tw-font-bold lg:tw-font-black font-kalameh tw-text-base lg:tw-text-lg text-dark">
+            <p className="tw-font-bold lg:tw-font-black font-kalameh-num tw-text-base lg:tw-text-lg text-dark">
               {title}
             </p>
-            <p className="text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg font-iranyekan" style={{}}>
+            <p
+              className="text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg font-iranyekan-num"
+              style={{}}
+            >
               {uiDescription}
             </p>
           </div>
@@ -73,7 +76,7 @@ const CourseCard = ({ props }) => {
                   </div>
                 ) : (
                   <div className="tw-flex tw-items-center tw-ml-4">
-                    <caption className="text-dark font-kalameh">{type}</caption>
+                    <caption className="text-dark font-kalameh-num">{type}</caption>
                   </div>
                 )}
                 <div className="tw-flex tw-items-center">
@@ -83,7 +86,7 @@ const CourseCard = ({ props }) => {
                     className="tw-ml-2"
                     style={{ width: '16px', height: '16px' }}
                   />
-                  <caption className="text-dark">{average}</caption>
+                  <caption className="text-dark font-kalameh-num">{average}</caption>
                 </div>
               </div>
               <div className="lg:tw-flex lg:tw-items-center">

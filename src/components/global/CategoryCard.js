@@ -7,10 +7,10 @@ export default function CategoryCard({ name, courses, sub }) {
       <div className="tw-flex tw-mb-6 tw-text-right">
         {/* img here */}
         <div className="tw-flex tw-flex-col">
-          <p className="text-black font-iranyekan tw-text-base tw-font-medium 2xl:tw-text-xl">
+          <p className="text-black font-iranyekan-num tw-text-base tw-font-medium 2xl:tw-text-xl">
             {name}
           </p>
-          <p className="text-gray font-iranyekan tw-text-xs tw-font-normal 2xl:tw-text-sm">
+          <p className="text-gray font-iranyekan-num tw-text-xs tw-font-normal 2xl:tw-text-sm">
             {courses} دوره
           </p>
         </div>

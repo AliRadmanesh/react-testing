@@ -1,16 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import { Link } from 'react-router-dom';
 import logoLarge from '../../assets/images/logo/karsaz/logo-large.svg';
 import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from './HeaderUserSection';
 
+import { autoSuggest } from '../../app/redux/actions/searchActions';
+
 export default function MenuDesktop() {
   const [show, doShow] = useState(false);
   const [width, setWidth] = useState('160px');
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     if (window.innerWidth >= 1280) setWidth('220px');
   });
+
+  const suggest = (e) => {
+    dispatch(autoSuggest(e.target.value));
+  };
 
   return (
     <div className="tw-w-full tw-hidden lg:tw-block" style={{ marginBottom: '96px' }}>
@@ -83,33 +93,36 @@ export default function MenuDesktop() {
           </Link>
         </div>
         <div className="tw-flex tw-align-middle tw-items-center tw-justify-items-center">
-          <div
-            id="page-header-desktop-search"
-            className="page-header-desktop-search tw-flex tw-flex-row tw-items-center tw-py-1 border-smooth tw-ml-4"
-          >
-            <div className="hoverer tw-z-0 tw-relative" style={{ fontFamily: 'kalamehWeb' }}>
-              <input
-                className="tw-block"
-                placeholder="جستجوی دوره، مدرس، آموزشگاه..."
-                type="text"
-                style={{
-                  width: show ? width : '0',
-                  // {display: show ? 'initial' : 'none',}
-                }}
-              />
-            </div>
-
-            <button
-              className="button-secondary"
-              style={{
-                background: 'transparent',
-                padding: '1rem',
-                borderColor: show && 'transparent',
-              }}
-              onClick={() => (show ? doShow(false) : doShow(true))}
+          <div className="tw-relative">
+            <div
+              id="page-header-desktop-search"
+              className="page-header-desktop-search tw-flex tw-flex-row tw-items-center tw-py-1 border-smooth tw-ml-4"
             >
-              <img src={searchIcon} alt="" className="" />
-            </button>
+              <div className="hoverer tw-z-0 tw-relative" style={{ fontFamily: 'kalamehWeb' }}>
+                <input
+                  className="tw-block"
+                  placeholder="جستجوی دوره، مدرس، آموزشگاه..."
+                  type="text"
+                  style={{
+                    width: show ? width : '0',
+                    // {display: show ? 'initial' : 'none',}
+                  }}
+                  onChange={suggest}
+                />
+              </div>
+
+              <button
+                className="button-secondary"
+                style={{
+                  background: 'transparent',
+                  padding: '1rem',
+                  borderColor: show && 'transparent',
+                }}
+                onClick={() => (show ? doShow(false) : doShow(true))}
+              >
+                <img src={searchIcon} alt="" className="" />
+              </button>
+            </div>
           </div>
           <HeaderUserSection />
         </div>
