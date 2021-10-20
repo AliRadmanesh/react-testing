@@ -13,11 +13,11 @@ export default function Form() {
   const [title, setTitle] = useState(null);
   const [department, setDepartment] = useState(null);
   const [description, setDescription] = useState(null);
-  const [nameMessage, setNameMessage] = useState(initialText);
-  const [emailMessage, setEmailMessage] = useState(initialText);
-  const [titleMessage, setTitleMessage] = useState(initialText);
-  const [departmentMessage, setDepartmentMessage] = useState(initialText);
-  const [descriptionMessage, setDescriptionMessage] = useState(initialText);
+  const [nameMessage, setNameMessage] = useState('نام خود را فراموش نکنید.');
+  const [emailMessage, setEmailMessage] = useState('ایمیل خود را فراموش نکنید.');
+  const [titleMessage, setTitleMessage] = useState('موضوع خود را فراموش نکنید.');
+  const [departmentMessage, setDepartmentMessage] = useState('دپارتمان خود را فراموش نکنید.');
+  const [descriptionMessage, setDescriptionMessage] = useState('پیام خود را فراموش نکنید.');
   const [nameState, setNameState] = useState();
   const [emailState, setEmailState] = useState();
   const [titleState, setTitleState] = useState(null);
