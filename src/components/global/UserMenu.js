@@ -47,7 +47,7 @@ export default function UserMenu() {
           style={{ zIndex: '8888', top: '0', display: showMenu ? 'block' : 'none' }}
         >
           <div className="tw-flex tw-justify-between tw-items-center bg-white tw-px-4 tw-py-6 tw-shadow">
-            <p className="font-kalameh tw-text-base tw-font-normal">منوی کاربر</p>
+            <p className="font-kalameh-num tw-text-base tw-font-normal">منوی کاربر</p>
             <button className="tw-p-0" onClick={() => dispatch(showUserMenu(false))}>
               <img src={closeGray} alt="" />
             </button>
@@ -75,7 +75,7 @@ export default function UserMenu() {
           }}
         />
         <div className="tw-relative tw-w-full tw-h-full user-menu">
-          <div className="tw-px-4 tw-py-4 tw-w-full tw-max-w-full lg:tw-max-w-md font-kalameh bg-white user-menu-content">
+          <div className="tw-px-4 tw-py-4 tw-w-full tw-max-w-full lg:tw-max-w-md font-kalameh-num bg-white user-menu-content">
             <div className="tw-flex tw-my-5 lg:tw-hidden tw-items-center">
               <img
                 src={image}
