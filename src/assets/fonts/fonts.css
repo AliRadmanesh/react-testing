@@ -182,56 +182,56 @@ This set of fonts are used in this project under the license: (.....)
 *
 **/
 @font-face {
-  font-family: iranyekan;
+  font-family: iranyekannum;
   font-style: normal;
   font-weight: bold;
   src: url('./yekan/iranyekanwebboldfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
-  font-family: iranyekan;
+  font-family: iranyekannum;
   font-style: normal;
   font-weight: 100;
   src: url('./yekan/iranyekanwebthinfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
-  font-family: iranyekan;
+  font-family: iranyekannum;
   font-style: normal;
   font-weight: 300;
   src: url('./yekan/iranyekanweblightfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
-  font-family: iranyekan;
+  font-family: iranyekannum;
   font-style: normal;
   font-weight: normal;
   src: url('./yekan/iranyekanwebregularfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
-  font-family: iranyekan;
+  font-family: iranyekannum;
   font-style: normal;
   font-weight: 500;
   src: url('./yekan/iranyekanwebmediumfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
-  font-family: iranyekan;
+  font-family: iranyekannum;
   font-style: normal;
   font-weight: 800;
   src: url('./yekan/iranyekanwebextraboldfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
-  font-family: iranyekan;
+  font-family: iranyekannum;
   font-style: normal;
   font-weight: 850;
   src: url('./yekan/iranyekanwebblackfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
-  font-family: iranyekan;
+  font-family: iranyekannum;
   font-style: normal;
   font-weight: 900;
   src: url('./yekan/iranyekanwebextrablackfanum.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
