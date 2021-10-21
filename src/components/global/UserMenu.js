@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import walletGray from '../../assets/icons/Wallet-Gray.svg';
 import dashboardGray from '../../assets/icons/Dashboard-Gray.svg';
@@ -11,11 +11,34 @@ import { showUserMenu } from '../../app/redux/actions/headerActions';
 
 export default function UserMenu() {
   const { data, showMenu } = useSelector((state) => state.header);
+  const ref = useRef();
   const dispatch = useDispatch();
   const {
     profile: { first_name, last_name, image },
     wallet: { balance },
   } = data;
+
+  // eslint-disable-next-line
+  const handleClick = (e) => {
+    // console.log(e.target.classList);
+    if (e.target.classList.contains('user-menu')) {
+      dispatch(showUserMenu(false));
+    }
+  };
+
+  useEffect(() => {
+    // document.addEventListener('click', handleClick);
+    // return () => {
+    //   document.removeEventListener('click', handleClick);
+    // };
+
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
+
   return (
     <>
       <div className="tw-block lg:tw-hidden">
@@ -31,6 +54,7 @@ export default function UserMenu() {
           </div>
         </div>
       </div>
+      {/* MENU CONTENT */}
       <div
         id="user-menu-container"
         className="tw-fixed user-menu-container"
@@ -39,11 +63,18 @@ export default function UserMenu() {
           height: window.innerHeight,
           zIndex: '8888',
           top: '0',
-          background: 'rgba(0, 0, 0, 0.5)',
+          // background: 'rgba(0, 0, 0, 0.5)',
           display: showMenu ? 'block' : 'none',
         }}
       >
-        <div className="tw-relative tw-w-full tw-h-full">
+        <div
+          className="tw-w-full tw-h-full tw-absolute"
+          style={{
+            background: 'rgba(0, 0, 0, 0.5)',
+            dsiplay: showMenu ? 'block' : 'none',
+          }}
+        />
+        <div className="tw-relative tw-w-full tw-h-full user-menu">
           <div className="tw-px-4 tw-py-4 tw-w-full tw-max-w-full lg:tw-max-w-md font-kalameh bg-white user-menu-content">
             <div className="tw-flex tw-my-5 lg:tw-hidden tw-items-center">
               <img
