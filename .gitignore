@@ -78,3 +78,6 @@ yarn-error.log*
 
 # ignore .idea since is related to Webstorm IDE
 .idea/
+
+# ignore test files in every format
+test.*

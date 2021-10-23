@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-
 import { Link } from 'react-router-dom';
 import logoLarge from '../../assets/images/logo/karsaz/logo-large.svg';
 import searchIcon from '../../assets/icons/Search.svg';
