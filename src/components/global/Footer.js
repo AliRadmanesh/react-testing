@@ -20,6 +20,7 @@ function Footer() {
     if (top_categories.length === 0) {
       dispatch(getTopCategories());
     }
+    // eslint-disable-next-line
   }, []);
 
   return (

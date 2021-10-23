@@ -1,21 +1,15 @@
 // eslint-disble-next-line
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import './template.css';
 import icon from './icon.svg';
 
-export function Dropdown({ disabled, classes, state, stateHandler, onChange, message, options }) {
+export default function Dropdown({ disabled, classes, state, onChange, message, options }) {
   const [choice, setChoice] = useState(null);
   const [show, doShow] = useState(false);
-  // const [state, setState] = useState(null);
-
-  useEffect(() => {
-    // document.querySelector('.dropdown-container').style.width =
-    console.log(document.querySelector('.template').style.width);
-  }, []);
 
   return (
-    <div style={{ marginBottom: '1rem' }} className="template font-kalameh">
+    <div style={{ marginBottom: '1rem' }} className={`template font-kalameh ${classes}`}>
       <div
         role="none"
         className={!disabled ? `dropdown ${state}` : `dropdown disabled`}
@@ -46,6 +40,7 @@ export function Dropdown({ disabled, classes, state, stateHandler, onChange, mes
               onClick={() => {
                 setChoice(item);
                 doShow(false);
+                onChange();
               }}
             >
               {item}

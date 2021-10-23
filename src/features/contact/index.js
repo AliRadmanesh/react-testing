@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '../../common/Layout/pacific';
 import Form from '../../components/contact/Form';
 import ContactMap from '../../components/contact/Map';

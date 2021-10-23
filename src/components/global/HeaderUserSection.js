@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { checkUser, showUserHeaderData, showUserMenu } from '../../app/redux/actions/headerActions';
+import { checkUser, showUserMenu } from '../../app/redux/actions/headerActions';
 import downIcon from '../../assets/icons/down arrow.svg';
 
 export default function HeaderUserSection() {
@@ -12,6 +12,8 @@ export default function HeaderUserSection() {
   useEffect(() => {
     if (!fetched) dispatch(checkUser());
     // else dispatch(showUserHeaderData(true));
+
+    // eslint-disable-next-line
   }, []);
 
   return (
