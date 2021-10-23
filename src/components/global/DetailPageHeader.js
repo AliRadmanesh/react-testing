@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { Toaster } from 'react-hot-toast';
 import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import ScrollToTop from './ScrollToTop';
 import UserMenu from './UserMenu';
+import CategoryMenuDesktop from './CategoryMenuDesktop';
+import CategoryMenuMobile from './CategoryMenuMobile';
 
 export default function DetailPageHeader() {
   return (
@@ -29,6 +30,8 @@ export default function DetailPageHeader() {
       <MenuDesktop />
       <UserMenu />
       <ScrollToTop />
+      <CategoryMenuDesktop />
+      <CategoryMenuMobile />
     </>
   );
 }

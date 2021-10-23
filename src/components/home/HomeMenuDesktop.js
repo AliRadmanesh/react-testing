@@ -16,7 +16,7 @@ const MenuDesktop = () => {
     });
 
     if (window.innerWidth >= 1280) setWidth('220px');
-  });
+  }, []);
 
   return (
     <>
@@ -28,7 +28,7 @@ const MenuDesktop = () => {
             position: 'fixed',
             top: '0',
             background: scrollY === 0 ? 'transparent' : '#fbfbfb',
-            transition: 'background .7s',
+            transition: 'background .7s, top .7s',
             zIndex: '8888',
           }}
         >

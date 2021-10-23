@@ -110,14 +110,14 @@ export default function Form() {
         <div className="tw-flex tw-items-center tw-mb-4">
           <img src={messageIcon} alt="" className="icon tw-ml-4" />
           <div>
-            <p className="tw-text-base text-dark 2xl:tw-text-xl font-kalameh tw-font-semibold">
+            <p className="tw-text-base text-dark 2xl:tw-text-xl font-kalameh-num tw-font-semibold">
               تماس با ما
             </p>
-            <p className="font-kalameh tw-text-xs 2xl:tw-text-lg">با ما در ارتباط باشید.</p>
+            <p className="font-kalameh-num tw-text-xs 2xl:tw-text-lg">با ما در ارتباط باشید.</p>
           </div>
         </div>
         <form onSubmit={onSubmit} noValidate>
-          <div className="tw-h-auto tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-4 font-iranyekan">
+          <div className="tw-h-auto tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-4 font-iranyekan-num">
             <div className="">
               {/* <label
               htmlFor="name"
@@ -133,11 +133,11 @@ export default function Form() {
                 onChange={(e) => setName(e.target.value)}
               />
             </label> */}
-              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
+              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
                 نام
               </p>
               <TextInput
-                classes="tw-w-full font-kalameh"
+                classes="tw-w-full font-kalameh-num"
                 placeholder="نام و نام خانوادگی خود را وارد کنید."
                 value={name}
                 onChange={(e) => {
@@ -153,11 +153,11 @@ export default function Form() {
               />
             </div>
             <div className="">
-              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
+              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
                 ایمیل
               </p>
               <EmailInput
-                classes="tw-w-full font-kalameh"
+                classes="tw-w-full font-kalameh-num"
                 placeholder="برای مثال info@karsaz.app"
                 value={email}
                 onChange={(e) => {
@@ -173,11 +173,11 @@ export default function Form() {
               />
             </div>
             <div className="">
-              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
+              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
                 موضوع
               </p>
               <TextInput
-                classes="tw-w-full font-kalameh"
+                classes="tw-w-full font-kalameh-num"
                 placeholder="برای مثال همکاری"
                 value={title}
                 onChange={(e) => {
@@ -193,10 +193,10 @@ export default function Form() {
               />
             </div>
             <div className="">
-              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
+              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
                 دپارتمان
               </p>
-              <div style={{ marginBottom: '1rem' }} className="template font-kalameh">
+              <div style={{ marginBottom: '1rem' }} className="template font-kalameh-num">
                 <div
                   role="none"
                   className={`dropdown ${departmentState}`}
@@ -240,7 +240,7 @@ export default function Form() {
                   </div>
                 </div>
                 <p
-                  className="template-dropdown-message font-iranyekan"
+                  className="template-dropdown-message font-iranyekan-num"
                   style={{
                     color:
                       (!departmentState && '#2c2c2c') ||
@@ -258,12 +258,12 @@ export default function Form() {
             </div>
           </div>
 
-          <div className="template tw-flex tw-flex-col tw-w-full  font-iranyekan">
-            <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh">
+          <div className="tw-flex tw-flex-col tw-w-full font-iranyekan-num">
+            <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
               پیام
             </p>
             <TextArea
-              classes="tw-w-full font-kalameh"
+              classes="tw-w-full font-kalameh-num"
               placeholder="پیام خود را در اینجا برایمان بنویسید..."
               value={description}
               onChange={(e) => {

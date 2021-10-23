@@ -41,9 +41,12 @@ const CoursesContainer = () => {
         {/* eslint-disable-next-line */}
         <Swiper
           pagination={pagination}
-          spaceBetween={16}
+          spaceBetween={30}
+          slidesPerView={1}
           className="mySwiper"
           centeredSlides={true}
+          loop={true}
+          watchSlidesVisibility={true}
         >
           {recommended_courses.map((ee) => (
             <SwiperSlide key={ee.id} style={{ width: '80vw' }}>

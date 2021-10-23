@@ -3,6 +3,8 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { showCategoryMobileMenu } from '../../app/redux/actions/headerActions';
 import bars from '../../assets/icons/bars.svg';
 import logoSmall from '../../assets/images/logo/karsaz/logo-small.svg';
 import close from '../../assets/icons/Close-Gray.svg';
@@ -12,6 +14,8 @@ import HeaderUserSection from './HeaderUserSection';
 const MenuMobile = () => {
   const [show, doShow] = useState(false);
 
+  const dispatch = useDispatch();
+
   const handleSearch = (e) => {
     e.preventDefault();
   };
@@ -19,7 +23,7 @@ const MenuMobile = () => {
   return (
     <div
       id="mobile-menu"
-      className="tw-block lg:tw-hidden"
+      className="tw-block xl:tw-hidden"
       style={{
         background: show ? 'rgba(251, 251, 251, 1)' : 'transparent',
         zIndex: '8888',
@@ -95,7 +99,7 @@ const MenuMobile = () => {
             >
               <input
                 type="text"
-                className="mobile-menu-search"
+                className="mobile-menu-search font-kalameh-num"
                 placeholder="نام آموزش، آموزشگاه یا مدرس را سرچ کنید..."
                 onFocus={() => {
                   document.querySelector('.mobile-menu-search-container').classList.add('focus');
@@ -109,10 +113,13 @@ const MenuMobile = () => {
               </button>
             </form>
           </div>
-          <Link to="./" className="tab tw-my-2">
+          <Link to="./" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             خانه
           </Link>
-          <Link to="https://google.com" className="tab tw-my-2">
+          <button
+            className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num tw-p-0 tw-text-right"
+            onClick={() => dispatch(showCategoryMobileMenu(true))}
+          >
             دسته‌بندی &nbsp; &nbsp;
             <span
               style={{
@@ -122,20 +129,26 @@ const MenuMobile = () => {
             >
               &rsaquo;
             </span>
-          </Link>
-          <Link to="https://google.com" className="tab tw-my-2">
+          </button>
+          <Link
+            to="https://google.com"
+            className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num"
+          >
             فرصت‌های شغلی
           </Link>
-          <Link to="https://google.com" className="tab tw-my-2">
+          <Link
+            to="https://google.com"
+            className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num"
+          >
             وبلاگ
           </Link>
-          <Link to="./about" className="tab tw-my-2">
+          <Link to="./about" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             درباره ما
           </Link>
-          <Link to="./contact" className="tab tw-my-2">
+          <Link to="./contact" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             تماس با ما
           </Link>
-          <Link to="./faq" className="tab tw-my-2">
+          <Link to="./faq" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             سوالات متداول
           </Link>
         </div>
@@ -145,17 +158,3 @@ const MenuMobile = () => {
 };
 
 export default MenuMobile;
-
-const styles = {
-  main: {
-    background: 'rgba(44, 44, 44, .5)',
-    height: '100vh',
-  },
-  container: {
-    position: 'absolute',
-    width: '100%',
-    top: '0',
-    right: '0',
-    zIndex: '999999',
-  },
-};

@@ -27,10 +27,10 @@ const GridContainer = () => {
         >
           <img className="tw-opacity-40 avatar" src={studentIcon} alt="" />
           <div className="tw-flex tw-flex-col tw-mr-6">
-            <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh">
+            <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh-num">
               {users}
             </p>
-            <p className="text-black font-iranyekan tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
+            <p className="text-black font-iranyekan-num tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
               دانشجو
             </p>
           </div>
@@ -41,10 +41,10 @@ const GridContainer = () => {
         >
           <img className="tw-opacity-40 avatar" src={schoolIcon} alt="" />
           <div className="tw-flex tw-flex-col tw-mr-6">
-            <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh">
+            <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh-num">
               {academies}
             </p>
-            <p className="text-black font-iranyekan tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
+            <p className="text-black font-iranyekan-num tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
               آموزشگاه
             </p>
           </div>
@@ -57,10 +57,10 @@ const GridContainer = () => {
         >
           <img className="tw-opacity-40 avatar" src={slideIcon} alt="" />
           <div className="tw-flex tw-flex-col tw-mr-6">
-            <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh">
+            <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh-num">
               {courses}
             </p>
-            <p className="text-black font-iranyekan tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
+            <p className="text-black font-iranyekan-num tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
               آموزش
             </p>
           </div>

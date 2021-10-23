@@ -1,4 +1,10 @@
-import { SET_USER_CHECK, SHOW_USER_HEADER_DATA, SHOW_USER_MENU } from '../actions/types';
+import {
+  SET_USER_CHECK,
+  SHOW_USER_HEADER_DATA,
+  SHOW_USER_MENU,
+  SHOW_CATEGORY_DESKTOP_MENU,
+  SHOW_CATEGORY_MOBILE_MENU,
+} from '../actions/types';
 
 const initial = {
   show: false,
@@ -6,6 +12,8 @@ const initial = {
   meta: {},
   fetched: false,
   showMenu: false,
+  categoryDesktop: false,
+  categoryMobile: false,
 };
 
 export default (state = initial, action) => {
@@ -29,6 +37,18 @@ export default (state = initial, action) => {
       return {
         ...state,
         showMenu: action.payload,
+      };
+
+    case SHOW_CATEGORY_DESKTOP_MENU:
+      return {
+        ...state,
+        categoryDesktop: action.payload,
+      };
+
+    case SHOW_CATEGORY_MOBILE_MENU:
+      return {
+        ...state,
+        categoryMobile: action.payload,
       };
 
     default:
