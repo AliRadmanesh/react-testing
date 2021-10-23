@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import walletGray from '../../assets/icons/Wallet-Gray.svg';
 import dashboardGray from '../../assets/icons/Dashboard-Gray.svg';
@@ -11,7 +11,6 @@ import { showUserMenu } from '../../app/redux/actions/headerActions';
 
 export default function UserMenu() {
   const { data, showMenu } = useSelector((state) => state.header);
-  const ref = useRef();
   const dispatch = useDispatch();
   const {
     profile: { first_name, last_name, image },
@@ -37,6 +36,7 @@ export default function UserMenu() {
     return () => {
       document.removeEventListener('click', handleClick);
     };
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -44,7 +44,11 @@ export default function UserMenu() {
       <div className="tw-block lg:tw-hidden">
         <div
           className="tw-fixed tw-w-full"
-          style={{ zIndex: '8888', top: '0', display: showMenu ? 'block' : 'none' }}
+          style={{
+            zIndex: '8888',
+            top: '0',
+            display: showMenu ? 'block' : 'none',
+          }}
         >
           <div className="tw-flex tw-justify-between tw-items-center bg-white tw-px-4 tw-py-6 tw-shadow">
             <p className="font-kalameh-num tw-text-base tw-font-normal">منوی کاربر</p>
@@ -63,16 +67,18 @@ export default function UserMenu() {
           height: window.innerHeight,
           zIndex: '8888',
           top: '0',
-          // background: 'rgba(0, 0, 0, 0.5)',
+          background: 'rgba(0, 0, 0, 0.5)',
           display: showMenu ? 'block' : 'none',
         }}
       >
         <div
           className="tw-w-full tw-h-full tw-absolute"
-          style={{
-            background: 'rgba(0, 0, 0, 0.5)',
-            dsiplay: showMenu ? 'block' : 'none',
-          }}
+          style={
+            {
+              // display: showMenu ? 'block' : 'none',
+              // top: showMenu ? '0' : '-10rem',
+            }
+          }
         />
         <div className="tw-relative tw-w-full tw-h-full user-menu">
           <div className="tw-px-4 tw-py-4 tw-w-full tw-max-w-full lg:tw-max-w-md font-kalameh-num bg-white user-menu-content">

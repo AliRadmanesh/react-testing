@@ -1,14 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import HeaderUserSection from '../global/HeaderUserSection';
 import logoLarge from '../../assets/images/logo/karsaz/logo-large.svg';
 import searchIcon from '../../assets/icons/Search.svg';
 import UserMenu from '../global/UserMenu';
+import CategoryMenuDesktop from '../global/CategoryMenuDesktop';
+import { showCategoryDesktopMenu } from '../../app/redux/actions/headerActions';
+import { autoSuggest, hideSuggest } from '../../app/redux/actions/searchActions';
 
 const MenuDesktop = () => {
   const [scrollY, setScrollY] = useState(0);
   const [show, doShow] = useState(false);
   const [width, setWidth] = useState('160px');
+
+  const dispatch = useDispatch();
+  const { categoryDesktop } = useSelector((state) => state.header);
+  const { list, show: showSuggests } = useSelector((state) => state.search.suggest);
+
+  const ref = useRef();
+
+  const handleSuggests = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      dispatch(hideSuggest());
+    }
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
@@ -16,6 +32,13 @@ const MenuDesktop = () => {
     });
 
     if (window.innerWidth >= 1280) setWidth('220px');
+
+    document.addEventListener('click', handleSuggests);
+
+    return () => {
+      document.removeEventListener('click', handleSuggests);
+    };
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -33,19 +56,19 @@ const MenuDesktop = () => {
           }}
         >
           <div className="tw-flex tw-items-center tw-py-2">
-            <Link to="https://google.com" className="tw-ml-4 lg:tw-ml-8 tw-flex tw-items-center">
+            <Link to="./" className="tw-ml-4 lg:tw-ml-8 tw-flex tw-items-center">
               <img src={logoLarge} alt="" />
               <h3 className="tw-mr-4 tw-font-black text-blue">کارساز</h3>
             </Link>
             <Link
-              to="https://google.com"
+              to="./"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               خانه
             </Link>
-            <Link
-              to="https://google.com"
-              className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
+            <button
+              className="tw-text-sm tw-p-0 tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
+              onClick={() => dispatch(showCategoryDesktopMenu(!categoryDesktop))}
             >
               دسته‌بندی &nbsp; &nbsp;
               <span
@@ -57,7 +80,7 @@ const MenuDesktop = () => {
               >
                 &lsaquo;
               </span>
-            </Link>
+            </button>
             <Link
               to="https://google.com"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
@@ -90,39 +113,59 @@ const MenuDesktop = () => {
             </Link>
           </div>
           <div className="tw-flex tw-align-middle tw-items-center tw-justify-items-center">
-            <div
-              id="page-header-desktop-search"
-              className="page-header-desktop-search tw-flex tw-flex-row tw-items-center border-smooth tw-py-1 tw-ml-4"
-            >
-              <div className="hoverer tw-z-0 tw-relative" style={{ fontFamily: 'kalamehWeb' }}>
-                <input
-                  className="tw-block"
-                  placeholder="جستجوی دوره، مدرس، آموزشگاه..."
-                  type="text"
-                  style={{
-                    width: show ? width : '0',
-                    // {display: show ? 'initial' : 'none',}
-                  }}
-                />
-              </div>
-
-              <button
-                className="button-secondary"
-                style={{
-                  background: 'transparent',
-                  padding: '1rem',
-                  borderColor: show && 'transparent',
-                }}
-                onClick={() => (show ? doShow(false) : doShow(true))}
+            <div className="tw-relative">
+              <div
+                id="page-header-desktop-search"
+                className="page-header-desktop-search tw-flex tw-flex-row tw-items-center border-smooth tw-py-1 tw-ml-4"
               >
-                <img src={searchIcon} alt="" className="" />
-              </button>
+                <div className="hoverer tw-z-0 tw-relative" style={{ fontFamily: 'kalamehWeb' }}>
+                  <input
+                    className="tw-block"
+                    placeholder="جستجوی دوره، مدرس، آموزشگاه..."
+                    type="text"
+                    style={{
+                      width: show ? width : '0',
+                      // {display: show ? 'initial' : 'none',}
+                    }}
+                    onChange={(e) => dispatch(autoSuggest(e.target.value))}
+                  />
+                </div>
+
+                <button
+                  className="button-secondary"
+                  style={{
+                    background: 'transparent',
+                    padding: '1rem',
+                    borderColor: show && 'transparent',
+                  }}
+                  onClick={() => (show ? doShow(false) : doShow(true))}
+                >
+                  <img src={searchIcon} alt="" className="" />
+                </button>
+              </div>
+              <div
+                className="tw-absolute bg-white tw-rounded-xl tw-shadow-sm"
+                ref={ref}
+                style={{ display: showSuggests ? 'block' : 'none' }}
+              >
+                {list.length !== 0 &&
+                  list.map((item) => (
+                    <div
+                      key={item.id}
+                      id={item.id}
+                      className="tw-p-4 bg-white autosuggest-item font-kalameh-num tw-w-full hover:tw-bg-gray-200 tw-cursor-pointer"
+                    >
+                      {item.title}
+                    </div>
+                  ))}
+              </div>
             </div>
             <HeaderUserSection />
           </div>
         </div>
       </div>
       <UserMenu />
+      <CategoryMenuDesktop />
     </>
   );
 };

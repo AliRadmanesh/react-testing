@@ -28,3 +28,4 @@ export const SHOW_USER_HEADER_DATA = 'SHOW_USER_HEADER_DATA';
 /* Search Functionality */
 export const SEARCH_COURSES = 'SEARCH_COURSES';
 export const AUTO_SUGGEST = 'AUTO_SUGGEST';
+export const HIDE_SUGGEST = 'HIDE_SUGGEST';

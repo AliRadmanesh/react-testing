@@ -7,11 +7,12 @@ import Footer from '../../components/global/Footer';
 import SearchBar from '../../components/home/SearchBar';
 
 import { getHomePageData } from '../../app/redux/actions/homeActions';
+import ScrollToTop from '../../components/global/ScrollToTop';
+import CategoryMenuMobile from '../../components/global/CategoryMenuMobile';
 import HomeMenuDesktop from '../../components/home/HomeMenuDesktop';
 import CategoryContainer from '../../components/home/CategoryContainer';
 import RecentPostsContainer from '../../components/home/RecentPostsContainer';
 import CoursesContainer from '../../components/home/CoursesContainer';
-import ScrollToTop from '../../components/global/ScrollToTop';
 import RecommendedCoursesContainer from '../../components/home/RecommendedCoursesContainer';
 import JobsContainer from '../../components/home/JobsContainer';
 import HomeColleagues from '../../components/home/HomeColleagues';
@@ -34,6 +35,7 @@ const Home = () => {
       <ScrollToTop />
       <MenuMobile />
       <HomeMenuDesktop />
+      <CategoryMenuMobile />
       <div
         id="main-landing"
         className="tw-text-center main-landing top-shadow-inner tw-pt-4 tw-pb-2 md:tw-pt-16 tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-auto"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { showCategoryDesktopMenu } from '../../app/redux/actions/headerActions';
@@ -6,7 +6,7 @@ import logoLarge from '../../assets/images/logo/karsaz/logo-large.svg';
 import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from './HeaderUserSection';
 
-import { autoSuggest } from '../../app/redux/actions/searchActions';
+import { autoSuggest, hideSuggest } from '../../app/redux/actions/searchActions';
 
 export default function MenuDesktop() {
   const [show, doShow] = useState(false);
@@ -14,14 +14,26 @@ export default function MenuDesktop() {
 
   const dispatch = useDispatch();
   const { categoryDesktop } = useSelector((state) => state.header);
+  const { list, show: showSuggests } = useSelector((state) => state.search.suggest);
+
+  const ref = useRef();
+
+  const handleSuggests = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      dispatch(hideSuggest());
+    }
+  };
 
   useEffect(() => {
     if (window.innerWidth >= 1280) setWidth('220px');
-  }, []);
 
-  const suggest = (e) => {
-    dispatch(autoSuggest(e.target.value));
-  };
+    document.addEventListener('click', handleSuggests);
+
+    return () => {
+      document.removeEventListener('click', handleSuggests);
+    };
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="tw-relative">
@@ -49,7 +61,6 @@ export default function MenuDesktop() {
               خانه
             </Link>
             <button
-              to="https://google.com"
               className="tw-text-sm tw-p-0 tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
               onClick={() => dispatch(showCategoryDesktopMenu(!categoryDesktop))}
             >
@@ -110,7 +121,7 @@ export default function MenuDesktop() {
                       width: show ? width : '0',
                       // {display: show ? 'initial' : 'none',}
                     }}
-                    onChange={suggest}
+                    onChange={(e) => dispatch(autoSuggest(e.target.value))}
                   />
                 </div>
 
@@ -125,6 +136,22 @@ export default function MenuDesktop() {
                 >
                   <img src={searchIcon} alt="" className="" />
                 </button>
+              </div>
+              <div
+                className="tw-absolute bg-white tw-rounded-xl tw-shadow-sm"
+                ref={ref}
+                style={{ display: showSuggests ? 'block' : 'none' }}
+              >
+                {list.length !== 0 &&
+                  list.map((item) => (
+                    <div
+                      key={item.id}
+                      id={item.id}
+                      className="tw-p-4 bg-white autosuggest-item font-kalameh-num tw-w-full hover:tw-bg-gray-200 tw-cursor-pointer"
+                    >
+                      {item.title}
+                    </div>
+                  ))}
               </div>
             </div>
             <HeaderUserSection />
