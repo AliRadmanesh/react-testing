@@ -19,7 +19,11 @@ export default function MenuDesktop() {
   const ref = useRef();
 
   const handleSuggests = (event) => {
-    if (ref.current && !ref.current.contains(event.target)) {
+    if (
+      ref.current &&
+      !ref.current.contains(event.target) &&
+      ref.current.style.display !== 'none'
+    ) {
       dispatch(hideSuggest());
     }
   };
