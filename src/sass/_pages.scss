@@ -320,6 +320,7 @@
   background-color: $karsaz-white;
   color: $karsaz-secondary;
   transition: background-color 0.2s;
+  position: relative;
 
   & + .category-dropdown-items {
     // display: none;
@@ -342,7 +343,7 @@
     & + .category-dropdown-items {
       // display: block;
       transform: scaleY(1);
-      position: relative;
+      // position: relative;
     }
 
     img:not(.category-dropdown.active img.icon) {
@@ -364,7 +365,7 @@
 .category-dropdown-items {
   background: $karsaz-white;
   border-radius: 12px;
-  position: relative;
+  position: absolute;
 }
 
 .category-dropdown-item {

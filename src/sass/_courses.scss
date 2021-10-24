@@ -75,3 +75,73 @@
     }
   }
 }
+
+.courses-dropdown {
+  background-color: #f0f2f2;
+  border-radius: 12px;
+  min-width: 160px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+
+  &:hover {
+    background-color: $karsaz-dark-gray;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.1s linear;
+
+    @media (min-width: $text-breakpoint-xx) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  & + .courses-dropdown-items {
+    position: absolute;
+    transform: scaleY(0);
+    // display: none;
+    transform-origin: top center;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &.active {
+    background-color: $karsaz-primary;
+    color: $karsaz-white;
+
+    img {
+      transform: rotate(180deg);
+    }
+
+    & + .courses-dropdown-items {
+      transform: scaleY(1);
+    }
+  }
+}
+
+.courses-dropdown-items {
+  background: $karsaz-white;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.courses-dropdown-item {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  color: $karsaz-secondary;
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+
+  &:first-child {
+    border-radius: 12px 12px 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 12px 12px;
+  }
+  &:hover {
+    background-color: $karsaz-dark-gray;
+  }
+}

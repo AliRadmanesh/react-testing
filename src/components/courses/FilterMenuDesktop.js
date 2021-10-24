@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { displayMobileFilterMenu } from '../../app/redux/actions/coursesActions';
 import closeIcon from '../../assets/icons/Close-Gray.svg';
@@ -7,6 +8,8 @@ import Checkbox from '../../common/template/Checkbox';
 export default function FilterMenuDesktop() {
   const { course_types, academies } = useSelector((state) => state.courses.search);
   const dispatch = useDispatch();
+
+  useEffect(() => {}, []);
 
   return (
     <div className="courses-desktop-filters">
@@ -21,7 +24,9 @@ export default function FilterMenuDesktop() {
         </div>
         <div className="tw-flex tw-items-center tw-flex-wrap">
           <div className="tw-p-2 tw-m-2 tw-text-xs tw-flex bg-medium tw-rounded-md">
-            <p className="tw-ml-2 text-gray">برنامه نویسی</p>
+            <p className="tw-ml-2 text-gray font-iranyekan-num tw-text-sm tw-font-normal">
+              برنامه نویسی
+            </p>
             <button className="tw-p-0">
               <img src={closeIcon} alt="" style={{ width: '16px' }} />
             </button>
