@@ -1,0 +1,81 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
+import Footer from '../../components/global/Footer';
+import MenuMobile from '../../components/global/MenuMobile';
+import ScrollToTop from '../../components/global/ScrollToTop';
+import MenuDesktop from '../../components/global/MenuDesktop';
+import SearchBar from '../../components/home/SearchBar';
+import searchWhiteIcon from '../../assets/icons/Search White.svg';
+
+export default function Page404() {
+  const query = '';
+  const top_search = useSelector((state) => state.home.data.top_search);
+
+  return (
+    <div className="bg-light">
+      <ScrollToTop />
+      <MenuMobile />
+      <MenuDesktop />
+      <div className="404-content">
+        <div className="container">
+          <div className="tw-w-full">
+            <div className="tw-grid tw-place-items-center" style={{ minHeight: '600px' }}>
+              <div className="tw-max-w-full md:tw-max-w-3/4 lg:tw-max-w-2/3 xl:tw-max-w-1/2 2xl:tw-max-w-2/5">
+                <p className="font-kalameh-num text-blue tw-text-center tw-font-extrabold tw-text-2xl 2xl:tw-text-4xl 2xl:tw-font-black 2xl:tw-mb-4">
+                  متاسفانه؛ نتیجه ای یافت نشد
+                </p>
+                <p className="text-dark font-kalameh tw-mb-10 tw-text-xs tw-font-normal 2xl:tw-text-base">
+                  متاسفانه نتیجه ای یافت نشد، لطفا جستجوی دیگری انجام داده یا به صفحات دیگر مراجعه
+                  فرمایید.
+                </p>
+                <div className="">
+                  <div className="tw-flex tw-justify-between tw-items-center landing-search-container bg-light tw-mb-4 tw-w-full tw-max-w-lg 2xl:tw-max-w-2xl tw-mx-auto tw-shadow-xl">
+                    <input
+                      type="text"
+                      className="landing-search tw-flex font-kalameh-num tw-w-full tw-px-4 tw-py-0 tw-text-base tw-font-normal"
+                      placeholder="نام آموزش، آموزشگاه یا مدرس را سرچ کنید..."
+                      onFocus={() => {
+                        document.querySelector('.landing-search-container').classList.add('focus');
+                      }}
+                      onBlur={() => {
+                        document
+                          .querySelector('.landing-search-container')
+                          .classList.remove('focus');
+                      }}
+                    />
+                    <button className="tw-m-0 tw-py-2 tw-px-6 button-primary tw-hidden lg:tw-block font-kalameh-num te-text-base tw-font-semibold 2xl:tw-text-xl">
+                      جستجو
+                    </button>
+                    <button
+                      className="tw-m-0 button-primary tw-block lg:tw-hidden"
+                      style={{ padding: '.5rem' }}
+                    >
+                      <img src={searchWhiteIcon} alt="" />
+                    </button>
+                  </div>
+                  <div className="tw-py-4 tw-mb-4 tw-w-full tw-max-w-screen-sm tw-mx-auto">
+                    <p className="text-black font-iranyekan-num tw-text-sm tw-font-medium 2xl:tw-text-xl tw-mb-2 ">
+                      بیشترین کلمات جستجو شده
+                    </p>
+                    <div className="tw-flex tw-flex-wrap">
+                      {top_search.map((item) => (
+                        <p
+                          key="1"
+                          className="bg-medium font-iranyekan-num tw-text-xs tw-font-normal 2xl:tw-text-sm tw-py-2 tw-px-4 tw-m-2"
+                          style={{ borderRadius: '6px' }}
+                        >
+                          {item}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+}
