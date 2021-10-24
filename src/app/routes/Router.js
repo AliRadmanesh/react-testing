@@ -13,6 +13,7 @@ import About from '../../features/about';
 import FAQ from '../../features/faq';
 import CourseList from '../../features/courses';
 import Course from '../../features/course';
+import Page404 from '../../features/404/index';
 
 function AppRouter() {
   return (
@@ -30,6 +31,7 @@ function AppRouter() {
           <Route exact path="/about" component={About} />
           <Route exact path="/courses" component={CourseList} />
           <Route exact path="/course" component={Course} />
+          <Route exact path="/404" component={Page404} />
         </Switch>
       </Router>
     </div>

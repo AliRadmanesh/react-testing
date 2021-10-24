@@ -5,6 +5,10 @@ import {
   DISPLAY_MOBILE_FILTER_MENU,
   SET_COURSES_IS_FREE,
   SET_COURSES_SORT,
+  ADD_COURSES_TYPE_FILTER,
+  ADD_COURSES_ACADEMY_FILTER,
+  REMOVE_COURSES_ACADEMY_FILTER,
+  REMOVE_COURSES_TYPE_FILTER,
 } from './types';
 import axios from '../../axios';
 import instance from '../../instance';
@@ -15,7 +19,7 @@ export const getSearchContent = () => async (dispatch) => {
   try {
     const res = await axios.get('/api/v1/web/content/courses/search-content');
 
-    console.log(res.data.data);
+    // console.log(res.data.data);
 
     if (res.data.code === 200) {
       dispatch({
@@ -48,4 +52,32 @@ export const setCoursesType = (num) => (dispatch) => {
       payload: num,
     });
   }
+};
+
+export const addCoursesAcademyFilter = (object) => (dispatch) => {
+  dispatch({
+    type: ADD_COURSES_ACADEMY_FILTER,
+    payload: { id: object.id, title: object.title },
+  });
+};
+
+export const addCoursesTypeFilter = (object) => (dispatch) => {
+  dispatch({
+    type: ADD_COURSES_TYPE_FILTER,
+    payload: { id: object.id, title: object.title },
+  });
+};
+
+export const removeCoursesAcademyFilter = (id) => (dispatch) => {
+  dispatch({
+    type: REMOVE_COURSES_ACADEMY_FILTER,
+    payload: id,
+  });
+};
+
+export const removeCoursesTypeFilter = (id) => (dispatch) => {
+  dispatch({
+    type: REMOVE_COURSES_TYPE_FILTER,
+    payload: id,
+  });
 };
