@@ -1,7 +1,7 @@
 import React from 'react';
 import searchIcon from '../../assets/icons/Search.svg';
 
-export default function SearchBar({ onSearch, classes }) {
+export default function SearchBar({ onSearch, onChange, classes }) {
   return (
     <div
       className={`tw-grid tw-items-center tw-px-2 search-container tw-mb-4 tw-w-full  ${classes}`}
@@ -17,6 +17,7 @@ export default function SearchBar({ onSearch, classes }) {
         onBlur={() => {
           document.querySelector('.search-container').classList.remove('focus');
         }}
+        onChange={onChange}
       />
       <button className="tw-m-0 tw-p-2 tw-justify-self-end" onClick={onSearch}>
         <img src={searchIcon} alt="" className="icon" />
