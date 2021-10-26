@@ -1,3 +1,7 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable one-var */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prefer-const */
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
@@ -10,12 +14,20 @@ import FilterMenuDesktop from '../../components/courses/FilterMenuDesktop';
 import SortDropdown from '../../components/courses/SortDropdown';
 import IsFreeDropdown from '../../components/courses/IsFreeDropdown';
 import { getSearchContent } from '../../app/redux/actions/coursesActions';
+import { searchCourses } from '../../app/redux/actions/searchActions';
 
 import './courses.css';
 
 export default function CourseList() {
   const dispatch = useDispatch();
   const [list, setList] = useState([]);
+
+  const {
+    options: { course_types, academies },
+    sort,
+    is_free,
+    filters,
+  } = useSelector((state) => state.courses);
 
   const getData = async () => {
     try {
@@ -30,19 +42,28 @@ export default function CourseList() {
     }
   };
 
+  const onSearch = () => {
+    // console.log(academies);
+    const acaArr = filters.academies;
+    console.log(acaArr);
+  };
+
   useEffect(() => {
     // toast('hello');
     dispatch(getSearchContent(), getData());
-
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    console.log(1);
+  }, [sort, is_free, filters.course_types, filters.academies]);
 
   return (
     <Layout title="کورس‌ها" text="دوره‌های آموزشی">
       <div className="container courses">
         <div className="tw-grid tw-gap-x-4 courses-grid tw-mb-4">
           <div className="tw-hidden lg:tw-block">
-            <SearchBar />
+            <SearchBar onSearch={onSearch} />
           </div>
           <div className="tw-flex tw-items-center text-dark tw-flex-col lg:tw-flex-row lg:tw-justify-end">
             <p className="font-kalameh-num tw-text-xs tw-font-normal 2xl:tw-text-base tw-ml-4 tw-mb-4 lg:tw-mb-0 tw-self-start lg:tw-self-center">

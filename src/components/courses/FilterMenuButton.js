@@ -5,7 +5,7 @@ import filterIcon from '../../assets/icons/Filter-White.svg';
 import { displayMobileFilterMenu } from '../../app/redux/actions/coursesActions';
 
 export default function ScrollToTop() {
-  const { showMenu } = useSelector((state) => state.courses.search);
+  const { showMenu } = useSelector((state) => state.courses);
   const dispatch = useDispatch();
 
   return (

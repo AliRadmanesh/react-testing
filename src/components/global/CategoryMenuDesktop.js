@@ -29,8 +29,6 @@ export default function CategoryMenuDesktop() {
   };
 
   useEffect(() => {
-    console.log(document.querySelector('.titles-container').offsetWidth);
-
     setWidth(document.querySelector('.titles-container').offsetWidth);
   }, []);
 

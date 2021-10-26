@@ -1,11 +1,15 @@
 import React from 'react';
 import Layout from '../../common/Layout/detail';
-import Form from '../../components/contact/Form';
 
 export default function Course() {
+  const dummy = {
+    title: 'UI kit آموزش طراحی',
+    abstract: '',
+  };
+
   return (
     <Layout>
-      <Form />
+      <h1>صفحه اطلاعات دوره‌ها</h1>
     </Layout>
   );
 }

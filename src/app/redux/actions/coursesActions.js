@@ -9,6 +9,7 @@ import {
   ADD_COURSES_ACADEMY_FILTER,
   REMOVE_COURSES_ACADEMY_FILTER,
   REMOVE_COURSES_TYPE_FILTER,
+  CLEAR_COURSES_FILTERS,
 } from './types';
 import axios from '../../axios';
 import instance from '../../instance';
@@ -79,5 +80,11 @@ export const removeCoursesTypeFilter = (id) => (dispatch) => {
   dispatch({
     type: REMOVE_COURSES_TYPE_FILTER,
     payload: id,
+  });
+};
+
+export const clearCoursesFilters = () => (dispatch) => {
+  dispatch({
+    type: CLEAR_COURSES_FILTERS,
   });
 };

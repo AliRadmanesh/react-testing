@@ -7,6 +7,7 @@ import {
   ADD_COURSES_ACADEMY_FILTER,
   REMOVE_COURSES_TYPE_FILTER,
   REMOVE_COURSES_ACADEMY_FILTER,
+  CLEAR_COURSES_FILTERS,
 } from '../actions/types';
 
 const initialState = {
@@ -76,6 +77,13 @@ export default (state = initialState, action) => {
           course_types: state.filters.course_types.filter((type) => type.id !== action.payload),
         },
       };
+
+    case CLEAR_COURSES_FILTERS:
+      return {
+        ...state,
+        filters: { course_types: [], academies: [] },
+      };
+
     default:
       return state;
   }

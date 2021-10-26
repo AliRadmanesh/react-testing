@@ -27,26 +27,8 @@ export const hideSuggest = () => (dispatch) => {
   dispatch({ type: HIDE_SUGGEST });
 };
 
-export const searchCourses = () => (dispatch) => {
-  const { value } = useSelector((state) => state.search);
-  const {
-    is_free,
-    sort,
-    options: { academies, course_types },
-  } = useSelector((state) => state.courses);
-
-  let query = '',
-    acaArr = [],
-    typArr = [];
-  if (academies.length !== 0) {
-    academies.map((academy) => {
-      acaArr.push(academy);
-    });
-  }
-  if (course_types.length !== 0) {
-    course_types.map((course_type) => {
-      typArr.push(course_type);
-    });
-  }
-  console.log(acaArr, typArr);
-};
+export const searchCourses =
+  (academies = [], types = [], sort = 1, free = 0) =>
+  (dispatch) => {
+    console.log(1);
+  };
