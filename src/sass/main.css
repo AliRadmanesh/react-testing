@@ -33,6 +33,10 @@
   background-color: #118ab2;
 }
 
+.bg-primary-pale {
+  background-color: #f0f2f2;
+}
+
 /* TEXT COLORS */
 .text-white {
   color: #fefefe;
@@ -89,6 +93,61 @@
 
 .border-smooth {
   border-radius: 12px;
+}
+
+.container {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+/* Karsaz Grid System */
+/* Initial Development, October 2021 */
+.ks-row {
+  margin: auto;
+  width: 100%;
+  float: right;
+}
+
+.ks-row::before, .ks-row::after {
+  content: '';
+  clear: 'both';
+  display: block;
+}
+
+.ks-grid-paddinger {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.ks-gridder {
+  display: -webkit-grid;
+  display: -ms-grid;
+  display: -moz-grid;
+  display: grid;
+}
+
+.ks-gap-1 {
+  grid-gap: 1rem;
+}
+
+.ks-grid-1-3 {
+  -ms-grid-columns: 1fr 3fr;
+  grid-template-columns: 1fr 3fr;
+}
+
+.ks-grid-3-1 {
+  -ms-grid-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1fr;
+}
+
+.ks-grid-1-4 {
+  -ms-grid-columns: 1fr 4fr;
+  grid-template-columns: 1fr 4fr;
+}
+
+.ks-grid-4-1 {
+  -ms-grid-columns: 4fr 1fr;
+  grid-template-columns: 4fr 1fr;
 }
 
 ul,
@@ -941,6 +1000,10 @@ footer .footer-heading {
   background-color: #118ab2;
 }
 
+.bg-primary-pale {
+  background-color: #f0f2f2;
+}
+
 /* TEXT COLORS */
 .text-white {
   color: #fefefe;
@@ -1093,7 +1156,19 @@ footer .footer-heading {
   width: 100%;
   background: #118ab2;
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 1536px) {
+  .detail-page-bg-fade {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .detail-page-bg-fade {
+    height: 250px;
+  }
 }
 
 .detail-page-bg-pattern {
@@ -1104,9 +1179,35 @@ footer .footer-heading {
   top: 0;
 }
 
+@media screen and (min-width: 1536px) {
+  .detail-page-bg-pattern {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .detail-page-bg-pattern {
+    height: 250px;
+  }
+}
+
 .detail-page-content {
   position: relative;
   top: 1.2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .detail-page-content {
+    top: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .detail-page-content {
+    top: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .page-header-mobile button, .page-header-mobile .button-primary, .page-header-mobile .button-secondary, .page-header-mobile .button-error, .page-header-mobile .button {
@@ -1865,5 +1966,61 @@ footer .footer-heading {
 
 .courses-dropdown-item:hover {
   background-color: #e2e2e2;
+}
+
+.course-header {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 1024px) {
+  .course-header {
+    -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
+  }
+}
+
+.course-header-right {
+  width: 100%;
+  -ms-grid-columns: 40% auto;
+      grid-template-columns: 40% auto;
+}
+
+.course-header-right .course-header-description {
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 21px;
+  max-height: 63px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (min-width: 768px) {
+  .course-header-right .course-header-description {
+    line-height: 21px;
+    max-height: 42px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .course-header-right .course-header-description {
+    line-height: 21px;
+    max-height: 84px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .course-header-right .course-header-description {
+    line-height: 30px;
+    max-height: 90px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
 }
 /*# sourceMappingURL=main.css.map */

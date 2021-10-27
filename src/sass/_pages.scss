@@ -89,7 +89,15 @@
   width: 100%;
   background: $karsaz-primary;
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.8;
+
+  @media screen and (min-width: $text-breakpoint-xx) {
+    height: 200px;
+  }
+
+  @media screen and (min-width: $text-breakpoint-3x) {
+    height: 250px;
+  }
 }
 
 .detail-page-bg-pattern {
@@ -99,11 +107,29 @@
   width: 100%;
   position: absolute;
   top: 0;
+
+  @media screen and (min-width: $text-breakpoint-xx) {
+    height: 200px;
+  }
+
+  @media screen and (min-width: $text-breakpoint-3x) {
+    height: 250px;
+  }
 }
 
 .detail-page-content {
   position: relative;
   top: 1.2rem;
+
+  @media screen and (min-width: $text-breakpoint-lg) {
+    top: 1.6rem;
+  }
+
+  @media screen and (min-width: $text-breakpoint-xx) {
+    top: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .page {
