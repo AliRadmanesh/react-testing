@@ -60,6 +60,18 @@
 
 // Grid view small
 @media screen and (min-width: 640px) and (max-width: 768px) {
+  .ks-col-1-xs {
+    width: 25%;
+  }
+  .ks-col-2-xs {
+    width: 50%;
+  }
+  .ks-col-3-xs {
+    width: 75%;
+  }
+  .ks-col-4-xs {
+    width: 100%;
+  }
 }
 
 // Grid view medium

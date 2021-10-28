@@ -8,6 +8,7 @@ import Chapters from '../../components/course/Chapters';
 import Comments from '../../components/course/Comments';
 import Header from '../../components/course/Header';
 import Recommended from '../../components/course/Recommended';
+import UserComment from '../../components/course/UserComment';
 
 import './course.css';
 
@@ -212,7 +213,7 @@ export default function Course() {
   });
 
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
   }, []);
 
   return (
@@ -235,11 +236,13 @@ export default function Course() {
         type={data.type}
         cashback={data.cashback}
       />
-      <Author instructors={data.instructors} />
-      <About />
-      <Chapters />
-      <Recommended />
-      <Comments />
+      <Author instructors={data.instructors[0]} />
+      <About description_summary_string={data.description_summary_string} />
+      <div className="container 2xl:tw-py-16">
+        <Recommended recommended_courses={data.recommended_courses} />
+      </div>
+      <UserComment user_comment={data.user_comment} />
+      <Comments id={data.id} />
     </Layout>
   );
 }

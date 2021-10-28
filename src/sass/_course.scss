@@ -36,9 +36,89 @@
 
         @media screen and (min-width: 1536px) {
           line-height: 30px;
-          max-height: 90px;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
+          max-height: 120px;
+        }
+      }
+    }
+  }
+
+  &-author {
+    .course-author-about {
+      word-break: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      line-height: 25px;
+      max-height: 100px;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+
+      @media screen and (min-width: 1024px) {
+        max-height: 84px;
+        -webkit-line-clamp: auto;
+        -webkit-box-orient: vertical;
+      }
+
+      @media screen and (min-width: 1536px) {
+        line-height: 30px;
+        max-height: auto;
+      }
+    }
+  }
+
+  &-page-card {
+    &-description {
+      word-break: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      line-height: 21px;
+      max-height: 81px;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+
+      @media screen and (min-width: 1024px) {
+        max-height: 84px;
+        -webkit-line-clamp: auto;
+        -webkit-box-orient: vertical;
+      }
+
+      @media screen and (min-width: 1536px) {
+        line-height: 30px;
+        max-height: auto;
+      }
+    }
+
+    &-background {
+      height: 160px;
+      @media screen and (min-width: 1024px) {
+        height: 200px;
+      }
+
+      @media screen and (min-width: 1536px) {
+        height: 240px;
+      }
+    }
+  }
+
+  &-page-user-comment {
+    .course-page-user-comment-stars {
+      .star {
+        .empty {
+          display: block;
+        }
+        .fill {
+          display: none;
+        }
+
+        &:hover {
+          .empty {
+            display: none;
+          }
+
+          .fill {
+            display: block;
+          }
         }
       }
     }

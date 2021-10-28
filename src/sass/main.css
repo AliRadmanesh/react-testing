@@ -150,6 +150,21 @@
   grid-template-columns: 4fr 1fr;
 }
 
+@media screen and (min-width: 640px) and (max-width: 768px) {
+  .ks-col-1-xs {
+    width: 25%;
+  }
+  .ks-col-2-xs {
+    width: 50%;
+  }
+  .ks-col-3-xs {
+    width: 75%;
+  }
+  .ks-col-4-xs {
+    width: 100%;
+  }
+}
+
 ul,
 ol {
   list-style: none;
@@ -2018,9 +2033,91 @@ footer .footer-heading {
 @media screen and (min-width: 1536px) {
   .course-header-right .course-header-description {
     line-height: 30px;
-    max-height: 90px;
-    -webkit-line-clamp: 3;
+    max-height: 120px;
+  }
+}
+
+.course-author .course-author-about {
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 25px;
+  max-height: 100px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (min-width: 1024px) {
+  .course-author .course-author-about {
+    max-height: 84px;
+    -webkit-line-clamp: auto;
     -webkit-box-orient: vertical;
   }
+}
+
+@media screen and (min-width: 1536px) {
+  .course-author .course-author-about {
+    line-height: 30px;
+    max-height: auto;
+  }
+}
+
+.course-page-card-description {
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 21px;
+  max-height: 81px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (min-width: 1024px) {
+  .course-page-card-description {
+    max-height: 84px;
+    -webkit-line-clamp: auto;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .course-page-card-description {
+    line-height: 30px;
+    max-height: auto;
+  }
+}
+
+.course-page-card-background {
+  height: 160px;
+}
+
+@media screen and (min-width: 1024px) {
+  .course-page-card-background {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .course-page-card-background {
+    height: 240px;
+  }
+}
+
+.course-page-user-comment .course-page-user-comment-stars .star .empty {
+  display: block;
+}
+
+.course-page-user-comment .course-page-user-comment-stars .star .fill {
+  display: none;
+}
+
+.course-page-user-comment .course-page-user-comment-stars .star:hover .empty {
+  display: none;
+}
+
+.course-page-user-comment .course-page-user-comment-stars .star:hover .fill {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */

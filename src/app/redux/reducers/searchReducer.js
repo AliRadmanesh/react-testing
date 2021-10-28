@@ -1,4 +1,9 @@
-import { SEARCH_COURSES, AUTO_SUGGEST, HIDE_SUGGEST } from '../actions/types';
+import {
+  SEARCH_COURSES,
+  AUTO_SUGGEST,
+  HIDE_SUGGEST,
+  SEARCH_CATEGORY_COURSES,
+} from '../actions/types';
 
 const initialState = {
   courses: [],
@@ -24,6 +29,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         suggest: { ...state.suggest, show: false },
+      };
+
+    case SEARCH_CATEGORY_COURSES:
+      return {
+        ...state,
+        courses: action.payload,
       };
 
     default:

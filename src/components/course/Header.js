@@ -30,8 +30,8 @@ export default function Header({
   cashback,
 }) {
   return (
-    <div className="tw-grid course-header tw-gap-4">
-      <div className="course-header-right bg-white tw-p-4 lg:tw-py-5 lg:tw-px-4 tw-rounded-xl tw-flex tw-flex-col md:tw-grid tw-gap-x-4 lg:tw-gap-x-6 tw-shadow-lg tw-relative">
+    <div className="tw-grid course-header tw-gap-4 container">
+      <div className="course-header-right bg-white tw-p-4 lg:tw-p-5 tw-rounded-xl tw-flex tw-flex-col md:tw-grid tw-gap-x-4 lg:tw-gap-x-6 tw-shadow-lg tw-relative">
         {/* <img src={image} alt="" className="tw-rounded-lg tw-w-full tw-h-auto" /> */}
         <div
           className="tw-rounded-xl tw-w-full tw-h-auto"
@@ -89,7 +89,7 @@ export default function Header({
           <img src={bookmarkIcon} alt="" style={{}} className="tw-w-4" />
         </button>
       </div>
-      <div className="course-header-left font-kalameh-num bg-white tw-p-4 lg:tw-py-5 lg:tw-px-4 tw-rounded-xl tw-grid md:tw-grid-cols-3 md:tw-gap-y-4  lg:tw-grid-cols-2 tw-gap-8 lg:tw-gap-x-6 tw-grid-cols-2 tw-shadow-lg tw-relative">
+      <div className="course-header-left font-kalameh-num bg-white tw-p-4 lg:tw-py-5 lg:tw-px-4 tw-rounded-xl tw-grid md:tw-grid-cols-4 md:tw-gap-y-4  lg:tw-grid-cols-2 tw-gap-8 lg:tw-gap-x-6 tw-grid-cols-2 tw-shadow-lg tw-relative">
         <div className="">
           <div className="tw-flex tw-items-center">
             <img src={academyIcon} alt="" className="tw-w-6" />

@@ -2,10 +2,9 @@
 /* eslint-disable one-var */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prefer-const */
-import { useSelector } from 'react-redux';
 import instance from '../../instance';
 import axios from '../../axios';
-import { SEARCH_COURSES, AUTO_SUGGEST, HIDE_SUGGEST } from './types';
+import { SEARCH_COURSES, AUTO_SUGGEST, HIDE_SUGGEST, SEARCH_CATEGORY_COURSES } from './types';
 
 export const autoSuggest = (query) => async (dispatch) => {
   const res = await axios.get(`/api/v1/web/service/courses/autosuggest/?q=${query}`);
@@ -28,7 +27,47 @@ export const hideSuggest = () => (dispatch) => {
 };
 
 export const searchCourses =
-  (academies = [], types = [], sort = 1, free = 0) =>
+  (query = '', academies = [], types = [], categories = [], sort = 1, free = 0) =>
   (dispatch) => {
-    console.log(1);
+    let search = `?=${query}`;
+    academies.forEach(
+      (item, index) =>
+        function () {
+          search += `&academy[${index}]=${item}`;
+        },
+    );
+    types.forEach(
+      (item, index) =>
+        function () {
+          search += `&type[${index}]=${item}`;
+        },
+    );
+    categories.forEach(
+      (item, index) =>
+        function () {
+          search += `&category[${index}]=${item}`;
+        },
+    );
+
+    console.log(search);
+    // axios.get('/')
   };
+
+export const searchCategoryCourses = (id) => async (dispatch) => {
+  try {
+    const res = await instance.get(`/api/v1/web/service/courses/search-filters/?category[0]=${id}`);
+
+    console.log(res);
+
+    if (res.status === 200 || res.status === 201) {
+      dispatch({
+        type: SEARCH_CATEGORY_COURSES,
+        payload: res.data.data.courses,
+      });
+    } else if (res.status === 404) {
+      dispatch({ type: SEARCH_CATEGORY_COURSES, payload: [] });
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
