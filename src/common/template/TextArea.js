@@ -29,14 +29,18 @@ export function TextArea({
         className="template-textarea-message"
         style={{
           color:
-            (!state && '#2c2c2c') ||
+            (!state && 'متن پیشفرض') ||
             (state === 'error' && '#B21111') ||
             (state === 'warning' && '#B26F11') ||
             (state === 'success' && '#11B262'),
           visibility: state ? 'visible' : 'hidden',
         }}
       >
-        {message}
+        {message ||
+          (!state && '#2c2c2c') ||
+          (state === 'error' && 'لطفا پیام خود را بنویسید') ||
+          (state === 'warning' && 'در این قسمت، چیزی ننوشتید.') ||
+          (state === 'success' && 'پیام شما را خواهیم دید.')}
       </p>
     </div>
   );
