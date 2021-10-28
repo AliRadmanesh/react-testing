@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         <div className="detail-page-bg-pattern">
           <div className="detail-page-bg-fade" />
         </div>
-        <div className="detail-page-content container">{children}</div>
+        <div className="detail-page-content">{children}</div>
       </div>
       {/* <div className="detail-page-bg-fade" /> */}
       <Footer />

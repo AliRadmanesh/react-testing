@@ -5,6 +5,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import Layout from '../../common/Layout/chill';
 import SearchBar from '../../components/global/SearchBar';
 import CourseCard from '../../components/courses/CourseCard';
@@ -14,13 +15,15 @@ import FilterMenuDesktop from '../../components/courses/FilterMenuDesktop';
 import SortDropdown from '../../components/courses/SortDropdown';
 import IsFreeDropdown from '../../components/courses/IsFreeDropdown';
 import { getSearchContent } from '../../app/redux/actions/coursesActions';
-import { searchCourses } from '../../app/redux/actions/searchActions';
+import { searchCourses, searchCategoryCourses } from '../../app/redux/actions/searchActions';
 
 import './courses.css';
 
 export default function CourseList() {
   const dispatch = useDispatch();
   const [list, setList] = useState([]);
+
+  const pageValue = window.location.href.split('=')[1];
 
   const {
     options: { course_types, academies },
@@ -29,18 +32,7 @@ export default function CourseList() {
     filters,
   } = useSelector((state) => state.courses);
 
-  const getData = async () => {
-    try {
-      const res = await axios.get(
-        'https://develop.karsazapp.ir/api/v1/web/service/courses/search/?q=php&type[0]=2&is_free=1&academy[0]=3',
-      );
-      if (res.status === 200) {
-        setList(res.data.data.courses);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { courses, query } = useSelector((state) => state.search);
 
   const onSearch = () => {
     // console.log(academies);
@@ -49,14 +41,14 @@ export default function CourseList() {
   };
 
   useEffect(() => {
-    // toast('hello');
-    dispatch(getSearchContent(), getData());
+    // dispatch(getSearchContent(), getData());
+    dispatch(getSearchContent());
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
-    console.log(1);
-  }, [sort, is_free, filters.course_types, filters.academies]);
+    dispatch(searchCategoryCourses(pageValue));
+  }, [pageValue]);
 
   return (
     <Layout title="کورس‌ها" text="دوره‌های آموزشی">
@@ -84,7 +76,7 @@ export default function CourseList() {
             <FilterMenuDesktop />
           </div>
           <div className="">
-            {list.map((item) => (
+            {courses.map((item) => (
               <CourseCard
                 key={item.id}
                 title={item.title}
@@ -92,7 +84,7 @@ export default function CourseList() {
                 price={item.price}
                 author={{ first_name: '', last_name: '', image: '' }}
                 rating={item.rating.average}
-                academy={item.academy.name}
+                academy={item.academy}
                 duration={item.duration}
                 type={item.type}
                 is_free={item.is_free}

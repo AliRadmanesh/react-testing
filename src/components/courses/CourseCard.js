@@ -9,8 +9,7 @@ export default function CourseCard({
   image,
   title,
   price,
-  author: { first_name, last_name, image: avatar },
-  academy,
+  academy: { id: academyID, name, avatar },
   rating,
   type,
   duration,
@@ -31,9 +30,11 @@ export default function CourseCard({
       </div>
       <div className="tw-flex tw-flex-col tw-justify-between tw-h-full text-dark">
         <div className="tw-flex tw-items-center tw-justify-between tw-mb-4">
-          <h1 className="course-card-title text-dark tw-font-bold tw-text-base 2xl:tw-text-xl 2xl:tw-font-semibold">
-            {title}
-          </h1>
+          <Link to="./">
+            <h1 className="course-card-title text-dark tw-font-bold tw-text-base 2xl:tw-text-xl 2xl:tw-font-semibold text-primary-hover">
+              {title}
+            </h1>
+          </Link>
           <div className="tw-flex tw-items-center">
             <p className="text-blue tw-hidden lg:tw-block tw-font-semibold tw-text-lg">{price}</p>
             <p className="tw-text-sm tw-font-normal tw-hidden lg:tw-block text-error">{discount}</p>
@@ -48,13 +49,15 @@ export default function CourseCard({
         >
           {description}
         </p>
-        <div className="tw-flex tw-items-end tw-justify-between lg:tw-hidden tw-mb-4">
-          <div className="tw-flex lg:tw-hidden tw-items-end">
-            <img src={avatar} alt="" />
-            <p className="tw-mr-2 lg:tw-mr-0">
-              {/* {first_name} {last_name} */}
-              محمد نادری
-            </p>
+        <div className="tw-flex tw-items-center tw-justify-between lg:tw-hidden tw-mb-4">
+          <div className="tw-flex lg:tw-hidden tw-items-center">
+            <img
+              src={avatar}
+              alt=""
+              className="tw-rounded-xl tw-ml-2"
+              style={{ width: '32px', height: '32px' }}
+            />
+            <p className="tw-mr-2 lg:tw-mr-0">{name}</p>
           </div>
 
           <div className="tw-flex tw-items-end">
@@ -68,17 +71,19 @@ export default function CourseCard({
         <div className="tw-flex tw-items-center lg:tw-flex lg:tw-items-end tw-justify-between">
           <div className="tw-flex tw-flex-col lg:tw-flex-row lg:tw-items-center">
             <div className="tw-flex tw-flex-row-reverse lg:tw-flex-row tw-items-center tw-justify-between">
-              <div className="tw-hidden lg:tw-flex tw-items-end tw-mb-4 lg:tw-mb-0 lg:tw-ml-4">
-                <img src={avatar} alt="" />
-                <p className="tw-mr-2 lg:tw-mr-0">
-                  {/* {first_name} {last_name} */}
-                  محمد نادری
-                </p>
+              <div className="tw-hidden lg:tw-flex tw-items-center tw-mb-4 lg:tw-mb-0 lg:tw-ml-4">
+                <img
+                  src={avatar}
+                  alt=""
+                  className="tw-rounded-xl tw-ml-2"
+                  style={{ width: '34px', height: '34px' }}
+                />
+                <p className="tw-mr-2 lg:tw-mr-0">{name}</p>
               </div>
-              <div className="tw-hidden xl:tw-flex tw-items-center tw-ml-4">
+              {/* <div className="tw-hidden xl:tw-flex tw-items-center tw-ml-4">
                 <img src={academyIcon} alt="" className="tw-ml-2 tw-w-4 2xl:tw-w-6" />
                 <p className="tw-text-xs tw-font-normal text-dark 2xl:tw-text-base">{academy}</p>
-              </div>
+              </div> */}
               <div className="tw-hidden lg:tw-flex tw-items-center tw-ml-4">
                 <img src={clockIcon} alt="" className="tw-ml-2 tw-w-4 2xl:tw-w-6" />
                 <p className="tw-text-xs tw-font-normal text-dark 2xl:tw-text-base">{duration}</p>
