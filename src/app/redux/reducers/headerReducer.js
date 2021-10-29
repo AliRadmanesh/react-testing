@@ -4,6 +4,7 @@ import {
   SHOW_USER_MENU,
   SHOW_CATEGORY_DESKTOP_MENU,
   SHOW_CATEGORY_MOBILE_MENU,
+  GET_MENU_CATEGORIES,
 } from '../actions/types';
 
 const initial = {
@@ -14,6 +15,7 @@ const initial = {
   showMenu: false,
   categoryDesktop: false,
   categoryMobile: false,
+  categories: [],
 };
 
 export default (state = initial, action) => {
@@ -50,7 +52,11 @@ export default (state = initial, action) => {
         ...state,
         categoryMobile: action.payload,
       };
-
+    case GET_MENU_CATEGORIES:
+      return {
+        ...state,
+        categories: action.payload,
+      };
     default:
       return state;
   }

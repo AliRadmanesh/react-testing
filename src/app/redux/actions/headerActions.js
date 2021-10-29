@@ -5,6 +5,7 @@ import {
   SHOW_USER_MENU,
   SHOW_CATEGORY_DESKTOP_MENU,
   SHOW_CATEGORY_MOBILE_MENU,
+  GET_MENU_CATEGORIES,
 } from './types';
 
 import instance from '../../instance';
@@ -55,4 +56,21 @@ export const showCategoryMobileMenu = (bool) => (dispatch) => {
     type: SHOW_CATEGORY_MOBILE_MENU,
     payload: bool,
   });
+};
+
+export const getMenuCategories = () => async (dispatch) => {
+  try {
+    const res = await instance.get('/api/v1/web/content/courses/menu-categories');
+
+    if (res.status === 201 || res.status === 200) {
+      dispatch({
+        type: GET_MENU_CATEGORIES,
+        payload: res.data.data.categories,
+      });
+    } else {
+      toast.error(res.message);
+    }
+  } catch (error) {
+    toast.error('خطا در برقراری ارتباط برای دریافت دسته‌بندی منو');
+  }
 };

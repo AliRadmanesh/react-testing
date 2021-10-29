@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTopCategories } from '../../app/redux/actions/footerActions';
 
@@ -91,39 +91,49 @@ function Footer() {
             <h4 className="text-blue tw-mb-2">لینک‌های مفید</h4>
             <ul className="">
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
-                  خانه
-                </p>
+                <Link to="./">
+                  <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
+                    خانه
+                  </p>
+                </Link>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
-                  دسته‌بندی
-                </p>
+                <Link to="./categories">
+                  <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
+                    دسته‌بندی
+                  </p>
+                </Link>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
+                <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                   فرصت‌های شغلی
                 </p>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
+                <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                   وبلاگ
                 </p>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
-                  درباره‌ی ما
-                </p>
+                <Link to="./about">
+                  <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
+                    درباره‌ی ما
+                  </p>
+                </Link>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
-                  تماس با ما
-                </p>
+                <Link to="./contact">
+                  <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
+                    تماس با ما
+                  </p>
+                </Link>
               </li>
               <li>
-                <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
-                  سئوالات متداول
-                </p>
+                <Link to="./faq">
+                  <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
+                    سئوالات متداول
+                  </p>
+                </Link>
               </li>
             </ul>
           </div>
@@ -132,9 +142,11 @@ function Footer() {
             <ul>
               {top_categories.map((category) => (
                 <li key={category.id}>
-                  <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
-                    {category.name}
-                  </p>
+                  <Link to={`../courses/category[0]=${category.id}`}>
+                    <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate text-primary-hover">
+                      {category.name}
+                    </p>
+                  </Link>
                 </li>
               ))}
             </ul>
