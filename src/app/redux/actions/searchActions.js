@@ -4,11 +4,23 @@
 /* eslint-disable prefer-const */
 import instance from '../../instance';
 import axios from '../../axios';
-import { SEARCH_COURSES, AUTO_SUGGEST, HIDE_SUGGEST, SEARCH_CATEGORY_COURSES } from './types';
+import {
+  SET_KEYWORDS,
+  SEARCH_COURSES,
+  AUTO_SUGGEST,
+  HIDE_SUGGEST,
+  SEARCH_CATEGORY_COURSES,
+} from './types';
+
+export const setKeywords = (string) => (dispatch) => {
+  dispatch({
+    type: SET_KEYWORDS,
+    payload: string,
+  });
+};
 
 export const autoSuggest = (query) => async (dispatch) => {
   const res = await axios.get(`/api/v1/web/service/courses/autosuggest/?q=${query}`);
-  // console.log(res);
   console.log(query);
   if (query) {
     if (res.status === 200 || res.status === 201) {
@@ -27,37 +39,23 @@ export const hideSuggest = () => (dispatch) => {
 };
 
 export const searchCourses =
-  (query = '', academies = [], types = [], categories = [], sort = 1, free = 0) =>
+  (query = '', academies = [], types = [], sort = 1, free = 0) =>
   (dispatch) => {
     let search = `?=${query}`;
-    academies.forEach(
-      (item, index) =>
-        function () {
-          search += `&academy[${index}]=${item}`;
-        },
-    );
-    types.forEach(
-      (item, index) =>
-        function () {
-          search += `&type[${index}]=${item}`;
-        },
-    );
-    categories.forEach(
-      (item, index) =>
-        function () {
-          search += `&category[${index}]=${item}`;
-        },
-    );
-
+    academies.forEach((item, index) => {
+      search += `&academy[${index}]=${item.id}`;
+    });
+    types.forEach((item, index) => {
+      search += `&type[${index}]=${item.id}`;
+    });
     console.log(search);
-    // axios.get('/')
   };
 
 export const searchCategoryCourses = (id) => async (dispatch) => {
   try {
     const res = await instance.get(`/api/v1/web/service/courses/search-filters/?category[0]=${id}`);
 
-    console.log(res);
+    // console.log(res);
 
     if (res.status === 200 || res.status === 201) {
       dispatch({

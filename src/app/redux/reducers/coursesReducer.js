@@ -17,6 +17,8 @@ const initialState = {
   sort: 1,
   category: [],
   filters: { academies: [], course_types: [] },
+  page: 1,
+  compare: { primary: {}, secondary: {} },
 };
 
 export default (state = initialState, action) => {

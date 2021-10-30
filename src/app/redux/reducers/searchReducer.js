@@ -1,4 +1,5 @@
 import {
+  SET_KEYWORDS,
   SEARCH_COURSES,
   AUTO_SUGGEST,
   HIDE_SUGGEST,
@@ -7,12 +8,17 @@ import {
 
 const initialState = {
   courses: [],
-  value: '', // query value
+  keywords: '', // query value
   suggest: { show: false, list: [] },
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SET_KEYWORDS:
+      return {
+        ...state,
+        keywords: action.payload,
+      };
     case SEARCH_COURSES:
       return {
         ...state,
