@@ -4,12 +4,18 @@ import {
   AUTO_SUGGEST,
   HIDE_SUGGEST,
   SEARCH_CATEGORY_COURSES,
+  SET_CURRENT_PAGE,
+  SET_PAGE_TOTAL,
 } from '../actions/types';
 
 const initialState = {
   courses: [],
   keywords: '', // query value
   suggest: { show: false, list: [] },
+  page: {
+    current: 1,
+    total: 1,
+  },
 };
 
 export default (state = initialState, action) => {
@@ -41,6 +47,18 @@ export default (state = initialState, action) => {
       return {
         ...state,
         courses: action.payload,
+      };
+
+    case SET_CURRENT_PAGE:
+      return {
+        ...state,
+        page: { ...state.page, current: action.payload },
+      };
+
+    case SET_PAGE_TOTAL:
+      return {
+        ...state,
+        page: { ...state.page, total: action.payload },
       };
 
     default:

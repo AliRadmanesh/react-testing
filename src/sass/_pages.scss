@@ -411,3 +411,24 @@
     color: $karsaz-white;
   }
 }
+
+.pagination-page-item,
+.pagination-page-item-active {
+  width: 42px;
+  height: 40px;
+
+  @media screen and (min-width: $text-breakpoint-xx) {
+    width: 62px;
+    height: 60px;
+  }
+}
+
+.pagination-page-item {
+  background: $karsaz-primary-pale;
+  color: $karsaz-secondary;
+}
+
+.pagination-page-item-active {
+  background: $karsaz-primary;
+  color: $karsaz-white;
+}

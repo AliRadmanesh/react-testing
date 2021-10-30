@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
 import Layout from '../../common/Layout/chill';
 import SearchBar from '../../components/global/SearchBar';
 import CourseCard from '../../components/courses/CourseCard';
@@ -10,8 +11,9 @@ import FilterMenuDesktop from '../../components/courses/FilterMenuDesktop';
 import SortDropdown from '../../components/courses/SortDropdown';
 import IsFreeDropdown from '../../components/courses/IsFreeDropdown';
 import { getSearchContent, setCoursesCategory } from '../../app/redux/actions/coursesActions';
-import { searchCourses, searchCategoryCourses } from '../../app/redux/actions/searchActions';
+import { searchCourses } from '../../app/redux/actions/searchActions';
 import { useFilters } from '../../common/hooks/search';
+import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 import './courses.css';
 
@@ -28,7 +30,11 @@ export default function Courses() {
     filters,
   } = useSelector((state) => state.courses);
 
-  const { courses, value } = useSelector((state) => state.search);
+  const {
+    courses,
+    value,
+    page: { current, total },
+  } = useSelector((state) => state.search);
 
   useEffect(() => {
     dispatch(setCoursesCategory(pageValue));
@@ -90,6 +96,36 @@ export default function Courses() {
               />
             ))}
           </div>
+        </div>
+        <div className="tw-grid tw-place-items-center tw-my-8 2xl:tw-my-16">
+          <ReactPaginate
+            onPageChange={({ selected }) => console.log(selected)}
+            breakLabel="..."
+            nextLabel={
+              <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">
+                <img
+                  src={arrow}
+                  alt=""
+                  style={{ width: '40%', height: 'auto', transform: 'rotate(90deg)' }}
+                />
+              </span>
+            }
+            pageCount={total}
+            previousLabel={
+              <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">
+                <img
+                  src={arrow}
+                  alt=""
+                  style={{ width: '40%', height: 'auto', transform: 'rotate(-90deg)' }}
+                />
+              </span>
+            }
+            initialPage={0}
+            marginPagesDisplayed={1}
+            containerClassName="tw-flex tw-items-center font-kalameh-num"
+            pageClassName="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item"
+            activeClassName="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item-active"
+          />
         </div>
       </div>
       <div>
