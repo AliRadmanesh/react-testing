@@ -120,7 +120,7 @@ export default function CategoryMenuDesktop() {
               {ci.sub.map((si) => (
                 <Link
                   key={si.id}
-                  to={`../courses/category[0]=${si.id}`}
+                  to={`../courses/category=${si.id}`}
                   className="header-category-item tw-py-4 tw-text-sm tw-font-normal 2xl:tw-text-lg"
                 >
                   {si.name}

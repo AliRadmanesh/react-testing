@@ -8,6 +8,8 @@ import HeaderUserSection from './HeaderUserSection';
 
 import { autoSuggest, hideSuggest } from '../../app/redux/actions/searchActions';
 
+import arrow from '../../assets/icons/Arrow Down Gray.svg';
+
 export default function MenuDesktop() {
   const [show, doShow] = useState(false);
   const [width, setWidth] = useState('160px');
@@ -65,19 +67,11 @@ export default function MenuDesktop() {
               خانه
             </Link>
             <button
-              className="tw-text-sm tw-p-0 tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
+              className="tw-flex tw-text-sm tw-p-0 tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
               onClick={() => dispatch(showCategoryDesktopMenu(!categoryDesktop))}
             >
               دسته‌بندی &nbsp; &nbsp;
-              <span
-                style={{
-                  transform: 'rotateY(-45deg)',
-                  color: '#2C2C2C',
-                  width: '10px',
-                }}
-              >
-                &lsaquo;
-              </span>
+              <img src={arrow} alt="" className="inline-block" />
             </button>
             <Link
               to="https://google.com"

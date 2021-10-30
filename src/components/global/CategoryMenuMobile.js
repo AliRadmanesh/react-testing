@@ -56,7 +56,7 @@ export default function CategoryMenuMobile() {
               <div className="category-dropdown-items tw-relative tw-w-full">
                 {ci.sub.map((si) => (
                   <Link
-                    to="../courses/category[0]=1"
+                    to={`../courses/category=${si.id}`}
                     key={si.id}
                     className="category-dropdown-item tw-py-4 tw-text-sm tw-font-normal tw-px-4 tw-block"
                   >
