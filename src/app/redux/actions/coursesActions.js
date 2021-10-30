@@ -1,5 +1,6 @@
 import toast from 'react-hot-toast';
 import {
+  SET_COURSES_CATEGORY,
   GET_COURSES_DATA,
   GET_COURSES_SEARCH_DATA,
   DISPLAY_MOBILE_FILTER_MENU,
@@ -16,12 +17,17 @@ import instance from '../../instance';
 
 export const getCoursesData = () => (dispatch) => {};
 
+export const setCoursesCategory = (id) => (dispatch) => {
+  dispatch({
+    type: SET_COURSES_CATEGORY,
+    payload: id,
+  });
+};
+
 export const getSearchContent = () => async (dispatch) => {
   try {
     const res = await axios.get('/api/v1/web/content/courses/search-content');
-
     // console.log(res.data.data);
-
     if (res.data.code === 200) {
       dispatch({
         type: GET_COURSES_SEARCH_DATA,
@@ -52,6 +58,8 @@ export const setCoursesType = (num) => (dispatch) => {
       type: SET_COURSES_SORT,
       payload: num,
     });
+  } else {
+    toast.error('ورودی اشتباه است.');
   }
 };
 

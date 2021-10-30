@@ -10,11 +10,13 @@ import {
 } from '../../app/redux/actions/coursesActions';
 import Checkbox from '../../common/template/Checkbox';
 import FilterIndicator from './FilterIndicator';
+import { useFiltersNew } from '../../common/hooks/search';
 
 export default function FilterMenuDesktop() {
   const { course_types, academies } = useSelector((state) => state.courses.options);
   const { filters } = useSelector((state) => state.courses);
   const dispatch = useDispatch();
+  const courses = useSelector((state) => state.search.courses);
 
   const filterAcademy = (event, item) => {
     if (event.target.checked) {
@@ -22,6 +24,7 @@ export default function FilterMenuDesktop() {
     } else {
       dispatch(removeCoursesAcademyFilter(item.id));
     }
+    // search();
   };
 
   const filterType = (event, item) => {
@@ -42,14 +45,9 @@ export default function FilterMenuDesktop() {
     });
   };
 
-  const onSearch = () => {
-    const acaArr = filters.academies;
-    console.log(acaArr);
-  };
-
   useEffect(() => {
     // console.log(1);
-  }, []);
+  }, [courses]);
 
   return (
     <div className="courses-desktop-filters">

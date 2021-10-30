@@ -117,7 +117,12 @@ export default function FilterMenuMobile() {
             />
           ))}
         </div>
-        <button className="button-primary tw-w-full tw-sticky tw-bottom-0">اعمال تغییرات</button>
+        <button
+          className="button-primary tw-w-full tw-sticky tw-bottom-0"
+          onClick={() => dispatch(displayMobileFilterMenu(false))}
+        >
+          اعمال تغییرات
+        </button>
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ export default function RecommendedCoursesContainer() {
   };
 
   useEffect(() => {
-    console.log(user_recommended_courses);
+    // console.log(user_recommended_courses);
   }, []);
 
   return (

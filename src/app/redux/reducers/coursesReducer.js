@@ -1,4 +1,5 @@
 import {
+  SET_COURSES_CATEGORY,
   GET_COURSES_SEARCH_DATA,
   DISPLAY_MOBILE_FILTER_MENU,
   SET_COURSES_IS_FREE,
@@ -15,14 +16,19 @@ const initialState = {
   showMenu: false,
   is_free: 0,
   sort: 1,
-  category: [],
   filters: { academies: [], course_types: [] },
   page: 1,
   compare: { primary: {}, secondary: {} },
+  category: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SET_COURSES_CATEGORY:
+      return {
+        ...state,
+        category: action.payload,
+      };
     case GET_COURSES_SEARCH_DATA:
       return {
         ...state,

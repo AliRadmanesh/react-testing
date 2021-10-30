@@ -2,6 +2,7 @@
 /* eslint-disable one-var */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prefer-const */
+import toast from 'react-hot-toast';
 import instance from '../../instance';
 import axios from '../../axios';
 import {
@@ -39,33 +40,32 @@ export const hideSuggest = () => (dispatch) => {
 };
 
 export const searchCourses =
-  (query = '', academies = [], types = [], sort = 1, free = 0) =>
-  (dispatch) => {
-    let search = `?=${query}`;
+  (category, academies = [], types = [], sort = 1, free = 0) =>
+  async (dispatch) => {
+    let proceed = false;
+    let search = `?category[0]=${category}`;
     academies.forEach((item, index) => {
       search += `&academy[${index}]=${item.id}`;
     });
-    types.forEach((item, index) => {
+    types.map((item, index) => {
       search += `&type[${index}]=${item.id}`;
     });
-    console.log(search);
-  };
+    search += `&sortby=${sort}&is_free=${free}`;
+    // console.log(search);
 
-export const searchCategoryCourses = (id) => async (dispatch) => {
-  try {
-    const res = await instance.get(`/api/v1/web/service/courses/search-filters/?category[0]=${id}`);
-
-    // console.log(res);
-
-    if (res.status === 200 || res.status === 201) {
-      dispatch({
-        type: SEARCH_CATEGORY_COURSES,
-        payload: res.data.data.courses,
-      });
-    } else if (res.status === 404) {
-      dispatch({ type: SEARCH_CATEGORY_COURSES, payload: [] });
+    try {
+      const res = await instance.get(`/api/v1/web/service/courses/search-filters/${search}`);
+      // console.log(res);
+      if (res.status === 200 || res.status === 201) {
+        dispatch({
+          type: SEARCH_CATEGORY_COURSES,
+          payload: res.data.data.courses,
+        });
+      } else if (res.status === 404) {
+        dispatch({ type: SEARCH_CATEGORY_COURSES, payload: [] });
+      }
+    } catch (error) {
+      if (proceed) toast.error('خطا در دریافت دوره‌های مربوط به دسته‌بندی');
+      else proceed = true;
     }
-  } catch (error) {
-    console.error(error);
-  }
-};
+  };

@@ -1,9 +1,4 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable one-var */
-/* eslint-disable no-unused-vars */
-/* eslint-disable prefer-const */
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Layout from '../../common/Layout/chill';
@@ -14,16 +9,17 @@ import FilterMenuMobile from '../../components/courses/FilterMenuMobile';
 import FilterMenuDesktop from '../../components/courses/FilterMenuDesktop';
 import SortDropdown from '../../components/courses/SortDropdown';
 import IsFreeDropdown from '../../components/courses/IsFreeDropdown';
-import { getSearchContent } from '../../app/redux/actions/coursesActions';
+import { getSearchContent, setCoursesCategory } from '../../app/redux/actions/coursesActions';
 import { searchCourses, searchCategoryCourses } from '../../app/redux/actions/searchActions';
+import { useFilters } from '../../common/hooks/search';
 
 import './courses.css';
 
-export default function CourseList() {
+export default function Courses() {
+  const pageValue = window.location.href.split('=')[1];
+
   const dispatch = useDispatch();
   const [list, setList] = useState([]);
-
-  const pageValue = window.location.href.split('=')[1];
 
   const {
     options: { course_types, academies },
@@ -32,30 +28,26 @@ export default function CourseList() {
     filters,
   } = useSelector((state) => state.courses);
 
-  const { courses, query } = useSelector((state) => state.search);
-
-  const onSearch = () => {
-    // console.log(academies);
-    const acaArr = filters.academies;
-    console.log(acaArr);
-  };
+  const { courses, value } = useSelector((state) => state.search);
 
   useEffect(() => {
-    // dispatch(getSearchContent(), getData());
+    dispatch(setCoursesCategory(pageValue));
+    // dispatch(searchCategoryCourses(pageValue));
+  }, [pageValue]);
+
+  useEffect(() => {
     dispatch(getSearchContent());
     // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
-    dispatch(searchCategoryCourses(pageValue));
-  }, [pageValue]);
+  useFilters();
 
   return (
     <Layout title="کورس‌ها" text="دوره‌های آموزشی">
       <div className="container courses">
         <div className="tw-grid tw-gap-x-4 courses-grid tw-mb-4">
           <div className="tw-hidden lg:tw-block">
-            <SearchBar onSearch={onSearch} />
+            <SearchBar />
           </div>
           <div className="tw-flex tw-items-center text-dark tw-flex-col lg:tw-flex-row lg:tw-justify-end">
             <p className="font-kalameh-num tw-text-xs tw-font-normal 2xl:tw-text-base tw-ml-4 tw-mb-4 lg:tw-mb-0 tw-self-start lg:tw-self-center">
@@ -76,6 +68,11 @@ export default function CourseList() {
             <FilterMenuDesktop />
           </div>
           <div className="">
+            {courses.length === 0 && (
+              <p className="tw-text-base text-dark font-kalameh-num tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-mt-3">
+                موردی برای نمایش وجود ندارد.
+              </p>
+            )}
             {courses.map((item) => (
               <CourseCard
                 key={item.id}
