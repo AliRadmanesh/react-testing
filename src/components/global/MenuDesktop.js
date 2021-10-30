@@ -61,7 +61,7 @@ export default function MenuDesktop() {
               <h3 className="tw-mr-4 tw-font-black text-blue">کارساز</h3>
             </Link>
             <Link
-              to="./"
+              to="../"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               خانه
@@ -86,19 +86,19 @@ export default function MenuDesktop() {
               وبلاگ
             </Link>
             <Link
-              to="./about"
+              to="../about"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               درباره ما
             </Link>
             <Link
-              to="./contact"
+              to="../contact"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               تماس با ما
             </Link>
             <Link
-              to="./faq"
+              to="../faq"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover"
             >
               سوالات متداول

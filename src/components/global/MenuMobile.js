@@ -113,7 +113,7 @@ const MenuMobile = () => {
               </button>
             </form>
           </div>
-          <Link to="./" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="../" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             خانه
           </Link>
           <button
@@ -142,13 +142,13 @@ const MenuMobile = () => {
           >
             وبلاگ
           </Link>
-          <Link to="./about" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="../about" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             درباره ما
           </Link>
-          <Link to="./contact" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="../contact" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             تماس با ما
           </Link>
-          <Link to="./faq" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="../faq" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             سوالات متداول
           </Link>
         </div>

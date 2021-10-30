@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export default function CategoryCard({ name, courses, sub }) {
+export default function CategoryCard({ name, courses, sub, image }) {
   return (
-    <div className="tw-p-4 bg-white border-smooth" style={{ boxShadow: '8px 8px 16px #ddd' }}>
-      <div className="tw-flex tw-mb-6 tw-text-right">
-        {/* img here */}
-        <div className="tw-flex tw-flex-col">
+    <div className="tw-p-4 bg-white border-smooth" style={{ boxShadow: '0 8px 40px #ddd' }}>
+      <div className="tw-flex tw-items-center tw-mb-6 tw-text-right tw-mt-2 tw-mr-2">
+        <img src={image} alt="" className="tw-w-12" />
+        <div className="tw-flex tw-flex-col tw-mr-4">
           <p className="text-black font-iranyekan-num tw-text-base tw-font-medium 2xl:tw-text-xl">
             {name}
           </p>
