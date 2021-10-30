@@ -2,7 +2,6 @@
 This custom hook, is dependant to searchCourses function which 
 dispatches search result into courses array defined in searchReducer.   
 */
-
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchCourses } from '../../app/redux/actions/searchActions';
@@ -17,14 +16,16 @@ export function useFilters() {
     category,
   } = useSelector((state) => state.courses);
 
-  const { courses } = useSelector((state) => state.search);
+  const {
+    courses,
+    page: { current },
+  } = useSelector((state) => state.search);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(searchCourses(category, academies, course_types, sort, is_free));
+    dispatch(searchCourses(category, academies, course_types, sort, is_free, current));
     // eslint-disable-next-line
-  }, [category, academies, course_types, is_free, sort]);
-
+  }, [category, academies, course_types, is_free, sort, current]);
   // return null;
 }

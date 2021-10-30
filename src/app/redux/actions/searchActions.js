@@ -48,7 +48,7 @@ export const hideSuggest = () => (dispatch) => {
 };
 
 export const searchCourses =
-  (category, academies = [], types = [], sort = 1, free = 0) =>
+  (category, academies = [], types = [], sort = 1, free = 0, page) =>
   async (dispatch) => {
     let proceed = false;
     let search = `?category[0]=${category}`;
@@ -58,7 +58,7 @@ export const searchCourses =
     types.map((item, index) => {
       search += `&type[${index}]=${item.id}`;
     });
-    search += `&sortby=${sort}&is_free=${free}`;
+    search += `&sortby=${sort}&is_free=${free}&page=${page}`;
     // console.log(search);
 
     try {
