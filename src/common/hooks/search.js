@@ -4,7 +4,7 @@ dispatches search result into courses array defined in searchReducer.
 */
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchCourses, searchQuery } from '../../app/redux/actions/searchActions';
+import { searchCourses, searchQuery, setQueryString } from '../../app/redux/actions/searchActions';
 // import instance from '../../app/instance';
 
 export function useFilters() {
@@ -32,16 +32,22 @@ export function useFilters() {
 
 export function useQuery() {
   const {
-    filters: { academeis, course_types },
+    filters: { academies, course_types },
     is_free,
     sort,
   } = useSelector((state) => state.courses);
 
-  const { page, keywords, status } = useSelector((state) => state.search.query);
+  const {
+    page: { current },
+    keywords,
+    status,
+    string,
+  } = useSelector((state) => state.search.query);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(searchQuery(keywords));
-  }, []);
+    // dispatch(searchQuery(keywords));
+    dispatch(setQueryString(keywords, academies, course_types, sort, is_free, current));
+  }, [current, academies, course_types, sort, is_free]);
 }

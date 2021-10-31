@@ -1,12 +1,22 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCoursesIsFree } from '../../app/redux/actions/coursesActions';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 export default function IsFreeDropdown() {
-  const [text, setText] = useState('رایگان');
+  const { is_free } = useSelector((state) => state.courses);
+  const [text, setText] = useState(() => {
+    switch (is_free) {
+      case 0:
+        return 'پولی';
+      case 1:
+        return 'رایگان';
+      default:
+        return 'مرتبط‌ترین';
+    }
+  });
   const dispatch = useDispatch();
 
   return (

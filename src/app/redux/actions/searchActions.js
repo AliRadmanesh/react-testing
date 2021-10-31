@@ -142,36 +142,17 @@ export const setQueryOptions = (object) => (dispatch) => {
   dispatch({ type: 'SET_QUERY_OPTIONS', payload: object });
 };
 
-export const addCoursesAcademyFilter = (object) => (dispatch) => {
-  dispatch({
-    type: 'ADD_COURSES_ACADEMY_FILTER',
-    payload: { id: object.id, title: object.title },
-  });
-};
-
-export const addCoursesTypeFilter = (object) => (dispatch) => {
-  dispatch({
-    type: 'ADD_COURSES_TYPE_FILTER',
-    payload: { id: object.id, title: object.title },
-  });
-};
-
-export const removeCoursesAcademyFilter = (id) => (dispatch) => {
-  dispatch({
-    type: 'REMOVE_COURSES_ACADEMY_FILTER',
-    payload: id,
-  });
-};
-
-export const removeCoursesTypeFilter = (id) => (dispatch) => {
-  dispatch({
-    type: 'REMOVE_COURSES_TYPE_FILTER',
-    payload: id,
-  });
-};
-
 export const setQueryString =
   (query, academies = [], types = [], sort = 1, free = 0, page = 1) =>
   (dispatch) => {
-    dispatch({ type: SET_QUERY_STRING, payload: 'some' });
+    let proceed = false;
+    let string = `q=${query}`;
+    academies.forEach((item, index) => {
+      string += `&academy[${index}]=${item.id}`;
+    });
+    types.map((item, index) => {
+      string += `&type[${index}]=${item.id}`;
+    });
+    string += `&sortby=${sort}&is_free=${free}&page=${page}`;
+    dispatch({ type: SET_QUERY_STRING, payload: string });
   };

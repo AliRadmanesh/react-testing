@@ -1,12 +1,24 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCoursesType } from '../../app/redux/actions/coursesActions';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 export default function SortDropdown() {
-  const [text, setText] = useState('مرتبط‌ترین');
+  const { sort } = useSelector((state) => state.courses);
+  const [text, setText] = useState(() => {
+    switch (sort) {
+      case 1:
+        return 'مرتبط‌ترین';
+      case 2:
+        return 'جدیدترین';
+      case 3:
+        return 'مرتبط‌ترین';
+      default:
+        return 'مرتبط‌ترین';
+    }
+  });
   const dispatch = useDispatch();
 
   return (

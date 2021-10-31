@@ -65,10 +65,7 @@ export default function Courses() {
       <div className="container courses">
         <div className="tw-grid tw-gap-x-4 courses-grid tw-mb-4">
           <div className="tw-hidden lg:tw-block">
-            <SearchBar
-              onSearch={() => <Redirect to="../" />}
-              onChange={(e) => dispatch(setQueryKeywords(e.target.value))}
-            />
+            <SearchBar />
           </div>
           <div className="tw-flex tw-items-center text-dark tw-flex-col lg:tw-flex-row lg:tw-justify-end">
             <p className="font-kalameh-num tw-text-xs tw-font-normal 2xl:tw-text-base tw-ml-4 tw-mb-4 lg:tw-mb-0 tw-self-start lg:tw-self-center">

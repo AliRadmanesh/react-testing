@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import Layout from '../../common/Layout/chill';
 import SearchBar from '../global/SearchBar';
-import CourseCard from './CourseCard';
-import FilterMenuButton from './FilterMenuButton';
-import FilterMenuMobile from './FilterMenuMobile';
-import FilterMenuDesktop from './FilterMenuDesktop';
-import SortDropdown from './SortDropdown';
-import IsFreeDropdown from './IsFreeDropdown';
-import { getSearchContent, setCoursesCategory } from '../../app/redux/actions/coursesActions';
-import {
-  searchCourses,
-  setCurrentPage,
-  setQueryKeywords,
-  setQueryTotalPage,
-} from '../../app/redux/actions/searchActions';
-import { useFilters, useQuery } from '../../common/hooks/search';
+import CourseCard from '../courses/CourseCard';
+import FilterMenuButton from '../courses/FilterMenuButton';
+import FilterMenuMobile from '../courses/FilterMenuMobile';
+import FilterMenuDesktop from '../courses/FilterMenuDesktop';
+import SortDropdown from '../courses/SortDropdown';
+import IsFreeDropdown from '../courses/IsFreeDropdown';
+import { setCurrentPage } from '../../app/redux/actions/searchActions';
+import { getSearchContent } from '../../app/redux/actions/coursesActions';
+import { useQuery } from '../../common/hooks/search';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 export default function Result({ query }) {
@@ -29,19 +23,23 @@ export default function Result({ query }) {
     result,
   } = useSelector((state) => state.search.query);
 
+  const {
+    options: { academies, course_types },
+  } = useSelector((state) => state.courses);
+
   useEffect(() => {
     console.log(result);
+    if (academies.length === 0 || course_types.length === 0) dispatch(getSearchContent());
   }, []);
+
+  // useQuery();
 
   return (
     <Layout title={`نتایج جستجو برای «${keywords}»`} text="دوره‌های آموزشی">
       <div className="container courses">
         <div className="tw-grid tw-gap-x-4 courses-grid tw-mb-4">
           <div className="tw-hidden lg:tw-block">
-            <SearchBar
-            // onSearch={() => <Redirect to="../" />}
-            // onChange={(e) => dispatch(setQueryKeywords(e.target.value))}
-            />
+            <SearchBar />
           </div>
           <div className="tw-flex tw-items-center text-dark tw-flex-col lg:tw-flex-row lg:tw-justify-end">
             <p className="font-kalameh-num tw-text-xs tw-font-normal 2xl:tw-text-base tw-ml-4 tw-mb-4 lg:tw-mb-0 tw-self-start lg:tw-self-center">

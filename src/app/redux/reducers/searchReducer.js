@@ -144,39 +144,6 @@ export default (state = initialState, action) => {
         query: { ...state.query, options: action.payload },
       };
 
-    case 'ADD_COURSES_ACADEMY_FILTER':
-      return {
-        ...state,
-        filters: { ...state.filters, academies: [...state.filters.academies, action.payload] },
-      };
-
-    case 'REMOVE_COURSES_ACADEMY_FILTER':
-      return {
-        ...state,
-        filters: {
-          ...state.filters,
-          academies: state.filters.academies.filter((academy) => academy.id !== action.payload),
-        },
-      };
-
-    case 'ADD_COURSES_TYPE_FILTER':
-      return {
-        ...state,
-        filters: {
-          ...state.filters,
-          course_types: [...state.filters.course_types, action.payload],
-        },
-      };
-
-    case 'REMOVE_COURSES_TYPE_FILTER':
-      return {
-        ...state,
-        filters: {
-          ...state.filters,
-          course_types: state.filters.course_types.filter((type) => type.id !== action.payload),
-        },
-      };
-
     default:
       return state;
   }

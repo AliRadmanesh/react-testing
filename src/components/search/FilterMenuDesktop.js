@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   addCoursesAcademyFilter,
@@ -10,13 +9,12 @@ import {
 } from '../../app/redux/actions/coursesActions';
 import Checkbox from '../../common/template/Checkbox';
 import FilterIndicator from './FilterIndicator';
-import { useFiltersNew } from '../../common/hooks/search';
 
 export default function FilterMenuDesktop() {
-  const { course_types, academies } = useSelector((state) => state.courses.options);
-  const { filters } = useSelector((state) => state.courses);
+  const { course_types, academies } = useSelector((state) => state.search.query.options);
+  const { filters } = useSelector((state) => state.search.query);
   const dispatch = useDispatch();
-  const courses = useSelector((state) => state.search.courses);
+  const courses = useSelector((state) => state.search.result);
 
   const filterAcademy = (event, item) => {
     if (event.target.checked) {
@@ -24,7 +22,6 @@ export default function FilterMenuDesktop() {
     } else {
       dispatch(removeCoursesAcademyFilter(item.id));
     }
-    // search();
   };
 
   const filterType = (event, item) => {
