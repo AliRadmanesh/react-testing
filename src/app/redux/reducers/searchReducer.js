@@ -6,6 +6,16 @@ import {
   SEARCH_CATEGORY_COURSES,
   SET_CURRENT_PAGE,
   SET_PAGE_TOTAL,
+  SEARCH_QUERY,
+  SET_QUERY_KEYWORDS,
+  SET_QUERY_PAGE_TOTAL,
+  SET_QUERY_CURRENT_PAGE,
+  SET_QUERY_STATUS,
+  SET_QUERY_STRING,
+  SET_QUERY_FITLERS_ACADEMIES,
+  SET_QUERY_FITLERS_TYPES,
+  SET_QUERY_FITLERS_FREE,
+  SET_QUERY_FITLERS_SORT,
 } from '../actions/types';
 
 const initialState = {
@@ -15,6 +25,15 @@ const initialState = {
   page: {
     current: 1,
     total: 1,
+  },
+
+  query: {
+    keywords: '',
+    result: [],
+    page: { current: 1, total: 1 },
+    status: null,
+    string: '',
+    filters: { academies: [], types: [], sort: 1, is_free: 1 },
   },
 };
 
@@ -59,6 +78,54 @@ export default (state = initialState, action) => {
       return {
         ...state,
         page: { ...state.page, total: action.payload },
+      };
+
+    case SEARCH_QUERY:
+      return {
+        ...state,
+        query: { ...state.query, result: action.payload },
+      };
+
+    case SET_QUERY_KEYWORDS:
+      return { ...state, query: { ...state.query, keywords: action.payload } };
+
+    case SET_QUERY_PAGE_TOTAL:
+      return {
+        ...state,
+        query: { ...state.query, page: { total: action.payload } },
+      };
+
+    case SET_QUERY_CURRENT_PAGE:
+      return { ...state, query: { page: { curernt: action.payload } } };
+
+    case SET_QUERY_STATUS:
+      return { ...state, query: { ...state.query, status: action.payload } };
+
+    case SET_QUERY_STRING:
+      return { ...state, query: { string: action.payload } };
+
+    case SET_QUERY_FITLERS_ACADEMIES:
+      return {
+        ...state,
+        query: { ...state.query, filters: { academies: action.payload } },
+      };
+
+    case SET_QUERY_FITLERS_TYPES:
+      return {
+        ...state,
+        query: { ...state.query, filters: { types: action.payload } },
+      };
+
+    case SET_QUERY_FITLERS_FREE:
+      return {
+        ...state,
+        query: { ...state.query, filters: { is_free: action.payload } },
+      };
+
+    case SET_QUERY_FITLERS_SORT:
+      return {
+        ...state,
+        query: { ...state.query, filters: { sort: action.payload } },
       };
 
     default:

@@ -3,71 +3,44 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import Layout from '../../common/Layout/chill';
-import SearchBar from '../../components/global/SearchBar';
-import CourseCard from '../../components/courses/CourseCard';
-import FilterMenuButton from '../../components/courses/FilterMenuButton';
-import FilterMenuMobile from '../../components/courses/FilterMenuMobile';
-import FilterMenuDesktop from '../../components/courses/FilterMenuDesktop';
-import SortDropdown from '../../components/courses/SortDropdown';
-import IsFreeDropdown from '../../components/courses/IsFreeDropdown';
+import SearchBar from '../global/SearchBar';
+import CourseCard from './CourseCard';
+import FilterMenuButton from './FilterMenuButton';
+import FilterMenuMobile from './FilterMenuMobile';
+import FilterMenuDesktop from './FilterMenuDesktop';
+import SortDropdown from './SortDropdown';
+import IsFreeDropdown from './IsFreeDropdown';
 import { getSearchContent, setCoursesCategory } from '../../app/redux/actions/coursesActions';
 import {
   searchCourses,
   setCurrentPage,
   setQueryKeywords,
+  setQueryTotalPage,
 } from '../../app/redux/actions/searchActions';
 import { useFilters, useQuery } from '../../common/hooks/search';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
-import './courses.css';
-
-export default function Courses() {
-  const pageValue = window.location.href.split('=')[1];
-
+export default function Result({ query }) {
   const dispatch = useDispatch();
-  const [list, setList] = useState([]);
 
   const {
-    options: { course_types, academies },
-    sort,
-    is_free,
-    filters,
-  } = useSelector((state) => state.courses);
-
-  const {
-    courses,
-    value,
-    page: { current, total },
-  } = useSelector((state) => state.search);
+    page: { total },
+    keywords,
+    result,
+  } = useSelector((state) => state.search.query);
 
   useEffect(() => {
-    dispatch(setCoursesCategory(pageValue));
-    // dispatch(searchCategoryCourses(pageValue));
-  }, [pageValue]);
-
-  useEffect(() => {
-    dispatch(getSearchContent());
-    // eslint-disable-next-line
+    console.log(result);
   }, []);
 
-  // eslint-disable-next-line
-  const onSearch = () => {
-    const bool = true;
-    if (bool) {
-      return <Redirect to="../" />;
-    }
-  };
-
-  useFilters();
-
   return (
-    <Layout title="کورس‌ها" text="دوره‌های آموزشی">
+    <Layout title={`نتایج جستجو برای «${keywords}»`} text="دوره‌های آموزشی">
       <div className="container courses">
         <div className="tw-grid tw-gap-x-4 courses-grid tw-mb-4">
           <div className="tw-hidden lg:tw-block">
             <SearchBar
-              onSearch={() => <Redirect to="../" />}
-              onChange={(e) => dispatch(setQueryKeywords(e.target.value))}
+            // onSearch={() => <Redirect to="../" />}
+            // onChange={(e) => dispatch(setQueryKeywords(e.target.value))}
             />
           </div>
           <div className="tw-flex tw-items-center text-dark tw-flex-col lg:tw-flex-row lg:tw-justify-end">
@@ -89,12 +62,12 @@ export default function Courses() {
             <FilterMenuDesktop />
           </div>
           <div className="">
-            {courses.length === 0 && (
+            {result.length === 0 && (
               <p className="tw-text-base text-dark font-kalameh-num tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-mt-3">
                 موردی برای نمایش وجود ندارد.
               </p>
             )}
-            {courses.map((item) => (
+            {result.map((item) => (
               <CourseCard
                 key={item.id}
                 title={item.title}

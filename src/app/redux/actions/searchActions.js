@@ -2,9 +2,11 @@
 /* eslint-disable one-var */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prefer-const */
+import { Redirect } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import instance from '../../instance';
 import axios from '../../axios';
+
 import {
   SET_KEYWORDS,
   SEARCH_COURSES,
@@ -13,6 +15,15 @@ import {
   SEARCH_CATEGORY_COURSES,
   SET_PAGE_TOTAL,
   SET_CURRENT_PAGE,
+  SET_QUERY_STATUS,
+  SEARCH_QUERY,
+  SET_QUERY_KEYWORDS,
+  SET_QUERY_PAGE_TOTAL,
+  SET_QUERY_CURRENT_PAGE,
+  SET_QUERY_FITLERS_ACADEMIES,
+  SET_QUERY_FITLERS_TYPES,
+  SET_QUERY_FITLERS_FREE,
+  SET_QUERY_FITLERS_SORT,
 } from './types';
 
 export const setKeywords = (string) => (dispatch) => {
@@ -81,3 +92,49 @@ export const searchCourses =
       else proceed = true;
     }
   };
+
+export const searchQuery =
+  (query, academies = [], types = [], sort = 1, free = 0, page) =>
+  async (dispatch) => {
+    let proceed = false;
+    try {
+      const res = await instance.get(`api/v1/web/service/courses/search/?q=${query}`);
+      console.log(res);
+      if (res.status === 200 || res.status === 201) {
+        if (res.data.data.courses.length !== 0) {
+          dispatch({ type: SET_QUERY_STATUS, payload: 200 });
+          dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
+        } else {
+          dispatch({ type: SET_QUERY_STATUS, payload: 400 });
+        }
+      }
+    } catch (error) {
+      if (proceed) toast.error('خطا در اجرای عملیات جستجو');
+      else proceed = true;
+    }
+  };
+
+export const setQueryKeywords = (string) => (dispatch) =>
+  dispatch({ type: SET_QUERY_KEYWORDS, payload: string });
+
+export const setQueryCurrentPage = (page) => (dispatch) =>
+  dispatch({ type: SET_QUERY_CURRENT_PAGE, payload: page });
+
+export const setQueryTotalPage = (page) => (dispatch) =>
+  dispatch({ type: SET_QUERY_PAGE_TOTAL, payload: page });
+
+export const setQueryAcademies = (value) => (dispatch) => {
+  dispatch({ type: SET_QUERY_FITLERS_ACADEMIES, payload: value });
+};
+
+export const setQueryTypes = (value) => (dispatch) => {
+  dispatch({ type: SET_QUERY_FITLERS_TYPES, payload: value });
+};
+
+export const setQueryFree = (value) => (dispatch) => {
+  dispatch({ type: SET_QUERY_FITLERS_FREE, payload: value });
+};
+
+export const setQuerySort = (value) => (dispatch) => {
+  dispatch({ type: SET_QUERY_FITLERS_SORT, payload: value });
+};

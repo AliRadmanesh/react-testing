@@ -14,6 +14,7 @@ import FAQ from '../../features/faq';
 import CourseList from '../../features/courses';
 import Course from '../../features/course';
 import Page404 from '../../features/404/index';
+import Search from '../../features/search';
 
 function AppRouter() {
   return (
@@ -32,6 +33,7 @@ function AppRouter() {
           <Route exact path="/courses/:query" component={CourseList} />
           <Route exact path="/course" component={Course} />
           <Route exact path="/404" component={Page404} />
+          <Route exact path="/search/:query" component={Search} />
         </Switch>
       </Router>
     </div>

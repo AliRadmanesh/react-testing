@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import searchIcon from '../../assets/icons/Search.svg';
 
 export default function SearchBar({ onSearch, onChange, classes }) {
+  const { keywords } = useSelector((state) => state.search.query);
+
   return (
     <div
       className={`tw-grid tw-items-center tw-px-2 search-container tw-mb-4 tw-w-full  ${classes}`}
@@ -19,9 +23,19 @@ export default function SearchBar({ onSearch, onChange, classes }) {
         }}
         onChange={onChange}
       />
-      <button className="tw-m-0 tw-p-2 tw-justify-self-end" onClick={onSearch}>
-        <img src={searchIcon} alt="" className="icon" />
-      </button>
+      {keywords !== '' ? (
+        <Link
+          to={`../search/q=${keywords}`}
+          className="tw-m-0 tw-p-2 tw-justify-self-end"
+          onClick={onSearch}
+        >
+          <img src={searchIcon} alt="" className="icon" />
+        </Link>
+      ) : (
+        <span className="tw-m-0 tw-p-2 tw-justify-self-end">
+          <img src={searchIcon} alt="" className="icon" />
+        </span>
+      )}
     </div>
   );
 }
