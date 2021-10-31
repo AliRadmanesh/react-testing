@@ -24,6 +24,7 @@ import {
   SET_QUERY_FITLERS_TYPES,
   SET_QUERY_FITLERS_FREE,
   SET_QUERY_FITLERS_SORT,
+  SET_QUERY_STRING,
 } from './types';
 
 export const setKeywords = (string) => (dispatch) => {
@@ -93,26 +94,24 @@ export const searchCourses =
     }
   };
 
-export const searchQuery =
-  (query, academies = [], types = [], sort = 1, free = 0, page) =>
-  async (dispatch) => {
-    let proceed = false;
-    try {
-      const res = await instance.get(`api/v1/web/service/courses/search/?q=${query}`);
-      console.log(res);
-      if (res.status === 200 || res.status === 201) {
-        if (res.data.data.courses.length !== 0) {
-          dispatch({ type: SET_QUERY_STATUS, payload: 200 });
-          dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
-        } else {
-          dispatch({ type: SET_QUERY_STATUS, payload: 400 });
-        }
+export const searchQuery = (query) => async (dispatch) => {
+  let proceed = false;
+  try {
+    const res = await instance.get(`api/v1/web/service/courses/search/?q=${query}`);
+    console.log(res);
+    if (res.status === 200 || res.status === 201) {
+      if (res.data.data.courses.length !== 0) {
+        dispatch({ type: SET_QUERY_STATUS, payload: 200 });
+        dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
+      } else {
+        dispatch({ type: SET_QUERY_STATUS, payload: 400 });
       }
-    } catch (error) {
-      if (proceed) toast.error('خطا در اجرای عملیات جستجو');
-      else proceed = true;
     }
-  };
+  } catch (error) {
+    if (proceed) toast.error('خطا در اجرای عملیات جستجو');
+    else proceed = true;
+  }
+};
 
 export const setQueryKeywords = (string) => (dispatch) =>
   dispatch({ type: SET_QUERY_KEYWORDS, payload: string });
@@ -138,3 +137,41 @@ export const setQueryFree = (value) => (dispatch) => {
 export const setQuerySort = (value) => (dispatch) => {
   dispatch({ type: SET_QUERY_FITLERS_SORT, payload: value });
 };
+
+export const setQueryOptions = (object) => (dispatch) => {
+  dispatch({ type: 'SET_QUERY_OPTIONS', payload: object });
+};
+
+export const addCoursesAcademyFilter = (object) => (dispatch) => {
+  dispatch({
+    type: 'ADD_COURSES_ACADEMY_FILTER',
+    payload: { id: object.id, title: object.title },
+  });
+};
+
+export const addCoursesTypeFilter = (object) => (dispatch) => {
+  dispatch({
+    type: 'ADD_COURSES_TYPE_FILTER',
+    payload: { id: object.id, title: object.title },
+  });
+};
+
+export const removeCoursesAcademyFilter = (id) => (dispatch) => {
+  dispatch({
+    type: 'REMOVE_COURSES_ACADEMY_FILTER',
+    payload: id,
+  });
+};
+
+export const removeCoursesTypeFilter = (id) => (dispatch) => {
+  dispatch({
+    type: 'REMOVE_COURSES_TYPE_FILTER',
+    payload: id,
+  });
+};
+
+export const setQueryString =
+  (query, academies = [], types = [], sort = 1, free = 0, page = 1) =>
+  (dispatch) => {
+    dispatch({ type: SET_QUERY_STRING, payload: 'some' });
+  };

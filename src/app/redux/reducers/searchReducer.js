@@ -28,11 +28,12 @@ const initialState = {
   },
 
   query: {
+    options: { academies: [], types: [] },
     keywords: '',
-    result: [],
+    result: [], // returned value from api and string
     page: { current: 1, total: 1 },
     status: null,
-    string: '',
+    string: '', // stringified query based on other sub-states
     filters: { academies: [], types: [], sort: 1, is_free: 1 },
   },
 };
@@ -96,13 +97,22 @@ export default (state = initialState, action) => {
       };
 
     case SET_QUERY_CURRENT_PAGE:
-      return { ...state, query: { page: { curernt: action.payload } } };
+      return {
+        ...state,
+        query: { ...state.query, page: { curernt: action.payload } },
+      };
 
     case SET_QUERY_STATUS:
-      return { ...state, query: { ...state.query, status: action.payload } };
+      return {
+        ...state,
+        query: { ...state.query, status: action.payload },
+      };
 
     case SET_QUERY_STRING:
-      return { ...state, query: { string: action.payload } };
+      return {
+        ...state,
+        query: { ...state.query, string: action.payload },
+      };
 
     case SET_QUERY_FITLERS_ACADEMIES:
       return {
@@ -126,6 +136,45 @@ export default (state = initialState, action) => {
       return {
         ...state,
         query: { ...state.query, filters: { sort: action.payload } },
+      };
+
+    case 'SET_QUERY_OPTIONS':
+      return {
+        ...state,
+        query: { ...state.query, options: action.payload },
+      };
+
+    case 'ADD_COURSES_ACADEMY_FILTER':
+      return {
+        ...state,
+        filters: { ...state.filters, academies: [...state.filters.academies, action.payload] },
+      };
+
+    case 'REMOVE_COURSES_ACADEMY_FILTER':
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          academies: state.filters.academies.filter((academy) => academy.id !== action.payload),
+        },
+      };
+
+    case 'ADD_COURSES_TYPE_FILTER':
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          course_types: [...state.filters.course_types, action.payload],
+        },
+      };
+
+    case 'REMOVE_COURSES_TYPE_FILTER':
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          course_types: state.filters.course_types.filter((type) => type.id !== action.payload),
+        },
       };
 
     default:
