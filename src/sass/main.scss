@@ -761,6 +761,22 @@ footer {
   height: 100%;
 }
 
+.ql-indent-1 {
+  text-indent: 1rem;
+}
+
+.ql-indent-2 {
+  text-indent: 2rem;
+}
+
+.ql-indent-3 {
+  text-indent: 3rem;
+}
+
+.ql-indent-4 {
+  text-indent: 4rem;
+}
+
 /* Features/Pages Scss */
 @import 'dashboard';
 @import 'pages';

@@ -7,18 +7,16 @@ import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from './HeaderUserSection';
 
 import { autoSuggest, hideSuggest } from '../../app/redux/actions/searchActions';
-
+import { setCoursesQuery } from '../../app/redux/actions/coursesActions';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 export default function MenuDesktop() {
+  const ref = useRef();
   const [show, doShow] = useState(false);
   const [width, setWidth] = useState('160px');
-
   const dispatch = useDispatch();
   const { categoryDesktop } = useSelector((state) => state.header);
   const { list, show: showSuggests } = useSelector((state) => state.search.suggest);
-
-  const ref = useRef();
 
   const handleSuggests = (event) => {
     if (
@@ -38,6 +36,7 @@ export default function MenuDesktop() {
     return () => {
       document.removeEventListener('click', handleSuggests);
     };
+
     // eslint-disable-next-line
   }, []);
 

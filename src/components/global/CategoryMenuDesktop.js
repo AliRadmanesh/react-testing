@@ -17,18 +17,14 @@ export default function CategoryMenuDesktop() {
   // const [segment, setSegment] = useState(0)
   const [right, setRight] = useState(0);
   const [width, setWidth] = useState(0);
-
   const dispatch = useDispatch();
   const { categoryDesktop, categories } = useSelector((state) => state.header);
-
-  const activate = (num, val) => {
-    setActive(num, true);
-    const segment = width / total;
-    // alert(segment);
-    // setRight(`${segment * num}px`);
-    setRight(`${val}%`);
-  };
-
+  // const url = new URL(window.location.href);
+  // url.pathname = '../courses/';
+  // url.searchParams.append('category[0]', null);
+  // url.searchParams.append('sort', 1);
+  // url.searchParams.append('is_free', 1);
+  // url.searchParams.append('page', 1);
   const handleClick = (click) => {
     if (click.target.classList.contains('category-menu')) {
       dispatch(showCategoryDesktopMenu(false));
@@ -117,15 +113,21 @@ export default function CategoryMenuDesktop() {
               className="tw-px-4 tw-flex-wrap tw-w-auto tw-h-auto"
               style={{ display: active === ci.id ? 'flex' : 'none' }}
             >
-              {ci.sub.map((si) => (
-                <Link
-                  key={si.id}
-                  to={`../courses/category=${si.id}`}
-                  className="header-category-item tw-py-4 tw-text-sm tw-font-normal 2xl:tw-text-lg"
-                >
-                  {si.name}
-                </Link>
-              ))}
+              {ci.sub.map((si) => {
+                const url = new URL(window.location);
+                url.searchParams.set('category[0]', si.id);
+                return (
+                  <Link
+                    key={si.id}
+                    // to={`../courses/category[0]=${si.id}&sortby=1&is_free=0&page=1`}
+                    to={`../courses/${url.search}`}
+                    className="header-category-item tw-py-4 tw-text-sm tw-font-normal 2xl:tw-text-lg"
+                    onClick={() => dispatch(showCategoryDesktopMenu(false))}
+                  >
+                    {si.name}
+                  </Link>
+                );
+              })}
             </div>
           ))}
         </div>

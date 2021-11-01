@@ -7,7 +7,11 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { showCategoryMobileMenu, getMenuCategories } from '../../app/redux/actions/headerActions';
+import {
+  showCategoryMobileMenu,
+  getMenuCategories,
+  showMenu,
+} from '../../app/redux/actions/headerActions';
 import it from '../../assets/icons/Category/IT-Dark-Small.svg';
 import data from '../../assets/icons/Category/Intelligence and data-Dark-Small.svg';
 import marketing from '../../assets/icons/Category/Marketing-Dark-Small.svg';
@@ -22,10 +26,9 @@ import close from '../../assets/icons/Close-Gray.svg';
 export default function CategoryMenuMobile() {
   const dispatch = useDispatch();
   const { categoryMobile, categories } = useSelector((state) => state.header);
-
   useEffect(() => {
     if (categories.length === 0) dispatch(getMenuCategories());
-  });
+  }, []);
 
   return (
     <div style={{ display: categoryMobile ? 'block' : 'none' }}>
@@ -54,15 +57,23 @@ export default function CategoryMenuMobile() {
                 <img src={arrow} alt="" className="tw-w-4" />
               </div>
               <div className="category-dropdown-items tw-relative tw-w-full">
-                {ci.sub.map((si) => (
-                  <Link
-                    to={`../courses/category=${si.id}`}
-                    key={si.id}
-                    className="category-dropdown-item tw-py-4 tw-text-sm tw-font-normal tw-px-4 tw-block"
-                  >
-                    {si.name}
-                  </Link>
-                ))}
+                {ci.sub.map((si) => {
+                  const url = new URL(window.location);
+                  url.searchParams.set('category[0]', si.id);
+                  return (
+                    <Link
+                      to={`../courses/${url.search}`}
+                      key={si.id}
+                      className="category-dropdown-item tw-py-4 tw-text-sm tw-font-normal tw-px-4 tw-block"
+                      onClick={() => {
+                        dispatch(showCategoryMobileMenu(false));
+                        dispatch(showMenu(false));
+                      }}
+                    >
+                      {si.name}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           ))}
