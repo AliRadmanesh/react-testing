@@ -30,7 +30,7 @@ function AppRouter() {
           <Route exact path="/faq" component={FAQ} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/courses/:query" component={CourseList} />
+          <Route exact path="/courses" component={CourseList} />
           <Route exact path="/course" component={Course} />
           <Route exact path="/404" component={Page404} />
           <Route exact path="/search/:query" component={Search} />
