@@ -31,7 +31,13 @@ export default function Categories() {
         <div className="container tw-grid tw-my-6 tw-grid-cols-1 md:tw-grid-cols-3 xl:tw-grid-cols-4 tw-gap-x-4 tw-gap-y-6 tw-justify-center">
           {categories.length !== 0 ? (
             categories.map((ee) => (
-              <CategoryCard key={ee.id} courses={ee.courses} name={ee.name} sub={ee.sub} />
+              <CategoryCard
+                key={ee.id}
+                courses={ee.courses}
+                name={ee.name}
+                sub={ee.sub}
+                image={ee.image}
+              />
             ))
           ) : (
             <div className="container">
