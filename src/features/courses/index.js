@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable radix */
+/* eslint-disable eqeqeq */
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import Layout from '../../common/Layout/chill';
 import SearchBar from '../../components/global/SearchBar';
@@ -10,55 +12,96 @@ import FilterMenuMobile from '../../components/courses/FilterMenuMobile';
 import FilterMenuDesktop from '../../components/courses/FilterMenuDesktop';
 import SortDropdown from '../../components/courses/SortDropdown';
 import IsFreeDropdown from '../../components/courses/IsFreeDropdown';
-import { getSearchContent, setCoursesCategory } from '../../app/redux/actions/coursesActions';
 import {
-  searchCourses,
-  setCurrentPage,
-  setQueryKeywords,
-} from '../../app/redux/actions/searchActions';
-import { useFilters, useQuery } from '../../common/hooks/search';
+  getSearchContent,
+  addCoursesTypeFilter,
+  addCoursesAcademyFilter,
+} from '../../app/redux/actions/coursesActions';
+import { searchCourses, setCurrentPage } from '../../app/redux/actions/searchActions';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
-
 import './courses.css';
 
+const constant =
+  new URL(window.location).searchParams.get('category[0]') == 'null'
+    ? window.localStorage.getItem('category')
+    : new URL(window.location).searchParams.get('category[0]');
+
+window.localStorage.setItem('category', constant);
+console.log(`constant: ${constant}`);
+
 export default function Courses() {
-  const pageValue = window.location.href.split('=')[1];
-
+  console.log(typeof new URL(window.location).searchParams.get('category[0]'));
   const dispatch = useDispatch();
-  const [list, setList] = useState([]);
-
+  const history = useHistory();
   const {
-    options: { course_types, academies },
+    options,
     sort,
     is_free,
-    filters,
+    filters: { course_types, academies },
   } = useSelector((state) => state.courses);
-
   const {
     courses,
-    value,
     page: { current, total },
   } = useSelector((state) => state.search);
 
   useEffect(() => {
-    dispatch(setCoursesCategory(pageValue));
-    // dispatch(searchCategoryCourses(pageValue));
-  }, [pageValue]);
-
-  useEffect(() => {
     dispatch(getSearchContent());
-    // eslint-disable-next-line
   }, []);
 
-  // eslint-disable-next-line
-  const onSearch = () => {
-    const bool = true;
-    if (bool) {
-      return <Redirect to="../" />;
-    }
-  };
+  useEffect(() => {
+    dispatch(searchCourses(new URL(window.location).search));
+  }, [new URL(window.location).search]);
 
-  useFilters();
+  useEffect(() => {
+    const { searchParams } = new URL(window.location);
+    if (options.academies.length !== 0) {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const pair of searchParams.entries()) {
+        if (pair[0].includes('academy')) {
+          options.academies.forEach((item) => {
+            if (item.id == pair[1]) {
+              const object = { id: item.id, title: item.name };
+              dispatch(addCoursesAcademyFilter(object));
+            }
+          });
+        }
+      }
+    }
+    if (options.course_types.length !== 0) {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const pair of searchParams.entries()) {
+        if (pair[0].includes('type')) {
+          options.course_types.forEach((item) => {
+            if (item.id == pair[1]) {
+              const object = { id: item.id, title: item.name };
+              dispatch(addCoursesTypeFilter(object));
+            }
+          });
+        }
+      }
+    }
+  }, [options]);
+
+  useEffect(() => {
+    const base = window.location.origin;
+    console.log(base);
+    const url = new URL(window.location.origin);
+    url.searchParams.set('category[0]', constant);
+    console.log(academies);
+    academies.forEach((item, index) => {
+      url.searchParams.set(`academy[${index}]`, item.id);
+    });
+    course_types.forEach((item, index) => {
+      url.searchParams.set(`type[${index}]`, item.id);
+    });
+    url.searchParams.set(`sort`, sort);
+    url.searchParams.set(`is_free`, is_free);
+    url.searchParams.set(`page`, current);
+    // console.log(url.search);
+    history.push(`./${url.search}`);
+  }, [academies, course_types, sort, is_free, current]);
+
+  // useFilters();
 
   return (
     <Layout title="کورس‌ها" text="دوره‌های آموزشی">

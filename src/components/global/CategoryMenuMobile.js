@@ -68,6 +68,7 @@ export default function CategoryMenuMobile() {
                       onClick={() => {
                         dispatch(showCategoryMobileMenu(false));
                         dispatch(showMenu(false));
+                        window.localStorage.setItem('category', si.id);
                       }}
                     >
                       {si.name}

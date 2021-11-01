@@ -97,7 +97,7 @@ export default function FilterMenuDesktop() {
           آموزشگاه
         </p>
         <div className="filters-section-items">
-          {academies.map((academy) => (
+          {academies.map((academy, index) => (
             <Checkbox
               key={academy.id}
               text={academy.name}

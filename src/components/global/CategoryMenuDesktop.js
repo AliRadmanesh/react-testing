@@ -2,29 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { showCategoryDesktopMenu, getMenuCategories } from '../../app/redux/actions/headerActions';
-import it from '../../assets/icons/Category/IT-Dark-Small.svg';
-import data from '../../assets/icons/Category/Intelligence and data-Dark-Small.svg';
-import marketing from '../../assets/icons/Category/Marketing-Dark-Small.svg';
-import art from '../../assets/icons/Category/Graphic-Dark-Small.svg';
-import economic from '../../assets/icons/Category/Economics and Finance-Dark-Small.svg';
-import science from '../../assets/icons/Category/Science-Dark-Small.svg';
-import language from '../../assets/icons/Category/Language-Dark-Small.svg';
-import general from '../../assets/icons/Category/General-Dark-Small.svg';
+import { setCategoryId } from '../../app/redux/actions/coursesActions';
 
 export default function CategoryMenuDesktop() {
   const [active, setActive] = useState(1);
   const [total, setTotal] = useState(3);
-  // const [segment, setSegment] = useState(0)
   const [right, setRight] = useState(0);
   const [width, setWidth] = useState(0);
   const dispatch = useDispatch();
   const { categoryDesktop, categories } = useSelector((state) => state.header);
-  // const url = new URL(window.location.href);
-  // url.pathname = '../courses/';
-  // url.searchParams.append('category[0]', null);
-  // url.searchParams.append('sort', 1);
-  // url.searchParams.append('is_free', 1);
-  // url.searchParams.append('page', 1);
   const handleClick = (click) => {
     if (click.target.classList.contains('category-menu')) {
       dispatch(showCategoryDesktopMenu(false));
@@ -122,7 +108,11 @@ export default function CategoryMenuDesktop() {
                     // to={`../courses/category[0]=${si.id}&sortby=1&is_free=0&page=1`}
                     to={`../courses/${url.search}`}
                     className="header-category-item tw-py-4 tw-text-sm tw-font-normal 2xl:tw-text-lg"
-                    onClick={() => dispatch(showCategoryDesktopMenu(false))}
+                    onClick={() => {
+                      dispatch(setCategoryId(si.id));
+                      dispatch(showCategoryDesktopMenu(false));
+                      window.localStorage.setItem('category', si.id);
+                    }}
                   >
                     {si.name}
                   </Link>

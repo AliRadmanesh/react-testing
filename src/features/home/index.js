@@ -42,7 +42,7 @@ const Home = () => {
       >
         <div className="main-landing-content tw-w-full md:tw-w-1/2 md:tw-mx-auto">
           <div className="tw-mt-0 3xl:tw-mt-16" style={{}}>
-            <p className="text-blue tw-text-2xl 2xl:tw-text-5xl tw-font-extrabold font-kalameh tw-mb-8 2xl:tw-mb-16">
+            <p className="text-blue tw-text-2xl 2xl:tw-text-5xl tw-font-extrabold font-kalameh tw-mb-8 2xl:tw-mb-16 tw-mt-6 md:tw-mt-0">
               کارساز، بستری برای یادگیری
             </p>
             <p className="text-black tw-text-sm 2xl:tw-text-xl font-iranyekan tw-font-normal tw-w-4/5 tw-max-w-lg lg:tw-max-w-3xl tw-mx-auto tw-mb-8 2xl:tw-mb-16">

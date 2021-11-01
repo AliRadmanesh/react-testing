@@ -12,6 +12,7 @@ import {
   REMOVE_COURSES_TYPE_FILTER,
   CLEAR_COURSES_FILTERS,
   SET_COURSES_QUERY,
+  SET_CATEGORY_ID,
 } from './types';
 import axios from '../../axios';
 import instance from '../../instance';
@@ -113,3 +114,5 @@ export const clearCoursesFilters = () => (dispatch) => {
     type: CLEAR_COURSES_FILTERS,
   });
 };
+
+export const setCategoryId = (id) => (dispatch) => dispatch({ type: SET_CATEGORY_ID, payload: id });
