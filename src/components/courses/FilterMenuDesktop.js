@@ -10,7 +10,7 @@ import {
 } from '../../app/redux/actions/coursesActions';
 import Checkbox from '../../common/template/Checkbox';
 import FilterIndicator from './FilterIndicator';
-import { useFiltersNew } from '../../common/hooks/search';
+import {} from '../../common/hooks/search';
 
 export default function FilterMenuDesktop() {
   const { course_types, academies } = useSelector((state) => state.courses.options);
