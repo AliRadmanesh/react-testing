@@ -9,6 +9,7 @@ import {
   REMOVE_COURSES_TYPE_FILTER,
   REMOVE_COURSES_ACADEMY_FILTER,
   CLEAR_COURSES_FILTERS,
+  SET_COURSES_QUERY,
 } from '../actions/types';
 
 const initialState = {
@@ -20,10 +21,16 @@ const initialState = {
   page: 1,
   compare: { primary: {}, secondary: {} },
   category: null,
+  query: '',
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SET_COURSES_QUERY:
+      return {
+        ...state,
+        query: action.payload,
+      };
     case SET_COURSES_CATEGORY:
       return {
         ...state,

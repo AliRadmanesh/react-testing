@@ -37,6 +37,10 @@ export const checkUser = () => async (dispatch) => {
   }
 };
 
+export const showMenu = (bool) => (dispatch) => {
+  dispatch({ type: 'SHOW_MENU', payload: bool });
+};
+
 export const showUserMenu = (bool) => (dispatch) => {
   dispatch({
     type: SHOW_USER_MENU,

@@ -60,21 +60,21 @@ export const hideSuggest = () => (dispatch) => {
 };
 
 export const searchCourses =
-  (category, academies = [], types = [], sort = 1, free = 0, page) =>
-  async (dispatch) => {
+  // (category, academies = [], types = [], sort = 1, free = 0, page) =>
+  (query) => async (dispatch) => {
     let proceed = false;
-    let search = `?category[0]=${category}`;
-    academies.forEach((item, index) => {
-      search += `&academy[${index}]=${item.id}`;
-    });
-    types.map((item, index) => {
-      search += `&type[${index}]=${item.id}`;
-    });
-    search += `&sortby=${sort}&is_free=${free}&page=${page}`;
-    // console.log(search);
+    // let query = `?category[0]=${category}`;
+    // academies.forEach((item, index) => {
+    //   query += `&academy[${index}]=${item.id}`;
+    // });
+    // types.map((item, index) => {
+    //   query += `&type[${index}]=${item.id}`;
+    // });
+    // query += `&sortby=${sort}&is_free=${free}&page=${page}`;
+    // console.log(query);
 
     try {
-      const res = await instance.get(`/api/v1/web/service/courses/search-filters/${search}`);
+      const res = await instance.get(`/api/v1/web/service/courses/search-filters/${query}`);
       console.log(res);
       if (res.status === 200 || res.status === 201) {
         dispatch({

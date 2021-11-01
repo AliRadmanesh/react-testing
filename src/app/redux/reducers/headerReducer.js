@@ -16,10 +16,16 @@ const initial = {
   categoryDesktop: false,
   categoryMobile: false,
   categories: [],
+  showNav: false,
 };
 
 export default (state = initial, action) => {
   switch (action.type) {
+    case 'SHOW_MENU':
+      return {
+        ...state,
+        showNav: action.payload,
+      };
     case SET_USER_CHECK:
       return {
         ...state,

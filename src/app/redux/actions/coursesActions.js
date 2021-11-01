@@ -11,6 +11,7 @@ import {
   REMOVE_COURSES_ACADEMY_FILTER,
   REMOVE_COURSES_TYPE_FILTER,
   CLEAR_COURSES_FILTERS,
+  SET_COURSES_QUERY,
 } from './types';
 import axios from '../../axios';
 import instance from '../../instance';
@@ -42,6 +43,22 @@ export const getSearchContent = () => async (dispatch) => {
 export const displayMobileFilterMenu = (bool) => (dispatch) => {
   dispatch({ type: DISPLAY_MOBILE_FILTER_MENU, payload: bool });
 };
+
+export const setCoursesQuery =
+  (category, academies = [], types = [], sort = 1, free = 0, page) =>
+  (dispatch) => {
+    let string = `?category[0]=${category}`;
+    academies.forEach((item, index) => {
+      string += `&academy[${index}]=${item.id}`;
+    });
+    types.forEach((item, index) => {
+      string += `&type[${index}]=${item.id}`;
+    });
+    string += `&sortby=${sort}&is_free=${free}&page=${page}`;
+    dispatch({ type: SET_COURSES_QUERY, payload: string });
+
+    // console.log(string);
+  };
 
 export const setCoursesIsFree = (num) => (dispatch) => {
   if (num === 0 || num === 1) {
