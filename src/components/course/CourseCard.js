@@ -70,7 +70,7 @@ export default function CourseCard({ props }) {
             </div>
           </div>
           <div>
-            <Link to="https://karsaz.app/" className="">
+            <Link to={`./?id=${id}&sort=2`} className="">
               <button className="tw-mx-auto button-primary font-kalameh-num">مشاهده بیشتر</button>
             </Link>
           </div>

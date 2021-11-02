@@ -41,22 +41,24 @@ export const bookmarkCourse = (id) => async (dispatch) => {
   }
 };
 
-export const createComment = (id, rating, content, is_anonymous) => async (dispatch) => {
-  const data = {
-    rating,
-    content,
-    is_anonymous,
+export const createComment =
+  (id, rating, content = null, is_anonymous) =>
+  async (dispatch) => {
+    const data = {
+      rating,
+      content,
+      is_anonymous,
+    };
+    const res = await instance.post(`/api/v1/web/service/courses/${id}/comments/create`, data);
+    if (res.status === 200 || res.status === 201) {
+      dispatch({
+        type: 'CREATE_COMMENT',
+      });
+      window.location.reload();
+    } else {
+      toast.error('خطا هنگام ثبت بازخورد شما');
+    }
   };
-  const res = await instance.post(`/api/v1/web/service/courses/${id}/comments/create`, data);
-  if (res.status === 200 || res.status === 201) {
-    dispatch({
-      type: 'CREATE_COMMENT',
-    });
-    window.location.reload();
-  } else {
-    toast.error('خطا هنگام ثبت بازخورد شما');
-  }
-};
 
 export const likeComment = (courseId, commentId) => async (dispatch) => {
   const res = await instance.post(

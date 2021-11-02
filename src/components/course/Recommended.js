@@ -18,7 +18,7 @@ const RecentPostsContainer = ({ recommended_courses }) => {
 
   return (
     <div className="tw-py-4 tw-my-16 2xl:tw-py-16">
-      <p className="text-blue tw-text-center tw-mb-8 2xl:tw-mb-12 tw-font-extrabold 2xl:tw-font-black font-kalameh home-section-title">
+      <p className="text-blue tw-text-center tw-mb-8 2xl:tw-mb-12 tw-font-extrabold 2xl:tw-font-black font-kalameh 2xl:tw-text-3xl">
         آموزش‌های مرتبط
       </p>
       <div id="course-slider" className="">

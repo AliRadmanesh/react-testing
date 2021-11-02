@@ -1,7 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Rating from 'react-rating';
-
+import toast from 'react-hot-toast';
 import { TextArea } from '../../common/template/TextArea';
+
+import { createComment } from '../../app/redux/actions/courseActions';
 
 import starFillIcon from '../../assets/icons/Star Fill.svg';
 import starIcon from '../../assets/icons/Star.svg';
@@ -9,18 +12,19 @@ import starIcon from '../../assets/icons/Star.svg';
 export default function UserComment() {
   const [rate, setRate] = useState(0);
   const [state, setState] = useState(null);
-  const [message, setMessage] = useState('');
-  const [uiMessage, setUiMessage] = useState('دیدگاه شما را خواهیم دید...');
+  const [message, setMessage] = useState(null);
 
-  const ref = useRef();
+  const dispatch = useDispatch();
+  const { is_anonymous } = useSelector((store) => store.course.data);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (message === '') {
-      setState('error');
-      // setUiMessage('لطفا دیدگاه خود را برای مان بنویسید');
+    if (rate === 0) {
+      toast.error('لطفا نمره خود را ثبت کنید.');
     } else {
-      console.log(message);
+      dispatch(
+        createComment(new URL(window.location).searchParams.get('id'), rate, message, is_anonymous),
+      );
     }
   };
 
@@ -30,7 +34,7 @@ export default function UserComment() {
 
   return (
     <div className="container tw-my-4 2xl:tw-my-8">
-      <p className="text-blue tw-text-center font-kalameh-num tw-text-2xl tw-font-extrabold lg:tw-text-xl lg:tw-font-bold 2xl:tw-text-4xl 2xl:tw-font-black">
+      <p className="text-blue tw-text-center font-kalameh-num tw-text-xl tw-font-extrabold lg:tw-font-bold 2xl:tw-text-3xl 2xl:tw-font-black">
         دیدگاه شما
       </p>
       <div
@@ -47,9 +51,10 @@ export default function UserComment() {
         >
           <Rating
             className="tw-grid-cols-5 stars tw-justify-items-center"
-            onClick={(value) => {
+            onChange={(value) => {
               setRate(value);
             }}
+            initialRating={rate}
             emptySymbol={<img src={starIcon} alt="" className="icon" />}
             fullSymbol={<img src={starFillIcon} alt="" className="icon" />}
           />
@@ -66,7 +71,6 @@ export default function UserComment() {
             onChange={(e) => setMessage(e.target.value)}
             value={message}
             placeholder="دیدگاه خود را بنویسید..."
-            ref={ref}
             // message={uiMessage}
           />
           <div className="tw-flex md:tw-justify-end">

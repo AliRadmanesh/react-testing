@@ -104,6 +104,7 @@ export default function Header({
         <button
           className="tw-p-4 md:tw-hidden tw-w-auto tw-absolute tw-left-8 tw-top-8"
           style={{ backgroundColor: '#118ab288' }}
+          onClick={() => dispatch(bookmarkCourse(new URL(window.location).searchParams.get('id')))}
         >
           {is_bookmarked ? (
             <img src={bookmarkfillIcon} alt="" style={{}} className="tw-w-4" />
