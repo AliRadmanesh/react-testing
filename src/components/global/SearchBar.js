@@ -25,7 +25,11 @@ export default function SearchBar({ onChange, classes }) {
         onChange={(e) => dispatch(setQueryKeywords(e.target.value))}
       />
       {keywords !== '' ? (
-        <Link to={`../search/q=${keywords}`} className="tw-m-0 tw-p-2 tw-justify-self-end">
+        <Link
+          to={`./?q=${keywords}`}
+          className="tw-m-0 tw-p-2 tw-justify-self-end"
+          onClick={() => window.localStorage.setItem('query', keywords)}
+        >
           <img src={searchIcon} alt="" className="icon" />
         </Link>
       ) : (

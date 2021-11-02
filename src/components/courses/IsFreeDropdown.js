@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCoursesIsFree } from '../../app/redux/actions/coursesActions';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
@@ -18,11 +18,10 @@ export default function IsFreeDropdown() {
     }
   });
   const dispatch = useDispatch();
-  const ref = useRef();
+
   return (
     <div className="font-kalameh-num tw-relative tw-w-full tw-h-auto">
       <div
-        ref={ref}
         className="tw-flex items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
         onClick={(e) => e.target.classList.toggle('active')}
       >
@@ -35,7 +34,6 @@ export default function IsFreeDropdown() {
           onClick={() => {
             dispatch(setCoursesIsFree(1));
             setText('رایگان');
-            console.log(ref.current.classList.remove('active'));
           }}
         >
           رایگان
@@ -45,7 +43,6 @@ export default function IsFreeDropdown() {
           onClick={() => {
             dispatch(setCoursesIsFree(0));
             setText('پولی');
-            console.log(ref.current.classList.remove('active'));
           }}
         >
           پولی

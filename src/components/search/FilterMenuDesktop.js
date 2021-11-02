@@ -1,39 +1,44 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  addCoursesAcademyFilter,
-  removeCoursesAcademyFilter,
-  addCoursesTypeFilter,
-  removeCoursesTypeFilter,
-  clearCoursesFilters,
-} from '../../app/redux/actions/coursesActions';
+  addQueryAcademyFilter,
+  removeQueryAcademyFilter,
+  addQueryTypeFilter,
+  removeQueryTypeFilter,
+  clearQueryFilters,
+} from '../../app/redux/actions/searchActions';
 import Checkbox from '../../common/template/Checkbox';
 import FilterIndicator from './FilterIndicator';
+import {} from '../../common/hooks/search';
 
 export default function FilterMenuDesktop() {
-  const { course_types, academies } = useSelector((state) => state.search.query.options);
-  const { filters } = useSelector((state) => state.search.query);
+  const { course_types, academies } = useSelector((state) => state.courses.options);
+  const {
+    filters: { academies: filtersAcademies, types: filtersTypes },
+  } = useSelector((state) => state.search.query);
   const dispatch = useDispatch();
-  const courses = useSelector((state) => state.search.result);
+  const courses = useSelector((state) => state.search.courses);
 
   const filterAcademy = (event, item) => {
     if (event.target.checked) {
-      dispatch(addCoursesAcademyFilter({ id: item.id, title: item.name }));
+      dispatch(addQueryAcademyFilter({ id: item.id, title: item.name }));
     } else {
-      dispatch(removeCoursesAcademyFilter(item.id));
+      dispatch(removeQueryAcademyFilter(item.id));
     }
+    // search();
   };
 
   const filterType = (event, item) => {
     if (event.target.checked) {
-      dispatch(addCoursesTypeFilter({ id: item.id, title: item.name }));
+      dispatch(addQueryTypeFilter({ id: item.id, title: item.name }));
     } else {
-      dispatch(removeCoursesTypeFilter(item.id));
+      dispatch(removeQueryTypeFilter(item.id));
     }
   };
 
   const clearAllFilters = () => {
-    dispatch(clearCoursesFilters());
+    dispatch(clearQueryFilters());
     document.querySelectorAll('[class*="academy-desktop-"]').forEach((item) => {
       if (item.querySelector('input').checked) item.querySelector('input').checked = false;
     });
@@ -61,12 +66,12 @@ export default function FilterMenuDesktop() {
           </button>
         </div>
         <div className="tw-flex tw-items-center tw-flex-wrap">
-          {filters.academies.map((academy) => (
+          {filtersAcademies.map((academy) => (
             <FilterIndicator
               key={academy.id}
               title={academy.title}
               onDelete={() => {
-                dispatch(removeCoursesAcademyFilter(academy.id));
+                dispatch(removeQueryAcademyFilter(academy.id));
                 // console.log(document.querySelector(`.academy-${academy.id} input`));
                 document
                   .querySelectorAll(`.academy-desktop-${academy.id} input`)
@@ -76,12 +81,12 @@ export default function FilterMenuDesktop() {
               }}
             />
           ))}
-          {filters.course_types.map((type) => (
+          {filtersTypes.map((type) => (
             <FilterIndicator
               key={type.id}
               title={type.title}
               onDelete={() => {
-                dispatch(removeCoursesTypeFilter(type.id));
+                dispatch(removeQueryTypeFilter(type.id));
                 // console.log(document.querySelector(`.academy-${academy.id}`));
                 document.querySelector(`.type-desktop-${type.id} input`).checked = false;
               }}
@@ -94,7 +99,7 @@ export default function FilterMenuDesktop() {
           آموزشگاه
         </p>
         <div className="filters-section-items">
-          {academies.map((academy) => (
+          {academies.map((academy, index) => (
             <Checkbox
               key={academy.id}
               text={academy.name}

@@ -26,11 +26,10 @@ const constant =
     ? window.localStorage.getItem('category')
     : new URL(window.location).searchParams.get('category[0]');
 
-window.localStorage.setItem('category', constant);
 console.log(`constant: ${constant}`);
+window.localStorage.setItem('category', constant);
 
 export default function Courses() {
-  console.log(typeof new URL(window.location).searchParams.get('category[0]'));
   const dispatch = useDispatch();
   const history = useHistory();
   const {

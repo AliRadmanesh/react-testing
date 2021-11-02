@@ -20,11 +20,14 @@ import {
   SET_QUERY_KEYWORDS,
   SET_QUERY_PAGE_TOTAL,
   SET_QUERY_CURRENT_PAGE,
-  SET_QUERY_FITLERS_ACADEMIES,
-  SET_QUERY_FITLERS_TYPES,
-  SET_QUERY_FITLERS_FREE,
-  SET_QUERY_FITLERS_SORT,
   SET_QUERY_STRING,
+  SET_QUERY_FILTERS_IS_FREE,
+  SET_QUERY_FILTERS_SORT,
+  ADD_QUERY_FILTERS_ACADEMY,
+  ADD_QUERY_FILTERS_TYPE,
+  REMOVE_QUERY_FILTERS_ACADEMY,
+  REMOVE_QUERY_FILTERS_TYPE,
+  CLEAR_QUERY_FILTERS,
 } from './types';
 
 export const setKeywords = (string) => (dispatch) => {
@@ -97,15 +100,13 @@ export const searchCourses =
 export const searchQuery = (query) => async (dispatch) => {
   let proceed = false;
   try {
-    const res = await instance.get(`api/v1/web/service/courses/search/?q=${query}`);
+    const res = await instance.get(`api/v1/web/service/courses/search/${query}`);
     console.log(res);
     if (res.status === 200 || res.status === 201) {
-      if (res.data.data.courses.length !== 0) {
-        dispatch({ type: SET_QUERY_STATUS, payload: 200 });
-        dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
-      } else {
-        dispatch({ type: SET_QUERY_STATUS, payload: 400 });
-      }
+      dispatch({ type: SET_QUERY_STATUS, payload: 200 });
+      dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
+    } else {
+      dispatch({ type: SET_QUERY_STATUS, payload: 400 });
     }
   } catch (error) {
     if (proceed) toast.error('خطا در اجرای عملیات جستجو');
@@ -121,22 +122,6 @@ export const setQueryCurrentPage = (page) => (dispatch) =>
 
 export const setQueryTotalPage = (page) => (dispatch) =>
   dispatch({ type: SET_QUERY_PAGE_TOTAL, payload: page });
-
-export const setQueryAcademies = (value) => (dispatch) => {
-  dispatch({ type: SET_QUERY_FITLERS_ACADEMIES, payload: value });
-};
-
-export const setQueryTypes = (value) => (dispatch) => {
-  dispatch({ type: SET_QUERY_FITLERS_TYPES, payload: value });
-};
-
-export const setQueryFree = (value) => (dispatch) => {
-  dispatch({ type: SET_QUERY_FITLERS_FREE, payload: value });
-};
-
-export const setQuerySort = (value) => (dispatch) => {
-  dispatch({ type: SET_QUERY_FITLERS_SORT, payload: value });
-};
 
 export const setQueryOptions = (object) => (dispatch) => {
   dispatch({ type: 'SET_QUERY_OPTIONS', payload: object });
@@ -156,3 +141,57 @@ export const setQueryString =
     string += `&sortby=${sort}&is_free=${free}&page=${page}`;
     dispatch({ type: SET_QUERY_STRING, payload: string });
   };
+
+export const setQueryIsFree = (num) => (dispatch) => {
+  if (num === 0 || num === 1) {
+    dispatch({
+      type: SET_QUERY_FILTERS_IS_FREE,
+      payload: num,
+    });
+  }
+};
+
+export const setQuerySort = (num) => (dispatch) => {
+  if (num === 1 || num === 2 || num === 3) {
+    dispatch({
+      type: SET_QUERY_FILTERS_SORT,
+      payload: num,
+    });
+  } else {
+    toast.error('ورودی اشتباه است.');
+  }
+};
+
+export const addQueryAcademyFilter = (object) => (dispatch) => {
+  dispatch({
+    type: ADD_QUERY_FILTERS_ACADEMY,
+    payload: { id: object.id, title: object.title },
+  });
+};
+
+export const addQueryTypeFilter = (object) => (dispatch) => {
+  dispatch({
+    type: ADD_QUERY_FILTERS_TYPE,
+    payload: { id: object.id, title: object.title },
+  });
+};
+
+export const removeQueryAcademyFilter = (id) => (dispatch) => {
+  dispatch({
+    type: REMOVE_QUERY_FILTERS_ACADEMY,
+    payload: id,
+  });
+};
+
+export const removeQueryTypeFilter = (id) => (dispatch) => {
+  dispatch({
+    type: REMOVE_QUERY_FILTERS_TYPE,
+    payload: id,
+  });
+};
+
+export const clearQueryFilters = () => (dispatch) => {
+  dispatch({
+    type: CLEAR_QUERY_FILTERS,
+  });
+};

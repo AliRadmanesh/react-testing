@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { displayMobileFilterMenu } from '../../app/redux/actions/coursesActions';
 import {
-  displayMobileFilterMenu,
-  addCoursesAcademyFilter,
-  removeCoursesAcademyFilter,
-  addCoursesTypeFilter,
-  removeCoursesTypeFilter,
-  clearCoursesFilters,
-} from '../../app/redux/actions/coursesActions';
+  addQueryAcademyFilter,
+  removeQueryAcademyFilter,
+  addQueryTypeFilter,
+  removeQueryTypeFilter,
+  clearQueryFilters,
+} from '../../app/redux/actions/searchActions';
 import closeIcon from '../../assets/icons/Close-Gray.svg';
 import Checkbox from '../../common/template/Checkbox';
 import SearchBar from '../global/SearchBar';
@@ -18,25 +18,28 @@ export default function FilterMenuMobile() {
   const { showMenu } = useSelector((state) => state.courses);
   const { course_types, academies } = useSelector((state) => state.courses.options);
   const { filters } = useSelector((state) => state.courses);
+  const {
+    filters: { academies: filtersAcademies, types: filtersTypes },
+  } = useSelector((state) => state.search.query);
 
   const filterAcademy = (event, item) => {
     if (event.target.checked) {
-      dispatch(addCoursesAcademyFilter({ id: item.id, title: item.name }));
+      dispatch(addQueryAcademyFilter({ id: item.id, title: item.name }));
     } else {
-      dispatch(removeCoursesAcademyFilter(item.id));
+      dispatch(removeQueryAcademyFilter(item.id));
     }
   };
 
   const filterType = (event, item) => {
     if (event.target.checked) {
-      dispatch(addCoursesTypeFilter({ id: item.id, title: item.name }));
+      dispatch(addQueryTypeFilter({ id: item.id, title: item.name }));
     } else {
-      dispatch(removeCoursesTypeFilter(item.id));
+      dispatch(removeQueryTypeFilter(item.id));
     }
   };
 
   const clearAllFilters = () => {
-    dispatch(clearCoursesFilters());
+    dispatch(clearQueryFilters());
     document.querySelectorAll('[class*="academy-mobile-"]').forEach((item) => {
       if (item.querySelector('input').checked) item.querySelector('input').checked = false;
     });
@@ -71,23 +74,23 @@ export default function FilterMenuMobile() {
             </button>
           </div>
           <div className="tw-flex tw-items-center tw-flex-wrap">
-            {filters.academies.map((academy) => (
+            {filtersAcademies.map((academy) => (
               <FilterIndicator
                 key={academy.id}
                 title={academy.title}
                 onDelete={() => {
-                  dispatch(removeCoursesAcademyFilter(academy.id));
+                  dispatch(removeQueryAcademyFilter(academy.id));
                   // console.log(document.querySelector(`.academy-${academy.id} input`));
                   document.querySelector(`.academy-mobile-${academy.id} input`).checked = false;
                 }}
               />
             ))}
-            {filters.course_types.map((type) => (
+            {filtersTypes.map((type) => (
               <FilterIndicator
                 key={type.id}
                 title={type.title}
                 onDelete={() => {
-                  dispatch(removeCoursesTypeFilter(type.id));
+                  dispatch(removeQueryTypeFilter(type.id));
                   // console.log(document.querySelector(`.academy-${academy.id}`));
                   document.querySelector(`.type-mobile-${type.id} input`).checked = false;
                 }}

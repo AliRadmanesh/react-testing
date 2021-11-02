@@ -12,10 +12,13 @@ import {
   SET_QUERY_CURRENT_PAGE,
   SET_QUERY_STATUS,
   SET_QUERY_STRING,
-  SET_QUERY_FITLERS_ACADEMIES,
-  SET_QUERY_FITLERS_TYPES,
-  SET_QUERY_FITLERS_FREE,
-  SET_QUERY_FITLERS_SORT,
+  SET_QUERY_FILTERS_IS_FREE,
+  SET_QUERY_FILTERS_SORT,
+  ADD_QUERY_FILTERS_ACADEMY,
+  ADD_QUERY_FILTERS_TYPE,
+  REMOVE_QUERY_FILTERS_ACADEMY,
+  REMOVE_QUERY_FILTERS_TYPE,
+  CLEAR_QUERY_FILTERS,
 } from '../actions/types';
 
 const initialState = {
@@ -34,7 +37,12 @@ const initialState = {
     page: { current: 1, total: 1 },
     status: null,
     string: '', // stringified query based on other sub-states
-    filters: { academies: [], types: [], sort: 1, is_free: 1 },
+    filters: {
+      academies: [],
+      types: [],
+      sort: 1,
+      is_free: 1,
+    },
   },
 };
 
@@ -99,7 +107,7 @@ export default (state = initialState, action) => {
     case SET_QUERY_CURRENT_PAGE:
       return {
         ...state,
-        query: { ...state.query, page: { curernt: action.payload } },
+        query: { ...state.query, page: { current: action.payload } },
       };
 
     case SET_QUERY_STATUS:
@@ -114,28 +122,64 @@ export default (state = initialState, action) => {
         query: { ...state.query, string: action.payload },
       };
 
-    case SET_QUERY_FITLERS_ACADEMIES:
+    case SET_QUERY_FILTERS_SORT:
       return {
         ...state,
-        query: { ...state.query, filters: { academies: action.payload } },
+        query: { ...state.query, filters: { ...state.query.filters, sort: action.payload } },
       };
 
-    case SET_QUERY_FITLERS_TYPES:
+    case SET_QUERY_FILTERS_IS_FREE:
       return {
         ...state,
-        query: { ...state.query, filters: { types: action.payload } },
+        query: { ...state.query, filters: { ...state.query.filters, is_free: action.payload } },
       };
 
-    case SET_QUERY_FITLERS_FREE:
+    case ADD_QUERY_FILTERS_ACADEMY:
       return {
         ...state,
-        query: { ...state.query, filters: { is_free: action.payload } },
+        query: {
+          ...state.query,
+          filters: {
+            ...state.query.filters,
+            academies: [...state.query.filters.academies, action.payload],
+          },
+        },
       };
 
-    case SET_QUERY_FITLERS_SORT:
+    case ADD_QUERY_FILTERS_TYPE:
       return {
         ...state,
-        query: { ...state.query, filters: { sort: action.payload } },
+        query: {
+          ...state.query,
+          filters: {
+            ...state.query.filters,
+            types: [...state.query.filters.types, action.payload],
+          },
+        },
+      };
+
+    case REMOVE_QUERY_FILTERS_ACADEMY:
+      return {
+        ...state,
+        query: {
+          ...state.query,
+          filters: {
+            ...state.query.filters,
+            academies: state.query.filters.academies.filter((item) => item.id !== action.payload),
+          },
+        },
+      };
+
+    case REMOVE_QUERY_FILTERS_TYPE:
+      return {
+        ...state,
+        query: {
+          ...state.query,
+          filters: {
+            ...state.query.filters,
+            types: state.query.filters.types.filter((item) => item.id !== action.payload),
+          },
+        },
       };
 
     case 'SET_QUERY_OPTIONS':

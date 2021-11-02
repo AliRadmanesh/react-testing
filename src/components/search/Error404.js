@@ -1,13 +1,20 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import Footer from '../global/Footer';
 import MenuMobile from '../global/MenuMobile';
 import ScrollToTop from '../global/ScrollToTop';
 import MenuDesktop from '../global/MenuDesktop';
 import searchWhiteIcon from '../../assets/icons/Search White.svg';
+import { clearQueryFilters, setQueryKeywords } from '../../app/redux/actions/searchActions';
 
 export default function Error404({ query }) {
   const top_search = useSelector((state) => state.home.data.top_search);
+  const { keywords } = useSelector((state) => state.search.query);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(clearQueryFilters());
+  }, []);
 
   return (
     <div className="bg-light">
@@ -40,16 +47,21 @@ export default function Error404({ query }) {
                           .querySelector('.landing-search-container')
                           .classList.remove('focus');
                       }}
+                      onChange={(e) => dispatch(setQueryKeywords(e.target.value))}
                     />
-                    <button className="tw-m-0 tw-py-2 tw-px-6 button-primary tw-hidden lg:tw-block font-kalameh-num te-text-base tw-font-semibold 2xl:tw-text-xl">
+                    <Link
+                      to={`./?q=${keywords}`}
+                      className="tw-m-0 tw-py-2 tw-px-6 button-primary tw-hidden lg:tw-block font-kalameh-num te-text-base tw-font-semibold 2xl:tw-text-xl"
+                    >
                       جستجو
-                    </button>
-                    <button
+                    </Link>
+                    <Link
+                      to={`./?q=${keywords}`}
                       className="tw-m-0 button-primary tw-block lg:tw-hidden"
                       style={{ padding: '.5rem' }}
                     >
                       <img src={searchWhiteIcon} alt="" />
-                    </button>
+                    </Link>
                   </div>
                   <div className="tw-py-4 tw-mb-4 tw-w-full tw-max-w-screen-sm tw-mx-auto">
                     <p className="text-black font-iranyekan-num tw-text-sm tw-font-medium 2xl:tw-text-xl tw-mb-2 ">
