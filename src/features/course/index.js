@@ -42,11 +42,12 @@ export default function Course() {
       is_bookmarked,
       user_comment,
     },
+    comments: { sort },
   } = useSelector((state) => state.course);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCourseData(id));
-  }, []);
+  }, [sort]);
 
   return (
     <Layout>

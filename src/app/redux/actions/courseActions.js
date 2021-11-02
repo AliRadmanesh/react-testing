@@ -12,14 +12,18 @@ import instance from '../../instance';
 // 'COURSE_COMMENT_CURRENT_PAGE'
 // 'COURSE_COMMENT_PAGE_TOTAL'
 
-export const getCourseComments = (id) => async (dispatch) => {
-  try {
-    const res = await instance.get(`api/v1/web/service/courses/${id}/comments`);
-    dispatch({ type: GET_COURSE_COMMENTS, payload: res.data.data.comments });
-  } catch (error) {
-    toast.error(error);
-  }
-};
+export const getCourseComments =
+  (id, sort = 2, page = 1) =>
+  async (dispatch) => {
+    try {
+      const res = await instance.get(
+        `api/v1/web/service/courses/${id}/comments/?sort=${sort}&page=${page}`,
+      );
+      dispatch({ type: GET_COURSE_COMMENTS, payload: res.data.data.comments });
+    } catch (error) {
+      toast.error(error);
+    }
+  };
 
 export const getCourseData = (id) => async (dispatch) => {
   try {
@@ -82,4 +86,8 @@ export const dislikeComment = (courseId, commentId) => async (dispatch) => {
       payload: res.data.data.comment,
     });
   }
+};
+
+export const sortComment = (sort) => (dispatch) => {
+  dispatch({ type: 'SORT_COMMENT', payload: sort });
 };

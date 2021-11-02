@@ -1,7 +1,7 @@
 import { GET_COURSE_COMMENTS } from '../actions/types';
 
 const initialState = {
-  comments: { list: [], page: { current: 1, total: 1 } },
+  comments: { list: [], page: { current: 1, total: 1 }, sort: 2 },
   data: {
     id: null,
     title: '',
@@ -139,6 +139,12 @@ export default (state = initialState, action) => {
     case 'COURSE_COMMENT_CURRENT_PAGE':
       return {
         ...state,
+      };
+
+    case 'COMMENT_SORT':
+      return {
+        ...state,
+        comments: { ...state.comnents, sort: action.payload },
       };
     default:
       return state;
