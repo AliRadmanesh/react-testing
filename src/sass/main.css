@@ -980,6 +980,22 @@ footer .footer-heading {
   height: 100%;
 }
 
+.ql-indent-1 {
+  text-indent: 1rem;
+}
+
+.ql-indent-2 {
+  text-indent: 2rem;
+}
+
+.ql-indent-3 {
+  text-indent: 3rem;
+}
+
+.ql-indent-4 {
+  text-indent: 4rem;
+}
+
 /* Features/Pages Scss */
 /* Dashboard Module */
 /* BACKGROUND COLORS */
@@ -1521,6 +1537,30 @@ footer .footer-heading {
 
 .category-dropdown-item:hover {
   background-color: #118ab2;
+  color: #fefefe;
+}
+
+.pagination-page-item,
+.pagination-page-item-active {
+  width: 42px;
+  height: 40px;
+}
+
+@media screen and (min-width: 1536px) {
+  .pagination-page-item,
+  .pagination-page-item-active {
+    width: 62px;
+    height: 60px;
+  }
+}
+
+.pagination-page-item {
+  background: #f0f2f2;
+  color: #2c2c2c;
+}
+
+.pagination-page-item-active {
+  background: #118ab2;
   color: #fefefe;
 }
 
@@ -2119,5 +2159,33 @@ footer .footer-heading {
 
 .course-page-user-comment .course-page-user-comment-stars .star:hover .fill {
   display: block;
+}
+
+.course-chapters {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 768px) {
+  .course-chapters {
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+  }
+}
+
+.comment-stars > span {
+  width: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .comment-stars > span {
+    width: 14px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .comment-stars > span {
+    width: 16px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

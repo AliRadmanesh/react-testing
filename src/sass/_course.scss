@@ -125,5 +125,23 @@
   }
 }
 
-.course-page {
+.course-chapters {
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: $text-breakpoint-md) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.comment-stars {
+}
+
+.comment-stars > span {
+  width: 12px;
+  @media screen and (min-width: $text-breakpoint-md) {
+    width: 14px;
+  }
+  @media screen and (min-width: $text-breakpoint-xx) {
+    width: 16px;
+  }
 }
