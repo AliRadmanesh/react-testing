@@ -6,7 +6,7 @@ import { TextArea } from '../../common/template/TextArea';
 import starFillIcon from '../../assets/icons/Star Fill.svg';
 import starIcon from '../../assets/icons/Star.svg';
 
-export default function UserComment({ user_comment }) {
+export default function UserComment() {
   const [rate, setRate] = useState(0);
   const [state, setState] = useState(null);
   const [message, setMessage] = useState('');
@@ -67,16 +67,6 @@ export default function UserComment({ user_comment }) {
             value={message}
             placeholder="دیدگاه خود را بنویسید..."
             ref={ref}
-            state={state}
-            onBlur={() => {
-              if (message !== '') {
-                setState('success');
-                // setUiMessage('دیدگاه شما را خواهیم دید...');
-              } else {
-                setState('warning');
-                // setUiMessage('دیدگاه خود را ننوشتید');
-              }
-            }}
             // message={uiMessage}
           />
           <div className="tw-flex md:tw-justify-end">
