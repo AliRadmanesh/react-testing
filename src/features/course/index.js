@@ -51,8 +51,8 @@ export default function Course() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCourseData(id, sort, current));
-  }, [sort, current]);
+    dispatch(getCourseData(id));
+  }, []);
 
   return (
     <Layout>

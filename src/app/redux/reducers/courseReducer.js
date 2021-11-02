@@ -134,17 +134,19 @@ export default (state = initialState, action) => {
     case 'COURSE_COMMENT_PAGE_TOTAL':
       return {
         ...state,
+        comments: { ...state.comments, page: { ...state.comments.page, total: action.payload } },
       };
 
     case 'COURSE_COMMENT_CURRENT_PAGE':
       return {
         ...state,
+        comments: { ...state.comments, page: { ...state.comments.page, current: action.payload } },
       };
 
     case 'COMMENT_SORT':
       return {
         ...state,
-        comments: { ...state.comnents, sort: action.payload },
+        comments: { ...state.comments, sort: action.payload },
       };
     default:
       return state;

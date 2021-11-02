@@ -20,6 +20,12 @@ export const getCourseComments =
         `api/v1/web/service/courses/${id}/comments/?sort=${sort}&page=${page}`,
       );
       dispatch({ type: GET_COURSE_COMMENTS, payload: res.data.data.comments });
+      if (res.data.meta.last_page !== 1) {
+        dispatch({
+          type: 'COURSE_COMMENT_PAGE_TOTAL',
+          payload: res.data.meta.last_page,
+        });
+      }
     } catch (error) {
       toast.error(error);
     }
@@ -90,4 +96,8 @@ export const dislikeComment = (courseId, commentId) => async (dispatch) => {
 
 export const sortComment = (sort) => (dispatch) => {
   dispatch({ type: 'SORT_COMMENT', payload: sort });
+};
+
+export const pageComment = (page) => (dispatch) => {
+  dispatch({ type: 'COURSE_COMMENT_CURRENT_PAGE', payload: page });
 };
