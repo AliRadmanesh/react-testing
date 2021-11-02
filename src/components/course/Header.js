@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
 import compareIcon from '../../assets/icons/Comparison.svg';
 import bookmarkIcon from '../../assets/icons/Bookmark.svg';
 import bookmarkfillIcon from '../../assets/icons/Bookmark Fill.svg';
@@ -11,6 +11,8 @@ import starIcon from '../../assets/icons/Star Fill-Gray.svg';
 import timeIcon from '../../assets/icons/Time Fill-Gray.svg';
 import closeIcon from '../../assets/icons/Close Fill-Gray.svg';
 import tickIcon from '../../assets/icons/Tick Fill-Gray.svg';
+
+import { bookmarkCourse } from '../../app/redux/actions/courseActions';
 
 export default function Header({
   image,
@@ -31,6 +33,8 @@ export default function Header({
   is_bookmarked,
   cashback,
 }) {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     // document.querySelector('.course-header-description').innerHTML = description_summary;
   }, []);
@@ -53,7 +57,12 @@ export default function Header({
                 <button className="tw-bg-transparent tw-p-2">
                   <img src={compareIcon} alt="" className="tw-w-8" />
                 </button>
-                <button className="tw-bg-transparent tw-p-2">
+                <button
+                  className="tw-bg-transparent tw-p-2"
+                  onClick={() =>
+                    dispatch(bookmarkCourse(new URL(window.location).searchParams.get('id')))
+                  }
+                >
                   {is_bookmarked ? (
                     <img src={bookmarkfillIcon} alt="" className="tw-w-8" />
                   ) : (
