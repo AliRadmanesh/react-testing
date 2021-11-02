@@ -11,7 +11,6 @@ export default function Comments() {
       list,
       page: { total, current },
     },
-    user_comment,
   } = useSelector((state) => state.course);
 
   useEffect(() => {

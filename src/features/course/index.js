@@ -42,12 +42,17 @@ export default function Course() {
       is_bookmarked,
       user_comment,
     },
-    comments: { sort },
+    comments: {
+      sort,
+      page: { current },
+    },
   } = useSelector((state) => state.course);
+
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(getCourseData(id));
-  }, [sort]);
+    dispatch(getCourseData(id, sort, current));
+  }, [sort, current]);
 
   return (
     <Layout>
@@ -76,8 +81,8 @@ export default function Course() {
       <div className="container 2xl:tw-py-16">
         <Recommended recommended_courses={recommended_courses} />
       </div>
-      <UserComment />
-      <Comments user_comment={user_comment} />
+      <UserComment user_comment={user_comment} />
+      <Comments />
     </Layout>
   );
 }
