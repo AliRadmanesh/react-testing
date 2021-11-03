@@ -15,6 +15,7 @@ import CourseList from '../../features/courses';
 import Course from '../../features/course';
 import Page404 from '../../features/404/index';
 import Search from '../../features/search';
+import Compare from '../../features/compare';
 
 function AppRouter() {
   return (

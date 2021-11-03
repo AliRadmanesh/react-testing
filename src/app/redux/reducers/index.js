@@ -6,6 +6,7 @@ import footerReducer from './footerReducer';
 import coursesReducer from './coursesReducer';
 import searchReducer from './searchReducer';
 import courseReducer from './courseReducer';
+import compareReducer from './compareReducer';
 
 export default combineReducers({
   home: homeReducer,
@@ -15,4 +16,5 @@ export default combineReducers({
   courses: coursesReducer,
   search: searchReducer,
   course: courseReducer,
+  compare: compareReducer,
 });

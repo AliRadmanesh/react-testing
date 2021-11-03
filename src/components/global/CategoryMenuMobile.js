@@ -62,7 +62,7 @@ export default function CategoryMenuMobile() {
                   url.searchParams.set('category[0]', si.id);
                   return (
                     <Link
-                      to={`../courses/${url.search}`}
+                      to={`../courses/?category[0]=${si.id}`}
                       key={si.id}
                       className="category-dropdown-item tw-py-4 tw-text-sm tw-font-normal tw-px-4 tw-block"
                       onClick={() => {

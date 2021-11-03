@@ -5,6 +5,9 @@ import Footer from '../global/Footer';
 import MenuMobile from '../global/MenuMobile';
 import ScrollToTop from '../global/ScrollToTop';
 import MenuDesktop from '../global/MenuDesktop';
+import CategoryMenuMobile from '../global/CategoryMenuMobile';
+import CategoryMenuDesktop from '../global/CategoryMenuDesktop';
+import UserMenu from '../global/UserMenu';
 import searchWhiteIcon from '../../assets/icons/Search White.svg';
 import { clearQueryFilters, setQueryKeywords } from '../../app/redux/actions/searchActions';
 
@@ -21,6 +24,9 @@ export default function Error404({ query }) {
       <ScrollToTop />
       <MenuMobile />
       <MenuDesktop />
+      <UserMenu />
+      <CategoryMenuDesktop />
+      <CategoryMenuMobile />
       <div className="404-content">
         <div className="container">
           <div className="tw-w-full">
@@ -30,8 +36,8 @@ export default function Error404({ query }) {
                   متاسفانه؛ نتیجه ای یافت نشد
                 </p>
                 <p className="text-dark font-kalameh tw-mb-10 tw-text-xs tw-font-normal 2xl:tw-text-base">
-                  متاسفانه نتیجه ای برای «{query}» یافت نشد، لطفا جستجوی دیگری انجام داده یا به
-                  صفحات دیگر مراجعه فرمایید.
+                  متاسفانه نتیجه ای برای «{new URL(window.location).searchParams.get('q') || query}»
+                  یافت نشد، لطفا جستجوی دیگری انجام داده یا به صفحات دیگر مراجعه فرمایید.
                 </p>
                 <div className="">
                   <div className="tw-flex tw-justify-between tw-items-center landing-search-container bg-light tw-mb-4 tw-w-full tw-max-w-lg 2xl:tw-max-w-2xl tw-mx-auto tw-shadow-xl">

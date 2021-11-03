@@ -2188,4 +2188,63 @@ footer .footer-heading {
     width: 16px;
   }
 }
+
+.search-container {
+  background: #f0f2f2;
+  border-radius: 12px;
+  -webkit-transition: border-color 0.3s, color 0.3s, background-color 0.3s, -webkit-box-shadow 0.3s;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s, -webkit-box-shadow 0.3s;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  width: 100%;
+}
+
+.search-container:hover {
+  -webkit-box-shadow: 0 0 0 1px #118ab2;
+          box-shadow: 0 0 0 1px #118ab2;
+}
+
+.search-container.focus {
+  background-color: #f0f2f2;
+  -webkit-box-shadow: 0 0 0 2px #118ab2;
+          box-shadow: 0 0 0 2px #118ab2;
+}
+
+.search-container input.search, .search-container textarea.search,
+.search-container .search.textarea,
+.search-container input.search:focus,
+.search-container textarea.search:focus,
+.search-container .search.textarea:focus,
+.search-container input.search:hover,
+.search-container textarea.search:hover,
+.search-container .search.textarea:hover,
+.search-container input.search.error,
+.search-container textarea.search.error,
+.search-container .search.error.textarea,
+.search-container input.search.success,
+.search-container textarea.search.success,
+.search-container .search.success.textarea,
+.search-container input.search.warning,
+.search-container textarea.search.warning,
+.search-container .search.warning.textarea {
+  background: transparent !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: inherit !important;
+  border: none !important;
+  border-radius: 0;
+  width: 100%;
+}
+
+.search-container button img, .search-container .button-primary img, .search-container .button-secondary img, .search-container .button-error img, .search-container .button img {
+  width: 30px !important;
+  height: 30px !important;
+  margin: 0 !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .search-container {
+    max-width: 550px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
