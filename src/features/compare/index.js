@@ -9,11 +9,18 @@ import UserMenu from '../../components/global/UserMenu';
 import CategoryMenuMobile from '../../components/global/CategoryMenuMobile';
 import CategoryMenuDesktop from '../../components/global/CategoryMenuDesktop';
 
+import plusIcon from '../../assets/icons/Add Fill.svg';
+
 import OverView from '../../components/compare/OverView';
 import Modal from '../../components/compare/Modal';
 
-import { setPrimary, setSecondary, getData } from '../../app/redux/actions/compareActions';
-
+import {
+  setPrimary,
+  setSecondary,
+  getData,
+  showModal,
+  setDispatcher,
+} from '../../app/redux/actions/compareActions';
 import './compare.css';
 
 export default function Compare() {
@@ -40,62 +47,107 @@ export default function Compare() {
             <OverView />
             <div className="bg-white tw-my-4 tw-grid tw-grid-cols-2 tw-align-center tw-shadow tw-rounded-xl tw-p-4">
               <div className="compare-gridder-right tw-flex tw-justify-center lg:tw-justify-start ">
-                <span
-                  alt=""
-                  className="tw-rounded-xl tw-hidden lg:tw-block"
-                  style={{
-                    width: '212px',
-                    height: '129px',
-                    background: `url("${primary.images.cover}") no-repeat center/cover`,
-                  }}
-                />
-                <p className="tw-block tw-mr-4">
-                  <span className="tw-text-xs text-blue tw-font-bold tw-block md:tw-hidden">
-                    {primary.title}
-                  </span>
-                  <span className="tw-text-xs text-dark tw-font-bold tw-hidden md:tw-block 2xl:tw-text-xl 2xl:tw-font-semibold">
-                    {primary.title}
-                  </span>
-                  {primary.price && (
-                    <>
-                      <span className="tw-text-xs text-dark tw-font-normal tw-block md:tw-hidden">
-                        {primary.is_free ? 'رایگان' : primary.price}
+                {!primary.id && (
+                  <button
+                    onClick={() => {
+                      dispatch(showModal(true));
+                      dispatch(setDispatcher('primary'));
+                    }}
+                    alt=""
+                    className="tw-rounded-xl tw-hidden lg:tw-flex tw-w-full tw-border-dashed tw-border-gray-300 tw-border-2 tw-justify-center tw-items-center"
+                    style={{
+                      height: '129px',
+                    }}
+                  >
+                    <img src={plusIcon} alt="" className="tw-ml-4" />
+                    <p className="tw-text-center text-gray tw-font-kalameh-num tw-text-base 2xl:tw-text-lg">
+                      برای افزودن دوره به لیست مقایسه کلیک کنید
+                    </p>
+                  </button>
+                )}
+                {primary.id && (
+                  <>
+                    <span
+                      alt=""
+                      className="tw-rounded-xl tw-hidden lg:tw-block"
+                      style={{
+                        width: '212px',
+                        height: '129px',
+                        background: `url("${primary.images.cover}") no-repeat center/cover`,
+                      }}
+                    />
+
+                    <p className="tw-block tw-mr-4">
+                      <span className="tw-text-xs text-blue tw-font-bold tw-block md:tw-hidden">
+                        {primary.title}
                       </span>
-                      <span className="tw-text-xs text-blue tw-font-bold tw-hidden md:tw-block 2xl:tw-text-lg 2xl:tw-font-semibold tw-overflow-ellipses">
-                        {primary.is_free ? 'رایگان' : primary.price}
+                      <span className="tw-text-xs text-dark tw-font-bold tw-hidden md:tw-block 2xl:tw-text-xl 2xl:tw-font-semibold">
+                        {primary.title}
                       </span>
-                    </>
-                  )}
-                </p>
+                      {primary.price && (
+                        <>
+                          <span className="tw-text-xs text-dark tw-font-normal tw-block md:tw-hidden">
+                            {primary.is_free ? 'رایگان' : primary.price}
+                          </span>
+                          <span className="tw-text-xs text-blue tw-font-bold tw-hidden md:tw-block 2xl:tw-text-lg 2xl:tw-font-semibold tw-overflow-ellipses">
+                            {primary.is_free ? 'رایگان' : primary.price}
+                          </span>
+                        </>
+                      )}
+                    </p>
+                  </>
+                )}
               </div>
               <div className="compare-gridder-left tw-flex tw-justify-center lg:tw-justify-start ">
-                <span
-                  alt=""
-                  className="tw-rounded-xl tw-hidden lg:tw-block"
-                  style={{
-                    width: '212px',
-                    height: '129px',
-                    background: `url("${secondary.images.cover}") no-repeat center/cover`,
-                  }}
-                />
-                <p className="tw-block tw-mr-4">
-                  <span className="tw-text-xs text-blue tw-font-bold tw-block md:tw-hidden">
-                    {secondary.title}
-                  </span>
-                  <span className="tw-text-xs text-dark tw-font-bold tw-hidden md:tw-block 2xl:tw-text-xl 2xl:tw-font-semibold tw-overflow-ellipses">
-                    {secondary.title}
-                  </span>
-                  {secondary.price && (
-                    <>
-                      <span className="tw-text-xs text-dark tw-font-normal tw-block md:tw-hidden">
-                        {secondary.is_free ? 'رایگان' : secondary.price}
+                {!secondary.id && (
+                  <button
+                    onClick={() => {
+                      dispatch(setDispatcher('secondary'));
+                      dispatch(showModal(true));
+                    }}
+                    alt=""
+                    className="tw-rounded-xl tw-hidden lg:tw-flex tw-w-full tw-border-dashed tw-border-gray-300 tw-border-2 tw-justify-center tw-items-center"
+                    style={{
+                      height: '129px',
+                    }}
+                  >
+                    <img src={plusIcon} alt="" className="tw-ml-4" />
+                    <p className="tw-text-center text-gray tw-font-kalameh-num tw-text-base 2xl:tw-text-lg">
+                      برای افزودن دوره به لیست مقایسه کلیک کنید
+                    </p>
+                  </button>
+                )}
+                {secondary.id && (
+                  <>
+                    <span
+                      alt=""
+                      className="tw-rounded-xl tw-hidden lg:tw-block"
+                      style={{
+                        width: '212px',
+                        height: '129px',
+                        background: `url("${secondary.images.cover}") no-repeat center/cover`,
+                      }}
+                    />
+                    <p className="tw-block tw-mr-4">
+                      <span className="tw-text-xs text-blue tw-font-bold tw-block md:tw-hidden">
+                        {secondary.title}
                       </span>
-                      <span className="tw-text-xs text-blue tw-font-bold tw-hidden md:tw-block 2xl:tw-text-lg 2xl:tw-font-semibold tw-overflow-ellipses">
-                        {secondary.is_free ? 'رایگان' : secondary.price}
+                      <span className="tw-text-xs text-dark tw-font-bold tw-hidden md:tw-block 2xl:tw-text-xl 2xl:tw-font-semibold tw-overflow-ellipses">
+                        {secondary.title}
                       </span>
-                    </>
-                  )}
-                </p>
+                      {secondary.price && (
+                        <>
+                          <span className="tw-text-xs text-dark tw-font-normal tw-block md:tw-hidden">
+                            {secondary.is_free ? 'رایگان' : secondary.price}
+                          </span>
+                          <span className="tw-text-xs text-blue tw-font-bold tw-hidden md:tw-block 2xl:tw-text-lg 2xl:tw-font-semibold tw-overflow-ellipses">
+                            {secondary.is_free ? 'رایگان' : secondary.price}
+                          </span>
+                        </>
+                      )}
+                    </p>
+                  </>
+                )}
               </div>
             </div>
             <div className="bg-white tw-my-4 tw-shadow tw-rounded-xl tw-p-4">
@@ -145,6 +197,7 @@ export default function Compare() {
         </div>
         <CategoryMenuMobile />
       </>
+      <Modal />
     </>
   );
 }

@@ -149,3 +149,48 @@
 .compare-heighter {
   height: clamp(180px, 20vw, 285px);
 }
+.modal-grid {
+  scrollbar-width: thin;
+  scrollbar-color: #118ab2 #f4f4f4;
+}
+
+.modal-grid::-webkit-scrollbar {
+  width: 4px;
+}
+.modal-grid::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 50px;
+}
+.modal-grid::-webkit-scrollbar-thumb {
+  background: #118ab2;
+  border-radius: 50px;
+}
+
+.modal-box {
+  top: 0;
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .modal-box {
+    top: 10%;
+    right: 8.33%;
+  }
+}
+@media (min-width: 1024px) {
+  .modal-box {
+    top: 10%;
+  }
+}
+@media (min-width: 1280px) {
+  .modal-box {
+    top: 20%;
+    right: 12.5%;
+  }
+}
+@media (min-width: 1536px) {
+  .modal-box {
+    top: 14%;
+    right: 17%;
+  }
+}

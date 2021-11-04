@@ -7,13 +7,11 @@ import closeFillIcon from '../../assets/icons/Close Fill.svg';
 import {
   clearPrimary,
   clearSecondary,
-  setPrimary,
-  setSecondary,
+  showModal,
+  setDispatcher,
 } from '../../app/redux/actions/compareActions';
 
-export default function OverView({ course }) {
-  useEffect(() => {}, [course]);
-
+export default function OverView() {
   const dispatch = useDispatch();
 
   const { primary, secondary } = useSelector((state) => state.compare);
@@ -44,7 +42,13 @@ export default function OverView({ course }) {
           {!pid && (
             <div className="compare-gridder-right">
               <div className="tw-border-dashed tw-border-gray-300 tw-rounded-xl tw-border-2 tw-grid tw-place-items-center ">
-                <button className="tw-p-0 tw-w-1/2 tw-flex tw-justify-center tw-flex-col tw-items-center">
+                <button
+                  onClick={() => {
+                    dispatch(setDispatcher('primary'));
+                    dispatch(showModal(true));
+                  }}
+                  className="tw-p-0 tw-w-1/2 tw-flex tw-justify-center tw-flex-col tw-items-center"
+                >
                   <img src={plusIcon} alt="" className="tw-mb-4" style={{ width: '48px' }} />
                   <p className="tw-text-center text-gray tw-font-kalameh-num tw-text-base 2xl:tw-text-lg">
                     برای افزودن دوره به لیست مقایسه کلیک کنید
@@ -84,10 +88,12 @@ export default function OverView({ course }) {
                   خرید این دوره
                 </Link>
                 <Link
-                  to={`./compare?primary=${sid}`}
+                  to={sid ? `./compare?primary=${sid}` : './compare'}
                   className="tw-flex tw-justify-center tw-items-center button-secondary tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold"
                   style={{ padding: '0' }}
-                  onClick={() => dispatch(clearPrimary())}
+                  onClick={() => {
+                    dispatch(clearPrimary());
+                  }}
                 >
                   <img
                     className="tw-ml-1 md:tw-ml-2"
@@ -107,7 +113,17 @@ export default function OverView({ course }) {
           {sid === null && (
             <div className="compare-gridder-left">
               <div className="tw-border-dashed tw-border-gray-300 tw-rounded-xl tw-border-2 tw-grid tw-place-items-center">
-                <button className="tw-p-0 tw-w-1/2 tw-flex tw-justify-center tw-items-center tw-flex-col">
+                <button
+                  onClick={() => {
+                    if (!new URL(window.location).searchParams.get('primary')) {
+                      dispatch(setDispatcher('primary'));
+                    } else {
+                      dispatch(setDispatcher('secondary'));
+                    }
+                    dispatch(showModal(true));
+                  }}
+                  className="tw-p-0 tw-w-1/2 tw-flex tw-justify-center tw-items-center tw-flex-col"
+                >
                   <img src={plusIcon} alt="" className="tw-mb-4" style={{ width: '48px' }} />
                   <p className="tw-text-center text-gray tw-font-kalameh-num tw-text-base 2xl:tw-text-lg">
                     برای افزودن دوره به لیست مقایسه کلیک کنید
@@ -117,7 +133,7 @@ export default function OverView({ course }) {
             </div>
           )}
           {sid && (
-            <div className="">
+            <div className="compare-gridder-left">
               <div
                 className="tw-rounded-xl compare-heighter"
                 style={{ background: `url("${scover}") center/cover no-repeat` }}
@@ -147,7 +163,7 @@ export default function OverView({ course }) {
                   خرید این دوره
                 </Link>
                 <Link
-                  to={`./compare?primary=${pid}`}
+                  to={pid ? `./compare?primary=${pid}` : `./compare`}
                   className="tw-flex tw-justify-center tw-items-center button-secondary tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold"
                   style={{ padding: '0' }}
                   onClick={() => dispatch(clearSecondary())}

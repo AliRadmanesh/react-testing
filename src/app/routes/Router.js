@@ -35,6 +35,7 @@ function AppRouter() {
           <Route exact path="/course" component={Course} />
           <Route exact path="/404" component={Page404} />
           <Route exact path="/search" component={Search} />
+          <Route exact path="/compare" component={Compare} />
         </Switch>
       </Router>
     </div>

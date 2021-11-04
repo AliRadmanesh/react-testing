@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import compareIcon from '../../assets/icons/Comparison.svg';
 import bookmarkIcon from '../../assets/icons/Bookmark.svg';
 import bookmarkfillIcon from '../../assets/icons/Bookmark Fill.svg';
@@ -54,9 +55,12 @@ export default function Header({
                 {title}
               </p>
               <div className="tw-hidden md:tw-flex tw-items-center">
-                <button className="tw-bg-transparent tw-p-2">
+                <Link
+                  to={`../compare?primary=${new URL(window.location).searchParams.get('id')}`}
+                  className="tw-bg-transparent tw-p-2"
+                >
                   <img src={compareIcon} alt="" className="tw-w-8" />
-                </button>
+                </Link>
                 <button
                   className="tw-bg-transparent tw-p-2"
                   onClick={() =>
@@ -91,9 +95,13 @@ export default function Header({
                 {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
               </div>
               <div className="tw-flex tw-mt-2 tw-w-full tw-items-stretch md:tw-justify-end">
-                <button className="tw-p-6 md:tw-hidden" style={{ backgroundColor: '#118ab222' }}>
+                <Link
+                  to={`../compare?primary=${new URL(window.location).searchParams.get('id')}`}
+                  className="tw-p-6 md:tw-hidden"
+                  style={{ backgroundColor: '#118ab222' }}
+                >
                   <img src={compareIcon} alt="" style={{}} className="tw-w-8" />
-                </button>
+                </Link>
                 <button className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center">
                   خرید این دوره
                 </button>

@@ -1,4 +1,6 @@
 const initial = {
+  dispatcher: '',
+
   modal: { show: false, query: '', sort: 1, is_free: 1 },
 
   primary: {
@@ -101,6 +103,11 @@ export default (state = initial, action) => {
       return {
         ...state,
         modal: { ...state.modal, show: action.payload },
+      };
+    case 'SET_DISPATCHER':
+      return {
+        ...state,
+        dispatcher: action.payload,
       };
     default:
       return state;

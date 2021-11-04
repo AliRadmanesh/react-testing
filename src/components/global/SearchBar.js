@@ -9,7 +9,7 @@ export default function SearchBar({ onChange, classes }) {
   const dispatch = useDispatch();
   return (
     <div
-      className={`tw-grid tw-items-center tw-px-2 search-container tw-mb-4 tw-w-full  ${classes}`}
+      className={`tw-grid tw-items-center tw-px-2 search-container tw-mb-4 tw-w-full tw-h-full ${classes}`}
       style={{ gridTemplateColumns: 'auto 62px' }}
     >
       <input
