@@ -51,7 +51,7 @@ const MenuDesktop = () => {
       <div className="tw-w-full" style={{}}>
         <div
           id="desktop-menu"
-          className="tw-hidden container tw-w-full lg:tw-flex tw-justify-between tw-items-center tw-py-4 2xl:tw-py-8"
+          className="tw-hidden container tw-w-full xl:tw-flex tw-justify-between tw-items-center tw-py-4 2xl:tw-py-8"
           style={{
             position: 'fixed',
             top: '0',

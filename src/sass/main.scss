@@ -649,25 +649,25 @@ footer {
   position: relative;
   background: linear-gradient(rgba(251, 251, 251, 0.9), rgba(251, 251, 251, 0.7)),
     url('../assets/images/domenico-loia-hGV2TfOh0ns-unsplash.jpg') no-repeat center/cover;
-  clip-path: circle(90vh at center -28vh);
-  height: 60vh;
+  clip-path: circle(82vh at center 0);
+  height: 80vh;
   overflow: hidden;
   display: flex;
   align-items: center;
 
   @media screen and (min-width: $breakpoint-sm) {
-    clip-path: circle(90vh at center -22vh);
-    height: 65vh;
+    // clip-path: circle(80vh at center 0);
+    // height: 80vh;
   }
 
   @media screen and (min-width: $breakpoint-md) {
-    clip-path: circle(150vh at center -75vh);
+    clip-path: circle(148vh at center -75vh);
     height: 70vh;
   }
 
   @media screen and (min-width: $breakpoint-lg) {
-    clip-path: circle(230vh at center -128vh);
-    height: 100vh;
+    clip-path: circle(230vh at center -168vh);
+    height: 60vh;
   }
 
   @media screen and (min-width: $breakpoint-xl) {
