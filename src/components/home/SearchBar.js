@@ -70,13 +70,14 @@ const SearchBar = () => {
         </p>
         <div className="tw-flex tw-flex-wrap">
           {top_search.map((item) => (
-            <p
+            <Link
+              to={`../search/?q=${item}`}
               key="1"
               className="bg-medium font-iranyekan-num tw-text-xs tw-font-normal 2xl:tw-text-sm tw-py-2 tw-px-4 tw-m-2"
               style={{ borderRadius: '6px' }}
             >
               {item}
-            </p>
+            </Link>
           ))}
         </div>
       </div>
