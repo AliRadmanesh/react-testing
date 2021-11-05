@@ -136,6 +136,7 @@ export default function Courses() {
             {courses.map((item) => (
               <CourseCard
                 key={item.id}
+                id={item.id}
                 title={item.title}
                 description=""
                 price={item.price}

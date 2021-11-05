@@ -152,6 +152,7 @@ export default function Search() {
                 {result.map((item) => (
                   <CourseCard
                     key={item.id}
+                    id={item.id}
                     title={item.title}
                     description=""
                     price={item.price}
