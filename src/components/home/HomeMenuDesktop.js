@@ -147,13 +147,14 @@ const MenuDesktop = () => {
               >
                 {list.length !== 0 &&
                   list.map((item) => (
-                    <div
-                      key={item.id}
-                      id={item.id}
-                      className="tw-p-4 bg-white autosuggest-item font-kalameh-num tw-w-full hover:tw-bg-gray-200 tw-cursor-pointer"
-                    >
-                      {item.title}
-                    </div>
+                    <Link key={item.id} to={`../course/?id=${item.id}`}>
+                      <div
+                        id={item.id}
+                        className="tw-p-4 bg-white autosuggest-item font-kalameh-num tw-w-full hover:tw-bg-gray-200 tw-cursor-pointer"
+                      >
+                        {item.title}
+                      </div>
+                    </Link>
                   ))}
               </div>
             </div>
