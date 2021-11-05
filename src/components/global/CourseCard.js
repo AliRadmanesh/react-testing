@@ -91,7 +91,7 @@ const CourseCard = ({ props }) => {
               </div>
               <div className="lg:tw-flex lg:tw-items-center">
                 <p className="tab text-blue tw-hidden lg:tw-block tw-ml-6">{price}</p>
-                <Link to="https://karsaz.app/" className="">
+                <Link to={`../course/?id=${id}`} className="">
                   <button className="tw-mx-auto button-primary">مشاهده بیشتر</button>
                 </Link>
               </div>
