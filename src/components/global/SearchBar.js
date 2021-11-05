@@ -26,7 +26,7 @@ export default function SearchBar({ onChange, classes }) {
       />
       {keywords !== '' ? (
         <Link
-          to={`./?q=${keywords}`}
+          to={`../search/?q=${keywords}`}
           className="tw-m-0 tw-p-2 tw-justify-self-end"
           onClick={() => window.localStorage.setItem('query', keywords)}
         >
