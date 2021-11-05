@@ -869,9 +869,9 @@ footer .footer-heading {
   position: relative;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(251, 251, 251, 0.9)), to(rgba(251, 251, 251, 0.7))), url("../assets/images/domenico-loia-hGV2TfOh0ns-unsplash.jpg") no-repeat center/cover;
   background: linear-gradient(rgba(251, 251, 251, 0.9), rgba(251, 251, 251, 0.7)), url("../assets/images/domenico-loia-hGV2TfOh0ns-unsplash.jpg") no-repeat center/cover;
-  -webkit-clip-path: circle(90vh at center -28vh);
-          clip-path: circle(90vh at center -28vh);
-  height: 60vh;
+  -webkit-clip-path: circle(82vh at center 0);
+          clip-path: circle(82vh at center 0);
+  height: 80vh;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -881,27 +881,19 @@ footer .footer-heading {
           align-items: center;
 }
 
-@media screen and (min-width: 640px) {
-  .main-landing {
-    -webkit-clip-path: circle(90vh at center -22vh);
-            clip-path: circle(90vh at center -22vh);
-    height: 65vh;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .main-landing {
-    -webkit-clip-path: circle(150vh at center -75vh);
-            clip-path: circle(150vh at center -75vh);
+    -webkit-clip-path: circle(148vh at center -75vh);
+            clip-path: circle(148vh at center -75vh);
     height: 70vh;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .main-landing {
-    -webkit-clip-path: circle(230vh at center -128vh);
-            clip-path: circle(230vh at center -128vh);
-    height: 100vh;
+    -webkit-clip-path: circle(230vh at center -168vh);
+            clip-path: circle(230vh at center -168vh);
+    height: 60vh;
   }
 }
 
@@ -1288,7 +1280,7 @@ footer .footer-heading {
 }
 
 .page-header-desktop-back button:hover, .page-header-desktop-back .button-primary:hover, .page-header-desktop-back .button-secondary:hover, .page-header-desktop-back .button-error:hover, .page-header-desktop-back .button:hover {
-  background-color: #fefefe;
+  background-color: #f0f2f2;
 }
 
 .page-header-desktop-back button:hover img.primary, .page-header-desktop-back .button-primary:hover img.primary, .page-header-desktop-back .button-secondary:hover img.primary, .page-header-desktop-back .button-error:hover img.primary, .page-header-desktop-back .button:hover img.primary {
@@ -1310,17 +1302,9 @@ footer .footer-heading {
   z-index: -1;
 }
 
-.page-header-desktop-search {
-  background-color: #fefefe;
-}
-
 .page-header-desktop-search img {
   width: 30px;
   height: 30px;
-}
-
-.page-header-desktop-search button, .page-header-desktop-search .button-primary, .page-header-desktop-search .button-secondary, .page-header-desktop-search .button-error, .page-header-desktop-search .button {
-  padding: 0 16px;
 }
 
 .page-header-desktop-search input, .page-header-desktop-search textarea,
@@ -1330,7 +1314,6 @@ footer .footer-heading {
   outline: none !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
-  padding: 17px 0 !important;
   -webkit-transition: width 0.7s ease-in-out, padding 0.3s ease-in;
   transition: width 0.7s ease-in-out, padding 0.3s ease-in;
 }
@@ -1342,7 +1325,6 @@ footer .footer-heading {
   outline: none !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
-  padding: 17px 4px !important;
 }
 
 .page-header-desktop-search.input {
@@ -2197,6 +2179,7 @@ footer .footer-heading {
   transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
   width: 100%;
+  padding: 0;
 }
 
 .search-container:hover {
@@ -2208,6 +2191,11 @@ footer .footer-heading {
   background-color: #f0f2f2;
   -webkit-box-shadow: 0 0 0 2px #118ab2;
           box-shadow: 0 0 0 2px #118ab2;
+}
+
+.search-container input, .search-container textarea,
+.search-container .textarea {
+  padding: 12px 16px !important;
 }
 
 .search-container input.search, .search-container textarea.search,
@@ -2236,9 +2224,13 @@ footer .footer-heading {
   width: 100%;
 }
 
+.search-container button, .search-container .button-primary, .search-container .button-secondary, .search-container .button-error, .search-container .button {
+  padding: 12px 16px !important;
+}
+
 .search-container button img, .search-container .button-primary img, .search-container .button-secondary img, .search-container .button-error img, .search-container .button img {
-  width: 30px !important;
-  height: 30px !important;
+  width: 24px !important;
+  height: 24px !important;
   margin: 0 !important;
 }
 

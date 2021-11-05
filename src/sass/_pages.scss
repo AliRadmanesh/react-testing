@@ -181,7 +181,7 @@
           }
 
           &:hover {
-            background-color: $karsaz-white;
+            background-color: $karsaz-primary-pale;
 
             img.primary {
               display: initial;
@@ -207,14 +207,16 @@
       }
 
       &-search {
-        background-color: $karsaz-white;
+        // padding-right: 1rem;
+        // padding-left: 1rem;
+        // background-color: $karsaz-primary-pale;
         img {
           width: 30px;
           height: 30px;
         }
 
         button {
-          padding: 0 16px;
+          // padding: 0 0 0 16px;
         }
 
         input {
@@ -222,7 +224,6 @@
           border: none !important;
           outline: none !important;
           box-shadow: none !important;
-          padding: 17px 0 !important;
 
           transition: width 0.7s ease-in-out, padding 0.3s ease-in;
 
@@ -231,7 +232,7 @@
             border: none !important;
             outline: none !important;
             box-shadow: none !important;
-            padding: 17px 4px !important;
+            // padding: 17px 4px !important;
           }
         }
 

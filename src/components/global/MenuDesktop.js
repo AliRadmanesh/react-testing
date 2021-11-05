@@ -108,6 +108,9 @@ export default function MenuDesktop() {
               <div
                 id="page-header-desktop-search"
                 className="page-header-desktop-search tw-flex tw-flex-row tw-items-center tw-py-1 border-smooth tw-ml-4"
+                style={{
+                  backgroundColor: show ? 'rgba(17, 138, 178, .1)' : 'transparent',
+                }}
               >
                 <div className="hoverer tw-z-0 tw-relative" style={{ fontFamily: 'kalamehWeb' }}>
                   <input
@@ -117,6 +120,9 @@ export default function MenuDesktop() {
                     style={{
                       width: show ? width : '0',
                       // {display: show ? 'initial' : 'none',}
+                      padding: show ? '0 1rem 0 0 ' : '0',
+                      transition: 'all .5s ease-in-out',
+                      color: '#118ab2',
                     }}
                     onChange={(e) => dispatch(autoSuggest(e.target.value))}
                   />
