@@ -14,6 +14,7 @@ export default function MenuDesktop() {
   const ref = useRef();
   const [show, doShow] = useState(false);
   const [width, setWidth] = useState('160px');
+  const [value, setValue] = useState('');
   const dispatch = useDispatch();
   const { categoryDesktop } = useSelector((state) => state.header);
   const { list, show: showSuggests } = useSelector((state) => state.search.suggest);
@@ -114,7 +115,7 @@ export default function MenuDesktop() {
               >
                 <div className="hoverer tw-z-0 tw-relative" style={{ fontFamily: 'kalamehWeb' }}>
                   <input
-                    className="tw-block"
+                    className="tw-block haeder-search-box"
                     placeholder="جستجوی دوره، مدرس، آموزشگاه..."
                     type="text"
                     style={{
@@ -124,21 +125,39 @@ export default function MenuDesktop() {
                       transition: 'all .5s ease-in-out',
                       color: '#118ab2',
                     }}
-                    onChange={(e) => dispatch(autoSuggest(e.target.value))}
+                    onChange={(e) => {
+                      dispatch(autoSuggest(e.target.value));
+                      setValue(e.target.value);
+                    }}
                   />
                 </div>
 
-                <button
-                  className="button-secondary"
-                  style={{
-                    background: 'transparent',
-                    padding: '1rem',
-                    borderColor: show && 'transparent',
-                  }}
-                  onClick={() => (show ? doShow(false) : doShow(true))}
-                >
-                  <img src={searchIcon} alt="" className="" />
-                </button>
+                {value === '' ? (
+                  <button
+                    className="button-secondary"
+                    style={{
+                      background: 'transparent',
+                      padding: '1rem',
+                      borderColor: show && 'transparent',
+                    }}
+                    onClick={() => (show ? doShow(false) : doShow(true))}
+                  >
+                    <img src={searchIcon} alt="" className="" />
+                  </button>
+                ) : (
+                  <Link
+                    to={`../search/?q=${value}`}
+                    className="button-secondary"
+                    style={{
+                      background: 'transparent',
+                      padding: '1rem',
+                      borderColor: show && 'transparent',
+                    }}
+                    onClick={() => (show ? doShow(false) : doShow(true))}
+                  >
+                    <img src={searchIcon} alt="" className="" />
+                  </Link>
+                )}
               </div>
               <div
                 className="tw-absolute bg-white tw-rounded-xl tw-shadow-sm"
