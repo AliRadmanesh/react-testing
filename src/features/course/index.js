@@ -52,7 +52,7 @@ export default function Course() {
 
   useEffect(() => {
     dispatch(getCourseData(id));
-  }, []);
+  }, [new URL(window.location).search]);
 
   return (
     <Layout>
