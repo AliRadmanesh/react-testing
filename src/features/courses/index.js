@@ -1,6 +1,6 @@
 /* eslint-disable radix */
 /* eslint-disable eqeqeq */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
@@ -30,6 +30,9 @@ console.log(`constant: ${constant}`);
 window.localStorage.setItem('category', constant);
 
 export default function Courses() {
+  const [category, setCategory] = useState(
+    new URL(window.location).searchParams.get('category[0]'),
+  );
   const dispatch = useDispatch();
   const history = useHistory();
   const {
@@ -49,6 +52,7 @@ export default function Courses() {
 
   useEffect(() => {
     dispatch(searchCourses(new URL(window.location).search));
+    setCategory(new URL(window.location).searchParams.get('category[0]'));
   }, [new URL(window.location).search]);
 
   useEffect(() => {
@@ -85,7 +89,7 @@ export default function Courses() {
     const base = window.location.origin;
     console.log(base);
     const url = new URL(window.location.origin);
-    url.searchParams.set('category[0]', constant);
+    url.searchParams.set('category[0]', category);
     console.log(academies);
     academies.forEach((item, index) => {
       url.searchParams.set(`academy[${index}]`, item.id);
