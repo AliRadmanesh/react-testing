@@ -37,7 +37,7 @@ export default function SortDropdown() {
           onClick={() => {
             dispatch(setQuerySort(1));
             setText('مرتبط‌ترین');
-            console.log(ref.current.classList.remove('active'));
+            ref.current.classList.remove('active');
           }}
         >
           مرتبط‌ترین
@@ -47,7 +47,7 @@ export default function SortDropdown() {
           onClick={() => {
             dispatch(setQuerySort(2));
             setText('جدیدترین');
-            console.log(ref.current.classList.remove('active'));
+            ref.current.classList.remove('active');
           }}
         >
           جدیدترین
@@ -57,7 +57,7 @@ export default function SortDropdown() {
           onClick={() => {
             dispatch(setQuerySort(3));
             setText('محبوب‌ترین');
-            console.log(ref.current.classList.remove('active'));
+            ref.current.classList.remove('active');
           }}
         >
           محبوب‌ترین

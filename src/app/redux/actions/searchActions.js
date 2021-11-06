@@ -101,13 +101,13 @@ export const searchQuery = (query) => async (dispatch) => {
   let proceed = false;
   try {
     const res = await instance.get(`api/v1/web/service/courses/search/${query}`);
-    console.log(res);
+    console.log(res.status, res.data.data.courses.length);
     if (res.status === 200 || res.status === 201) {
       dispatch({ type: SET_QUERY_STATUS, payload: 200 });
       dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
     }
     if (res.data.data.courses.length === 0) {
-      dispatch({ type: SET_QUERY_STATUS, payload: 400 });
+      dispatch({ type: SET_QUERY_STATUS, payload: 200 });
     }
   } catch (error) {
     if (proceed) toast.error('خطا در اجرای عملیات جستجو');

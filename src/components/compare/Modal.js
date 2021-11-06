@@ -251,7 +251,6 @@ export default function Modal() {
   const { show, sort, is_free, query } = useSelector((state) => state.compare.modal);
   const { primary, secondary } = useSelector((state) => state.compare);
   const dispatch = useDispatch();
-  const { dispatcher } = useSelector((state) => state.compare);
 
   const ref = useRef();
 
@@ -291,11 +290,8 @@ export default function Modal() {
   useEffect(() => {
     if (show) getData();
     else setCourses([]);
-    // return () => {
-    //   dispatch(showModal(false));
-    // };
-    document.addEventListener('click', handleClick);
 
+    document.addEventListener('click', handleClick);
     return () => {
       document.removeEventListener('click', handleClick);
     };

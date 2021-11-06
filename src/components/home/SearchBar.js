@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import searchWhiteIcon from '../../assets/icons/Search White.svg';
+import { setQueryKeywords } from '../../app/redux/actions/searchActions';
 
 const SearchBar = () => {
   const [value, setValue] = useState('');
   const top_search = useSelector((state) => state.home.data.top_search);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const onSubmit = (e) => {
-    alert(1);
     e.preventDefault();
+    dispatch(setQueryKeywords(value));
     if (value !== '') {
       history.push(`../search/?q=${value}`);
     }

@@ -1,9 +1,11 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-loop-func */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { useQuery } from '../../common/hooks/search';
+
 import Error404 from '../../components/search/Error404';
 import Result from '../../components/search/Result';
 import Layout from '../../common/Layout/chill';
@@ -33,14 +35,6 @@ import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 console.log(new URL(window.location).search);
 
-const constant =
-  new URL(window.location).searchParams.get('q') == 'null'
-    ? window.localStorage.getItem('query')
-    : new URL(window.location).searchParams.get('q');
-
-console.log(`constant: ${constant}`);
-window.localStorage.setItem('query', constant);
-
 export default function Search() {
   const {
     query: {
@@ -52,7 +46,7 @@ export default function Search() {
       filters: { academies, types, sort, is_free },
     },
   } = useSelector((state) => state.search);
-
+  const [urlQuery, setUrlQuery] = useState(new URL(window.location).searchParams.get('q'));
   const { options } = useSelector((state) => state.courses);
 
   const dispatch = useDispatch();
@@ -62,11 +56,6 @@ export default function Search() {
     // dispatch(searchQuery(window.location.href.split('q=')[1]));
     dispatch(getSearchContent());
   }, []);
-
-  useEffect(() => {
-    console.log(new URL(window.location).search);
-    dispatch(searchQuery(new URL(window.location).search));
-  }, [new URL(window.location).search]);
 
   useEffect(() => {
     const { searchParams } = new URL(window.location);
@@ -99,8 +88,11 @@ export default function Search() {
   }, [options]);
 
   useEffect(() => {
+    const base = window.location.origin;
+    console.log(base);
     const url = new URL(window.location.origin);
-    url.searchParams.set('q', constant);
+    url.searchParams.set('q', urlQuery);
+    console.log(academies);
     academies.forEach((item, index) => {
       url.searchParams.set(`academy[${index}]`, item.id);
     });
@@ -114,12 +106,17 @@ export default function Search() {
     history.push(`./${url.search}`);
   }, [academies, types, sort, is_free, current]);
 
+  useEffect(() => {
+    dispatch(searchQuery(new URL(window.location).search));
+    setUrlQuery(new URL(window.location).searchParams.get('q'));
+  }, [new URL(window.location).search]);
+
   return (
     <>
-      {status === 400 && <Error404 query={constant} />}
+      {status === 400 && <Error404 query={urlQuery} />}
 
       {status === 200 && (
-        <Layout title={`نتایج جستجو برای «${constant}»`}>
+        <Layout title={`نتایج جستجو برای «${urlQuery}»`}>
           <div className="container courses">
             <div className="tw-grid tw-gap-x-4 courses-grid tw-mb-4">
               <div className="tw-hidden lg:tw-block">
