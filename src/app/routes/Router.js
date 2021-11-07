@@ -16,6 +16,8 @@ import Course from '../../features/course';
 import Page404 from '../../features/404/index';
 import Search from '../../features/search';
 import Compare from '../../features/compare';
+import JobList from '../../features/jobs';
+import Job from '../../features/job';
 
 function AppRouter() {
   return (
@@ -36,6 +38,8 @@ function AppRouter() {
           <Route exact path="/404" component={Page404} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/compare" component={Compare} />
+          <Route exact path="/jobs" component={Compare} />
+          <Route exact path="/job" component={Compare} />
         </Switch>
       </Router>
     </div>
