@@ -34,6 +34,11 @@ export default function Header({
   is_bookmarked,
   cashback,
 }) {
+  let price = 0;
+  if (prices !== null) {
+    price = prices.original.price;
+  }
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -88,9 +93,11 @@ export default function Header({
           ) : (
             <div className="">
               <div className="tw-flex tw-justify-end font-kalameh-num tw-mt-4">
-                <p className="font-kalameh-num text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
-                  {prices}
-                </p>
+                {is_free === 0 && (
+                  <p className="font-kalameh-num text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                    {price}
+                  </p>
+                )}
                 <p className="tw-text-sm tw-font-normal text-success">{discount}</p>
                 {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
               </div>
