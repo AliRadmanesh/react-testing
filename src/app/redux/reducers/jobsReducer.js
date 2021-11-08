@@ -10,6 +10,7 @@ export default (state = initial, action) => {
     case 'GET_JOBS_DATA':
       return {
         ...state,
+        section: 1,
         recommended: action.payload.user_recommended_jobs,
         recent: action.payload.recent_jobs,
       };
