@@ -1,5 +1,4 @@
 import React from 'react';
-import Dropdown from '../../common/template/Dropdown';
 
 export default function Search() {
   return (
