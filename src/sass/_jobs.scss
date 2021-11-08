@@ -1,0 +1,66 @@
+.jobs-page-bg-fade {
+  width: 100%;
+  height: 100%;
+  background: $karsaz-primary;
+  position: absolute;
+  opacity: 0.8;
+}
+
+.jobs-page-bg-pattern {
+  background: url('../assets/illustrations/pattern.svg') repeat 210px 185px, $karsaz-primary;
+  // background-size: 100% 160px;
+  width: 100%;
+  top: 0;
+  opacity: 0.8;
+}
+
+.jobs-page-content {
+  top: 1.2rem;
+
+  @media screen and (min-width: $text-breakpoint-lg) {
+    top: 1.6rem;
+  }
+
+  @media screen and (min-width: $text-breakpoint-xx) {
+    top: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.jobs-search {
+  &-area-1 {
+    grid-area: search;
+  }
+
+  &-area-2 {
+    grid-area: category;
+  }
+
+  &-area-3 {
+    grid-area: city;
+  }
+
+  &-area-4 {
+    grid-area: submit;
+  }
+
+  &-areas {
+    & > div {
+      background: #0293ad;
+    }
+
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas: 'search' 'category' 'city' 'submit';
+
+    @media screen and (min-width: 768px) {
+      grid-template-areas: 'search search search submit' 'category category city city';
+    }
+
+    @media screen and (min-width: 1280px) {
+      grid-template-areas: 'search search category category city city submit';
+    }
+  }
+}
