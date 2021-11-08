@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 // eslint-disble-next-line
 import React, { useState } from 'react';
 
@@ -35,7 +36,7 @@ export default function Dropdown({ disabled, classes, state, onChange, message, 
           {options.map((item) => (
             <div
               role="none"
-              key="item"
+              key={item.id && item.id}
               className="dropdown-item"
               onClick={() => {
                 setChoice(item);
