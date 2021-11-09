@@ -48,7 +48,7 @@ export default function Layout({ children }) {
                 className="container tw-py-4 lg:tw-pb-10 lg:tw-pt-12"
                 style={{ width: '100%', height: '100%' }}
               >
-                <Search />
+                <SearchBox />
               </div>
             </div>
           </div>
