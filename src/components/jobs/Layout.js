@@ -1,10 +1,38 @@
 import React from 'react';
-
+import { Toaster } from 'react-hot-toast';
+import MenuDesktop from '../global/MenuDesktop';
+import MenuMobile from '../global/MenuMobile';
+import ScrollToTop from '../global/ScrollToTop';
+import UserMenu from '../global/UserMenu';
+import CategoryMenuDesktop from '../global/CategoryMenuDesktop';
+import CategoryMenuMobile from '../global/CategoryMenuMobile';
+import Footer from '../global/Footer';
 import Search from './Search';
 
 export default function Layout({ children }) {
   return (
     <>
+      <Toaster
+        toastOptions={{
+          success: {
+            style: {
+              background: '#11b262',
+              color: '#fefefe',
+            },
+          },
+          error: {
+            style: {
+              background: '#b21111',
+              color: '#fefefe',
+            },
+          },
+        }}
+      />
+      <MenuMobile />
+      <MenuDesktop />
+      <UserMenu />
+      <CategoryMenuDesktop />
+      <CategoryMenuMobile />
       <div className="bg-light">
         <div className="" style={{ position: 'relative' }}>
           <div className="" style={{ height: 'auto', display: 'block' }}>
@@ -17,7 +45,9 @@ export default function Layout({ children }) {
           </div>
         </div>
       </div>
+      <ScrollToTop />
       <div className="container">{children}</div>
+      <Footer />
     </>
   );
 }
