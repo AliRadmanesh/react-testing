@@ -13,7 +13,7 @@ export default function JobCard({ props }) {
   } = props;
 
   return (
-    <div className="bg-white tw-flex tw-items-center tw-justify-center tw-w-full tw-shadow-sm border-smooth tw-p-4 font-kalameh-num">
+    <div className="bg-white tw-flex tw-items-center tw-justify-center tw-w-full tw-shadow-lg border-smooth tw-p-4 font-kalameh-num">
       <img src={avatar} alt="" className="tw-ml-4" />
       <div className="tw-flex tw-flex-col">
         <div className="tw-mb-2">
