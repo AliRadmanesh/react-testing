@@ -47,7 +47,10 @@ export default function Course() {
       page: { current },
     },
   } = useSelector((state) => state.course);
-
+  let price = 0;
+  if (prices !== null) {
+    price = prices.original.price;
+  }
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -55,34 +58,49 @@ export default function Course() {
   }, [new URL(window.location).search]);
 
   return (
-    <Layout>
-      <Header
-        image={cover}
-        title={title}
-        description_summary_string={description_summary_string}
-        description_summary={description_summary}
-        prices={prices}
-        discount={discount}
-        is_free={is_free}
-        rating={average}
-        academy={academy}
-        is_purchased={is_purchased}
-        is_bookmarked={is_bookmarked}
-        duration_hours={duration_hours}
-        duration_minutes={duration_minutes}
-        start_datetime={start_datetime}
-        end_datetime={end_datetime}
-        type={type}
-        cashback={cashback}
-      />
-      <Author instructors={instructors[0]} />
-      <About description={description} />
-      <Chapters topics={topics} topics_summary={topics_summary} />
-      <div className="container 2xl:tw-py-16">
-        <Recommended recommended_courses={recommended_courses} />
-      </div>
-      <UserComment user_comment={user_comment} />
-      <Comments />
-    </Layout>
+    <>
+      <Layout>
+        <Header
+          image={cover}
+          title={title}
+          description_summary_string={description_summary_string}
+          description_summary={description_summary}
+          prices={prices}
+          discount={discount}
+          is_free={is_free}
+          rating={average}
+          academy={academy}
+          is_purchased={is_purchased}
+          is_bookmarked={is_bookmarked}
+          duration_hours={duration_hours}
+          duration_minutes={duration_minutes}
+          start_datetime={start_datetime}
+          end_datetime={end_datetime}
+          type={type}
+          cashback={cashback}
+        />
+        <Author instructors={instructors[0]} />
+        <About description={description} />
+        <Chapters topics={topics} topics_summary={topics_summary} />
+        <div className="container 2xl:tw-py-16">
+          <Recommended recommended_courses={recommended_courses} />
+        </div>
+        <UserComment user_comment={user_comment} />
+        <Comments />
+      </Layout>
+      {!is_purchased && (
+        <div
+          className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-bottom-4 tw-w-full tw-right-0 tw-px-4"
+          style={{ zIndex: '9999' }}
+        >
+          <button
+            className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
+            style={{ width: '100%' }}
+          >
+            خرید این دوره
+          </button>
+        </div>
+      )}
+    </>
   );
 }
