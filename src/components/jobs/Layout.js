@@ -7,7 +7,7 @@ import UserMenu from '../global/UserMenu';
 import CategoryMenuDesktop from '../global/CategoryMenuDesktop';
 import CategoryMenuMobile from '../global/CategoryMenuMobile';
 import Footer from '../global/Footer';
-import Search from './Search';
+import SearchBox from './SearchBox';
 
 export default function Layout({ children }) {
   return (
