@@ -35,10 +35,19 @@ export default function Layout({ children }) {
       <CategoryMenuMobile />
       <div className="bg-light">
         <div className="" style={{ position: 'relative' }}>
-          <div className="" style={{ height: 'auto', display: 'block' }}>
+          <div
+            className=""
+            style={{
+              height: 'auto',
+              display: 'block',
+            }}
+          >
             <div className="jobs-page-bg-pattern" style={{ zIndex: '-2' }}>
               <div className="jobs-page-bg-fade" style={{ zIndex: '-1' }} />
-              <div className="container tw-py-4" style={{ width: '100%', height: '100%' }}>
+              <div
+                className="container tw-py-4 lg:tw-pb-10 lg:tw-pt-12"
+                style={{ width: '100%', height: '100%' }}
+              >
                 <Search />
               </div>
             </div>
@@ -46,7 +55,7 @@ export default function Layout({ children }) {
         </div>
       </div>
       <ScrollToTop />
-      <div className="container">{children}</div>
+      <div className="">{children}</div>
       <Footer />
     </>
   );
