@@ -69,28 +69,28 @@ export const removeJobsSalaryFilter = (id) => (dispatch) => {
 
 export const addJobsContractFilter = (object) => (dispatch) => {
   dispatch({
-    type: 'ADD_JOBS_SEARCH_Contract_FILTER',
+    type: 'ADD_JOBS_SEARCH_CONTRACT_FILTER',
     payload: { id: object.id, title: object.title },
   });
 };
 
 export const removeJobsContractFilter = (id) => (dispatch) => {
   dispatch({
-    type: 'REMOVE_JOBS_SEARCH_Contract_FILTER',
+    type: 'REMOVE_JOBS_SEARCH_CONTRACT_FILTER',
     payload: id,
   });
 };
 
-export const addJobsExperianceFilter = (object) => (dispatch) => {
+export const addJobsExperienceFilter = (object) => (dispatch) => {
   dispatch({
-    type: 'ADD_JOBS_SEARCH_EXPERIANCE_FILTER',
+    type: 'ADD_JOBS_SEARCH_EXPERIENCE_FILTER',
     payload: { id: object.id, title: object.title },
   });
 };
 
-export const removeJobsExperianceFilter = (id) => (dispatch) => {
+export const removeJobsExperienceFilter = (id) => (dispatch) => {
   dispatch({
-    type: 'REMOVE_JOBS_SEARCH_EXPERIANCE_FILTER',
+    type: 'REMOVE_JOBS_SEARCH_EXPERIENCE_FILTER',
     payload: id,
   });
 };

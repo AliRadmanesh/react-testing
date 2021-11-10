@@ -62,7 +62,7 @@ export default (state = initial, action) => {
           },
         },
       };
-    case 'ADD_JOBS_SEARCH_EXPERIANCE_FILTER':
+    case 'ADD_JOBS_SEARCH_EXPERIENCE_FILTER':
       return {
         ...state,
         search: {
@@ -86,7 +86,7 @@ export default (state = initial, action) => {
           },
         },
       };
-    case 'REMOVE_JOBS_SEARCH_EXPERIANCE_FILTER':
+    case 'REMOVE_JOBS_SEARCH_EXPERIENCE_FILTER':
       return {
         ...state,
         search: {
