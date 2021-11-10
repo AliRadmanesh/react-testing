@@ -10,7 +10,7 @@ export default function Home() {
     <div className="bg-light container">
       {recommended.length !== 0 && (
         <div className="tw-py-6 2xl:tw-py-16">
-          <p className="text-blue font-kalameh-num tw-text-center tw-mb-8 tw-text-2xl tw-font-extrabold 2xl:tw-text-4xl 2xl:tw-font-black tw-max-w-4/5">
+          <p className="text-blue font-kalameh-num tw-text-center tw-mb-8 2xl:tw-mb-16 tw-text-2xl tw-font-extrabold 2xl:tw-text-4xl 2xl:tw-font-black tw-max-w-4/5">
             جدیدترین فرصت های شغلی برای شما
           </p>
 
@@ -28,7 +28,7 @@ export default function Home() {
       )}
       {recent.length !== 0 && (
         <div className="tw-py-6 2xl:tw-py-16">
-          <p className="text-blue font-kalameh-num tw-text-center tw-mb-8 tw-text-2xl tw-font-extrabold 2xl:tw-text-4xl 2xl:tw-font-black tw-max-w-4/5">
+          <p className="text-blue font-kalameh-num tw-text-center tw-mb-8 2xl:tw-mb-16 tw-text-2xl tw-font-extrabold 2xl:tw-text-4xl 2xl:tw-font-black tw-max-w-4/5">
             آخرین فرصت‌های شغلی
           </p>
 
