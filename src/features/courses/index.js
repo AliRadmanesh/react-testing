@@ -182,8 +182,10 @@ export default function Courses() {
             initialPage={0}
             marginPagesDisplayed={1}
             containerClassName="tw-flex tw-items-center font-kalameh-num"
-            pageClassName="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item"
-            activeClassName="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item-active"
+            pageClassName="tw-mx-1 tw-grid"
+            activeClassName="tw-mx-1 tw-grid"
+            activeLinkClassName="pagination-page-item-active tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-grid tw-place-items-center tw-rounded-xl"
+            pageLinkClassName="pagination-page-item tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-grid tw-place-items-center tw-rounded-xl"
           />
         </div>
       </div>
