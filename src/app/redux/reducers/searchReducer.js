@@ -101,7 +101,7 @@ export default (state = initialState, action) => {
     case SET_QUERY_PAGE_TOTAL:
       return {
         ...state,
-        query: { ...state.query, page: { total: action.payload } },
+        query: { ...state.query, page: { ...state.query.page, total: action.payload } },
       };
 
     case SET_QUERY_CURRENT_PAGE:

@@ -105,6 +105,7 @@ export const searchQuery = (query) => async (dispatch) => {
     if (res.status === 200 || res.status === 201) {
       dispatch({ type: SET_QUERY_STATUS, payload: 200 });
       dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
+      dispatch({ type: SET_QUERY_PAGE_TOTAL, payload: res.data.meta.last_page });
     }
     if (res.data.data.courses.length === 0) {
       dispatch({ type: SET_QUERY_STATUS, payload: 200 });
