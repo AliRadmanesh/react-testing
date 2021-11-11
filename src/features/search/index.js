@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 import { useQuery } from '../../common/hooks/search';
 
 import Error404 from '../../components/search/Error404';
-import Result from '../../components/search/Result';
 import Layout from '../../common/Layout/chill';
 import SearchBar from '../../components/global/SearchBar';
 import CourseCard from '../../components/search/CourseCard';
@@ -33,7 +32,7 @@ import { getSearchContent } from '../../app/redux/actions/coursesActions';
 import '../courses/courses.css';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
-console.log(new URL(window.location).search);
+// console.log(new URL(window.location).search);
 
 export default function Search() {
   const {
@@ -110,6 +109,12 @@ export default function Search() {
     dispatch(searchQuery(new URL(window.location).search));
     setUrlQuery(new URL(window.location).searchParams.get('q'));
   }, [new URL(window.location).search]);
+
+  useEffect(() => {
+    if (window.scollY !== 0) {
+      window.scrollTo(0, 0);
+    }
+  }, [current]);
 
   return (
     <>

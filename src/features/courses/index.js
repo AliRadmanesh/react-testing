@@ -104,7 +104,11 @@ export default function Courses() {
     history.push(`./${url.search}`);
   }, [academies, course_types, sort, is_free, current]);
 
-  // useFilters();
+  useEffect(() => {
+    if (window.scollY !== 0) {
+      window.scrollTo(0, 0);
+    }
+  }, [current]);
 
   return (
     <Layout title="کورس‌ها" text="دوره‌های آموزشی">
