@@ -21,13 +21,13 @@ export default function IsFreeDropdown() {
 
   return (
     <div className="font-kalameh-num tw-relative tw-w-full tw-h-auto">
-      <div
-        className="tw-flex items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
+      <button
+        className="tw-flex tw-text-sm tw-font-normal 2xl:tw-text-base tw-items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
         onClick={(e) => e.target.classList.toggle('active')}
       >
-        <p className="tw-text-sm tw-font-normal 2xl:tw-text-base">{text}</p>
+        {text}
         <img src={arrow} alt="" />
-      </div>
+      </button>
       <div className="courses-dropdown-items">
         <div
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"

@@ -23,14 +23,16 @@ export default function SortDropdown() {
   const ref = useRef();
   return (
     <div className="font-kalameh-num tw-relative tw-w-full tw-h-auto">
-      <div
+      <button
         ref={ref}
-        className="tw-flex items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
+        className="tw-flex tw-text-sm tw-font-normal 2xl:tw-text-base tw-items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
         onClick={(e) => e.target.classList.toggle('active')}
       >
-        <p className="tw-text-sm tw-font-normal 2xl:tw-text-base">{text}</p>
-        <img src={arrow} alt="" />
-      </div>
+        {text}
+        <span>
+          <img src={arrow} alt="" />
+        </span>
+      </button>
       <div className="courses-dropdown-items">
         <div
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
