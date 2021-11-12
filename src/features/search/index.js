@@ -88,10 +88,10 @@ export default function Search() {
 
   useEffect(() => {
     const base = window.location.origin;
-    console.log(base);
+    // console.log(base);
     const url = new URL(window.location.origin);
     url.searchParams.set('q', urlQuery);
-    console.log(academies);
+    // console.log(academies);
     academies.forEach((item, index) => {
       url.searchParams.set(`academy[${index}]`, item.id);
     });

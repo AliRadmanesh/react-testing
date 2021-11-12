@@ -101,7 +101,7 @@ export const searchQuery = (query) => async (dispatch) => {
   let proceed = false;
   try {
     const res = await instance.get(`api/v1/web/service/courses/search/${query}`);
-    console.log(res.status, res.data.data.courses.length);
+    // console.log(res.status, res.data.data.courses.length);
     if (res.status === 200 || res.status === 201) {
       dispatch({ type: SET_QUERY_STATUS, payload: 200 });
       dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
