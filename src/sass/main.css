@@ -2251,12 +2251,11 @@ footer .footer-heading {
 .jobs-page-bg-pattern {
   background: url("../assets/illustrations/pattern.svg") repeat 210px 185px, #118ab2;
   width: 100%;
-  position: absolute;
   top: 0;
+  opacity: 0.8;
 }
 
 .jobs-page-content {
-  position: relative;
   top: 1.2rem;
 }
 
@@ -2271,6 +2270,53 @@ footer .footer-heading {
     top: 2rem;
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+}
+
+.jobs-search-area-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: search;
+}
+
+.jobs-search-area-2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: category;
+}
+
+.jobs-search-area-3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: city;
+}
+
+.jobs-search-area-4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: submit;
+}
+
+.jobs-search-areas {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+      grid-template-areas: 'search' 'category' 'city' 'submit';
+}
+
+.jobs-search-areas > div {
+  background: #0293ad;
+}
+
+@media screen and (min-width: 768px) {
+  .jobs-search-areas {
+        grid-template-areas: 'search search search submit' 'category category city city';
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .jobs-search-areas {
+        grid-template-areas: 'search search category category city city submit';
   }
 }
 /*# sourceMappingURL=main.css.map */
