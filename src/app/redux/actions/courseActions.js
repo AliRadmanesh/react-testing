@@ -12,9 +12,14 @@ import instance from '../../instance';
 // 'COURSE_COMMENT_CURRENT_PAGE'
 // 'COURSE_COMMENT_PAGE_TOTAL'
 
+export const setCommentsLoading = () => (dispatch) => {
+  dispatch({ type: 'SET_COMMENTS_LOADING' });
+};
+
 export const getCourseComments =
   (id, sort = 2, page = 1) =>
   async (dispatch) => {
+    dispatch({ type: 'SET_COMMENTS_LOADING' });
     try {
       const res = await instance.get(
         `api/v1/web/service/courses/${id}/comments/?sort=${sort}&page=${page}`,
@@ -61,10 +66,9 @@ export const createComment =
     };
     const res = await instance.post(`/api/v1/web/service/courses/${id}/comments/create`, data);
     if (res.status === 200 || res.status === 201) {
-      dispatch({
-        type: 'CREATE_COMMENT',
-      });
-      window.location.reload();
+      dispatch({ type: 'CREATE_COMMENT' });
+      // window.location.reload();
+      dispatch({ type: 'RESET_COMMENTS' });
     } else {
       toast.error('خطا هنگام ثبت بازخورد شما');
     }

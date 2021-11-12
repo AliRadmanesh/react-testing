@@ -1,7 +1,7 @@
 import { GET_COURSE_COMMENTS } from '../actions/types';
 
 const initialState = {
-  comments: { list: [], page: { current: 1, total: 1 }, sort: 2 },
+  comments: { list: [], page: { current: 1, total: 1 }, sort: 2, loading: false },
   data: {
     id: null,
     title: '',
@@ -80,7 +80,17 @@ export default (state = initialState, action) => {
     case GET_COURSE_COMMENTS:
       return {
         ...state,
-        comments: { ...state.comments, list: action.payload },
+        comments: { ...state.comments, list: action.payload, loading: false },
+      };
+    case 'SET_COMMENTS_LOADING':
+      return {
+        ...state,
+        comments: { ...state.comments, loading: true },
+      };
+    case 'RESET_COMMENTS':
+      return {
+        ...state,
+        comments: initialState.comments,
       };
     case 'GET_COURSE_DATA':
       return {
