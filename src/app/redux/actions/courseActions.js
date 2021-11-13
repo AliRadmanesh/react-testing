@@ -64,23 +64,21 @@ export const createComment =
       content,
       is_anonymous,
     };
-    dispatch({ type: 'SET_COMMENTS_LOADING' });
     const res = await instance.post(`/api/v1/web/service/courses/${id}/comments/create`, data);
     if (res.status === 200 || res.status === 201) {
       dispatch({ type: 'CREATE_COMMENT' });
       // window.location.reload();
       dispatch({ type: 'RESET_COMMENTS' });
-      try {
-        const res1 = await instance.get(`api/v1/web/service/courses/${id}/comments/`);
-        dispatch({ type: GET_COURSE_COMMENTS, payload: res1.data.data.comments });
-        if (res1.data.meta.last_page !== 1) {
-          dispatch({
-            type: 'COURSE_COMMENT_PAGE_TOTAL',
-            payload: res1.data.meta.last_page,
-          });
-        }
-      } catch (error) {
-        toast.error(error);
+      dispatch({ type: 'SET_COMMENTS_LOADING' });
+      const res1 = await instance.get(
+        `api/v1/web/service/courses/${id}/comments/?sort=${2}&page=${1}`,
+      );
+      dispatch({ type: GET_COURSE_COMMENTS, payload: res1.data.data.comments });
+      if (res1.data.meta.last_page !== 1) {
+        dispatch({
+          type: 'COURSE_COMMENT_PAGE_TOTAL',
+          payload: res1.data.meta.last_page,
+        });
       }
     } else {
       toast.error('خطا هنگام ثبت بازخورد شما');
