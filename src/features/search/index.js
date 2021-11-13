@@ -109,7 +109,7 @@ export default function Search() {
     types.forEach((item, index) => {
       url.searchParams.set(`type[${index}]`, item.id);
     });
-    url.searchParams.set(`sort`, sort);
+    url.searchParams.set(`sortby`, sort);
     url.searchParams.set(`is_free`, is_free);
     url.searchParams.set(`page`, current);
     // console.log(url.search);
