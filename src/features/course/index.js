@@ -57,6 +57,11 @@ export default function Course() {
     dispatch(getCourseData(id));
   }, [new URL(window.location).search]);
 
+  useEffect(() => {
+    if (window.innerWidth < 768)
+      document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
+  }, []);
+
   return (
     <>
       <Layout>

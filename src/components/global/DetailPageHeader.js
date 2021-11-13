@@ -29,9 +29,7 @@ export default function DetailPageHeader() {
       <MenuMobile />
       <MenuDesktop />
       <UserMenu />
-      <div className="" style={{ position: 'sticky', bottom: '4rem' }}>
-        <ScrollToTop />
-      </div>
+      <ScrollToTop />
       <CategoryMenuDesktop />
       <CategoryMenuMobile />
     </>
