@@ -14,6 +14,7 @@ import HeaderUserSection from './HeaderUserSection';
 const MenuMobile = () => {
   // const [show, doShow] = useState(false);
   const { showNav } = useSelector((state) => state.header);
+  const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
@@ -111,10 +112,18 @@ const MenuMobile = () => {
                 onBlur={() => {
                   document.querySelector('.mobile-menu-search-container').classList.remove('focus');
                 }}
+                onChange={(e) => {
+                  setValue(e.target.value);
+                }}
               />
-              <button type="submit" className="tw-p-0">
+              <Link
+                to={`../search/?q=${value}`}
+                type="submit"
+                className="tw-p-0"
+                onClick={() => dispatch(showMenu(false))}
+              >
                 <img src={searchIcon} alt="" className="" />
-              </button>
+              </Link>
             </form>
           </div>
           <Link to="../" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
