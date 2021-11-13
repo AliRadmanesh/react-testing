@@ -23,9 +23,7 @@ export default function Comments() {
   }, [current, sort]);
 
   useEffect(() => {
-    if (list.length === 0) {
-      dispatch(getCourseComments(new URL(window.location).searchParams.get('id'), sort, current));
-    }
+    // dispatch(getCourseComments(new URL(window.location).searchParams.get('id'), sort, current));
   }, [list]);
 
   if (loading) return <Loading />;
