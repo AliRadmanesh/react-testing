@@ -188,6 +188,15 @@ export default (state = initialState, action) => {
         query: { ...state.query, options: action.payload },
       };
 
+    case 'CLEAR_ALL_SEARCH_ADJUSTMENTS':
+      return {
+        ...state,
+        query: {
+          ...state.query,
+          filters: initialState.query.filters,
+          page: initialState.query.page,
+        },
+      };
     default:
       return state;
   }

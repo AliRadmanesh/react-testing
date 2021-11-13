@@ -27,6 +27,7 @@ import {
   setQueryKeywords,
   setQueryTotalPage,
   setQueryCurrentPage,
+  clearAllQueryAdjustments,
 } from '../../app/redux/actions/searchActions';
 import { getSearchContent } from '../../app/redux/actions/coursesActions';
 import '../courses/courses.css';
@@ -54,6 +55,16 @@ export default function Search() {
   useEffect(() => {
     // dispatch(searchQuery(window.location.href.split('q=')[1]));
     dispatch(getSearchContent());
+    new URL(window.location).searchParams.forEach((value, key) => {
+      console.log(key, ': ', value);
+      if (key.includes('sort') && value !== 1) {
+        console.log(1);
+        dispatch(setQuerySort(value));
+      }
+    });
+    return () => {
+      dispatch(clearAllQueryAdjustments());
+    };
   }, []);
 
   useEffect(() => {
@@ -88,10 +99,10 @@ export default function Search() {
 
   useEffect(() => {
     const base = window.location.origin;
-    // console.log(base);
+    console.log(base);
     const url = new URL(window.location.origin);
     url.searchParams.set('q', urlQuery);
-    // console.log(academies);
+    console.log(academies);
     academies.forEach((item, index) => {
       url.searchParams.set(`academy[${index}]`, item.id);
     });
@@ -102,6 +113,7 @@ export default function Search() {
     url.searchParams.set(`is_free`, is_free);
     url.searchParams.set(`page`, current);
     // console.log(url.search);
+
     history.push(`./${url.search}`);
   }, [academies, types, sort, is_free, current]);
 

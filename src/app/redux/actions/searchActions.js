@@ -159,8 +159,6 @@ export const setQuerySort = (num) => (dispatch) => {
       type: SET_QUERY_FILTERS_SORT,
       payload: num,
     });
-  } else {
-    toast.error('ورودی اشتباه است.');
   }
 };
 
@@ -196,4 +194,8 @@ export const clearQueryFilters = () => (dispatch) => {
   dispatch({
     type: CLEAR_QUERY_FILTERS,
   });
+};
+
+export const clearAllQueryAdjustments = () => (dispatch) => {
+  dispatch({ type: 'CLEAR_ALL_SEARCH_ADJUSTMENTS' });
 };
