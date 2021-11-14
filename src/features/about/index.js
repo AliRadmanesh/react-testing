@@ -15,7 +15,8 @@ export default function About() {
       className=""
       style={{
         height,
-        overflowY: allowScroll ? 'visible' : 'hidden',
+        // overflowY: allowScroll ? 'visible' : 'hidden',
+        overflowY: 'visible',
       }}
     >
       <Layout title="درباره کارساز" text="کارساز پلتفرم آموزش و اشتغال">
