@@ -97,7 +97,7 @@ export default function Header({
               <div className="tw-flex tw-justify-end font-kalameh-num tw-mt-4">
                 {is_free === 0 && (
                   <p className="font-kalameh-num text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
-                    {price}
+                    {price} تومان
                   </p>
                 )}
                 <p className="tw-text-sm tw-font-normal text-success">{discount}</p>
