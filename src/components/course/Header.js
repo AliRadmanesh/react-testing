@@ -15,6 +15,8 @@ import tickIcon from '../../assets/icons/Tick Fill-Gray.svg';
 
 import { bookmarkCourse } from '../../app/redux/actions/courseActions';
 
+import { numberWithCommas } from '../../common/Functions';
+
 export default function Header({
   image,
   title,
@@ -36,7 +38,7 @@ export default function Header({
 }) {
   let price = 0;
   if (prices !== null) {
-    price = prices.original.price;
+    price = numberWithCommas(prices.original.price);
   }
 
   const dispatch = useDispatch();
