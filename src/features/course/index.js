@@ -11,6 +11,7 @@ import Header from '../../components/course/Header';
 import Recommended from '../../components/course/Recommended';
 import UserComment from '../../components/course/UserComment';
 import { getCourseData } from '../../app/redux/actions/courseActions';
+import { hideSuggest } from '../../app/redux/actions/searchActions';
 import './course.css';
 
 export default function Course() {
@@ -57,6 +58,12 @@ export default function Course() {
     if (window.innerWidth < 768)
       document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
   }, []);
+
+  useEffect(() => {
+    console.log(11);
+    setId(window.location.href.split('course/')[1]);
+    dispatch(hideSuggest());
+  }, [new URL(window.location).pathname]);
 
   return (
     <>
