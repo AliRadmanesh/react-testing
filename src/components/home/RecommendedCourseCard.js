@@ -20,7 +20,7 @@ function RecommendedPostCard({ props }) {
   } = props;
 
   return (
-    <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4 font-iranyekan">
+    <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4 font-iranyekan home-card">
       {/* <img src={image} alt="" className="border-smooth tw-w-full tw-h-auto tw-mb-4" /> */}
       <div
         className="border-smooth tw-w-full tw-h-auto tw-mb-4"
@@ -34,11 +34,9 @@ function RecommendedPostCard({ props }) {
         {title}
       </p>
       <div className="tw-mt-4">
-        <div style={{ maxHeight: '110px' }} className="tw-overflow-y-hidden tw-text-ellipses">
-          <p className="text-gray font-iranyekan tw-font-normal tw-text-sm 2xl:tw-text-lg">
-            {description}
-          </p>
-        </div>
+        <p className="card-description text-gray font-iranyekan tw-font-normal tw-text-sm 2xl:tw-text-lg">
+          {description}
+        </p>
         <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-center tw-mt-4">
           <div className="tw-flex tw-items-center">
             <img

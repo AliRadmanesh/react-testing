@@ -23,6 +23,7 @@ const MenuMobile = () => {
 
   useEffect(() => {
     if (showNav) dispatch(showMenu(false));
+    window.scrollTo(0, 0);
   }, [new URL(window.location).pathname]);
 
   return (

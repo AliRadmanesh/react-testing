@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import onlineIcon from '../../assets/icons/Online.svg';
 import starFillIcon from '../../assets/icons/Star Fill.svg';
+import { numberWithCommas } from '../../common/Functions';
 
 const CourseCard = ({ props }) => {
   const {
@@ -15,6 +16,7 @@ const CourseCard = ({ props }) => {
     rating: { average, participants },
     description,
     academy: { avatar, name, id: academy_id },
+    is_free,
   } = props;
 
   const limit = 347;
@@ -23,7 +25,7 @@ const CourseCard = ({ props }) => {
   if (description.length >= limit) uiDescription += '...';
 
   return (
-    <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4 font-kalameh-num">
+    <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4 font-kalameh-num home-card">
       <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2">
         {/* <img src={cover} alt="" className="tw-block md:tw-hidden  border-smooth tw-w-full lg:tw-order-2" /> */}
         <div
@@ -41,10 +43,10 @@ const CourseCard = ({ props }) => {
               {title}
             </p>
             <p
-              className="text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg font-iranyekan-num"
+              className="card-description text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg font-iranyekan-num"
               style={{}}
             >
-              {uiDescription}
+              {description}
             </p>
           </div>
           <div className="tw-mt-4">
@@ -59,7 +61,12 @@ const CourseCard = ({ props }) => {
                 <p className="text-guide">{name}</p>
               </div>
               <div className="lg:tw-hidden">
-                <p className="tab text-blue">{price}</p>
+                {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
+                {price && (
+                  <p className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                    {numberWithCommas(price)}
+                  </p>
+                )}
               </div>
             </div>
             <div className="tw-flex tw-justify-between tw-items-end lg:tw-items-center">
@@ -90,7 +97,14 @@ const CourseCard = ({ props }) => {
                 </div>
               </div>
               <div className="lg:tw-flex lg:tw-items-center">
-                <p className="tab text-blue tw-hidden lg:tw-block tw-ml-6">{price}</p>
+                {is_free === 1 && (
+                  <p className="tw-text-sm tw-ml-4 tw-font-medium text-success">رایگان</p>
+                )}
+                {price && (
+                  <p className="text-blue font-kalameh tw-text-sm tw-ml-4 tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                    {numberWithCommas(price)}
+                  </p>
+                )}
                 <Link to={`../course/${id}`} className="">
                   <button className="tw-mx-auto button-primary">مشاهده بیشتر</button>
                 </Link>

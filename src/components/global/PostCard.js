@@ -17,7 +17,7 @@ function PostCard({ props }) {
   } = props;
 
   return (
-    <div className="tw-p-4 bg-white tw-my-4 tw-shadow-sm tw-rounded-xl font-iranyekan-num">
+    <div className="tw-p-4 bg-white tw-my-4 tw-shadow-sm tw-rounded-xl font-iranyekan-num home-card">
       {/* <img src={image} alt="" className="border-smooth tw-w-full tw-h-auto tw-mb-4" /> */}
       <div
         className="border-smooth tw-w-full tw-h-auto tw-mb-4"
@@ -27,11 +27,9 @@ function PostCard({ props }) {
           background: `url("${image}") no-repeat center/cover`,
         }}
       />
-      <p className="tw-font-bold text-black tw-text-base 2xl:tw-text-xl text-dark tw-truncate">
-        {title}
-      </p>
+      <p className="tw-font-bold text-black tw-text-base 2xl:tw-text-xl text-dark">{title}</p>
       <div className="tw-mt-4">
-        <p className="text-gray font-iranyekan-num tw-font-normal tw-text-sm 2xl:tw-text-lg">
+        <p className="text-gray font-iranyekan-num tw-font-normal tw-text-sm 2xl:tw-text-lg card-description">
           {description}
         </p>
         <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-end tw-mt-8">

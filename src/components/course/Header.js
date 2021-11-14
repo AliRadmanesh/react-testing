@@ -56,13 +56,13 @@ export default function Header({
           className="tw-rounded-xl tw-w-full tw-h-auto"
           style={{ background: `url("${image}") no-repeat center/cover`, minHeight: '180px' }}
         />
-        <div className="tw-pt-4 md:tw-pt-0 tw-flex tw-flex-col tw-justify-between">
+        <div className="tw-pt-4 tw-w-full md:tw-pt-0 tw-flex tw-flex-col tw-justify-between">
           <div className="">
-            <div className="tw-flex tw-items-center tw-justify-between">
+            <div className="tw-flex tw-items-center tw-justify-between ">
               <p className="text-dark font-kalameh-num tw-text-base tw-font-bold lg:tw-text-xl 2xl:tw-text-2xl 2xl:tw-font-black">
                 {title}
               </p>
-              <div className="tw-hidden md:tw-flex tw-items-center">
+              <div className="tw-hidden md:tw-flex tw-items-center tw-mr-4">
                 <Link to={`../compare?primary=${id}`} className="tw-bg-transparent tw-p-2">
                   <img src={compareIcon} alt="" className="tw-w-8" />
                 </Link>
