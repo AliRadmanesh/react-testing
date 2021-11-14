@@ -19,9 +19,9 @@ export default function CourseCard({
   discount,
 }) {
   return (
-    <div className="course-card bg-white font-kalameh-num tw-grid tw-p-4 tw-rounded-xl tw-shadow tw-w-full tw-items-center tw-gap-4 tw-mb-4">
+    <div className="course-card bg-white search-course-card font-kalameh-num tw-grid tw-p-4 tw-rounded-xl tw-shadow tw-w-full tw-items-stretch tw-gap-4 tw-mb-4">
       <div
-        className="tw-w-auto tw-rounded-xl"
+        className="tw-w-auto tw-h-auto tw-rounded-xl"
         style={{
           background: `url("${image}") no-repeat center/cover`,
           minHeight: '200px',
@@ -44,10 +44,7 @@ export default function CourseCard({
             )}
           </div>
         </div>
-        <p
-          className="text-gray font-iranyekan-num tw-mb-4 tw-font-normal tw-text-sm 2xl:tw-text-lg"
-          style={{ lineHeight: '21px' }}
-        >
+        <p className="text-gray card-description font-iranyekan-num tw-mb-4 tw-font-normal tw-text-sm 2xl:tw-text-lg">
           {description}
         </p>
         <div className="tw-flex tw-items-center tw-justify-between lg:tw-hidden tw-mb-4">

@@ -1546,6 +1546,37 @@ footer .footer-heading {
   color: #fefefe;
 }
 
+.search-course-card .card-description {
+  text-align: justify;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 20px;
+  /* fallback */
+  max-height: 100px;
+  /* fallback */
+  -webkit-line-clamp: 5;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (min-width: 1536px) {
+  .search-course-card .card-description {
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 28px;
+    /* fallback */
+    max-height: 140px;
+    /* fallback */
+    -webkit-line-clamp: 5;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+}
+
 .auth-header-mobile button, .auth-header-mobile .button-primary, .auth-header-mobile .button-secondary, .auth-header-mobile .button-error, .auth-header-mobile .button {
   padding: 8px;
 }
