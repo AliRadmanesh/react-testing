@@ -21,6 +21,10 @@ const MenuMobile = () => {
     e.preventDefault();
   };
 
+  useEffect(() => {
+    if (showNav) dispatch(showMenu(false));
+  }, [new URL(window.location).pathname]);
+
   return (
     <div
       id="mobile-menu"
