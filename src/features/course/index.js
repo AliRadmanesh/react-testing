@@ -14,8 +14,7 @@ import { getCourseData } from '../../app/redux/actions/courseActions';
 import './course.css';
 
 export default function Course() {
-  const id = new URL(window.location).searchParams.get('id');
-
+  const [id, setId] = useState(window.location.href.split('course/')[1]);
   const {
     data: {
       title,
@@ -54,6 +53,7 @@ export default function Course() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    setId(window.location.href.split('course/')[1]);
     dispatch(getCourseData(id));
   }, [new URL(window.location).search]);
 
@@ -91,7 +91,7 @@ export default function Course() {
           <Recommended recommended_courses={recommended_courses} />
         </div>
         <UserComment user_comment={user_comment} />
-        <Comments />
+        <Comments id={id} />
       </Layout>
       {!is_purchased && (
         <div
