@@ -53,11 +53,7 @@ export default function Course() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setId(window.location.href.split('course/')[1]);
     dispatch(getCourseData(id));
-  }, [new URL(window.location).search]);
-
-  useEffect(() => {
     if (window.innerWidth < 768)
       document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
   }, []);
@@ -66,6 +62,7 @@ export default function Course() {
     <>
       <Layout>
         <Header
+          id={id}
           image={cover}
           title={title}
           description_summary_string={description_summary_string}

@@ -4,6 +4,8 @@ import starFillIcon from '../../assets/icons/Star Fill.svg';
 import onlineIcon from '../../assets/icons/Online.svg';
 import offlineIcon from '../../assets/icons/Offline.svg';
 
+import { numberWithCommas } from '../../common/Functions';
+
 function RecommendedPostCard({ props }) {
   const {
     description,
@@ -14,6 +16,7 @@ function RecommendedPostCard({ props }) {
     academy: { avatar, name, id: academy_id },
     price,
     rating: { average, participants },
+    is_free,
   } = props;
 
   return (
@@ -46,10 +49,13 @@ function RecommendedPostCard({ props }) {
             />
             <p className="text-guide tw-truncate">{name}</p>
           </div>
-          <div className="">
-            <p className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
-              {price}
-            </p>
+          <div className="tw-flex tw-justify-end">
+            {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
+            {price && (
+              <p className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                {numberWithCommas(price)}
+              </p>
+            )}
           </div>
         </div>
         <div className="tw-flex tw-justify-between tw-items-end tw-mt-2">
@@ -93,7 +99,7 @@ function RecommendedPostCard({ props }) {
           </div>
           <div className="lg:tw-flex lg:tw-items-center">
             <p className="tab text-blue tw-hidden lg:tw-block tw-ml-6 font-kalameh">{price}</p>
-            <Link to={`../course/?id=${id}`} className="">
+            <Link to={`../course/${id}`} className="">
               <button className="tw-mx-auto button-primary font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
                 مشاهده بیشتر
               </button>

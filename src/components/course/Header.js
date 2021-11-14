@@ -18,6 +18,7 @@ import { bookmarkCourse } from '../../app/redux/actions/courseActions';
 import { numberWithCommas } from '../../common/Functions';
 
 export default function Header({
+  id,
   image,
   title,
   description_summary_string,
@@ -62,17 +63,12 @@ export default function Header({
                 {title}
               </p>
               <div className="tw-hidden md:tw-flex tw-items-center">
-                <Link
-                  to={`../compare?primary=${new URL(window.location).searchParams.get('id')}`}
-                  className="tw-bg-transparent tw-p-2"
-                >
+                <Link to={`../compare?primary=${id}`} className="tw-bg-transparent tw-p-2">
                   <img src={compareIcon} alt="" className="tw-w-8" />
                 </Link>
                 <button
                   className="tw-bg-transparent tw-p-2"
-                  onClick={() =>
-                    dispatch(bookmarkCourse(new URL(window.location).searchParams.get('id')))
-                  }
+                  onClick={() => dispatch(bookmarkCourse(id))}
                 >
                   {is_bookmarked ? (
                     <img src={bookmarkfillIcon} alt="" className="tw-w-8" />
@@ -121,7 +117,7 @@ export default function Header({
         <button
           className="tw-p-4 md:tw-hidden tw-w-auto tw-absolute tw-left-8 tw-top-8"
           style={{ backgroundColor: '#118ab288' }}
-          onClick={() => dispatch(bookmarkCourse(new URL(window.location).searchParams.get('id')))}
+          onClick={() => dispatch(bookmarkCourse(id))}
         >
           {is_bookmarked ? (
             <img src={bookmarkfillIcon} alt="" style={{}} className="tw-w-4" />

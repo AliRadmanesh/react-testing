@@ -82,7 +82,7 @@ export default function OverView() {
               </p>
               <div className="tw-gap-x-4 tw-grid compare-button-row tw-mt-4">
                 <Link
-                  to={`../course/?id=${pid}`}
+                  to={`../course/${pid}`}
                   className="button button-primary tw-px-0 tw-py-4 tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-text-center"
                 >
                   خرید این دوره
@@ -157,7 +157,7 @@ export default function OverView() {
               </p>
               <div className="tw-gap-x-4 tw-grid compare-button-row tw-mt-4">
                 <Link
-                  to={`../course/?id=${sid}`}
+                  to={`../course/${sid}`}
                   className="button-primary tw-px-0 tw-py-4 tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-text-center"
                 >
                   خرید این دوره

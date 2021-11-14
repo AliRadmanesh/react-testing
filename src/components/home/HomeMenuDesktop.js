@@ -171,7 +171,7 @@ const MenuDesktop = () => {
               >
                 {list.length !== 0 &&
                   list.map((item) => (
-                    <Link key={item.id} to={`../course/?id=${item.id}`}>
+                    <Link key={item.id} to={`../course/${item.id}`}>
                       <div
                         id={item.id}
                         className="tw-p-4 bg-white autosuggest-item font-kalameh-num tw-w-full hover:tw-bg-gray-200 tw-cursor-pointer"
