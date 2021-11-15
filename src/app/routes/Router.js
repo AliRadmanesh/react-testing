@@ -39,7 +39,7 @@ function AppRouter() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/compare" component={Compare} />
           <Route exact path="/jobs" component={JobList} />
-          <Route exact path="/job" component={Job} />
+          <Route exact path="/job/:id" component={Job} />
         </Switch>
       </Router>
     </div>
