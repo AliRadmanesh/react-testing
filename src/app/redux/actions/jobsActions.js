@@ -39,6 +39,7 @@ export const getJobsFilterOptions = () => async (dispatch) => {
   try {
     const res = await instance.get('/api/v1/web/content/jobs/search-content');
     if (res.status === 200 || res.status === 201) {
+      console.log(res.data.data);
       dispatch({
         type: 'GET_JOBS_FILTER_OPTIONS',
         payload: res.data.data,
@@ -50,6 +51,23 @@ export const getJobsFilterOptions = () => async (dispatch) => {
     toast.error(
       'خطا پیش از فرایند دریافت اطلاعات. اتصال خود به شبکه را بررسی نموده و دوباره تلاش نمایید',
     );
+  }
+};
+
+export const getJobsSearchOptions = () => async (dispatch) => {
+  try {
+    const res = await instance.get('/api/v1/web/content/jobs/search-box-content');
+    if (res.status === 200 || res.status === 201) {
+      console.log(res.data.data);
+      dispatch({
+        type: 'SET_JOBS_SEARCH_OPTIONS',
+        payload: res.data.data,
+      });
+    } else {
+      toast.error(res.message);
+    }
+  } catch (error) {
+    toast.error(error);
   }
 };
 
@@ -100,6 +118,12 @@ export const clearJobsSearchFilters = () => (dispatch) => {
     type: 'CLEAR_JOBS_FILTERS',
   });
 };
+
+export const setJobsCategory = (object) => (dispatch) =>
+  dispatch({ type: 'SET_JOBS_CATEGORY', payload: object });
+
+export const setJobsLocation = (object) => (dispatch) =>
+  dispatch({ type: 'SET_JOBS_LOCATION', payload: object });
 
 export const showJobsMobileMenu = (bool) => (dispatch) => {
   dispatch({

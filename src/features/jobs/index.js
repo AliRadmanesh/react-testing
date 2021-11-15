@@ -8,6 +8,7 @@ import Search from '../../components/jobs/Search';
 import {
   getJobsData,
   getJobsFilterOptions,
+  getJobsSearchOptions,
   setJobsSection,
 } from '../../app/redux/actions/jobsActions';
 
@@ -24,6 +25,7 @@ export default function JobListPage() {
       dispatch(getJobsData());
     } else {
       dispatch(setJobsSection(2));
+      dispatch(getJobsSearchOptions());
     }
   }, [new URL(window.location).search]);
 

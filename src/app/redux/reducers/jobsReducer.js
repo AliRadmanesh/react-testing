@@ -8,11 +8,16 @@ const initial = {
       work_experiences: [],
       salary_ranges: [],
     },
+    provinces: [],
+    cities: [],
+    categories: [],
     filters: {
       contract_types: [],
       work_experiences: [],
       salary_ranges: [],
     },
+    location: { id: null, name: '' },
+    category: { id: null, name: '' },
     result: [],
     mobile: false,
   },
@@ -38,6 +43,16 @@ export default (state = initial, action) => {
         search: {
           ...state.search,
           options: action.payload,
+        },
+      };
+    case 'SET_JOBS_SEARCH_OPTIONS':
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          categories: action.payload.categories,
+          provinces: action.payload.provinces,
+          cities: action.payload.cities,
         },
       };
     case 'ADD_JOBS_SEARCH_SALARY_FILTER':
@@ -133,6 +148,14 @@ export default (state = initial, action) => {
         search: {
           ...state.search,
           filters: initial.search.filters,
+        },
+      };
+    case 'SET_JOBS_CATEGORY':
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          category: { id: action.payload.id, name: action.payload.name },
         },
       };
     default:

@@ -46,8 +46,15 @@
   }
 
   &-areas {
+    input,
+    button {
+      width: 100%;
+      min-width: unset;
+      padding: 0;
+      display: block;
+    }
     & > div {
-      background: #0293ad;
+      // background: #0293ad;
     }
 
     display: -ms-grid;

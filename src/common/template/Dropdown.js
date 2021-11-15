@@ -5,7 +5,16 @@ import React, { useState } from 'react';
 import './template.css';
 import icon from './icon.svg';
 
-export default function Dropdown({ disabled, classes, state, onChange, message, options }) {
+export default function Dropdown({
+  disabled,
+  classes,
+  state,
+  onChange,
+  message,
+  options,
+  selector,
+  valuer,
+}) {
   const [choice, setChoice] = useState(null);
   const [show, doShow] = useState(false);
 
@@ -38,13 +47,10 @@ export default function Dropdown({ disabled, classes, state, onChange, message, 
               role="none"
               key={item.id && item.id}
               className="dropdown-item"
-              onClick={() => {
-                setChoice(item);
-                doShow(false);
-                onChange();
-              }}
+              onClick={onChange}
+              value={item.valuer}
             >
-              {item}
+              {item.selector}
             </div>
           ))}
         </div>
