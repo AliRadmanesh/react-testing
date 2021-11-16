@@ -8,6 +8,7 @@ import searchReducer from './searchReducer';
 import courseReducer from './courseReducer';
 import compareReducer from './compareReducer';
 import jobsReducer from './jobsReducer';
+import jobReducer from './jobReducer';
 
 export default combineReducers({
   home: homeReducer,
@@ -19,4 +20,5 @@ export default combineReducers({
   course: courseReducer,
   compare: compareReducer,
   jobs: jobsReducer,
+  job: jobReducer,
 });
