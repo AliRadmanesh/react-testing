@@ -1,14 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Layout from '../../common/Layout/detail';
+import { getJobData } from '../../app/redux/actions/jobActions';
+import Header from '../../components/job/Header';
+import StikcyBox from '../../components/job/StikcyBox';
+import RelatedJobsContainer from '../../components/job/RelatedJobsContainer';
+import ConditionsContainer from '../../components/job/ConditionsContainer';
+import './job.css';
+import Company from '../../components/job/Company';
+import Requirements from '../../components/job/Requirements';
+import Description from '../../components/job/Description';
 
 export default function JobList() {
   const dispatch = useDispatch();
+  const [id, setId] = useState(window.location.href.split('job/')[1]);
+  const { data } = useSelector((state) => state.job);
+  useEffect(() => {
+    dispatch(getJobData(id));
+    if (window.innerWidth < 768)
+      document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
+  }, []);
 
   return (
     <>
       <Layout>
-        <h1>Job Page</h1>
+        <Header data={data} />
+        <div className="tw-grid tw-mt-12 job-gridder tw-gap-x-4 container tw-items-start">
+          <div className="">
+            {/* <div className="tw-rounded-xl tw-bg-yellow-300" style={{ height: '1000px' }} /> */}
+            <Company />
+            <Requirements />
+            <Description />
+            <ConditionsContainer />
+          </div>
+          <StikcyBox data={data} />
+        </div>
+        <div className="container">
+          <RelatedJobsContainer />
+        </div>
       </Layout>
       {/* {!is_purchased && (
         <div
@@ -26,3 +55,10 @@ export default function JobList() {
     </>
   );
 }
+
+// Headings
+/*
+<p className="text-blue tw-mr-2 tw-text-base tw-font-semibold 2xl:tw-text-2xl 2xl:tw-font-black tw-mb-4">
+        شرایط احراز شغل
+      </p>
+*/
