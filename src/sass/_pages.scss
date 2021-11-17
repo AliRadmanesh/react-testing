@@ -84,6 +84,16 @@
   }
 }
 
+.detail-avatar {
+  width: 80px;
+  height: 80px;
+
+  @media screen and (min-width: $text-breakpoint-xx) {
+    width: 108px;
+    height: 108px;
+  }
+}
+
 .detail-page-bg-fade {
   height: 160px;
   width: 100%;
