@@ -86,6 +86,11 @@ export default (state = initial, action) => {
         ...state,
         data: action.payload,
       };
+    case 'JOB_BOOKMARK':
+      return {
+        ...state,
+        data: { ...state.data, is_bookmarked: action.payload },
+      };
     default:
       return state;
   }
