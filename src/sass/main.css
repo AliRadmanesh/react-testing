@@ -966,6 +966,16 @@ footer .footer-heading {
   background: #118ab2 !important;
 }
 
+.job-course-container .swiper-pagination-bullet {
+  background: #fbfbfb !important;
+  opacity: 0.6;
+}
+
+.job-course-container .swiper-pagination-bullet-active {
+  background: #fefefe !important;
+  opacity: 1;
+}
+
 .leaflet-container {
   width: 100%;
   min-height: 500px;

@@ -23,7 +23,6 @@ export default function Header({ data }) {
     is_bookmarked,
     company: { name_fa, name_en, avatar },
   } = data;
-
   const dispatch = useDispatch();
 
   return (
@@ -84,7 +83,7 @@ export default function Header({ data }) {
         </div>
         <div className="tw-flex tw-w-full">
           <div className="detail-avatar" />
-          <div className="tw-hidden md:tw-grid tw-grid-cols-3 tw-pt-4 tw-w-full">
+          <div className="tw-hidden md:tw-grid tw-grid-cols-3 tw-gap-x-4 tw-pt-4 tw-w-full">
             <div className="tw-flex tw-items-center">
               <img src={bagIcon} alt="" className="icon" />
               <div className="tw-pr-4 tw-mr-4 tw-border-r tw-border-gray-200">
@@ -104,8 +103,8 @@ export default function Header({ data }) {
                 </p>
                 <p className="text-gray tw-text-xs tw-font-normal 2xl:tw-text-base 2xl:tw-font-semibold">
                   {benefits.map((item, index) => {
-                    if (index === benefits.length - 1) return item;
-                    return `${item} - `;
+                    if (index === benefits.length - 1) return item.name;
+                    return `${item.name} - `;
                   })}
                 </p>
               </div>
@@ -147,8 +146,8 @@ export default function Header({ data }) {
             <p className="text-gray tw-text-xs tw-font-normal">مزایا و تسهیلات</p>
             <p className="text-dark tw-text-xs tw-font-normal">
               {benefits.map((item, index) => {
-                if (index === benefits.length - 1) return item;
-                return `${item} - `;
+                if (index === benefits.length - 1) return item.name;
+                return `${item.name} - `;
               })}
             </p>
           </div>

@@ -1,12 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-export default function Company() {
+export default function Company({ data }) {
   const {
-    data: {
-      company: { name_fa, industry, about },
-    },
-  } = useSelector((state) => state.job);
+    company: { name_fa, industry, about },
+  } = data;
 
   return (
     <div className="bg-white tw-rounded-xl tw-shadow-xl tw-p-4 font-kalameh-num">

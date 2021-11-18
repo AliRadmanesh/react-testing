@@ -2,17 +2,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-export default function ConditionsContainer() {
+export default function ConditionsContainer({ data }) {
   const {
-    data: {
-      conditions: {
-        age_range: { min, max },
-        gender,
-        minimum_education_degree,
-        skills,
-      },
+    conditions: {
+      age_range: { min, max },
+      gender,
+      minimum_education_degree,
+      skills,
     },
-  } = useSelector((state) => state.job);
+  } = data;
   return (
     <div className="bg-white tw-rounded-xl tw-shadow-xl tw-p-4 tw-mt-8 font-kalameh-num">
       <p className="text-blue tw-mr-2 tw-text-base tw-font-semibold 2xl:tw-text-2xl 2xl:tw-font-black tw-mb-4">
@@ -67,7 +65,7 @@ export default function ConditionsContainer() {
           </div>
         </div>
       </div>
-      <div className="tw-grid tw-gap-x-4 tw-mb-2 job-condition-gridder tw-items-start tw-mt-4">
+      {/* <div className="tw-grid tw-gap-x-4 tw-mb-2 job-condition-gridder tw-items-start tw-mt-4">
         <div className="tw-hidden lg:tw-grid tw-p-4 tw-items-center bg-primary-pale tw-rounded-xl">
           <p className="tw-text-sm tw-font-normal text-black 2xl:tw-text-base 2xl:tw-font-semibold">
             زبان
@@ -81,7 +79,7 @@ export default function ConditionsContainer() {
             <p className="tw-text-sm tw-font-normal text-dark 2xl:tw-text-base">TO BE DECIDED...</p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="tw-grid tw-gap-x-4 tw-mb-2 job-condition-gridder tw-items-start tw-mt-4">
         <div className="tw-hidden lg:tw-grid tw-p-4 tw-items-center bg-primary-pale tw-rounded-xl">
           <p className="tw-text-sm tw-font-normal text-black 2xl:tw-text-base 2xl:tw-font-semibold">

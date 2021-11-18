@@ -755,6 +755,20 @@ footer {
   background: $karsaz-primary !important;
 }
 
+.job-course-container .swiper-pagination-bullet {
+  background: $karsaz-light !important;
+  opacity: 0.6;
+}
+
+.job-course-container .swiper-pagination-bullet-active {
+  background: $karsaz-white !important;
+  opacity: 1;
+}
+
+.job-course-container .swiper-slide {
+  // width: clamp(328px, 45%, 488px) !important;
+}
+
 .leaflet-container {
   width: 100%;
   min-height: 500px;

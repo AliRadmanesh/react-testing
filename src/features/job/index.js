@@ -10,6 +10,7 @@ import './job.css';
 import Company from '../../components/job/Company';
 import Requirements from '../../components/job/Requirements';
 import Description from '../../components/job/Description';
+import RecommendedCourses from '../../components/job/RecommendedCourses';
 
 export default function JobList() {
   const dispatch = useDispatch();
@@ -27,31 +28,30 @@ export default function JobList() {
         <Header data={data} />
         <div className="tw-grid tw-mt-12 job-gridder tw-gap-x-4 container tw-items-start">
           <div className="">
-            {/* <div className="tw-rounded-xl tw-bg-yellow-300" style={{ height: '1000px' }} /> */}
-            <Company />
-            <Requirements />
-            <Description />
-            <ConditionsContainer />
+            <Company data={data} />
+            <Requirements data={data} />
+            <Description data={data} />
+            <ConditionsContainer data={data} />
           </div>
           <StikcyBox data={data} />
         </div>
         <div className="container">
-          <RelatedJobsContainer />
+          <RelatedJobsContainer data={data} />
         </div>
+
+        <RecommendedCourses data={data} />
       </Layout>
-      {/* {!is_purchased && (
-        <div
-          className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-bottom-4 tw-w-full tw-right-0 tw-px-4"
-          style={{ zIndex: '9999' }}
+      <div
+        className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-bottom-4 tw-w-full tw-right-0 tw-px-4"
+        style={{ zIndex: '9999' }}
+      >
+        <button
+          className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
+          style={{ width: '100%' }}
         >
-          <button
-            className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
-            style={{ width: '100%' }}
-          >
-            خرید این دوره
-          </button>
-        </div>
-      )} */}
+          خرید این دوره
+        </button>
+      </div>
     </>
   );
 }
