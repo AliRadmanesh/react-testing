@@ -14,11 +14,11 @@ export default function Company({ data }) {
       <p className="tw-mt-4 2xl:tw-mt-6 2xl:tw-text-base 2xl:tw-font-semibold tw-text-xs tw-font-medium text-black">
         خدمات و محصولات
       </p>
-      <p className="text-gray 2xl:tw-text-base tw-font-normal tw-text-xs text-black">{industry}</p>
+      <p className="text-gray 2xl:tw-text-base tw-font-normal tw-text-xs text-gray">{industry}</p>
       <p className="tw-mt-4 2xl:tw-mt-6 2xl:tw-text-base 2xl:tw-font-semibold tw-text-xs tw-font-medium text-black">
         اندازه سازمان
       </p>
-      <p className="text-gray 2xl:tw-text-base tw-font-normal tw-text-xs text-black">{about}</p>
+      <p className="text-gray 2xl:tw-text-base tw-font-normal tw-text-xs text-gray">{about}</p>
     </div>
   );
 }

@@ -61,3 +61,28 @@
     padding-right: 204px;
   }
 }
+
+.job-description p {
+  color: #878787;
+  font-size: 12px;
+}
+
+.job-description p strong {
+  /* color:  */
+  display: block;
+  color: #2c2c2c;
+  margin-top: 1rem;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 1536px) {
+  .job-description p {
+    font-size: 16px;
+  }
+
+  .job-description p strong {
+    /* color:  */
+    margin-top: 1.5rem;
+    font-size: 16px;
+  }
+}

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Layout from '../../common/Layout/detail';
-import { getJobData } from '../../app/redux/actions/jobActions';
 import Header from '../../components/job/Header';
 import StikcyBox from '../../components/job/StikcyBox';
 import RelatedJobsContainer from '../../components/job/RelatedJobsContainer';
 import ConditionsContainer from '../../components/job/ConditionsContainer';
-import './job.css';
 import Company from '../../components/job/Company';
 import Requirements from '../../components/job/Requirements';
 import Description from '../../components/job/Description';
 import RecommendedCourses from '../../components/job/RecommendedCourses';
+
+import './job.css';
+
+import { getJobData } from '../../app/redux/actions/jobActions';
 
 export default function JobList() {
   const dispatch = useDispatch();
@@ -45,12 +48,14 @@ export default function JobList() {
         className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-bottom-4 tw-w-full tw-right-0 tw-px-4"
         style={{ zIndex: '9999' }}
       >
-        <button
+        <Link
+          to={{ pathname: data.ref_url }}
+          target="_blank"
           className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
           style={{ width: '100%' }}
         >
           خرید این دوره
-        </button>
+        </Link>
       </div>
     </>
   );
