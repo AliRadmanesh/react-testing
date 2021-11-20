@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -9,13 +10,14 @@ export default function Requirements({ data }) {
       <p className="text-blue tw-mr-2 tw-text-base tw-font-semibold 2xl:tw-text-2xl 2xl:tw-font-black tw-mb-4">
         شاخص های کلیدی از نظر کارفرما
       </p>
-      <p className="text-gray 2xl:tw-text-base tw-font-normal tw-text-xs text-gray">
+      <div className="job-requirements">
         {requirements !== null &&
-          requirements.map((item, index) => {
-            if (index === requirements.length - 1) return item;
-            return `${item} - `;
-          })}
-      </p>
+          requirements.map((item) => (
+            <p className="text-gray 2xl:tw-text-base tw-font-normal tw-text-xs text-gray tw-relative">
+              {item}
+            </p>
+          ))}
+      </div>
     </div>
   );
 }
