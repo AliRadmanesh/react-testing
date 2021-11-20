@@ -43,15 +43,19 @@ export default function RecommendedCourses({ data }) {
         spaceBetween={16}
         className="mySwiper tw-w-full tw-py-4"
         breakpoints={{
-          '@0.00': {
+          100: {
             slidesPerView: 1,
             spaceBetween: 16,
           },
-          '@0.75': {
-            slidesPerView: 2,
+          768: {
+            slidesPerView: 3,
             spaceBetween: 16,
           },
-          '@2.5': {
+          1024: {
+            slidesPerView: 1.5,
+            spaceBetween: 16,
+          },
+          1280: {
             slidesPerView: 2.5,
             spaceBetween: 16,
           },
