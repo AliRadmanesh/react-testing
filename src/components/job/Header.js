@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import bookmarkIcon from '../../assets/icons/Bookmark.svg';
 import bookmarkFillIcon from '../../assets/icons/Bookmark Fill.svg';
@@ -158,9 +159,13 @@ export default function Header({ data }) {
         </div>
       </div>
       <div className="tw-hidden lg:tw-flex tw-flex-col tw-p-4 tw-rounded-xl tw-shadow-xl bg-white">
-        <button className="button-primary tw-py-4 tw-text-center tw-mb-8">
+        <Link
+          to={{ pathname: data.ref_url }}
+          target="_blank"
+          className="button-primary tw-py-4 tw-text-center tw-mb-8"
+        >
           مشاهده و ارسال رزومه
-        </button>
+        </Link>
         <p className="tw-text-xs 2xl:tw-text-base tw-font-normal text-gray tw-text-justify ">
           برای ارسال رزومه به سایت مربوط آگهی ارجاع داده خواهید شد.
           <br />

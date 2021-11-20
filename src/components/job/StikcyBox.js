@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function StikcyBox({ data }) {
   const {
@@ -21,9 +22,13 @@ export default function StikcyBox({ data }) {
           </p>
         </div>
       </div>
-      <button className="button-primary tw-py-4 tw-text-center tw-mb-8">
+      <Link
+        to={{ pathname: data.ref_url }}
+        target="_blank"
+        className="button-primary tw-py-4 tw-text-center tw-mb-8"
+      >
         مشاهده و ارسال رزومه
-      </button>
+      </Link>
       <p className="tw-text-xs 2xl:tw-text-base tw-font-normal text-gray tw-text-justify font-kalameh-num">
         برای ارسال رزومه به سایت مربوط آگهی ارجاع داده خواهید شد.
         <br />
