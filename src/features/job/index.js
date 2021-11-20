@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Layout from '../../common/Layout/detail';
 import Header from '../../components/job/Header';
 import StikcyBox from '../../components/job/StikcyBox';
@@ -18,13 +18,16 @@ import { getJobData } from '../../app/redux/actions/jobActions';
 export default function JobList() {
   const dispatch = useDispatch();
   const [id, setId] = useState(window.location.href.split('job/')[1]);
-  const { data } = useSelector((state) => state.job);
+  const { data, status } = useSelector((state) => state.job);
   useEffect(() => {
     dispatch(getJobData(id));
     if (window.innerWidth < 768)
       document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
   }, []);
 
+  useEffect(() => {}, [status]);
+
+  if (status === 400) return <Redirect to="../404" />;
   return (
     <>
       <Layout>

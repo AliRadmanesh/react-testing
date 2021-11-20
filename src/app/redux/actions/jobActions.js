@@ -2,12 +2,32 @@ import toast from 'react-hot-toast';
 import instance from '../../instance';
 
 export const getJobData = (id) => async (dispatch) => {
-  const res = await instance.get(`/api/v1/web/service/jobs/${id}`);
-  // console.log(res);
-  if (res.status === 200 || res.status === 201) {
+  try {
+    const res = await instance.get(`/api/v1/web/service/jobs/${id}`);
+    console.log(res);
+    if (res.status === 200 || res.status === 201) {
+      dispatch({
+        type: 'GET_JOB_DATA',
+        payload: res.data.data.job,
+      });
+      dispatch({
+        type: 'SET_JOB_STATUS',
+        payload: 200,
+      });
+    } else {
+      // toast.error(res.data.message);
+      // window.location.href = `${new URL(window.location).origin}/404`;
+      dispatch({
+        type: 'SET_JOB_STATUS',
+        payload: 400,
+      });
+    }
+  } catch (error) {
+    // toast.error(error);
+    console.log(error);
     dispatch({
-      type: 'GET_JOB_DATA',
-      payload: res.data.data.job,
+      type: 'SET_JOB_STATUS',
+      payload: 400,
     });
   }
 };

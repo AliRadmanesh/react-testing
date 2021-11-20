@@ -1,4 +1,5 @@
 const initial = {
+  status: null,
   data: {
     id: null,
     title: '',
@@ -81,6 +82,11 @@ const initial = {
 
 export default (state = initial, action) => {
   switch (action.type) {
+    case 'SET_JOB_STATUS':
+      return {
+        ...state,
+        status: action.payload,
+      };
     case 'GET_JOB_DATA':
       return {
         ...state,
