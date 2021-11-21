@@ -25,7 +25,7 @@ function Footer() {
 
   return (
     <footer className="tw-pb-12 bg-light" style={{}}>
-      <div className="tw-grid bg-white container" style={{ gridTemplateColumns: '150px auto' }}>
+      <div className="tw-grid bg-white footer-gridder" style={{}}>
         <div
           className=""
           style={{
@@ -33,7 +33,7 @@ function Footer() {
           }}
         >
           <div
-            className="tw-inline-flex tab-effect tw-py-8 bg-white tw-px-4"
+            className="tw-inline-flex tab-effect tw-py-8 bg-white tw-px-4 footer-righter"
             style={{
               clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0 100%)',
               boxShadow: '-10px 0 5px -8px #eee',

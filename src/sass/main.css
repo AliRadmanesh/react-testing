@@ -621,6 +621,24 @@ button, .button-primary, .button-secondary, .button-error, .button {
 }
 
 /* FOOTER SETTINGS */
+footer .footer-gridder {
+  -ms-grid-columns: 150px auto;
+      grid-template-columns: 150px auto;
+}
+
+@media screen and (min-width: 1536px) {
+  footer .footer-gridder {
+    -ms-grid-columns: 350px auto;
+        grid-template-columns: 350px auto;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  footer .footer-righter {
+    margin-right: 188px;
+  }
+}
+
 footer .tab-effect-container {
   -webkit-box-shadow: 30px -10px 5px -8px #eee;
           box-shadow: 30px -10px 5px -8px #eee;
@@ -2366,10 +2384,7 @@ footer .footer-heading {
 .jobs-search-areas .button-secondary,
 .jobs-search-areas .button-error,
 .jobs-search-areas .button {
-  width: 100%;
-  min-width: unset;
   padding: 0;
-  display: block;
 }
 
 @media screen and (min-width: 768px) {
