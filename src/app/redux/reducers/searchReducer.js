@@ -107,7 +107,7 @@ export default (state = initialState, action) => {
     case SET_QUERY_CURRENT_PAGE:
       return {
         ...state,
-        query: { ...state.query, page: { current: action.payload } },
+        query: { ...state.query, page: { ...state.query.page, current: action.payload } },
       };
 
     case SET_QUERY_STATUS:
