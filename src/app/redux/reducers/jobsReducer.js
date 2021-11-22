@@ -3,6 +3,7 @@ const initial = {
   recommended: [],
   recent: [],
   search: {
+    loading: true,
     options: {
       contract_types: [],
       work_experiences: [],
@@ -11,6 +12,7 @@ const initial = {
     provinces: [],
     cities: [],
     categories: [],
+    locations: [],
     filters: {
       contract_types: [],
       work_experiences: [],
@@ -19,6 +21,7 @@ const initial = {
     location: { id: null, name: '' },
     category: { id: null, name: '' },
     result: [],
+    page: { current: 1, total: 1 },
     mobile: false,
   },
 };
@@ -37,6 +40,31 @@ export default (state = initial, action) => {
         ...state,
         section: action.payload,
       };
+    case 'SET_JOBS_SEARCH_LOADING':
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          loading: true,
+        },
+      };
+    case 'SEARCH_JOBS':
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          result: action.payload,
+          loading: false,
+        },
+      };
+    case 'SET_SEARCH_JOBS_TOTAL_PAGE':
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          page: { ...state.search.page, total: action.payload },
+        },
+      };
     case 'GET_JOBS_FILTER_OPTIONS':
       return {
         ...state,
@@ -51,8 +79,9 @@ export default (state = initial, action) => {
         search: {
           ...state.search,
           categories: action.payload.categories,
-          provinces: action.payload.provinces,
-          cities: action.payload.cities,
+          // provinces: action.payload.provinces,
+          // cities: action.payload.cities,
+          locations: action.payload.locations,
         },
       };
     case 'ADD_JOBS_SEARCH_SALARY_FILTER':
@@ -127,11 +156,6 @@ export default (state = initial, action) => {
           },
         },
       };
-    case 'CLEAR_COURSES_FILTERS':
-      return {
-        ...state,
-        filters: { course_types: [], academies: [] },
-      };
 
     case 'SHOW_JOBS_FILTER_MOBILE':
       return {
@@ -157,6 +181,19 @@ export default (state = initial, action) => {
           ...state.search,
           category: { id: action.payload.id, name: action.payload.name },
         },
+      };
+    case 'SET_JOBS_LOCATION':
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          location: { id: action.payload.id, name: action.payload.name },
+        },
+      };
+    case 'CLEAR_ALL_JOBS_ADJUSTMENTS':
+      return {
+        ...state,
+        search: initial.search,
       };
     default:
       return state;

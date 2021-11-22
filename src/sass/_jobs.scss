@@ -35,6 +35,11 @@
 
   &-area-2 {
     grid-area: category;
+    column-width: 100px;
+    div {
+      max-width: 100%;
+      overflow: hidden;
+    }
   }
 
   &-area-3 {
@@ -46,25 +51,49 @@
   }
 
   &-areas {
-    input,
-    button {
-      padding: 0;
-    }
     & > div {
       // background: #0293ad;
+      min-width: 0;
+      overflow: hidden;
     }
-
-    display: -ms-grid;
-    display: grid;
-    grid-gap: 1rem;
     grid-template-areas: 'search' 'category' 'city' 'submit';
 
     @media screen and (min-width: 768px) {
       grid-template-areas: 'search search search submit' 'category category city city';
     }
+  }
+}
 
-    @media screen and (min-width: 1280px) {
-      grid-template-areas: 'search search category category city city submit';
-    }
+.jobs-columnar-form {
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+}
+
+.job-search-select {
+  z-index: 9999;
+  input,
+  input:focus,
+  .input:hover {
+    border: none;
+    box-shadow: none;
+  }
+
+  div div div input {
+    background: red;
+  }
+
+  div {
+    border-radius: 12px;
+  }
+
+  input {
+    height: 50px;
+  }
+}
+
+.search-box {
+  input,
+  input:focus,
+  input:hover {
+    box-shadow: none !important;
   }
 }

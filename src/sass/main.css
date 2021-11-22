@@ -2356,6 +2356,13 @@ footer .footer-heading {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: category;
+  -webkit-column-width: 100px;
+          column-width: 100px;
+}
+
+.jobs-search-area-2 div {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .jobs-search-area-3 {
@@ -2371,20 +2378,12 @@ footer .footer-heading {
 }
 
 .jobs-search-areas {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 1rem;
       grid-template-areas: 'search' 'category' 'city' 'submit';
 }
 
-.jobs-search-areas input, .jobs-search-areas textarea,
-.jobs-search-areas .textarea,
-.jobs-search-areas button,
-.jobs-search-areas .button-primary,
-.jobs-search-areas .button-secondary,
-.jobs-search-areas .button-error,
-.jobs-search-areas .button {
-  padding: 0;
+.jobs-search-areas > div {
+  min-width: 0;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
@@ -2393,9 +2392,49 @@ footer .footer-heading {
   }
 }
 
-@media screen and (min-width: 1280px) {
-  .jobs-search-areas {
-        grid-template-areas: 'search search category category city city submit';
-  }
+.jobs-columnar-form {
+  -ms-grid-columns: 2fr 2fr 2fr 1fr;
+      grid-template-columns: 2fr 2fr 2fr 1fr;
+}
+
+.job-search-select {
+  z-index: 9999;
+}
+
+.job-search-select input, .job-search-select textarea,
+.job-search-select .textarea,
+.job-search-select input:focus,
+.job-search-select textarea:focus,
+.job-search-select .textarea:focus,
+.job-search-select .input:hover {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.job-search-select div div div input, .job-search-select div div div textarea,
+.job-search-select div div div .textarea {
+  background: red;
+}
+
+.job-search-select div {
+  border-radius: 12px;
+}
+
+.job-search-select input, .job-search-select textarea,
+.job-search-select .textarea {
+  height: 50px;
+}
+
+.search-box input, .search-box textarea,
+.search-box .textarea,
+.search-box input:focus,
+.search-box textarea:focus,
+.search-box .textarea:focus,
+.search-box input:hover,
+.search-box textarea:hover,
+.search-box .textarea:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 /*# sourceMappingURL=main.css.map */

@@ -27,19 +27,33 @@ export const getJobsData = () => async (dispatch) => {
   }
 };
 
-// export const searchJobs = () => async (dispatch) => {
-//   try {
-//     const res = await instance.get('/api/v1/web/service/jobs/search/?q=ui');
-
-//     if(res.data.)
-//   } catch (error) {}
-// };
+export const searchJobs = (query) => async (dispatch) => {
+  try {
+    dispatch({
+      type: 'SET_JOBS_SEARCH_LOADING',
+    });
+    const res = await instance.get(`/api/v1/web/service/jobs/search/${query}`);
+    console.log(res);
+    if (res.status === 200 || res.status === 201) {
+      dispatch({
+        type: 'SEARCH_JOBS',
+        payload: res.data.data.jobs,
+      });
+      dispatch({
+        type: 'SET_SEARCH_JOBS_TOTAL_PAGE',
+        payload: res.data.meta.last_page,
+      });
+    }
+  } catch (error) {
+    toast.error('خطا پیش از برقراری ارتباط با سرور');
+  }
+};
 
 export const getJobsFilterOptions = () => async (dispatch) => {
   try {
     const res = await instance.get('/api/v1/web/content/jobs/search-content');
     if (res.status === 200 || res.status === 201) {
-      console.log(res.data.data);
+      // console.log(res.data.data);
       dispatch({
         type: 'GET_JOBS_FILTER_OPTIONS',
         payload: res.data.data,
@@ -55,13 +69,27 @@ export const getJobsFilterOptions = () => async (dispatch) => {
 };
 
 export const getJobsSearchOptions = () => async (dispatch) => {
+  const result = { categories: [], locations: [] };
   try {
     const res = await instance.get('/api/v1/web/content/jobs/search-box-content');
     if (res.status === 200 || res.status === 201) {
-      console.log(res.data.data);
+      // console.log(res.data.data);
+      // eslint-disable-next-line array-callback-return
+      res.data.data.categories.map((item) => {
+        result.categories.push({ label: item.name, value: item.id });
+      });
+      // eslint-disable-next-line array-callback-return
+      res.data.data.provinces.map((item) => {
+        result.locations.push({ label: item.name, value: item.id });
+      });
+      // eslint-disable-next-line array-callback-return
+      res.data.data.cities.map((item) => {
+        result.locations.push({ label: item.name, value: item.id });
+      });
+      // console.log(result);
       dispatch({
         type: 'SET_JOBS_SEARCH_OPTIONS',
-        payload: res.data.data,
+        payload: result,
       });
     } else {
       toast.error(res.message);
@@ -131,3 +159,6 @@ export const showJobsMobileMenu = (bool) => (dispatch) => {
     payload: bool,
   });
 };
+
+export const clearAllJobsAdustments = () => (dispatch) =>
+  dispatch({ type: 'CLEAR_ALL_JOBS_ADJUSTMENTS' });
