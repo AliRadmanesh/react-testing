@@ -79,7 +79,17 @@ const LocationDropdown = () => {
       className="tw-rounded-xl jobs-search-select text-gray tw-text-sm tw-font-normal 2xl:tw-text-base"
       placeholder={<div>شهر</div>}
       styles={customStyle}
-      onChange={(item) => dispatch(setJobsLocation({ name: item.label, id: item.value }))}
+      onChange={({ value, label, city, province }) => {
+        dispatch(
+          setJobsLocation({
+            id: value,
+            name: label,
+            city,
+            province,
+          }),
+        );
+        // console.log(item);
+      }}
     />
   );
 };

@@ -12,13 +12,17 @@ import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 export default function Search() {
   const dispatch = useDispatch();
+  const [urlQuery, setUrlQuery] = useState(new URL(window.location).searchParams.get('q'));
   const {
     search: {
       result,
       loading,
       page: { current, total },
+      filters: { work_experiences, contract_types, salary_ranges },
+      options,
     },
   } = useSelector((state) => state.jobs);
+
   useEffect(() => {
     const query = new URL(window.location).search;
     dispatch(searchJobs(query));
@@ -27,6 +31,34 @@ export default function Search() {
       dispatch(clearAllJobsAdustments());
     };
   }, []);
+
+  useEffect(() => {
+    const url = new URL(window.location);
+    // url.searchParams.set('q')
+    const filters = url.search.split('filters')[1];
+    console.log(filters);
+    // if (filters)
+    work_experiences.forEach((item, index) => {
+      url.searchParams.set(`work_experiences[${index}]`, item.id);
+    });
+    contract_types.forEach((item, index) => {
+      url.searchParams.set(`contract_types[${index}]`, item.id);
+    });
+    salary_ranges.forEach((item, index) => {
+      url.searchParams.set(`salary_ranges[${index}]`, item.id);
+    });
+  }, [work_experiences, contract_types, salary_ranges, current]);
+
+  useEffect(() => {
+    // dispatch(searchQuery(new URL(window.location).search));
+    setUrlQuery(new URL(window.location).searchParams.get('q'));
+  }, [new URL(window.location).search]);
+
+  useEffect(() => {
+    if (window.scrollY !== 0) {
+      window.scrollTo(0, 0);
+    }
+  }, [current]);
 
   return (
     <>

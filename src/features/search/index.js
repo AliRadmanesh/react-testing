@@ -123,7 +123,7 @@ export default function Search() {
   }, [new URL(window.location).search]);
 
   useEffect(() => {
-    if (window.scollY !== 0) {
+    if (window.scrollY !== 0) {
       window.scrollTo(0, 0);
     }
   }, [current]);
