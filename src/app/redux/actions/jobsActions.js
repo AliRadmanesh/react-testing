@@ -40,7 +40,7 @@ export const searchJobs = (query) => async (dispatch) => {
         payload: res.data.data.jobs,
       });
       dispatch({
-        type: 'SET_SEARCH_JOBS_TOTAL_PAGE',
+        type: 'SET_JOBS_SEARCH_PAGE_TOTAL',
         payload: res.data.meta.last_page,
       });
     }
@@ -80,11 +80,21 @@ export const getJobsSearchOptions = () => async (dispatch) => {
       });
       // eslint-disable-next-line array-callback-return
       res.data.data.provinces.map((item) => {
-        result.locations.push({ label: item.name, value: item.id });
+        result.locations.push({
+          label: item.name,
+          value: item.id,
+          city: null,
+          province: item.name,
+        });
       });
       // eslint-disable-next-line array-callback-return
       res.data.data.cities.map((item) => {
-        result.locations.push({ label: item.name, value: item.id });
+        result.locations.push({
+          label: item.name,
+          value: item.id,
+          city: item.name,
+          province: item.name.split(' - ')[0],
+        });
       });
       // console.log(result);
       dispatch({
@@ -162,3 +172,9 @@ export const showJobsMobileMenu = (bool) => (dispatch) => {
 
 export const clearAllJobsAdustments = () => (dispatch) =>
   dispatch({ type: 'CLEAR_ALL_JOBS_ADJUSTMENTS' });
+
+export const setJobsSearchCurrentPage = (page) => (dispatch) =>
+  dispatch({ type: 'SET_JOBS_SEARCH_CURRENT_PAGE', payload: page });
+
+export const setJobsSearchTotalPage = (page) => (dispatch) =>
+  dispatch({ type: 'SET_JOBS_SEARCH_PAGE_TOTAL', payload: page });

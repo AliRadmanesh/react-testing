@@ -18,7 +18,7 @@ const initial = {
       work_experiences: [],
       salary_ranges: [],
     },
-    location: { id: null, name: '' },
+    location: { id: null, name: '', city: null, province: null },
     category: { id: null, name: '' },
     result: [],
     page: { current: 1, total: 1 },
@@ -57,12 +57,20 @@ export default (state = initial, action) => {
           loading: false,
         },
       };
-    case 'SET_SEARCH_JOBS_TOTAL_PAGE':
+    case 'SET_JOBS_SEARCH_PAGE_TOTAL':
       return {
         ...state,
         search: {
           ...state.search,
           page: { ...state.search.page, total: action.payload },
+        },
+      };
+    case 'SET_JOBS_SEARCH_CURRENT_PAGE':
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          page: { ...state.search.page, current: action.payload },
         },
       };
     case 'GET_JOBS_FILTER_OPTIONS':
@@ -187,7 +195,12 @@ export default (state = initial, action) => {
         ...state,
         search: {
           ...state.search,
-          location: { id: action.payload.id, name: action.payload.name },
+          location: {
+            id: action.payload.id,
+            name: action.payload.name,
+            province: action.payload.province,
+            city: action.payload.city,
+          },
         },
       };
     case 'CLEAR_ALL_JOBS_ADJUSTMENTS':
