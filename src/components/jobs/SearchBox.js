@@ -108,7 +108,22 @@ export default function SearchBox() {
     else {
       const url = new URL(window.location);
       url.searchParams.set('q', text);
-      // if(location.id !== null) url.searchParams.set('')
+      if (location.id !== null) {
+        if (location.city) {
+          url.searchParams.delete('province');
+          url.searchParams.set('city[0]', location.id);
+        }
+        if (!location.city) {
+          url.searchParams.delete('city[0]');
+          url.searchParams.set('province', location.id);
+        }
+      }
+      if (category.id) {
+        url.searchParams.set('category[0]', category.id);
+      }
+      if (!category.id) {
+        url.searchParams.delete('category[0]');
+      }
       console.log(url.search);
       history.push(`../jobs${url.search}`);
     }
