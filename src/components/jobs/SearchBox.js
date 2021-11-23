@@ -1,23 +1,22 @@
 // Due to wrong grid behavior, Multiple grid forms are written
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import toast from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setJobsCategory, setJobsLocation } from '../../app/redux/actions/jobsActions';
-
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-];
+import {
+  setJobsCategory,
+  setJobsLocation,
+  clearJobsSearchFilters,
+} from '../../app/redux/actions/jobsActions';
 
 const customStyle = {
   control: (provided, state) => ({
     ...provided,
     background: 'rgb(240, 242, 242)',
     borderRadius: 12,
-    height: window.innerWidth >= 1536 ? 72 : 56,
+    // height: 72,
+    height: window.innerWidth >= 768 ? 72 : 56,
     border: 'none',
     // borderColor: state.isHovered ? 'transparent' : 'transparent',
     transition: 'box-shadow .3s ease-in',
@@ -32,19 +31,6 @@ const customStyle = {
   indicatorSeparator: (state) => ({
     display: 'none',
   }),
-};
-
-const SearchInput = () => {
-  const [text, setText] = useState(new URL(window.location).searchParams.get('q'));
-  return (
-    <input
-      type="text"
-      placeholder="عنوان شغلی یا شرکت..."
-      className="tw-w-full tw-h-full"
-      onChange={(e) => setText(e.target.value)}
-      value={text}
-    />
-  );
 };
 
 const CategoryDropdown = () => {
@@ -102,11 +88,13 @@ export default function SearchBox() {
   let name;
   let value;
   const history = useHistory();
+  const dispatch = useDispatch();
   const onSubmit = (event) => {
     event.preventDefault();
+    dispatch(clearJobsSearchFilters());
     if (text === '') toast.error('لطفا کلمه یا عبارتی را درون باکس اول وارد کنید.');
     else {
-      const url = new URL(window.location);
+      const url = new URL(window.location.origin);
       url.searchParams.set('q', text);
       if (location.id !== null) {
         if (location.city) {
@@ -125,7 +113,7 @@ export default function SearchBox() {
         url.searchParams.delete('category[0]');
       }
       console.log(url.search);
-      history.push(`../jobs${url.search}`);
+      history.push(`./${url.search}`);
     }
   };
   return (

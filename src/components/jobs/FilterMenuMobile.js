@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   addJobsSalaryFilter,
@@ -24,7 +24,6 @@ export default function FilterMenuMobile() {
   const { filters } = useSelector((state) => state.jobs.search);
 
   const dispatch = useDispatch();
-  const { result } = useSelector((state) => state.jobs.search);
 
   const filterContract = (event, item) => {
     if (event.target.checked) {
@@ -52,10 +51,14 @@ export default function FilterMenuMobile() {
 
   const clearAllFilters = () => {
     dispatch(clearJobsSearchFilters());
-    document.querySelectorAll('[class*="academy-desktop-"]').forEach((item) => {
+    document.querySelectorAll('[class*="experience-mobile-"]').forEach((item) => {
       if (item.querySelector('input').checked) item.querySelector('input').checked = false;
     });
-    document.querySelectorAll('[class*="type-desktop-"]').forEach((item) => {
+    document.querySelectorAll('[class*="contract-mobile-"]').forEach((item) => {
+      if (item.querySelector('input').checked) item.querySelector('input').checked = false;
+    });
+
+    document.querySelectorAll('[class*="salary-mobile-"]').forEach((item) => {
       if (item.querySelector('input').checked) item.querySelector('input').checked = false;
     });
   };
@@ -72,9 +75,6 @@ export default function FilterMenuMobile() {
         </button>
       </div>
       <div className="container">
-        <div className="tw-py-6">
-          <SearchBar classes="tw-py-2" />
-        </div>
         <div className="tw-p-4 tw-rounded-xl bg-white">
           <div className="tw-flex tw-justify-between tw-items-center tw-mb-4">
             <p className="text-black tw-text-base tw-font-semibold">فیلترهای اعمال شده</p>
@@ -92,7 +92,6 @@ export default function FilterMenuMobile() {
                 title={contract.title}
                 onDelete={() => {
                   dispatch(removeJobsContractFilter(contract.id));
-                  // console.log(document.querySelector(`.contract-${contract.id} input`));
                   document.querySelector(`.contract-mobile-${contract.id} input`).checked = false;
                 }}
               />
@@ -103,7 +102,6 @@ export default function FilterMenuMobile() {
                 title={experience.title}
                 onDelete={() => {
                   dispatch(removeJobsExperienceFilter(experience.id));
-                  // console.log(document.querySelector(`.academy-${academy.id}`));
                   document.querySelector(
                     `.experience-mobile-${experience.id} input`,
                   ).checked = false;
@@ -116,7 +114,6 @@ export default function FilterMenuMobile() {
                 title={salary.title}
                 onDelete={() => {
                   dispatch(removeJobsSalaryFilter(salary.id));
-                  // console.log(document.querySelector(`.academy-${academy.id}`));
                   document.querySelector(`.salary-mobile-${salary.id} input`).checked = false;
                 }}
               />
@@ -140,7 +137,7 @@ export default function FilterMenuMobile() {
             <Checkbox
               key={type.id}
               text={type.name}
-              classes={`font-iranyekan-num type-desktop-${type.id}`}
+              classes={`font-iranyekan-num contract-mobile-${type.id}`}
               onChange={(e) => filterContract(e, type)}
             />
           ))}
@@ -151,7 +148,7 @@ export default function FilterMenuMobile() {
             <Checkbox
               key={type.id}
               text={type.title}
-              classes={`font-iranyekan-num type-desktop-${type.id}`}
+              classes={`font-iranyekan-num salary-mobile-${type.id}`}
               onChange={(e) => filterSalary(e, type)}
             />
           ))}

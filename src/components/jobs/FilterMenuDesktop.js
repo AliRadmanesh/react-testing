@@ -21,7 +21,6 @@ export default function FilterMenuDesktop() {
   const { filters } = useSelector((state) => state.jobs.search);
 
   const dispatch = useDispatch();
-  const jobs = useSelector((state) => state.search.jobs);
 
   const filterContract = (event, item) => {
     if (event.target.checked) {
@@ -49,17 +48,16 @@ export default function FilterMenuDesktop() {
 
   const clearAllFilters = () => {
     dispatch(clearJobsSearchFilters());
-    document.querySelectorAll('[class*="academy-desktop-"]').forEach((item) => {
+    document.querySelectorAll('[class*="experience-desktop-"]').forEach((item) => {
       if (item.querySelector('input').checked) item.querySelector('input').checked = false;
     });
-    document.querySelectorAll('[class*="type-desktop-"]').forEach((item) => {
+    document.querySelectorAll('[class*="contract-desktop-"]').forEach((item) => {
+      if (item.querySelector('input').checked) item.querySelector('input').checked = false;
+    });
+    document.querySelectorAll('[class*="salary-desktop-"]').forEach((item) => {
       if (item.querySelector('input').checked) item.querySelector('input').checked = false;
     });
   };
-
-  useEffect(() => {
-    // console.log(1);
-  }, [jobs]);
 
   return (
     <div className="courses-desktop-filters">
@@ -124,7 +122,7 @@ export default function FilterMenuDesktop() {
             <Checkbox
               key={type.id}
               text={type.title}
-              classes={`font-iranyekan-num type-desktop-${type.id}`}
+              classes={`font-iranyekan-num salary-desktop-${type.id}`}
               onChange={(e) => filterSalary(e, type)}
             />
           ))}

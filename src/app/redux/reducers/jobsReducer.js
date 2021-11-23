@@ -206,7 +206,10 @@ export default (state = initial, action) => {
     case 'CLEAR_ALL_JOBS_ADJUSTMENTS':
       return {
         ...state,
-        search: initial.search,
+        search: {
+          ...state.search,
+          filters: initial.search.filters,
+        },
       };
     default:
       return state;
