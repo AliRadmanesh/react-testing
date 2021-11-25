@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link, useHistory } from 'react-router-dom';
 import logoSmall from '../../assets/images/logo/karsaz/logo-small.svg';
 import logoLarge from '../../assets/images/logo/karsaz/logo-large.svg';
 import backArrowIcon from '../../assets/icons/Right arrow.svg';
@@ -8,10 +8,14 @@ import searchIcon from '../../assets/icons/Search.svg';
 
 export default function Header() {
   const [show, doShow] = useState(false);
+  const history = useHistory();
 
   return (
     <>
-      <div id="auth-header-mobile" className="tw-block lg:tw-hidden tw-w-screen auth-header-mobile">
+      <div
+        id="auth-header-mobile"
+        className="tw-block lg:tw-hidden tw-w-screen auth-header-mobile tw-absolute tw-z-10 tw-top-0 tw-overflow-x-hidden"
+      >
         <div className="container bg-light tw-flex tw-justify-between tw-items-center tw-py-4 tw-shadow">
           <div className="tw-flex tw-items-center bg-white">
             <img src={logoSmall} className="tw-ml-4" alt="" />
@@ -24,7 +28,7 @@ export default function Header() {
       </div>
       <div
         id="auth-header-desktop"
-        className="tw-hidden lg:tw-block tw-w-screen auth-header-desktop"
+        className="tw-hidden lg:tw-block tw-w-full auth-header-desktop tw-absolute tw-z-10 tw-top-0 tw-overflow-x-hidden"
       >
         <div className="container tw-bg-transparent tw-flex tw-justify-between items-center tw-py-4">
           <div className="tw-flex tw-items-center tw-flex-row">
@@ -32,32 +36,9 @@ export default function Header() {
             <h3 className="tw-mr-4 tw-font-black text-blue">کارساز</h3>
           </div>
           <div className="tw-flex">
-            <div
-              id="auth-header-desktop-search"
-              className="auth-header-desktop-search  tw-flex tw-flex-row tw-items-center border-smooth"
-            >
-              <div className="hoverer tw-z-0 tw-relative">
-                <input
-                  ckassName="font-kalameh tw-block"
-                  placeholder="دوره یا آموزشگاه را جستجو کنید..."
-                  type="text"
-                  style={{
-                    width: show ? '220px' : '0',
-                    // {display: show ? 'initial' : 'none',}
-                  }}
-                />
-              </div>
-
-              <button
-                className="button-secondary"
-                style={{ border: 'none', background: 'transparent' }}
-                onClick={() => (show ? doShow(false) : doShow(true))}
-              >
-                <img src={searchIcon} alt="" className="" />
-              </button>
-            </div>
             <div id="auth-header-desktop-back" className="tw-mr-4 auth-header-desktop-back">
               <button
+                onClick={() => history.goBack()}
                 className="button-secondary border-white tw-flex tw-flex-row tw-items-center"
                 style={{}}
               >

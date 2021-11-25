@@ -117,3 +117,68 @@
     }
   }
 }
+
+.auth-gridder {
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .auth-banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(17, 138, 178, 1), rgba(17, 138, 178, 0.8));
+    // padding-left: 1rem;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 150%;
+      width: 150%;
+      top: -30%;
+      left: -30%;
+      z-index: -1;
+      background: url('../assets/illustrations/pattern.svg') center/cover no-repeat, $karsaz-primary;
+      transform: rotate(-20deg);
+    }
+
+    @media screen and (min-width: 1536px) {
+      padding-left: 204px;
+    }
+
+    .auth-banner-transformation {
+      transition: all 1s ease-in-out;
+    }
+  }
+}
+
+.auth-login-pass,
+.auth-forget-pass,
+.auth-signup-pass {
+  background: rgb(240, 242, 242);
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $karsaz-primary !important;
+  }
+
+  &.focus {
+    box-shadow: 0 0 0 2px $karsaz-primary !important;
+  }
+
+  input,
+  input:focus,
+  input:hover {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+
+.auth-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}

@@ -18,6 +18,7 @@ import Search from '../../features/search';
 import Compare from '../../features/compare';
 import JobList from '../../features/jobs';
 import Job from '../../features/job';
+import Retrieve from '../../features/retrieve';
 
 function AppRouter() {
   return (
@@ -29,6 +30,7 @@ function AppRouter() {
           <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/retrieve" component={Retrieve} />
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/faq" component={FAQ} />
           <Route exact path="/contact" component={Contact} />

@@ -112,9 +112,9 @@ export default function Search() {
     work_experiences.forEach((item, index) => {
       url.searchParams.set(`work_experiences[${index}]`, item.id);
     });
-    contract_types.forEach((item, index) => {
-      url.searchParams.set(`contract_types[${index}]`, item.id);
-    });
+    // contract_types.forEach((item, index) => {
+    //   url.searchParams.set(`contract_types[${index}]`, item.id);
+    // });
     // url.searchParams.set(`page`, current);
     // console.log(url.search);
 
