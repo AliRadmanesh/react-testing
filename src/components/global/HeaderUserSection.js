@@ -22,16 +22,10 @@ export default function HeaderUserSection() {
         {!show ? (
           <div className="tw-flex tw-items-center">
             <Link
-              to="https://google.com"
-              className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-mx-4"
+              to="../auth"
+              className="button-primary tw-text-sm tw-font-medium font-kalameh-num 2xl:tw-text-lg 2xl:tw-font-semibold tw-mx-4"
             >
-              ورود
-            </Link>
-            <Link
-              to="https://google.com"
-              className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold button-primary"
-            >
-              ثبت نام
+              ورود / ثبت نام
             </Link>
           </div>
         ) : (

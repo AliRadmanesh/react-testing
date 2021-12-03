@@ -125,13 +125,19 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  @media screen and (min-width: 1280px) {
+  // @media screen and (min-width: 1280px) {
+  //   grid-template-columns: 1fr 2fr;
+  // }
+
+  @media screen and (min-width: 1536px) {
     grid-template-columns: 2fr 3fr;
   }
 
   .auth-banner {
     position: relative;
     overflow: hidden;
+    transition: all 1s ease-in-out;
+
     background: linear-gradient(rgba(17, 138, 178, 1), rgba(17, 138, 178, 0.8));
     // padding-left: 1rem;
     &::before {
@@ -147,11 +153,7 @@
     }
 
     @media screen and (min-width: 1536px) {
-      padding-left: 204px;
-    }
-
-    .auth-banner-transformation {
-      transition: all 1s ease-in-out;
+      // padding-left: 204px;
     }
   }
 }

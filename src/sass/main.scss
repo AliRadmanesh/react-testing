@@ -803,6 +803,21 @@ footer {
   text-indent: 4rem;
 }
 
+.input-error {
+  background-color: $karsaz-error-pale;
+  box-shadow: 0 0 0 1px $karsaz-error;
+}
+
+.input-warning {
+  background-color: $karsaz-warning-pale;
+  box-shadow: 0 0 0 1px $karsaz-warning;
+}
+
+.input-success {
+  background-color: $karsaz-success-pale;
+  box-shadow: 0 0 0 1px $karsaz-success;
+}
+
 /* Features/Pages Scss */
 @import 'dashboard';
 @import 'pages';

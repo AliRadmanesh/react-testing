@@ -19,6 +19,14 @@ import Compare from '../../features/compare';
 import JobList from '../../features/jobs';
 import Job from '../../features/job';
 import Retrieve from '../../features/retrieve';
+import Authentication from '../../features/auth';
+import NewPassword from '../../features/forget/new-password';
+import LoginPassword from '../../features/login/password';
+import LoginCode from '../../features/login/code';
+import ForgetCode from '../../features/forget/code';
+import ForgetPhone from '../../features/forget/phone';
+import RegisterCode from '../../features/register/code';
+import CompleteInfo from '../../features/register/complete-info';
 
 function AppRouter() {
   return (
@@ -28,9 +36,6 @@ function AppRouter() {
           <Route exact path="/" component={Home} />
           <Route exact path="/me" component={Dashboard} />
           <Route exact path="/blogs" component={Blogs} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/retrieve" component={Retrieve} />
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/faq" component={FAQ} />
           <Route exact path="/contact" component={Contact} />
@@ -42,6 +47,15 @@ function AppRouter() {
           <Route exact path="/compare" component={Compare} />
           <Route exact path="/jobs" component={JobList} />
           <Route exact path="/job/:id" component={Job} />
+          <Route exact path="/auth" component={Authentication} />
+          <Route exact path="/login/password" component={LoginPassword} />
+          <Route exact path="/login/code" component={LoginCode} />
+          {/* <Route exact path="/register/phone" component={() => <h4>register phone</h4>} /> */}
+          <Route exact path="/register/code" component={RegisterCode} />
+          <Route exact path="/register/complete-info" component={CompleteInfo} />
+          {/* <Route exact path="/forget/phone" component={ForgetPhone} /> */}
+          <Route exact path="/forget/code" component={ForgetCode} />
+          <Route exact path="/forget/new-password" component={NewPassword} />
         </Switch>
       </Router>
     </div>
