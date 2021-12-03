@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from '../../features/home';
-import Dashboard from '../../features/dashboard';
+import Dashboard from '../../common/Layout/dashboard';
 import Blogs from '../../features/blogs';
 import Login from '../../features/login';
 import Register from '../../features/register';
@@ -27,6 +27,14 @@ import ForgetCode from '../../features/forget/code';
 import ForgetPhone from '../../features/forget/phone';
 import RegisterCode from '../../features/register/code';
 import CompleteInfo from '../../features/register/complete-info';
+import Bookmarks from '../../features/dashboard/bookmarks';
+import Edit from '../../features/dashboard/edit';
+import Favorites from '../../features/dashboard/favorites';
+import Notifications from '../../features/dashboard/notifications';
+import Purchases from '../../features/dashboard/purchases';
+import Transactions from '../../features/dashboard/transactions';
+import Wallet from '../../features/dashboard/wallet';
+import Main from '../../features/dashboard/main';
 
 function AppRouter() {
   return (
@@ -34,7 +42,7 @@ function AppRouter() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/me" component={Dashboard} />
+          {/* <Route exact path="/me" component={Dashboard} /> */}
           <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/faq" component={FAQ} />
@@ -56,6 +64,14 @@ function AppRouter() {
           {/* <Route exact path="/forget/phone" component={ForgetPhone} /> */}
           <Route exact path="/forget/code" component={ForgetCode} />
           <Route exact path="/forget/new-password" component={NewPassword} />
+          <Route exact path="/me/dashboard" component={Main} />
+          <Route exact path="/me/bookmarks" component={Bookmarks} />
+          <Route exact path="/me/favorites" component={Edit} />
+          <Route exact path="/me/edit" component={Favorites} />
+          <Route exact path="/me/notifications" component={Notifications} />
+          <Route exact path="/me/purchases" component={Purchases} />
+          <Route exact path="/me/transaction" component={Transactions} />
+          <Route exact path="/me/wallet" component={Wallet} />
         </Switch>
       </Router>
     </div>
