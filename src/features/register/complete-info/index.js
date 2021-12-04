@@ -99,7 +99,7 @@ export default function CompleteInfo() {
                 برای تکمیل فرایند ثبت نام در کارساز فرم پایین را پر کنید و به جمع {users} دانشجو
                 کارزار بپیوندید.
               </p>
-              <div className="tw-grid tw-grid-cols-2 2xl:tw-grid-cols-1 tw-items-center tw-gap-x-4 tw-w-full">
+              <div className="tw-grid tw-gride-cols-1 md:tw-grid-cols-2 2xl:tw-grid-cols-1 tw-items-center tw-gap-x-4 tw-w-full">
                 <div className="">
                   <p className="tw-text-base tw-font-normal text-dark 2xl:tw-text-lg 2xl:tw-font-semibold tw-mb-4">
                     نام
