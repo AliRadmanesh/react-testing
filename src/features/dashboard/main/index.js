@@ -1,9 +1,13 @@
 import React from 'react';
 
+import Layout from '../../../common/Layout/dashboard';
+
 export default function Main() {
   return (
-    <div>
-      <h1>Dashboard Main Page</h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>Dashboard Main Page</h1>
+      </div>
+    </Layout>
   );
 }
