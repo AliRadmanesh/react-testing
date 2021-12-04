@@ -19,14 +19,55 @@ export default function LeftBanner({ stage }) {
       .catch(() => toast.error('خطا در برقراری ارتباط برای دریافت اطلاعات'));
   }, []);
 
+  if (stage === 5)
+    return (
+      <div className="auth-banner tw-hidden lg:tw-grid tw-place-items-center">
+        <div className="tw-w-5/6 xl:tw-w-4/5 tw-relative tw-bg-red-400" style={{}}>
+          <p className="tw-font-bold tw-text-center font-kalameh-num text-light tw-text-3xl 2xl:tw-text-5xl tw-mb-8 2xl:tw-mb-12">
+            به جمع {data.users} دانشجو کارساز بپیوندید
+          </p>
+          <div
+            className="tw-relative tw-w-2/3 2xl:tw-w-1/2 tw-mx-auto"
+            style={{
+              height: '300px',
+              perspective: '1000px',
+            }}
+          >
+            <UserCard stage={stage} users={data.users} />
+            <div
+              className="tw-flex tw-flex-col tw-relative tw-items-center tw-bg-blue-500 tw-h-full"
+              style={{ width: '200px', right: '50%', transform: 'translateX(50%)' }}
+            >
+              <h1>salsk</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   return (
     <div className="auth-banner tw-hidden lg:tw-grid tw-place-items-center">
-      <div className="tw-w-5/6 xl:tw-w-4/5">
+      <div
+        className="tw-w-5/6 xl:tw-w-4/5 tw-relative"
+        style={{
+          top:
+            (stage === 3 && window.innerWidth < 1536 && '-6rem') ||
+            (stage === 3 && window.innerWidth >= 1536 && '-10rem') ||
+            (stage === 1 && window.innerWidth < 1536 && '-8rem') ||
+            (stage === 1 && window.innerWidth >= 1536 && '-10rem') ||
+            (stage === 2 && window.innerWidth < 1536 && '-6rem') ||
+            (stage === 2 && window.innerWidth >= 1536 && '-8rem'),
+        }}
+      >
         <p className="tw-font-bold tw-text-center font-kalameh-num text-light tw-text-3xl 2xl:tw-text-5xl tw-mb-8 2xl:tw-mb-12">
           دسترسی به جدید ترین دوره های آموزشی و فرصت های شغلی مخصوص شما
         </p>
-        <div className="tw-relative tw-w-1/2 tw-mx-auto" style={{ perspective: '1000px' }}>
+        <div
+          className="tw-relative tw-w-2/3 2xl:tw-w-1/2 tw-mx-auto tw-h-auto "
+          style={{ perspective: '1000px' }}
+        >
+          <CourseCard stage={stage} courses={data.courses} />
           <UserCard stage={stage} users={data.users} />
+          <AcademyCard stage={stage} academies={data.academies} />
         </div>
       </div>
     </div>
@@ -35,25 +76,36 @@ export default function LeftBanner({ stage }) {
 
 const UserCard = ({ stage, users }) => (
   <div
-    className="tw-inline-block tw-w-auto auth-banner-transformation tw-absolute"
+    className="tw-inline-block tw-shadow-lg tw-w-auto auth-banner-transformation tw-absolute"
     style={{
       transform:
-        (stage === 1 && 'skew(-10deg, 0) rotateY(-20deg) rotateX(10deg)') ||
-        (stage === 2 && 'skew(520deg, 0)'),
-      top: (stage === 1 && '50%') || (stage === 2 && '-20%'),
-      left: (stage === 1 && '50%') || (stage === 2 && '0'),
-      transformOrigin: stage === 1 && 'top center',
+        (stage === 1 && 'skew(-10deg, 0) rotateY(-10deg) rotateX(10deg)') ||
+        (stage === 5 && 'skew(10deg, 0) rotateY(10deg) rotateX(-10deg)') ||
+        (stage === 2 && 'rotateX(40deg)') ||
+        (stage === 3 && 'skew(12deg, 0) rotateX(0deg) rotateY(40deg) rotateZ(4deg)') ||
+        (stage === 4 && 'skew(10deg, 0) rotateY(-10deg) rotateX(10deg)'),
+      top:
+        (stage === 1 && '6rem') ||
+        (stage === 2 && '0') ||
+        (stage === 3 && '5rem') ||
+        (stage === 4 && '0'),
+      left:
+        (stage === 1 && 'unset') ||
+        (stage === 2 && '7rem') ||
+        (stage === 3 && '-1rem') ||
+        (stage === 4 && '0') ||
+        (stage === 5 && '0'),
+      right: (stage === 1 && '0') || (stage === 2 && 'unset'),
+      bottom: stage === 5 && '0',
+
+      // transformOrigin: stage === 1 && 'top center',
     }}
   >
-    <div className="bg-light tw-rounded-xl tw-py-4 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right tw-items-center">
-      <img className="tw-opacity-40 avatar" src={studentIcon} alt="" />
-      <div className="tw-flex tw-flex-col tw-mr-6">
-        <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh-num">
-          {users}
-        </p>
-        <p className="text-black font-iranyekan-num tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
-          دانشجو
-        </p>
+    <div className="bg-light tw-rounded-xl tw-p-4 2xl:tw-p-6 tw-w-auto tw-flex tw-text-right tw-items-center">
+      <img className="tw-opacity-20" src={studentIcon} alt="" />
+      <div className="tw-flex tw-flex-col tw-mr-10">
+        <p className="text-blue home-counter tw-font-extrabold font-kalameh-num">{users}</p>
+        <p className="text-black font-iranyekan-num tw-text-sm tw-font-medium ">دانشجو</p>
       </div>
     </div>
   </div>
@@ -61,24 +113,29 @@ const UserCard = ({ stage, users }) => (
 
 const AcademyCard = ({ stage, academies }) => (
   <div
-    className="tw-inline-block tw-w-auto auth-banner-transformation"
+    className="tw-inline-block tw-shadow-lg tw-absolute tw-w-auto auth-banner-transformation"
     style={{
       transform:
-        (stage === 1 && 'skew(-10deg, 0) rotateY(-20deg) rotateX(10deg)') ||
-        (stage === 2 && 'skew(0)'),
-      top: stage === 1 && '50%',
-      transformOrigin: stage === 1 && 'top center',
+        (stage === 1 && 'skew(10deg, 0) rotateY(10deg) rotateX(-10deg)') ||
+        (stage === 2 && 'rotateX(40deg)') ||
+        (stage === 3 && 'unset') ||
+        (stage === 4 && 'skew(-10deg, 0) rotateY(-10deg) rotateX(10deg)'),
+      top:
+        (stage === 1 && '12rem') ||
+        (stage === 2 && window.innerWidth < 1536 && '5rem') ||
+        (stage === 2 && window.innerWidth >= 1536 && '8rem') ||
+        (stage === 3 && '0') ||
+        (stage === 4 && '4rem'),
+      left: (stage === 1 && '0') || (stage === 2 && 'unset'),
+      right: (stage === 3 && 3) || (stage === 4 && '0'),
+      // transformOrigin: stage === 1 && 'top center',
     }}
   >
-    <div className="bg-light tw-rounded-xl tw-py-4 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right tw-items-center">
-      <img className="tw-opacity-40 avatar" src={schoolIcon} alt="" />
-      <div className="tw-flex tw-flex-col tw-mr-6">
-        <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh-num">
-          {academies}
-        </p>
-        <p className="text-black font-iranyekan-num tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
-          آموزشگاه
-        </p>
+    <div className="bg-light tw-rounded-xl tw-p-4 2xl:tw-p-6 tw-w-auto tw-flex tw-text-right tw-items-center">
+      <img className="tw-opacity-20" src={schoolIcon} alt="" />
+      <div className="tw-flex tw-flex-col tw-mr-10">
+        <p className="text-blue home-counter tw-font-extrabold font-kalameh-num">{academies}</p>
+        <p className="text-black font-iranyekan-num tw-text-sm tw-font-medium ">آموزشگاه</p>
       </div>
     </div>
   </div>
@@ -86,24 +143,29 @@ const AcademyCard = ({ stage, academies }) => (
 
 const CourseCard = ({ stage, courses }) => (
   <div
-    className="tw-inline-block tw-w-auto auth-banner-transformation"
+    className="tw-inline-block tw-shadow-lg tw-absolute tw-w-auto auth-banner-transformation"
     style={{
       transform:
-        (stage === 1 && 'skew(-10deg, 0) rotateY(-20deg) rotateX(10deg)') ||
-        (stage === 2 && 'skew(0)'),
-      top: stage === 1 && '50%',
-      transformOrigin: stage === 1 && 'top center',
+        (stage === 1 && 'skew(10deg, 0) rotateY(10deg) rotateX(-10deg)') ||
+        (stage === 2 && 'rotateX(40deg)') ||
+        (stage === 3 && 'skew(-10deg, 0) rotateY(-10deg) rotateZ(0) rotateX(-7deg)') ||
+        (stage === 4 && 'skew(-10deg, 0) rotateY(-10deg) rotateX(10deg)'),
+      top:
+        (stage === 1 && 'unset') ||
+        (stage === 2 && window.innerWidth < 1536 && '6rem') ||
+        (stage === 2 && window.innerWidth >= 1536 && '10rem') ||
+        (stage === 3 && '12rem') ||
+        (stage === 4 && window.innerWidth < 1536 && '10rem') ||
+        (stage === 4 && window.innerWidth >= 1536 && '12rem'),
+      left: (stage === 1 && '4rem') || (stage === 2 && '1rem') || (stage === 4 && '3rem'),
+      // transformOrigin: stage === 1 && 'top center',
     }}
   >
-    <div className="bg-light tw-rounded-xl tw-py-4 tw-px-4 lg:tw-px-6 tw-mx-2 md:tw-py-4 tw-w-auto tw-flex tw-text-right tw-items-center">
-      <img className="tw-opacity-40 avatar" src={slideIcon} alt="" />
-      <div className="tw-flex tw-flex-col tw-mr-6">
-        <p className="text-blue home-counter tw-font-extrabold 2xl:tw-font-black font-kalameh-num">
-          {courses}
-        </p>
-        <p className="text-black font-iranyekan-num tw-text-sm 2xl:tw-text tw-font-medium 2xl:tw-text-xl">
-          آموزش
-        </p>
+    <div className="bg-light tw-rounded-xl tw-p-4 2xl:tw-p-6 tw-w-auto tw-flex tw-text-right tw-items-center">
+      <img className="tw-opacity-20" src={slideIcon} alt="" />
+      <div className="tw-flex tw-flex-col tw-mr-10">
+        <p className="text-blue home-counter tw-font-extrabold font-kalameh-num">{courses}</p>
+        <p className="text-black font-iranyekan-num tw-text-sm tw-font-medium ">آموزش</p>
       </div>
     </div>
   </div>
