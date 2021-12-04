@@ -44,7 +44,9 @@ export default function LoginPassword() {
       } catch (error) {
         console.log(error.response);
         const { status, data } = error.response;
-        if (status === 422) toast.error(data.message.password[0]);
+        if (status === 422 && data.message.password) toast.error(data.message.password[0]);
+        if (status === 422 && data.message.mobile) toast.error(data.message.mobile[0]);
+        if (status === 422 && data.message.device_name) toast.error(data.message.device_name[0]);
         else if (status === 401)
           toast.error('ورود ناموفق. از درستی شماره و گذرواژه ورودی اطمینان حاصل نمایید');
         else {

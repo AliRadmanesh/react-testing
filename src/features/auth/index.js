@@ -44,6 +44,7 @@ export default function Authentication() {
         else if (status === 404) {
           // toast.error('کاربری با این شماره یافت نشد.');
           window.localStorage.setItem('tempToken', data.data.token);
+          window.localStorage.setItem('userPhone', phone);
           history.push('../register/code');
         } else toast.error('عملیات ورود ناموفق بود.');
       }
