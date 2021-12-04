@@ -213,7 +213,7 @@ export default function LoginPassword() {
             </div>
           </form>
         </div>
-        <LeftBanner stage={stage} />
+        <LeftBanner stage={2} />
       </div>
     </div>
   );

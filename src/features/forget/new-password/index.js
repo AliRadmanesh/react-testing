@@ -119,7 +119,7 @@ export default function NewPassword() {
             </div>
           </form>
         </div>
-        <LeftBanner stage={stage} />
+        <LeftBanner stage={3} />
       </div>
     </div>
   );

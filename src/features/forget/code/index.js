@@ -184,7 +184,7 @@ export default function ForgetCode() {
             </div>
           </form>
         </div>
-        <LeftBanner stage={stage} />
+        <LeftBanner stage={4} />
       </div>
     </div>
   );

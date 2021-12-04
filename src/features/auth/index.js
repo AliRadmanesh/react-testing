@@ -92,7 +92,7 @@ export default function Authentication() {
             </div>
           </form>
         </div>
-        <LeftBanner stage={stage} />
+        <LeftBanner stage={1} />
       </div>
     </div>
   );

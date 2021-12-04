@@ -174,7 +174,7 @@ export default function RegisterCode() {
             </div>
           </form>
         </div>
-        <LeftBanner stage={stage} />
+        <LeftBanner stage={2} />
       </div>
     </div>
   );

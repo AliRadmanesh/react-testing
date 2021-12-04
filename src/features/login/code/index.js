@@ -91,6 +91,7 @@ export default function LoginCode() {
           localStorage.setItem('userToken', res.data.data.user.token);
           localStorage.removeItem('tempToken');
           history.push('../');
+          window.location.reload();
         }
       }
     } catch (error) {
@@ -190,7 +191,7 @@ export default function LoginCode() {
             </div>
           </form>
         </div>
-        <LeftBanner stage={stage} />
+        <LeftBanner stage={3} />
       </div>
     </div>
   );

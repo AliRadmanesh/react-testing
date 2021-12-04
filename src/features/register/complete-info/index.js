@@ -59,6 +59,7 @@ export default function CompleteInfo() {
             localStorage.setItem('userToken', res.data.data.user.token);
             localStorage.removeItem('tempToken');
             history.push('../');
+            window.location.reload();
           }
         } catch (error) {
           console.log(error);
@@ -188,7 +189,7 @@ export default function CompleteInfo() {
             </div>
           </form>
         </div>
-        <LeftBanner stage={stage} />
+        <LeftBanner stage={5} />
       </div>
     </div>
   );
