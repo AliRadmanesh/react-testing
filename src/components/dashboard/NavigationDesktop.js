@@ -66,7 +66,7 @@ export default function NavigationDesktop() {
         />
         <NavigationItem src={editIcon} fill={editFillIcon} section="edit" title="ویرایش پروفایل" />
       </div>
-      <button type="button" className="button-error container tw-mx-4 tw-mb-4">
+      <button type="button" className="button-error tw-mx-4 tw-mb-4">
         خروج از حساب
       </button>
     </div>
