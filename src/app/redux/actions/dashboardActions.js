@@ -19,3 +19,6 @@ export const clearPopup = () => (dispatch) => {
     type: CLEAR_POPUP,
   });
 };
+
+export const showDashboardMobileMenu = (bool) => (dispatch) =>
+  dispatch({ type: 'SHOW_DASHBOARD_MOBILE_MENU', payload: bool });

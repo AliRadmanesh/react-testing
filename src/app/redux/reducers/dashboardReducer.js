@@ -3,6 +3,9 @@ import { ACTIVE_PART, SET_POPUP, CLEAR_POPUP } from '../actions/types';
 const initialState = {
   active: 'dashboard',
   popup: { display: false, data: { title: '', text: '', img: '', date: '' } },
+  navigation: {
+    mobile: { show: false },
+  },
 };
 
 export default (state = initialState, action) => {
@@ -21,6 +24,17 @@ export default (state = initialState, action) => {
       return {
         ...state,
         popup: { ...state.popup, display: false, data: { title: '', text: '', date: '' } },
+      };
+    case 'SHOW_DASHBOARD_MOBILE_MENU':
+      return {
+        ...state,
+        navigation: {
+          ...state.navigation,
+          mobile: {
+            ...state.navigation.mobile,
+            show: action.payload,
+          },
+        },
       };
     default:
       return state;
