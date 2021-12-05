@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import NavigationItem from './NavigationItem';
 
 import dashboardIcon from '../../assets/icons/Dashboard.svg';
@@ -32,39 +33,60 @@ export default function NavigationDesktop() {
       style={{ maxHeight: '912px' }}
     >
       <div>
-        <NavigationItem
-          src={dashboardIcon}
-          fill={dashboardFillIcon}
-          section="dashboard"
-          title="داشبورد"
-        />
-        <NavigationItem
-          src={favoritesIcon}
-          fill={favoritesFillIcon}
-          section="favorites"
-          title="علاقه‌مندی‌ها"
-        />
-        <NavigationItem
-          src={bookmarkIcon}
-          fill={bookmarkFillIcon}
-          section="bookmarks"
-          title="بوک‌مارک‌ها"
-        />
-        <NavigationItem src={cartIcon} fill={cartFillIcon} section="cart" title="خریدها" />
-        <NavigationItem src={walletIcon} fill={walletFillIcon} section="wallet" title="کیف پول" />
-        <NavigationItem
-          src={transactionIcon}
-          fill={transactionFillIcon}
-          section="transactions"
-          title="تراکنش‌ها"
-        />
-        <NavigationItem
-          src={notificationsIcon}
-          fill={notificationsFillIcon}
-          section="notifications"
-          title="اعلان‌ها"
-        />
-        <NavigationItem src={editIcon} fill={editFillIcon} section="edit" title="ویرایش پروفایل" />
+        <Link to="../me/dashboard">
+          <NavigationItem
+            src={dashboardIcon}
+            fill={dashboardFillIcon}
+            section="dashboard"
+            title="داشبورد"
+          />
+        </Link>
+        <Link to="../me/favorites">
+          <NavigationItem
+            src={favoritesIcon}
+            fill={favoritesFillIcon}
+            section="favorites"
+            title="علاقه‌مندی‌ها"
+          />
+        </Link>
+        <Link to="../me/bookmarks">
+          <NavigationItem
+            src={bookmarkIcon}
+            fill={bookmarkFillIcon}
+            section="bookmarks"
+            title="بوک‌مارک‌ها"
+          />
+        </Link>
+        <Link to="../me/purchases">
+          <NavigationItem src={cartIcon} fill={cartFillIcon} section="cart" title="خریدها" />
+        </Link>
+        <Link to="../me/wallet">
+          <NavigationItem src={walletIcon} fill={walletFillIcon} section="wallet" title="کیف پول" />
+        </Link>
+        <Link to="../me/transactions">
+          <NavigationItem
+            src={transactionIcon}
+            fill={transactionFillIcon}
+            section="transactions"
+            title="تراکنش‌ها"
+          />
+        </Link>
+        <Link to="../me/notifications">
+          <NavigationItem
+            src={notificationsIcon}
+            fill={notificationsFillIcon}
+            section="notifications"
+            title="اعلان‌ها"
+          />
+        </Link>
+        <Link to="../me/edit">
+          <NavigationItem
+            src={editIcon}
+            fill={editFillIcon}
+            section="edit"
+            title="ویرایش پروفایل"
+          />
+        </Link>
       </div>
       <button
         type="button"
