@@ -1017,6 +1017,24 @@ footer .footer-heading {
   text-indent: 4rem;
 }
 
+.input-error {
+  background-color: #fbf2f2;
+  -webkit-box-shadow: 0 0 0 1px #b21111;
+          box-shadow: 0 0 0 1px #b21111;
+}
+
+.input-warning {
+  background-color: #fbfbf2;
+  -webkit-box-shadow: 0 0 0 1px #b26f11;
+          box-shadow: 0 0 0 1px #b26f11;
+}
+
+.input-success {
+  background-color: #f2fbf7;
+  -webkit-box-shadow: 0 0 0 1px #11b262;
+          box-shadow: 0 0 0 1px #11b262;
+}
+
 /* Features/Pages Scss */
 /* Dashboard Module */
 /* BACKGROUND COLORS */
@@ -1131,6 +1149,18 @@ footer .footer-heading {
 
 .dashboard-item-indicator button, .dashboard-item-indicator .button-primary, .dashboard-item-indicator .button-secondary, .dashboard-item-indicator .button-error, .dashboard-item-indicator .button {
   font-weight: auto;
+}
+
+.dashboard-user-avatar {
+  width: 48px;
+  height: 48px;
+}
+
+@media screen and (min-width: 1536px) {
+  .dashboard-user-avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .page-header-chill {
@@ -1737,6 +1767,107 @@ footer .footer-heading {
 
 .auth-header-desktop-search.input.hide {
   width: 0 !important;
+}
+
+.auth-gridder {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 1024px) {
+  .auth-gridder {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .auth-gridder {
+    -ms-grid-columns: 2fr 3fr;
+        grid-template-columns: 2fr 3fr;
+  }
+}
+
+.auth-gridder .auth-banner {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  background: -webkit-gradient(linear, left top, left bottom, from(#118ab2), to(rgba(17, 138, 178, 0.8)));
+  background: linear-gradient(#118ab2, rgba(17, 138, 178, 0.8));
+}
+
+.auth-gridder .auth-banner::before {
+  content: '';
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  top: -30%;
+  left: -30%;
+  z-index: -1;
+  background: url("../assets/illustrations/pattern.svg") center/cover no-repeat, #118ab2;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+}
+
+.auth-login-pass,
+.auth-forget-pass,
+.auth-signup-pass {
+  background: #f0f2f2;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.auth-login-pass:hover,
+.auth-forget-pass:hover,
+.auth-signup-pass:hover {
+  -webkit-box-shadow: 0 0 0 1px #118ab2 !important;
+          box-shadow: 0 0 0 1px #118ab2 !important;
+}
+
+.auth-login-pass.focus,
+.auth-forget-pass.focus,
+.auth-signup-pass.focus {
+  -webkit-box-shadow: 0 0 0 2px #118ab2 !important;
+          box-shadow: 0 0 0 2px #118ab2 !important;
+}
+
+.auth-login-pass input, .auth-login-pass textarea,
+.auth-login-pass .textarea,
+.auth-login-pass input:focus,
+.auth-login-pass textarea:focus,
+.auth-login-pass .textarea:focus,
+.auth-login-pass input:hover,
+.auth-login-pass textarea:hover,
+.auth-login-pass .textarea:hover,
+.auth-forget-pass input,
+.auth-forget-pass textarea,
+.auth-forget-pass .textarea,
+.auth-forget-pass input:focus,
+.auth-forget-pass textarea:focus,
+.auth-forget-pass .textarea:focus,
+.auth-forget-pass input:hover,
+.auth-forget-pass textarea:hover,
+.auth-forget-pass .textarea:hover,
+.auth-signup-pass input,
+.auth-signup-pass textarea,
+.auth-signup-pass .textarea,
+.auth-signup-pass input:focus,
+.auth-signup-pass textarea:focus,
+.auth-signup-pass .textarea:focus,
+.auth-signup-pass input:hover,
+.auth-signup-pass textarea:hover,
+.auth-signup-pass .textarea:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: none !important;
+}
+
+.auth-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .faq-item {

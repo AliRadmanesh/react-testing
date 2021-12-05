@@ -36,6 +36,10 @@
   background-color: $karsaz-primary-pale;
 }
 
+.bg-primary-light {
+  background-color: $karsaz-primary-light;
+}
+
 /* TEXT COLORS */
 .text-white {
   color: #fefefe;
@@ -56,6 +60,11 @@
 .text-blue,
 .text-info {
   color: $karsaz-primary;
+}
+
+.text-blue-light,
+.text-info-light {
+  color: $karsaz-primary-light;
 }
 
 .text-dark,
@@ -87,6 +96,14 @@
 // Hover Effect
 .bg-primary-hover:hover {
   background-color: $karsaz-primary;
+}
+
+.bg-primary-light-hover:hover {
+  background-color: $karsaz-primary-light;
+}
+
+.bg-primary-pale-hover:hover {
+  background-color: $karsaz-primary-pale;
 }
 
 .text-primary-hover:hover {

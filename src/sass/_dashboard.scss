@@ -23,3 +23,15 @@
     }
   }
 }
+
+.dashboard-user-row {
+  .avatar {
+    width: 48px;
+    height: 48px;
+
+    @media screen and (min-width: 1536px) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
