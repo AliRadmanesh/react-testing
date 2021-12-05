@@ -30,8 +30,8 @@ export default function NavigationMobileItem({ src, fill, section, title }) {
       <button
         className={
           active === section
-            ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold lg:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
-            : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular lg:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
+            ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
+            : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
         }
         onClick={() => {
           dispatch(setActivePart(section));
