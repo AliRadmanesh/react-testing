@@ -45,7 +45,10 @@ export default function Layout({ children }) {
         <CategoryMenuDesktop />
         <CategoryMenuMobile />
       </>
-      <div style={{ display: showMobileNav ? 'block' : 'none' }}>
+      <div
+        className="tw-fixed tw-w-full tw-top-0 tw-right-0"
+        style={{ display: showMobileNav ? 'block' : 'none', zIndex: '9999' }}
+      >
         <NavigationMobile />
       </div>
       <div className="bg-light tw-shadow-inner tw-pt-8" style={{}}>
