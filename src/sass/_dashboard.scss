@@ -44,3 +44,27 @@
     background: $karsaz-light-gray;
   }
 }
+
+.dashboard-wallet-area-amount {
+  grid-area: amount;
+}
+
+.dashboard-wallet-area-info {
+  grid-area: info;
+}
+
+.dashboard-wallet-container {
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.dashboard-wallet-form {
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 2fr 1fr;
+  }
+}

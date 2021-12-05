@@ -2,6 +2,7 @@ import React from 'react';
 import walletPaleIcon from '../../assets/icons/Dashboard/wallet-pale.svg';
 import bookmarkPaleIcon from '../../assets/icons/Dashboard/bookmark-pale.svg';
 import cartPaleIcon from '../../assets/icons/Dashboard/cart-pale.svg';
+import giftPaleIcon from '../../assets/icons/Dashboard/gift-pale.svg';
 import { numberWithCommas } from '../../common/Functions';
 
 export const WalletCard = () => {
@@ -55,6 +56,24 @@ export const CartCard = () => {
         {balance}
       </p>
       <img alt="" className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" src={cartPaleIcon} />
+    </div>
+  );
+};
+
+export const AmountCard = () => {
+  const balance = 1520000;
+  return (
+    <div className="bg-warning-light tw-p-4 tw-flex tw-justify-between font-kalameh-num tw-items-center tw-rounded-xl">
+      <div className="">
+        <p className="tw-text-sm tw-font-medium text-black 2xl:tw-text-xl 2xl:tw-font-normal">
+          مبلغ دریافتی
+        </p>
+        <p className="tw-text-xs tw-font-normal text-gray 2xl:tw-text-base">تومان</p>
+      </div>
+      <p className="tw-font-extrabold text-warning tw-text-xl 2xl:tw-text-3xl 2xl:tw-font-black">
+        {balance}
+      </p>
+      <img alt="" src={giftPaleIcon} className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" />
     </div>
   );
 };
