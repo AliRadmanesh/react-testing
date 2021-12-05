@@ -28,7 +28,7 @@ import close from '../../assets/icons/Close-Gray.svg';
 export default function NavigationDesktop() {
   return (
     <div
-      className="bg-light tw-h-screen tw-hidden tw-flex-col lg:tw-flex tw-justify-between tw-w-full"
+      className="tw-h-auto tw-rounded-xl tw-hidden tw-flex-col lg:tw-flex tw-w-full bg-white"
       style={{ maxHeight: '912px' }}
     >
       <div>
@@ -66,7 +66,10 @@ export default function NavigationDesktop() {
         />
         <NavigationItem src={editIcon} fill={editFillIcon} section="edit" title="ویرایش پروفایل" />
       </div>
-      <button type="button" className="button-error tw-mx-4 tw-mb-4">
+      <button
+        type="button"
+        className="button-error tw-mx-4 tw-mb-4 tw-mt-20 tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl"
+      >
         خروج از حساب
       </button>
     </div>
