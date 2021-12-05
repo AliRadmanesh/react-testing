@@ -25,6 +25,7 @@ import { showDashboardMobileMenu } from '../../app/redux/actions/dashboardAction
 
 export default function NavigationMobile() {
   const dispatch = useDispatch();
+  const section = window.location.href.split('me/')[1];
 
   return (
     <div className="bg-light tw-h-screen tw-flex tw-flex-col lg:tw-hidden tw-justify-between">
@@ -39,58 +40,200 @@ export default function NavigationMobile() {
           <p className="tw-text-base tw-mx-4 font-kalameh">منوی داشبورد</p>
         </div>
         <Link to="../me/dashboard">
-          <NavigationItem
-            src={dashboardIcon}
-            fill={dashboardFillIcon}
-            section="dashboard"
-            title="داشبورد"
-          />
+          <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
+            <span
+              className={
+                section === 'dashboard'
+                  ? 'bg-primary dashboard-item-indicator active tw-h-full'
+                  : 'bg-primary dashboard-item-indicator tw-h-full'
+              }
+            />
+            <img
+              src={section === 'dashboard' ? dashboardFillIcon : dashboardIcon}
+              alt=""
+              className="menu-icon"
+            />
+            <span
+              className={
+                section === 'dashboard'
+                  ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
+                  : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
+              }
+            >
+              داشبورد
+            </span>
+          </span>
         </Link>
         <Link to="../me/favorites">
-          <NavigationItem
-            src={favoritesIcon}
-            fill={favoritesFillIcon}
-            section="favorites"
-            title="علاقه‌مندی‌ها"
-          />
+          <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
+            <span
+              className={
+                section === 'favorites'
+                  ? 'bg-primary dashboard-item-indicator active tw-h-full'
+                  : 'bg-primary dashboard-item-indicator tw-h-full'
+              }
+            />
+            <img
+              src={section === 'favorites' ? favoritesFillIcon : favoritesIcon}
+              alt=""
+              className="menu-icon"
+            />
+            <span
+              className={
+                section === 'favorites'
+                  ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
+                  : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
+              }
+            >
+              علاقه‌مندی‌ها
+            </span>
+          </span>
         </Link>
         <Link to="../me/bookmarks">
-          <NavigationItem
-            src={bookmarkIcon}
-            fill={bookmarkFillIcon}
-            section="bookmarks"
-            title="بوک‌مارک‌ها"
-          />
+          <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
+            <span
+              className={
+                section === 'bookmarks'
+                  ? 'bg-primary dashboard-item-indicator active tw-h-full'
+                  : 'bg-primary dashboard-item-indicator tw-h-full'
+              }
+            />
+            <img
+              src={section === 'bookmarks' ? bookmarkFillIcon : bookmarkIcon}
+              alt=""
+              className="menu-icon"
+            />
+            <span
+              className={
+                section === 'bookmarks'
+                  ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
+                  : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
+              }
+            >
+              بوک‌مارک‌ها
+            </span>
+          </span>
         </Link>
         <Link to="../me/purchases">
-          <NavigationItem src={cartIcon} fill={cartFillIcon} section="cart" title="خریدها" />
+          <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
+            <span
+              className={
+                section === 'purchases'
+                  ? 'bg-primary dashboard-item-indicator active tw-h-full'
+                  : 'bg-primary dashboard-item-indicator tw-h-full'
+              }
+            />
+            <img
+              src={section === 'purchases' ? cartFillIcon : cartIcon}
+              alt=""
+              className="menu-icon"
+            />
+            <span
+              className={
+                section === 'purchases'
+                  ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
+                  : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
+              }
+            >
+              خریدها
+            </span>
+          </span>
         </Link>
         <Link to="../me/wallet">
-          <NavigationItem src={walletIcon} fill={walletFillIcon} section="wallet" title="کیف پول" />
+          <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
+            <span
+              className={
+                section === 'wallet'
+                  ? 'bg-primary dashboard-item-indicator active tw-h-full'
+                  : 'bg-primary dashboard-item-indicator tw-h-full'
+              }
+            />
+            <img
+              src={section === 'wallet' ? walletFillIcon : walletIcon}
+              alt=""
+              className="menu-icon"
+            />
+            <span
+              className={
+                section === 'wallet'
+                  ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
+                  : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
+              }
+            >
+              کیف پول
+            </span>
+          </span>
         </Link>
         <Link to="../me/transactions">
-          <NavigationItem
-            src={transactionIcon}
-            fill={transactionFillIcon}
-            section="transactions"
-            title="تراکنش‌ها"
-          />
+          <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
+            <span
+              className={
+                section === 'transactions'
+                  ? 'bg-primary dashboard-item-indicator active tw-h-full'
+                  : 'bg-primary dashboard-item-indicator tw-h-full'
+              }
+            />
+            <img
+              src={section === 'transactions' ? transactionFillIcon : transactionIcon}
+              alt=""
+              className="menu-icon"
+            />
+            <span
+              className={
+                section === 'transactions'
+                  ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
+                  : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
+              }
+            >
+              تراکنش‌ها
+            </span>
+          </span>
         </Link>
         <Link to="../me/notifications">
-          <NavigationItem
-            src={notificationsIcon}
-            fill={notificationsFillIcon}
-            section="notifications"
-            title="اعلان‌ها"
-          />
+          <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
+            <span
+              className={
+                section === 'notifications'
+                  ? 'bg-primary dashboard-item-indicator active tw-h-full'
+                  : 'bg-primary dashboard-item-indicator tw-h-full'
+              }
+            />
+            <img
+              src={section === 'notifications' ? notificationsFillIcon : notificationsIcon}
+              alt=""
+              className="menu-icon"
+            />
+            <span
+              className={
+                section === 'notifications'
+                  ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
+                  : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
+              }
+            >
+              اعلان‌ها
+            </span>
+          </span>
         </Link>
         <Link to="../me/edit">
-          <NavigationItem
-            src={editIcon}
-            fill={editFillIcon}
-            section="edit"
-            title="ویرایش پروفایل"
-          />
+          <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
+            <span
+              className={
+                section === 'edit'
+                  ? 'bg-primary dashboard-item-indicator active tw-h-full'
+                  : 'bg-primary dashboard-item-indicator tw-h-full'
+              }
+            />
+            <img src={section === 'edit' ? editFillIcon : editIcon} alt="" className="menu-icon" />
+            <span
+              className={
+                section === 'edit'
+                  ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
+                  : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
+              }
+            >
+              ویرایش پروفایل
+            </span>
+          </span>
         </Link>
       </div>
       <button type="button" className="button-error container tw-mx-4 tw-mb-4">
