@@ -2,6 +2,7 @@ import React from 'react';
 import walletPaleIcon from '../../assets/icons/Dashboard/wallet-pale.svg';
 import bookmarkPaleIcon from '../../assets/icons/Dashboard/bookmark-pale.svg';
 import cartPaleIcon from '../../assets/icons/Dashboard/cart-pale.svg';
+import { numberWithCommas } from '../../common/Functions';
 
 export const WalletCard = () => {
   const balance = 1520000;
@@ -14,12 +15,9 @@ export const WalletCard = () => {
         <p className="tw-text-xs tw-font-normal text-gray 2xl:tw-text-base">تومان</p>
       </div>
       <p className="tw-font-extrabold text-blue tw-text-xl 2xl:tw-text-3xl 2xl:tw-font-black">
-        {balance}
+        {numberWithCommas(balance)}
       </p>
-      <div
-        style={{ backgroundImage: `url("${walletPaleIcon}")` }}
-        className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16"
-      />
+      <img alt="" src={walletPaleIcon} className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" />
     </div>
   );
 };
@@ -36,10 +34,7 @@ export const BookmarksCard = () => {
       <p className="tw-font-extrabold text-warning tw-text-xl 2xl:tw-text-3xl 2xl:tw-font-black">
         {balance}
       </p>
-      <div
-        style={{ backgroundImage: `url("${bookmarkPaleIcon}")` }}
-        className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16"
-      />
+      <img alt="" src={bookmarkPaleIcon} className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" />
     </div>
   );
 };
@@ -59,10 +54,7 @@ export const CartCard = () => {
       <p className="tw-font-extrabold text-success tw-text-xl 2xl:tw-text-3xl 2xl:tw-font-black">
         {balance}
       </p>
-      <div
-        className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16"
-        style={{ backgroundImage: `url("${cartPaleIcon}")` }}
-      />
+      <img alt="" className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" src={cartPaleIcon} />
     </div>
   );
 };
