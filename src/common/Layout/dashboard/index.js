@@ -12,6 +12,7 @@ import CategoryMenuMobile from '../../../components/global/CategoryMenuMobile';
 import UserMenu from '../../../components/global/UserMenu';
 import NavigationButton from '../../../components/dashboard/NavigationButton';
 import Footer from '../../../components/global/Footer';
+import UserRow from '../../../components/dashboard/UserRow';
 
 export default function Layout({ children }) {
   const {
@@ -47,10 +48,13 @@ export default function Layout({ children }) {
       <div style={{ display: showMobileNav ? 'block' : 'none' }}>
         <NavigationMobile />
       </div>
-      <div className="layout-content bg-light">
-        <div className="tw-grid tw-gap-x-4 tw-items-start dashboard-content container">
+      <div className="bg-light tw-shadow-inner tw-pt-8" style={{}}>
+        <div className="tw-grid tw-gap-x-4 tw-items-start dashboard-content container tw-mb-60">
           <NavigationDesktop />
-          <div className="">{children}</div>
+          <div className="">
+            <UserRow />
+            <div className="">{children}</div>
+          </div>
         </div>
       </div>
       <NavigationButton />
