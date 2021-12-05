@@ -20,7 +20,10 @@ export default function UserRow() {
         <Link to="./edit" className="tw-p-2 2xl:tw-p-3 tw-rounded-xl bg-primary-light">
           <img src={editFillIcon} alt="ویرایش" className="tw-w-6 tw-h-6" />
         </Link>
-        <Link to="./edit" className="tw-mr-2 tw-p-2 2xl:tw-p-3 tw-rounded-xl bg-primary-light">
+        <Link
+          to="./notifications"
+          className="tw-mr-2 tw-p-2 2xl:tw-p-3 tw-rounded-xl bg-primary-light"
+        >
           <img src={notificationsFillIcon} alt="اعلان‌ها" className="tw-w-6 tw-h-6" />
         </Link>
       </div>
