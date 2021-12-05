@@ -40,6 +40,30 @@
   background-color: $karsaz-primary-light;
 }
 
+.bg-success-light {
+  background-color: $karsaz-success-light;
+}
+
+.bg-secondary-light {
+  background-color: $karsaz-secondary-light;
+}
+
+.bg-warning-light {
+  background-color: $karsaz-warning-light;
+}
+
+.bg-error-light {
+  background-color: $karsaz-error-light;
+}
+
+.bg-success-light {
+  background-color: $karsaz-success-light;
+}
+
+.bg-info-light {
+  background-color: $karsaz-info-light;
+}
+
 /* TEXT COLORS */
 .text-white {
   color: #fefefe;
@@ -57,13 +81,15 @@
   color: #878787;
 }
 
-.text-blue,
-.text-info {
+.text-blue {
   color: $karsaz-primary;
 }
 
-.text-blue-light,
-.text-info-light {
+.text-info {
+  color: $karsaz-info;
+}
+
+.text-blue-light {
   color: $karsaz-primary-light;
 }
 
