@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { showDashboardMobileMenu } from '../../app/redux/actions/dashboardActions';
-import homeIcon from '../../assets/icons/Home White.svg';
+import homeIcon from '../../assets/icons/Home-White.svg';
 
 export default function NavigationButton() {
   const dispatch = useDispatch();
