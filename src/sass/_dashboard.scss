@@ -35,3 +35,12 @@
     }
   }
 }
+
+.dashboard-main-table-item {
+  &:nth-child(even) {
+    background: $karsaz-light;
+  }
+  &:nth-child(odd) {
+    background: $karsaz-light-gray;
+  }
+}
