@@ -53,7 +53,7 @@ export default function Layout({ children }) {
           <NavigationDesktop />
           <div className="">
             <UserRow />
-            <div className="">{children}</div>
+            <div className="tw-py-4">{children}</div>
           </div>
         </div>
       </div>
