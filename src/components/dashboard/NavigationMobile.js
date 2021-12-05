@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import NavigationItem from './NavigationItem';
 
 import dashboardIcon from '../../assets/icons/Dashboard.svg';
@@ -19,13 +20,11 @@ import editIcon from '../../assets/icons/Edit.svg';
 import editFillIcon from '../../assets/icons/Edit Fill.svg';
 import close from '../../assets/icons/Close-Gray.svg';
 
-// import styles from '../../features/dashboard/dashboard.module.css';
-
-// const classes = {
-//   dashboardItem: `tw-flex tw-items-center ${styles.dashboardItem}`,
-// };
+import { showDashboardMobileMenu } from '../../app/redux/actions/dashboardActions';
 
 export default function NavigationMobile() {
+  const dispatch = useDispatch();
+
   return (
     <div className="bg-light tw-h-screen tw-flex tw-flex-col lg:tw-hidden tw-justify-between">
       <div>
@@ -33,7 +32,9 @@ export default function NavigationMobile() {
           className="tw-flex tw-items-center tw-py-4 container"
           style={{ boxShadow: '0 0 5px 5px #efefef' }}
         >
-          <img src={close} alt="بستن" className="menu-icon" />
+          <button className="tw-p-0" onClick={() => dispatch(showDashboardMobileMenu(false))}>
+            <img src={close} alt="بستن" className="menu-icon" />
+          </button>
           <p className="tw-text-base tw-mx-4 font-kalameh">منوی داشبورد</p>
         </div>
         <NavigationItem
