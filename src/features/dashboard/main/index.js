@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Layout from '../../../common/Layout/dashboard';
 import { WalletCard, BookmarksCard, CartCard } from '../../../components/dashboard/InfoCards';
 
 import notificationsFillIcon from '../../../assets/icons/Notification Fill.svg';
+import { getDashboardData } from '../../../app/redux/actions/dashboardActions';
 
 const TableItem = () => {
   const temp = 'to prevent prettier brackets removal';
@@ -17,7 +18,10 @@ const TableItem = () => {
 };
 
 const Table = () => {
-  const [state, setstate] = useState();
+  const {
+    dashboard: { notifiacations },
+  } = useSelector((state) => state.dashboard);
+
   return (
     <div className="tw-p-4 bg-white font-kalameh-num">
       <div className="tw-flex tw-items-center tw-pr-4">
@@ -35,12 +39,24 @@ const Table = () => {
 };
 
 export default function Main() {
+  const {
+    dashboard: {
+      stat: { purchases, bookmarks, wallet },
+      notifiacations,
+    },
+  } = useSelector((state) => state.dashboard);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getDashboardData());
+  }, []);
+
   return (
     <Layout>
       <div className="tw-grid tw-gap-4 tw-grid-cols-1 md:tw-grid-cols-3 tw-py-4 tw-rounded-xl">
-        <CartCard />
-        <BookmarksCard />
-        <WalletCard />
+        <CartCard purchases={purchases} />
+        <BookmarksCard bookmarks={bookmarks} />
+        <WalletCard wallet={wallet} />
       </div>
       <Table />
     </Layout>

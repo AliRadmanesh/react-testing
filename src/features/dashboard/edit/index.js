@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../../../common/Layout/dashboard';
 
 export default function Edit() {
   return (
-    <div>
+    <Layout>
       <h1>Dashboard Edit Page</h1>
-    </div>
+    </Layout>
   );
 }

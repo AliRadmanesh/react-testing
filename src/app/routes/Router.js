@@ -70,7 +70,7 @@ function AppRouter() {
           <Route exact path="/me/edit" component={Edit} />
           <Route exact path="/me/notifications" component={Notifications} />
           <Route exact path="/me/purchases" component={Purchases} />
-          <Route exact path="/me/transaction" component={Transactions} />
+          <Route exact path="/me/transactions" component={Transactions} />
           <Route exact path="/me/wallet" component={Wallet} />
         </Switch>
       </Router>
