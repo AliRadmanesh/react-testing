@@ -25,7 +25,7 @@ import { showDashboardMobileMenu } from '../../app/redux/actions/dashboardAction
 
 export default function NavigationMobile() {
   const dispatch = useDispatch();
-  const section = window.location.href.split('me/')[1];
+  const section = window.location.href.split('/dashboard/')[1];
 
   return (
     <div className="bg-light tw-h-screen tw-flex tw-flex-col lg:tw-hidden tw-justify-between">
@@ -39,7 +39,7 @@ export default function NavigationMobile() {
           </button>
           <p className="tw-text-base tw-mx-4 font-kalameh">منوی داشبورد</p>
         </div>
-        <Link to="../me/dashboard">
+        <Link to="../dashboard">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -49,13 +49,13 @@ export default function NavigationMobile() {
               }
             />
             <img
-              src={section === 'dashboard' ? dashboardFillIcon : dashboardIcon}
+              src={section === undefined ? dashboardFillIcon : dashboardIcon}
               alt=""
               className="menu-icon"
             />
             <span
               className={
-                section === 'dashboard'
+                section === undefined
                   ? 'tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl text-blue tw-mx-4 font-kalameh tw-p-0'
                   : 'tw-text-sm 2xl:tw-font-semibold tw-font-regular 2xl:tw-text-xl text-gray tw-mx-4 font-kalameh tw-p-0'
               }
@@ -64,7 +64,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../me/favorites">
+        <Link to="../dashboard/favorites">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -89,7 +89,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../me/bookmarks">
+        <Link to="../dashboard/bookmarks">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -114,7 +114,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../me/purchases">
+        <Link to="../dashboard/purchases">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -139,7 +139,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../me/wallet">
+        <Link to="../dashboard/wallet">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -164,7 +164,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../me/transactions">
+        <Link to="../dashboard/transactions">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -189,7 +189,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../me/notifications">
+        <Link to="../dashboard/notifications">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -214,7 +214,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../me/edit">
+        <Link to="../dashboard/edit">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={

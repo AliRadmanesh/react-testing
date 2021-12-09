@@ -64,14 +64,14 @@ function AppRouter() {
           {/* <Route exact path="/forget/phone" component={ForgetPhone} /> */}
           <Route exact path="/forget/code" component={ForgetCode} />
           <Route exact path="/forget/new-password" component={NewPassword} />
-          <Route exact path="/me/dashboard" component={Main} />
-          <Route exact path="/me/bookmarks" component={Bookmarks} />
-          <Route exact path="/me/favorites" component={Favorites} />
-          <Route exact path="/me/edit" component={Edit} />
-          <Route exact path="/me/notifications" component={Notifications} />
-          <Route exact path="/me/purchases" component={Purchases} />
-          <Route exact path="/me/transactions" component={Transactions} />
-          <Route exact path="/me/wallet" component={Wallet} />
+          <Route exact path="/dashboard" component={Main} />
+          <Route exact path="/dashboard/bookmarks" component={Bookmarks} />
+          <Route exact path="/dashboard/favorites" component={Favorites} />
+          <Route exact path="/dashboard/edit" component={Edit} />
+          <Route exact path="/dashboard/notifications" component={Notifications} />
+          <Route exact path="/dashboard/purchases" component={Purchases} />
+          <Route exact path="/dashboard/transactions" component={Transactions} />
+          <Route exact path="/dashboard/wallet" component={Wallet} />
         </Switch>
       </Router>
     </div>

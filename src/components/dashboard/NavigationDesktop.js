@@ -27,7 +27,7 @@ import close from '../../assets/icons/Close-Gray.svg';
 // };
 
 export default function NavigationDesktop() {
-  const section = window.location.href.split('me/')[1];
+  const section = window.location.href.split('/dashboard/')[1];
 
   return (
     <div
@@ -35,17 +35,17 @@ export default function NavigationDesktop() {
       style={{ maxHeight: '912px' }}
     >
       <div>
-        <Link className="tw-block tw-mb-8 2xl:tw-mb-12" to="../me/dashboard">
+        <Link className="tw-block tw-mb-8 2xl:tw-mb-12" to="../dashboard">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
-                section === 'dashboard'
+                section === undefined
                   ? 'bg-primary dashboard-item-indicator active tw-h-full'
                   : 'bg-primary dashboard-item-indicator tw-h-full'
               }
             />
             <img
-              src={section === 'dashboard' ? dashboardFillIcon : dashboardIcon}
+              src={section === undefined ? dashboardFillIcon : dashboardIcon}
               alt=""
               className="menu-icon"
             />
@@ -60,7 +60,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../me/favorites">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/favorites">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -85,7 +85,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../me/bookmarks">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/bookmarks">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -110,7 +110,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../me/purchases">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/purchases">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -135,7 +135,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../me/wallet">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/wallet">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -160,7 +160,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../me/transactions">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/transactions">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -185,7 +185,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../me/notifications">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/notifications">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -210,7 +210,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-mt-8 2xl:tw-mt-12" to="../me/edit">
+        <Link className="tw-block tw-mt-8 2xl:tw-mt-12" to="../dashboard/edit">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
