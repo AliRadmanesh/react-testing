@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import walletGray from '../../assets/icons/Wallet-Gray.svg';
 import dashboardGray from '../../assets/icons/Dashboard-Gray.svg';
@@ -38,6 +39,10 @@ export default function UserMenu() {
     };
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    dispatch(showUserMenu(false));
+  }, [window.location.href]);
 
   return (
     <>
@@ -106,12 +111,14 @@ export default function UserMenu() {
                 {balance}
               </p>
             </div>
-            <div className="tw-flex tw-items-center tw-my-5">
-              <img src={dashboardGray} alt="" className="icon tw-ml-4" />
-              <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
-                پنل کاربری
-              </p>
-            </div>
+            <Link to="../dashboard">
+              <div className="tw-flex tw-items-center tw-my-5">
+                <img src={dashboardGray} alt="" className="icon tw-ml-4" />
+                <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
+                  پنل کاربری
+                </p>
+              </div>
+            </Link>
             <div className="tw-flex tw-items-center tw-my-5">
               <img src={bookmarksGray} alt="" className="icon tw-ml-4" />
               <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
