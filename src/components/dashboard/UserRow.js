@@ -32,11 +32,11 @@ export default function UserRow() {
         </div>
       </div>
       <div className="tw-flex tw-items-center">
-        <Link to="./edit" className="tw-p-2 2xl:tw-p-3 tw-rounded-xl bg-primary-light">
+        <Link to="../dashboard/edit" className="tw-p-2 2xl:tw-p-3 tw-rounded-xl bg-primary-light">
           <img src={editFillIcon} alt="ویرایش" className="tw-w-6 tw-h-6" />
         </Link>
         <Link
-          to="./notifications"
+          to="../dashboard/notifications"
           className="tw-mr-2 tw-p-2 2xl:tw-p-3 tw-rounded-xl bg-primary-light"
         >
           <img src={notificationsFillIcon} alt="اعلان‌ها" className="tw-w-6 tw-h-6" />
