@@ -9,6 +9,7 @@ import { getDashboardPurchases } from '../../../app/redux/actions/dashboardActio
 // }
 
 export default function Purchases() {
+  const [section, setSection] = useState(1);
   const dispatch = useDispatch();
   const {
     purchases: { course_purchases, course_purchases_approved },
@@ -20,10 +21,44 @@ export default function Purchases() {
 
   return (
     <Layout>
-      <section className="dashboard-purchases tw-my-4 tw-p-4 bg-white tw-shadow tw-rounded-xl">
-        <p className="2xl:tw-text-2xl 2xl:tw-font-black text-blue font-kalameh-num tw-font-bold tw-text-base tw-mb-4 2xl:tw-mb-6">
-          خرید‌های تأیید شده شما
-        </p>
+      <div className="tw-my-4 tw-relative">
+        {/* Indicator Line */}
+        <div
+          className="tw-absolute bg-primary 2xl:tw-w-28 tw-w-20 tw-h-1 tw-top-0"
+          style={{
+            borderRadius: '0 0 12px 12px',
+            right: section === 1 ? '25%' : '75%',
+            transform: 'translateX(50%)',
+            transition: 'right .7s ease-in-out',
+          }}
+        />
+        {/* Tabs */}
+        <div className="tw-rounded-xl tw-font-medium tw-grid tw-grid-cols-2 tw-place-items-center font-kalameh-num tw-w-full tw-py-4 2xl:tw-py-8 bg-primary-pale">
+          <div
+            className={
+              section === 1
+                ? 'tw-text-sm tw-cursor-pointer tw-font-medium 2xl:tw-text-xl text-blue'
+                : 'tw-text-sm tw-cursor-pointer tw-font-normal 2xl:tw-text-xl 2xl:tw-font-medium text-black'
+            }
+            role="none"
+            onClick={() => setSection(1)}
+          >
+            خرید‌های تأیید شده
+          </div>
+          <div
+            className={
+              section === 2
+                ? 'tw-text-sm tw-cursor-pointer tw-font-medium 2xl:tw-text-xl text-blue'
+                : 'tw-text-sm tw-cursor-pointer tw-font-normal 2xl:tw-text-xl 2xl:tw-font-medium text-black'
+            }
+            role="none"
+            onClick={() => setSection(2)}
+          >
+            تمامی خرید‌های شما
+          </div>
+        </div>
+      </div>
+      <div className="tw-my-4" style={{ display: section === 1 ? 'block' : 'none' }}>
         <table className="tw-table-fixed font-kalameh-num lg:tw-w-full tw-text-right">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
@@ -66,11 +101,8 @@ export default function Purchases() {
             ))}
           </tbody>
         </table>
-      </section>
-      <section className="dashboard-purchases tw-my-4 tw-p-4 bg-white tw-shadow tw-rounded-xl">
-        <p className="2xl:tw-text-2xl 2xl:tw-font-black text-blue font-kalameh-num tw-font-bold tw-text-base tw-mb-4 2xl:tw-mb-6">
-          خرید‌های شما
-        </p>
+      </div>
+      <div className="tw-my-4" style={{ display: section === 2 ? 'block' : 'none' }}>
         <table className="tw-table-fixed font-kalameh-num lg:tw-w-full tw-text-right">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
@@ -113,7 +145,7 @@ export default function Purchases() {
             ))}
           </tbody>
         </table>
-      </section>
+      </div>
     </Layout>
   );
 }
