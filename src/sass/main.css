@@ -73,6 +73,10 @@
   background-color: #f4f4f4;
 }
 
+.bg-gray {
+  background-color: #f6f9fb;
+}
+
 /* TEXT COLORS */
 .text-white {
   color: #fefefe;
@@ -1161,6 +1165,10 @@ footer .footer-heading {
   background-color: #f4f4f4;
 }
 
+.bg-gray {
+  background-color: #f6f9fb;
+}
+
 /* TEXT COLORS */
 .text-white {
   color: #fefefe;
@@ -1303,6 +1311,26 @@ footer .footer-heading {
     -ms-grid-columns: 2fr 1fr;
         grid-template-columns: 2fr 1fr;
   }
+}
+
+.dashboard-purchases table tbody tr:nth-child(odd) td {
+  background-color: #f4f4f4;
+}
+
+tr:first-child td:first-child {
+  border-top-left-radius: 10px;
+}
+
+tr:first-child td:last-child {
+  border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
 }
 
 .page-header-chill {
