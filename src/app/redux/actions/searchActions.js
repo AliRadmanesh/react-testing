@@ -44,17 +44,21 @@ export const setTotalPage = (page) => (dispatch) =>
   dispatch({ type: SET_PAGE_TOTAL, payload: page });
 
 export const autoSuggest = (query) => async (dispatch) => {
-  const res = await axios.get(`/api/v1/web/service/courses/autosuggest/?q=${query}`);
-  console.log(query);
-  if (query) {
-    if (res.status === 200 || res.status === 201) {
-      dispatch({
-        type: AUTO_SUGGEST,
-        payload: res.data.data.courses,
-      });
+  try {
+    const res = await axios.get(`/api/v1/web/service/courses/autosuggest/?q=${query}`);
+    console.log(res);
+    if (query) {
+      if (res.status === 200 || res.status === 201) {
+        dispatch({
+          type: AUTO_SUGGEST,
+          payload: res.data.data.courses,
+        });
+      }
+    } else {
+      dispatch({ type: AUTO_SUGGEST, payload: [] });
     }
-  } else {
-    dispatch({ type: AUTO_SUGGEST, payload: null });
+  } catch (error) {
+    dispatch({ type: AUTO_SUGGEST, payload: [] });
   }
 };
 
