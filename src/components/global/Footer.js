@@ -91,14 +91,14 @@ function Footer() {
             <h4 className="text-blue tw-mb-2">لینک‌های مفید</h4>
             <ul className="">
               <li>
-                <Link to="./">
+                <Link to="../">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     خانه
                   </p>
                 </Link>
               </li>
               <li>
-                <Link to="./categories">
+                <Link to="../categories">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     دسته‌بندی
                   </p>
@@ -115,21 +115,21 @@ function Footer() {
                 </p>
               </li>
               <li>
-                <Link to="./about">
+                <Link to="../about">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     درباره‌ی ما
                   </p>
                 </Link>
               </li>
               <li>
-                <Link to="./contact">
+                <Link to="../contact">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     تماس با ما
                   </p>
                 </Link>
               </li>
               <li>
-                <Link to="./faq">
+                <Link to="../faq">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     سئوالات متداول
                   </p>
