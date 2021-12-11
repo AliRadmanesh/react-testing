@@ -12,6 +12,9 @@ module.exports = {
       screens: {
         '3xl': '1920',
       },
+      width: {
+        100: '25rem',
+      },
     },
   },
   variants: {
