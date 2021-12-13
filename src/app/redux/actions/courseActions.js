@@ -56,34 +56,29 @@ export const bookmarkCourse = (id) => async (dispatch) => {
   }
 };
 
-export const createComment =
-  (id, rating, content = null, is_anonymous) =>
-  async (dispatch) => {
-    const data = {
-      rating,
-      content,
-      is_anonymous,
-    };
-    const res = await instance.post(`/api/v1/web/service/courses/${id}/comments/create`, data);
-    if (res.status === 200 || res.status === 201) {
-      dispatch({ type: 'CREATE_COMMENT' });
-      // window.location.reload();
-      dispatch({ type: 'RESET_COMMENTS' });
-      dispatch({ type: 'SET_COMMENTS_LOADING' });
-      const res1 = await instance.get(
-        `api/v1/web/service/courses/${id}/comments/?sort=${2}&page=${1}`,
-      );
-      dispatch({ type: GET_COURSE_COMMENTS, payload: res1.data.data.comments });
-      if (res1.data.meta.last_page !== 1) {
-        dispatch({
-          type: 'COURSE_COMMENT_PAGE_TOTAL',
-          payload: res1.data.meta.last_page,
-        });
-      }
-    } else {
-      toast.error('خطا هنگام ثبت بازخورد شما');
+export const createComment = (id, rating, content) => async (dispatch) => {
+  const data = content !== '' && content !== null ? { rating, content } : { rating };
+
+  const res = await instance.post(`/api/v1/web/service/courses/${id}/comments/create`, data);
+  if (res.status === 200 || res.status === 201) {
+    dispatch({ type: 'CREATE_COMMENT' });
+    // window.location.reload();
+    dispatch({ type: 'RESET_COMMENTS' });
+    dispatch({ type: 'SET_COMMENTS_LOADING' });
+    const res1 = await instance.get(
+      `api/v1/web/service/courses/${id}/comments/?sort=${2}&page=${1}`,
+    );
+    dispatch({ type: GET_COURSE_COMMENTS, payload: res1.data.data.comments });
+    if (res1.data.meta.last_page !== 1) {
+      dispatch({
+        type: 'COURSE_COMMENT_PAGE_TOTAL',
+        payload: res1.data.meta.last_page,
+      });
     }
-  };
+  } else {
+    toast.error('خطا هنگام ثبت بازخورد شما');
+  }
+};
 
 export const likeComment = (courseId, commentId) => async (dispatch) => {
   const res = await instance.post(

@@ -93,7 +93,7 @@ export default function Course() {
         <div className="container 2xl:tw-py-16">
           <Recommended recommended_courses={recommended_courses} />
         </div>
-        <UserComment user_comment={user_comment} />
+        <UserComment id={id} user_comment={user_comment} />
         <Comments id={id} />
       </Layout>
       {!is_purchased && (

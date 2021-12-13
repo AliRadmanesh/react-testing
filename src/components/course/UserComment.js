@@ -9,10 +9,10 @@ import { createComment } from '../../app/redux/actions/courseActions';
 import starFillIcon from '../../assets/icons/Star Fill.svg';
 import starIcon from '../../assets/icons/Star.svg';
 
-export default function UserComment() {
+export default function UserComment({ id }) {
   const [rate, setRate] = useState(0);
   const [state, setState] = useState(null);
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState('');
 
   const dispatch = useDispatch();
   const { is_anonymous } = useSelector((store) => store.course.data);
@@ -22,9 +22,7 @@ export default function UserComment() {
     if (rate === 0) {
       toast.error('لطفا نمره خود را ثبت کنید.');
     } else {
-      dispatch(
-        createComment(new URL(window.location).searchParams.get('id'), rate, message, is_anonymous),
-      );
+      dispatch(createComment(id, rate, message));
     }
   };
 
