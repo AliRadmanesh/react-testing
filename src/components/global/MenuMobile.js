@@ -148,16 +148,10 @@ const MenuMobile = () => {
               &rsaquo;
             </span>
           </button>
-          <Link
-            to="https://google.com"
-            className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num"
-          >
+          <Link to="../jobs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             فرصت‌های شغلی
           </Link>
-          <Link
-            to="https://google.com"
-            className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num"
-          >
+          <Link to="../blogs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             وبلاگ
           </Link>
           <Link to="../about" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">

@@ -79,13 +79,13 @@ const MenuDesktop = () => {
               <img src={arrow} alt="" className="inline-block" />
             </button>
             <Link
-              to="https://google.com"
+              to="../jobs"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               فرصت‌های شغلی
             </Link>
             <Link
-              to="https://google.com"
+              to="../blogs"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               وبلاگ

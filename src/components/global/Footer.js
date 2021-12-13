@@ -105,14 +105,18 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
-                  فرصت‌های شغلی
-                </p>
+                <Link to="../jobs">
+                  <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
+                    فرصت‌های شغلی
+                  </p>
+                </Link>
               </li>
               <li>
-                <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
-                  وبلاگ
-                </p>
+                <Link to="../blogs">
+                  <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
+                    وبلاگ
+                  </p>
+                </Link>
               </li>
               <li>
                 <Link to="../about">

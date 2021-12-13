@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import walletGray from '../../assets/icons/Wallet-Gray.svg';
 import dashboardGray from '../../assets/icons/Dashboard-Gray.svg';
@@ -18,12 +18,22 @@ export default function UserMenu() {
     wallet: { balance },
   } = data;
 
+  const history = useHistory();
+
   // eslint-disable-next-line
   const handleClick = (e) => {
     // console.log(e.target.classList);
     if (e.target.classList.contains('user-menu')) {
       dispatch(showUserMenu(false));
     }
+  };
+
+  const logout = () => {
+    window.localStorage.removeItem('userPhone');
+    window.localStorage.removeItem('userToken');
+    dispatch(showUserMenu(false));
+    history.push('../');
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -100,17 +110,19 @@ export default function UserMenu() {
               </p>
               {/* </div> */}
             </div>
-            <div className="tw-flex tw-justify-between tw-items-center tw-my-5">
-              <div className="tw-flex tw-items-center">
-                <img src={walletGray} alt="" className="icon tw-ml-4" />
-                <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
-                  موجودی کیف پول شما
+            <Link to="../dashboard/wallet">
+              <div className="tw-flex tw-justify-between tw-items-center tw-my-5">
+                <div className="tw-flex tw-items-center">
+                  <img src={walletGray} alt="" className="icon tw-ml-4" />
+                  <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
+                    موجودی کیف پول شما
+                  </p>
+                </div>
+                <p className="text-gray tw-text-left tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
+                  {balance}
                 </p>
               </div>
-              <p className="text-gray tw-text-left tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
-                {balance}
-              </p>
-            </div>
+            </Link>
             <Link to="../dashboard">
               <div className="tw-flex tw-items-center tw-my-5">
                 <img src={dashboardGray} alt="" className="icon tw-ml-4" />
@@ -119,25 +131,33 @@ export default function UserMenu() {
                 </p>
               </div>
             </Link>
-            <div className="tw-flex tw-items-center tw-my-5">
-              <img src={bookmarksGray} alt="" className="icon tw-ml-4" />
-              <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
-                بوک‌مارک‌ها
-              </p>
-            </div>
-            <div className="tw-flex tw-items-center tw-my-5">
-              <img src={favoriteGray} alt="" className="icon tw-ml-4" />
-              <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
-                علاقه‌مندی‌ها
-              </p>
-            </div>
-            <div className="tw-flex tw-items-center tw-my-5">
-              <img src={editGray} alt="" className="icon tw-ml-4" />
-              <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
-                ویرایش پروفایل
-              </p>
-            </div>
-            <button className="button-error tw-w-full">خروج از حساب</button>
+            <Link to="../dashboard/bookmarks">
+              <div className="tw-flex tw-items-center tw-my-5">
+                <img src={bookmarksGray} alt="" className="icon tw-ml-4" />
+                <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
+                  بوک‌مارک‌ها
+                </p>
+              </div>
+            </Link>
+            <Link to="../dashboard/favorites">
+              <div className="tw-flex tw-items-center tw-my-5">
+                <img src={favoriteGray} alt="" className="icon tw-ml-4" />
+                <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
+                  علاقه‌مندی‌ها
+                </p>
+              </div>
+            </Link>
+            <Link to="../dashboard/edit">
+              <div className="tw-flex tw-items-center tw-my-5">
+                <img src={editGray} alt="" className="icon tw-ml-4" />
+                <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
+                  ویرایش پروفایل
+                </p>
+              </div>
+            </Link>
+            <button className="button-error tw-w-full" onClick={logout}>
+              خروج از حساب
+            </button>
           </div>
         </div>
       </div>
