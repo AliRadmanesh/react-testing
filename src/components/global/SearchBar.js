@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setQueryKeywords } from '../../app/redux/actions/searchActions';
+import { setQueryKeywords, hideSuggest } from '../../app/redux/actions/searchActions';
 import searchIcon from '../../assets/icons/Search.svg';
 
 export default function SearchBar({ onChange, classes }) {
@@ -28,7 +28,10 @@ export default function SearchBar({ onChange, classes }) {
         <Link
           to={`../search/?q=${keywords}`}
           className="tw-m-0 tw-p-2 tw-justify-self-end"
-          onClick={() => window.localStorage.setItem('query', keywords)}
+          onClick={() => {
+            window.localStorage.setItem('query', keywords);
+            dispatch(hideSuggest());
+          }}
         >
           <img src={searchIcon} alt="" className="icon" />
         </Link>
