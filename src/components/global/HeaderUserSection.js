@@ -14,7 +14,7 @@ export default function HeaderUserSection() {
     // else dispatch(showUserHeaderData(true));
 
     // eslint-disable-next-line
-  }, []);
+  }, [window.localStorage.getItem('userToken')]);
 
   return (
     <>

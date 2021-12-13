@@ -32,6 +32,7 @@ export default function NewPassword() {
         if (res.status === 200) {
           localStorage.setItem('userToken', res.data.data.user.token);
           history.push('../');
+          window.location.reload();
         }
       } catch (error) {
         const { data, status } = error.response;
