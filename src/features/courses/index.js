@@ -147,7 +147,7 @@ export default function Courses() {
                 id={item.id}
                 title={item.title}
                 description={item.description}
-                price={item.price}
+                prices={item.prices}
                 author={{ first_name: '', last_name: '', image: '' }}
                 rating={item.rating.average}
                 academy={item.academy}

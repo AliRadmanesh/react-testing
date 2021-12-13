@@ -232,7 +232,8 @@
 }
 
 @media screen and (min-width: 1536px) {
-  .template .checkbox-container {
+  .template .checkbox-container,
+  .template .radio-container {
     font-size: 18px;
   }
 }
@@ -250,4 +251,65 @@
   .template .template-textarea-message {
     font-size: 14px;
   }
+}
+
+.template .radio-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #2c2c2c;
+  padding-right: 42px;
+  margin: 1rem auto;
+}
+
+.template .radio-container input {
+  /* position: absolute; */
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}
+
+.template .radio-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.template .radio-container:hover input ~ .checkmark {
+  box-shadow: 0 0 0 2px #118ab2;
+  transition: box-shadow 0.1s ease-in;
+}
+
+.template .radio-container input:checked ~ .checkmark {
+  /* background-color: #2196f3; */
+  box-shadow: 0 0 0 2px #118ab2;
+}
+
+.template .radio-container .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.template .radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.template .radio-container .checkmark:after {
+  top: 3px;
+  right: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #118ab2;
 }

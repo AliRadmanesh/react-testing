@@ -91,3 +91,22 @@ tr:last-child td:first-child {
 tr:last-child td:last-child {
   border-bottom-right-radius: 10px;
 }
+
+.dashboard-profile-dropdown {
+  div input {
+    border: none !important;
+    box-shadow: none !important;
+    &:focus,
+    &:hover {
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  input,
+  input:focus,
+  .input:hover {
+    border: none;
+    box-shadow: none;
+  }
+}

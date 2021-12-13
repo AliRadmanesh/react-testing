@@ -31,8 +31,8 @@ export default function NavigationDesktop() {
 
   return (
     <div
-      className="tw-h-auto tw-rounded-xl tw-hidden tw-flex-col lg:tw-flex tw-w-full bg-white"
-      style={{ maxHeight: '912px' }}
+      className="tw-h-auto tw-rounded-xl tw-hidden tw-flex-col lg:tw-flex tw-w-full bg-white tw-sticky"
+      style={{ maxHeight: '912px', top: '7rem' }}
     >
       <div>
         <Link className="tw-block tw-mb-8 2xl:tw-mb-12" to="../dashboard">

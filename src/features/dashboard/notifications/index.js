@@ -1,11 +1,23 @@
+/* eslint-disable eqeqeq */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
 import instance from '../../../app/instance';
 import Layout from '../../../common/Layout/dashboard';
+import { getDashboardNotifications } from '../../../app/redux/actions/dashboardActions';
 
 export default function Notifications() {
   const [section, setSection] = useState(1);
+  const dispatch = useDispatch();
+
+  const {
+    notifications: { user_notifications, multicast_notifications },
+  } = useSelector((state) => state.dashboard);
+
+  useEffect(() => {
+    dispatch(getDashboardNotifications());
+  }, []);
+
   return (
     <Layout>
       <div className="tw-my-4 tw-relative">
@@ -63,7 +75,31 @@ export default function Notifications() {
               </th>
             </tr>
           </thead>
-          <tbody>table content</tbody>
+          <tbody>
+            {user_notifications.map((item) => (
+              <tr key={item.id} className="">
+                <td
+                  style={{ borderRadius: '0 12px 12px 0' }}
+                  className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none"
+                >
+                  {item.notification.title}: {item.notification.body}
+                </td>
+                <td className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none">
+                  {item.data.type == 0 && <span className="text-success">شغلی</span>}
+                  {item.data.type == 1 && <span className="text-error">آموزشی</span>}
+                </td>
+                <td className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none">
+                  <img src={item.notification.image} alt="" className="tw-w-16 tw-h-16" />
+                </td>
+                <td
+                  style={{ borderRadius: '12px 0 0 12px' }}
+                  className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-gray-300 lg:tw-border-none"
+                >
+                  {item.created_at}
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
       <div className="tw-my-4" style={{ display: section === 2 ? 'block' : 'none' }}>
@@ -78,7 +114,24 @@ export default function Notifications() {
               </th>
             </tr>
           </thead>
-          <tbody>table content</tbody>
+          <tbody>
+            {multicast_notifications.map((item) => (
+              <tr key={item.id} className="">
+                <td
+                  style={{ borderRadius: '0 12px 12px 0' }}
+                  className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none"
+                >
+                  {item.notification.title}: {item.notification.body}
+                </td>
+                <td
+                  style={{ borderRadius: '12px 0 0 12px' }}
+                  className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-gray-300 lg:tw-border-none"
+                >
+                  {item.created_at}
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </Layout>

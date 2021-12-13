@@ -6,20 +6,28 @@ import { WalletCard, BookmarksCard, CartCard } from '../../../components/dashboa
 import notificationsFillIcon from '../../../assets/icons/Notification Fill.svg';
 import { getDashboardData } from '../../../app/redux/actions/dashboardActions';
 
-const TableItem = () => {
+const TableItem = ({ props }) => {
   const temp = 'to prevent prettier brackets removal';
   const date = new Date().toLocaleDateString('fa-IR');
+
+  const {
+    created_at,
+    notification: { title, body },
+  } = props;
+
   return (
     <div className="dashboard-main-table-item tw-rounded-xl tw-p-4 tw-mt-2 tw-grid tw-items-center tw-grid-cols-2 2xl:tw-text-base 2xl:tw-font-normal">
-      <p className="text-black tw-truncate">{temp}</p>
-      <p className="text-gray tw-truncate tw-text-left">{date}</p>
+      <p className="text-black tw-truncate">
+        {title}: {body}
+      </p>
+      <p className="text-gray tw-truncate tw-text-left">{created_at}</p>
     </div>
   );
 };
 
 const Table = () => {
   const {
-    dashboard: { notifiacations },
+    dashboard: { notifications },
   } = useSelector((state) => state.dashboard);
 
   return (
@@ -28,12 +36,9 @@ const Table = () => {
         <img src={notificationsFillIcon} alt="" className="tw-w-6 tw-h-6 tw-ml-4" />
         <p className="tw-text-base tw-font-semibold 2xl:tw-text-lg text-blue">اعلان‌های جدید</p>
       </div>
-      <TableItem />
-      <TableItem />
-      <TableItem />
-      <TableItem />
-      <TableItem />
-      <TableItem />
+      {notifications.map((item) => (
+        <TableItem props={item} key={item.id} />
+      ))}
     </div>
   );
 };
@@ -42,7 +47,6 @@ export default function Main() {
   const {
     dashboard: {
       stat: { purchases, bookmarks, wallet },
-      notifiacations,
     },
   } = useSelector((state) => state.dashboard);
   const dispatch = useDispatch();

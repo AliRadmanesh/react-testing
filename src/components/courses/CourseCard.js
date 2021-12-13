@@ -9,7 +9,7 @@ export default function CourseCard({
   id,
   image,
   title,
-  price,
+  prices,
   academy: { id: academyID, name, avatar },
   rating,
   type,
@@ -18,6 +18,10 @@ export default function CourseCard({
   is_free,
   discount,
 }) {
+  const { amount, percentage } = discount !== null;
+
+  const price = prices !== null ? prices.original.price : null;
+
   return (
     <div className="course-card bg-white search-course-card font-kalameh-num tw-grid tw-p-4 tw-rounded-xl tw-shadow tw-w-full tw-items-stretch tw-gap-4 tw-mb-4">
       <div
@@ -37,8 +41,14 @@ export default function CourseCard({
             </h1>
           </Link>
           <div className="tw-flex tw-items-center">
-            <p className="text-blue tw-hidden lg:tw-block tw-font-semibold tw-text-lg">{price}</p>
-            <p className="tw-text-sm tw-font-normal tw-hidden lg:tw-block text-error">{discount}</p>
+            {price && (
+              <p className="text-blue tw-hidden lg:tw-block tw-font-semibold tw-text-lg">
+                {percentage ? price * (1 - percentage / 100) : price}
+              </p>
+            )}
+            <p className="tw-text-sm tw-font-normal tw-hidden lg:tw-block text-error">
+              {percentage}
+            </p>
             {is_free === 1 && (
               <p className="tw-text-sm tw-font-normal tw-hidden lg:tw-block text-success">رایگان</p>
             )}
@@ -60,7 +70,11 @@ export default function CourseCard({
 
           <div className="tw-flex tw-items-end">
             <p className="text-blue lg:tw-hidden tw-block tw-font-semibold tw-text-lg">{price}</p>
-            <p className="tw-text-sm tw-font-normal lg:tw-hidden tw-block text-error">{discount}</p>
+            {percentage && (
+              <p className="tw-text-sm tw-font-normal lg:tw-hidden tw-block text-error">
+                {percentage}
+              </p>
+            )}
             {is_free === 1 && (
               <p className="tw-text-sm tw-font-normal lg:tw-hidden tw-block text-success">رایگان</p>
             )}

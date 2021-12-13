@@ -37,6 +37,26 @@ const initialState = {
     cashback: { amount: 0 },
     wallet: { balance: 0, balance_available: 0 },
   },
+  favorites: {
+    courses: {
+      interests: {
+        fetched: false,
+        list: [],
+      },
+      interested: { fetched: false, list: [] },
+    },
+    jobs: {
+      interests: {
+        fetched: false,
+        list: [],
+      },
+      interested: { fetched: false, list: [] },
+    },
+  },
+  notifications: {
+    user_notifications: [],
+    multicast_notifications: [],
+  },
 };
 
 export default (state = initialState, action) => {
@@ -96,6 +116,106 @@ export default (state = initialState, action) => {
         wallet: action.payload,
       };
 
+    case 'SET_DASHBOARD_FAVORITES_LISTS':
+      return {
+        ...state,
+        favorites: {
+          ...state.favorites,
+          courses: {
+            ...state.favorites.courses,
+            interests: { fetched: true, list: action.payload.categories },
+          },
+          jobs: {
+            ...state.favorites.jobs,
+            interests: { fetched: true, list: action.payload.categories },
+          },
+        },
+      };
+
+    case 'SET_DASHBOARD_FAVORITES_INTERESTS':
+      return {
+        ...state,
+        favorites: {
+          ...state.favorites,
+          courses: {
+            ...state.favorites.courses,
+            interested: { fetched: true, list: action.payload.favorite_course_categories },
+          },
+          jobs: {
+            ...state.favorites.jobs,
+            interested: { fetched: true, list: action.payload.favorite_job_categories },
+          },
+        },
+      };
+
+    case 'ADD_DASHBOARD_FAVORITES_INTERESTS_COURSES':
+      return {
+        ...state,
+        favorites: {
+          ...state.favorites,
+          courses: {
+            ...state.favorites.courses,
+            interested: {
+              ...state.favorites.courses.interested,
+              list: [...state.favorites.courses.interested.list, action.payload],
+            },
+          },
+        },
+      };
+
+    case 'ADD_DASHBOARD_FAVORITES_INTERESTS_JOBS':
+      return {
+        ...state,
+        favorites: {
+          ...state.favorites,
+          jobs: {
+            ...state.favorites.jobs,
+            interested: {
+              ...state.favorites.jobs.interested,
+              list: [...state.favorites.jobs.interested.list, action.payload],
+            },
+          },
+        },
+      };
+
+    case 'REMOVE_DASHBOARD_FAVORITES_INTERESTS_COURSES':
+      return {
+        ...state,
+        favorites: {
+          ...state.favorites,
+          courses: {
+            ...state.favorites.jobs,
+            interested: {
+              ...state.favorites.jobs.interested,
+              list: state.favorites.courses.interested.list.filter(
+                (course) => course.id !== action.payload,
+              ),
+            },
+          },
+        },
+      };
+
+    case 'REMOVE_DASHBOARD_FAVORITES_INTERESTS_JOBS':
+      return {
+        ...state,
+        favorites: {
+          ...state.favorites,
+          jobs: {
+            ...state.favorites.jobs,
+            interested: {
+              ...state.favorites.jobs.interested,
+              list: state.favorites.jobs.interested.list.filter(
+                (item) => item.id !== action.payload,
+              ),
+            },
+          },
+        },
+      };
+    case 'SET_DASHBOARD_NOTIFICATIONS':
+      return {
+        ...state,
+        notifications: action.payload,
+      };
     default:
       return state;
   }
