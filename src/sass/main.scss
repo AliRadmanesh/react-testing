@@ -849,6 +849,9 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* Features/Pages Scss */
 @import 'dashboard';
 @import 'pages';

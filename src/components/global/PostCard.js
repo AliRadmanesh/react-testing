@@ -9,7 +9,7 @@ function PostCard({ props }) {
     link,
     image,
     title,
-    author: { last_name, first_name, image: authorImage },
+    author: { name, image: authorImage },
     rating,
     created_at,
     description,
@@ -35,9 +35,7 @@ function PostCard({ props }) {
         <div className="tw-grid tw-grid-cols-2 tw-justify-between tw-items-end tw-mt-8">
           <div className="tw-flex tw-items-end">
             <img src={authorImage} alt="" className="tw-ml-2 border-smooth" />
-            <p className="text-guide tw-truncate">
-              {first_name} {last_name}
-            </p>
+            <p className="text-guide tw-truncate">{name}</p>
           </div>
           <div>
             <caption className="text-blue tw-block tw-text-left font-kalameh-num">

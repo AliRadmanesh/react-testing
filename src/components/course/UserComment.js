@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Rating from 'react-rating';
 import toast from 'react-hot-toast';
@@ -8,21 +8,54 @@ import { createComment } from '../../app/redux/actions/courseActions';
 
 import starFillIcon from '../../assets/icons/Star Fill.svg';
 import starIcon from '../../assets/icons/Star.svg';
+import instance from '../../app/instance';
 
 export default function UserComment({ id }) {
   const [rate, setRate] = useState(0);
   const [state, setState] = useState(null);
   const [message, setMessage] = useState('');
+  const ref = useRef();
 
   const dispatch = useDispatch();
   const { is_anonymous } = useSelector((store) => store.course.data);
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (rate === 0) {
       toast.error('لطفا نمره خود را ثبت کنید.');
     } else {
-      dispatch(createComment(id, rate, message));
+      try {
+        const data =
+          message !== '' && message !== null
+            ? { rating: rate, content: message }
+            : { rating: rate };
+
+        const res = await instance.post(`/api/v1/web/service/courses/${id}/comments/create`, data);
+        if (res.status === 200 || res.status === 201) {
+          toast.success('دیدگاه شما ثبت گردید.');
+          dispatch({ type: 'CREATE_COMMENT' });
+          // window.location.reload();
+          dispatch({ type: 'RESET_COMMENTS' });
+          dispatch({ type: 'SET_COMMENTS_LOADING' });
+          const res1 = await instance.get(
+            `api/v1/web/service/courses/${id}/comments/?sort=${2}&page=${1}`,
+          );
+          setRate(0);
+          setMessage('');
+          // ref.current.value = '';
+          dispatch({ type: 'GET_COURSE_COMMENTS', payload: res1.data.data.comments });
+          if (res1.data.meta.last_page !== 1) {
+            dispatch({
+              type: 'COURSE_COMMENT_PAGE_TOTAL',
+              payload: res1.data.meta.last_page,
+            });
+          }
+        } else {
+          toast.error('خطا هنگام ثبت بازخورد شما');
+        }
+      } catch (error) {
+        const { data, status } = error.response;
+      }
     }
   };
 
@@ -66,8 +99,9 @@ export default function UserComment({ id }) {
 
         <form className="tw-mt-4" onSubmit={onSubmit}>
           <TextArea
+            ref={ref}
             onChange={(e) => setMessage(e.target.value)}
-            value={message}
+            value={message || null}
             placeholder="دیدگاه خود را بنویسید..."
             // message={uiMessage}
           />

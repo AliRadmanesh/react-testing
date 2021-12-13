@@ -63,7 +63,10 @@ export default function Header({
                 {title}
               </p>
               <div className="tw-hidden md:tw-flex tw-items-center tw-mr-4">
-                <Link to={`../compare?primary=${id}`} className="tw-bg-transparent tw-p-2">
+                <Link
+                  to={`../compare?primary=${window.location.href.split('course/')[1]}`}
+                  className="tw-bg-transparent tw-p-2"
+                >
                   <img src={compareIcon} alt="" className="tw-w-8" />
                 </Link>
                 <button
@@ -101,8 +104,8 @@ export default function Header({
               </div>
               <div className="tw-flex tw-mt-2 tw-w-full tw-items-stretch md:tw-justify-end">
                 <Link
-                  to={`../compare?primary=${new URL(window.location).searchParams.get('id')}`}
-                  className="tw-p-6 md:tw-hidden"
+                  to={`../compare?primary=${window.location.href.split('course/')[1]}`}
+                  className="tw-p-6 md:tw-hidden tw-rounded-xl"
                   style={{ backgroundColor: '#118ab222' }}
                 >
                   <img src={compareIcon} alt="" style={{}} className="tw-w-8" />

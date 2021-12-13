@@ -15,6 +15,8 @@ import { hideSuggest } from '../../app/redux/actions/searchActions';
 import './course.css';
 
 export default function Course() {
+  const [scroll, setScroll] = useState(window.scrollY);
+
   const [id, setId] = useState(window.location.href.split('course/')[1]);
   const {
     data: {
@@ -55,6 +57,9 @@ export default function Course() {
 
   useEffect(() => {
     dispatch(getCourseData(id));
+    window.addEventListener('scroll', () => {
+      setScroll(window.scrollY);
+    });
     if (window.innerWidth < 768)
       document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
   }, []);
@@ -98,8 +103,12 @@ export default function Course() {
       </Layout>
       {!is_purchased && (
         <div
-          className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-bottom-4 tw-w-full tw-right-0 tw-px-4"
-          style={{ zIndex: '9999' }}
+          className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-w-full tw-right-0 tw-px-4"
+          style={{
+            zIndex: '9999',
+            bottom: scroll >= 100 ? '1rem' : '-4rem',
+            transition: 'bottom .3s ease-in-out',
+          }}
         >
           <button
             className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
