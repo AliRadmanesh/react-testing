@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import NavigationItem from './NavigationItem';
 
 import dashboardIcon from '../../assets/icons/Dashboard.svg';
@@ -28,6 +28,14 @@ import close from '../../assets/icons/Close-Gray.svg';
 
 export default function NavigationDesktop() {
   const section = window.location.href.split('/dashboard/')[1];
+  const history = useHistory();
+
+  const logout = () => {
+    window.localStorage.removeItem('userPhone');
+    window.localStorage.removeItem('userToken');
+    history.push('../');
+    window.location.reload();
+  };
 
   return (
     <div
@@ -234,6 +242,7 @@ export default function NavigationDesktop() {
       </div>
       <button
         type="button"
+        onClick={logout}
         className="button-error tw-mx-4 tw-mb-4 tw-mt-20 tw-text-sm 2xl:tw-font-semibold tw-font-bold 2xl:tw-text-xl"
       >
         خروج از حساب

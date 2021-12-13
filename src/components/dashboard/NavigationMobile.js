@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import NavigationItem from './NavigationItem';
 
@@ -20,25 +20,26 @@ import notificationsFillIcon from '../../assets/icons/Notification Fill.svg';
 import editIcon from '../../assets/icons/Edit.svg';
 import editFillIcon from '../../assets/icons/Edit Fill.svg';
 import close from '../../assets/icons/Close-Gray.svg';
+import { showUserMenu } from '../../app/redux/actions/headerActions';
 
 import { showDashboardMobileMenu } from '../../app/redux/actions/dashboardActions';
 
 export default function NavigationMobile() {
   const dispatch = useDispatch();
   const section = window.location.href.split('/dashboard/')[1];
+  const history = useHistory();
+
+  const logout = () => {
+    window.localStorage.removeItem('userPhone');
+    window.localStorage.removeItem('userToken');
+    dispatch(showUserMenu(false));
+    history.push('../');
+    window.location.reload();
+  };
 
   return (
-    <div className="bg-light tw-h-screen tw-flex tw-flex-col lg:tw-hidden tw-justify-between">
-      <div>
-        <div
-          className="tw-flex tw-items-center tw-py-4 container"
-          style={{ boxShadow: '0 0 5px 5px #efefef' }}
-        >
-          <button className="tw-p-0" onClick={() => dispatch(showDashboardMobileMenu(false))}>
-            <img src={close} alt="بستن" className="menu-icon" />
-          </button>
-          <p className="tw-text-base tw-mx-4 font-kalameh">منوی داشبورد</p>
-        </div>
+    <div className="bg-light tw-h-full tw-flex tw-flex-col lg:tw-hidden tw-justify-between">
+      <div className="">
         <Link to="../dashboard">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
@@ -236,7 +237,7 @@ export default function NavigationMobile() {
           </span>
         </Link>
       </div>
-      <button type="button" className="button-error container tw-mx-4 tw-mb-4">
+      <button type="button" className="button-error container tw-mx-4" onClick={logout}>
         خروج از حساب
       </button>
     </div>

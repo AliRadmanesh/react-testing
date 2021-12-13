@@ -13,6 +13,7 @@ import UserMenu from '../../../components/global/UserMenu';
 import NavigationButton from '../../../components/dashboard/NavigationButton';
 import Footer from '../../../components/global/Footer';
 import UserRow from '../../../components/dashboard/UserRow';
+import MobileHeader from '../../../components/dashboard/MobileHeader';
 
 export default function Layout({ children }) {
   const {
@@ -39,7 +40,8 @@ export default function Layout({ children }) {
             },
           }}
         />
-        <MenuMobile />
+        {/* <MenuMobile /> */}
+        <MobileHeader />
         <MenuDesktop />
         <UserMenu />
         <CategoryMenuDesktop />
