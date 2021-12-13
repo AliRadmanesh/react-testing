@@ -60,10 +60,9 @@ export default function Course() {
   }, []);
 
   useEffect(() => {
-    console.log(11);
-    setId(window.location.href.split('course/')[1]);
+    dispatch(getCourseData(window.location.href.split('course/')[1]));
     dispatch(hideSuggest());
-  }, [new URL(window.location).pathname]);
+  }, [window.location.href.split('course/')[1]]);
 
   return (
     <>
