@@ -12,7 +12,7 @@ export default function CategoryMenuDesktop() {
   const dispatch = useDispatch();
   const { categoryDesktop, categories } = useSelector((state) => state.header);
   const handleClick = (click) => {
-    if (click.target.classList.contains('category-menu')) {
+    if (click.target.className.includes('category-menu')) {
       dispatch(showCategoryDesktopMenu(false));
     }
   };
