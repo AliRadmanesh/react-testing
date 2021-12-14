@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+
+import instance from '../../app/instance';
+
 import walletGray from '../../assets/icons/Wallet-Gray.svg';
 import dashboardGray from '../../assets/icons/Dashboard-Gray.svg';
 import bookmarksGray from '../../assets/icons/Bookmarks-Gray.svg';
@@ -28,12 +32,18 @@ export default function UserMenu() {
     }
   };
 
-  const logout = () => {
-    window.localStorage.removeItem('userPhone');
-    window.localStorage.removeItem('userToken');
-    dispatch(showUserMenu(false));
-    history.push('../');
-    window.location.reload();
+  const logout = async () => {
+    try {
+      const res = await instance.post('/api/v1/web/service/users/logout');
+      if (res.status === 200) {
+        window.localStorage.removeItem('userPhone');
+        window.localStorage.removeItem('userToken');
+        history.push('../');
+        window.location.reload();
+      }
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   useEffect(() => {

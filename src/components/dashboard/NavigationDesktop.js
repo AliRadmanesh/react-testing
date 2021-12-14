@@ -1,5 +1,8 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { Link, useHistory } from 'react-router-dom';
+import instance from '../../app/instance';
+
 import NavigationItem from './NavigationItem';
 
 import dashboardIcon from '../../assets/icons/Dashboard.svg';
@@ -30,11 +33,19 @@ export default function NavigationDesktop() {
   const section = window.location.href.split('/dashboard/')[1];
   const history = useHistory();
 
-  const logout = () => {
-    window.localStorage.removeItem('userPhone');
-    window.localStorage.removeItem('userToken');
-    history.push('../');
-    window.location.reload();
+  const logout = async () => {
+    try {
+      const res = await instance.post('/api/v1/web/service/users/logout');
+      if (res.status === 200) {
+        window.localStorage.removeItem('userPhone');
+        window.localStorage.removeItem('userToken');
+        history.push('../');
+        window.location.reload();
+      }
+    } catch (error) {
+      const { status, data } = error.response;
+      toast.error(data.message);
+    }
   };
 
   return (
