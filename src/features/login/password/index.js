@@ -37,21 +37,23 @@ export default function LoginPassword() {
         );
         console.log(res);
         if (res.status === 200) {
-          window.localStorage.setItem('userToken', res.data.data.user.token);
-          history.push('../');
-          window.location.reload();
+          if (res.data.code === 200) {
+            window.localStorage.setItem('userToken', res.data.data.user.token);
+            history.push('../');
+            window.location.reload();
+          }
+          if (res.data.code === 401) {
+            toast.error('ورود ناموفق. از درستی گذرواژه وارد شده، اطمینان حاصل نمایید');
+          }
         }
       } catch (error) {
         console.log(error.response);
-        const { status, data } = error.response;
-        if (status === 422 && data.message.password) toast.error(data.message.password[0]);
+        const { data, status } = error?.response;
         if (status === 422 && data.message.mobile) toast.error(data.message.mobile[0]);
         if (status === 422 && data.message.device_name) toast.error(data.message.device_name[0]);
-        else if (status === 401)
+        if (status === 422 && data.message.password) toast.error(data.message.password[0]);
+        if (status === 401)
           toast.error('ورود ناموفق. از درستی شماره و گذرواژه ورودی اطمینان حاصل نمایید');
-        else {
-          toast.error('عملیات ورود ناموفق بود.');
-        }
       }
     }
 
