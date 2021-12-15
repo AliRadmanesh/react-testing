@@ -1,5 +1,6 @@
 /* MAIN CSS */
 /* DEVELOPED BY: MILAD KHORRAMIAN */
+/* Initail Deploy-Ready: 15.12.2021*/
 /* BACKGROUND COLORS */
 .bg-white {
   background-color: #fefefe;
@@ -1090,6 +1091,44 @@ footer .footer-heading {
           box-shadow: 0 0 0 1px #11b262;
 }
 
+input[type='file'], textarea[type='file'],
+.textarea[type='file'] {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+input[type='file'] + label, textarea[type='file'] + label, .textarea[type='file'] + label {
+  cursor: pointer;
+  width: 128px;
+  height: 128px;
+  border-radius: 12px;
+  border: 2px dashed #e2e2e2;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+input::-webkit-outer-spin-button, textarea::-webkit-outer-spin-button,
+.textarea::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+textarea::-webkit-inner-spin-button,
+.textarea::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'], textarea[type='number'],
+.textarea[type='number'] {
+  -moz-appearance: textfield;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* Features/Pages Scss */
 /* Dashboard Module */
 /* BACKGROUND COLORS */
@@ -1331,6 +1370,32 @@ tr:last-child td:first-child {
 
 tr:last-child td:last-child {
   border-bottom-right-radius: 10px;
+}
+
+.dashboard-profile-dropdown div input, .dashboard-profile-dropdown div textarea,
+.dashboard-profile-dropdown div .textarea {
+  border: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.dashboard-profile-dropdown div input:focus, .dashboard-profile-dropdown div textarea:focus,
+.dashboard-profile-dropdown div .textarea:focus, .dashboard-profile-dropdown div input:hover, .dashboard-profile-dropdown div textarea:hover,
+.dashboard-profile-dropdown div .textarea:hover {
+  border: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.dashboard-profile-dropdown input, .dashboard-profile-dropdown textarea,
+.dashboard-profile-dropdown .textarea,
+.dashboard-profile-dropdown input:focus,
+.dashboard-profile-dropdown textarea:focus,
+.dashboard-profile-dropdown .textarea:focus,
+.dashboard-profile-dropdown .input:hover {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .page-header-chill {

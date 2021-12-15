@@ -1,5 +1,6 @@
 /* MAIN CSS */
 /* DEVELOPED BY: MILAD KHORRAMIAN */
+/* Initail Deploy-Ready: 15.12.2021*/
 
 @import 'variables';
 @import 'colors';
@@ -852,6 +853,7 @@ input[type='number'] {
 html {
   scroll-behavior: smooth;
 }
+
 /* Features/Pages Scss */
 @import 'dashboard';
 @import 'pages';
