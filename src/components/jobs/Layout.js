@@ -13,6 +13,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Toaster
+        containerClassName="font-kalameh-num"
         toastOptions={{
           success: {
             style: {

@@ -93,7 +93,8 @@ export default function SearchBox() {
   const onSubmit = (event) => {
     event.preventDefault();
     dispatch(clearJobsSearchFilters());
-    if (text === '') toast.error('لطفا کلمه یا عبارتی را درون باکس اول وارد کنید.');
+    if (text === '' || text === null)
+      toast.error('لطفا کلمه یا عبارتی را درون باکس اول وارد کنید.');
     else {
       const url = new URL(window.location.origin);
       url.searchParams.set('q', text);

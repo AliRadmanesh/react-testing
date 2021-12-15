@@ -64,48 +64,48 @@ export default function Search() {
     setUrlQuery(new URL(window.location).searchParams.get('q'));
   }, [new URL(window.location).search]);
 
-  useEffect(() => {
-    const { searchParams } = new URL(window.location);
-    if (options.contract_types.length !== 0) {
-      // eslint-disable-next-line no-restricted-syntax
-      for (const pair of searchParams.entries()) {
-        if (pair[0].includes('contract_types')) {
-          options.contract_types.forEach((item) => {
-            if (item.id == pair[1]) {
-              const object = { id: item.id, title: item.name };
-              dispatch(addJobsContractFilter(object));
-            }
-          });
-        }
-      }
-    }
-    if (options.work_experiences.length !== 0) {
-      // eslint-disable-next-line no-restricted-syntax
-      for (const pair of searchParams.entries()) {
-        if (pair[0].includes('work_experiences')) {
-          options.work_experiences.forEach((item) => {
-            if (item.id == pair[1]) {
-              const object = { id: item.id, title: item.name };
-              dispatch(addJobsExperienceFilter(object));
-            }
-          });
-        }
-      }
-    }
-    if (options.salary_ranges.length !== 0) {
-      // eslint-disable-next-line no-restricted-syntax
-      for (const pair of searchParams.entries()) {
-        if (pair[0].includes('salary_ranges')) {
-          options.salary_ranges.forEach((item) => {
-            if (item.id == pair[1]) {
-              const object = { id: item.id, title: item.name };
-              dispatch(addJobsSalaryFilter(object));
-            }
-          });
-        }
-      }
-    }
-  }, [options]);
+  // useEffect(() => {
+  //   const { searchParams } = new URL(window.location);
+  //   if (options.contract_types.length !== 0) {
+  //     // eslint-disable-next-line no-restricted-syntax
+  //     for (const pair of searchParams.entries()) {
+  //       if (pair[0].includes('contract_types')) {
+  //         options.contract_types.forEach((item) => {
+  //           if (item.id == pair[1]) {
+  //             const object = { id: item.id, title: item.name };
+  //             dispatch(addJobsContractFilter(object));
+  //           }
+  //         });
+  //       }
+  //     }
+  //   }
+  //   if (options.work_experiences.length !== 0) {
+  //     // eslint-disable-next-line no-restricted-syntax
+  //     for (const pair of searchParams.entries()) {
+  //       if (pair[0].includes('work_experiences')) {
+  //         options.work_experiences.forEach((item) => {
+  //           if (item.id == pair[1]) {
+  //             const object = { id: item.id, title: item.title };
+  //             dispatch(addJobsExperienceFilter(object));
+  //           }
+  //         });
+  //       }
+  //     }
+  //   }
+  //   if (options.salary_ranges.length !== 0) {
+  //     // eslint-disable-next-line no-restricted-syntax
+  //     for (const pair of searchParams.entries()) {
+  //       if (pair[0].includes('salary_ranges')) {
+  //         options.salary_ranges.forEach((item) => {
+  //           if (item.id == pair[1]) {
+  //             const object = { id: item.id, title: item.title };
+  //             dispatch(addJobsSalaryFilter(object));
+  //           }
+  //         });
+  //       }
+  //     }
+  //   }
+  // }, [options]);
 
   useEffect(() => {
     const base = window.location.origin;

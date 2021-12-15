@@ -16,7 +16,8 @@ import Course from '../../features/course';
 import Page404 from '../../features/404/index';
 import Search from '../../features/search';
 import Compare from '../../features/compare';
-import JobList from '../../features/jobs';
+import Jobs from '../../features/jobs';
+import JobSearch from '../../features/jobs/search';
 import Job from '../../features/job';
 import Retrieve from '../../features/retrieve';
 import Authentication from '../../features/auth';
@@ -35,6 +36,7 @@ import Purchases from '../../features/dashboard/purchases';
 import Transactions from '../../features/dashboard/transactions';
 import Wallet from '../../features/dashboard/wallet';
 import Main from '../../features/dashboard/main';
+import TestPage from '../../features/test';
 
 function AppRouter() {
   return (
@@ -42,6 +44,7 @@ function AppRouter() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/test" component={TestPage} />
           {/* <Route exact path="/me" component={Dashboard} /> */}
           <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/categories" component={Categories} />
@@ -53,7 +56,8 @@ function AppRouter() {
           <Route exact path="/404" component={Page404} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/compare" component={Compare} />
-          <Route exact path="/jobs" component={JobList} />
+          <Route exact path="/jobs" component={Jobs} />
+          <Route exact path="/jobs/search" component={JobSearch} />
           <Route exact path="/job/:id" component={Job} />
           <Route exact path="/auth" component={Authentication} />
           <Route exact path="/login/password" component={LoginPassword} />
