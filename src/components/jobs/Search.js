@@ -48,18 +48,21 @@ export default function Search() {
   };
 
   useEffect(() => {
-    // dispatch(searchQuery(window.location.href.split('q=')[1]));
-    // dispatch(getSearchContent());
-    new URL(window.location).searchParams.forEach((value, key) => {
-      console.log(key, ': ', value);
-      if (key.includes('sort') && value !== 1) {
-        console.log(1);
-      }
-    });
-    return () => {
-      dispatch(clearAllJobsAdustments());
-    };
+    // new URL(window.location).searchParams.forEach((value, key) => {
+    //   console.log(key, ': ', value);
+    //   if (key.includes('sort') && value !== 1) {
+    //     console.log(1);
+    //   }
+    // });
+    // return () => {
+    //   dispatch(clearAllJobsAdustments());
+    // };
   }, []);
+
+  useEffect(() => {
+    dispatch(searchJobs(new URL(window.location).search));
+    setUrlQuery(new URL(window.location).searchParams.get('q'));
+  }, [new URL(window.location).search]);
 
   useEffect(() => {
     const { searchParams } = new URL(window.location);
@@ -109,22 +112,15 @@ export default function Search() {
     console.log(base);
     const url = new URL(window.location.origin);
     url.searchParams.set('q', urlQuery);
+    console.log(work_experiences);
     work_experiences.forEach((item, index) => {
       url.searchParams.set(`work_experiences[${index}]`, item.id);
     });
-    // contract_types.forEach((item, index) => {
-    //   url.searchParams.set(`contract_types[${index}]`, item.id);
-    // });
-    // url.searchParams.set(`page`, current);
+    url.searchParams.set(`page`, current);
     // console.log(url.search);
-
-    history.push(`./${url.search}`);
+    history.push(`../jobs${url.search}`);
+    // console.log(`/${url.search}`);
   }, [work_experiences, current]);
-
-  useEffect(() => {
-    dispatch(searchJobs(new URL(window.location).search));
-    setUrlQuery(new URL(window.location).searchParams.get('q'));
-  }, [new URL(window.location).search]);
 
   useEffect(() => {
     if (window.scrollY !== 0) {

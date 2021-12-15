@@ -19,13 +19,13 @@ export default function JobListPage() {
   const { section } = useSelector((state) => state.jobs);
 
   useEffect(() => {
-    dispatch(getJobsFilterOptions());
     dispatch(getJobsSearchOptions());
     if (new URL(window.location).search === '') {
       dispatch(setJobsSection(1));
       dispatch(getJobsData());
     } else {
       dispatch(setJobsSection(2));
+      dispatch(getJobsFilterOptions());
     }
   }, [new URL(window.location).search]);
 

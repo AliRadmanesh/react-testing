@@ -14,6 +14,7 @@ export default function PageHeaderPacific({ title, text = '', img = '' }) {
   return (
     <>
       <Toaster
+        containerClassName="font-kalameh-num"
         toastOptions={{
           success: {
             style: {

@@ -89,6 +89,7 @@ export default function SearchBox() {
   let value;
   const history = useHistory();
   const dispatch = useDispatch();
+
   const onSubmit = (event) => {
     event.preventDefault();
     dispatch(clearJobsSearchFilters());
@@ -113,9 +114,10 @@ export default function SearchBox() {
         url.searchParams.delete('category[0]');
       }
       console.log(url.search);
-      history.push(`./${url.search}`);
+      history.push(`./jobs${url.search}`);
     }
   };
+
   return (
     <div className="search-box bg-light font-kalameh-num tw-rounded-xl tw-p-4 tw-w-full" style={{}}>
       {/* 0 to 768px */}
