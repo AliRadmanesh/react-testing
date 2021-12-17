@@ -100,6 +100,13 @@ export const searchCourses =
     }
   };
 
+export const setSearchContent = (options) => (dispatch) => {
+  dispatch({
+    type: 'SET_QUERY_OPTIONS',
+    payload: options,
+  });
+};
+
 export const searchQuery = (query) => async (dispatch) => {
   let proceed = false;
   try {
@@ -168,14 +175,14 @@ export const setQuerySort = (num) => (dispatch) => {
 export const addQueryAcademyFilter = (object) => (dispatch) => {
   dispatch({
     type: ADD_QUERY_FILTERS_ACADEMY,
-    payload: { id: object.id, title: object.title },
+    payload: { id: object.id, name: object.name },
   });
 };
 
 export const addQueryTypeFilter = (object) => (dispatch) => {
   dispatch({
     type: ADD_QUERY_FILTERS_TYPE,
-    payload: { id: object.id, title: object.title },
+    payload: { id: object.id, name: object.name, type: object.type },
   });
 };
 

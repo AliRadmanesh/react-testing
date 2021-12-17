@@ -31,7 +31,7 @@ const initialState = {
   },
 
   query: {
-    options: { academies: [], types: [] },
+    options: { academies: [], course_types: [] },
     keywords: '',
     result: [], // returned value from api and string
     page: { current: 1, total: 1 },
@@ -39,7 +39,7 @@ const initialState = {
     string: '', // stringified query based on other sub-states
     filters: {
       academies: [],
-      types: [],
+      course_types: [],
       sort: 1,
       is_free: 0,
     },
@@ -153,7 +153,7 @@ export default (state = initialState, action) => {
           ...state.query,
           filters: {
             ...state.query.filters,
-            types: [...state.query.filters.types, action.payload],
+            course_types: [...state.query.filters.course_types, action.payload],
           },
         },
       };
@@ -177,7 +177,9 @@ export default (state = initialState, action) => {
           ...state.query,
           filters: {
             ...state.query.filters,
-            types: state.query.filters.types.filter((item) => item.id !== action.payload),
+            course_types: state.query.filters.course_types.filter(
+              (item) => item.id !== action.payload,
+            ),
           },
         },
       };
@@ -195,6 +197,18 @@ export default (state = initialState, action) => {
           ...state.query,
           filters: initialState.query.filters,
           page: initialState.query.page,
+        },
+      };
+    case CLEAR_QUERY_FILTERS:
+      return {
+        ...state,
+        query: {
+          ...state.query,
+          filters: {
+            ...state.query.filters,
+            academies: [],
+            course_types: [],
+          },
         },
       };
     default:

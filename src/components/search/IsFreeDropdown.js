@@ -1,29 +1,39 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { setQueryIsFree } from '../../app/redux/actions/searchActions';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 export default function IsFreeDropdown() {
   const { is_free } = useSelector((state) => state.search.query.filters);
-  const [text, setText] = useState(() => {
+  const [text, setText] = useState(() => {});
+  const history = useHistory();
+
+  useEffect(() => {
     switch (is_free) {
       case 0:
-        return 'پولی';
+        setText('پولی');
+        break;
       case 1:
-        return 'رایگان';
+        setText('رایگان');
+        break;
       default:
-        return 'مرتبط‌ترین';
+        setText('پولی');
     }
-  });
-  const dispatch = useDispatch();
-  const ref = useRef();
+  }, [is_free]);
+
+  const onClick = (value) => {
+    const url = new URL(window.location);
+    url.searchParams.set('is_free', value);
+    history.push(`./${url.search}`);
+  };
+
   return (
     <div className="font-kalameh-num tw-relative tw-w-full tw-h-auto">
       <button
-        ref={ref}
-        className="tw-flex tw-text-sm tw-font-normal 2xl:tw-text-base tw-items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
+        className="tw-flex tw-text-sm tw-font-normal 2xl:tw-text-base tw-items-center courses-dropdown free-dropdown tw-justify-between tw-relative tw-p-4"
         onClick={(e) => e.target.classList.toggle('active')}
       >
         {text}
@@ -33,9 +43,9 @@ export default function IsFreeDropdown() {
         <div
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
-            dispatch(setQueryIsFree(1));
+            onClick(1);
             setText('رایگان');
-            ref.current.classList.remove('active');
+            document.querySelector('.free-dropdown').classList.remove('active');
           }}
         >
           رایگان
@@ -43,9 +53,9 @@ export default function IsFreeDropdown() {
         <div
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
-            dispatch(setQueryIsFree(0));
+            onClick(0);
             setText('پولی');
-            ref.current.classList.remove('active');
+            document.querySelector('.free-dropdown').classList.remove('active');
           }}
         >
           پولی
