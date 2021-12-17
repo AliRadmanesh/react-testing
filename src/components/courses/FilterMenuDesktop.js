@@ -20,7 +20,6 @@ import {} from '../../common/hooks/search';
 export default function FilterMenuDesktop() {
   const { course_types, academies } = useSelector((state) => state.courses.options);
   const { filters } = useSelector((state) => state.courses);
-  const dispatch = useDispatch();
   const history = useHistory();
 
   const filterAcademy = (event, item) => {

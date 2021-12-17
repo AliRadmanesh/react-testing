@@ -34,7 +34,7 @@ export default function FilterMenuMobile() {
 
   const filterType = (event, item) => {
     if (event.target.checked) {
-      dispatch(addCoursesTypeFilter({ id: item.id, name: item.name, type: item.name }));
+      dispatch(addCoursesTypeFilter({ id: item.id, name: item.name, type: item.type }));
     } else {
       dispatch(removeCoursesTypeFilter(item.id));
     }
@@ -95,80 +95,85 @@ export default function FilterMenuMobile() {
           <img src={closeIcon} alt="" className="icon" />
         </button>
       </div>
-      <div className="courses-mobile-filters">
-        <div className="tw-p-4 tw-rounded-xl bg-white">
-          <div className="tw-flex tw-justify-between tw-items-center tw-mb-4">
-            <p className="text-black tw-text-base tw-font-semibold font-kalameh">
-              فیلترهای اعمال شده
+      <div className="container">
+        <div className="tw-my-6">
+          <SearchBar classes="tw-py-4" />
+        </div>
+        <div className="courses-mobile-filters">
+          <div className="tw-p-4 tw-rounded-xl bg-white">
+            <div className="tw-flex tw-justify-between tw-items-center tw-mb-4">
+              <p className="text-black tw-text-base tw-font-semibold font-kalameh">
+                فیلترهای اعمال شده
+              </p>
+              <button
+                className="text-error tw-text-xs tw-font-normal font-iranyekan tw-p-0"
+                onClick={clearAllFilters}
+              >
+                حذف فیلترها
+              </button>
+            </div>
+            <div className="tw-flex tw-items-center tw-flex-wrap">
+              {filters.academies.map((academy) => (
+                <FilterIndicator
+                  key={academy.id}
+                  title={academy.name}
+                  onDelete={() => {
+                    dispatch(removeCoursesAcademyFilter(academy.id));
+                    // console.log(document.querySelector(`.academy-${academy.id} input`));
+                    document.querySelector(`.academy-mobile-${academy.id} input`).checked = false;
+                  }}
+                />
+              ))}
+              {filters.course_types.map((type) => (
+                <FilterIndicator
+                  key={type.id}
+                  title={type.name}
+                  secondText={`(${type.type})`}
+                  onDelete={() => {
+                    dispatch(removeCoursesTypeFilter(type.id));
+                    // console.log(document.querySelector(`.academy-${academy.id}`));
+                    document.querySelector(`.type-mobile-${type.id} input`).checked = false;
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="tw-p-4 tw-rounded-xl bg-white tw-mb-4">
+            <p className="text-black tw-text-base tw-font-semibold tw-mb-4 font-kalameh filters-section">
+              آموزشگاه
             </p>
-            <button
-              className="text-error tw-text-xs tw-font-normal font-iranyekan tw-p-0"
-              onClick={clearAllFilters}
-            >
-              حذف فیلترها
+            <div className="filters-section-items">
+              {academies.map((academy) => (
+                <Checkbox
+                  key={academy.id}
+                  text={academy.name}
+                  classes={`font-iranyekan-num academy-mobile-${academy.id}`}
+                  onChange={(e) => filterAcademy(e, academy)}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="tw-p-4 tw-rounded-xl bg-white tw-mb-4">
+            <p className="text-black tw-text-base tw-font-semibold tw-mb-4 font-kalameh filters-section">
+              نوع برگزاری
+            </p>
+            <div className="filters-section-items">
+              {course_types.map((type) => (
+                <Checkbox
+                  key={type.id}
+                  text={type.name}
+                  secondText={`(${type.type})`}
+                  classes={`font-iranyekan-num type-mobile-${type.id}`}
+                  onChange={(e) => filterType(e, type)}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="tw-sticky tw-bottom-0 md:tw-w-3/4 md:tw-mx-auto lg:tw-w-1/2">
+            <button className="button-primary tw-w-full " onClick={submitChange}>
+              اعمال تغییرات
             </button>
           </div>
-          <div className="tw-flex tw-items-center tw-flex-wrap">
-            {filters.academies.map((academy) => (
-              <FilterIndicator
-                key={academy.id}
-                title={academy.name}
-                onDelete={() => {
-                  dispatch(removeCoursesAcademyFilter(academy.id));
-                  // console.log(document.querySelector(`.academy-${academy.id} input`));
-                  document.querySelector(`.academy-mobile-${academy.id} input`).checked = false;
-                }}
-              />
-            ))}
-            {filters.course_types.map((type) => (
-              <FilterIndicator
-                key={type.id}
-                title={type.name}
-                secondText={`(${type.type})`}
-                onDelete={() => {
-                  dispatch(removeCoursesTypeFilter(type.id));
-                  // console.log(document.querySelector(`.academy-${academy.id}`));
-                  document.querySelector(`.type-mobile-${type.id} input`).checked = false;
-                }}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="tw-p-4 tw-rounded-xl bg-white tw-mb-4">
-          <p className="text-black tw-text-base tw-font-semibold tw-mb-4 font-kalameh filters-section">
-            آموزشگاه
-          </p>
-          <div className="filters-section-items">
-            {academies.map((academy) => (
-              <Checkbox
-                key={academy.id}
-                text={academy.name}
-                classes={`font-iranyekan-num academy-mobile-${academy.id}`}
-                onChange={(e) => filterAcademy(e, academy)}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="tw-p-4 tw-rounded-xl bg-white tw-mb-4">
-          <p className="text-black tw-text-base tw-font-semibold tw-mb-4 font-kalameh filters-section">
-            نوع برگزاری
-          </p>
-          <div className="filters-section-items">
-            {course_types.map((type) => (
-              <Checkbox
-                key={type.id}
-                text={type.name}
-                secondText={`(${type.type})`}
-                classes={`font-iranyekan-num type-mobile-${type.id}`}
-                onChange={(e) => filterType(e, type)}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="tw-px-4 tw-sticky tw-bottom-0 md:tw-w-3/4 md:tw-mx-auto lg:tw-w-1/2">
-          <button className="button-primary tw-w-full " onClick={submitChange}>
-            اعمال تغییرات
-          </button>
         </div>
       </div>
     </div>
