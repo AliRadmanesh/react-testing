@@ -44,7 +44,6 @@ function AppRouter() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/test" component={TestPage} />
           {/* <Route exact path="/me" component={Dashboard} /> */}
           <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/categories" component={Categories} />
