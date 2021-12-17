@@ -151,7 +151,7 @@ const MenuDesktop = () => {
                   </button>
                 ) : (
                   <Link
-                    to={`../search/?q=${value}`}
+                    to={`../courses/search/?q=${value}&is_free=0&sort=1&page=1`}
                     className="button-secondary"
                     style={{
                       background: 'transparent',
@@ -159,7 +159,7 @@ const MenuDesktop = () => {
                       borderColor: show && 'transparent',
                     }}
                     onClick={() => {
-                      doShow(!show);
+                      // doShow(!show);
                       dispatch(hideSuggest());
                     }}
                   >

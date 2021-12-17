@@ -52,7 +52,7 @@ function AppRouter() {
           <Route exact path="/courses" component={CourseList} />
           <Route exact path="/course/:id" component={Course} />
           <Route exact path="/404" component={Page404} />
-          <Route exact path="/search" component={Search} />
+          <Route exact path="/courses/search" component={Search} />
           <Route exact path="/compare" component={Compare} />
           <Route exact path="/jobs" component={Jobs} />
           <Route exact path="/jobs/search" component={JobSearch} />

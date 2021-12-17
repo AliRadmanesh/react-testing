@@ -17,7 +17,7 @@ export default function Page404() {
     event.preventDefault();
 
     if (query !== '') {
-      history.push(`../search/?q=${query}`);
+      history.push(`../courses/search/?q=${query}&is_free=0&sort=1&page=1`);
     }
   };
 
