@@ -106,7 +106,7 @@ export default function CategoryMenuDesktop() {
                   <Link
                     key={si.id}
                     // to={`../courses/category[0]=${si.id}&sortby=1&is_free=0&page=1`}
-                    to={`../courses/?category[0]=${si.id}`}
+                    to={`../courses/?category[0]=${si.id}&sort=1&is_free=0&page=1`}
                     className="header-category-item tw-py-4 tw-text-sm tw-font-normal 2xl:tw-text-lg"
                     onClick={() => {
                       dispatch(setCategoryId(si.id));

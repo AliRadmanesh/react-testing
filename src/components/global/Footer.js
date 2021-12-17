@@ -146,7 +146,7 @@ function Footer() {
             <ul>
               {top_categories.map((category) => (
                 <li key={category.id}>
-                  <Link to={`../courses/?category[0]=${category.id}`}>
+                  <Link to={`../courses/?category[0]=${category.id}&sort=1&is_free=0&page=1`}>
                     <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate text-primary-hover">
                       {category.name}
                     </p>
