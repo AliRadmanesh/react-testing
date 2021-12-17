@@ -183,7 +183,7 @@ export default function LoginCode() {
                 </span>
               </p>
               <Link
-                to="../login/password"
+                to="/login/password"
                 className="tw-text-xs tw-font-normal 2xl:tw-text-base text-blue tw-mt-4 tw-text-center"
               >
                 ورود از طریق گذرواژه

@@ -36,7 +36,7 @@ export default function Header() {
         className="tw-block lg:tw-hidden tw-w-screen auth-header-mobile tw-absolute tw-z-10 tw-top-0 tw-overflow-x-hidden"
       >
         <div className="container bg-light tw-flex tw-justify-between tw-items-center tw-py-4 tw-shadow">
-          <Link to="../">
+          <Link to="/">
             <div className="tw-flex tw-items-center bg-white">
               <img src={logoSmall} className="tw-ml-4" alt="" />
               <p className="tw-font-black text-blue tw-text-base">کارساز</p>
@@ -55,7 +55,7 @@ export default function Header() {
         className="tw-hidden lg:tw-block tw-w-full auth-header-desktop tw-absolute tw-z-10 tw-top-0 tw-overflow-x-hidden"
       >
         <div className="container tw-bg-transparent tw-flex tw-justify-between items-center tw-py-4">
-          <Link to="../">
+          <Link to="/">
             <div className="tw-flex tw-items-center tw-flex-row">
               <img src={logoLarge} alt="" />
               <h3 className="tw-mr-4 tw-font-black text-blue">کارساز</h3>

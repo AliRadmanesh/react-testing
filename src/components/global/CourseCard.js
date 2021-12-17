@@ -105,7 +105,7 @@ const CourseCard = ({ props }) => {
                     {numberWithCommas(price)}
                   </p>
                 )}
-                <Link to={`../course/${id}`} className="">
+                <Link to={`/course/${id}`} className="">
                   <button className="tw-mx-auto button-primary">مشاهده بیشتر</button>
                 </Link>
               </div>

@@ -94,7 +94,7 @@ const LoginLanding = () => {
       </button>
       <p className="tw-text-xs tw-font-normal 2xl:tw-text-base text-dark tw-mb-4 tw-text-center">
         آیا در کارساز ثبت نام نکردید؟{' '}
-        <Link to="./register" className="text-blue">
+        <Link to="/register" className="text-blue">
           ثبت‌نام
         </Link>
       </p>
@@ -184,7 +184,7 @@ const PhonePassLogin = () => {
         </button>
         <p className="tw-text-xs tw-font-normal 2xl:tw-text-base text-dark tw-mb-4 tw-text-center">
           آیا در کارساز ثبت نام نکردید؟{' '}
-          <Link to="./register" className="text-blue">
+          <Link to="/register" className="text-blue">
             ثبت‌نام
           </Link>
         </p>
@@ -225,7 +225,7 @@ const PhoneCodeLogin = () => {
         </button>
         <p className="tw-text-xs tw-font-normal 2xl:tw-text-base text-dark tw-mb-4 tw-text-center">
           آیا در کارساز ثبت نام نکردید؟{' '}
-          <Link to="./register" className="text-blue">
+          <Link to="/register" className="text-blue">
             ثبت‌نام
           </Link>
         </p>
@@ -298,7 +298,7 @@ const ForgetPassPhone = () => {
         </button>
         <p className="tw-text-xs tw-font-normal 2xl:tw-text-base text-dark tw-mb-4 tw-text-center">
           آیا در کارساز ثبت نام نکردید؟{' '}
-          <Link to="./register" className="text-blue">
+          <Link to="/register" className="text-blue">
             ثبت‌نام
           </Link>
         </p>

@@ -65,7 +65,7 @@ function PostCard({ props }) {
             </div>
           </div>
           <div>
-            <Link to="https://karsaz.app/" className="">
+            <Link to="/" className="">
               <button className="tw-mx-auto button-primary font-kalameh-num">مشاهده بیشتر</button>
             </Link>
           </div>

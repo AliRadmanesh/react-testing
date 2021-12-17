@@ -120,7 +120,7 @@ export default function UserMenu() {
               </p>
               {/* </div> */}
             </div>
-            <Link to="../dashboard/wallet">
+            <Link to="/dashboard/wallet">
               <div className="tw-flex tw-justify-between tw-items-center tw-my-5">
                 <div className="tw-flex tw-items-center">
                   <img src={walletGray} alt="" className="icon tw-ml-4" />
@@ -133,7 +133,7 @@ export default function UserMenu() {
                 </p>
               </div>
             </Link>
-            <Link to="../dashboard">
+            <Link to="/dashboard">
               <div className="tw-flex tw-items-center tw-my-5">
                 <img src={dashboardGray} alt="" className="icon tw-ml-4" />
                 <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
@@ -141,7 +141,7 @@ export default function UserMenu() {
                 </p>
               </div>
             </Link>
-            <Link to="../dashboard/bookmarks">
+            <Link to="/dashboard/bookmarks">
               <div className="tw-flex tw-items-center tw-my-5">
                 <img src={bookmarksGray} alt="" className="icon tw-ml-4" />
                 <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
@@ -149,7 +149,7 @@ export default function UserMenu() {
                 </p>
               </div>
             </Link>
-            <Link to="../dashboard/favorites">
+            <Link to="/dashboard/favorites">
               <div className="tw-flex tw-items-center tw-my-5">
                 <img src={favoriteGray} alt="" className="icon tw-ml-4" />
                 <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
@@ -157,7 +157,7 @@ export default function UserMenu() {
                 </p>
               </div>
             </Link>
-            <Link to="../dashboard/edit">
+            <Link to="/dashboard/edit">
               <div className="tw-flex tw-items-center tw-my-5">
                 <img src={editGray} alt="" className="icon tw-ml-4" />
                 <p className="text-black tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">

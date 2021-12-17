@@ -56,12 +56,12 @@ export default function MenuDesktop() {
           }}
         >
           <div className="tw-flex tw-items-center tw-py-2">
-            <Link to="./" className=" tw-ml-4 lg:tw-ml-8 tw-flex tw-items-center">
+            <Link to="/" className=" tw-ml-4 lg:tw-ml-8 tw-flex tw-items-center">
               <img src={logoLarge} alt="" />
               <h3 className="tw-mr-4 tw-font-black text-blue">کارساز</h3>
             </Link>
             <Link
-              to="../"
+              to="/"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               خانه
@@ -74,31 +74,31 @@ export default function MenuDesktop() {
               <img src={arrow} alt="" className="inline-block" />
             </button>
             <Link
-              to="../jobs"
+              to="/jobs"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               فرصت‌های شغلی
             </Link>
             <Link
-              to="../blogs"
+              to="/blogs"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               وبلاگ
             </Link>
             <Link
-              to="../about"
+              to="/about"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               درباره ما
             </Link>
             <Link
-              to="../contact"
+              to="/contact"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               تماس با ما
             </Link>
             <Link
-              to="../faq"
+              to="/faq"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover"
             >
               سوالات متداول

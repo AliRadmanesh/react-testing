@@ -20,7 +20,7 @@ export default function Home() {
             ))}
           </div>
           <div className="tw-flex tw-mt-4 tw-justify-center">
-            <Link to="./" className="button-secondary tw-mt-6 lg:tw-mt-10">
+            <Link to="/" className="button-secondary tw-mt-6 lg:tw-mt-10">
               مشاهده همه
             </Link>
           </div>
@@ -38,7 +38,7 @@ export default function Home() {
             ))}
           </div>
           <div className="tw-flex tw-mt-4 tw-justify-center">
-            <Link to="./" className="button-secondary tw-mt-6 lg:tw-mt-10">
+            <Link to="/" className="button-secondary tw-mt-6 lg:tw-mt-10">
               مشاهده همه
             </Link>
           </div>

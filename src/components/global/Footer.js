@@ -91,49 +91,49 @@ function Footer() {
             <h4 className="text-blue tw-mb-2">لینک‌های مفید</h4>
             <ul className="">
               <li>
-                <Link to="../">
+                <Link to="/">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     خانه
                   </p>
                 </Link>
               </li>
               <li>
-                <Link to="../categories">
+                <Link to="/categories">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     دسته‌بندی
                   </p>
                 </Link>
               </li>
               <li>
-                <Link to="../jobs">
+                <Link to="/jobs">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     فرصت‌های شغلی
                   </p>
                 </Link>
               </li>
               <li>
-                <Link to="../blogs">
+                <Link to="/blogs">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     وبلاگ
                   </p>
                 </Link>
               </li>
               <li>
-                <Link to="../about">
+                <Link to="/about">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     درباره‌ی ما
                   </p>
                 </Link>
               </li>
               <li>
-                <Link to="../contact">
+                <Link to="/contact">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     تماس با ما
                   </p>
                 </Link>
               </li>
               <li>
-                <Link to="../faq">
+                <Link to="/faq">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     سئوالات متداول
                   </p>
@@ -146,7 +146,7 @@ function Footer() {
             <ul>
               {top_categories.map((category) => (
                 <li key={category.id}>
-                  <Link to={`../courses/?category[0]=${category.id}&sort=1&is_free=0&page=1`}>
+                  <Link to={`/courses/?category[0]=${category.id}&sort=1&is_free=0&page=1`}>
                     <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate text-primary-hover">
                       {category.name}
                     </p>

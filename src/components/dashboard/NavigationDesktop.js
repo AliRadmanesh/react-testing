@@ -54,7 +54,7 @@ export default function NavigationDesktop() {
       style={{ maxHeight: '912px', top: '7rem' }}
     >
       <div>
-        <Link className="tw-block tw-mb-8 2xl:tw-mb-12" to="../dashboard">
+        <Link className="tw-block tw-mb-8 2xl:tw-mb-12" to="/dashboard">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -79,7 +79,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/favorites">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="/dashboard/favorites">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -104,7 +104,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/bookmarks">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="/dashboard/bookmarks">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -129,7 +129,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/purchases">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="/dashboard/purchases">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -154,7 +154,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/wallet">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="/dashboard/wallet">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -179,7 +179,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/transactions">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="/dashboard/transactions">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -204,7 +204,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="../dashboard/notifications">
+        <Link className="tw-block tw-my-8 2xl:tw-my-12" to="/dashboard/notifications">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -229,7 +229,7 @@ export default function NavigationDesktop() {
             </span>
           </span>
         </Link>
-        <Link className="tw-block tw-mt-8 2xl:tw-mt-12" to="../dashboard/edit">
+        <Link className="tw-block tw-mt-8 2xl:tw-mt-12" to="/dashboard/edit">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={

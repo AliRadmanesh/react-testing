@@ -31,7 +31,7 @@ export default function CourseCard({
       </div>
       <div className="tw-flex tw-flex-col tw-justify-between tw-h-full text-dark">
         <div className="tw-flex tw-items-center tw-justify-between tw-mb-4">
-          <Link to={`../course/${id}`}>
+          <Link to={`/course/${id}`}>
             <h1 className="course-card-title text-dark tw-font-bold tw-text-base 2xl:tw-text-xl 2xl:tw-font-semibold text-primary-hover">
               {title}
             </h1>
@@ -96,7 +96,7 @@ export default function CourseCard({
               </div>
             </div>
           </div>
-          <Link to={`../course/${id}`} className="button-primary" style={{}}>
+          <Link to={`/course/${id}`} className="button-primary" style={{}}>
             مشاهده بیشتر
           </Link>
         </div>

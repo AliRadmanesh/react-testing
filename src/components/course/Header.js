@@ -64,7 +64,7 @@ export default function Header({
               </p>
               <div className="tw-hidden md:tw-flex tw-items-center tw-mr-4">
                 <Link
-                  to={`../compare?primary=${window.location.href.split('course/')[1]}`}
+                  to={`/compare?primary=${window.location.href.split('course/')[1]}`}
                   className="tw-bg-transparent tw-p-2"
                 >
                   <img src={compareIcon} alt="" className="tw-w-8" />
@@ -104,7 +104,7 @@ export default function Header({
               </div>
               <div className="tw-flex tw-mt-2 tw-w-full tw-items-stretch md:tw-justify-end">
                 <Link
-                  to={`../compare?primary=${window.location.href.split('course/')[1]}`}
+                  to={`/compare?primary=${window.location.href.split('course/')[1]}`}
                   className="tw-p-6 md:tw-hidden tw-rounded-xl"
                   style={{ backgroundColor: '#118ab222' }}
                 >

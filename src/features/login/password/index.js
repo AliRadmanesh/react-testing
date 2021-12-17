@@ -206,7 +206,7 @@ export default function LoginPassword() {
                 </p>
               </div>
               <Link
-                to={window.localStorage.getItem('userPhone') ? './code' : '../auth'}
+                to={window.localStorage.getItem('userPhone') ? '/code' : '/auth'}
                 className="button-secondary tw-text-center tw-p-4 tw-text-sm tw-font-medium 2xl:tw-text-2xl 2xl:tw-font-semibold "
                 onClick={linkClick}
               >

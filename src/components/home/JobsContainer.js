@@ -17,7 +17,7 @@ export default function JobsContainer() {
         ))}
       </div>
       <div className="tw-flex tw-mt-4 tw-justify-center">
-        <Link to="./" className="button-secondary">
+        <Link to="/" className="button-secondary">
           مشاهده همه
         </Link>
       </div>

@@ -44,7 +44,7 @@ export default function ForgetPhone() {
               </button>
               <p className="tw-text-xs tw-font-normal 2xl:tw-text-base text-dark tw-mb-4 tw-text-center">
                 آیا در کارساز ثبت نام نکردید؟{' '}
-                <Link to="./register" className="text-blue">
+                <Link to="/register" className="text-blue">
                   ثبت‌نام
                 </Link>
               </p>

@@ -52,17 +52,6 @@ const MenuHeader = () => {
           <h3 className="tw-font-black text-blue">کارساز</h3>
         </div>
         <HeaderUserSection />
-        {/* <div className="tw-flex tw-items-center">
-          <Link to="https://google.com" className="tab tw-mx-4">
-            ورود
-          </Link>
-          <Link
-            to="https://google.com"
-            className="tab tw-py-2 bg-primary font-kalameh text-white tw-px-4 tw-rounded-xl"
-          >
-            ثبت نام
-          </Link>
-        </div> */}
       </div>
       <div
         className="mobile-menu-container bg-white"

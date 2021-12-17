@@ -56,13 +56,13 @@ export default function Error404({ query }) {
                       onChange={(e) => dispatch(setQueryKeywords(e.target.value))}
                     />
                     <Link
-                      to={`./?q=${keywords}`}
+                      to={`/?q=${keywords}`}
                       className="tw-m-0 tw-py-2 tw-px-6 button-primary tw-hidden lg:tw-block font-kalameh-num te-text-base tw-font-semibold 2xl:tw-text-xl"
                     >
                       جستجو
                     </Link>
                     <Link
-                      to={`./?q=${keywords}`}
+                      to={`/?q=${keywords}`}
                       className="tw-m-0 button-primary tw-block lg:tw-hidden"
                       style={{ padding: '.5rem' }}
                     >

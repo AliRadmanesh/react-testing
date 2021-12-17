@@ -82,13 +82,13 @@ export default function OverView() {
               </p>
               <div className="tw-gap-x-4 tw-grid compare-button-row tw-mt-4">
                 <Link
-                  to={`../course/${pid}`}
+                  to={`/course/${pid}`}
                   className="button button-primary tw-px-0 tw-py-4 tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-text-center"
                 >
                   خرید این دوره
                 </Link>
                 <Link
-                  to={sid ? `./compare?primary=${sid}` : './compare'}
+                  to={sid ? `/compare?primary=${sid}` : './compare'}
                   className="tw-flex tw-justify-center tw-items-center button-secondary tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold"
                   style={{ padding: '0' }}
                   onClick={() => {
@@ -157,13 +157,13 @@ export default function OverView() {
               </p>
               <div className="tw-gap-x-4 tw-grid compare-button-row tw-mt-4">
                 <Link
-                  to={`../course/${sid}`}
+                  to={`/course/${sid}`}
                   className="button-primary tw-px-0 tw-py-4 tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-text-center"
                 >
                   خرید این دوره
                 </Link>
                 <Link
-                  to={pid ? `./compare?primary=${pid}` : `./compare`}
+                  to={pid ? `/compare?primary=${pid}` : `./compare`}
                   className="tw-flex tw-justify-center tw-items-center button-secondary tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold"
                   style={{ padding: '0' }}
                   onClick={() => dispatch(clearSecondary())}

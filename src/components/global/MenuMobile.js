@@ -51,17 +51,6 @@ const MenuMobile = () => {
           <h3 className="tw-font-black text-blue">کارساز</h3>
         </div>
         <HeaderUserSection />
-        {/* <div className="tw-flex tw-items-center">
-          <Link to="https://google.com" className="tab tw-mx-4">
-            ورود
-          </Link>
-          <Link
-            to="https://google.com"
-            className="tab tw-py-2 bg-primary font-kalameh text-white tw-px-4 tw-rounded-xl"
-          >
-            ثبت نام
-          </Link>
-        </div> */}
       </div>
       <div
         className="mobile-menu-container bg-white"
@@ -91,14 +80,6 @@ const MenuMobile = () => {
               </div>
               <h3 className="tab">منو</h3>
             </div>
-            {/* <div className="tw-flex tw-items-center">
-              <Link to="https://google.com" className="tab tw-mx-4">
-                ورود
-              </Link>
-              <Link to="https://google.com" className="tab button-primary">
-                ثبت نام
-              </Link>
-            </div> */}
             <HeaderUserSection />
           </div>
           <div>
@@ -122,7 +103,7 @@ const MenuMobile = () => {
                 }}
               />
               <Link
-                to={`../courses/search/?q=${value}&is_free=0&sort=1&page=1`}
+                to={`/courses/search/?q=${value}&is_free=0&sort=1&page=1`}
                 type="submit"
                 className="tw-p-0"
                 onClick={() => dispatch(showMenu(false))}
@@ -131,7 +112,7 @@ const MenuMobile = () => {
               </Link>
             </form>
           </div>
-          <Link to="../" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="/" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             خانه
           </Link>
           <button
@@ -148,19 +129,19 @@ const MenuMobile = () => {
               &rsaquo;
             </span>
           </button>
-          <Link to="../jobs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="/jobs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             فرصت‌های شغلی
           </Link>
-          <Link to="../blogs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="/blogs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             وبلاگ
           </Link>
-          <Link to="../about" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="/about" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             درباره ما
           </Link>
-          <Link to="../contact" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="/contact" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             تماس با ما
           </Link>
-          <Link to="../faq" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <Link to="/faq" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             سوالات متداول
           </Link>
         </div>

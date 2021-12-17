@@ -11,7 +11,7 @@ export default function NavigationButton() {
 
   return (
     <Link
-      to="../"
+      to="/"
       className="tw-fixed tw-bottom-4 tw-p-4 bg-primary scroll-to-top-button tw-block lg:tw-hidden tw-rounded-xl"
       onClick={() => dispatch(showDashboardMobileMenu(true))}
       style={{

@@ -50,7 +50,7 @@ export default function NavigationMobile() {
   return (
     <div className="bg-light tw-h-full tw-flex tw-flex-col lg:tw-hidden tw-justify-between">
       <div className="">
-        <Link to="../dashboard">
+        <Link to="/dashboard">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -75,7 +75,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../dashboard/favorites">
+        <Link to="/dashboard/favorites">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -100,7 +100,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../dashboard/bookmarks">
+        <Link to="/dashboard/bookmarks">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -125,7 +125,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../dashboard/purchases">
+        <Link to="/dashboard/purchases">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -150,7 +150,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../dashboard/wallet">
+        <Link to="/dashboard/wallet">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -175,7 +175,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../dashboard/transactions">
+        <Link to="/dashboard/transactions">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -200,7 +200,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../dashboard/notifications">
+        <Link to="/dashboard/notifications">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={
@@ -225,7 +225,7 @@ export default function NavigationMobile() {
             </span>
           </span>
         </Link>
-        <Link to="../dashboard/edit">
+        <Link to="/dashboard/edit">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span
               className={

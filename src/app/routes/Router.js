@@ -40,7 +40,7 @@ import Main from '../../features/dashboard/main';
 function AppRouter() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/">
         <Switch>
           <Route exact path="/" component={Home} />
           {/* <Route exact path="/me" component={Dashboard} /> */}
