@@ -1,30 +1,41 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setCoursesType } from '../../app/redux/actions/coursesActions';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 export default function SortDropdown() {
   const { sort } = useSelector((state) => state.courses);
-  const [text, setText] = useState(() => {
+  const [text, setText] = useState(() => {});
+  const history = useHistory();
+
+  useEffect(() => {
     switch (sort) {
       case 1:
-        return 'مرتبط‌ترین';
+        setText('مرتبط‌ترین');
+        break;
       case 2:
-        return 'جدیدترین';
+        setText('جدیدترین');
+        break;
       case 3:
-        return 'مرتبط‌ترین';
+        setText('محبوب‌ترین');
+        break;
       default:
-        return 'مرتبط‌ترین';
+        setText('مرتبط‌ترین');
     }
-  });
-  const dispatch = useDispatch();
+  }, [sort]);
+
+  const onClick = (value) => {
+    const url = new URL(window.location);
+    url.searchParams.set('sort', value);
+    history.push(`./${url.search}`);
+  };
 
   return (
     <div className="font-kalameh-num tw-relative tw-w-full tw-h-auto">
       <button
-        className="tw-flex tw-text-sm tw-font-normal 2xl:tw-text-base tw-items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
+        className="tw-flex tw-w-full tw-text-sm tw-font-normal 2xl:tw-text-base tw-items-center courses-dropdown sort-dropdown tw-justify-between tw-relative tw-p-4"
         onClick={(e) => e.target.classList.toggle('active')}
       >
         {text}
@@ -34,8 +45,9 @@ export default function SortDropdown() {
         <div
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
-            dispatch(setCoursesType(1));
+            onClick(1);
             setText('مرتبط‌ترین');
+            document.querySelector('.sort-dropdown').classList.remove('active');
           }}
         >
           مرتبط‌ترین
@@ -43,8 +55,9 @@ export default function SortDropdown() {
         <div
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
-            dispatch(setCoursesType(2));
+            onClick(2);
             setText('جدیدترین');
+            document.querySelector('.sort-dropdown').classList.remove('active');
           }}
         >
           جدیدترین
@@ -52,8 +65,9 @@ export default function SortDropdown() {
         <div
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
-            dispatch(setCoursesType(3));
+            onClick(3);
             setText('محبوب‌ترین');
+            document.querySelector('.sort-dropdown').classList.remove('active');
           }}
         >
           محبوب‌ترین

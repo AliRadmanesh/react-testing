@@ -82,7 +82,6 @@ export const searchCourses =
 
     try {
       const res = await instance.get(`/api/v1/web/service/courses/search-filters/${query}`);
-      console.log(res.data.data.courses);
       if (res.status === 200 || res.status === 201) {
         dispatch({
           type: SEARCH_CATEGORY_COURSES,

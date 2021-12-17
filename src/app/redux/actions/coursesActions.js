@@ -41,6 +41,13 @@ export const getSearchContent = () => async (dispatch) => {
   }
 };
 
+export const setSearchContent = (options) => (dispatch) => {
+  dispatch({
+    type: GET_COURSES_SEARCH_DATA,
+    payload: options,
+  });
+};
+
 export const displayMobileFilterMenu = (bool) => (dispatch) => {
   dispatch({ type: DISPLAY_MOBILE_FILTER_MENU, payload: bool });
 };
@@ -70,7 +77,7 @@ export const setCoursesIsFree = (num) => (dispatch) => {
   }
 };
 
-export const setCoursesType = (num) => (dispatch) => {
+export const setCoursesSort = (num) => (dispatch) => {
   if (num === 1 || num === 2 || num === 3) {
     dispatch({
       type: SET_COURSES_SORT,
@@ -84,14 +91,14 @@ export const setCoursesType = (num) => (dispatch) => {
 export const addCoursesAcademyFilter = (object) => (dispatch) => {
   dispatch({
     type: ADD_COURSES_ACADEMY_FILTER,
-    payload: { id: object.id, title: object.title },
+    payload: { id: object.id, name: object.name },
   });
 };
 
 export const addCoursesTypeFilter = (object) => (dispatch) => {
   dispatch({
     type: ADD_COURSES_TYPE_FILTER,
-    payload: { id: object.id, title: object.title },
+    payload: { id: object.id, name: object.name, type: object.type },
   });
 };
 

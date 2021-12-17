@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Layout from '../../../components/jobs/Layout';
-import Home from '../../../components/jobs/Home';
 import Search from '../../../components/jobs/Search';
 
 import {
