@@ -14,7 +14,7 @@ export const getJobsData = () => async (dispatch) => {
         payload: res.data.data,
       });
     } else if (res.status >= 400 && res.status < 500) {
-      toast.error(res.data.message);
+      console.log(1);
     } else if (res.status >= 500) {
       toast.error('خطای سرور');
     } else {

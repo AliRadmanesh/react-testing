@@ -26,7 +26,11 @@ export const checkUser = () => async (dispatch) => {
           type: SET_USER_CHECK,
           payload: res.data,
         });
-
+        // CHANGIN STATE ON authReducer
+        dispatch({
+          type: 'SET_USER_AUTHENTICATION',
+          payload: true,
+        });
         showUserHeaderData(true);
       }
 
@@ -34,7 +38,12 @@ export const checkUser = () => async (dispatch) => {
         toast.error(res.message);
       }
     } catch (error) {
-      toast.error('خطا در دریافت اطلاعات کاربری');
+      // CHANGIN STATE ON authReducer
+      dispatch({
+        type: 'SET_USER_AUTHENTICATION',
+        payload: false,
+      });
+      // toast.error('خطا در دریافت اطلاعات کاربری');
     }
   }
 };

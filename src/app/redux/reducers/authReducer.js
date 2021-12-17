@@ -1,5 +1,7 @@
 const initial = {
-  user: {},
+  user: {
+    authenticated: false,
+  },
   login: { stage: 1 },
   retrieve: { stage: 1 },
   signup: { stage: 1 },
@@ -7,6 +9,14 @@ const initial = {
 
 export default (state = initial, action) => {
   switch (action.type) {
+    case 'SET_USER_AUTHENTICATION':
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          authenticated: action.payload,
+        },
+      };
     case 'SET_LOGIN_STAGE':
       return {
         ...state,
