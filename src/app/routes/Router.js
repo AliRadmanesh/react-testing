@@ -36,7 +36,6 @@ import Purchases from '../../features/dashboard/purchases';
 import Transactions from '../../features/dashboard/transactions';
 import Wallet from '../../features/dashboard/wallet';
 import Main from '../../features/dashboard/main';
-import TestPage from '../../features/test';
 
 function AppRouter() {
   return (
