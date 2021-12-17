@@ -118,7 +118,7 @@ const MenuDesktop = () => {
                   backgroundColor: show ? 'rgba(17, 138, 178, .1)' : 'transparent',
                 }}
               >
-                <div className="hoverer tw-z-0 tw-relative" style={{ fontFamily: 'kalamehWeb' }}>
+                <div className="hoverer tw-z-0 tw-relative font-kalameh-num" style={{}}>
                   <input
                     className="tw-block"
                     placeholder="جستجوی دوره، مدرس، آموزشگاه..."
@@ -158,7 +158,10 @@ const MenuDesktop = () => {
                       padding: '1rem',
                       borderColor: show && 'transparent',
                     }}
-                    onClick={() => (show ? doShow(false) : doShow(true))}
+                    onClick={() => {
+                      doShow(!show);
+                      dispatch(hideSuggest());
+                    }}
                   >
                     <img src={searchIcon} alt="" className="" />
                   </Link>
