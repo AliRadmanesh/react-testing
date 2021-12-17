@@ -19,11 +19,11 @@ export default function Home() {
               <JobCard key={job.id} props={job} />
             ))}
           </div>
-          <div className="tw-flex tw-mt-4 tw-justify-center">
+          {/* <div className="tw-flex tw-mt-4 tw-justify-center">
             <Link to="/" className="button-secondary tw-mt-6 lg:tw-mt-10">
               مشاهده همه
             </Link>
-          </div>
+          </div> */}
         </div>
       )}
       {recent.length !== 0 && (
@@ -38,7 +38,7 @@ export default function Home() {
             ))}
           </div>
           <div className="tw-flex tw-mt-4 tw-justify-center">
-            <Link to="/" className="button-secondary tw-mt-6 lg:tw-mt-10">
+            <Link to="/jobs/search/?page=1" className="button-secondary tw-mt-6 lg:tw-mt-10">
               مشاهده همه
             </Link>
           </div>

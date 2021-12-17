@@ -149,14 +149,16 @@ export default function MenuDesktop() {
                   </button>
                 ) : (
                   <Link
-                    to={`../search/?q=${value}`}
+                    to={`/courses/search/?q=${value}&is_free=0&sort=1&page=1`}
                     className="button-secondary"
                     style={{
                       background: 'transparent',
                       padding: '1rem',
                       borderColor: show && 'transparent',
                     }}
-                    onClick={() => (show ? doShow(false) : doShow(true))}
+                    onClick={() => {
+                      dispatch(hideSuggest());
+                    }}
                   >
                     <img src={searchIcon} alt="" className="" />
                   </Link>

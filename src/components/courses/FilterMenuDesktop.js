@@ -188,7 +188,7 @@ export default function FilterMenuDesktop() {
               key={type.id}
               text={type.name}
               secondText={`(${type.type})`}
-              classes={`font-iranyekan-num type-desktop-${type.id}`}
+              classes={`font-iranyekan-num contract-desktop-${type.id}`}
               onChange={(e) => filterType(e, type)}
             />
           ))}

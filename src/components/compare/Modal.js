@@ -17,7 +17,7 @@ import {
   showModal,
 } from '../../app/redux/actions/compareActions';
 
-export const ModalCard = ({ props }) => {
+const ModalCard = ({ props }) => {
   const {
     id,
     images: { cover },
@@ -100,7 +100,7 @@ export const ModalCard = ({ props }) => {
   );
 };
 
-export function IsFreeDropdown() {
+function IsFreeDropdown() {
   const { is_free } = useSelector((state) => state.compare.modal);
   const [text, setText] = useState(() => {
     switch (is_free) {
@@ -150,7 +150,7 @@ export function IsFreeDropdown() {
   );
 }
 
-export function SortDropdown() {
+function SortDropdown() {
   const { sort } = useSelector((state) => state.compare.modal);
   const [text, setText] = useState(() => {
     switch (sort) {
@@ -212,7 +212,7 @@ export function SortDropdown() {
   );
 }
 
-export function SearchBar() {
+function SearchBar() {
   const { query } = useSelector((state) => state.compare.modal);
   const dispatch = useDispatch();
 

@@ -211,6 +211,7 @@ export default (state = initial, action) => {
           filters: initial.search.filters,
         },
       };
+
     default:
       return state;
   }

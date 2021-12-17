@@ -27,12 +27,34 @@ export const getJobsData = () => async (dispatch) => {
   }
 };
 
-export const searchJobs = (query) => async (dispatch) => {
+export const searchJobsQuery = (query) => async (dispatch) => {
   try {
     dispatch({
       type: 'SET_JOBS_SEARCH_LOADING',
     });
     const res = await instance.get(`/api/v1/web/service/jobs/search/${query}`);
+    console.log(res);
+    if (res.status === 200 || res.status === 201) {
+      dispatch({
+        type: 'SEARCH_JOBS',
+        payload: res.data.data.jobs,
+      });
+      dispatch({
+        type: 'SET_JOBS_SEARCH_PAGE_TOTAL',
+        payload: res.data.meta.last_page,
+      });
+    }
+  } catch (error) {
+    toast.error('خطا پیش از برقراری ارتباط با سرور');
+  }
+};
+
+export const searchJobsNoQuery = (query) => async (dispatch) => {
+  try {
+    dispatch({
+      type: 'SET_JOBS_SEARCH_LOADING',
+    });
+    const res = await instance.get(`/api/v1/web/service/jobs/search-filters/${query}`);
     console.log(res);
     if (res.status === 200 || res.status === 201) {
       dispatch({
@@ -126,7 +148,7 @@ export const removeJobsSalaryFilter = (id) => (dispatch) => {
 export const addJobsContractFilter = (object) => (dispatch) => {
   dispatch({
     type: 'ADD_JOBS_SEARCH_CONTRACT_FILTER',
-    payload: { id: object.id, title: object.title },
+    payload: { id: object.id, name: object.name },
   });
 };
 
@@ -178,3 +200,9 @@ export const setJobsSearchCurrentPage = (page) => (dispatch) =>
 
 export const setJobsSearchTotalPage = (page) => (dispatch) =>
   dispatch({ type: 'SET_JOBS_SEARCH_PAGE_TOTAL', payload: page });
+
+export const clearJobsFilters = () => (dispatch) => {
+  dispatch({
+    type: 'CLEAR_JOBS_SEARCH_FILTERS',
+  });
+};

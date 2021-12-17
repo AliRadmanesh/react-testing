@@ -1,5 +1,9 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable eqeqeq */
+/* eslint-disable array-callback-return */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import {
   addJobsSalaryFilter,
   removeJobsSalaryFilter,
@@ -24,10 +28,11 @@ export default function FilterMenuMobile() {
   const { filters } = useSelector((state) => state.jobs.search);
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const filterContract = (event, item) => {
     if (event.target.checked) {
-      dispatch(addJobsContractFilter({ id: item.id, title: item.name }));
+      dispatch(addJobsContractFilter({ id: item.id, name: item.name }));
     } else {
       dispatch(removeJobsContractFilter(item.id));
     }
@@ -62,6 +67,56 @@ export default function FilterMenuMobile() {
       if (item.querySelector('input').checked) item.querySelector('input').checked = false;
     });
   };
+
+  const submitChange = () => {
+    const url = new URL(window.location);
+    const arr = [];
+    for (const pair of url.searchParams) {
+      if (pair[0].includes('academy') || pair[0].includes('type')) {
+        arr.push(pair[0]);
+      }
+    }
+    arr.map((key) => url.searchParams.delete(key));
+    filters.work_experiences.map((item, index) =>
+      url.searchParams.set(`work_experience[${index}]`, item.id),
+    );
+    filters.contract_types.map((item, index) =>
+      url.searchParams.set(`contract_type[${index}]`, item.id),
+    );
+    filters.salary_ranges.map((item, index) =>
+      url.searchParams.set(`salary_range[${index}]`, item.id),
+    );
+
+    history.push(`./${url.search}`);
+    dispatch(showJobsMobileMenu(false));
+  };
+
+  useEffect(() => {
+    document.querySelectorAll('[class*="contract-mobile-"]').forEach((element) => {
+      const temp = element.classList[2].split('-')[2];
+      filters.contract_types.map((contract) => {
+        if (temp == contract.id) {
+          element.querySelector('input').checked = true;
+        }
+      });
+    });
+    document.querySelectorAll('[class*="experience-mobile-"]').forEach((element) => {
+      const temp = element.classList[2].split('-')[2];
+      filters.work_experiences.map((experience) => {
+        if (temp == experience.id) {
+          element.querySelector('input').checked = true;
+        }
+      });
+    });
+    document.querySelectorAll('[class*="salary-mobile-"]').forEach((element) => {
+      const temp = element.classList[2].split('-')[2];
+      filters.salary_ranges.map((salary) => {
+        if (temp == salary.id) {
+          element.querySelector('input').checked = true;
+        }
+      });
+    });
+  }, [filters]);
 
   return (
     <div
@@ -153,12 +208,11 @@ export default function FilterMenuMobile() {
             />
           ))}
         </div>
-        <button
-          className="button-primary tw-w-full tw-sticky tw-bottom-0"
-          onClick={() => dispatch(showJobsMobileMenu(false))}
-        >
-          اعمال تغییرات
-        </button>
+        <div className="tw-sticky tw-bottom-0 md:tw-w-3/4 md:tw-mx-auto lg:tw-w-1/2">
+          <button className="button-primary tw-w-full " onClick={submitChange}>
+            اعمال تغییرات
+          </button>
+        </div>
       </div>
     </div>
   );

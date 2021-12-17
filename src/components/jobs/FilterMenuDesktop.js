@@ -1,5 +1,10 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable prefer-destructuring */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import {
   addJobsSalaryFilter,
   removeJobsSalaryFilter,
@@ -15,49 +20,133 @@ import {} from '../../common/hooks/search';
 
 export default function FilterMenuDesktop() {
   const {
+    filters,
     options: { contract_types, work_experiences, salary_ranges },
   } = useSelector((state) => state.jobs.search);
 
-  const { filters } = useSelector((state) => state.jobs.search);
-
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const filterContract = (event, item) => {
-    if (event.target.checked) {
-      dispatch(addJobsContractFilter({ id: item.id, title: item.name }));
+    const url = new URL(window.location);
+    if (!event.target.checked) {
+      let temp;
+      for (const pair of url.searchParams) {
+        // eslint-disable-next-line eqeqeq
+        if (pair[0].includes('contract_type') && pair[1] == item.id) {
+          temp = pair[0];
+          break;
+        }
+      }
+      url.searchParams.delete(temp);
     } else {
-      dispatch(removeJobsContractFilter(item.id));
+      let counter;
+      counter = 0;
+      for (const pair of url.searchParams) {
+        if (pair[0].includes('contract_type')) counter += 1;
+      }
+      url.searchParams.set(`contract_type[${counter}]`, item.id);
     }
+    history.push(`./${url.search}`);
   };
 
   const filterExperience = (event, item) => {
-    if (event.target.checked) {
-      dispatch(addJobsExperienceFilter({ id: item.id, title: item.title }));
+    const url = new URL(window.location);
+    if (!event.target.checked) {
+      let temp;
+      for (const pair of url.searchParams) {
+        // eslint-disable-next-line eqeqeq
+        if (pair[0].includes('work_experience') && pair[1] == item.id) {
+          temp = pair[0];
+          break;
+        }
+      }
+      url.searchParams.delete(temp);
     } else {
-      dispatch(removeJobsExperienceFilter(item.id));
+      let counter;
+      counter = 0;
+      for (const pair of url.searchParams) {
+        if (pair[0].includes('work_experience')) counter += 1;
+      }
+      url.searchParams.set(`work_experience[${counter}]`, item.id);
     }
+    history.push(`./${url.search}`);
   };
 
   const filterSalary = (event, item) => {
-    if (event.target.checked) {
-      dispatch(addJobsSalaryFilter({ id: item.id, title: item.title }));
+    const url = new URL(window.location);
+    if (!event.target.checked) {
+      let temp;
+      for (const pair of url.searchParams) {
+        // eslint-disable-next-line eqeqeq
+        if (pair[0].includes('salary_range') && pair[1] == item.id) {
+          temp = pair[0];
+          break;
+        }
+      }
+      url.searchParams.delete(temp);
     } else {
-      dispatch(removeJobsSalaryFilter(item.id));
+      let counter;
+      counter = 0;
+      for (const pair of url.searchParams) {
+        if (pair[0].includes('salary_range')) counter += 1;
+      }
+      url.searchParams.set(`salary_range[${counter}]`, item.id);
     }
+    history.push(`./${url.search}`);
   };
 
   const clearAllFilters = () => {
-    dispatch(clearJobsSearchFilters());
-    document.querySelectorAll('[class*="experience-desktop-"]').forEach((item) => {
-      if (item.querySelector('input').checked) item.querySelector('input').checked = false;
+    const url = new URL(window.location);
+    const arr = [];
+    for (const pair of url.searchParams) {
+      if (
+        pair[0].includes('work_experience') ||
+        pair[0].includes('contract_type') ||
+        pair[0].includes('salary_range')
+      ) {
+        arr.push(pair[0]);
+      }
+    }
+    arr.map((key) => url.searchParams.delete(key));
+    history.push(`./${url.search}`);
+    document.querySelectorAll('[class*="contract-desktop-"]').forEach((element) => {
+      element.querySelector('input').checked = false;
     });
-    document.querySelectorAll('[class*="contract-desktop-"]').forEach((item) => {
-      if (item.querySelector('input').checked) item.querySelector('input').checked = false;
+    document.querySelectorAll('[class*="salary-desktop-"]').forEach((element) => {
+      element.querySelector('input').checked = false;
     });
-    document.querySelectorAll('[class*="salary-desktop-"]').forEach((item) => {
-      if (item.querySelector('input').checked) item.querySelector('input').checked = false;
+    document.querySelectorAll('[class*="experience-desktop-"]').forEach((element) => {
+      element.querySelector('input').checked = false;
     });
   };
+
+  useEffect(() => {
+    document.querySelectorAll('[class*="contract-desktop-"]').forEach((element) => {
+      const temp = element.classList[2].split('-')[2];
+      filters.contract_types.map((contract) => {
+        if (temp == contract.id) {
+          element.querySelector('input').checked = true;
+        }
+      });
+    });
+    document.querySelectorAll('[class*="experience-desktop-"]').forEach((element) => {
+      const temp = element.classList[2].split('-')[2];
+      filters.work_experiences.map((experience) => {
+        if (temp == experience.id) {
+          element.querySelector('input').checked = true;
+        }
+      });
+    });
+    document.querySelectorAll('[class*="salary-desktop-"]').forEach((element) => {
+      const temp = element.classList[2].split('-')[2];
+      filters.salary_ranges.map((salary) => {
+        if (temp == salary.id) {
+          element.querySelector('input').checked = true;
+        }
+      });
+    });
+  }, [filters]);
 
   return (
     <div className="courses-desktop-filters">
@@ -79,24 +168,38 @@ export default function FilterMenuDesktop() {
               key={experience.id}
               title={experience.title}
               onDelete={() => {
-                dispatch(removeJobsExperienceFilter(experience.id));
-                // console.log(document.querySelector(`.experience-${experience.id} input`));
-                document
-                  .querySelectorAll(`.experience-desktop-${experience.id} input`)
-                  .forEach((item) => {
-                    item.checked = false;
-                  });
+                const url = new URL(window.location);
+                for (const pair of url.searchParams) {
+                  if (pair[0].includes('work_experience') && pair[1] == experience.id) {
+                    url.searchParams.delete(pair[0]);
+                    break;
+                  }
+                }
+                history.push(`./${url.search}`);
+                document.querySelectorAll('[class*="experience-desktop-"]').forEach((element) => {
+                  const temp = element.classList[2].split('-')[2];
+                  if (experience.id == temp) element.querySelector('input').checked = false;
+                });
               }}
             />
           ))}
-          {filters.contract_types.map((type) => (
+          {filters.contract_types.map((contract) => (
             <FilterIndicator
-              key={type.id}
-              title={type.title}
+              key={contract.id}
+              title={contract.name}
               onDelete={() => {
-                dispatch(removeJobsContractFilter(type.id));
-                // console.log(document.querySelector(`.academy-${academy.id}`));
-                document.querySelector(`.contract-desktop-${type.id} input`).checked = false;
+                const url = new URL(window.location);
+                for (const pair of url.searchParams) {
+                  if (pair[0].includes('contract_type') && pair[1] == contract.id) {
+                    url.searchParams.delete(pair[0]);
+                    break;
+                  }
+                }
+                history.push(`./${url.search}`);
+                document.querySelectorAll('[class*="contract-desktop-"]').forEach((element) => {
+                  const temp = element.classList[2].split('-')[2];
+                  if (contract.id == temp) element.querySelector('input').checked = false;
+                });
               }}
             />
           ))}
@@ -105,9 +208,18 @@ export default function FilterMenuDesktop() {
               key={salary.id}
               title={salary.title}
               onDelete={() => {
-                dispatch(removeJobsSalaryFilter(salary.id));
-                // console.log(document.querySelector(`.academy-${academy.id}`));
-                document.querySelector(`.salary-desktop-${salary.id} input`).checked = false;
+                const url = new URL(window.location);
+                for (const pair of url.searchParams) {
+                  if (pair[0].includes('salary_range') && pair[1] == salary.id) {
+                    url.searchParams.delete(pair[0]);
+                    break;
+                  }
+                }
+                history.push(`./${url.search}`);
+                document.querySelectorAll('[class*="salary-desktop-"]').forEach((element) => {
+                  const temp = element.classList[2].split('-')[2];
+                  if (salary.id == temp) element.querySelector('input').checked = false;
+                });
               }}
             />
           ))}

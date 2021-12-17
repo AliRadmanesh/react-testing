@@ -8,6 +8,7 @@ import {
   setJobsCategory,
   setJobsLocation,
   clearJobsSearchFilters,
+  getJobsSearchOptions,
 } from '../../app/redux/actions/jobsActions';
 
 const customStyle = {
@@ -39,14 +40,31 @@ const CategoryDropdown = () => {
     search: { categories, category },
   } = useSelector((state) => state.jobs);
 
+  useEffect(() => {
+    const params = new URL(window.location).searchParams;
+    // eslint-disable-next-line no-restricted-syntax
+    for (const pair of params) {
+      if (pair[0].includes('category')) {
+        // eslint-disable-next-line array-callback-return
+        categories.map((item) => {
+          // eslint-disable-next-line eqeqeq
+          if (item.value == pair[1]) {
+            dispatch(setJobsCategory({ name: item.label, id: item.value }));
+          }
+        });
+      }
+    }
+  }, [window.location.search]);
+
   return (
     <Select
       options={categories}
       height="100px"
       className="tw-rounded-xl jobs-search-select text-gray  tw-text-sm tw-font-normal 2xl:tw-text-base"
-      placeholder={<div>گروه شغلی</div>}
+      placeholder={category.id === null && <div>گروه شغلی</div>}
       styles={customStyle}
       onChange={(item) => dispatch(setJobsCategory({ name: item.label, id: item.value }))}
+      value={category.id !== null && { value: category.id, label: category.name }}
       // styles={customSelectStyle}
     />
   );
@@ -57,6 +75,41 @@ const LocationDropdown = () => {
   const {
     search: { locations, location },
   } = useSelector((state) => state.jobs);
+
+  useEffect(() => {
+    const p = parseInt(new URL(window.location).searchParams.get('province'), 10) || null;
+    const c = parseInt(new URL(window.location).searchParams.get('city[0]'), 10) || null;
+    if (c === null) {
+      // eslint-disable-next-line array-callback-return
+      locations.map((item) => {
+        if (item.value === p && item.city === null) {
+          console.log(item);
+          dispatch(
+            setJobsLocation({
+              id: item.value,
+              name: item.label,
+              city: item.city,
+              province: item.province,
+            }),
+          );
+        }
+      });
+    } else {
+      // eslint-disable-next-line array-callback-return
+      locations.map((item) => {
+        if (item.value === c && item.city !== null) {
+          dispatch(
+            setJobsLocation({
+              id: item.value,
+              name: item.label,
+              city: item.city,
+              province: item.province,
+            }),
+          );
+        }
+      });
+    }
+  }, [window.location.search]);
 
   return (
     <Select
@@ -76,6 +129,7 @@ const LocationDropdown = () => {
         );
         // console.log(item);
       }}
+      value={location.id !== null && { value: location.id, label: location.name }}
     />
   );
 };
@@ -83,7 +137,7 @@ const LocationDropdown = () => {
 export default function SearchBox() {
   const [text, setText] = useState(new URL(window.location).searchParams.get('q'));
   const {
-    search: { category, location },
+    search: { category, location, categories, locations },
   } = useSelector((state) => state.jobs);
   let name;
   let value;
@@ -93,31 +147,37 @@ export default function SearchBox() {
   const onSubmit = (event) => {
     event.preventDefault();
     dispatch(clearJobsSearchFilters());
-    if (text === '' || text === null)
-      toast.error('لطفا کلمه یا عبارتی را درون باکس اول وارد کنید.');
-    else {
-      const url = new URL(window.location.origin);
+    const url = new URL(window.location.origin);
+
+    if (text !== '' && text !== null) {
+      console.log('querySet');
       url.searchParams.set('q', text);
-      if (location.id !== null) {
-        if (location.city) {
-          url.searchParams.delete('province');
-          url.searchParams.set('city[0]', location.id);
-        }
-        if (!location.city) {
-          url.searchParams.delete('city[0]');
-          url.searchParams.set('province', location.id);
-        }
-      }
-      if (category.id) {
-        url.searchParams.set('category[0]', category.id);
-      }
-      if (!category.id) {
-        url.searchParams.delete('category[0]');
-      }
-      console.log(url.search);
-      history.push(`./jobs${url.search}`);
     }
+    if (location.id !== null) {
+      if (location.city) {
+        url.searchParams.delete('province');
+        url.searchParams.set('city[0]', location.id);
+      }
+      if (!location.city) {
+        url.searchParams.delete('city[0]');
+        url.searchParams.set('province', location.id);
+      }
+    }
+    if (category.id) {
+      url.searchParams.set('category[0]', category.id);
+    }
+    if (!category.id) {
+      url.searchParams.delete('category[0]');
+    }
+    url.searchParams.set('page', 1);
+
+    console.log(url.search);
+    history.push(`/jobs/search/${url.search}`);
   };
+
+  useEffect(() => {
+    setText(new URL(window.location).searchParams.get('q'));
+  }, [window.location.search]);
 
   return (
     <div className="search-box bg-light font-kalameh-num tw-rounded-xl tw-p-4 tw-w-full" style={{}}>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function JobCard({ props }) {
   const {
@@ -13,39 +14,41 @@ export default function JobCard({ props }) {
   } = props;
 
   return (
-    <div className="bg-white tw-flex tw-items-center tw-w-full tw-shadow-lg border-smooth font-kalameh-num">
-      <img src={avatar} alt="" className="tw-m-4" />
-      <div className="tw-flex tw-flex-col tw-p-4 tw-overflow-hidden tw-w-full">
-        <div className="tw-mb-2">
-          <p className="font-iranyekan-num text-dark tw-text-base tw-font-normal 2xl:tw-text-xl 2xl:tw-font-bold tw-w-full tw-truncate">
-            {title}
-          </p>
-        </div>
-        <div className="tw-flex tw-w-full tw-items-center tw-justify-between tw-mb-2">
-          <div>
-            <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh-num text-blue">
-              {name_fa}
+    <Link to={`/job/${id}`}>
+      <div className="bg-white tw-flex tw-items-center tw-w-full tw-shadow-lg border-smooth font-kalameh-num">
+        <img src={avatar} alt="" className="tw-m-4" />
+        <div className="tw-flex tw-flex-col tw-p-4 tw-overflow-hidden tw-w-full">
+          <div className="tw-mb-2">
+            <p className="font-iranyekan-num text-dark tw-text-base tw-font-normal 2xl:tw-text-xl 2xl:tw-font-bold tw-w-full tw-truncate">
+              {title}
             </p>
           </div>
-          <div>
-            <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh-num text-blue">
-              {salary_from}
-            </p>
+          <div className="tw-flex tw-w-full tw-items-center tw-justify-between tw-mb-2">
+            <div>
+              <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh-num text-blue">
+                {name_fa}
+              </p>
+            </div>
+            <div>
+              <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh-num text-blue">
+                {salary_from}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="tw-flex tw-w-full tw-items-center tw-justify-between">
-          <div>
-            <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh-num text-gray">
-              {province}/{city} - {contract_type}
-            </p>
-          </div>
-          <div className="tw-text-left">
-            <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh-num text-gray">
-              {created_at}
-            </p>
+          <div className="tw-flex tw-w-full tw-items-center tw-justify-between">
+            <div>
+              <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh-num text-gray">
+                {province}/{city} - {contract_type}
+              </p>
+            </div>
+            <div className="tw-text-left">
+              <p className="tw-text-xs 2xl:tw-text-base tw-font-normal font-kalameh-num text-gray">
+                {created_at}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -16,10 +16,15 @@ import './jobs.css';
 
 export default function Jobs() {
   const dispatch = useDispatch();
-  const { section } = useSelector((state) => state.jobs);
+  const {
+    section,
+    search: { locations, categories },
+  } = useSelector((state) => state.jobs);
 
   useEffect(() => {
-    dispatch(getJobsSearchOptions());
+    if (categories.length === 0 || locations.length === 0) {
+      dispatch(getJobsSearchOptions());
+    }
     dispatch(getJobsData());
   }, []);
 

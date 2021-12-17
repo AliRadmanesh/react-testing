@@ -85,12 +85,12 @@ const MenuMobile = () => {
           <div>
             <form
               onSubmit={handleSearch}
-              className="tw-grid tw-items-center mobile-menu-search-container tw-mb-4"
-              style={{ gridTemplateColumns: 'auto 30px' }}
+              className="tw-grid tw-items-center mobile-menu-search-container tw-mb-4 tw-w-full"
+              style={{ gridTemplateColumns: '1fr auto' }}
             >
               <input
                 type="text"
-                className="mobile-menu-search font-kalameh-num"
+                className="mobile-menu-search font-kalameh-num tw-block"
                 placeholder="نام آموزش، آموزشگاه یا مدرس را سرچ کنید..."
                 onFocus={() => {
                   document.querySelector('.mobile-menu-search-container').classList.add('focus');
@@ -101,15 +101,20 @@ const MenuMobile = () => {
                 onChange={(e) => {
                   setValue(e.target.value);
                 }}
+                style={{ width: '100%' }}
               />
-              <Link
-                to={`/courses/search/?q=${value}&is_free=0&sort=1&page=1`}
-                type="submit"
-                className="tw-p-0"
-                onClick={() => dispatch(showMenu(false))}
-              >
-                <img src={searchIcon} alt="" className="" />
-              </Link>
+              {value !== '' ? (
+                <Link
+                  to={`/courses/search/?q=${value}&is_free=0&sort=1&page=1`}
+                  type="submit"
+                  className="tw-p-0"
+                  onClick={() => dispatch(showMenu(false))}
+                >
+                  <img src={searchIcon} alt="جستجو" className="" />
+                </Link>
+              ) : (
+                <img src={searchIcon} alt="جستجو" className="" />
+              )}
             </form>
           </div>
           <Link to="/" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
