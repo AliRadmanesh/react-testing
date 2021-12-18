@@ -43,6 +43,8 @@ export default function Course() {
       is_purchased,
       is_bookmarked,
       user_comment,
+      ref_url,
+      ref_url_discount,
     },
     comments: {
       sort,
@@ -69,6 +71,10 @@ export default function Course() {
     dispatch(hideSuggest());
   }, [window.location.href.split('course/')[1]]);
 
+  const openCourseLink = () => {
+    window.open(ref_url_discount || ref_url, '_blank');
+  };
+
   return (
     <>
       <Layout>
@@ -91,6 +97,8 @@ export default function Course() {
           end_datetime={end_datetime}
           type={type}
           cashback={cashback}
+          ref_url={ref_url}
+          ref_url_discount={ref_url_discount}
         />
         <Author instructors={instructors[0]} />
         <About description={description} />
@@ -101,23 +109,22 @@ export default function Course() {
         <UserComment id={id} user_comment={user_comment} />
         <Comments id={id} />
       </Layout>
-      {!is_purchased && (
-        <div
-          className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-w-full tw-right-0 tw-px-4"
-          style={{
-            zIndex: '9999',
-            bottom: scroll >= 100 ? '1rem' : '-4rem',
-            transition: 'bottom .3s ease-in-out',
-          }}
+      <div
+        className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-w-full tw-right-0 tw-px-4"
+        style={{
+          zIndex: '9999',
+          bottom: scroll >= 100 ? '1rem' : '-4rem',
+          transition: 'bottom .3s ease-in-out',
+        }}
+      >
+        <button
+          className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
+          style={{ width: '100%' }}
+          onClick={is_purchased ? null : openCourseLink}
         >
-          <button
-            className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
-            style={{ width: '100%' }}
-          >
-            خرید این دوره
-          </button>
-        </div>
-      )}
+          {is_purchased ? 'خریداری شده' : 'خرید این دوره'}
+        </button>
+      </div>
     </>
   );
 }

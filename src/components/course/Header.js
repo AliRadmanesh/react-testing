@@ -36,6 +36,8 @@ export default function Header({
   is_purchased,
   is_bookmarked,
   cashback,
+  ref_url,
+  ref_url_discount,
 }) {
   let price = 0;
   if (prices !== null) {
@@ -44,9 +46,9 @@ export default function Header({
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    // document.querySelector('.course-header-description').innerHTML = description_summary;
-  }, []);
+  const openCourseLink = () => {
+    window.open(ref_url_discount || ref_url, '_blank');
+  };
 
   return (
     <div className="tw-grid course-header tw-gap-4 container">
@@ -85,37 +87,32 @@ export default function Header({
               {description_summary_string}
             </p>
           </div>
-          {is_purchased ? (
-            <div>
-              <p className="font-kalameh-num text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
-                این دوره خریداری شده.
-              </p>
+          <div className="">
+            <div className="tw-flex tw-justify-end font-kalameh-num tw-mt-4">
+              {is_free === 0 && (
+                <p className="font-kalameh-num text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                  {price} تومان
+                </p>
+              )}
+              <p className="tw-text-sm tw-font-normal text-success">{discount}</p>
+              {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
             </div>
-          ) : (
-            <div className="">
-              <div className="tw-flex tw-justify-end font-kalameh-num tw-mt-4">
-                {is_free === 0 && (
-                  <p className="font-kalameh-num text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
-                    {price} تومان
-                  </p>
-                )}
-                <p className="tw-text-sm tw-font-normal text-success">{discount}</p>
-                {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
-              </div>
-              <div className="tw-flex tw-mt-2 tw-w-full tw-items-stretch md:tw-justify-end">
-                <Link
-                  to={`/compare?primary=${window.location.href.split('course/')[1]}`}
-                  className="tw-p-6 md:tw-hidden tw-rounded-xl"
-                  style={{ backgroundColor: '#118ab222' }}
-                >
-                  <img src={compareIcon} alt="" style={{}} className="tw-w-8" />
-                </Link>
-                <button className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center">
-                  خرید این دوره
-                </button>
-              </div>
+            <div className="tw-flex tw-mt-2 tw-w-full tw-items-stretch md:tw-justify-end">
+              <Link
+                to={`/compare?primary=${window.location.href.split('course/')[1]}`}
+                className="tw-p-6 md:tw-hidden tw-rounded-xl"
+                style={{ backgroundColor: '#118ab222' }}
+              >
+                <img src={compareIcon} alt="" style={{}} className="tw-w-8" />
+              </Link>
+              <button
+                className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
+                onClick={is_purchased ? null : openCourseLink}
+              >
+                {is_purchased ? 'خریداری شده' : 'خرید این دوره'}
+              </button>
             </div>
-          )}
+          </div>
         </div>
         <button
           className="tw-p-4 md:tw-hidden tw-w-auto tw-absolute tw-left-8 tw-top-8"
