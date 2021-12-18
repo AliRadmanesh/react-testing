@@ -13,11 +13,11 @@ export default function Form() {
   const [title, setTitle] = useState(null);
   const [department, setDepartment] = useState(null);
   const [description, setDescription] = useState(null);
-  const [nameMessage, setNameMessage] = useState('نام خود را فراموش نکنید.');
-  const [emailMessage, setEmailMessage] = useState('ایمیل خود را فراموش نکنید.');
-  const [titleMessage, setTitleMessage] = useState('موضوع خود را فراموش نکنید.');
-  const [departmentMessage, setDepartmentMessage] = useState('دپارتمان خود را فراموش نکنید.');
-  const [descriptionMessage, setDescriptionMessage] = useState('پیام خود را فراموش نکنید.');
+  const [nameMessage, setNameMessage] = useState('لطفا نام خود را وارد کنید.');
+  const [emailMessage, setEmailMessage] = useState('لطفا ایمیل خود را وارد کنید.');
+  const [titleMessage, setTitleMessage] = useState('لطفا موضوع خود را وارد کنید.');
+  const [departmentMessage, setDepartmentMessage] = useState('لطفا دپارتمان مرتبط را وارد کنید.');
+  const [descriptionMessage, setDescriptionMessage] = useState('لطفا پیام خود را وارد کنید.');
   const [nameState, setNameState] = useState();
   const [emailState, setEmailState] = useState();
   const [titleState, setTitleState] = useState(null);
@@ -97,7 +97,7 @@ export default function Form() {
       const res = await instance.post('/api/v1/web/service/contact-us', data);
 
       if (res.data.code === 200 || res.data.code === 201) {
-        toast.success('پیام شما دریافت شذه است. قدردانتان هستیم.');
+        toast.success('با تشکر از شما. پیام با موفقیت دریافت شد.');
       } else {
         toast.error('ارسال درخواست با خطا مواجه شد.');
       }
@@ -264,7 +264,7 @@ export default function Form() {
             </p>
             <TextArea
               classes="tw-w-full font-kalameh-num"
-              placeholder="پیام خود را در اینجا برایمان بنویسید..."
+              placeholder="پیام خود را در اینجا برای ما بنویسید..."
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
