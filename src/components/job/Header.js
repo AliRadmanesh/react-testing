@@ -117,7 +117,7 @@ export default function Header({ data }) {
                   سفر کاری
                 </p>
                 <p className="text-gray tw-text-xs tw-font-normal 2xl:tw-text-base 2xl:tw-font-semibold">
-                  Must come from server
+                  -
                 </p>
               </div>
             </div>

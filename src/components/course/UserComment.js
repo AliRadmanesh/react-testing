@@ -102,11 +102,11 @@ export default function UserComment({ id }) {
               </p>
             )}
             <form className="tw-mt-4" onSubmit={onSubmit}>
-              <TextArea
-                ref={ref}
+              <textarea
                 onChange={(e) => setMessage(e.target.value)}
-                value={message || null}
+                value={message}
                 placeholder="دیدگاه خود را بنویسید..."
+                className="tw-w-full tw-mb-2"
                 // message={uiMessage}
               />
               <div className="tw-flex md:tw-justify-end">

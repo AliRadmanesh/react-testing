@@ -77,7 +77,7 @@ const Modal = () => {
                 رفتن به آموزش
               </Link>
             )}
-            {data.data.type === 2 && (
+            {data.data.type === 3 && (
               <Link to={`/job/${data.data.id}`} target="_blank" className="button-primary tw-p-4">
                 رفتن به فرصت شغلی
               </Link>
