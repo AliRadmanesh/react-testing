@@ -193,6 +193,17 @@ export const getDashboardNotifications = () => async (dispatch) => {
   }
 };
 
+export const showDashboardModal = (data) => (dispatch) => {
+  dispatch({
+    type: 'SHOW_DASHBOARD_MODAL',
+    payload: data,
+  });
+};
+
+export const closeDashboardModal = () => (dispatch) => {
+  dispatch({ type: 'CLOSE_DASHBOARD_MODAL' });
+};
+
 export const addDashboardFavoritesInterestsCourses = (object) => (dispatch) => {
   dispatch({ type: 'ADD_DASHBOARD_FAVORITES_INTERESTS_COURSES', payload: object });
 };

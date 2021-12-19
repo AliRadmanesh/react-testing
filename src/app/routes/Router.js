@@ -36,6 +36,7 @@ import Purchases from '../../features/dashboard/purchases';
 import Transactions from '../../features/dashboard/transactions';
 import Wallet from '../../features/dashboard/wallet';
 import Main from '../../features/dashboard/main';
+import Unauthenticated from '../../features/unauthenticated';
 
 function AppRouter() {
   return (
@@ -52,6 +53,7 @@ function AppRouter() {
           <Route exact path="/courses" component={CourseList} />
           <Route exact path="/course/:id" component={Course} />
           <Route exact path="/404" component={Page404} />
+          <Route exact path="/unauthenticated" component={Unauthenticated} />
           <Route exact path="/courses/search" component={Search} />
           <Route exact path="/compare" component={Compare} />
           <Route exact path="/jobs" component={Jobs} />

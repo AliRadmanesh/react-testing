@@ -57,6 +57,29 @@ const initialState = {
     user_notifications: [],
     multicast_notifications: [],
   },
+  modal: {
+    show: false,
+    data: {
+      id: null,
+      notification_id: null,
+      type: '',
+      notification: {
+        title: '',
+        body: '',
+        image: '',
+      },
+      data: {
+        id: null,
+        type: null,
+        link_title: '',
+        link_url: '',
+      },
+      created_at: '',
+      created_at_difference: '',
+      created_at_gregorian: '',
+      is_viewed: 0,
+    },
+  },
 };
 
 export default (state = initialState, action) => {
@@ -215,6 +238,22 @@ export default (state = initialState, action) => {
       return {
         ...state,
         notifications: action.payload,
+      };
+    case 'SHOW_DASHBOARD_MODAL':
+      return {
+        ...state,
+        modal: {
+          data: action.payload,
+          show: true,
+        },
+      };
+    case 'CLOSE_DASHBOARD_MODAL':
+      return {
+        ...state,
+        modal: {
+          data: initialState.modal.data,
+          show: false,
+        },
       };
     default:
       return state;

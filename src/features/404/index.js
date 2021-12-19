@@ -6,6 +6,7 @@ import MenuMobile from '../../components/global/MenuMobile';
 import ScrollToTop from '../../components/global/ScrollToTop';
 import MenuDesktop from '../../components/global/MenuDesktop';
 import searchWhiteIcon from '../../assets/icons/Search White.svg';
+import UserMenu from '../../components/global/UserMenu';
 
 export default function Page404() {
   const [query, setQuery] = useState('');
@@ -26,6 +27,7 @@ export default function Page404() {
       <ScrollToTop />
       <MenuMobile />
       <MenuDesktop />
+      <UserMenu />
       <div className="404-content">
         <div className="container">
           <div className="tw-w-full">
