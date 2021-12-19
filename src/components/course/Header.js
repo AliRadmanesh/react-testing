@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+
 import compareIcon from '../../assets/icons/Comparison.svg';
 import bookmarkIcon from '../../assets/icons/Bookmark.svg';
 import bookmarkfillIcon from '../../assets/icons/Bookmark Fill.svg';
@@ -45,9 +47,20 @@ export default function Header({
   }
 
   const dispatch = useDispatch();
+  const {
+    user: { authenticated },
+  } = useSelector((state) => state.auth);
 
   const openCourseLink = () => {
     window.open(ref_url_discount || ref_url, '_blank');
+  };
+
+  const checkAndbookmarkCourse = () => {
+    if (authenticated) {
+      dispatch(bookmarkCourse(id));
+    } else {
+      toast.error('برای نشان کردن آموزش‌ها باید وارد شوید یا ثبت‌نام کنید!');
+    }
   };
 
   return (
@@ -66,14 +79,16 @@ export default function Header({
               </p>
               <div className="tw-hidden md:tw-flex tw-items-center tw-mr-4">
                 <Link
+                  title="مقایسه کردن"
                   to={`/compare?primary=${window.location.href.split('course/')[1]}`}
                   className="tw-bg-transparent tw-p-2"
                 >
                   <img src={compareIcon} alt="" className="tw-w-8" />
                 </Link>
                 <button
+                  title="نشان کردن"
                   className="tw-bg-transparent tw-p-2"
-                  onClick={() => dispatch(bookmarkCourse(id))}
+                  onClick={checkAndbookmarkCourse}
                 >
                   {is_bookmarked ? (
                     <img src={bookmarkfillIcon} alt="" className="tw-w-8" />
@@ -117,7 +132,7 @@ export default function Header({
         <button
           className="tw-p-4 md:tw-hidden tw-w-auto tw-absolute tw-left-8 tw-top-8"
           style={{ backgroundColor: '#118ab288' }}
-          onClick={() => dispatch(bookmarkCourse(id))}
+          onClick={checkAndbookmarkCourse}
         >
           {is_bookmarked ? (
             <img src={bookmarkfillIcon} alt="" style={{}} className="tw-w-4" />
