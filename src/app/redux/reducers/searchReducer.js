@@ -6,9 +6,11 @@ import {
   SEARCH_CATEGORY_COURSES,
   SET_CURRENT_PAGE,
   SET_PAGE_TOTAL,
+  SET_TOTAL_RESULTS,
   SEARCH_QUERY,
   SET_QUERY_KEYWORDS,
   SET_QUERY_PAGE_TOTAL,
+  SET_QUERY_TOTAL_RESULTS,
   SET_QUERY_CURRENT_PAGE,
   SET_QUERY_STATUS,
   SET_QUERY_STRING,
@@ -23,8 +25,10 @@ import {
 
 const initialState = {
   courses: [],
+  category: null, // Selected categoy
   keywords: '', // query value
   suggest: { show: false, list: [] },
+  total_results: 0,
   page: {
     current: 1,
     total: 1,
@@ -34,6 +38,7 @@ const initialState = {
     options: { academies: [], course_types: [] },
     keywords: '',
     result: [], // returned value from api and string
+    query_total_results: 0,
     page: { current: 1, total: 1 },
     status: null,
     string: '', // stringified query based on other sub-states
@@ -74,7 +79,8 @@ export default (state = initialState, action) => {
     case SEARCH_CATEGORY_COURSES:
       return {
         ...state,
-        courses: action.payload,
+        courses: action.payload.courses,
+        category: action.payload.category,
       };
 
     case SET_CURRENT_PAGE:
@@ -87,6 +93,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         page: { ...state.page, total: action.payload },
+      };
+
+    case SET_TOTAL_RESULTS:
+      return {
+        ...state,
+        total_results: action.payload,
       };
 
     case SEARCH_QUERY:
@@ -102,6 +114,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         query: { ...state.query, page: { ...state.query.page, total: action.payload } },
+      };
+
+    case SET_QUERY_TOTAL_RESULTS:
+      return {
+        ...state,
+        query: { ...state.query, query_total_results: action.payload },
       };
 
     case SET_QUERY_CURRENT_PAGE:

@@ -43,6 +43,7 @@ export default function Search() {
   const {
     query: {
       result,
+      query_total_results,
       page: { total, current },
       status,
       filters,
@@ -124,7 +125,10 @@ export default function Search() {
       {status === 400 && <Error404 query={urlQuery} />}
 
       {status === 200 && (
-        <Layout title={`نتایج جستجو برای «${urlQuery}»`}>
+        <Layout
+          title={`نتایج جستجوی «${urlQuery}»`}
+          text={`${query_total_results} دوره آموزشی یافت شد`}
+        >
           <div className="container Query">
             <div className="tw-grid tw-gap-x-4 courses-grid tw-mb-4">
               <div className="tw-hidden lg:tw-block">

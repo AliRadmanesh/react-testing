@@ -14,11 +14,13 @@ import {
   HIDE_SUGGEST,
   SEARCH_CATEGORY_COURSES,
   SET_PAGE_TOTAL,
+  SET_TOTAL_RESULTS,
   SET_CURRENT_PAGE,
   SET_QUERY_STATUS,
   SEARCH_QUERY,
   SET_QUERY_KEYWORDS,
   SET_QUERY_PAGE_TOTAL,
+  SET_QUERY_TOTAL_RESULTS,
   SET_QUERY_CURRENT_PAGE,
   SET_QUERY_STRING,
   SET_QUERY_FILTERS_IS_FREE,
@@ -85,11 +87,15 @@ export const searchCourses =
       if (res.status === 200 || res.status === 201) {
         dispatch({
           type: SEARCH_CATEGORY_COURSES,
-          payload: res.data.data.courses,
+          payload: res.data.data,
         });
         dispatch({
           type: SET_PAGE_TOTAL,
           payload: res.data.meta.last_page,
+        });
+        dispatch({
+          type: SET_TOTAL_RESULTS,
+          payload: res.data.meta.total,
         });
       } else if (res.status === 404) {
         dispatch({ type: SEARCH_CATEGORY_COURSES, payload: [] });
@@ -116,6 +122,7 @@ export const searchQuery = (query) => async (dispatch) => {
       dispatch({ type: SET_QUERY_STATUS, payload: 200 });
       dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
       dispatch({ type: SET_QUERY_PAGE_TOTAL, payload: res.data.meta.last_page });
+      dispatch({ type: SET_QUERY_TOTAL_RESULTS, payload: res.data.meta.total });
     }
     if (res.data.data.courses.length === 0) {
       dispatch({ type: SET_QUERY_STATUS, payload: 200 });

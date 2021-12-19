@@ -30,9 +30,6 @@ import './courses.css';
 import instance from '../../app/instance';
 
 export default function Courses() {
-  const [category, setCategory] = useState(
-    new URL(window.location).searchParams.get('category[0]'),
-  );
   const dispatch = useDispatch();
   const history = useHistory();
   const {
@@ -43,6 +40,8 @@ export default function Courses() {
   } = useSelector((state) => state.courses);
   const {
     courses,
+    category,
+    total_results,
     page: { current, total },
   } = useSelector((state) => state.search);
 
@@ -112,7 +111,7 @@ export default function Courses() {
   }, [options]);
 
   useEffect(() => {
-    setCategory(new URL(window.location).searchParams.get('category[0]'));
+    // setCategory(new URL(window.location).searchParams.get('category[0]'));
     dispatch(searchCourses(new URL(window.location).search));
     if (options.academies.length === 0 || options.course_types.length === 0) {
       getSearchOptions();
@@ -123,7 +122,10 @@ export default function Courses() {
   }, [window.location.search]);
 
   return (
-    <Layout title="کورس‌ها" text="دوره‌های آموزشی">
+    <Layout
+      title={category ? category.name : 'آموزش‌ها'}
+      text={`${total_results} دوره آموزشی یافت شد`}
+    >
       <div className="container courses">
         <div className="tw-grid tw-gap-x-4 courses-grid tw-mb-4">
           <div className="tw-hidden lg:tw-block">
