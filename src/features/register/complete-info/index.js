@@ -32,7 +32,7 @@ export default function CompleteInfo() {
 
     if (!localStorage.getItem('userPhone')) {
       toast.error('لطفا شماره همراه خود را دوباره با شکل صحیح وارد نمایید.');
-      history.push('../auth');
+      history.push('/auth');
     }
 
     if (localStorage.getItem('userPhone') && regex.test(localStorage.getItem('userPhone'))) {
@@ -58,7 +58,7 @@ export default function CompleteInfo() {
           if (res.status === 200) {
             localStorage.setItem('userToken', res.data.data.user.token);
             localStorage.removeItem('tempToken');
-            history.push('../');
+            history.push('/');
             window.location.reload();
           }
         } catch (error) {

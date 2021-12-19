@@ -32,7 +32,7 @@ export default function ForgetCode() {
 
   useEffect(() => {
     if (!window.localStorage.getItem('userPhone')) {
-      history.push('../auth');
+      history.push('/auth');
     }
   }, []);
 
@@ -88,7 +88,7 @@ export default function ForgetCode() {
         );
 
         if (res.status === 200) {
-          history.push('../forget/new-password');
+          history.push('/forget/new-password');
         }
       }
     } catch (error) {

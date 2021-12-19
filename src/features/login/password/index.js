@@ -39,7 +39,7 @@ export default function LoginPassword() {
         if (res.status === 200) {
           if (res.data.code === 200) {
             window.localStorage.setItem('userToken', res.data.data.user.token);
-            history.push('../');
+            history.push('/');
             window.location.reload();
           }
           if (res.data.code === 401) {
@@ -58,7 +58,7 @@ export default function LoginPassword() {
     }
 
     if (!window.localStorage.getItem('userPhone')) {
-      history.push('../auth');
+      history.push('/auth');
     }
   };
 
@@ -94,7 +94,7 @@ export default function LoginPassword() {
 
         if (res.status === 200) {
           localStorage.setItem('tempToken', res.data.data.token);
-          history.push('../forget/code');
+          history.push('/forget/code');
         }
       } catch (error) {
         const { status, data } = error.response;
@@ -106,7 +106,7 @@ export default function LoginPassword() {
               'userPhone',
             )} یافت نشد. لطفاً شماره دیگری وارد کنید.`,
           );
-          history.push('../auth');
+          history.push('/auth');
         }
       }
     }
@@ -206,7 +206,7 @@ export default function LoginPassword() {
                 </p>
               </div>
               <Link
-                to={window.localStorage.getItem('userPhone') ? '/code' : '/auth'}
+                to={window.localStorage.getItem('userPhone') ? '/login/code' : '/auth'}
                 className="button-secondary tw-text-center tw-p-4 tw-text-sm tw-font-medium 2xl:tw-text-2xl 2xl:tw-font-semibold "
                 onClick={linkClick}
               >

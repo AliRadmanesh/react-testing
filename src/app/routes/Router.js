@@ -1,7 +1,7 @@
 // Define app routes here
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 import Home from '../../features/home';
 import Dashboard from '../../common/Layout/dashboard';
 import Blogs from '../../features/blogs';
@@ -39,6 +39,10 @@ import Main from '../../features/dashboard/main';
 import Unauthenticated from '../../features/unauthenticated';
 
 function AppRouter() {
+  const {
+    user: { authenticated },
+  } = useSelector((state) => state.auth);
+
   return (
     <div className="App">
       <Router basename="/">

@@ -36,7 +36,7 @@ export default function Authentication() {
         );
         if (res.status === 200 || res.status === 201) {
           window.localStorage.setItem('userPhone', phone);
-          history.push('../login/password');
+          history.push('/login/password');
         }
       } catch (error) {
         const { status, data } = error.response;
@@ -45,7 +45,7 @@ export default function Authentication() {
           // toast.error('کاربری با این شماره یافت نشد.');
           window.localStorage.setItem('tempToken', data.data.token);
           window.localStorage.setItem('userPhone', phone);
-          history.push('../register/code');
+          history.push('/register/code');
         } else toast.error('عملیات ورود ناموفق بود.');
       }
     }

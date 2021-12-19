@@ -90,7 +90,7 @@ export default function LoginCode() {
         if (res.status === 200) {
           localStorage.setItem('userToken', res.data.data.user.token);
           localStorage.removeItem('tempToken');
-          history.push('../');
+          history.push('/');
           window.location.reload();
         }
       }

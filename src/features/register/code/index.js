@@ -31,7 +31,7 @@ export default function RegisterCode() {
 
   useEffect(() => {
     if (!window.localStorage.getItem('userPhone')) {
-      history.push('../auth');
+      history.push('/auth');
     }
   }, []);
 
@@ -75,7 +75,7 @@ export default function RegisterCode() {
           );
 
           if (res.status === 200) {
-            history.push('../register/complete-info');
+            history.push('/register/complete-info');
           }
         }
       } catch (error) {
