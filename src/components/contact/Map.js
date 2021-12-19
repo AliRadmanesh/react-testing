@@ -32,7 +32,7 @@ export default function ContactMap() {
     <div className="tw-h-auto tw-w-full tw-relative tw-order-first lg:tw-order-last">
       <MapContainer
         center={position}
-        zoom={16}
+        zoom={15}
         scrollWheelZoom={false}
         dragging={false}
         className="border-smooth"
