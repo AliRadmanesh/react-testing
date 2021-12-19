@@ -122,7 +122,7 @@ export default function UserComment({ id }) {
         ) : (
           <div className="tw-grid tw-justify-center">
             <p className="tw-text-sm text-dark font-kalameh-num tw-font-normal 2xl:tw-text-lg 2xl:tw-mb-2 tw-text-center">
-              کاربر گرامی، خواهشمندیم،‌ برای ارسال دیدگاه، وارد سایت شده یا ثبت‌نام کنید.
+              لطفا برای ارسال دیدگاه، وارد سایت شده یا ثبت‌نام کنید.
             </p>
             <Link
               to="/auth"
