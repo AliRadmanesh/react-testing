@@ -16,7 +16,7 @@ export function TextArea({
   return (
     <div style={{ marginBottom: '.5rem' }} className="template">
       <textarea
-        defaultValue={defaultValue}
+        value={defaultValue}
         placeholder={placeholder}
         className={`${classes} ${state}`}
         style={{ marginBottom: '-10px', width: '100%' }}
@@ -40,7 +40,7 @@ export function TextArea({
           (!state && '#2c2c2c') ||
           (state === 'error' && 'لطفا پیام خود را بنویسید') ||
           (state === 'warning' && 'در این قسمت، چیزی ننوشتید.') ||
-          (state === 'success' && 'پیام شما را خواهیم دید.')}
+          (state === 'success' && '')}
       </p>
     </div>
   );

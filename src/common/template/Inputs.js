@@ -17,7 +17,7 @@ export function TextInput({
     <div style={{ marginBottom: '.5rem' }} className="template">
       <input
         type="text"
-        defaultValue={defaultValue}
+        value={defaultValue}
         placeholder={placeholder}
         className={`${classes} ${state}`}
         style={{ marginBottom: '-10px', width: '100%' }}
@@ -57,7 +57,7 @@ export function EmailInput({
     <div style={{ marginBottom: '.5rem' }} className="template">
       <input
         type="email"
-        defaultValue={defaultValue}
+        value={defaultValue}
         placeholder={placeholder}
         className={`${classes} ${state}`}
         style={{ marginBottom: '-10px', width: '100%' }}
@@ -96,7 +96,7 @@ export function NumberInput({
     <div style={{ marginBottom: '.5rem' }} className="template">
       <input
         type="number"
-        defaultValue={defaultValue}
+        value={defaultValue}
         placeholder={placeholder}
         className={`${classes} ${state}`}
         style={{ marginBottom: '-10px', width: '100%' }}
