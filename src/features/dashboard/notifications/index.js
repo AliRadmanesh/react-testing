@@ -74,12 +74,12 @@ const Modal = () => {
                 target="_blank"
                 className="button-primary tw-p-4"
               >
-                رفتن به آموزش
+                جزئیات
               </Link>
             )}
             {data.data.type === 3 && (
               <Link to={`/job/${data.data.id}`} target="_blank" className="button-primary tw-p-4">
-                رفتن به فرصت شغلی
+                جزئیات
               </Link>
             )}
           </div>
@@ -149,10 +149,10 @@ export default function Notifications() {
         <table className="tw-table-auto font-kalameh-num tw-min-w-full tw-text-right">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
-              <th className="tw-py-2">عنوان</th>
-              <th className="tw-py-2">نوع</th>
-              <th className="tw-py-2">شرکت یا برگزارکننده</th>
-              <th className="tw-py-2">تاریخ</th>
+              <th className="tw-p-2 lg:tw-w-1/2">عنوان</th>
+              <th className="tw-p-2 lg:tw-w-1/12">نوع</th>
+              <th className="tw-p-2 lg:tw-w-1/4">شرکت یا برگزارکننده</th>
+              <th className="tw-p-2 lg:tw-w-1/6">تاریخ</th>
             </tr>
           </thead>
           <tbody>
@@ -160,7 +160,7 @@ export default function Notifications() {
               <tr key={item.id} className="">
                 <td
                   style={{ borderRadius: '0 12px 12px 0' }}
-                  className="text-primary-hover tw-cursor-pointer tw-py-2"
+                  className="text-primary-hover tw-cursor-pointer tw-p-2"
                   role="none"
                   onClick={() => dispatch(showDashboardModal(item))}
                 >
@@ -186,8 +186,8 @@ export default function Notifications() {
         <table className="tw-table-auto font-kalameh-num tw-min-w-full tw-text-right tw-overflow-x-scroll">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
-              <th className="tw-py-2">عنوان</th>
-              <th className="tw-py-2">تاریخ</th>
+              <th className="tw-p-2 tw-w-10/12">عنوان</th>
+              <th className="tw-p-2 tw-w-1/6">تاریخ</th>
             </tr>
           </thead>
           <tbody>
@@ -195,13 +195,13 @@ export default function Notifications() {
               <tr key={item.id} className="">
                 <td
                   style={{ borderRadius: '0 12px 12px 0' }}
-                  className="text-primary-hover tw-cursor-pointer tw-py-2"
+                  className="text-primary-hover tw-cursor-pointer tw-p-2"
                   role="none"
                   onClick={() => dispatch(showDashboardModal(item))}
                 >
                   {item.notification.title}
                 </td>
-                <td style={{ borderRadius: '12px 0 0 12px' }} className="tw-py-2">
+                <td style={{ borderRadius: '12px 0 0 12px' }} className="tw-p-2">
                   {item.created_at}
                 </td>
               </tr>

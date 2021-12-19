@@ -11,7 +11,7 @@ export default function Transactions() {
       <div className="tw-my-4 tw-relative">
         {/* Indicator Line */}
         <div
-          className="tw-absolute bg-primary 2xl:tw-w-28 tw-w-20 tw-h-1 tw-top-0"
+          className="tw-absolute bg-primary 2xl:lg:tw-w-28 lg:tw-w-20 tw-h-1 tw-top-0"
           style={{
             borderRadius: '0 0 12px 12px',
             right: section === 1 ? '25%' : '75%',
@@ -20,7 +20,7 @@ export default function Transactions() {
           }}
         />
         {/* Tabs */}
-        <div className="tw-rounded-xl tw-font-medium tw-grid tw-grid-cols-2 tw-place-items-center font-kalameh-num tw-w-full tw-py-4 2xl:tw-py-8 bg-primary-pale">
+        <div className="tw-rounded-xl tw-font-medium tw-grid tw-grid-cols-2 tw-place-items-center font-kalameh-num lg:tw-w-full tw-py-4 2xl:tw-py-8 bg-primary-pale">
           <div
             className={
               section === 1
@@ -46,48 +46,34 @@ export default function Transactions() {
         </div>
       </div>
       <div className="tw-my-4" style={{ display: section === 1 ? 'block' : 'none' }}>
-        <table className="tw-table-fixed font-kalameh-num lg:tw-w-full tw-text-right">
+        <table className="tw-table-auto font-kalameh-num tw-min-w-full tw-text-right tw-overflow-x-scroll">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none tw-w-1/5">
-                ردیف
-              </th>
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none tw-w-1/5">
-                تاریخ برداشت
-              </th>
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none tw-w-1/5">
+              <th className="tw-p-4 lg:tw-w-1/5">ردیف</th>
+              <th className="tw-p-4 lg:tw-w-1/5">تاریخ برداشت</th>
+              <th className="tw-p-4 lg:tw-w-1/5">
                 مبلغ &nbsp;{' '}
                 <span className="tw-font-normal tw-text-xs 2xl:tw-text-base">(تومان)</span>
               </th>
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-gray-300 lg:tw-border-none tw-w-1/5">
-                وضعیت
-              </th>
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-gray-300 lg:tw-border-none tw-w-1/5">
-                تاریخ رسیدگی
-              </th>
+              <th className="tw-p-4 lg:tw-w-1/5">وضعیت</th>
+              <th className="tw-p-4 lg:tw-w-1/5">تاریخ رسیدگی</th>
             </tr>
           </thead>
           <tbody>table content</tbody>
         </table>
       </div>
       <div className="tw-my-4" style={{ display: section === 2 ? 'block' : 'none' }}>
-        <table className="tw-table-fixed font-kalameh-num lg:tw-w-full tw-text-right">
+        <table className="tw-table-auto font-kalameh-num tw-min-w-full tw-text-right tw-overflow-x-scroll">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none tw-w-1/12">
-                ردیف
-              </th>
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none tw-w-1/6">
-                تاریخ
-              </th>
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-l tw-border-gray-300 lg:tw-border-none tw-w-5/12">
-                توضیحات
-              </th>
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-gray-300 lg:tw-border-none tw-w-1/6">
+              <th className="tw-p-4 lg:tw-w-1/12">ردیف</th>
+              <th className="tw-p-4 lg:tw-w-1/6">تاریخ</th>
+              <th className="tw-p-4 lg:tw-w-5/12">توضیحات</th>
+              <th className="tw-p-4 lg:tw-w-1/6">
                 مبلغ &nbsp;{' '}
                 <span className="tw-font-normal tw-text-xs 2xl:tw-text-base">(تومان)</span>
               </th>
-              <th className="tw-py-4 tw-px-2 lg:tw-px-4 tw-border-gray-300 lg:tw-border-none tw-w-1/6">
+              <th className="tw-p-4 lg:tw-w-1/6">
                 موجودی &nbsp;{' '}
                 <span className="tw-font-normal tw-text-xs 2xl:tw-text-base">(تومان)</span>
               </th>
