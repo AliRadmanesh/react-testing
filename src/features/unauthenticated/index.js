@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Footer from '../../components/global/Footer';
 import MenuMobile from '../../components/global/MenuMobile';
 import ScrollToTop from '../../components/global/ScrollToTop';
@@ -8,19 +8,6 @@ import MenuDesktop from '../../components/global/MenuDesktop';
 import UserMenu from '../../components/global/UserMenu';
 
 export default function Unauthenticated() {
-  const [query, setQuery] = useState('');
-  const top_search = useSelector((state) => state.home.data.top_search);
-  const history = useHistory();
-
-  const onSubmit = (event) => {
-    console.log(1);
-    event.preventDefault();
-
-    if (query !== '') {
-      history.push(`../courses/search/?q=${query}&is_free=0&sort=1&page=1`);
-    }
-  };
-
   return (
     <div className="bg-light">
       <ScrollToTop />

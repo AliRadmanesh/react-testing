@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
 
@@ -19,7 +20,12 @@ export default function Layout({ children }) {
   const {
     mobile: { show: showMobileNav },
   } = useSelector((state) => state.dashboard.navigation);
+  const {
+    user: { authenticated },
+  } = useSelector((state) => state.auth);
 
+  if (!window.localStorage.getItem('userToken') || window.localStorage.getItem('userToken') === '')
+    return <Redirect to="/auth" />;
   return (
     <div className="bg-light">
       <>
