@@ -7,7 +7,7 @@ import icon from '../../common/template/icon.svg';
 import instance from '../../app/instance';
 
 export default function Form() {
-  const initialText = 'متن';
+  const initialText = '';
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [title, setTitle] = useState(null);
@@ -24,7 +24,7 @@ export default function Form() {
   const [departmentState, setDepartmentState] = useState(null);
   const [descriptionState, setDescriptionState] = useState(null);
   const [showItems, doShowItems] = useState(false);
-  const [dropdownText, setDropdownText] = useState();
+  const [dropdownText, setDropdownText] = useState(null);
   const [dropdownWidth, setDropdownWidth] = useState(null);
 
   const options = [
@@ -98,6 +98,12 @@ export default function Form() {
 
       if (res.data.code === 200 || res.data.code === 201) {
         toast.success('با تشکر از شما. پیام با موفقیت دریافت شد.');
+        setName('');
+        setEmail('');
+        setTitle('');
+        setDepartment(null);
+        setDropdownText(null);
+        setDescription('');
       } else {
         toast.error('ارسال درخواست با خطا مواجه شد.');
       }
@@ -139,7 +145,7 @@ export default function Form() {
               <TextInput
                 classes="tw-w-full font-kalameh-num"
                 placeholder="نام و نام خانوادگی خود را وارد کنید."
-                value={name}
+                defaultValue={name}
                 onChange={(e) => {
                   setName(e.target.value);
                   setNameState('');
@@ -159,7 +165,7 @@ export default function Form() {
               <EmailInput
                 classes="tw-w-full font-kalameh-num"
                 placeholder="برای مثال info@karsaz.app"
-                value={email}
+                defaultValue={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
                   setEmailState('');
@@ -179,7 +185,7 @@ export default function Form() {
               <TextInput
                 classes="tw-w-full font-kalameh-num"
                 placeholder="برای مثال همکاری"
-                value={title}
+                defaultValue={title}
                 onChange={(e) => {
                   setTitle(e.target.value);
                   setTitleState('');
@@ -265,7 +271,7 @@ export default function Form() {
             <TextArea
               classes="tw-w-full font-kalameh-num"
               placeholder="پیام خود را در اینجا برای ما بنویسید..."
-              value={description}
+              defaultValue={description}
               onChange={(e) => {
                 setDescription(e.target.value);
                 setDescriptionState('');
