@@ -61,7 +61,7 @@ export default function UserMenu() {
   }, []);
 
   useEffect(() => {
-    if (showMenu === true) dispatch(showUserMenu(false));
+    dispatch(showUserMenu(false));
   }, [window.location.href]);
 
   return (

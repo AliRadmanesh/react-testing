@@ -148,7 +148,77 @@ export default function Notifications() {
           </div>
         </div>
       </div>
-      <div className="tw-my-4" style={{ display: section === 1 ? 'block' : 'none' }}>
+      <div
+        className="dashboard-table-container font-kalameh-num "
+        style={{ display: section === 1 ? 'block' : 'none' }}
+      >
+        <table className="">
+          <thead className="">
+            <tr className="">
+              <th className="">عنوان</th>
+              <th className="">نوع</th>
+              <th className="">شرکت یا برگزارکننده</th>
+              <th className="">تاریخ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {user_notifications.map((item) => (
+              <tr key={item.id} className="">
+                <td
+                  style={{ borderRadius: '0 12px 12px 0' }}
+                  className="text-primary-hover tw-cursor-pointer"
+                  role="none"
+                  onClick={() => dispatch(showDashboardModal(item))}
+                >
+                  {item.notification.title}
+                </td>
+                <td className="">
+                  {item.data.type == 1 && <span className="text-info">خبری</span>}
+                  {item.data.type == 2 && <span className="text-info">آموزشی</span>}
+                  {item.data.type == 3 && <span className="text-success">شغلی</span>}
+                </td>
+                <td className="">
+                  <img src={item.notification.image} alt="" className="tw-w-8 tw-h-8" />
+                </td>
+                <td style={{ borderRadius: '12px 0 0 12px' }} className="">
+                  {item.created_at}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div
+        className="dashboard-table-container font-kalameh-num"
+        style={{ display: section === 2 ? 'block' : 'none' }}
+      >
+        <table className="">
+          <thead className="">
+            <tr className="">
+              <th className="">عنوان</th>
+              <th className="">تاریخ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {multicast_notifications.map((item) => (
+              <tr key={item.id} className="">
+                <td
+                  style={{ borderRadius: '0 12px 12px 0' }}
+                  className="text-primary-hover tw-cursor-pointer"
+                  role="none"
+                  onClick={() => dispatch(showDashboardModal(item))}
+                >
+                  {item.notification.title}
+                </td>
+                <td style={{ borderRadius: '12px 0 0 12px' }} className="">
+                  {item.created_at}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {/* <div className="tw-my-4" style={{ display: section === 1 ? 'block' : 'none' }}>
         <table className="tw-table-auto font-kalameh-num tw-min-w-full tw-text-right">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
@@ -211,7 +281,7 @@ export default function Notifications() {
             ))}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </Layout>
   );
 }

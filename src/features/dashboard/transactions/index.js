@@ -55,7 +55,85 @@ export default function Transactions() {
           </div>
         </div>
       </div>
-      <div className="tw-my-4" style={{ display: section === 1 ? 'block' : 'none' }}>
+      <div
+        className="dashboard-table-container font-kalameh-num"
+        style={{ display: section === 1 ? 'block' : 'none' }}
+      >
+        <table className="">
+          <thead className="">
+            <tr className="">
+              <th className="">ردیف</th>
+              <th className="">تاریخ برداشت</th>
+              <th className="">
+                مبلغ &nbsp; <span className="">(تومان)</span>
+              </th>
+              <th className="">وضعیت</th>
+              <th className="">تاریخ رسیدگی</th>
+            </tr>
+          </thead>
+          <tbody>
+            {withdrawals_pending.map((item, index) => (
+              <tr key={item.id} className="">
+                <td style={{ borderRadius: '0 12px 12px 0' }} className="">
+                  {index + 1}
+                </td>
+                <td className="">{item.created_at}</td>
+                <td className="">
+                  <span className="text-error">{item.amount} - تومان</span>
+                </td>
+                <td className="">{item.status_title}</td>
+                <td style={{ borderRadius: '12px 0 0 12px' }} className="">
+                  {item.checkout_at === null || item.checkout_at !== '' ? (
+                    <span className="">-</span>
+                  ) : (
+                    <span>{item.checkout_at}</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div
+        className="dashboard-table-container font-kalameh-num"
+        style={{ display: section === 2 ? 'block' : 'none' }}
+      >
+        <table className="">
+          <thead className="">
+            <tr className="">
+              <th className="">ردیف</th>
+              <th className="">تاریخ</th>
+              <th className="">توضیحات</th>
+              <th className="">
+                مبلغ &nbsp; <span className="">(تومان)</span>
+              </th>
+              <th className="">
+                موجودی &nbsp; <span className="">(تومان)</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {transactions.map((item, index) => (
+              <tr key={item.id} className="">
+                <td style={{ borderRadius: '0 12px 12px 0' }} className="">
+                  {index + 1}
+                </td>
+                <td className="">{item.created_at}</td>
+                <td className="">{item.title}</td>
+                <td style={{ borderRadius: '12px 0 0 12px' }} className="">
+                  {item.type === 'pos' ? (
+                    <span className="text-success">{item.amount} + تومان</span>
+                  ) : (
+                    <span className="text-error">{item.amount} - تومان</span>
+                  )}
+                </td>
+                <td className="">{item.after_balance} تومان</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {/* <div className="tw-my-4" style={{ display: section === 1 ? 'block' : 'none' }}>
         <table className="tw-table-auto font-kalameh-num tw-min-w-full tw-text-right tw-overflow-x-scroll">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
@@ -129,7 +207,7 @@ export default function Transactions() {
             ))}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </Layout>
   );
 }
