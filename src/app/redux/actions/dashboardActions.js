@@ -222,3 +222,20 @@ export const removeDashboardFavoritesInterestsJobs = (id) => (dispatch) => {
 
 export const showDashboardMobileMenu = (bool) => (dispatch) =>
   dispatch({ type: 'SHOW_DASHBOARD_MOBILE_MENU', payload: bool });
+
+export const getDashboardTransactions = () => async (dispatch) => {
+  try {
+    const res = await instance.get('/api/v1/web/service/users/dashboard/wallet/transactions');
+    if (res.status === 200) {
+      dispatch({
+        type: 'GET_DASHBOARD_TRANSACTIONS',
+        payload: res.data.data,
+      });
+    } else {
+      toast.error(res.data.message);
+    }
+  } catch (error) {
+    const { data, status } = error.response;
+    toast.error(data.message);
+  }
+};

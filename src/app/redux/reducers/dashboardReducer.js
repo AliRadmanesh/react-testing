@@ -30,7 +30,11 @@ const initialState = {
   },
   purchases: {
     course_purchases: [],
-    course_purchases_approved: [],
+    course_purchases_pending: [],
+  },
+  transactions: {
+    transactions: [],
+    withdrawals_pending: [],
   },
   wallet: {
     purchases: { count: 0, amount: 0 },
@@ -254,6 +258,11 @@ export default (state = initialState, action) => {
           data: initialState.modal.data,
           show: false,
         },
+      };
+    case 'GET_DASHBOARD_TRANSACTIONS':
+      return {
+        ...state,
+        transactions: action.payload,
       };
     default:
       return state;

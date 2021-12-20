@@ -4,15 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import Layout from '../../../common/Layout/dashboard';
 import { getDashboardPurchases } from '../../../app/redux/actions/dashboardActions';
 
-// const Table = () => {
-
-// }
+import { numberWithCommas } from '../../../common/Functions';
 
 export default function Purchases() {
   const [section, setSection] = useState(1);
   const dispatch = useDispatch();
   const {
-    purchases: { course_purchases, course_purchases_approved },
+    purchases: { course_purchases, course_purchases_pending },
   } = useSelector((state) => state.dashboard);
 
   useEffect(() => {
@@ -43,7 +41,7 @@ export default function Purchases() {
             role="none"
             onClick={() => setSection(1)}
           >
-            خرید‌های تأیید شده
+            خرید‌های تأیید نشده
           </div>
           <div
             className={
@@ -69,7 +67,7 @@ export default function Purchases() {
             </tr>
           </thead>
           <tbody>
-            {course_purchases_approved.map((item) => (
+            {course_purchases_pending.map((item) => (
               <tr key={item.id} className="">
                 <td style={{ borderRadius: '0 12px 12px 0' }} className="tw-p-2">
                   {item.course.title}
@@ -77,7 +75,7 @@ export default function Purchases() {
                 <td className="tw-p-2">{item.created_at}</td>
                 <td className="tw-p-2">{item.purchase.track_id}</td>
                 <td style={{ borderRadius: '12px 0 0 12px' }} className="tw-p-2">
-                  {item.purchase.amount} تومان
+                  {numberWithCommas(item.purchase.amount)} تومان
                 </td>
               </tr>
             ))}
@@ -89,9 +87,10 @@ export default function Purchases() {
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
               <th className="tw-p-2 lg:tw-w-1/2">نام دوره آموزشی</th>
-              <th className="tw-p-2 lg:tw-w-1/6">تاریخ خرید</th>
+              <th className="tw-p-2 lg:tw-w-1/12">تاریخ خرید</th>
               <th className="tw-p-2 lg:tw-w-1/6">کد پیگیری</th>
               <th className="tw-p-2 lg:tw-w-1/6">هزینه پرداخت شده</th>
+              <th className="tw-p-2 lg:tw-w-1/12">وضعیت</th>
             </tr>
           </thead>
           <tbody>
@@ -102,8 +101,9 @@ export default function Purchases() {
                 </td>
                 <td className="tw-p-2">{item.created_at}</td>
                 <td className="tw-p-2">{item.purchase.track_id}</td>
+                <td className="tw-p-2">{numberWithCommas(item.purchase.amount)} تومان</td>
                 <td style={{ borderRadius: '12px 0 0 12px' }} className="tw-p-2">
-                  {item.purchase.amount} تومان
+                  {item.status_title}
                 </td>
               </tr>
             ))}
