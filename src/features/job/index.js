@@ -57,7 +57,7 @@ export default function Job() {
           className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
           style={{ width: '100%' }}
         >
-          خرید این دوره
+          مشاهده و ارسال رزومه
         </Link>
       </div>
     </>
