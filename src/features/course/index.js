@@ -107,7 +107,7 @@ export default function Course() {
           <Recommended recommended_courses={recommended_courses} />
         </div>
         <UserComment id={id} user_comment={user_comment} />
-        <Comments id={id} />
+        <Comments />
       </Layout>
       <div
         className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-w-full tw-right-0 tw-px-4"

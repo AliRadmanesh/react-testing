@@ -154,7 +154,7 @@ export default function Header({ data }) {
           </div>
           <div className="tw-pt-4 tw-flex tw-justify-between tw-items-center">
             <p className="text-gray tw-text-xs tw-font-normal">سفر کاری</p>
-            <p className="text-dark tw-text-xs tw-font-normal">Must come from server</p>
+            <p className="text-dark tw-text-xs tw-font-normal">-</p>
           </div>
         </div>
       </div>

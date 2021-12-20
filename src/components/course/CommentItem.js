@@ -59,7 +59,7 @@ function CommentItem({ props }) {
             <button
               className="tw-flex tw-items-center tw-p-0 tw-mx-2"
               onClick={() =>
-                dispatch(likeComment(new URL(window.location).searchParams.get('id'), id))
+                dispatch(likeComment(parseInt(window.location.href.split('course/')[1], 10), id))
               }
             >
               <img src={user_like === 1 ? likedIcon : likeIcon} alt="" className="tw-ml-2" />
@@ -68,7 +68,7 @@ function CommentItem({ props }) {
             <button
               className="tw-flex tw-items-center tw-p-0 tw-mx-2"
               onClick={() =>
-                dispatch(dislikeComment(new URL(window.location).searchParams.get('id'), id))
+                dispatch(dislikeComment(parseInt(window.location.href.split('course/')[1], 10), id))
               }
             >
               <img
@@ -91,7 +91,9 @@ function CommentItem({ props }) {
       <div className="tw-flex tw-jsutify-center tw-items-center md:tw-hidden font-kalameh-num">
         <button
           className="tw-flex tw-items-center tw-p-0 tw-mx-2"
-          onClick={() => dispatch(likeComment(new URL(window.location).searchParams.get('id'), id))}
+          onClick={() =>
+            dispatch(likeComment(parseInt(window.location.href.split('course/')[1], 10), id))
+          }
         >
           <img src={user_like === 1 ? likedIcon : likeIcon} alt="" className="tw-ml-2" />
           <span className="font-kalameh-num tw-text-xs text-dark 2xl:tw-text-base">{like}</span>
@@ -99,7 +101,7 @@ function CommentItem({ props }) {
         <button
           className="tw-flex tw-items-center tw-p-0 tw-mx-2"
           onClick={() =>
-            dispatch(dislikeComment(new URL(window.location).searchParams.get('id'), id))
+            dispatch(dislikeComment(parseInt(window.location.href.split('course/')[1], 10), id))
           }
         >
           <img src={user_dislike === 1 ? dislikedIcon : dislikeIcon} alt="" className="tw-ml-2" />

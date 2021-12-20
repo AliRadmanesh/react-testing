@@ -6,7 +6,7 @@ import Loading from '../global/Loading';
 import { getCourseComments, pageComment } from '../../app/redux/actions/courseActions';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
-export default function Comments({ id }) {
+export default function Comments() {
   const dispatch = useDispatch();
 
   const {
@@ -19,7 +19,9 @@ export default function Comments({ id }) {
   } = useSelector((state) => state.course);
 
   useEffect(() => {
-    dispatch(getCourseComments(id, sort, current));
+    dispatch(
+      getCourseComments(parseInt(window.location.href.split('course/')[1], 10), sort, current),
+    );
   }, [current, sort]);
 
   useEffect(() => {
