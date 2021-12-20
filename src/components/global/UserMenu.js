@@ -38,7 +38,7 @@ export default function UserMenu() {
       if (res.status === 200) {
         window.localStorage.removeItem('userPhone');
         window.localStorage.removeItem('userToken');
-        history.push('../');
+        history.push('/');
         window.location.reload();
       }
     } catch (error) {
