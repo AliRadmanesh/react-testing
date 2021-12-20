@@ -36,7 +36,12 @@ export default function RecommendedCourses({ data }) {
               کارساز برای یادگیری شما در این حوزه؛ این آموزش ها را پیشنهاد می کند
             </p>
           </div>
-          <img src={illustration} alt="" style={{ width: '360px ' }} />
+          <img
+            src={illustration}
+            alt=""
+            style={{ width: '360px ' }}
+            className="tw-mt-4 2xl:tw-mt-8"
+          />
         </div>
       </div>
       <Swiper

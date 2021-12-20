@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable eqeqeq */
 import React, { useState, useEffect, useRef } from 'react';
@@ -24,64 +25,62 @@ const Modal = () => {
   return (
     <>
       <div
-        className="tw-fixed tw-top-0 tw-right-0 tw-h-full tw-w-full tw-place-items-center tw-items-center modal-box-container"
+        className="tw-fixed tw-top-0 tw-right-0 tw-h-full tw-w-full modal-box-container tw-p-4"
         style={{
           zIndex: '9999',
           backgroundColor: 'rgba(0,0,0,0.5)',
           display: show ? 'grid' : 'none',
+          placeItems: 'center',
         }}
-      />
-      <div
-        style={{ zIndex: '999999', display: show ? 'block' : 'none' }}
-        className="modal-box tw-fixed tw-m-auto tw-w-full tw-h-auto xl:tw-h-3/4 md:tw-w-5/6 xl:tw-w-3/4 2xl:tw-w-2/3 "
       >
-        <button
-          className="tw-p-0 tw-mb-2 tw-block tw-w-auto"
-          onClick={() => dispatch(closeDashboardModal())}
+        <div
+          style={{ zIndex: '999999' }}
+          className="tw-relative tw-w-full md:tw-w-5/6 xl:tw-w-3/4 2xl:tw-w-2/3"
         >
-          <img src={closeIcon} alt="" />
-        </button>
-        <div className="tw-rounded-xl bg-light font-kalameh-num text-dark">
-          {/* <img
+          <button
+            className="tw-p-0 tw-mb-2 tw-block tw-w-auto"
+            onClick={() => dispatch(closeDashboardModal())}
+          >
+            <img src={closeIcon} alt="" />
+          </button>
+          <div className="tw-rounded-xl bg-light font-kalameh-num text-dark tw-p-4">
+            {/* <img
             src={(data.notification && data.notification.image) || ''}
             alt=""
             style={{ borderRadius: '12px 0 0 12px' }}
           /> */}
-          <div className="tw-p-4">
-            <div className="tw-flex tw-justify-between tw-items-center">
-              <p className="tw-text-base 2xl:tw-text-xl tw-font-medium 2xl:tw-font-semibold">
-                {data.notification.title}
-              </p>
-              <p className="tw-text-xs 2xl:tw-text-base tw-font-normal text-gray">
-                {data.created_at}
-              </p>
+            <div className="">
+              <div className="tw-flex tw-justify-between tw-items-center">
+                <p className="tw-text-base 2xl:tw-text-xl tw-font-medium 2xl:tw-font-semibold">
+                  {data.notification.title}
+                </p>
+                <p className="tw-text-xs 2xl:tw-text-base tw-font-normal text-gray">
+                  {data.created_at}
+                </p>
+              </div>
+              <p className="tw-text-sm tw-font-normal 2xl:tw-text-lg">{data.notification.body}</p>
             </div>
-            <p className="tw-text-sm tw-font-normal 2xl:tw-text-lg">{data.notification.body}</p>
-          </div>
-          <div className="tw-flex tw-justify-center">
-            {data.data.type === 1 && data.data.link_url !== '' && (
-              <Link
-                to={{ pathname: data.data.link_url }}
-                target="_blank"
-                className="button-primary tw-p-4"
-              >
-                {data.data.link_title}
-              </Link>
-            )}
-            {data.data.type === 2 && (
-              <Link
-                to={`/course/${data.data.id}`}
-                target="_blank"
-                className="button-primary tw-p-4"
-              >
-                جزئیات
-              </Link>
-            )}
-            {data.data.type === 3 && (
-              <Link to={`/job/${data.data.id}`} target="_blank" className="button-primary tw-p-4">
-                جزئیات
-              </Link>
-            )}
+            <div className="tw-flex tw-justify-center">
+              {data.data.type === '1' && data.data.link_url && (
+                <Link className="button-primary tw-p-4" to={{ pathname: data.data.link_url }}>
+                  {data.data.link_title}
+                </Link>
+              )}
+              {data.data.type === '2' && (
+                <Link
+                  to={`/course/${data.data.id}`}
+                  target="_blank"
+                  className="button-primary tw-p-4"
+                >
+                  جزئیات
+                </Link>
+              )}
+              {data.data.type === '3' && (
+                <Link to={`/job/${data.data.id}`} target="_blank" className="button-primary tw-p-4">
+                  جزئیات
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </div>
