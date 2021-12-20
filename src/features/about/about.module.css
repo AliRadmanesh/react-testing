@@ -18,6 +18,7 @@
 }
 
 .aboutTitle {
+  font-family: 'KalamehNum';
   @apply tw-text-base tw-font-semibold tw-font-kalameh lg:tw-text-xl tw-mb-2;
 }
 
