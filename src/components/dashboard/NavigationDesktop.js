@@ -2,9 +2,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import { Link, useHistory } from 'react-router-dom';
 import instance from '../../app/instance';
-
 import NavigationItem from './NavigationItem';
-
 import dashboardIcon from '../../assets/icons/Dashboard.svg';
 import dashboardFillIcon from '../../assets/icons/Dashboard Fill.svg';
 import favoritesIcon from '../../assets/icons/Favorites.svg';

@@ -38,12 +38,15 @@ import Wallet from '../../features/dashboard/wallet';
 import Main from '../../features/dashboard/main';
 import Unauthenticated from '../../features/unauthenticated';
 
+import Test from '../../features/test';
+
 function AppRouter() {
   return (
     <div className="App">
       <Router basename="/">
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/test" component={Test} />
           <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/faq" component={FAQ} />

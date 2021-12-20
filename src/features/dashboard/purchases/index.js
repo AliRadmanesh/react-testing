@@ -82,7 +82,7 @@ export default function Purchases() {
           </tbody>
         </table>
       </div>
-      <div className="tw-my-4" style={{ display: section === 2 ? 'block' : 'none' }}>
+      {/* <div className="tw-my-4" style={{ display: section === 2 ? 'block' : 'none' }}>
         <table className="tw-table-auto font-kalameh-num tw-min-w-full tw-text-right tw-overflow-x-scroll">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
             <tr className="">
@@ -103,6 +103,37 @@ export default function Purchases() {
                 <td className="tw-p-2">{item.purchase.track_id}</td>
                 <td className="tw-p-2">{numberWithCommas(item.purchase.amount)} تومان</td>
                 <td style={{ borderRadius: '12px 0 0 12px' }} className="tw-p-2">
+                  {item.status_title}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div> */}
+      <div
+        className="dashboard-table-container font-kalameh-num"
+        style={{ display: section === 2 ? 'block' : 'none' }}
+      >
+        <table className="">
+          <thead className="">
+            <tr className="">
+              <th className="">نام دوره آموزشی</th>
+              <th className="">تاریخ خرید</th>
+              <th className="">کد پیگیری</th>
+              <th className="">هزینه پرداخت شده</th>
+              <th className="">وضعیت</th>
+            </tr>
+          </thead>
+          <tbody>
+            {course_purchases.map((item) => (
+              <tr key={item.id} className="">
+                <td style={{ borderRadius: '0 12px 12px 0' }} className="">
+                  {item.course.title}
+                </td>
+                <td className="">{item.created_at}</td>
+                <td className="">{item.purchase.track_id}</td>
+                <td className="">{numberWithCommas(item.purchase.amount)} تومان</td>
+                <td style={{ borderRadius: '12px 0 0 12px' }} className="">
                   {item.status_title}
                 </td>
               </tr>

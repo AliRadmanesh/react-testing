@@ -110,3 +110,102 @@ tr:last-child td:last-child {
     box-shadow: none;
   }
 }
+
+.ks-table-responsive::after,
+.ks-table-responsive::before {
+  box-sizing: border-box !important;
+}
+
+@media (max-screen: 768px) {
+  .ks-table-responsive {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: scroll !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: -ms-autohiding-scrollbar !important;
+  }
+
+  .ks-table-responsive .table {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem !important;
+    /* background-color: transparent !important; */
+  }
+}
+
+.dashboard-table-container {
+  display: block;
+  padding: 1rem;
+
+  table {
+    width: 100%;
+
+    tr:not(thead tr) {
+      &:nth-child(odd) {
+        background: #f0f2f2;
+      }
+    }
+
+    th {
+      color: $karsaz-primary;
+    }
+
+    th {
+      text-align: right;
+    }
+
+    th,
+    td {
+      padding: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    table {
+      display: block;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      margin: 0 auto;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: #118ab2 #f4f4f4;
+
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f4f4f4;
+        border-radius: 50px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #118ab2;
+        border-radius: 50px;
+      }
+    }
+  }
+
+  /* Regular responsive approach for fonts */
+  table {
+    th {
+      font-size: 14px;
+      font-weight: 500;
+
+      @media (min-width: 1536px) {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+    td {
+      font-size: 12px;
+      font-weight: 400;
+
+      @media (min-width: 1536px) {
+        font-size: 16px;
+      }
+    }
+  }
+}

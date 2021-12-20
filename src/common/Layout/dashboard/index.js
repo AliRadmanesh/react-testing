@@ -64,7 +64,9 @@ export default function Layout({ children }) {
         <div className="tw-grid tw-gap-x-6 tw-items-start dashboard-content container tw-mb-60">
           <NavigationDesktop />
           <div className="">
-            <UserRow />
+            <div className="tw-w-screen tw-relative lg:tw-static lg:tw-w-auto lg:tw-right-0 lg:tw-px-0 tw--right-4 tw-px-4">
+              <UserRow />
+            </div>
             <div className="tw-py-4">{children}</div>
           </div>
         </div>
