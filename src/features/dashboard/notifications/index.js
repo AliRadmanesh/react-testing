@@ -62,7 +62,11 @@ const Modal = () => {
             </div>
             <div className="tw-flex tw-justify-center">
               {data.data.type === '1' && data.data.link_url && (
-                <Link className="button-primary tw-p-4" to={{ pathname: data.data.link_url }}>
+                <Link
+                  className="button-primary tw-p-4"
+                  to={{ pathname: data.data.link_url }}
+                  target="_blank"
+                >
                   {data.data.link_title}
                 </Link>
               )}
