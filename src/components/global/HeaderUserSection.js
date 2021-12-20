@@ -31,7 +31,7 @@ export default function HeaderUserSection() {
         ) : (
           <button
             className="tw-flex tw-p-0 tw-items-center"
-            onClick={() => dispatch(showUserMenu(!showMenu))}
+            onClick={() => dispatch(showUserMenu(true))}
           >
             <img
               src={data.profile.image}

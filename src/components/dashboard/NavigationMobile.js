@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import instance from '../../app/instance';
 import NavigationItem from './NavigationItem';
@@ -23,7 +23,6 @@ import notificationsFillIcon from '../../assets/icons/Notification Fill.svg';
 import editIcon from '../../assets/icons/Edit.svg';
 import editFillIcon from '../../assets/icons/Edit Fill.svg';
 import close from '../../assets/icons/Close-Gray.svg';
-import { showUserMenu } from '../../app/redux/actions/headerActions';
 
 import { showDashboardMobileMenu } from '../../app/redux/actions/dashboardActions';
 
@@ -31,6 +30,8 @@ export default function NavigationMobile() {
   const dispatch = useDispatch();
   const section = window.location.href.split('/dashboard/')[1];
   const history = useHistory();
+
+  const { show } = useSelector((state) => state.dashboard.navigation.mobile);
 
   const logout = async () => {
     try {
@@ -46,6 +47,12 @@ export default function NavigationMobile() {
       toast.error(data.message);
     }
   };
+
+  useEffect(() => {
+    if (show) {
+      dispatch(showDashboardMobileMenu(false));
+    }
+  }, [window.location.href]);
 
   return (
     <div className="bg-light tw-h-full tw-flex tw-flex-col lg:tw-hidden tw-justify-between">
