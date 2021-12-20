@@ -15,7 +15,7 @@ import {
 
 import closeIcon from '../../../assets/icons/Close Fill Light.svg';
 
-const Modal = () => {
+export const Modal = () => {
   const {
     modal: { show, data },
   } = useSelector((state) => state.dashboard);

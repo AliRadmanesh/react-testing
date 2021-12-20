@@ -4,7 +4,13 @@ import Layout from '../../../common/Layout/dashboard';
 import { WalletCard, BookmarksCard, CartCard } from '../../../components/dashboard/InfoCards';
 
 import notificationsFillIcon from '../../../assets/icons/Notification Fill.svg';
-import { getDashboardData } from '../../../app/redux/actions/dashboardActions';
+import {
+  getDashboardData,
+  closeDashboardModal,
+  showDashboardModal,
+} from '../../../app/redux/actions/dashboardActions';
+
+import { Modal } from '../notifications';
 
 const TableItem = ({ props }) => {
   const temp = 'to prevent prettier brackets removal';
@@ -15,9 +21,15 @@ const TableItem = ({ props }) => {
     notification: { title, body },
   } = props;
 
+  const dispatch = useDispatch();
+
   return (
     <div className="dashboard-main-table-item tw-rounded-xl tw-p-4 tw-mt-2 tw-grid tw-items-center tw-grid-cols-2 2xl:tw-text-base 2xl:tw-font-normal">
-      <p className="text-black tw-truncate">
+      <p
+        className="text-black tw-truncate text-primary-hover tw-cursor-pointer"
+        role="none"
+        onClick={() => dispatch(showDashboardModal(props))}
+      >
         {title}: {body}
       </p>
       <p className="text-gray tw-truncate tw-text-left">{created_at}</p>
@@ -49,6 +61,11 @@ export default function Main() {
       stat: { purchases, bookmarks, wallet },
     },
   } = useSelector((state) => state.dashboard);
+  const {
+    modal: { show },
+  } = useSelector((state) => state.dashboard);
+  const [props, setProps] = useState(null);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -57,6 +74,7 @@ export default function Main() {
 
   return (
     <Layout>
+      <Modal show={show} props={props !== null && props} />
       <div className="tw-grid tw-gap-4 tw-grid-cols-1 md:tw-grid-cols-3 tw-py-4 tw-rounded-xl">
         <CartCard purchases={purchases} />
         <BookmarksCard bookmarks={bookmarks} />
