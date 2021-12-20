@@ -22,7 +22,7 @@ export default function Bookmarks() {
       <div className="tw-my-4 tw-relative">
         {/* Indicator Line */}
         <div
-          className="tw-absolute bg-primary 2xl:tw-w-28 tw-w-20 tw-h-1 tw-top-0"
+          className="tw-absolute bg-primary 2xl:tw-w-28 lg:tw-w-20 tw-w-16 tw-h-1 tw-top-0"
           style={{
             borderRadius: '0 0 12px 12px',
             right: section === 1 ? '25%' : '75%',
