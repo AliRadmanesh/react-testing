@@ -139,8 +139,10 @@ export default function Header({ data }) {
             <p className="text-gray tw-text-xs tw-font-normal">نوع قرارداد</p>
             <p className="text-dark tw-text-xs tw-font-normal">{contract_type}</p>
           </div>
-          <div className="tw-pt-4 tw-flex tw-justify-between tw-items-center">
+          <div className="tw-pt-4 tw-flex tw-justify-right tw-items-center">
             <p className="text-gray tw-text-xs tw-font-normal">روزها و ساعت‌های کاری</p>
+          </div>
+          <div className="tw-flex tw-pt-4 tw-text-justify">
             <p className="text-dark tw-text-xs tw-font-normal">{work_days}</p>
           </div>
           <div className="tw-pt-4 tw-flex tw-justify-between tw-items-center">
