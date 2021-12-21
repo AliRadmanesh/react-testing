@@ -85,25 +85,25 @@ export default function HomeColleagues() {
                 </p>
               </span>
               <SwiperSlide>
-                <img style={{}} src={eseminar} alt="" />
+                <img src={eseminar} alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img style={{}} src={evand} alt="" />
+                <img src={evand} alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img style={{}} src={excelpedia} alt="" />
+                <img src={excelpedia} alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img style={{}} src={hamyar} alt="" />
+                <img src={hamyar} alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img style={{}} src={maktabkhooneh} alt="" />
+                <img src={maktabkhooneh} alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img style={{}} src={moobemoo} alt="" />
+                <img src={moobemoo} alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img style={{}} src={shahid} alt="" />
+                <img src={shahid} alt="" />
               </SwiperSlide>
             </Swiper>
           </div>

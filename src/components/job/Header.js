@@ -53,7 +53,7 @@ export default function Header({ data }) {
                   </p>
                 </div>
               </div>
-              <div style={{}}>
+              <div>
                 <button
                   className="tw-bg-transparent tw-p-0"
                   onClick={() => dispatch(bookmarkJob(id))}

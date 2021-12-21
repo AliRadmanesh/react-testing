@@ -24,7 +24,7 @@ export default function LeftBanner({ stage }) {
   if (stage === 5)
     return (
       <div className="auth-banner tw-hidden lg:tw-grid tw-place-items-center">
-        <div className="tw-w-5/6 xl:tw-w-4/5 tw-relative" style={{}}>
+        <div className="tw-w-5/6 xl:tw-w-4/5 tw-relative">
           <p className="tw-font-bold tw-text-center font-kalameh-num text-light tw-text-3xl 2xl:tw-text-5xl tw-mb-8 2xl:tw-mb-12">
             به جمع {data.users} دانشجو کارساز بپیوندید
           </p>

@@ -113,7 +113,7 @@ export default function MenuDesktop() {
                   backgroundColor: show ? 'rgba(17, 138, 178, .1)' : 'transparent',
                 }}
               >
-                <div className="hoverer tw-z-0 tw-relative font-kalameh-num" style={{}}>
+                <div className="hoverer tw-z-0 tw-relative font-kalameh-num">
                   <input
                     className="tw-block haeder-search-box"
                     placeholder="جستجوی دوره، مدرس، آموزشگاه..."

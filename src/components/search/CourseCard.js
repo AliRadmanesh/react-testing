@@ -96,7 +96,7 @@ export default function CourseCard({
               </div>
             </div>
           </div>
-          <Link to={`/course/${id}`} className="button-primary" style={{}}>
+          <Link to={`/course/${id}`} className="button-primary">
             مشاهده بیشتر
           </Link>
         </div>

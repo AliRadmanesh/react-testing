@@ -118,7 +118,7 @@ export default function Header({
                 className="tw-p-6 md:tw-hidden tw-rounded-xl"
                 style={{ backgroundColor: '#118ab222' }}
               >
-                <img src={compareIcon} alt="" style={{}} className="tw-w-8" />
+                <img src={compareIcon} alt="" className="tw-w-8" />
               </Link>
               <button
                 className="button-primary button-padding font-kalameh-num tw-mr-2 tw-w-full md:tw-w-auto tw-text-center"
@@ -135,9 +135,9 @@ export default function Header({
           onClick={checkAndbookmarkCourse}
         >
           {is_bookmarked ? (
-            <img src={bookmarkfillIcon} alt="" style={{}} className="tw-w-4" />
+            <img src={bookmarkfillIcon} alt="" className="tw-w-4" />
           ) : (
-            <img src={bookmarkIcon} alt="" style={{}} className="tw-w-4" />
+            <img src={bookmarkIcon} alt="" className="tw-w-4" />
           )}
         </button>
       </div>

@@ -9,7 +9,7 @@ export default function Login() {
   const [stage, setStage] = useState(1);
 
   return (
-    <div className="tw-overflow-x-hidden" style={{}}>
+    <div className="tw-overflow-x-hidden">
       <AuthHeader />
       <div className="auth-gridder tw-grid tw-h-full" style={{ minHeight: window.innerHeight }}>
         <div className="bg-light tw-grid tw-place-items-center">

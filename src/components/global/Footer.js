@@ -24,8 +24,8 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="tw-mb-16 md:tw-mb-8 bg-light" style={{}}>
-      <div className="tw-grid bg-white footer-gridder" style={{}}>
+    <footer className="tw-mb-16 md:tw-mb-8 bg-light">
+      <div className="tw-grid bg-white footer-gridder">
         <div
           style={{
             boxShadow: '0 -10px 8px -8px #eee',
@@ -64,10 +64,7 @@ function Footer() {
           <div />
         </div>
       </div>
-      <div
-        className="bg-white container tw-px-4 tw-py-10 tw-grid tw-grid-cols-1 lg:tw-grid-cols-3 tw-gap-x-16 tw-gap-y-8"
-        style={{}}
-      >
+      <div className="bg-white container tw-px-4 tw-py-10 tw-grid tw-grid-cols-1 lg:tw-grid-cols-3 tw-gap-x-16 tw-gap-y-8">
         <div>
           <p
             className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg leading-2"

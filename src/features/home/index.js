@@ -41,7 +41,7 @@ const Home = () => {
         className="tw-text-center main-landing top-shadow-inner tw-flex-col tw-items-center tw-justify-center tw-h-auto tw-flex"
       >
         <div className="main-landing-content tw-w-full md:tw-w-1/2 md:tw-mx-auto">
-          <div className="tw-mt-0 2xl:tw-mt-16" style={{}}>
+          <div className="tw-mt-0 2xl:tw-mt-16">
             <p className="text-blue tw-text-2xl 2xl:tw-text-5xl tw-font-extrabold font-kalameh tw-mb-8 2xl:tw-mb-16 tw-mt-6 md:tw-mt-0">
               کارساز، بستری برای یادگیری
             </p>

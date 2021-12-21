@@ -42,10 +42,7 @@ const CourseCard = ({ props }) => {
             <p className="tw-font-bold lg:tw-font-black font-kalameh-num tw-text-base lg:tw-text-lg text-dark">
               {title}
             </p>
-            <p
-              className="card-description text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg font-iranyekan-num"
-              style={{}}
-            >
+            <p className="card-description text-gray tw-mt-2 tw-text-sm 2xl:tw-text-lg font-iranyekan-num">
               {description}
             </p>
           </div>

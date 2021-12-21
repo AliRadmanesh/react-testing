@@ -25,7 +25,7 @@ export default function RecommendedCourses({ data }) {
         </p>
       </div>
       <div className="tw-hidden lg:tw-flex">
-        <div className="tw-w-full illustration tw-flex-col tw-justify-between tw-py-12" style={{}}>
+        <div className="tw-w-full illustration tw-flex-col tw-justify-between tw-py-12">
           <div>
             <p className="font-kalameh-num tw-text-xl tw-font-extrabold 2xl:tw-text-3xl 2xl:tw-font-black text-white tw-mb-4 2xl:tw-mb-8">
               آموزش‌های مرتبط

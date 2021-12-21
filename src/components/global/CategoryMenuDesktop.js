@@ -53,7 +53,6 @@ export default function CategoryMenuDesktop() {
                   }
                   onClick={() => setActive(ci.id)}
                   role="none"
-                  style={{}}
                 >
                   <div className="tw-flex tw-items-center">
                     <img

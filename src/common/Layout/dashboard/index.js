@@ -60,7 +60,7 @@ export default function Layout({ children }) {
       >
         <NavigationMobile />
       </div>
-      <div className="bg-light tw-shadow-inner tw-pt-8" style={{}}>
+      <div className="bg-light tw-shadow-inner tw-pt-8">
         <div className="tw-grid tw-gap-x-6 tw-items-start dashboard-content container tw-mb-60">
           <NavigationDesktop />
           <div className="tw-overflow-x-hidden">

@@ -48,7 +48,7 @@ const MenuDesktop = () => {
 
   return (
     <>
-      <div className="tw-w-full" style={{}}>
+      <div className="tw-w-full">
         <div
           id="desktop-menu"
           className="tw-hidden container tw-w-full xl:tw-flex tw-justify-between tw-items-center tw-py-4 2xl:tw-py-8"
@@ -120,7 +120,7 @@ const MenuDesktop = () => {
                   backgroundColor: show ? 'rgba(17, 138, 178, .1)' : 'transparent',
                 }}
               >
-                <div className="hoverer tw-z-0 tw-relative font-kalameh-num" style={{}}>
+                <div className="hoverer tw-z-0 tw-relative font-kalameh-num">
                   <input
                     className="tw-block"
                     placeholder="جستجوی دوره، مدرس، آموزشگاه..."

@@ -83,7 +83,7 @@ export default function CompleteInfo() {
   };
 
   return (
-    <div className="tw-overflow-x-hidden font-kalameh-num" style={{}}>
+    <div className="tw-overflow-x-hidden font-kalameh-num">
       <AuthHeader />
       <div className="auth-gridder tw-grid tw-h-full" style={{ minHeight: window.innerHeight }}>
         <div className="bg-light tw-grid tw-place-items-center">
