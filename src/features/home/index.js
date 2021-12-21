@@ -43,11 +43,12 @@ const Home = () => {
         <div className="main-landing-content tw-w-full md:tw-w-1/2 md:tw-mx-auto">
           <div className="tw-mt-0 2xl:tw-mt-16">
             <p className="text-blue tw-text-2xl 2xl:tw-text-5xl tw-font-extrabold font-kalameh tw-mb-8 2xl:tw-mb-16 tw-mt-6 md:tw-mt-0">
-              کارساز، بستری برای یادگیری
+              کارساز، بستری برای پیشرفت
             </p>
             <p className="text-black tw-text-sm 2xl:tw-text-xl font-iranyekan tw-font-normal tw-w-4/5 tw-max-w-lg lg:tw-max-w-3xl tw-mx-auto tw-mb-8 2xl:tw-mb-16">
-              کارساز بستری جامع برای یادگیری می‌باشد، در کارساز در هر زمینه‌ای آموزش ببینید و از
-              فرصت‌های شغلی کارساز برای اشتغال خود به سادگی استفاده کنید!
+              کارساز بستری جامع برای پیشرفت است. در کارساز آموزش‌ها را با هم مقایسه کنید و
+              مناسب‌ترین را با تخفیف ویژه‌ی کارساز بخرید و با استفاده از فرصت‌های شغلی کارساز شغل
+              مناسب خود را بیابید.
             </p>
           </div>
           <GridContainer />
