@@ -1,16 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useTimer } from 'react-timer-hook';
 import useDigitInput from 'react-digit-input';
-import Timer from '../../../components/auth/Timer';
 import AuthHeader from '../../../components/auth/AuthHeader';
 import LeftBanner from '../../../components/auth/LeftBanner';
 
 export default function RegisterCode() {
-  const stage = 1;
   const history = useHistory();
   const [show, setShow] = useState(false);
   // Timer setup
@@ -40,10 +38,7 @@ export default function RegisterCode() {
       const data = {
         mobile: window.localStorage.getItem('userPhone'),
       };
-      const res = await axios.post(
-        'https://develop.karsazapp.ir/api/v1/web/service/auth/mobile/check',
-        data,
-      );
+      await axios.post('https://develop.karsazapp.ir/api/v1/web/service/auth/mobile/check', data);
     } catch (error) {
       const { status, data } = error.response;
       if (status === 422) toast.error(data.message);

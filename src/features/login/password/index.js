@@ -9,7 +9,6 @@ import viewIcon from '../../../assets/icons/View.svg';
 import dontViewIcon from "../../../assets/icons/don't view.svg";
 
 export default function LoginPassword() {
-  const stage = 1;
   const history = useHistory();
   const [password, setPassword] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
@@ -18,7 +17,7 @@ export default function LoginPassword() {
     if (!window.localStorage.getItem('userPhone')) {
       history.push('../auth');
     }
-  }, []);
+  }, [history]);
 
   const onChange = (event) => setPassword(event.target.value);
 
@@ -77,7 +76,7 @@ export default function LoginPassword() {
     }
   };
 
-  const forgetClick = async (event) => {
+  const forgetClick = async () => {
     if (localStorage.getItem('userPhone')) {
       try {
         const data = {

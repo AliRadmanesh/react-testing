@@ -9,7 +9,6 @@ import viewIcon from '../../../assets/icons/View.svg';
 import dontViewIcon from "../../../assets/icons/don't view.svg";
 
 export default function CompleteInfo() {
-  const stage = 1;
   const [firstname, setFirstname] = useState(null);
   const [lastname, setLastname] = useState(null);
   const [password, setPassword] = useState(null);

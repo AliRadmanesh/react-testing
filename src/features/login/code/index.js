@@ -34,7 +34,7 @@ export default function LoginCode() {
     if (!window.localStorage.getItem('userPhone')) {
       history.push('../auth');
     }
-  }, []);
+  }, [history]);
 
   const resend = async () => {
     try {
