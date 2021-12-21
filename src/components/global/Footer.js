@@ -24,7 +24,7 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="tw-pb-12 bg-light" style={{}}>
+    <footer className="tw-mb-16 md:tw-mb-8 bg-light" style={{}}>
       <div className="tw-grid bg-white footer-gridder" style={{}}>
         <div
           className=""
@@ -112,11 +112,11 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/blogs">
+                <a href="https://blog.karsaz.app" target="_blank" rel="noreferrer">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     وبلاگ
                   </p>
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/about">
@@ -160,14 +160,22 @@ function Footer() {
         <div className="tw-px-8 tw-flex tw-flex-col tw-justify-between md:tw-justify-start">
           <h4 className="text-blue tw-mb-2">اپلیکیشن کارساز</h4>
           <p className=" tw-text-justify">
-            دسترسی آسان و راحت به دوره های آموزشی و فرصت های شغلی. با استفاده از اپلیکیشن کارساز،
-            همه آموزش ها توی جیبته.
+            دسترسی آسان و راحت به دوره‌های آموزشی و فرصت‌های شغلی. با استفاده از اپلیکیشن کارساز،
+            همه‌ی آموزش‌ها تو جیبته!
           </p>
           <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 tw-py-4 tw-max-w-sm tw-mx-auto">
-            <div className="">
-              <img src={bazaar} alt="لینک بازار" style={{ width: '100%' }} />
+            <div>
+              <a href="https://cafebazaar.ir/app/com.karsaz.app" target="_blank" rel="noreferrer">
+                <img src={bazaar} alt="لینک بازار" style={{ width: '100%' }} />
+              </a>
               <div className="tw-my-3" />
-              <img src={playstore} alt="لینک استور" style={{ width: '100%' }} />
+              <a
+                href="https://play.google.com/store/apps/details?id=com.karsaz.app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={playstore} alt="لینک پلی استور" style={{ width: '100%' }} />
+              </a>
             </div>
             <div className="tw-flex tw-justify-center tw-items-center">
               <img src={enamad} alt="" />
@@ -180,16 +188,25 @@ function Footer() {
         style={{ borderTop: '1px solid #E2E2E2' }}
       >
         <div
-          className="tw-flex tw-justify-between tw-mx-auto tw-mb-4 lg:tw-mt-2"
+          className="tw-flex tw-justify-center tw-mx-auto tw-mb-4 lg:tw-mt-2"
           style={{ width: '168px' }}
         >
-          <img src={TW} alt="" />
-          <img src={IG} alt="" />
-          <img src={LI} alt="" />
-          <img src={FB} alt="" />
+          {/* <img src={TW} alt="" /> */}
+          <a
+            href="https://www.instagram.com/karsaz.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="tw-ml-4"
+          >
+            <img src={IG} alt="" />
+          </a>
+          <a href="https://www.linkedin.com/company/karsazapp/" target="_blank" rel="noreferrer">
+            <img src={LI} alt="" />
+          </a>
+          {/* <img src={FB} alt="" /> */}
         </div>
         <div className="tw-text-center tw-mx-12 lg:tw-mx-auto copyright-container">
-          <p>اين وبسايت متعلق به کارساز بوده و تمامی حقوق آن محفوظ است.</p>
+          <p>&copy; اين وبسايت متعلق به کارساز بوده و تمامی حقوق آن محفوظ است.</p>
         </div>
       </div>
     </footer>
