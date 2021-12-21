@@ -258,13 +258,6 @@ input,
   }
 }
 
-button,
-input,
-textarea {
-  //margin-bottom: .75rem;
-  // display: block;
-}
-
 input:not(input.mobile-menu-search, input.landing-search, #auth-header-desktop-search input),
 .input {
   background-color: #f0f2f2;
@@ -499,9 +492,6 @@ footer {
   p,
   li {
     font-family: KalamehWeb;
-  }
-
-  ul {
   }
 
   ul li {
@@ -778,10 +768,6 @@ footer {
   opacity: 1;
 }
 
-.job-course-container .swiper-slide {
-  // width: clamp(328px, 45%, 488px) !important;
-}
-
 .leaflet-container {
   width: 100%;
   min-height: 500px;
@@ -848,6 +834,8 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 html {
