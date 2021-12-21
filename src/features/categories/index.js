@@ -28,9 +28,9 @@ export default function Categories() {
   return (
     <div className="bg-light">
       <Layout title="دسته‌بندی‌ها" text="دسترسی به همه دسته‌بندی‌های کارساز">
-        <div className="container tw-grid tw-my-6 tw-grid-cols-1 md:tw-grid-cols-3 xl:tw-grid-cols-4 tw-gap-x-4 tw-gap-y-6 tw-justify-center">
-          {categories.length !== 0 ? (
-            categories.map((ee) => (
+        {categories.length !== 0 ? (
+          <div className="container tw-grid tw-my-6 tw-grid-cols-1 md:tw-grid-cols-3 xl:tw-grid-cols-4 tw-gap-x-4 tw-gap-y-6 tw-justify-center">
+            {categories.map((ee) => (
               <CategoryCard
                 key={ee.id}
                 courses={ee.courses}
@@ -38,13 +38,13 @@ export default function Categories() {
                 sub={ee.sub}
                 image={ee.image}
               />
-            ))
-          ) : (
-            <div className="container">
-              <p>موردی برای نمایش وجود ندارد.</p>
-            </div>
-          )}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="container">
+            <p className="tw-font-yekan tw-font-bold">موردی برای نمایش وجود ندارد :(</p>
+          </div>
+        )}
       </Layout>
     </div>
   );
