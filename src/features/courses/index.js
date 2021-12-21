@@ -1,11 +1,10 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable radix */
 /* eslint-disable eqeqeq */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import Layout from '../../common/Layout/chill';
 import SearchBar from '../../components/global/SearchBar';
@@ -16,7 +15,6 @@ import FilterMenuDesktop from '../../components/courses/FilterMenuDesktop';
 import SortDropdown from '../../components/courses/SortDropdown';
 import IsFreeDropdown from '../../components/courses/IsFreeDropdown';
 import {
-  getSearchContent,
   addCoursesTypeFilter,
   addCoursesAcademyFilter,
   setCoursesSort,
@@ -32,22 +30,13 @@ import instance from '../../app/instance';
 export default function Courses() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const {
-    options,
-    sort,
-    is_free,
-    filters: { course_types, academies },
-  } = useSelector((state) => state.courses);
+  const { options } = useSelector((state) => state.courses);
   const {
     courses,
     category,
     total_results,
-    page: { current, total },
+    page: { total },
   } = useSelector((state) => state.search);
-
-  const search = () => {
-    console.log(`search: `, window.location.search);
-  };
 
   const setOptions = () => {
     const params = new URL(window.location).searchParams;
@@ -87,13 +76,6 @@ export default function Courses() {
     }
   };
 
-  const redirecter = () => {
-    const url = new URL(window.location);
-    url.searchParams.set('academy[0]', parseInt(url.searchParams.get('academy[0]')) + 1);
-    url.searchParams.set('sort', parseInt(url.searchParams.get('sort')) + 1);
-    history.push(`./${url.search}`);
-  };
-
   const getSearchOptions = async () => {
     try {
       const res = await instance.get('/api/v1/web/content/courses/search-content');
@@ -119,6 +101,7 @@ export default function Courses() {
       setOptions();
       setFilters();
     }
+    window.scrollTo(0, 0);
   }, [window.location.search]);
 
   return (
@@ -182,7 +165,6 @@ export default function Courses() {
               const url = new URL(window.location);
               url.searchParams.set('page', selected + 1);
               history.push(`./${url.search}`);
-              window.scrollTo(0, 0);
             }}
             breakLabel="..."
             nextLabel={
@@ -221,90 +203,3 @@ export default function Courses() {
     </Layout>
   );
 }
-
-/*
-
-export const useCourses = () => {
-  const [category, setCategory] = useState(
-    new URL(window.location).searchParams.get('category[0]'),
-  );
-
-  const dispatch = useDispatch();
-  const history = useHistory();
-  const {
-    options,
-    sort,
-    is_free,
-    filters: { course_types, academies },
-  } = useSelector((state) => state.courses);
-  const {
-    courses,
-    page: { current, total },
-  } = useSelector((state) => state.search);
-
-  useEffect(() => {
-    dispatch(getSearchContent());
-  }, []);
-
-  useEffect(() => {
-    dispatch(searchCourses(new URL(window.location).search));
-    setCategory(new URL(window.location).searchParams.get('category[0]'));
-  }, [new URL(window.location).search]);
-
-  useEffect(() => {
-    const { searchParams } = new URL(window.location);
-    if (options.academies.length !== 0) {
-      // eslint-disable-next-line no-restricted-syntax
-      for (const pair of searchParams.entries()) {
-        if (pair[0].includes('academy')) {
-          options.academies.forEach((item) => {
-            if (item.id == pair[1]) {
-              const object = { id: item.id, title: item.name };
-              dispatch(addCoursesAcademyFilter(object));
-            }
-          });
-        }
-      }
-    }
-    if (options.course_types.length !== 0) {
-      // eslint-disable-next-line no-restricted-syntax
-      for (const pair of searchParams.entries()) {
-        if (pair[0].includes('type')) {
-          options.course_types.forEach((item) => {
-            if (item.id == pair[1]) {
-              const object = { id: item.id, title: item.name };
-              dispatch(addCoursesTypeFilter(object));
-            }
-          });
-        }
-      }
-    }
-  }, [options]);
-
-  useEffect(() => {
-    const base = window.location.origin;
-    console.log(base);
-    const url = new URL(window.location.origin);
-    url.searchParams.set('category[0]', category);
-    console.log(academies);
-    academies.forEach((item, index) => {
-      url.searchParams.set(`academy[${index}]`, item.id);
-    });
-    course_types.forEach((item, index) => {
-      url.searchParams.set(`type[${index}]`, item.id);
-    });
-    url.searchParams.set(`sortby`, sort);
-    url.searchParams.set(`is_free`, is_free);
-    url.searchParams.set(`page`, current);
-    // console.log(url.search);
-    history.push(`./${url.search}`);
-  }, [academies, course_types, sort, is_free, current]);
-
-  useEffect(() => {
-    if (window.scollY !== 0) {
-      window.scrollTo(0, 0);
-    }
-  }, [current]);
-};
-
-*/
