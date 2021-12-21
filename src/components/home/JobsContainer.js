@@ -16,11 +16,11 @@ export default function JobsContainer() {
           <JobCard key={job.id} props={job} />
         ))}
       </div>
-      <div className="tw-flex tw-mt-4 tw-justify-center">
+      {/* <div className="tw-flex tw-mt-4 tw-justify-center">
         <Link to="/" className="button-secondary">
           مشاهده همه
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

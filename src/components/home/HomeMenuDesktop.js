@@ -84,12 +84,14 @@ const MenuDesktop = () => {
             >
               فرصت‌های شغلی
             </Link>
-            <Link
-              to="/blogs"
+            <a
+              href="https://blog.karsaz.app"
+              target="_blank"
+              rel="noreferrer"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               وبلاگ
-            </Link>
+            </a>
             <Link
               to="/about"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"

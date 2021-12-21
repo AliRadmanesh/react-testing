@@ -137,9 +137,14 @@ const MenuMobile = () => {
           <Link to="/jobs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             فرصت‌های شغلی
           </Link>
-          <Link to="/blogs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          <a
+            href="https://blog.karsaz.app"
+            target="_blank"
+            rel="noreferrer"
+            className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num"
+          >
             وبلاگ
-          </Link>
+          </a>
           <Link to="/about" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             درباره ما
           </Link>
