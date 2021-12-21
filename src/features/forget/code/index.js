@@ -57,7 +57,6 @@ export default function ForgetCode() {
         }
       }
     } catch (error) {
-      // console.log(error);
       const { status, data } = error.response;
       if (status === 422 && data.message.mobile) {
         toast.error(data.message.mobile[0]);

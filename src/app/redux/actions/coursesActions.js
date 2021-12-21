@@ -29,7 +29,6 @@ export const setCoursesCategory = (id) => (dispatch) => {
 export const getSearchContent = () => async (dispatch) => {
   try {
     const res = await axios.get('/api/v1/web/content/courses/search-content');
-    // console.log(res.data.data);
     if (res.data.code === 200) {
       dispatch({
         type: GET_COURSES_SEARCH_DATA,
@@ -64,8 +63,6 @@ export const setCoursesQuery =
     });
     string += `&sortby=${sort}&is_free=${free}&page=${page}`;
     dispatch({ type: SET_COURSES_QUERY, payload: string });
-
-    // console.log(string);
   };
 
 export const setCoursesIsFree = (num) => (dispatch) => {

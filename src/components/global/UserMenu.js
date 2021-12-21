@@ -27,7 +27,6 @@ export default function UserMenu() {
 
   // eslint-disable-next-line
   const handleClick = (e) => {
-    // console.log(e.target.classList);
     if (e.target.classList.contains('user-menu')) {
       dispatch(showUserMenu(false));
     }

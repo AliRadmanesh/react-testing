@@ -74,11 +74,6 @@ export function useQuery() {
       url.searchParams.set(`type[${index}]`, item.id);
     });
 
-    // url.searchParams.forEach((value, index) => console.log(index, value));
-
-    console.log('academies', academies);
-    console.log(url.search);
-
     history.push(`./${url.search}`);
   }, [is_free, sort, current, academies, types]);
 
@@ -114,6 +109,5 @@ export function useQuery() {
 
   useEffect(() => {
     dispatch(searchQuery(url.search));
-    console.log(1);
   }, [new URL(window.location).search]);
 }

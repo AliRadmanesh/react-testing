@@ -5,7 +5,6 @@ import cartPaleIcon from '../../assets/icons/Dashboard/cart-pale.svg';
 import giftPaleIcon from '../../assets/icons/Dashboard/gift-pale.svg';
 import { numberWithCommas } from '../../common/Functions';
 
-console.log(2);
 // eslint-disable-next-line arrow-body-style
 export const WalletCard = ({ wallet }) => {
   return (

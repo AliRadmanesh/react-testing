@@ -22,11 +22,8 @@ const CoursesContainer = () => {
       const wrapper = document.querySelector(
         '#home-courses-container .swiper-container .swiper-wrapper',
       );
-      // console.log(wrapper);
       const slides = wrapper.querySelectorAll('.swiper-slide');
-      // console.log(slides);
       for (let i = 0; i < slides.length; i += 1) {
-        // console.log(slides[i].style.width);
         slides[i].style.width = '90vw';
       }
     }

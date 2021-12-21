@@ -37,8 +37,6 @@ import { getSearchContent } from '../../app/redux/actions/coursesActions';
 import '../courses/courses.css';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
-// console.log(new URL(window.location).search);
-
 export default function Search() {
   const {
     query: {
@@ -249,9 +247,7 @@ export default function Search() {
     // dispatch(searchQuery(window.location.href.split('q=')[1]));
     dispatch(getSearchContent());
     new URL(window.location).searchParams.forEach((value, key) => {
-      console.log(key, ': ', value);
       if (key.includes('sort') && value !== 1) {
-        console.log(1);
         dispatch(setQuerySort(value));
       }
     });
@@ -292,10 +288,8 @@ export default function Search() {
 
   useEffect(() => {
     const base = window.location.origin;
-    console.log(base);
     const url = new URL(window.location.origin);
     url.searchParams.set('q', urlQuery);
-    console.log(academies);
     academies.forEach((item, index) => {
       url.searchParams.set(`academy[${index}]`, item.id);
     });
@@ -305,7 +299,6 @@ export default function Search() {
     url.searchParams.set(`sortby`, sort);
     url.searchParams.set(`is_free`, is_free);
     url.searchParams.set(`page`, current);
-    // console.log(url.search);
 
     history.push(`./${url.search}`);
   }, [academies, types, sort, is_free, current]);

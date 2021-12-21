@@ -32,7 +32,6 @@ export const getDashboardUserRowData = () => async (dispatch) => {
       });
     }
   } catch (error) {
-    // console.log(error);
     const { status, data } = error.response;
     if (status === 401)
       toast.error('کاربری گرامی، برای دریافت اطلاعات خود باید وارد شده یا ثبت‌نام کنید.');
@@ -63,7 +62,6 @@ export const getDashboardData = () => async (dispatch) => {
 export const getDashboardBookmarks = () => async (dispatch) => {
   try {
     const res = await instance.get('/api/v1/web/service/users/dashboard/bookmarks');
-    console.log(res.data.data);
     if (res.status === 200) {
       dispatch({
         type: 'SET_DASHBOARD_BOOKMARKS',

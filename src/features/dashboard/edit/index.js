@@ -136,7 +136,6 @@ export default function Edit() {
               //   let selectedImageErrors = {};
               setImgSrc(img.src);
             };
-            console.log(avatar);
             img.src = avatar.result;
           };
           avatar.readAsDataURL(event.target.files[0]);
@@ -150,8 +149,6 @@ export default function Edit() {
   };
 
   const onSubmit = async (prev) => {
-    console.log(prev);
-
     const data = new FormData();
     data.append('user_first_name', defaults.first_name);
     data.append('user_last_name', defaults.last_name);
@@ -177,11 +174,6 @@ export default function Edit() {
     if (prev.user_image.length !== 0) {
       data.append('user_image', prev.user_image[0], prev.user_image[0].name);
     }
-    // eslint-disable-next-line no-restricted-syntax
-    for (const pair of data.entries()) {
-      // eslint-disable-next-line prefer-template
-      console.log(pair[0] + ', ' + pair[1]);
-    }
 
     try {
       const res = await instance.post('/api/v1/web/service/users/dashboard/profile', data);
@@ -197,15 +189,12 @@ export default function Edit() {
       }
     } catch (error) {
       toast.error(error);
-      console.log(error);
     }
   };
 
   useEffect(() => {
     getProfile();
     getProvinces();
-
-    // console.log(getValues('user_province'));
   }, []);
 
   useEffect(() => {

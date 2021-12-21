@@ -48,7 +48,6 @@ export const setTotalPage = (page) => (dispatch) =>
 export const autoSuggest = (query) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/v1/web/service/courses/autosuggest/?q=${query}`);
-    console.log(res);
     if (query) {
       if (res.status === 200 || res.status === 201) {
         dispatch({
@@ -80,7 +79,6 @@ export const searchCourses =
     //   query += `&type[${index}]=${item.id}`;
     // });
     // query += `&sortby=${sort}&is_free=${free}&page=${page}`;
-    // console.log(query);
 
     try {
       const res = await instance.get(`/api/v1/web/service/courses/search-filters/${query}`);
@@ -117,7 +115,6 @@ export const searchQuery = (query) => async (dispatch) => {
   let proceed = false;
   try {
     const res = await instance.get(`api/v1/web/service/courses/search/${query}`);
-    // console.log(res.status, res.data.data.courses.length);
     if (res.status === 200 || res.status === 201) {
       dispatch({ type: SET_QUERY_STATUS, payload: 200 });
       dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });

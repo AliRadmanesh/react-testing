@@ -83,7 +83,6 @@ const LocationDropdown = () => {
       // eslint-disable-next-line array-callback-return
       locations.map((item) => {
         if (item.value === p && item.city === null) {
-          console.log(item);
           dispatch(
             setJobsLocation({
               id: item.value,
@@ -127,7 +126,6 @@ const LocationDropdown = () => {
             province,
           }),
         );
-        // console.log(item);
       }}
       value={location.id !== null && { value: location.id, label: location.name }}
     />
@@ -150,7 +148,6 @@ export default function SearchBox() {
     const url = new URL(window.location.origin);
 
     if (text !== '' && text !== null) {
-      console.log('querySet');
       url.searchParams.set('q', text);
     }
     if (location.id !== null) {
@@ -171,7 +168,6 @@ export default function SearchBox() {
     }
     url.searchParams.set('page', 1);
 
-    console.log(url.search);
     history.push(`/jobs/search/${url.search}`);
   };
 

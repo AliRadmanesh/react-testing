@@ -14,7 +14,7 @@ export const getJobsData = () => async (dispatch) => {
         payload: res.data.data,
       });
     } else if (res.status >= 400 && res.status < 500) {
-      console.log(1);
+      toast.error('خطا در دریافت اطلاعات :/');
     } else if (res.status >= 500) {
       toast.error('خطای سرور');
     } else {
@@ -33,7 +33,6 @@ export const searchJobsQuery = (query) => async (dispatch) => {
       type: 'SET_JOBS_SEARCH_LOADING',
     });
     const res = await instance.get(`/api/v1/web/service/jobs/search/${query}`);
-    console.log(res);
     if (res.status === 200 || res.status === 201) {
       dispatch({
         type: 'SEARCH_JOBS',
@@ -55,7 +54,6 @@ export const searchJobsNoQuery = (query) => async (dispatch) => {
       type: 'SET_JOBS_SEARCH_LOADING',
     });
     const res = await instance.get(`/api/v1/web/service/jobs/search-filters/${query}`);
-    console.log(res);
     if (res.status === 200 || res.status === 201) {
       dispatch({
         type: 'SEARCH_JOBS',
@@ -75,7 +73,6 @@ export const getJobsFilterOptions = () => async (dispatch) => {
   try {
     const res = await instance.get('/api/v1/web/content/jobs/search-content');
     if (res.status === 200 || res.status === 201) {
-      // console.log(res.data.data);
       dispatch({
         type: 'GET_JOBS_FILTER_OPTIONS',
         payload: res.data.data,
@@ -95,7 +92,6 @@ export const getJobsSearchOptions = () => async (dispatch) => {
   try {
     const res = await instance.get('/api/v1/web/content/jobs/search-box-content');
     if (res.status === 200 || res.status === 201) {
-      // console.log(res.data.data);
       // eslint-disable-next-line array-callback-return
       res.data.data.categories.map((item) => {
         result.categories.push({ label: item.name, value: item.id });
@@ -118,7 +114,6 @@ export const getJobsSearchOptions = () => async (dispatch) => {
           province: item.name.split(' - ')[0],
         });
       });
-      // console.log(result);
       dispatch({
         type: 'SET_JOBS_SEARCH_OPTIONS',
         payload: result,

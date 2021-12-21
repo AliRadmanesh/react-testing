@@ -31,16 +31,10 @@ export const getData = () => async (dispatch) => {
   const el1 = new URL(window.location).searchParams.get('primary');
   const el2 = new URL(window.location).searchParams.get('secondary');
 
-  console.log(el1, el2);
-  console.log(url.search);
   let query = '';
-  console.log(url.search.split('&'));
   if (el1 !== null) query += `/${el1}`;
   if (el2 !== null) query += `/${el2}`;
-  console.log(query);
   const res = await instance.get(`/api/v1/web/service/courses/compare${query}`);
-  console.log(res.data.data);
-  console.log(res.data.data.courses[1]);
   if (res.status === 200 || res.status === 201) {
     if (res.data.data.courses[0]) {
       dispatch({

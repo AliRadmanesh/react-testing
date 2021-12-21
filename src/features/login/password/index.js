@@ -35,7 +35,6 @@ export default function LoginPassword() {
           'https://develop.karsazapp.ir/api/v1/web/service/users/login',
           data,
         );
-        console.log(res);
         if (res.status === 200) {
           if (res.data.code === 200) {
             window.localStorage.setItem('userToken', res.data.data.user.token);
@@ -47,7 +46,6 @@ export default function LoginPassword() {
           }
         }
       } catch (error) {
-        console.log(error.response);
         const { data, status } = error?.response;
         if (status === 422 && data.message.mobile) toast.error(data.message.mobile[0]);
         if (status === 422 && data.message.device_name) toast.error(data.message.device_name[0]);

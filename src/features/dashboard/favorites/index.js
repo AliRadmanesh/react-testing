@@ -123,30 +123,19 @@ export default function Favorites() {
   const onUpdate = async () => {
     const jobArr = [];
     jobs.interested.list.map((item) => jobArr.push(item.id));
-    console.log(JSON.stringify(jobArr));
     const courseArr = [];
     courses.interested.list.map((item) => courseArr.push(item.id));
-
-    // const data = {
-    //   favorite_course_categories: JSON.stringify(courseArr),
-    //   favorite_job_categories: JSON.stringify(jobArr),
-    // };
-
-    // console.log(data);
 
     try {
       const data = {
         favorite_course_categories: JSON.stringify(courseArr),
         favorite_job_categories: JSON.stringify(jobArr),
       };
-      // console.log(JSON.parse(data));
       const res = await instance.post('/api/v1/web/service/users/dashboard/favorites', data);
-      console.log(res);
       if (res.status === 200) {
         window.location.reload();
       }
     } catch (error) {
-      console.log(error);
       const { status, data } = error.response;
       if (status === 401)
         toast.error('کاربری گرامی، برای دریافت اطلاعات خود باید وارد شده یا ثبت‌نام کنید.');

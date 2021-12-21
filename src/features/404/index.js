@@ -14,7 +14,6 @@ export default function Page404() {
   const history = useHistory();
 
   const onSubmit = (event) => {
-    console.log(1);
     event.preventDefault();
 
     if (query !== '') {

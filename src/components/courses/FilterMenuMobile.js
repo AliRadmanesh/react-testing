@@ -119,7 +119,6 @@ export default function FilterMenuMobile() {
                   title={academy.name}
                   onDelete={() => {
                     dispatch(removeCoursesAcademyFilter(academy.id));
-                    // console.log(document.querySelector(`.academy-${academy.id} input`));
                     document.querySelector(`.academy-mobile-${academy.id} input`).checked = false;
                   }}
                 />
@@ -131,7 +130,6 @@ export default function FilterMenuMobile() {
                   secondText={`(${type.type})`}
                   onDelete={() => {
                     dispatch(removeCoursesTypeFilter(type.id));
-                    // console.log(document.querySelector(`.academy-${academy.id}`));
                     document.querySelector(`.type-mobile-${type.id} input`).checked = false;
                   }}
                 />
@@ -243,7 +241,6 @@ export default function FilterMenuMobile() {
                 title={academy.title}
                 onDelete={() => {
                   dispatch(removeCoursesAcademyFilter(academy.id));
-                  // console.log(document.querySelector(`.academy-${academy.id} input`));
                   document.querySelector(`.academy-mobile-${academy.id} input`).checked = false;
                 }}
               />
@@ -254,7 +251,6 @@ export default function FilterMenuMobile() {
                 title={type.title}
                 onDelete={() => {
                   dispatch(removeCoursesTypeFilter(type.id));
-                  // console.log(document.querySelector(`.academy-${academy.id}`));
                   document.querySelector(`.type-mobile-${type.id} input`).checked = false;
                 }}
               />

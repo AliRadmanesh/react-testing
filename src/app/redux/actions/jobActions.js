@@ -4,7 +4,6 @@ import instance from '../../instance';
 export const getJobData = (id) => async (dispatch) => {
   try {
     const res = await instance.get(`/api/v1/web/service/jobs/${id}`);
-    console.log(res);
     if (res.status === 200 || res.status === 201) {
       dispatch({
         type: 'GET_JOB_DATA',
@@ -24,7 +23,6 @@ export const getJobData = (id) => async (dispatch) => {
     }
   } catch (error) {
     // toast.error(error);
-    console.log(error);
     dispatch({
       type: 'SET_JOB_STATUS',
       payload: 400,

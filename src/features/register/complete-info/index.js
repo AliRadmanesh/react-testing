@@ -36,7 +36,6 @@ export default function CompleteInfo() {
     }
 
     if (localStorage.getItem('userPhone') && regex.test(localStorage.getItem('userPhone'))) {
-      console.log(1);
       if (!password || password.length < 8) toast.error('گذرواژه بهتری را انتخاب کنید.');
       if (!firstname || !lastname) toast.error('لطفا نام و نام خانوادگی خود را وارد نمایید');
       if (password && password.length >= 8 && firstname && lastname) {
@@ -48,7 +47,6 @@ export default function CompleteInfo() {
             password,
             device_name: navigator.userAgent,
           };
-          console.log(data);
 
           const res = await axios.post(
             'https://develop.karsazapp.ir/api/v1/web/service/users/register',
@@ -62,9 +60,7 @@ export default function CompleteInfo() {
             window.location.reload();
           }
         } catch (error) {
-          console.log(error);
           const { status, data } = error.response;
-          console.log(error.response);
           if (status === 422 && data.message.mobile) {
             toast.error(data.message.mobile[0]);
           }

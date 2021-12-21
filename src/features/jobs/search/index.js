@@ -35,7 +35,6 @@ export default function JobSearch() {
   } = useSelector((state) => state.jobs);
 
   const setFilters = () => {
-    // console.log('set filters');
     dispatch(clearAllJobsAdustments());
     const params = new URL(window.location).searchParams;
     // eslint-disable-next-line no-restricted-syntax
@@ -65,7 +64,6 @@ export default function JobSearch() {
   };
 
   const setOptions = () => {
-    // console.log('set box options');
     const params = new URL(window.location).searchParams;
     for (const pair of params) {
       if (pair[0].includes('category')) {
@@ -81,7 +79,6 @@ export default function JobSearch() {
     if (c === null) {
       locations.map((item) => {
         if (item.value === p && item.city === null) {
-          console.log(item);
           dispatch(
             setJobsLocation({
               id: item.value,

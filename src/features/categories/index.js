@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 import CategoryCard from '../../components/global/CategoryCard';
 import Layout from '../../common/Layout/pacific';
 
@@ -16,12 +17,11 @@ export default function Categories() {
         'https://develop.karsazapp.ir/api/v1/web/content/courses/all-categories',
       );
 
-      console.log(res.data);
       if (res.data.code === 200) {
         setCategories(res.data.data.categories);
       }
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   }
 

@@ -34,10 +34,8 @@ const ModalCard = ({ props }) => {
   const dispatch = useDispatch();
 
   const setCourse = () => {
-    console.log(id);
     const url = new URL(window.location);
     url.searchParams.set(dispatcher, id);
-    console.log(url.search);
   };
 
   return (
@@ -182,7 +180,6 @@ function SortDropdown() {
           onClick={() => {
             dispatch(setModalSort(1));
             setText('مرتبط‌ترین');
-            console.log(ref.current.classList.remove('active'));
           }}
         >
           مرتبط‌ترین
@@ -192,7 +189,6 @@ function SortDropdown() {
           onClick={() => {
             dispatch(setModalSort(2));
             setText('جدیدترین');
-            console.log(ref.current.classList.remove('active'));
           }}
         >
           جدیدترین
@@ -202,7 +198,6 @@ function SortDropdown() {
           onClick={() => {
             dispatch(setModalSort(3));
             setText('محبوب‌ترین');
-            console.log(ref.current.classList.remove('active'));
           }}
         >
           محبوب‌ترین
@@ -267,12 +262,10 @@ export default function Modal() {
         search = primary.title;
       }
     }
-    // console.log(search);
     if (search !== '') {
       const res = await instance.get(
         `/api/v1/web/service/courses/search/?&q=${search}&sort=${sort}&is_free=${is_free}`,
       );
-      // console.log(res);
       if (res.status === 200 || res.status === 201) {
         setCourses(res.data.data.courses);
       }
@@ -281,7 +274,6 @@ export default function Modal() {
 
   // eslint-disable-next-line
   const handleClick = (e) => {
-    // console.log(e.target.classList);
     if (e.target.classList.contains('modal-box-container')) {
       dispatch(showModal(false));
     }

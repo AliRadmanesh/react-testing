@@ -30,7 +30,6 @@ export default function Result() {
 // import '../../features/courses/courses.css';
 
 // export default function Courses() {
-//   console.log(typeof new URL(window.location).searchParams.get('category[0]'));
 //   const dispatch = useDispatch();
 //   const history = useHistory();
 //   const {
@@ -93,7 +92,6 @@ export default function Result() {
 //     url.searchParams.set(`sort`, sort);
 //     url.searchParams.set(`is_free`, is_free);
 //     url.searchParams.set(`page`, current);
-//     // console.log(url.search);
 //     history.push(`./${url.search}`);
 //   }, [academies, course_types, sort, is_free, current]);
 
