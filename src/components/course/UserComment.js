@@ -25,7 +25,7 @@ export default function UserComment({ id }) {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (rate === 0) {
-      toast.error('لطفا نمره خود را ثبت کنید.');
+      toast.error('لطفا امتیاز خود را ثبت کنید.');
     } else {
       try {
         const data =
