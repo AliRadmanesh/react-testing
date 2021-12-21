@@ -50,8 +50,8 @@ export const CartCard = ({ purchases }) => {
           خرید‌ها
         </p>
         <p className="tw-text-xs tw-font-normal 2xl:tw-text-base">
-          <span className="text-gray">تومان</span>{' '}
-          <span className="text-black">{purchases.amount}</span>
+          <span className="text-black">{`${numberWithCommas(purchases.amount)} `}</span>
+          <span className="text-gray">تومان</span>
         </p>
       </div>
       <p className="tw-font-extrabold text-success tw-text-xl 2xl:tw-text-3xl 2xl:tw-font-black">
@@ -73,7 +73,7 @@ export const AmountCard = ({ cashback }) => {
         <p className="tw-text-xs tw-font-normal text-gray 2xl:tw-text-base">تومان</p>
       </div>
       <p className="tw-font-extrabold text-warning tw-text-xl 2xl:tw-text-3xl 2xl:tw-font-black">
-        {cashback.amount}
+        {numberWithCommas(cashback.amount)}
       </p>
       <img alt="" src={giftPaleIcon} className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" />
     </div>

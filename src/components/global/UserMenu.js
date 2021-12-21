@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import instance from '../../app/instance';
+import { numberWithCommas } from '../../common/Functions';
 
 import walletGray from '../../assets/icons/Wallet-Gray.svg';
 import dashboardGray from '../../assets/icons/Dashboard-Gray.svg';
@@ -129,7 +130,7 @@ export default function UserMenu() {
                   </p>
                 </div>
                 <p className="text-gray tw-text-left tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-normal">
-                  {balance}
+                  {`${numberWithCommas(balance)} تومان`}
                 </p>
               </div>
             </Link>
