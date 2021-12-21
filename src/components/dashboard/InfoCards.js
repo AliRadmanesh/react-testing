@@ -10,7 +10,7 @@ console.log(2);
 export const WalletCard = ({ wallet }) => {
   return (
     <div className="bg-primary-light tw-p-4 tw-flex tw-justify-between font-kalameh-num tw-items-center tw-rounded-xl">
-      <div className="">
+      <div>
         <p className="tw-text-sm tw-font-medium text-black 2xl:tw-text-xl 2xl:tw-font-normal">
           کیف پول
         </p>
@@ -28,7 +28,7 @@ export const WalletCard = ({ wallet }) => {
 export const BookmarksCard = ({ bookmarks }) => {
   return (
     <div className="bg-warning-light tw-p-4 tw-flex tw-justify-between font-kalameh-num tw-items-center tw-rounded-xl">
-      <div className="">
+      <div>
         <p className="tw-text-sm tw-font-medium text-black 2xl:tw-text-xl 2xl:tw-font-normal">
           بوک‌ماارک‌ها
         </p>
@@ -45,7 +45,7 @@ export const BookmarksCard = ({ bookmarks }) => {
 export const CartCard = ({ purchases }) => {
   return (
     <div className="bg-success-light tw-p-4 tw-flex tw-justify-between font-kalameh-num tw-items-center tw-rounded-xl">
-      <div className="">
+      <div>
         <p className="tw-text-sm tw-font-medium text-black 2xl:tw-text-xl 2xl:tw-font-normal">
           خرید‌ها
         </p>
@@ -66,7 +66,7 @@ export const CartCard = ({ purchases }) => {
 export const AmountCard = ({ cashback }) => {
   return (
     <div className="bg-warning-light tw-p-4 tw-flex tw-justify-between font-kalameh-num tw-items-center tw-rounded-xl">
-      <div className="">
+      <div>
         <p className="tw-text-sm tw-font-medium text-black 2xl:tw-text-xl 2xl:tw-font-normal">
           مبلغ دریافتی
         </p>

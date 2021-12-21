@@ -39,7 +39,7 @@ export default function Error404({ query }) {
                   متاسفانه نتیجه ای برای «{new URL(window.location).searchParams.get('q') || query}»
                   یافت نشد، لطفا جستجوی دیگری انجام داده یا به صفحات دیگر مراجعه فرمایید.
                 </p>
-                <div className="">
+                <div>
                   <div className="tw-flex tw-justify-between tw-items-center landing-search-container bg-light tw-mb-4 tw-w-full tw-max-w-lg 2xl:tw-max-w-2xl tw-mx-auto tw-shadow-xl">
                     <input
                       type="text"

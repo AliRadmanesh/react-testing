@@ -149,7 +149,7 @@ const MenuDesktop = () => {
                     }}
                     onClick={() => (show ? doShow(false) : doShow(true))}
                   >
-                    <img src={searchIcon} alt="" className="" />
+                    <img src={searchIcon} alt="" />
                   </button>
                 ) : (
                   <Link
@@ -165,7 +165,7 @@ const MenuDesktop = () => {
                       dispatch(hideSuggest());
                     }}
                   >
-                    <img src={searchIcon} alt="" className="" />
+                    <img src={searchIcon} alt="" />
                   </Link>
                 )}
               </div>

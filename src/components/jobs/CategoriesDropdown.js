@@ -23,7 +23,7 @@ export default function CategoriesDropdown() {
           <img src={arrow} alt="" />
         </span>
       </button>
-      <div className="">{categories.map((item) => console.log(item))}</div>
+      <div>{categories.map((item) => console.log(item))}</div>
     </div>
   );
 }

@@ -23,7 +23,7 @@ const RecentPostsContainer = () => {
       <p className="text-blue tw-text-center tw-mb-8 2xl:tw-mb-12 tw-font-extrabold 2xl:tw-font-black font-kalameh home-section-title">
         جدیدترین مقالات کارساز
       </p>
-      <div id="home-posts-container" className="">
+      <div id="home-posts-container">
         {
           // recent_posts.map(ee => <PostCard key={ee.id} props={ee} /> )
         }

@@ -33,9 +33,9 @@ export default function Search() {
             </div>
             {loading && <Loading />}
             {!loading && (
-              <div className="">
+              <div>
                 {result.length === 0 && (
-                  <div className="">
+                  <div>
                     <p className="tw-text-base text-dark font-kalameh-num tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-mt-3">
                       موردی برای نمایش وجود ندارد.
                     </p>

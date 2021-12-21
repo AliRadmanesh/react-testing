@@ -183,7 +183,7 @@ export default function SearchBox() {
     <div className="search-box bg-light font-kalameh-num tw-rounded-xl tw-p-4 tw-w-full" style={{}}>
       {/* 0 to 768px */}
       <form onSubmit={onSubmit} className="tw-grid tw-gap-4 tw-grid-cols-1 md:tw-hidden">
-        <div className="" style={{}}>
+        <div style={{}}>
           <input
             type="text"
             placeholder="عنوان شغلی یا شرکت..."
@@ -192,13 +192,13 @@ export default function SearchBox() {
             value={text}
           />
         </div>
-        <div className="" style={{}}>
+        <div style={{}}>
           <CategoryDropdown />
         </div>
-        <div className="" style={{}}>
+        <div style={{}}>
           <LocationDropdown />
         </div>
-        <div className="" style={{}}>
+        <div style={{}}>
           <button
             type="submit"
             className="button-primary tw-grid tw-place-items-center tw-w-full tw-h-full"
@@ -214,7 +214,7 @@ export default function SearchBox() {
         className="tw-hidden tw-grid-cols-1 tw-gap-4 md:tw-grid xl:tw-hidden"
       >
         <div className="tw-grid tw-gap-x-4" style={{ gridTemplateColumns: '3fr 1fr' }}>
-          <div className="" style={{}}>
+          <div style={{}}>
             <input
               type="text"
               placeholder="عنوان شغلی یا شرکت..."
@@ -223,7 +223,7 @@ export default function SearchBox() {
               value={text}
             />
           </div>
-          <div className="" style={{}}>
+          <div style={{}}>
             <button
               type="submit"
               className="button-primary tw-grid tw-place-items-center tw-w-full tw-h-full"
@@ -234,17 +234,17 @@ export default function SearchBox() {
           </div>
         </div>
         <div className="tw-grid tw-gap-x-4 tw-grid-cols-2">
-          <div className="" style={{}}>
+          <div style={{}}>
             <CategoryDropdown />
           </div>
-          <div className="" style={{}}>
+          <div style={{}}>
             <LocationDropdown />
           </div>
         </div>
       </form>
       {/* 1280px and up */}
       <form onSubmit={onSubmit} className="tw-hidden xl:tw-grid jobs-columnar-form tw-gap-4">
-        <div className="" style={{}}>
+        <div style={{}}>
           <input
             type="text"
             placeholder="عنوان شغلی یا شرکت..."
@@ -253,13 +253,13 @@ export default function SearchBox() {
             value={text}
           />
         </div>
-        <div className="" style={{}}>
+        <div style={{}}>
           <CategoryDropdown />
         </div>
-        <div className="" style={{}}>
+        <div style={{}}>
           <LocationDropdown />
         </div>
-        <div className="" style={{}}>
+        <div style={{}}>
           <button
             type="submit"
             className="button-primary tw-grid tw-place-items-center tw-w-full tw-h-full"

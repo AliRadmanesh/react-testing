@@ -21,11 +21,10 @@ const RecentPostsContainer = ({ recommended_courses }) => {
       <p className="text-blue tw-text-2xl tw-text-center tw-mb-8 2xl:tw-mb-12 tw-font-extrabold 2xl:tw-font-black font-kalameh 2xl:tw-text-3xl">
         آموزش‌های مرتبط
       </p>
-      <div id="course-slider" className="">
+      <div id="course-slider">
         <Swiper
           pagination={pagination}
           spaceBetween={16}
-          className=""
           breakpoints={{
             '@0.00': {
               slidesPerView: 1,

@@ -8,7 +8,7 @@ export default function Author({
       <div className="course-author bg-white tw-rounded-xl tw-shadow-lg tw-p-4 lg:tw-p-5 tw-mt-4">
         <div className="tw-flex tw-items-center">
           <img src={image} alt="" className="avatar tw-rounded-md" />
-          <div className="">
+          <div>
             <p className="font-kalameh-num text-dark tw-mr-2 tw-text-sm tw-font-semibold 2xl:tw-text-lg 2xl">
               {first_name} {last_name}
             </p>

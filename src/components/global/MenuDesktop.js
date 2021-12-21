@@ -145,7 +145,7 @@ export default function MenuDesktop() {
                       dispatch(hideSuggest());
                     }}
                   >
-                    <img src={searchIcon} alt="" className="" />
+                    <img src={searchIcon} alt="" />
                   </button>
                 ) : (
                   <Link
@@ -160,7 +160,7 @@ export default function MenuDesktop() {
                       dispatch(hideSuggest());
                     }}
                   >
-                    <img src={searchIcon} alt="" className="" />
+                    <img src={searchIcon} alt="" />
                   </Link>
                 )}
               </div>

@@ -110,10 +110,10 @@ const MenuMobile = () => {
                   className="tw-p-0"
                   onClick={() => dispatch(showMenu(false))}
                 >
-                  <img src={searchIcon} alt="جستجو" className="" />
+                  <img src={searchIcon} alt="جستجو" />
                 </Link>
               ) : (
-                <img src={searchIcon} alt="جستجو" className="" />
+                <img src={searchIcon} alt="جستجو" />
               )}
             </form>
           </div>

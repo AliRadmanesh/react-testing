@@ -41,7 +41,7 @@ export const Modal = () => {
             <img src={closeIcon} alt="" />
           </button>
           <div className="tw-rounded-xl bg-light font-kalameh-num text-dark tw-p-4">
-            <div className="">
+            <div>
               <div className="tw-flex tw-justify-between tw-items-center">
                 <p className="tw-text-base 2xl:tw-text-xl tw-font-medium 2xl:tw-font-semibold">
                   {data.notification.title}
@@ -140,21 +140,21 @@ export default function Notifications() {
         </div>
       </div>
       <div
-        className="dashboard-table-container font-kalameh-num "
+        className="dashboard-table-container font-kalameh-num"
         style={{ display: section === 1 ? 'block' : 'none' }}
       >
-        <table className="">
-          <thead className="">
-            <tr className="">
-              <th className="">عنوان</th>
-              <th className="">نوع</th>
-              <th className="">شرکت یا برگزارکننده</th>
-              <th className="">تاریخ</th>
+        <table>
+          <thead>
+            <tr>
+              <th>عنوان</th>
+              <th>نوع</th>
+              <th>شرکت یا برگزارکننده</th>
+              <th>تاریخ</th>
             </tr>
           </thead>
           <tbody>
             {user_notifications.map((item) => (
-              <tr key={item.id} className="">
+              <tr key={item.id}>
                 <td
                   style={{ borderRadius: '0 12px 12px 0' }}
                   className="text-primary-hover tw-cursor-pointer"
@@ -163,17 +163,15 @@ export default function Notifications() {
                 >
                   {item.notification.title}
                 </td>
-                <td className="">
+                <td>
                   {item.data.type == 1 && <span className="text-blue">خبری</span>}
                   {item.data.type == 2 && <span className="text-blue">آموزشی</span>}
                   {item.data.type == 3 && <span className="text-blue">شغلی</span>}
                 </td>
-                <td className="">
+                <td>
                   <img src={item.notification.image} alt="" className="tw-w-8 tw-h-8" />
                 </td>
-                <td style={{ borderRadius: '12px 0 0 12px' }} className="">
-                  {item.created_at_difference}
-                </td>
+                <td style={{ borderRadius: '12px 0 0 12px' }}>{item.created_at_difference}</td>
               </tr>
             ))}
           </tbody>
@@ -183,17 +181,17 @@ export default function Notifications() {
         className="dashboard-table-container font-kalameh-num"
         style={{ display: section === 2 ? 'block' : 'none' }}
       >
-        <table className="">
-          <thead className="">
-            <tr className="">
-              <th className="">عنوان</th>
-              <th className="">نوع</th>
-              <th className="">تاریخ</th>
+        <table>
+          <thead>
+            <tr>
+              <th>عنوان</th>
+              <th>نوع</th>
+              <th>تاریخ</th>
             </tr>
           </thead>
           <tbody>
             {multicast_notifications.map((item) => (
-              <tr key={item.id} className="">
+              <tr key={item.id}>
                 <td
                   style={{ borderRadius: '0 12px 12px 0' }}
                   className="text-primary-hover tw-cursor-pointer"
@@ -202,14 +200,12 @@ export default function Notifications() {
                 >
                   {item.notification.title}
                 </td>
-                <td className="">
+                <td>
                   {item.data.type == 1 && <span className="text-blue">خبری</span>}
                   {item.data.type == 2 && <span className="text-blue">آموزشی</span>}
                   {item.data.type == 3 && <span className="text-blue">شغلی</span>}
                 </td>
-                <td style={{ borderRadius: '12px 0 0 12px' }} className="">
-                  {item.created_at_difference}
-                </td>
+                <td style={{ borderRadius: '12px 0 0 12px' }}>{item.created_at_difference}</td>
               </tr>
             ))}
           </tbody>

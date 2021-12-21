@@ -154,7 +154,7 @@ export default function Search() {
               <div className="tw-hidden lg:tw-block">
                 <FilterMenuDesktop />
               </div>
-              <div className="">
+              <div>
                 {result.length === 0 && (
                   <p className="tw-text-base text-dark font-kalameh-num tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-mt-3">
                     موردی برای نمایش وجود ندارد.
@@ -337,10 +337,10 @@ export default function Search() {
                   مرتب‌شده براساس:‌
                 </p>
                 <div className="tw-grid tw-gap-x-4 tw-grid-cols-2 lg:tw-flex tw-w-full lg:tw-w-auto">
-                  <div className="">
+                  <div>
                     <SortDropdown />
                   </div>
-                  <div className="">
+                  <div>
                     <IsFreeDropdown />
                   </div>
                 </div>
@@ -350,7 +350,7 @@ export default function Search() {
               <div className="tw-hidden lg:tw-block">
                 <FilterMenuDesktop />
               </div>
-              <div className="">
+              <div>
                 {result.length === 0 && (
                   <p className="tw-text-base text-dark font-kalameh-num tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-mt-3">
                     موردی برای نمایش وجود ندارد.

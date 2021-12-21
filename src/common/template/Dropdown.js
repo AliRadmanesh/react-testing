@@ -56,7 +56,6 @@ export default function Dropdown({
         </div>
       </div>
       <p
-        className=""
         style={{
           color:
             (!state && '#2c2c2c') ||

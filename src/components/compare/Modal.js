@@ -240,7 +240,7 @@ function SearchBar() {
         onChange={(e) => dispatch(setModalQuery(e.target.value))}
       />
       <button type="submit" className="tw-m-0 tw-px-2 tw-justify-self-end">
-        <img src={searchIcon} alt="" className="" />
+        <img src={searchIcon} alt="" />
       </button>
     </form>
   );
@@ -327,10 +327,10 @@ export default function Modal() {
               مرتب‌شده براساس:‌
             </p>
             <div className="tw-grid tw-gap-x-4 tw-grid-cols-2 lg:tw-flex tw-w-full lg:tw-w-auto">
-              <div className="">
+              <div>
                 <SortDropdown />
               </div>
-              <div className="">
+              <div>
                 <IsFreeDropdown />
               </div>
             </div>

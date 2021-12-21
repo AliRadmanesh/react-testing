@@ -134,7 +134,7 @@ export default function Courses() {
           <div className="tw-hidden lg:tw-block">
             <FilterMenuDesktop />
           </div>
-          <div className="">
+          <div>
             {courses.length === 0 && (
               <p className="tw-text-base text-dark font-kalameh-num tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-mt-3">
                 موردی برای نمایش وجود ندارد.

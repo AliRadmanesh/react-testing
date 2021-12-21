@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   return (
     <div className="bg-light">
       <DetailPageHeader />
-      <div className="" style={{ position: 'relative', paddingBottom: '1rem' }}>
+      <div style={{ position: 'relative', paddingBottom: '1rem' }}>
         <div className="detail-page-bg-pattern">
           <div className="detail-page-bg-fade" />
         </div>

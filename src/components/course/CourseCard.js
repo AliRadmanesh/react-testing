@@ -70,7 +70,7 @@ export default function CourseCard({ props }) {
             </div>
           </div>
           <div>
-            <Link to={`/course/${id}`} className="">
+            <Link to={`/course/${id}`}>
               <button className="tw-mx-auto button-primary font-kalameh-num">مشاهده بیشتر</button>
             </Link>
           </div>

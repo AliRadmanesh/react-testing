@@ -21,7 +21,7 @@ export default function FAQItem({ ask, ans }) {
           <img src={down} alt="" className="tw-mr-4 lg:tw-mr-8 down" />
           <img src={up} alt="" className="tw-mr-4 lg:tw-mr-8 up" />
         </button>
-        <div className="">
+        <div>
           <div className="tw-full tw-rounded-xl tw-shadow-sm bg-white tw-py-4 tw-w-full font-kalameh tw-text-sm xl:tw-text-lg tw-font-normal tw-px-4 tw-mb-6 lg:tw-mb-12">
             {ans}
           </div>

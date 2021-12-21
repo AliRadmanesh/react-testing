@@ -72,7 +72,7 @@ export default function Header({
           style={{ background: `url("${image}") no-repeat center/cover`, minHeight: '180px' }}
         />
         <div className="tw-pt-4 tw-w-full md:tw-pt-0 tw-flex tw-flex-col tw-justify-between">
-          <div className="">
+          <div>
             <div className="tw-flex tw-items-center tw-justify-between ">
               <p className="text-dark font-kalameh-num tw-text-base tw-font-bold lg:tw-text-xl 2xl:tw-text-2xl 2xl:tw-font-black">
                 {title}
@@ -102,7 +102,7 @@ export default function Header({
               {description_summary_string}
             </p>
           </div>
-          <div className="">
+          <div>
             <div className="tw-flex tw-justify-end font-kalameh-num tw-mt-4">
               {is_free === 0 && (
                 <p className="font-kalameh-num text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
@@ -142,7 +142,7 @@ export default function Header({
         </button>
       </div>
       <div className="course-header-left font-kalameh-num bg-white tw-p-4 lg:tw-py-5 lg:tw-px-4 tw-rounded-xl tw-grid md:tw-grid-cols-4 md:tw-gap-y-4  lg:tw-grid-cols-2 tw-gap-8 lg:tw-gap-x-6 tw-grid-cols-2 tw-shadow-lg tw-relative">
-        <div className="">
+        <div>
           <div className="tw-flex tw-items-center">
             <img src={academyIcon} alt="" className="tw-w-6" />
             <p className="text-gray tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">
@@ -156,7 +156,7 @@ export default function Header({
             </p>
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="tw-flex tw-items-center">
             <img src={offlineIcon} alt="" className="tw-w-6" />
             <p className="text-gray tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">
@@ -168,7 +168,7 @@ export default function Header({
             <p className="text-blue tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">{typeName}</p>
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="tw-flex tw-items-center">
             <img src={studentIcon} alt="" className="tw-w-6" />
             <p className="text-gray tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">ثبت نامی</p>
@@ -178,7 +178,7 @@ export default function Header({
             <p className="text-blue tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">{cashback}</p>
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="tw-flex tw-items-center">
             <img src={starIcon} alt="" className="tw-w-6" />
             <p className="text-gray tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">امتیاز</p>
@@ -188,7 +188,7 @@ export default function Header({
             <p className="text-blue tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">{rating}</p>
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="tw-flex tw-items-center">
             <img src={tickIcon} alt="" className="tw-w-6" />
             <p className="text-gray tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">زمان شروع</p>
@@ -200,7 +200,7 @@ export default function Header({
             </p>
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="tw-flex tw-items-center">
             <img src={closeIcon} alt="" className="tw-w-6" />
             <p className="text-gray tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">زمان پایان</p>
@@ -212,7 +212,7 @@ export default function Header({
             </p>
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="tw-flex tw-items-center">
             <img src={academyIcon} alt="" className="tw-w-6" />
             <p className="text-gray tw-mr-2 tw-text-sm tw-font-medium 2xl:tw-text-lg">مدت زمان</p>

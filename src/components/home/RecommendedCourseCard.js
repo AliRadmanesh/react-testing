@@ -97,7 +97,7 @@ function RecommendedPostCard({ props }) {
           </div>
           <div className="lg:tw-flex lg:tw-items-center">
             <p className="tab text-blue tw-hidden lg:tw-block tw-ml-6 font-kalameh">{price}</p>
-            <Link to={`/course/${id}`} className="">
+            <Link to={`/course/${id}`}>
               <button className="tw-mx-auto button-primary font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
                 مشاهده بیشتر
               </button>

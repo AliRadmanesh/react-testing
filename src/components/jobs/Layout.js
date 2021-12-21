@@ -35,9 +35,8 @@ export default function Layout({ children }) {
       <CategoryMenuDesktop />
       <CategoryMenuMobile />
       <div className="bg-light">
-        <div className="" style={{ position: 'relative' }}>
+        <div style={{ position: 'relative' }}>
           <div
-            className=""
             style={{
               height: 'auto',
               display: 'block',
@@ -56,7 +55,7 @@ export default function Layout({ children }) {
         </div>
       </div>
       <ScrollToTop />
-      <div className="">{children}</div>
+      <div>{children}</div>
       <Footer />
     </>
   );

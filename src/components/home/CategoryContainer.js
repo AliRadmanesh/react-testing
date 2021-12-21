@@ -23,7 +23,7 @@ function CategoryContainer() {
         ))}
       </div>
       <div className="tw-pt-4 tw-mt-8 tw-mb-8 tw-flex tw-justify-center">
-        <Link to="/categories" className="">
+        <Link to="/categories">
           <button className="tw-mx-auto button-secondary">مشاهده همه</button>
         </Link>
       </div>

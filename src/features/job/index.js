@@ -33,7 +33,7 @@ export default function Job() {
       <Layout>
         <Header data={data} />
         <div className="tw-grid tw-mt-12 job-gridder tw-gap-x-4 container tw-items-start">
-          <div className="">
+          <div>
             <Company data={data} />
             <Requirements data={data} />
             <Description data={data} />

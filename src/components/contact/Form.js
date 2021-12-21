@@ -124,7 +124,7 @@ export default function Form() {
         </div>
         <form onSubmit={onSubmit} noValidate>
           <div className="tw-h-auto tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-4 font-iranyekan-num">
-            <div className="">
+            <div>
               {/* <label
               htmlFor="name"
               className="tw-text-base 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold tw-flex tw-flex-col"
@@ -158,7 +158,7 @@ export default function Form() {
                 }}
               />
             </div>
-            <div className="">
+            <div>
               <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
                 ایمیل
               </p>
@@ -178,7 +178,7 @@ export default function Form() {
                 }}
               />
             </div>
-            <div className="">
+            <div>
               <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
                 موضوع
               </p>
@@ -198,7 +198,7 @@ export default function Form() {
                 }}
               />
             </div>
-            <div className="">
+            <div>
               <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
                 دپارتمان
               </p>

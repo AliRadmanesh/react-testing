@@ -19,7 +19,7 @@ export default function PopUp() {
         className="tw-grid popup-container tw-z-50 tw-absolute tw-top-0 tw-right-0 tw-w-screen tw-h-screen"
         style={{ background: 'rgba(0,0,0, .7)', placeItems: 'center' }}
       >
-        <div className="">
+        <div>
           <button
             className="tw-flex-start tw-h-auto tw-w-auto tw-p-0 tw-mb-4 tw-opacity-50"
             onClick={() => dispatch(clearPopup())}

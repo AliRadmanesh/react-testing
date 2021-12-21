@@ -30,13 +30,13 @@ export default function Header({ data }) {
     <div className="tw-grid job-gridder  tw-gap-4 container font-kalameh-num">
       <div className="job-header-right bg-white tw-rounded-xl tw-p-4 tw-shadow-xl">
         <div className="tw-pb-4 tw-flex tw-border-b tw-border-gray-200 tw-w-full">
-          <div className="">
+          <div>
             <img src={avatar} alt="" className="tw-rounded-xl detail-avatar tw-ml-4" />
           </div>
           <div className="tw-w-full tw-pr-4">
             <div className="tw-flex tw-w-full tw-justify-between">
               <div className="tw-flex">
-                <div className="">
+                <div>
                   <div className="tw-flex tw-items-center">
                     <p className="text-dark tw-text-base tw-font-semibold tw-mb-1 2xl:tw-text-2xl 2xl:tw-font-black">
                       {title}
@@ -53,7 +53,7 @@ export default function Header({ data }) {
                   </p>
                 </div>
               </div>
-              <div className="" style={{}}>
+              <div style={{}}>
                 <button
                   className="tw-bg-transparent tw-p-0"
                   onClick={() => dispatch(bookmarkJob(id))}

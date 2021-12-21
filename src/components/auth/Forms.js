@@ -134,7 +134,6 @@ const PhonePassLogin = () => {
         >
           <input
             type="password"
-            className=""
             placeholder="گذرواژه خود را وارد نمایید."
             style={{
               outline: 'none',
@@ -366,7 +365,6 @@ const ForgetPassNewPass = () => {
         >
           <input
             type="password"
-            className=""
             placeholder="گذرواژه خود را وارد نمایید."
             style={{
               outline: 'none',
@@ -523,7 +521,6 @@ const InfoCompletionSignup = () => {
         >
           <input
             type="password"
-            className=""
             placeholder="گذرواژه خود را وارد نمایید."
             style={{
               outline: 'none',

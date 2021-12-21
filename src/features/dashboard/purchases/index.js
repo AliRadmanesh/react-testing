@@ -59,7 +59,7 @@ export default function Purchases() {
       {/* <div className="tw-my-4" style={{ display: section === 1 ? 'block' : 'none' }}>
         <table className="tw-table-auto font-kalameh-num tw-min-w-full tw-text-right tw-overflow-x-scroll">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
-            <tr className="">
+            <tr>
               <th className="tw-p-2 lg:tw-w-1/2">نام دوره آموزشی</th>
               <th className="tw-p-2 lg:tw-w-1/6">تاریخ خرید</th>
               <th className="tw-p-2 lg:tw-w-1/6">کد پیگیری</th>
@@ -68,7 +68,7 @@ export default function Purchases() {
           </thead>
           <tbody>
             {course_purchases_pending.map((item) => (
-              <tr key={item.id} className="">
+              <tr key={item.id}>
                 <td style={{ borderRadius: '0 12px 12px 0' }} className="tw-p-2">
                   {item.course.title}
                 </td>
@@ -85,7 +85,7 @@ export default function Purchases() {
       {/* <div className="tw-my-4" style={{ display: section === 2 ? 'block' : 'none' }}>
         <table className="tw-table-auto font-kalameh-num tw-min-w-full tw-text-right tw-overflow-x-scroll">
           <thead className="tw-text-sm tw-font-medium text-blue 2xl:tw-text-lg 2xl:tw-font-semibold">
-            <tr className="">
+            <tr>
               <th className="tw-p-2 lg:tw-w-1/2">نام دوره آموزشی</th>
               <th className="tw-p-2 lg:tw-w-1/12">تاریخ خرید</th>
               <th className="tw-p-2 lg:tw-w-1/6">کد پیگیری</th>
@@ -95,7 +95,7 @@ export default function Purchases() {
           </thead>
           <tbody>
             {course_purchases.map((item) => (
-              <tr key={item.id} className="">
+              <tr key={item.id}>
                 <td style={{ borderRadius: '0 12px 12px 0' }} className="tw-p-2">
                   {item.course.title}
                 </td>
@@ -114,24 +114,22 @@ export default function Purchases() {
         className="dashboard-table-container font-kalameh-num"
         style={{ display: section === 1 ? 'block' : 'none' }}
       >
-        <table className="">
-          <thead className="">
-            <tr className="">
-              <th className="">نام دوره آموزشی</th>
-              <th className="">تاریخ خرید</th>
-              <th className="">کد پیگیری</th>
-              <th className="">هزینه پرداخت شده</th>
+        <table>
+          <thead>
+            <tr>
+              <th>نام دوره آموزشی</th>
+              <th>تاریخ خرید</th>
+              <th>کد پیگیری</th>
+              <th>هزینه پرداخت شده</th>
             </tr>
           </thead>
           <tbody>
             {course_purchases_pending.map((item) => (
-              <tr key={item.id} className="">
-                <td style={{ borderRadius: '0 12px 12px 0' }} className="">
-                  {item.course.title}
-                </td>
-                <td className="">{item.created_at}</td>
-                <td className="">{item.purchase.track_id}</td>
-                <td style={{ borderRadius: '12px 0 0 12px' }} className="">
+              <tr key={item.id}>
+                <td style={{ borderRadius: '0 12px 12px 0' }}>{item.course.title}</td>
+                <td>{item.created_at}</td>
+                <td>{item.purchase.track_id}</td>
+                <td style={{ borderRadius: '12px 0 0 12px' }}>
                   {numberWithCommas(item.purchase.amount)} تومان
                 </td>
               </tr>
@@ -143,28 +141,24 @@ export default function Purchases() {
         className="dashboard-table-container font-kalameh-num"
         style={{ display: section === 2 ? 'block' : 'none' }}
       >
-        <table className="">
-          <thead className="">
-            <tr className="">
-              <th className="">نام دوره آموزشی</th>
-              <th className="">تاریخ خرید</th>
-              <th className="">کد پیگیری</th>
-              <th className="">هزینه پرداخت شده</th>
-              <th className="">وضعیت</th>
+        <table>
+          <thead>
+            <tr>
+              <th>نام دوره آموزشی</th>
+              <th>تاریخ خرید</th>
+              <th>کد پیگیری</th>
+              <th>هزینه پرداخت شده</th>
+              <th>وضعیت</th>
             </tr>
           </thead>
           <tbody>
             {course_purchases.map((item) => (
-              <tr key={item.id} className="">
-                <td style={{ borderRadius: '0 12px 12px 0' }} className="">
-                  {item.course.title}
-                </td>
-                <td className="">{item.created_at}</td>
-                <td className="">{item.purchase.track_id}</td>
-                <td className="">{numberWithCommas(item.purchase.amount)} تومان</td>
-                <td style={{ borderRadius: '12px 0 0 12px' }} className="">
-                  {item.status_title}
-                </td>
+              <tr key={item.id}>
+                <td style={{ borderRadius: '0 12px 12px 0' }}>{item.course.title}</td>
+                <td>{item.created_at}</td>
+                <td>{item.purchase.track_id}</td>
+                <td>{numberWithCommas(item.purchase.amount)} تومان</td>
+                <td style={{ borderRadius: '12px 0 0 12px' }}>{item.status_title}</td>
               </tr>
             ))}
           </tbody>

@@ -27,7 +27,6 @@ function Footer() {
     <footer className="tw-mb-16 md:tw-mb-8 bg-light" style={{}}>
       <div className="tw-grid bg-white footer-gridder" style={{}}>
         <div
-          className=""
           style={{
             boxShadow: '0 -10px 8px -8px #eee',
           }}
@@ -62,14 +61,14 @@ function Footer() {
             boxShadow: '0 -10px 8px -8px #eee inset',
           }}
         >
-          <div className="" />
+          <div />
         </div>
       </div>
       <div
         className="bg-white container tw-px-4 tw-py-10 tw-grid tw-grid-cols-1 lg:tw-grid-cols-3 tw-gap-x-16 tw-gap-y-8"
         style={{}}
       >
-        <div className="">
+        <div>
           <p
             className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg leading-2"
             style={{ lineHeight: window.innerWidth <= 1536 ? '25px' : '35px' }}
@@ -87,9 +86,9 @@ function Footer() {
           </p>
         </div>
         <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 tw-px-8 tw-mx-auto tw-max-w-full xl:tw-max-w-sm ">
-          <div className="">
+          <div>
             <h4 className="text-blue tw-mb-2">لینک‌های مفید</h4>
-            <ul className="">
+            <ul>
               <li>
                 <Link to="/">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
@@ -141,7 +140,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="">
+          <div>
             <h4 className="text-blue tw-mb-2">برترین دسته‌ها</h4>
             <ul>
               {top_categories.map((category) => (

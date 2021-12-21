@@ -51,7 +51,7 @@ export default function Page404() {
                   </button>
                   .
                 </p>
-                <div className="">
+                <div>
                   <form onSubmit={onSubmit}>
                     <div className="tw-flex tw-justify-between tw-items-center landing-search-container bg-light tw-mb-4 tw-w-full tw-max-w-lg 2xl:tw-max-w-2xl tw-mx-auto tw-shadow-xl">
                       <input

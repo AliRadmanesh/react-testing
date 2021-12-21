@@ -56,7 +56,7 @@ export default function NavigationMobile() {
 
   return (
     <div className="bg-light tw-h-full tw-flex tw-flex-col lg:tw-hidden tw-justify-between">
-      <div className="">
+      <div>
         <Link to="/dashboard">
           <span className="tw-flex tw-my-6 tw-items-center dashboard-item">
             <span

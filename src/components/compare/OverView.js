@@ -35,7 +35,7 @@ export default function OverView() {
   } = secondary;
 
   return (
-    <div className="">
+    <div>
       <div className="tw-grid compare-gridder bg-white tw-p-4 tw-shadow tw-my-6 2xl:tw-my-10 tw-gap-y-4 tw-rounded-xl font-kalameh-num">
         {/* PRIMARY */}
         <div className="primary-overview">

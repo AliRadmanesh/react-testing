@@ -84,25 +84,25 @@ export default function HomeColleagues() {
                   آموزشگاه هایی که با کارساز همکاری می کنند
                 </p>
               </span>
-              <SwiperSlide className="">
+              <SwiperSlide>
                 <img style={{}} src={eseminar} alt="" />
               </SwiperSlide>
-              <SwiperSlide className="">
+              <SwiperSlide>
                 <img style={{}} src={evand} alt="" />
               </SwiperSlide>
-              <SwiperSlide className="">
+              <SwiperSlide>
                 <img style={{}} src={excelpedia} alt="" />
               </SwiperSlide>
-              <SwiperSlide className="">
+              <SwiperSlide>
                 <img style={{}} src={hamyar} alt="" />
               </SwiperSlide>
-              <SwiperSlide className="">
+              <SwiperSlide>
                 <img style={{}} src={maktabkhooneh} alt="" />
               </SwiperSlide>
-              <SwiperSlide className="">
+              <SwiperSlide>
                 <img style={{}} src={moobemoo} alt="" />
               </SwiperSlide>
-              <SwiperSlide className="">
+              <SwiperSlide>
                 <img style={{}} src={shahid} alt="" />
               </SwiperSlide>
             </Swiper>

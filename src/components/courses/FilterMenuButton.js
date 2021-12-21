@@ -18,7 +18,7 @@ export default function ScrollToTop() {
         zIndex: '9999',
       }}
     >
-      <img src={filterIcon} alt="" className="" style={{ width: '24px', height: '24px' }} />
+      <img src={filterIcon} alt="" style={{ width: '24px', height: '24px' }} />
     </button>
   );
 }

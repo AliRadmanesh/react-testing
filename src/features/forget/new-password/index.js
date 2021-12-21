@@ -70,7 +70,6 @@ export default function NewPassword() {
                 <input
                   value={password}
                   type={showPassword ? 'text' : 'password'}
-                  className=""
                   placeholder="گذرواژه خود را وارد نمایید."
                   style={{
                     outline: 'none',

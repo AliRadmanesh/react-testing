@@ -12,7 +12,6 @@ export default function About() {
 
   return (
     <div
-      className=""
       style={{
         height,
         // overflowY: allowScroll ? 'visible' : 'hidden',
