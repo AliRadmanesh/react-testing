@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Home from '../../features/home';
 import Dashboard from '../../common/Layout/dashboard';
-import Blogs from '../../features/blogs';
 import Login from '../../features/login';
 import Register from '../../features/register';
 import Categories from '../../features/categories';
@@ -44,7 +43,6 @@ function AppRouter() {
       <Router basename="/">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/faq" component={FAQ} />
           <Route exact path="/contact" component={Contact} />
