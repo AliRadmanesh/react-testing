@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_100" data-name="Rectangle 100" width="48" height="48" fill="#118ab2"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_20" data-name="Mask Group 20" clip-path="url(#clip-path)">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="invisible_box" data-name="invisible box">
+        <rect id="Rectangle_103" data-name="Rectangle 103" width="48" height="48" fill="none"/>
+      </g>
+      <g id="Q3_icons" data-name="Q3 icons" transform="translate(5 5)">
+        <g id="Group_182" data-name="Group 182">
+          <circle id="Ellipse_3" data-name="Ellipse 3" cx="6" cy="6" r="6" transform="translate(26 26)" fill="#118ab2"/>
+          <path id="Path_159" data-name="Path 159" d="M28,18a2,2,0,0,1,0,4A19,19,0,0,0,9,41a2,2,0,0,1-4,0A23,23,0,0,1,28,18Z" transform="translate(8 -5)" fill="#118ab2"/>
+          <path id="Path_160" data-name="Path 160" d="M41,5a2,2,0,0,1,0,4A32.1,32.1,0,0,0,9,41a2,2,0,0,1-4,0A36,36,0,0,1,41,5Z" transform="translate(-5 -5)" fill="#118ab2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

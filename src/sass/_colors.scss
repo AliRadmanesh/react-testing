@@ -1,0 +1,149 @@
+@import 'variables';
+/* BACKGROUND COLORS */
+.bg-white {
+  background-color: #fefefe;
+}
+
+.bg-light {
+  background-color: #fbfbfb;
+}
+
+.bg-medium {
+  background-color: #f4f4f4;
+}
+
+.bg-gray {
+  background-color: #f6f9fb;
+}
+
+.bg-success {
+  background-color: $karsaz-success;
+}
+
+.bg-error {
+  background-color: $karsaz-error;
+}
+
+.bg-warning {
+  background-color: $karsaz-warning;
+}
+
+.bg-primary {
+  background-color: $karsaz-primary;
+}
+
+.bg-primary-pale {
+  background-color: $karsaz-primary-pale;
+}
+
+.bg-primary-light {
+  background-color: $karsaz-primary-light;
+}
+
+.bg-success-light {
+  background-color: $karsaz-success-light;
+}
+
+.bg-secondary-light {
+  background-color: $karsaz-secondary-light;
+}
+
+.bg-warning-light {
+  background-color: $karsaz-warning-light;
+}
+
+.bg-error-light {
+  background-color: $karsaz-error-light;
+}
+
+.bg-success-light {
+  background-color: $karsaz-success-light;
+}
+
+.bg-info-light {
+  background-color: $karsaz-info-light;
+}
+
+.bg-dark-gray {
+  background-color: $karsaz-dark-gray;
+}
+
+.bg-light-gray {
+  background-color: $karsaz-light-gray;
+}
+
+.bg-gray {
+  background-color: $karsaz-gray;
+}
+
+/* TEXT COLORS */
+.text-white {
+  color: #fefefe;
+}
+
+.text-light {
+  color: #fbfbfb;
+}
+
+.text-medium {
+  color: #e2e2e2;
+}
+
+.text-gray {
+  color: #878787;
+}
+
+.text-blue {
+  color: $karsaz-primary;
+}
+
+.text-info {
+  color: $karsaz-info;
+}
+
+.text-blue-light {
+  color: $karsaz-primary-light;
+}
+
+.text-dark,
+.text-black {
+  color: $karsaz-secondary;
+}
+
+.text-success {
+  color: $karsaz-success;
+}
+
+.text-error {
+  color: $karsaz-error;
+}
+
+.text-warning {
+  color: $karsaz-warning;
+}
+
+// Border Colors
+.border-error {
+  border-color: $karsaz-error;
+}
+
+.border-white {
+  border-color: #fbfbfb;
+}
+
+// Hover Effect
+.bg-primary-hover:hover {
+  background-color: $karsaz-primary;
+}
+
+.bg-primary-light-hover:hover {
+  background-color: $karsaz-primary-light;
+}
+
+.bg-primary-pale-hover:hover {
+  background-color: $karsaz-primary-pale;
+}
+
+.text-primary-hover:hover {
+  color: $karsaz-primary;
+}

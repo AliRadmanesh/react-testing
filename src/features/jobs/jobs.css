@@ -1,0 +1,10 @@
+.search-box {
+}
+
+.search-box form datalist {
+  margin-top: 2px;
+}
+
+.search-box form datalist option {
+  color: red;
+}

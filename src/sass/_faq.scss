@@ -1,0 +1,58 @@
+@import 'variables';
+.faq {
+  &-item {
+    position: relative;
+    button {
+      background-color: $karsaz-white;
+      transition: background-color 0.5s ease-in, color 0.5s ease-in, padding 1s ease-in;
+      color: $karsaz-secondary;
+      position: absolute;
+      top: 0;
+
+      z-index: 1;
+
+      img.up {
+        display: none;
+      }
+      img.down {
+        display: block;
+      }
+    }
+
+    button.expand {
+      background-color: $karsaz-primary;
+      color: $karsaz-white;
+
+      img.up {
+        display: block;
+      }
+
+      img.down {
+        display: none;
+      }
+    }
+
+    button + div {
+      padding-top: 0;
+      padding-bottom: 0;
+      transition: padding 0.5s ease-in;
+    }
+
+    button + div > div {
+      max-height: 0;
+      overflow: hidden;
+      position: relative;
+      top: 0;
+      transition: top 0.5s ease-in-out, max-height 0.5s ease-in-out;
+    }
+
+    button.expand + div {
+      padding-bottom: 16px;
+      padding-top: 16px;
+    }
+    button.expand + div > div {
+      max-height: 120px;
+      top: 56px;
+    }
+  }
+}

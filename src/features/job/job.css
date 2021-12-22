@@ -1,0 +1,110 @@
+.job-gridder,
+.job-condition-gridder {
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 1024px) {
+  .job-gridder {
+    grid-template-columns: 3fr 1fr;
+  }
+  .job-condition-gridder {
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+.job-course-container {
+  background: rgba(17, 138, 178, 1);
+  grid-template-columns: 1fr;
+  /* background-size: 200px; */
+  /* position: relative; */
+}
+
+.job-course-container .swiper-container::before {
+  position: absolute;
+  background: linear-gradient(rgba(17, 138, 178, 1), rgba(17, 138, 178, 0.8));
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+
+.job-course-container .swiper-container {
+  /* background: red; */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  background: url('../../assets/illustrations/pattern.svg') repeat;
+  background-size: 200px;
+}
+
+@media screen and (min-width: 1024px) {
+  .job-course-container {
+    grid-template-columns: 2fr 3fr;
+  }
+  .job-course-container .swiper-container::before {
+    background: rgba(17, 138, 178, 0.8);
+  }
+}
+
+.job-course-container .swiper-slide:last-child {
+  margin-left: 1rem;
+}
+
+.job-course-container .illustration {
+  padding-right: 16px;
+}
+
+@media screen and (min-width: 1536px) {
+  .job-course-container .illustration {
+    padding-right: 204px;
+  }
+}
+
+.job-description p {
+  color: #878787;
+  font-size: 12px;
+}
+
+.job-description strong {
+  /* color:  */
+  display: block;
+  color: #2c2c2c;
+  margin-top: 1rem;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 1536px) {
+  .job-description p {
+    font-size: 16px;
+  }
+
+  .job-description strong {
+    /* color:  */
+    margin-top: 1.5rem;
+    font-size: 16px;
+  }
+}
+
+.job-requirements p:not(.job-requirements p:last-child),
+.job-description p:not(.job-requirements p:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.job-requirements p::before,
+.job-description p::before {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 1rem;
+  content: '';
+  background: rgba(17, 138, 178, 1);
+  position: relative;
+  bottom: -0.25rem;
+  border-radius: 4px;
+}
+
+.job-description p:first-child::before {
+  display: none;
+}

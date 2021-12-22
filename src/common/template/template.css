@@ -1,0 +1,315 @@
+/* Inputs */
+.template {
+  width: 100% !important;
+}
+
+::-moz-placeholder,
+.template input:-moz-placeholder,
+.template input:-ms-input-placeholder,
+.template input::-webkit-input-placeholder,
+.template textarea:-moz-placeholder,
+.template textarea:-ms-input-placeholder,
+.template textarea::-webkit-input-placeholder {
+  color: #878787;
+}
+
+.template p {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.template input,
+.template .dropdown {
+  margin: 0 !important;
+  padding: 14px 8px !important;
+  height: 56px;
+  background-color: #f0f2f2 !important;
+  outline: none !important;
+  color: #2c2c2c !important;
+  font-weight: 400 !important;
+  line-height: 26 !important;
+  font-size: 1rem !important;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s !important;
+  display: block;
+}
+
+@media screen and (min-width: 1280px) {
+  .template input,
+  .template .dropdown {
+    padding: 22px 12px !important;
+    height: 66px;
+  }
+}
+
+.template input:focus {
+  background-color: #f0f2f2 !important;
+  -webkit-box-shadow: 0 0 0 2px #118ab2 !important;
+  box-shadow: 0 0 0 2px #118ab2 !important;
+}
+
+.template input:hover,
+.template .dropdown:hover {
+  -webkit-box-shadow: 0 0 0 1px #118ab2 !important;
+  box-shadow: 0 0 0 1px #118ab2 !important;
+}
+
+.template input.success,
+.template input.success:hover,
+.template input.success:focus,
+.template .dropdown.success {
+  background-color: #f2fbf7 !important;
+  -webkit-box-shadow: 0 0 0 1px #11b262 !important;
+  box-shadow: 0 0 0 1px #11b262 !important;
+}
+
+.template input.error,
+.template input.error:hover,
+.template input.error:focus,
+.template .dropdown.error {
+  background-color: #fbf2f2 !important;
+  -webkit-box-shadow: 0 0 0 1px #b21111 !important;
+  box-shadow: 0 0 0 1px #b21111 !important;
+}
+
+.template input.warning,
+.template input.warning:hover,
+.template input.warning:focus,
+.template .dropdown.warning {
+  background-color: #fbf8f2 !important;
+  -webkit-box-shadow: 0 0 0 1px #b26f11 !important;
+  box-shadow: 0 0 0 1px #b26f11 !important;
+}
+
+.template input:disabled,
+.template input.error:disabled,
+.template input.success:disabled,
+.template input.warning:disabled,
+.template .dropdown.disabled {
+  background-color: #e2e2e2 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* DROPDOWN */
+
+.template .dropdown {
+  font-size: 1rem;
+}
+
+.template .dropdown input,
+.template .dropdown input:hover,
+.template .dropdown input:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.template .dropdown {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.template .dropdown p::-moz-selection,
+.template .dropdown p::selection {
+  background-color: transparent;
+  color: inherit;
+}
+
+.template .dropdown {
+  width: auto;
+}
+
+.template .dropdown-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 0.5rem;
+  z-index: 1;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.template .dropdown-items {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.05);
+  /* width: 100%; */
+}
+
+.template .dropdown-item {
+  background-color: #fefefe;
+  padding: 14px 8px !important;
+  height: 56px;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s !important;
+  position: relative;
+}
+
+@media screen and (min-width: 1280px) {
+  .template .dropdown-item {
+    padding: 22px 12px !important;
+    height: 66px;
+  }
+}
+
+.template .dropdown-item:hover {
+  background-color: #118ab2;
+  color: white;
+}
+
+.template .dropdown-item:first-child {
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.template .dropdown-item:last-child {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.template input[type='checkbox'] {
+  height: 0;
+  width: 0;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.template .checkbox-container {
+  display: block;
+  position: relative;
+  margin: 1rem auto;
+  padding-right: 42px;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #2c2c2c;
+}
+
+.template .checkmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background-color: #f0f2f2;
+  border: 0 0 2px transparent;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.template .checkbox-container:hover input[type='checkbox'] ~ .checkmark {
+  background-color: #e2e2e2;
+  cursor: pointer;
+}
+
+.template .checkbox-container input[type='checkbox']:checked ~ .checkmark {
+  background-color: #118ab2;
+}
+
+.template .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.template .checkmark-indicator {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 16px;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.template .checkbox-container input[type='checkbox']:checked ~ .checkmark-indicator {
+  opacity: 1;
+}
+
+@media screen and (min-width: 1536px) {
+  .template .checkbox-container,
+  .template .radio-container {
+    font-size: 18px;
+  }
+}
+
+.template .template-input-message,
+.template .template-dropdown-message,
+.template .template-textarea-message {
+  font-size: 12px;
+  margin: 0.5rem 0.5rem auto auto;
+}
+
+@media screen and (min-width: 1280px) {
+  .template .template-input-message,
+  .template .template-dropdown-message,
+  .template .template-textarea-message {
+    font-size: 14px;
+  }
+}
+
+.template .radio-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #2c2c2c;
+  padding-right: 42px;
+  margin: 1rem auto;
+}
+
+.template .radio-container input {
+  /* position: absolute; */
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}
+
+.template .radio-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.template .radio-container:hover input ~ .checkmark {
+  box-shadow: 0 0 0 2px #118ab2;
+  transition: box-shadow 0.1s ease-in;
+}
+
+.template .radio-container input:checked ~ .checkmark {
+  /* background-color: #2196f3; */
+  box-shadow: 0 0 0 2px #118ab2;
+}
+
+.template .radio-container .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.template .radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.template .radio-container .checkmark:after {
+  top: 3px;
+  right: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #118ab2;
+}

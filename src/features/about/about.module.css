@@ -1,0 +1,32 @@
+.aboutContainer {
+  @apply tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-12;
+}
+
+.aboutMain {
+  grid-area: main;
+  @apply tw-mb-4;
+}
+
+.aboutList {
+  grid-area: list;
+  list-style: none;
+  @apply tw-mb-4;
+}
+
+.aboutImage {
+  @apply tw-w-auto tw-mb-4;
+}
+
+.aboutTitle {
+  font-family: 'KalamehNum';
+  @apply tw-text-base tw-font-semibold tw-font-kalameh lg:tw-text-xl tw-mb-2;
+}
+
+.aboutDescription {
+  @apply tw-font-yekan tw-text-sm lg:tw-text-lg tw-font-normal;
+}
+
+@media screen and (min-width: 768px) {
+  .aboutContainer {
+  }
+}
