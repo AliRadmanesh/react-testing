@@ -34,10 +34,10 @@ export default function Job() {
         <Header data={data} />
         <div className="tw-grid tw-mt-12 job-gridder tw-gap-x-4 container tw-items-start">
           <div>
-            <Company data={data} />
-            <Requirements data={data} />
             <Description data={data} />
+            <Requirements data={data} />
             <ConditionsContainer data={data} />
+            <Company data={data} />
           </div>
           <StikcyBox data={data} />
         </div>

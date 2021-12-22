@@ -92,7 +92,7 @@
   margin-bottom: 0.5rem;
 }
 
-.job-requirements p::before,
+/* .job-requirements p::before,
 .job-description p::before {
   display: inline-block;
   width: 16px;
@@ -103,7 +103,7 @@
   position: relative;
   bottom: -0.25rem;
   border-radius: 4px;
-}
+} */
 
 .job-description p:first-child::before {
   display: none;
