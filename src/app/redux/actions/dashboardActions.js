@@ -190,8 +190,23 @@ export const getDashboardNotifications = () => async (dispatch) => {
     else toast.error(data.message);
   }
 };
+// TODO: ///
+export const changeNotifViewStatus = (data) => async (dispatch) => {
+  const res = await instance.get('/api/v1/web/service/users/dashboard/notifications');
+
+  if (res.status === 200) {
+    dispatch({
+      type: 'SET_DASHBOARD_NOTIFICATIONS',
+      payload: res.data.data,
+    });
+  }
+};
 
 export const showDashboardModal = (data) => (dispatch) => {
+  dispatch({
+    type: 'CHANGE_NOTIFICATION_VIEW_STATUS',
+    payload: data,
+  });
   dispatch({
     type: 'SHOW_DASHBOARD_MODAL',
     payload: data,

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { showCategoryMobileMenu, showMenu } from '../../app/redux/actions/headerActions';
 import bars from '../../assets/icons/bars.svg';
-import logoSmall from '../../assets/images/logo/karsaz/logo-small.svg';
+import logotype from '../../assets/images/logo/karsaz/logotype.png';
 import close from '../../assets/icons/Close-Gray.svg';
 import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from './HeaderUserSection';
@@ -47,8 +47,8 @@ const MenuMobile = () => {
           >
             <img src={bars} alt="" />
           </div>
-          <img src={logoSmall} className="tw-mx-4" alt="" />
-          <h3 className="tw-font-black text-blue">کارساز</h3>
+          <img src={logotype} className="tw-mx-4 tw-w-20" alt="" />
+          {/* <h3 className="tw-font-black text-blue">کارساز</h3> */}
         </div>
         <HeaderUserSection />
       </div>

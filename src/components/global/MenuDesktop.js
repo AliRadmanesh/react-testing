@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { showCategoryDesktopMenu } from '../../app/redux/actions/headerActions';
-import logoLarge from '../../assets/images/logo/karsaz/logo-large.svg';
+import logotype from '../../assets/images/logo/karsaz/logotype.png';
 import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from './HeaderUserSection';
 
@@ -57,8 +57,8 @@ export default function MenuDesktop() {
         >
           <div className="tw-flex tw-items-center tw-py-2">
             <Link to="/" className=" tw-ml-4 lg:tw-ml-8 tw-flex tw-items-center">
-              <img src={logoLarge} alt="" />
-              <h3 className="tw-mr-4 tw-font-black text-blue">کارساز</h3>
+              <img src={logotype} className="tw-w-32" alt="" />
+              {/* <h3 className="tw-mr-4 tw-font-black text-blue">کارساز</h3> */}
             </Link>
             <Link
               to="/"

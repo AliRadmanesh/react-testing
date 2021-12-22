@@ -8,6 +8,7 @@ import {
   getDashboardNotifications,
   closeDashboardModal,
   showDashboardModal,
+  changeNotifViewStatus,
 } from '../../../app/redux/actions/dashboardActions';
 
 import closeIcon from '../../../assets/icons/Close Fill Light.svg';
@@ -159,7 +160,10 @@ export default function Notifications() {
                   style={{ borderRadius: '0 12px 12px 0' }}
                   className="text-primary-hover tw-cursor-pointer"
                   role="none"
-                  onClick={() => dispatch(showDashboardModal(item))}
+                  onClick={() => {
+                    // dispatch(changeNotifViewStatus(item));
+                    dispatch(showDashboardModal(item));
+                  }}
                 >
                   {item.notification.title}
                 </td>
