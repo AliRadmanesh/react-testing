@@ -101,7 +101,7 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="https://blog.karsaz.app" target="_blank" rel="noreferrer">
+                <a href="https://karsaz.app/blog" target="_blank" rel="noreferrer">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     وبلاگ
                   </p>

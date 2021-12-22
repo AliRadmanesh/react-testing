@@ -138,7 +138,7 @@ const MenuMobile = () => {
             فرصت‌های شغلی
           </Link>
           <a
-            href="https://blog.karsaz.app"
+            href="https://karsaz.app/blog"
             target="_blank"
             rel="noreferrer"
             className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num"
