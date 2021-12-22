@@ -190,15 +190,16 @@ export const getDashboardNotifications = () => async (dispatch) => {
     else toast.error(data.message);
   }
 };
-// TODO: ///
-export const changeNotifViewStatus = (data) => async (dispatch) => {
-  const res = await instance.get('/api/v1/web/service/users/dashboard/notifications');
 
-  if (res.status === 200) {
-    dispatch({
-      type: 'SET_DASHBOARD_NOTIFICATIONS',
-      payload: res.data.data,
-    });
+export const changeNotifViewStatus = (data) => async () => {
+  console.log(data);
+  const res = await instance.post(
+    `/api/v1/web/service/users/dashboard/notifications/${data.id}/view`,
+    { notification_type: data.type },
+  );
+
+  if (res.status === 200 || res.status === 201) {
+    // Do nothing :)
   }
 };
 
