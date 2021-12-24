@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import toast from 'react-hot-toast';
+import axios from '../../app/axios';
 import CategoryCard from '../../components/global/CategoryCard';
 import Layout from '../../common/Layout/pacific';
 
@@ -13,9 +13,7 @@ export default function Categories() {
 
   async function getData() {
     try {
-      const res = await axios.get(
-        'https://develop.karsazapp.ir/api/v1/web/content/courses/all-categories',
-      );
+      const res = await axios.get('/api/v1/web/content/courses/all-categories');
 
       if (res.data.code === 200) {
         setCategories(res.data.data.categories);

@@ -41,7 +41,7 @@ export default function UserComment({ id }) {
           dispatch({ type: 'RESET_COMMENTS' });
           dispatch({ type: 'SET_COMMENTS_LOADING' });
           const res1 = await instance.get(
-            `api/v1/web/service/courses/${id}/comments/?sort=${2}&page=${1}`,
+            `api/v1/web/service/courses/${id}/comments/?sortby=${2}&page=${1}`,
           );
           setRate(0);
           setMessage('');

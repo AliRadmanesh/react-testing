@@ -12,7 +12,7 @@ export default function ConditionsContainer({ data }) {
     },
   } = data;
   return (
-    <div className="bg-white tw-rounded-xl tw-shadow-xl tw-p-4 tw-mt-8 font-kalameh-num">
+    <div className="bg-white tw-rounded-xl tw-shadow-xl tw-p-4 tw-mb-8 font-kalameh-num">
       <p className="text-blue tw-mr-2 tw-text-base tw-font-semibold 2xl:tw-text-2xl 2xl:tw-font-black tw-mb-4">
         شرایط احراز شغل
       </p>
@@ -94,7 +94,7 @@ export default function ConditionsContainer({ data }) {
             {skills.map((item) => (
               <div className="tw-rounded bg-light text-gray tw-p-2 tw-my-1 tw-mx-1">
                 <p className="tw-font-normal tw-text-xs 2xl:tw-text-base">
-                  {item.name} | {item.seniority_level}
+                  {`${item.name} ${item.seniority_level ? `| ${item.seniority_level}` : ''}`}
                 </p>
               </div>
             ))}

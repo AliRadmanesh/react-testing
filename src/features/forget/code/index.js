@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useTimer } from 'react-timer-hook';
 import useDigitInput from 'react-digit-input';
+import axios from '../../../app/axios';
 import AuthHeader from '../../../components/auth/AuthHeader';
 import LeftBanner from '../../../components/auth/LeftBanner';
 
@@ -44,10 +44,7 @@ export default function ForgetCode() {
           state: 'reset',
         };
 
-        const res = await axios.post(
-          'https://develop.karsazapp.ir/api/v1/web/service/auth/mobile/send',
-          data,
-        );
+        const res = await axios.post('/api/v1/web/service/auth/mobile/send', data);
 
         if (res.status === 200) {
           window.localStorage.setItem('tempToken', res.data.data.token);
@@ -81,10 +78,7 @@ export default function ForgetCode() {
           device_name: navigator.userAgent,
         };
 
-        const res = await axios.post(
-          'https://develop.karsazapp.ir/api/v1/web/service/auth/mobile/verify',
-          data,
-        );
+        const res = await axios.post('/api/v1/web/service/auth/mobile/verify', data);
 
         if (res.status === 200) {
           history.push('/forget/new-password');

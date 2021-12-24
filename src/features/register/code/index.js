@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useTimer } from 'react-timer-hook';
 import useDigitInput from 'react-digit-input';
+import axios from '../../../app/axios';
 import AuthHeader from '../../../components/auth/AuthHeader';
 import LeftBanner from '../../../components/auth/LeftBanner';
 
@@ -38,7 +38,7 @@ export default function RegisterCode() {
       const data = {
         mobile: window.localStorage.getItem('userPhone'),
       };
-      await axios.post('https://develop.karsazapp.ir/api/v1/web/service/auth/mobile/check', data);
+      await axios.post('/api/v1/web/service/auth/mobile/check', data);
     } catch (error) {
       const { status, data } = error.response;
       if (status === 422) toast.error(data.message);
@@ -64,10 +64,7 @@ export default function RegisterCode() {
             device_name: window.navigator.userAgent,
           };
 
-          const res = await axios.post(
-            'https://develop.karsazapp.ir/api/v1/web/service/auth/mobile/verify',
-            data,
-          );
+          const res = await axios.post('/api/v1/web/service/auth/mobile/verify', data);
 
           if (res.status === 200) {
             history.push('/register/complete-info');

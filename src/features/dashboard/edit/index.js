@@ -116,10 +116,6 @@ export default function Edit() {
     setLoading(false);
   };
 
-  // const onSubmit = (event) => {
-  //   event.preventDefault();
-  // };
-
   const onSelectImage = (event) => {
     if (event?.target?.files.length) {
       if (
@@ -162,8 +158,8 @@ export default function Edit() {
     if (gender) {
       data.append('user_gender', gender);
     }
-    if (prev.user_back_account) {
-      data.append('user_back_account', prev.user_back_account);
+    if (prev.user_bank_account) {
+      data.append('user_bank_account', prev.user_bank_account);
     }
     if (prev.user_email) {
       data.append('user_email', prev.user_email);
@@ -200,8 +196,6 @@ export default function Edit() {
   useEffect(() => {
     if (province.value) getCities(province.value);
   }, [province]);
-
-  // useEffect(() => {}, [defaults]);
 
   return (
     <Layout>
@@ -264,7 +258,7 @@ export default function Edit() {
                   style={{ borderRadius: '0 12px 12px 0' }}
                   // onChange={(e) => setValue(e.target.value)}
                   defaultValue={defaults.bank_account}
-                  {...register('user_bank_account', { required: false, pattern: /[0-9]{24}/ })}
+                  {...register('user_bank_account', { required: false, pattern: /[0-9]{16}/ })}
                 />
                 <div
                   className="tw-px-2 md:tw-px-4 xl:tw-px-6 text-gray bg-dark-gray tw-h-full tw-grid tw-place-items-center"
@@ -315,7 +309,7 @@ export default function Edit() {
             <div className="tw-flex tw-flex-col">
               <div className="template">
                 {/* eslint-disable-next-line */}
-                <label class="radio-container">
+                <label className="radio-container">
                   <span>مرد</span>
                   <input
                     name="gender"
@@ -331,7 +325,7 @@ export default function Edit() {
               </div>
               <div className="template tw--mt-6">
                 {/* eslint-disable-next-line */}
-                <label class="radio-container">
+                <label className="radio-container">
                   <span>زن</span>
                   <input
                     name="gender"

@@ -49,7 +49,7 @@ export default function Search() {
     const params = new URL(window.location).searchParams;
     // eslint-disable-next-line no-restricted-syntax
     for (const pair of params) {
-      if (pair[0].includes('sort')) {
+      if (pair[0].includes('sortby')) {
         dispatch(setQuerySort(parseInt(pair[1])));
       }
       if (pair[0].includes('page')) {

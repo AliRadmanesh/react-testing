@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import toast from 'react-hot-toast';
+import axios from '../../app/axios';
 import studentIcon from '../../assets/icons/Student.svg';
 import slideIcon from '../../assets/icons/Slide.svg';
 import schoolIcon from '../../assets/icons/School.svg';
@@ -12,7 +12,7 @@ export default function LeftBanner({ stage }) {
 
   useEffect(() => {
     axios
-      .get('https://develop.karsazapp.ir/api/v1/web/service/login-stat')
+      .get('/api/v1/web/service/login-stat')
       .then((res) => {
         if (res.status === 200) {
           setData(res.data.data.stat);

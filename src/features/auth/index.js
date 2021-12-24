@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import axios from '../../app/axios';
 import AuthHeader from '../../components/auth/AuthHeader';
 import LeftBanner from '../../components/auth/LeftBanner';
 
@@ -30,10 +30,7 @@ export default function Authentication() {
         const data = {
           mobile: phone,
         };
-        const res = await axios.post(
-          'https://develop.karsazapp.ir/api/v1/web/service/auth/mobile/check',
-          data,
-        );
+        const res = await axios.post('/api/v1/web/service/auth/mobile/check', data);
         if (res.status === 200 || res.status === 201) {
           window.localStorage.setItem('userPhone', phone);
           history.push('/login/password');

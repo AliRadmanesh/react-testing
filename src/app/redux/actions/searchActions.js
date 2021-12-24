@@ -67,42 +67,32 @@ export const hideSuggest = () => (dispatch) => {
   dispatch({ type: HIDE_SUGGEST });
 };
 
-export const searchCourses =
-  // (category, academies = [], types = [], sort = 1, free = 0, page) =>
-  (query) => async (dispatch) => {
-    let proceed = false;
-    // let query = `?category[0]=${category}`;
-    // academies.forEach((item, index) => {
-    //   query += `&academy[${index}]=${item.id}`;
-    // });
-    // types.map((item, index) => {
-    //   query += `&type[${index}]=${item.id}`;
-    // });
-    // query += `&sortby=${sort}&is_free=${free}&page=${page}`;
+export const searchCourses = (query) => async (dispatch) => {
+  let proceed = false;
 
-    try {
-      const res = await instance.get(`/api/v1/web/service/courses/search-filters/${query}`);
-      if (res.status === 200 || res.status === 201) {
-        dispatch({
-          type: SEARCH_CATEGORY_COURSES,
-          payload: res.data.data,
-        });
-        dispatch({
-          type: SET_PAGE_TOTAL,
-          payload: res.data.meta.last_page,
-        });
-        dispatch({
-          type: SET_TOTAL_RESULTS,
-          payload: res.data.meta.total,
-        });
-      } else if (res.status === 404) {
-        dispatch({ type: SEARCH_CATEGORY_COURSES, payload: [] });
-      }
-    } catch (error) {
-      if (proceed) toast.error('خطا در دریافت دوره‌های مربوط به دسته‌بندی');
-      else proceed = true;
+  try {
+    const res = await instance.get(`/api/v1/web/service/courses/search-filters/${query}`);
+    if (res.status === 200 || res.status === 201) {
+      dispatch({
+        type: SEARCH_CATEGORY_COURSES,
+        payload: res.data.data,
+      });
+      dispatch({
+        type: SET_PAGE_TOTAL,
+        payload: res.data.meta.last_page,
+      });
+      dispatch({
+        type: SET_TOTAL_RESULTS,
+        payload: res.data.meta.total,
+      });
+    } else if (res.status === 404) {
+      dispatch({ type: SEARCH_CATEGORY_COURSES, payload: [] });
     }
-  };
+  } catch (error) {
+    if (proceed) toast.error('خطا در دریافت دوره‌های مربوط به دسته‌بندی');
+    else proceed = true;
+  }
+};
 
 export const setSearchContent = (options) => (dispatch) => {
   dispatch({

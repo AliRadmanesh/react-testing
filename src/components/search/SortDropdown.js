@@ -30,7 +30,7 @@ export default function SortDropdown() {
 
   const onClick = (value) => {
     const url = new URL(window.location);
-    url.searchParams.set('sort', value);
+    url.searchParams.set('sortby', value);
     history.push(`./${url.search}`);
   };
 

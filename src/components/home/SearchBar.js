@@ -14,7 +14,7 @@ const SearchBar = () => {
     e.preventDefault();
     dispatch(setQueryKeywords(value));
     if (value !== '') {
-      history.push(`../courses/search/?q=${value}&is_free=0&sort=1&page=1`);
+      history.push(`/courses/search/?q=${value}&is_free=0&sortby=1&page=1`);
     }
   };
 
@@ -73,7 +73,7 @@ const SearchBar = () => {
         <div className="tw-flex tw-flex-wrap">
           {top_search.map((item) => (
             <Link
-              to={`/courses/search/?q=${item}&is_free=0&sort=1&page=1`}
+              to={`/courses/search/?q=${item}&is_free=0&sortby=1&page=1`}
               key="1"
               className="bg-medium font-iranyekan-num tw-text-xs tw-font-normal 2xl:tw-text-sm tw-py-2 tw-px-4 tw-m-2"
               style={{ borderRadius: '6px' }}

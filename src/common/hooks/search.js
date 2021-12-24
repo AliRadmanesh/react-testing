@@ -55,7 +55,7 @@ export function useQuery() {
 
   useEffect(() => {
     url.searchParams.set('is_free', is_free);
-    url.searchParams.set('sort', sort);
+    url.searchParams.set('sortby', sort);
     url.searchParams.set('page', current);
 
     if (academies.length === 0) {

@@ -7,7 +7,7 @@ export default function Company({ data }) {
   } = data;
 
   return (
-    <div className="bg-white tw-rounded-xl tw-shadow-xl tw-p-4 font-kalameh-num">
+    <div className="bg-white tw-rounded-xl tw-shadow-xl tw-p-4 font-kalameh-num tw-mb-8">
       <p className="text-blue tw-mr-2 tw-text-base tw-font-semibold 2xl:tw-text-2xl 2xl:tw-font-black tw-mb-4">
         درباره {name_fa}
       </p>

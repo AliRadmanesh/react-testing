@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { showCategoryMobileMenu, showMenu } from '../../app/redux/actions/headerActions';
 import bars from '../../assets/icons/bars.svg';
-import logoSmall from '../../assets/images/logo/karsaz/logo-small.svg';
+import logotype from '../../assets/images/logo/karsaz/logotype.png';
 import close from '../../assets/icons/Close-Gray.svg';
 import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from './HeaderUserSection';
@@ -47,8 +47,8 @@ const MenuMobile = () => {
           >
             <img src={bars} alt="" />
           </div>
-          <img src={logoSmall} className="tw-mx-4" alt="" />
-          <h3 className="tw-font-black text-blue">کارساز</h3>
+          <img src={logotype} className="tw-mx-4 tw-w-20" alt="" />
+          {/* <h3 className="tw-font-black text-blue">کارساز</h3> */}
         </div>
         <HeaderUserSection />
       </div>
@@ -105,7 +105,7 @@ const MenuMobile = () => {
               />
               {value !== '' ? (
                 <Link
-                  to={`/courses/search/?q=${value}&is_free=0&sort=1&page=1`}
+                  to={`/courses/search/?q=${value}&is_free=0&sortby=1&page=1`}
                   type="submit"
                   className="tw-p-0"
                   onClick={() => dispatch(showMenu(false))}
@@ -138,7 +138,7 @@ const MenuMobile = () => {
             فرصت‌های شغلی
           </Link>
           <a
-            href="https://blog.karsaz.app"
+            href="https://karsaz.app/blog"
             target="_blank"
             rel="noreferrer"
             className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num"

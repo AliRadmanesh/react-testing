@@ -120,7 +120,24 @@ export const getDashboardFavoritesLists = () => async (dispatch) => {
 
     if (res.status === 200) {
       dispatch({
-        type: 'SET_DASHBOARD_FAVORITES_LISTS',
+        type: 'SET_DASHBOARD_FAVORITES_COURSES',
+        payload: res.data.data,
+      });
+    }
+  } catch (error) {
+    const { status, data } = error.response;
+    if (status === 401)
+      toast.error('کاربری گرامی، برای دریافت اطلاعات خود باید وارد شده یا ثبت‌نام کنید.');
+    if (status === 404) toast.error('اطلاعاتی دریافت نشد.');
+    else toast.error(data.message);
+  }
+
+  try {
+    const res = await instance.get('/api/v1/web/content/jobs/all-categories');
+
+    if (res.status === 200) {
+      dispatch({
+        type: 'SET_DASHBOARD_FAVORITES_JOBS',
         payload: res.data.data,
       });
     }
@@ -191,7 +208,22 @@ export const getDashboardNotifications = () => async (dispatch) => {
   }
 };
 
+export const changeNotifViewStatus = (data) => async () => {
+  const res = await instance.post(
+    `/api/v1/web/service/users/dashboard/notifications/${data.id}/view`,
+    { notification_type: data.type },
+  );
+
+  if (res.status === 200 || res.status === 201) {
+    // Do nothing :)
+  }
+};
+
 export const showDashboardModal = (data) => (dispatch) => {
+  dispatch({
+    type: 'CHANGE_NOTIFICATION_VIEW_STATUS',
+    payload: data,
+  });
   dispatch({
     type: 'SHOW_DASHBOARD_MODAL',
     payload: data,

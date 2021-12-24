@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 import toast from 'react-hot-toast';
+import axios from '../../../app/axios';
 import AuthHeader from '../../../components/auth/AuthHeader';
 import LeftBanner from '../../../components/auth/LeftBanner';
 
@@ -18,7 +18,7 @@ export default function CompleteInfo() {
   const history = useHistory();
 
   useEffect(() => {
-    axios.get('https://develop.karsazapp.ir/api/v1/web/service/login-stat').then((res) => {
+    axios.get('/api/v1/web/service/login-stat').then((res) => {
       if (res.status === 200) {
         setUsers(res.data.data.stat.users);
       }
@@ -47,10 +47,7 @@ export default function CompleteInfo() {
             device_name: navigator.userAgent,
           };
 
-          const res = await axios.post(
-            'https://develop.karsazapp.ir/api/v1/web/service/users/register',
-            data,
-          );
+          const res = await axios.post('/api/v1/web/service/users/register', data);
 
           if (res.status === 200) {
             localStorage.setItem('userToken', res.data.data.user.token);

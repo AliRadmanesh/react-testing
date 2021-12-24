@@ -143,7 +143,7 @@ export default (state = initialState, action) => {
         wallet: action.payload,
       };
 
-    case 'SET_DASHBOARD_FAVORITES_LISTS':
+    case 'SET_DASHBOARD_FAVORITES_COURSES':
       return {
         ...state,
         favorites: {
@@ -152,6 +152,14 @@ export default (state = initialState, action) => {
             ...state.favorites.courses,
             interests: { fetched: true, list: action.payload.categories },
           },
+        },
+      };
+
+    case 'SET_DASHBOARD_FAVORITES_JOBS':
+      return {
+        ...state,
+        favorites: {
+          ...state.favorites,
           jobs: {
             ...state.favorites.jobs,
             interests: { fetched: true, list: action.payload.categories },
