@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import toast from 'react-hot-toast';
 import { Link, useHistory } from 'react-router-dom';
+import axios from '../../../app/axios';
 import AuthHeader from '../../../components/auth/AuthHeader';
 import LeftBanner from '../../../components/auth/LeftBanner';
 
@@ -30,10 +30,7 @@ export default function LoginPassword() {
           password,
           device_name: window.navigator.userAgent,
         };
-        const res = await axios.post(
-          'https://develop.karsazapp.ir/api/v1/web/service/users/login',
-          data,
-        );
+        const res = await axios.post('/api/v1/web/service/users/login', data);
         if (res.status === 200) {
           if (res.data.code === 200) {
             window.localStorage.setItem('userToken', res.data.data.user.token);
@@ -66,10 +63,7 @@ export default function LoginPassword() {
         state: 'login',
       };
 
-      const res = await axios.post(
-        'https://develop.karsazapp.ir/api/v1/web/service/auth/mobile/send',
-        data,
-      );
+      const res = await axios.post('/api/v1/web/service/auth/mobile/send', data);
       if (res.status === 200) {
         window.localStorage.setItem('tempToken', res.data.data.token);
       }
@@ -84,10 +78,7 @@ export default function LoginPassword() {
           state: 'reset',
         };
 
-        const res = await axios.post(
-          'https://develop.karsazapp.ir/api/v1/web/service/auth/mobile/send',
-          data,
-        );
+        const res = await axios.post('/api/v1/web/service/auth/mobile/send', data);
 
         if (res.status === 200) {
           localStorage.setItem('tempToken', res.data.data.token);

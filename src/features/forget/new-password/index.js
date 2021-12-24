@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import axios from '../../../app/axios';
 import AuthHeader from '../../../components/auth/AuthHeader';
 import LeftBanner from '../../../components/auth/LeftBanner';
 
@@ -25,10 +25,7 @@ export default function NewPassword() {
           device_name: navigator.userAgent,
         };
 
-        const res = await axios.post(
-          'https://develop.karsazapp.ir/api/v1/web/service/users/reset',
-          data,
-        );
+        const res = await axios.post('/api/v1/web/service/users/reset', data);
         if (res.status === 200) {
           localStorage.setItem('userToken', res.data.data.user.token);
           history.push('/');
