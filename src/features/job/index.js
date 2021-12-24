@@ -16,14 +16,20 @@ import './job.css';
 import { getJobData } from '../../app/redux/actions/jobActions';
 
 export default function Job() {
-  const dispatch = useDispatch();
   const [id, setId] = useState(window.location.href.split('job/')[1]);
+
+  const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.job);
+
   useEffect(() => {
     dispatch(getJobData(id));
     if (window.innerWidth < 768)
       document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
   }, []);
+
+  useEffect(() => {
+    dispatch(getJobData(window.location.href.split('job/')[1]));
+  }, [window.location.href.split('job/')[1]]);
 
   useEffect(() => {}, [status]);
 
