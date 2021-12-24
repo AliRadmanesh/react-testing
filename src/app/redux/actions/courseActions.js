@@ -22,7 +22,7 @@ export const getCourseComments =
     dispatch({ type: 'SET_COMMENTS_LOADING' });
     try {
       const res = await instance.get(
-        `api/v1/web/service/courses/${id}/comments/?sort=${sort}&page=${page}`,
+        `api/v1/web/service/courses/${id}/comments/?sortby=${sort}&page=${page}`,
       );
       dispatch({ type: GET_COURSE_COMMENTS, payload: res.data.data.comments });
       if (res.data.meta.last_page !== 1) {
@@ -66,7 +66,7 @@ export const createComment = (id, rating, content) => async (dispatch) => {
     dispatch({ type: 'RESET_COMMENTS' });
     dispatch({ type: 'SET_COMMENTS_LOADING' });
     const res1 = await instance.get(
-      `api/v1/web/service/courses/${id}/comments/?sort=${2}&page=${1}`,
+      `api/v1/web/service/courses/${id}/comments/?sortby=${2}&page=${1}`,
     );
     dispatch({ type: GET_COURSE_COMMENTS, payload: res1.data.data.comments });
     if (res1.data.meta.last_page !== 1) {

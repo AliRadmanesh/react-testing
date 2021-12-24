@@ -264,7 +264,7 @@ export default function Modal() {
     }
     if (search !== '') {
       const res = await instance.get(
-        `/api/v1/web/service/courses/search/?&q=${search}&sort=${sort}&is_free=${is_free}`,
+        `/api/v1/web/service/courses/search/?q=${search}&sortby=${sort}&is_free=${is_free}`,
       );
       if (res.status === 200 || res.status === 201) {
         setCourses(res.data.data.courses);

@@ -105,7 +105,7 @@ const MenuMobile = () => {
               />
               {value !== '' ? (
                 <Link
-                  to={`/courses/search/?q=${value}&is_free=0&sort=1&page=1`}
+                  to={`/courses/search/?q=${value}&is_free=0&sortby=1&page=1`}
                   type="submit"
                   className="tw-p-0"
                   onClick={() => dispatch(showMenu(false))}

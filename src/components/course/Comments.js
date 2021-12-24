@@ -24,10 +24,6 @@ export default function Comments() {
     );
   }, [current, sort]);
 
-  useEffect(() => {
-    // dispatch(getCourseComments(new URL(window.location).searchParams.get('id'), sort, current));
-  }, [list]);
-
   if (loading) return <Loading />;
   return (
     <div className="container tw-my-4 2xl:tw-my-8 tw-py-6 2xl:tw-py-12">
