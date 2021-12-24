@@ -27,7 +27,7 @@ export default function Job() {
 
   useEffect(() => {}, [status]);
 
-  if (status === 400) return <Redirect to="../404" />;
+  if (status === 400) return <Redirect to="/404" />;
   return (
     <>
       <Layout>
