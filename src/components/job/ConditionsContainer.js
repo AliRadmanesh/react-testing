@@ -94,7 +94,7 @@ export default function ConditionsContainer({ data }) {
             {skills.map((item) => (
               <div className="tw-rounded bg-light text-gray tw-p-2 tw-my-1 tw-mx-1">
                 <p className="tw-font-normal tw-text-xs 2xl:tw-text-base">
-                  {item.name} | {item.seniority_level}
+                  {`${item.name} ${item.seniority_level ? `| ${item.seniority_level}` : ''}`}
                 </p>
               </div>
             ))}
