@@ -1,0 +1,21 @@
+.ks-table-responsive::after,
+.ks-table-responsive::before {
+  box-sizing: border-box !important;
+}
+
+@media (max-screen: 768px) {
+  .ks-table-responsive {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: scroll !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: -ms-autohiding-scrollbar !important;
+  }
+
+  .ks-table-responsive .table {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem !important;
+    /* background-color: transparent !important; */
+  }
+}

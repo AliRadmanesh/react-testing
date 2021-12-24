@@ -1,0 +1,147 @@
+.courses {
+  .search-container {
+    background: #f0f2f2;
+    border-radius: 12px;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 0 1px $karsaz-primary;
+    }
+
+    &.focus {
+      background-color: #f0f2f2;
+      box-shadow: 0 0 0 2px $karsaz-primary;
+    }
+
+    input.search,
+    input.search:focus,
+    input.search:hover,
+    input.search.error,
+    input.search.success,
+    input.search.warning {
+      background: transparent !important;
+      box-shadow: none !important;
+      color: inherit !important;
+      border: none !important;
+      border-radius: 0;
+    }
+
+    button img {
+      width: 30px !important;
+      height: 30px !important;
+      margin: 0 !important;
+    }
+  }
+}
+
+.courses-mobile-filters {
+  @extend .courses;
+}
+
+.courses-desktop-filters {
+  .filters-section {
+    &-items {
+      max-height: 320px;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: $karsaz-primary $karsaz-light-gray;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: $karsaz-light-gray;
+        border-radius: 50px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $karsaz-primary;
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
+.course {
+  &-card {
+    grid-template-columns: repeat(1, 1fr);
+    -ms-grid-columns: repeat(1, 1fr);
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 33% auto;
+      -ms-grid-columns: 33% auto;
+    }
+
+    &-title {
+      line-height: 26px;
+    }
+  }
+}
+
+.courses-dropdown {
+  background-color: #f0f2f2;
+  border-radius: 12px;
+  min-width: 160px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+
+  &:hover {
+    background-color: $karsaz-dark-gray;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.1s linear;
+
+    @media (min-width: $text-breakpoint-xx) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  & + .courses-dropdown-items {
+    position: absolute;
+    transform: scaleY(0);
+    // display: none;
+    transform-origin: top center;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &.active {
+    background-color: $karsaz-primary;
+    color: $karsaz-white;
+
+    img {
+      transform: rotate(180deg);
+    }
+
+    & + .courses-dropdown-items {
+      transform: scaleY(1);
+    }
+  }
+}
+
+.courses-dropdown-items {
+  background: $karsaz-white;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.courses-dropdown-item {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  color: $karsaz-secondary;
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+
+  &:first-child {
+    border-radius: 12px 12px 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 12px 12px;
+  }
+  &:hover {
+    background-color: $karsaz-dark-gray;
+  }
+}

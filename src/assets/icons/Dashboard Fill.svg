@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_326" data-name="Rectangle 326" width="48" height="48" transform="translate(744 8173)" fill="#118ab2"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_82" data-name="Mask Group 82" transform="translate(-744 -8173)" clip-path="url(#clip-path)">
+    <g id="Layer_2" data-name="Layer 2" transform="translate(744 8173)">
+      <g id="invisible_box" data-name="invisible box">
+        <rect id="Rectangle_329" data-name="Rectangle 329" width="48" height="48" fill="none"/>
+      </g>
+      <g id="icons_Q2" data-name="icons Q2">
+        <g id="Group_366" data-name="Group 366">
+          <path id="Path_332" data-name="Path 332" d="M20,30H8a2,2,0,0,0-2,2V42a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V32A2,2,0,0,0,20,30Z" fill="#118ab2"/>
+          <path id="Path_333" data-name="Path 333" d="M20,4H8A2,2,0,0,0,6,6V24a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V6A2,2,0,0,0,20,4Z" fill="#118ab2"/>
+          <path id="Path_334" data-name="Path 334" d="M40,4H28a2,2,0,0,0-2,2V16a2,2,0,0,0,2,2H40a2,2,0,0,0,2-2V6A2,2,0,0,0,40,4Z" fill="#118ab2"/>
+          <path id="Path_335" data-name="Path 335" d="M40,22H28a2,2,0,0,0-2,2V42a2,2,0,0,0,2,2H40a2,2,0,0,0,2-2V24A2,2,0,0,0,40,22Z" fill="#118ab2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
