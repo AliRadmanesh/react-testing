@@ -103,7 +103,7 @@ function IsFreeDropdown() {
   const [text, setText] = useState(() => {
     switch (is_free) {
       case 0:
-        return 'پولی';
+        return 'دارای هزینه';
       case 1:
         return 'رایگان';
       default:
@@ -137,11 +137,11 @@ function IsFreeDropdown() {
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
             dispatch(setModalFree(0));
-            setText('پولی');
+            setText('دارای هزینه');
             ref.current.classList.remove('active');
           }}
         >
-          پولی
+          دارای هزینه
         </div>
       </div>
     </div>

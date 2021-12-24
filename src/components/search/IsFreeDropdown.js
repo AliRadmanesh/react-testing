@@ -14,13 +14,13 @@ export default function IsFreeDropdown() {
   useEffect(() => {
     switch (is_free) {
       case 0:
-        setText('پولی');
+        setText('دارای هزینه');
         break;
       case 1:
         setText('رایگان');
         break;
       default:
-        setText('پولی');
+        setText('دارای هزینه');
     }
   }, [is_free]);
 
@@ -54,11 +54,11 @@ export default function IsFreeDropdown() {
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
             onClick(0);
-            setText('پولی');
+            setText('دارای هزینه');
             document.querySelector('.free-dropdown').classList.remove('active');
           }}
         >
-          پولی
+          دارای هزینه
         </div>
       </div>
     </div>
