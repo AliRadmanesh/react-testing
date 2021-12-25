@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+import { numberWithCommas, isObjEmpty } from '../../common/Functions';
+
 import onlineIcon from '../../assets/icons/Online.svg';
 import academyIcon from '../../assets/icons/School.svg';
 import starIcon from '../../assets/icons/Star Fill.svg';
@@ -10,7 +13,7 @@ export default function CourseCard({
   image,
   title,
   prices,
-  academy: { id: academyID, name, avatar },
+  academy: { name, avatar },
   rating,
   type,
   duration,
@@ -18,9 +21,25 @@ export default function CourseCard({
   is_free,
   discount,
 }) {
-  const { amount, percentage } = discount !== null;
+  let realPrice = '';
+  let discountPrice = '';
+  let courseDiscount = '';
 
-  const price = prices !== null ? prices.original.price : null;
+  if (!isObjEmpty(prices) && parseInt(is_free, 10) === 0) {
+    realPrice = `${numberWithCommas(prices.original.price)}`;
+
+    if (!isObjEmpty(discount)) {
+      if (discount.percentage && parseInt(discount.percentage, 10) > 0) {
+        discountPrice = `${numberWithCommas(
+          prices.original.price * (1 - parseInt(discount.percentage, 10) / 100),
+        )} تومان`;
+        courseDiscount = `${discount.percentage} %`;
+      } else {
+        discountPrice = `${numberWithCommas(prices.original.price - discount.amount)} تومان`;
+        courseDiscount = `${numberWithCommas(discount.amount)} تومان`;
+      }
+    }
+  }
 
   return (
     <div className="course-card bg-white search-course-card font-kalameh-num tw-grid tw-p-4 tw-rounded-xl tw-shadow tw-w-full tw-items-stretch tw-gap-4 tw-mb-4">
@@ -30,9 +49,7 @@ export default function CourseCard({
           background: `url("${image}") no-repeat center/cover`,
           minHeight: '200px',
         }}
-      >
-        {/* <img src={image} alt="" className/> */}
-      </div>
+      />
       <div className="tw-flex tw-flex-col tw-justify-between tw-h-full text-dark">
         <div className="tw-flex tw-items-center tw-justify-between tw-mb-4">
           <Link to={`/course/${id}`}>
@@ -40,17 +57,34 @@ export default function CourseCard({
               {title}
             </h1>
           </Link>
-          <div className="tw-flex tw-items-center">
-            {price && (
-              <p className="text-blue tw-hidden lg:tw-block tw-font-semibold tw-text-lg">
-                {percentage ? price * (1 - percentage / 100) : price}
+          <div className="tw-flex tw-flex-col tw-items-end">
+            <div className="tw-flex tw-items-center">
+              {realPrice.length > 0 && (
+                <p
+                  className={`tw-hidden lg:tw-block ${
+                    discountPrice.length > 0
+                      ? 'tw-ml-2 text-gray tw-font-normal tw-text-md tw-line-through'
+                      : 'text-blue tw-font-bold tw-text-lg'
+                  }`}
+                >
+                  {`${realPrice} ${discountPrice.length > 0 ? '' : ' تومان'}`}
+                </p>
+              )}
+              {courseDiscount.length > 0 && (
+                <p className="tw-text-md tw-font-normal tw-hidden lg:tw-block tw-px-3 tw-py-1 bg-error text-white tw-rounded-lg">
+                  {courseDiscount}
+                </p>
+              )}
+              {parseInt(is_free, 10) === 1 && (
+                <p className="tw-text-base tw-font-bold tw-hidden lg:tw-block text-success">
+                  رایگان
+                </p>
+              )}
+            </div>
+            {discountPrice.length > 0 && (
+              <p className="tw-hidden lg:tw-block text-blue tw-font-bold tw-text-xl">
+                {discountPrice}
               </p>
-            )}
-            <p className="tw-text-sm tw-font-normal tw-hidden lg:tw-block text-error">
-              {percentage}
-            </p>
-            {is_free === 1 && (
-              <p className="tw-text-sm tw-font-normal tw-hidden lg:tw-block text-success">رایگان</p>
             )}
           </div>
         </div>
@@ -68,15 +102,32 @@ export default function CourseCard({
             <p className="tw-mr-2 lg:tw-mr-0">{name}</p>
           </div>
 
-          <div className="tw-flex tw-items-end">
-            <p className="text-blue lg:tw-hidden tw-block tw-font-semibold tw-text-lg">{price}</p>
-            {percentage && (
-              <p className="tw-text-sm tw-font-normal lg:tw-hidden tw-block text-error">
-                {percentage}
-              </p>
-            )}
-            {is_free === 1 && (
-              <p className="tw-text-sm tw-font-normal lg:tw-hidden tw-block text-success">رایگان</p>
+          <div className="tw-flex tw-flex-col tw-items-end">
+            <div className="tw-flex tw-items-center">
+              {realPrice.length > 0 && (
+                <p
+                  className={`lg:tw-hidden tw-block ${
+                    discountPrice.length > 0
+                      ? 'tw-ml-2 text-gray tw-font-normal tw-text-sm tw-line-through'
+                      : 'text-blue tw-font-semibold tw-text-lg'
+                  }`}
+                >
+                  {`${realPrice} ${discountPrice.length > 0 ? '' : ' تومان'}`}
+                </p>
+              )}
+              {courseDiscount.length > 0 && (
+                <p className="tw-text-xs tw-font-normal lg:tw-hidden tw-block tw-px-2 tw-py-1 bg-error text-white tw-rounded-lg">
+                  {courseDiscount}
+                </p>
+              )}
+              {parseInt(is_free, 10) === 1 && (
+                <p className="tw-text-base tw-font-bold lg:tw-hidden tw-block text-success">
+                  رایگان
+                </p>
+              )}
+            </div>
+            {discountPrice.length > 0 && (
+              <p className="text-blue tw-font-bold tw-text-lg">{discountPrice}</p>
             )}
           </div>
         </div>
