@@ -11,7 +11,7 @@ import instance from '../../app/instance';
 import Error404 from '../../components/search/Error404';
 import Layout from '../../common/Layout/chill';
 import SearchBar from '../../components/global/SearchBar';
-import CourseCard from '../../components/search/CourseCard';
+import CourseCard from '../../components/courses/CourseCard';
 import FilterMenuButton from '../../components/search/FilterMenuButton';
 import FilterMenuMobile from '../../components/search/FilterMenuMobile';
 import FilterMenuDesktop from '../../components/search/FilterMenuDesktop';
@@ -156,7 +156,7 @@ export default function Search() {
                     id={item.id}
                     title={item.title}
                     description={item.description}
-                    price={item.price}
+                    prices={item.prices}
                     author={{ first_name: '', last_name: '', image: '' }}
                     rating={item.rating.average}
                     academy={item.academy}
