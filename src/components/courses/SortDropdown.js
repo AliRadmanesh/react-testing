@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
@@ -9,6 +9,14 @@ export default function SortDropdown() {
   const { sort } = useSelector((state) => state.courses);
   const [text, setText] = useState(() => {});
   const history = useHistory();
+  const ref = useRef();
+
+  const handleClick = (event) => {
+    // console.log(ref);
+    if (!event.target.className.includes('sort-dropdown') && ref.current) {
+      ref.current.classList.remove('active');
+    }
+  };
 
   useEffect(() => {
     switch (sort) {
@@ -24,6 +32,12 @@ export default function SortDropdown() {
       default:
         setText('مرتبط‌ترین');
     }
+
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
   }, [sort]);
 
   const onClick = (value) => {
@@ -35,11 +49,12 @@ export default function SortDropdown() {
   return (
     <div className="font-kalameh-num tw-relative tw-w-full tw-h-auto">
       <button
+        ref={ref}
         className="tw-flex tw-w-full tw-text-sm tw-font-normal 2xl:tw-text-base tw-items-center courses-dropdown sort-dropdown tw-justify-between tw-relative tw-p-4"
         onClick={(e) => e.target.classList.toggle('active')}
       >
         {text}
-        <img src={arrow} alt="" />
+        <img src={arrow} alt="" className="" />
       </button>
       <div className="courses-dropdown-items">
         <div
