@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>https://karsaz.app/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/categories/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/faq/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/contact/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/about/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/courses/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/courses/search/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/compare/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/jobs/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/jobs/search/</loc>
+    </url>
+    <url>
+        <loc>https://karsaz.app/blog/</loc>
+    </url>
+</urlset>
