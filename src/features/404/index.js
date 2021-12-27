@@ -32,13 +32,13 @@ export default function Page404() {
           <div className="tw-w-full">
             <div className="tw-grid tw-place-items-center" style={{ minHeight: '600px' }}>
               <div className="tw-max-w-full md:tw-max-w-3/4 lg:tw-max-w-2/3 xl:tw-max-w-1/2 2xl:tw-max-w-2/5">
-                <p className="font-kalameh-num text-blue tw-text-center tw-font-extrabold tw-text-2xl 2xl:tw-text-4xl 2xl:tw-font-black 2xl:tw-mb-4">
-                  نتیجه ای یافت نشد
+                <p className="font-kalameh-num text-blue tw-text-center tw-font-extrabold tw-text-3xl 2xl:tw-text-5xl 2xl:tw-font-black 2xl:tw-mb-4">
+                  خطای ۴۰۴
                 </p>
-                <p className="text-dark font-kalameh tw-text-center tw-text-xs tw-font-normal 2xl:tw-text-base">
+                <p className="text-dark font-kalameh tw-text-center tw-text-xs tw-font-normal 2xl:tw-text-lg">
                   با عرض پوزش، نتوانستیم محتوای مورد نظر شما را بیابیم.
                 </p>
-                <p className="text-dark font-kalameh tw-text-center tw-mb-10 tw-text-xs tw-font-normal 2xl:tw-text-base">
+                <p className="text-dark font-kalameh tw-text-center tw-mb-10 tw-text-xs tw-font-normal 2xl:tw-text-lg">
                   می‌توانید از باکس زیر برای جستجو استفاده کنید یا در صورت تمایل به صفحه پیشین{' '}
                   <button className="tw-p-0" onClick={() => history.push(-1)}>
                     <span
