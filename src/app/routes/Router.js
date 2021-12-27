@@ -49,7 +49,6 @@ function AppRouter() {
           <Route exact path="/about" component={About} />
           <Route exact path="/courses" component={CourseList} />
           <Route exact path="/course/:id" component={Course} />
-          <Route exact path="/404" component={Page404} />
           <Route exact path="/unauthenticated" component={Unauthenticated} />
           <Route exact path="/courses/search" component={Search} />
           <Route exact path="/compare" component={Compare} />
@@ -73,6 +72,7 @@ function AppRouter() {
           <Route exact path="/dashboard/purchases" component={Purchases} />
           <Route exact path="/dashboard/transactions" component={Transactions} />
           <Route exact path="/dashboard/wallet" component={Wallet} />
+          <Route component={Page404} />
         </Switch>
       </Router>
     </div>
