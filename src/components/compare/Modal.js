@@ -21,14 +21,15 @@ import { isObjEmpty, numberWithCommas } from '../../common/Functions';
 const ModalCard = ({ props }) => {
   const {
     id,
-    images: { cover },
+    image,
     title,
-    description,
     prices,
-    is_free,
     academy: { name, avatar },
     rating,
     type,
+    duration,
+    description,
+    is_free,
     discount,
   } = props;
 
@@ -65,7 +66,7 @@ const ModalCard = ({ props }) => {
       <div
         className="tw-rounded-xl tw-realtive tw-mb-4 tw-block"
         style={{
-          background: `url("${cover}") center/cover no-repeat`,
+          background: `url("${image}") center/cover no-repeat`,
           height: '166px',
         }}
       >

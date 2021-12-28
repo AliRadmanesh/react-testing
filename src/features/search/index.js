@@ -15,8 +15,8 @@ import CourseCard from '../../components/courses/CourseCard';
 import FilterMenuButton from '../../components/search/FilterMenuButton';
 import FilterMenuMobile from '../../components/search/FilterMenuMobile';
 import FilterMenuDesktop from '../../components/search/FilterMenuDesktop';
-import SortDropdown from '../../components/search/SortDropdown';
-import IsFreeDropdown from '../../components/search/IsFreeDropdown';
+import SortDropdown from '../../components/courses/SortDropdown';
+import IsFreeDropdown from '../../components/courses/IsFreeDropdown';
 import {
   searchQuery,
   setQuerySort,
