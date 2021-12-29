@@ -21,7 +21,7 @@ import { isObjEmpty, numberWithCommas } from '../../common/Functions';
 const ModalCard = ({ props }) => {
   const {
     id,
-    image,
+    images: { cover },
     title,
     prices,
     academy: { name, avatar },
@@ -36,6 +36,10 @@ const ModalCard = ({ props }) => {
   let realPrice = '';
   let discountPrice = '';
   let courseDiscount = '';
+
+  // const realPrice = '';
+  // const discountPrice = '';
+  // const courseDiscount = '';
 
   if (!isObjEmpty(prices) && parseInt(is_free, 10) === 0) {
     realPrice = `${numberWithCommas(prices.original.price)}`;
@@ -66,21 +70,10 @@ const ModalCard = ({ props }) => {
       <div
         className="tw-rounded-xl tw-realtive tw-mb-4 tw-block"
         style={{
-          background: `url("${image}") center/cover no-repeat`,
+          background: `url("${cover}") center/cover no-repeat`,
           height: '166px',
         }}
-      >
-        {discount && (
-          <div
-            className="tw-absolute bg-error text-white tw-top-8 tw-left-8"
-            style={{
-              borderRadius: '12px 12px 0 12px',
-            }}
-          >
-            {discount}%
-          </div>
-        )}
-      </div>
+      />
       <p className="tw-text-sm text-dark tw-font-medium 2xl:tw-text-lg tw-truncate tw-mb-4">
         {title}
       </p>
@@ -93,7 +86,7 @@ const ModalCard = ({ props }) => {
           <div className="tw-flex tw-items-center">
             {realPrice.length > 0 && (
               <p
-                className={`lg:tw-hidden tw-block ${
+                className={`tw-block ${
                   discountPrice.length > 0
                     ? 'tw-ml-2 text-gray tw-font-normal tw-text-sm tw-line-through'
                     : 'text-blue tw-font-semibold tw-text-lg'
@@ -103,12 +96,12 @@ const ModalCard = ({ props }) => {
               </p>
             )}
             {courseDiscount.length > 0 && (
-              <p className="tw-text-xs tw-font-normal lg:tw-hidden tw-block tw-px-2 tw-py-1 bg-error text-white tw-rounded-lg">
+              <p className="tw-text-xs tw-font-normal tw-block tw-px-2 tw-py-1 bg-error text-white tw-rounded-lg">
                 {courseDiscount}
               </p>
             )}
             {parseInt(is_free, 10) === 1 && (
-              <p className="tw-text-base tw-font-bold lg:tw-hidden tw-block text-success">رایگان</p>
+              <p className="tw-text-base tw-font-bold tw-block text-success">رایگان</p>
             )}
           </div>
           {discountPrice.length > 0 && (
@@ -120,7 +113,7 @@ const ModalCard = ({ props }) => {
         <div className="tw-flex tw-items-center">
           <p className="text-dark tw-text-sm 2xl:tw-text-base">{type.name}</p>
           <div className="tw-flex tw-justify-center tw-mr-4 tw-items-center">
-            <img src={starFillIcon} alt="" className="tw-ml-2 icon" />
+            <img src={starFillIcon} alt="" className="tw-ml-2 tw-w-4 2xl:tw-w-6" />
             <p className="text-dark tw-text-sm 2xl:tw-text-base">{rating.average}</p>
           </div>
         </div>
@@ -134,7 +127,7 @@ const ModalCard = ({ props }) => {
           className="button-secondary tw-flex tw-justify-center"
           style={{ padding: '.5rem' }}
         >
-          <img src={addFillIcon} alt="" className="tw-ml-2 icon" />
+          <img src={addFillIcon} alt="" className="tw-ml-2 tw-w-4 2xl:tw-w-6" />
           افزودن دوره
         </Link>
       </div>
@@ -365,7 +358,7 @@ export default function Modal() {
       >
         <div className="tw-flex tw-px-4 tw-items-center tw-justify-between tw-py-4 font-kalameh-num md:tw-hidden">
           <p className="tw-text-base tw-font-normal text-dark">افزوردن دوره به لیست</p>
-          <button onClick={() => dispatch(showModal(false))} className="tw-p-0 icon">
+          <button onClick={() => dispatch(showModal(false))} className="tw-p-0 tw-w-4 2xl:tw-w-6">
             <img src={closeIcon} alt="" />
           </button>
         </div>
