@@ -111,3 +111,15 @@ export const sortComment = (sort) => (dispatch) => {
 export const pageComment = (page) => (dispatch) => {
   dispatch({ type: 'COURSE_COMMENT_CURRENT_PAGE', payload: page });
 };
+
+export const affiliateCourse = (id) => async (dispatch) => {
+  try {
+    const res = await instance.post(`/api/v1/app/service/courses/${id}/affiliate`);
+
+    if (res.status === 200) {
+      console.log(res);
+    }
+  } catch (error) {
+    toast.error(error.response.message);
+  }
+};
