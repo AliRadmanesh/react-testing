@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import Layout from '../../common/Layout/detail';
 import instance from '../../app/instance';
 
@@ -56,6 +58,7 @@ export default function Course() {
     price = prices.original.price;
   }
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getCourseData(id));
@@ -71,8 +74,26 @@ export default function Course() {
     dispatch(hideSuggest());
   }, [window.location.href.split('course/')[1]]);
 
+  const affiliateCourse = async (id) => {
+    try {
+      const res = await instance.get(`/api/v1/app/service/courses/${id}/affiliate`);
+
+      if (res.status === 200) {
+        history.push(res.data.data.affiliate.url);
+      }
+    } catch (error) {
+      const { status, message } = error.response;
+      toast.error(message);
+    }
+  };
+
   const openCourseLink = () => {
-    window.open(ref_url_discount || ref_url, '_blank');
+    if (
+      window.localStorage.getItem('userToken') &&
+      window.localStorage.getItem('userToken') !== ''
+    ) {
+      affiliateCourse(id);
+    } else window.open(ref_url_discount || ref_url, '_blank');
   };
 
   return (
