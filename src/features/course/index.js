@@ -120,6 +120,7 @@ export default function Course() {
           cashback={cashback}
           ref_url={ref_url}
           ref_url_discount={ref_url_discount}
+          openCourseLink={openCourseLink}
         />
         <Author instructors={instructors[0]} />
         <About description={description} />
