@@ -74,7 +74,7 @@ export default function Course() {
     dispatch(hideSuggest());
   }, [window.location.href.split('course/')[1]]);
 
-  const affiliateCourse = async (id) => {
+  const affiliateCourse = async () => {
     try {
       const res = await instance.get(`/api/v1/app/service/courses/${id}/affiliate`);
 
