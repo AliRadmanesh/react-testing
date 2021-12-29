@@ -151,7 +151,7 @@ function IsFreeDropdown() {
   });
 
   const handleClick = (event) => {
-    if (!event.target.className.includes('free-dropdown') && ref.current) {
+    if (!event.target.className.includes('modal-free-dropdown') && ref.current) {
       ref.current.classList.remove('active');
     }
   };
@@ -216,11 +216,26 @@ function SortDropdown() {
   });
   const dispatch = useDispatch();
   const ref = useRef();
+
+  const handleClick = (event) => {
+    if (!event.target.className.includes('modal-sort-dropdown') && ref.current) {
+      ref.current.classList.remove('active');
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
+
   return (
     <div className="font-kalameh-num tw-relative tw-w-full tw-h-auto">
       <div
         ref={ref}
-        className="tw-flex items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
+        className="tw-flex items-center courses-dropdown modal-sort-dropdown tw-justify-between tw-relative tw-p-4"
         onClick={(e) => e.target.classList.toggle('active')}
       >
         <p className="tw-text-sm tw-font-normal 2xl:tw-text-base">{text}</p>
