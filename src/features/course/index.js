@@ -76,10 +76,14 @@ export default function Course() {
 
   const affiliateCourse = async () => {
     try {
-      const res = await instance.get(`/api/v1/app/service/courses/${id}/affiliate`);
+      const res = await instance.post(`/api/v1/app/service/courses/${id}/affiliate`);
 
       if (res.status === 200) {
-        history.push(res.data.data.affiliate.url);
+        // history.push(res.data.data.affiliate.url);
+        // window.location.href = res.data.data.affiliate.url;
+        window.open(res.data.data.affiliate.url || ref_url, '_blank');
+      } else {
+        toast.error(res.data.message);
       }
     } catch (error) {
       const { status, message } = error.response;
