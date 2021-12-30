@@ -47,9 +47,10 @@ function RecommendedPostCard({ props }) {
             />
             <p className="text-guide tw-truncate">{name}</p>
           </div>
-          <div className="tw-flex tw-justify-end">
-            {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
-            {price && (
+          <div className="tw-flex tw-justify-end lg:tw-hidden">
+            {is_free === 1 ? (
+              <p className="tw-text-sm tw-font-medium text-success">رایگان</p>
+            ) : (
               <p className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
                 {numberWithCommas(price)}
               </p>
@@ -96,7 +97,15 @@ function RecommendedPostCard({ props }) {
             </div>
           </div>
           <div className="lg:tw-flex lg:tw-items-center">
-            <p className="tab text-blue tw-hidden lg:tw-block tw-ml-6 font-kalameh">{price}</p>
+            <p className="tab tw-hidden lg:tw-block tw-ml-6 font-kalameh">
+              {is_free === 1 ? (
+                <span className="tw-text-sm tw-font-medium text-success">رایگان</span>
+              ) : (
+                <span className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                  {numberWithCommas(price)}
+                </span>
+              )}
+            </p>
             <Link to={`/course/${id}`}>
               <button className="tw-mx-auto button-primary font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
                 مشاهده بیشتر

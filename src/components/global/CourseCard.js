@@ -57,9 +57,10 @@ const CourseCard = ({ props }) => {
                 />
                 <p className="text-guide">{name}</p>
               </div>
-              <div className="lg:tw-hidden">
-                {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
-                {price && (
+              <div className="tw-flex tw-justify-end lg:tw-hidden">
+                {is_free === 1 ? (
+                  <p className="tw-text-sm tw-font-medium text-success">رایگان</p>
+                ) : (
                   <p className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
                     {numberWithCommas(price)}
                   </p>
@@ -94,14 +95,15 @@ const CourseCard = ({ props }) => {
                 </div>
               </div>
               <div className="lg:tw-flex lg:tw-items-center">
-                {is_free === 1 && (
-                  <p className="tw-text-sm tw-ml-4 tw-font-medium text-success">رایگان</p>
-                )}
-                {price && (
-                  <p className="text-blue font-kalameh tw-text-sm tw-ml-4 tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
-                    {numberWithCommas(price)}
-                  </p>
-                )}
+                <p className="tab tw-hidden lg:tw-block tw-ml-6 font-kalameh">
+                  {is_free === 1 ? (
+                    <span className="tw-text-sm tw-font-medium text-success">رایگان</span>
+                  ) : (
+                    <span className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                      {numberWithCommas(price)}
+                    </span>
+                  )}
+                </p>
                 <Link to={`/course/${id}`}>
                   <button className="tw-mx-auto button-primary">مشاهده بیشتر</button>
                 </Link>
