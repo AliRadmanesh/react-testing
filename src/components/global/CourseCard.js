@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import onlineIcon from '../../assets/icons/Online.svg';
 import starFillIcon from '../../assets/icons/Star Fill.svg';
-import { numberWithCommas } from '../../common/Functions';
+import { numberWithCommas, replaceString } from '../../common/Functions';
 
 const CourseCard = ({ props }) => {
   const {
@@ -18,6 +18,8 @@ const CourseCard = ({ props }) => {
     academy: { avatar, name, id: academy_id },
     is_free,
   } = props;
+
+  const linkString = replaceString(title, ' ', '-');
 
   const limit = 347;
   let uiDescription = String(description).slice(0, limit);
@@ -106,7 +108,7 @@ const CourseCard = ({ props }) => {
                     </span>
                   )}
                 </p>
-                <Link to={`/course/${id}`}>
+                <Link to={`/course/${linkString}-ka${id}`}>
                   <button className="tw-mx-auto button-primary">مشاهده بیشتر</button>
                 </Link>
               </div>

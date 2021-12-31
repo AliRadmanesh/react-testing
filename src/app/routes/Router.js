@@ -54,7 +54,7 @@ function AppRouter() {
           <Route exact path="/compare" component={Compare} />
           <Route exact path="/jobs" component={Jobs} />
           <Route exact path="/jobs/search" component={JobSearch} />
-          <Route exact path="/job/:id" component={Job} />
+          <Route exact path="/job/:slug" component={Job} />
           <Route exact path="/auth" component={Authentication} />
           <Route exact path="/login/password" component={LoginPassword} />
           <Route exact path="/login/code" component={LoginCode} />

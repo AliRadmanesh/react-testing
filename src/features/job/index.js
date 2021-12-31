@@ -16,7 +16,7 @@ import './job.css';
 import { getJobData } from '../../app/redux/actions/jobActions';
 
 export default function Job() {
-  const [id, setId] = useState(window.location.href.split('job/')[1]);
+  const [id, setId] = useState(window.location.href.split('ka')[1]);
 
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.job);
@@ -28,8 +28,8 @@ export default function Job() {
   }, []);
 
   useEffect(() => {
-    dispatch(getJobData(window.location.href.split('job/')[1]));
-  }, [window.location.href.split('job/')[1]]);
+    dispatch(getJobData(window.location.href.split('ka')[1]));
+  }, [window.location.href.split('ka')[1]]);
 
   useEffect(() => {}, [status]);
 

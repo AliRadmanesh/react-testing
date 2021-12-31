@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import starFillIcon from '../../assets/icons/Star Fill.svg';
 import onlineIcon from '../../assets/icons/Online.svg';
 
+import { replaceString } from '../../common/Functions';
+
 export default function CourseCard({ props }) {
   const {
     id,
@@ -15,6 +17,8 @@ export default function CourseCard({ props }) {
     price,
     discount,
   } = props;
+
+  const linkString = replaceString(title, ' ', '-');
 
   return (
     <div className="bg-white tw-my-4 tw-shadow tw-rounded-xl font-iranyekan-num tw-p-4">
@@ -70,7 +74,7 @@ export default function CourseCard({ props }) {
             </div>
           </div>
           <div>
-            <Link to={`/course/${id}`}>
+            <Link to={`/course/${linkString}-ka${id}`}>
               <button className="tw-mx-auto button-primary font-kalameh-num">مشاهده بیشتر</button>
             </Link>
           </div>

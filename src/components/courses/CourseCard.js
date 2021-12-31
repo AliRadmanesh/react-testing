@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { numberWithCommas, isObjEmpty } from '../../common/Functions';
+import { numberWithCommas, isObjEmpty, replaceString } from '../../common/Functions';
 
 import onlineIcon from '../../assets/icons/Online.svg';
 import academyIcon from '../../assets/icons/School.svg';
@@ -21,6 +21,8 @@ export default function CourseCard({
   is_free,
   discount,
 }) {
+  const linkString = replaceString(title, ' ', '-');
+
   let realPrice = '';
   let discountPrice = '';
   let courseDiscount = '';
@@ -52,7 +54,7 @@ export default function CourseCard({
       />
       <div className="tw-flex tw-flex-col tw-justify-between tw-h-full text-dark">
         <div className="tw-flex tw-items-center tw-justify-between tw-mb-4">
-          <Link to={`/course/${id}`}>
+          <Link to={`/course/${linkString}-ka${id}`}>
             <h1 className="course-card-title text-dark tw-font-bold tw-text-base 2xl:tw-text-xl 2xl:tw-font-semibold text-primary-hover">
               {title}
             </h1>
@@ -161,7 +163,7 @@ export default function CourseCard({
               </div>
             </div>
           </div>
-          <Link to={`/course/${id}`} className="button-primary">
+          <Link to={`/course/${linkString}-ka${id}`} className="button-primary">
             مشاهده بیشتر
           </Link>
         </div>
