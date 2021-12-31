@@ -219,9 +219,9 @@ export default (state = initialState, action) => {
         favorites: {
           ...state.favorites,
           courses: {
-            ...state.favorites.jobs,
+            ...state.favorites.courses,
             interested: {
-              ...state.favorites.jobs.interested,
+              ...state.favorites.courses.interested,
               list: state.favorites.courses.interested.list.filter(
                 (course) => course.id !== action.payload,
               ),
