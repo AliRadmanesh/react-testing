@@ -19,7 +19,7 @@ import './course.css';
 export default function Course() {
   const [scroll, setScroll] = useState(window.scrollY);
 
-  const [id, setId] = useState(window.location.href.split('course/')[1]);
+  const [id, setId] = useState(window.location.href.split('ka')[1]);
   const {
     data: {
       title,
@@ -70,9 +70,9 @@ export default function Course() {
   }, []);
 
   useEffect(() => {
-    dispatch(getCourseData(window.location.href.split('course/')[1]));
+    dispatch(getCourseData(window.location.href.split('ka')[1]));
     dispatch(hideSuggest());
-  }, [window.location.href.split('course/')[1]]);
+  }, [window.location.href.split('ka')[1]]);
 
   const affiliateCourse = async () => {
     try {

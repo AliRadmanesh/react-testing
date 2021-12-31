@@ -4,7 +4,7 @@ import starFillIcon from '../../assets/icons/Star Fill.svg';
 import onlineIcon from '../../assets/icons/Online.svg';
 import offlineIcon from '../../assets/icons/Offline.svg';
 
-import { numberWithCommas } from '../../common/Functions';
+import { numberWithCommas, replaceString } from '../../common/Functions';
 
 function RecommendedPostCard({ props }) {
   const {
@@ -18,6 +18,8 @@ function RecommendedPostCard({ props }) {
     rating: { average, participants },
     is_free,
   } = props;
+
+  const linkString = replaceString(title, ' ', '-');
 
   return (
     <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4 font-iranyekan home-card">
@@ -108,7 +110,7 @@ function RecommendedPostCard({ props }) {
                 </span>
               )}
             </p>
-            <Link to={`/course/${id}`}>
+            <Link to={`/course/${linkString}-ka${id}`}>
               <button className="tw-mx-auto button-primary font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
                 مشاهده بیشتر
               </button>
