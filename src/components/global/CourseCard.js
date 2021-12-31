@@ -59,9 +59,9 @@ const CourseCard = ({ props }) => {
               </div>
               <div className="tw-flex tw-justify-end lg:tw-hidden">
                 {is_free === 1 ? (
-                  <p className="tw-text-sm tw-font-medium text-success">رایگان</p>
+                  <p className="tw-text-sm tw-font-medium text-success font-kalameh-num">رایگان</p>
                 ) : (
-                  <p className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                  <p className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold font-kalameh-num">
                     {numberWithCommas(price)}
                   </p>
                 )}
@@ -97,9 +97,11 @@ const CourseCard = ({ props }) => {
               <div className="lg:tw-flex lg:tw-items-center">
                 <p className="tab tw-hidden lg:tw-block tw-ml-6 font-kalameh">
                   {is_free === 1 ? (
-                    <span className="tw-text-sm tw-font-medium text-success">رایگان</span>
+                    <span className="tw-text-sm tw-font-medium text-success font-kalameh-num">
+                      رایگان
+                    </span>
                   ) : (
-                    <span className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+                    <span className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold font-kalameh-num">
                       {numberWithCommas(price)}
                     </span>
                   )}
