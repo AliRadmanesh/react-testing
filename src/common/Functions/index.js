@@ -13,3 +13,11 @@ export const isObjEmpty = (obj) => {
   }
   return true;
 };
+
+// Replace characters in string
+export const replaceString = (string, prev, next) => {
+  if (typeof string !== 'string') {
+    return false;
+  }
+  return string.replaceAll(prev, next);
+};
