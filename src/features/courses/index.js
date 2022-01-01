@@ -166,6 +166,12 @@ export default function Courses() {
               url.searchParams.set('page', selected + 1);
               history.push(`./${url.search}`);
             }}
+            // hrefBuilder={(page) => (page >= 1 && page <= total ? `/home/${page}` : '#')}
+            hrefBuilder={(page) => {
+              const url = new URL(window.location.href);
+              url.searchParams.set('page', page);
+              return `/courses/${category.name}/${url.search}`;
+            }}
             breakLabel="..."
             nextLabel={
               <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">
