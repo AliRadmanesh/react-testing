@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { replaceString } from '../../common/Functions';
 
 export default function CategoryCard({ name, courses, sub, image }) {
   return (
@@ -18,7 +19,12 @@ export default function CategoryCard({ name, courses, sub, image }) {
       </div>
       <div>
         {sub.map((ee) => (
-          <Link to={`/courses/?category[0]=${ee.id}&sortby=1&is_free=0&page=1`} key={ee.id}>
+          <Link
+            to={`/courses/${replaceString(ee.name, ' ', '-')}/?category[0]=${
+              ee.id
+            }&sortby=1&is_free=0&page=1`}
+            key={ee.id}
+          >
             <p className="text-black font-kalameh tw-text-sm tw-font-normal 2xl:tw-text-base tw-mt-2">
               {ee.name}
             </p>

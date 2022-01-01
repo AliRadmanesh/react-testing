@@ -23,6 +23,8 @@ import general from '../../assets/icons/Category/General-Dark-Small.svg';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 import close from '../../assets/icons/Close-Gray.svg';
 
+import { replaceString } from '../../common/Functions';
+
 export default function CategoryMenuMobile() {
   const dispatch = useDispatch();
   const { categoryMobile, categories } = useSelector((state) => state.header);
@@ -62,7 +64,9 @@ export default function CategoryMenuMobile() {
                   url.searchParams.set('category[0]', si.id);
                   return (
                     <Link
-                      to={`/courses/?category[0]=${si.id}&sortby=1&is_free=0&page=1`}
+                      to={`/courses/${replaceString(si.name, ' ', '-')}/?category[0]=${
+                        si.id
+                      }&sortby=1&is_free=0&page=1`}
                       key={si.id}
                       className="category-dropdown-item tw-py-4 tw-text-sm tw-font-normal tw-px-4 tw-block"
                       onClick={() => {
