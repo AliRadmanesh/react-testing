@@ -177,6 +177,11 @@ export default function Search() {
                   history.push(`./${url.search}`);
                   window.scrollTo(0, 0);
                 }}
+                hrefBuilder={(page) => {
+                  const url = new URL(window.location.href);
+                  url.searchParams.set('page', page);
+                  return `/courses/${url.search}`;
+                }}
                 breakLabel="..."
                 nextLabel={
                   <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">

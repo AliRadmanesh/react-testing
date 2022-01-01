@@ -38,7 +38,23 @@ export default function SortDropdown() {
     return () => {
       document.removeEventListener('click', handleClick);
     };
-  }, [sort]);
+  }, []);
+
+  useEffect(() => {
+    switch (parseInt(new URL(window.location.href).searchParams.get('sortby'), 10)) {
+      case 1:
+        setText('مرتبط‌ترین');
+        break;
+      case 2:
+        setText('جدیدترین');
+        break;
+      case 3:
+        setText('محبوب‌ترین');
+        break;
+      default:
+        setText('مرتبط‌ترین');
+    }
+  }, [window.location.search]);
 
   const onClick = (value) => {
     const url = new URL(window.location);

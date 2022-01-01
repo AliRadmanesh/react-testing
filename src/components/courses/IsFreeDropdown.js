@@ -35,7 +35,20 @@ export default function IsFreeDropdown({ section }) {
     return () => {
       document.removeEventListener('click', handleClick);
     };
-  }, [is_free]);
+  }, []);
+
+  useEffect(() => {
+    switch (parseInt(new URL(window.location.href).searchParams.get('is_free'), 10)) {
+      case 0:
+        setText('دارای هزینه');
+        break;
+      case 1:
+        setText('رایگان');
+        break;
+      default:
+        setText('دارای هزینه');
+    }
+  }, [new URL(window.location.href).searchParams.get('is_free')]);
 
   const onClick = (value) => {
     const url = new URL(window.location);
