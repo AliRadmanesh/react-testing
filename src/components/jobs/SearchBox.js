@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import toast from 'react-hot-toast';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   setJobsCategory,
@@ -10,6 +10,8 @@ import {
   clearJobsSearchFilters,
   getJobsSearchOptions,
 } from '../../app/redux/actions/jobsActions';
+
+import { replaceString } from '../../common/Functions';
 
 const customStyle = {
   control: (provided, state) => ({
@@ -160,6 +162,7 @@ export default function SearchBox() {
         url.searchParams.set('province', location.id);
       }
     }
+
     if (category.id) {
       url.searchParams.set('category[0]', category.id);
     }
@@ -168,7 +171,11 @@ export default function SearchBox() {
     }
     url.searchParams.set('page', 1);
 
-    history.push(`/jobs/search/${url.search}`);
+    history.push(
+      `/jobs${category.name !== '' ? `/${replaceString(category.name, ' ', '-')}` : ''}/${
+        url.search
+      }`,
+    );
   };
 
   useEffect(() => {

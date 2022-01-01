@@ -38,6 +38,8 @@ import Main from '../../features/dashboard/main';
 import Unauthenticated from '../../features/unauthenticated';
 
 function AppRouter() {
+  const { category } = useSelector((state) => state.jobs.search);
+
   return (
     <div className="App">
       <Router basename="/">
@@ -52,8 +54,11 @@ function AppRouter() {
           <Route exact path="/unauthenticated" component={Unauthenticated} />
           <Route exact path="/courses" component={Search} />
           <Route exact path="/compare" component={Compare} />
-          <Route exact path="/jobs" component={Jobs} />
-          <Route exact path="/jobs/search" component={JobSearch} />
+          <Route
+            path={['/jobs', '/jobs/:slug']}
+            component={window.location.search === '' ? Jobs : JobSearch}
+          />
+          {/* <Route exact path="/jobs/search" component={JobSearch} /> */}
           <Route exact path="/job/:slug" component={Job} />
           <Route exact path="/auth" component={Authentication} />
           <Route exact path="/login/password" component={LoginPassword} />
