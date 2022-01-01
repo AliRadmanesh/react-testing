@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setQueryKeywords, hideSuggest } from '../../app/redux/actions/searchActions';
 import searchIcon from '../../assets/icons/Search.svg';
 
+import { displayMobileFilterMenu } from '../../app/redux/actions/coursesActions';
+
 export default function SearchBar({ onChange, classes }) {
   const { keywords } = useSelector((state) => state.search.query);
   const [category, setCategory] = useState(null);
@@ -19,6 +21,7 @@ export default function SearchBar({ onChange, classes }) {
   // console.log(window.location.href.searchParams);
 
   const dispatch = useDispatch();
+
   return (
     <div
       className={`tw-grid tw-items-center tw-px-2 search-container tw-mb-4 tw-w-full tw-h-full ${classes}`}
@@ -44,6 +47,7 @@ export default function SearchBar({ onChange, classes }) {
           className="tw-m-0 tw-p-2 tw-justify-self-end"
           onClick={() => {
             window.localStorage.setItem('query', keywords);
+            dispatch(displayMobileFilterMenu(false));
             dispatch(hideSuggest());
           }}
         >
