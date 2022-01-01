@@ -7,11 +7,13 @@ import searchIcon from '../../assets/icons/Search.svg';
 export default function SearchBar({ onChange, classes }) {
   const { keywords } = useSelector((state) => state.search.query);
   const [category, setCategory] = useState(null);
+  const [categoryName, setCategoryName] = useState('');
 
   useEffect(() => {
-    if (new URL(window.location).searchParams.get('category[0]'))
+    if (new URL(window.location).searchParams.get('category[0]')) {
       setCategory(new URL(window.location).searchParams.get('category[0]'));
-    else setCategory(null);
+      setCategoryName(window.location.href.split('courses/')[1].split('/')[0]);
+    } else setCategory(null);
   }, [window.location.href]);
 
   // console.log(window.location.href.searchParams);
@@ -36,7 +38,7 @@ export default function SearchBar({ onChange, classes }) {
       />
       {keywords !== '' ? (
         <Link
-          to={`/courses/?q=${keywords}&${
+          to={`/courses/${categoryName}/?q=${keywords}&${
             category !== null ? `category[0]=${category}` : ''
           }&is_free=0&sortby=1&page=1`}
           className="tw-m-0 tw-p-2 tw-justify-self-end"
