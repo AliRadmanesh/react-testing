@@ -172,9 +172,9 @@ export default function SearchBox() {
     url.searchParams.set('page', 1);
 
     history.push(
-      `/jobs${category.name !== '' ? `/${replaceString(category.name, ' ', '-')}` : ''}/${
-        url.search
-      }`,
+      `/jobs${url.searchParams.get('q') && category.name === '' ? '/search' : ''}${
+        category.name !== '' ? `/${replaceString(category.name, ' ', '-')}` : ''
+      }/${url.search}`,
     );
   };
 

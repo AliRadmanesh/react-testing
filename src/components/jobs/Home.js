@@ -48,7 +48,7 @@ export default function Home() {
             ))}
           </div>
           <div className="tw-flex tw-mt-4 tw-justify-center">
-            <Link to="/jobs/search/?page=1" className="button-secondary tw-mt-6 lg:tw-mt-10">
+            <Link to="/jobs/?page=1" className="button-secondary tw-mt-6 lg:tw-mt-10">
               مشاهده همه
             </Link>
           </div>

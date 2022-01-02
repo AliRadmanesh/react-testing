@@ -58,7 +58,7 @@ function AppRouter() {
             path={['/jobs', '/jobs/:slug']}
             component={window.location.search === '' ? Jobs : JobSearch}
           />
-          {/* <Route exact path="/jobs/search" component={JobSearch} /> */}
+          <Route exact path="/jobs/search" component={JobSearch} />
           <Route exact path="/job/:slug" component={Job} />
           <Route exact path="/auth" component={Authentication} />
           <Route exact path="/login/password" component={LoginPassword} />
