@@ -107,7 +107,7 @@ export default function FilterMenuDesktop() {
 
   return (
     <div className="courses-desktop-filters">
-      <div className="tw-p-4 tw-rounded-xl bg-white">
+      <div className="tw-p-4 tw-rounded-xl bg-white tw-mb-4">
         <div className="tw-flex tw-justify-between tw-items-center tw-mb-4">
           <p className="text-black tw-text-base tw-font-semibold font-kalameh">
             فیلترهای اعمال شده
