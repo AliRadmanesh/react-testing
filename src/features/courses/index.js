@@ -36,7 +36,7 @@ export default function Courses() {
     category,
     total_results,
     page: { total },
-    query: { result },
+    query,
   } = useSelector((state) => state.search);
 
   const setOptions = () => {
@@ -161,13 +161,13 @@ export default function Courses() {
                   discount={item.discount}
                 />
               ))}
-            {window.location.href.includes('q=') && result.length === 0 && (
+            {window.location.href.includes('q=') && query.result.length === 0 && (
               <p className="tw-text-base text-dark font-kalameh-num tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-mt-3">
                 موردی برای نمایش وجود ندارد.
               </p>
             )}
             {window.location.href.includes('q=') &&
-              result.map((item) => (
+              query.result.map((item) => (
                 <CourseCard
                   key={item.id}
                   id={item.id}
@@ -187,46 +187,89 @@ export default function Courses() {
           </div>
         </div>
         <div className="tw-grid tw-place-items-center tw-my-8 2xl:tw-my-16">
-          <ReactPaginate
-            onPageChange={({ selected }) => {
-              const url = new URL(window.location);
-              url.searchParams.set('page', selected + 1);
-              history.push(`./${url.search}`);
-            }}
-            // hrefBuilder={(page) => (page >= 1 && page <= total ? `/home/${page}` : '#')}
-            hrefBuilder={(page) => {
-              const url = new URL(window.location.href);
-              url.searchParams.set('page', page);
-              return `/courses/${category.name}/${url.search}`;
-            }}
-            breakLabel="..."
-            nextLabel={
-              <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">
-                <img
-                  src={arrow}
-                  alt=""
-                  style={{ width: '40%', height: 'auto', transform: 'rotate(90deg)' }}
-                />
-              </span>
-            }
-            pageCount={total}
-            previousLabel={
-              <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">
-                <img
-                  src={arrow}
-                  alt=""
-                  style={{ width: '40%', height: 'auto', transform: 'rotate(-90deg)' }}
-                />
-              </span>
-            }
-            initialPage={0}
-            marginPagesDisplayed={1}
-            containerClassName="tw-flex tw-items-center font-kalameh-num"
-            pageClassName="tw-mx-1 tw-grid"
-            activeClassName="tw-mx-1 tw-grid"
-            activeLinkClassName="pagination-page-item-active tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-grid tw-place-items-center tw-rounded-xl"
-            pageLinkClassName="pagination-page-item tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-grid tw-place-items-center tw-rounded-xl"
-          />
+          {window.location.href.includes('q=') ? (
+            <ReactPaginate
+              onPageChange={({ selected }) => {
+                const url = new URL(window.location);
+                url.searchParams.set('page', selected + 1);
+                history.push(`./${url.search}`);
+                window.scrollTo(0, 0);
+              }}
+              hrefBuilder={(page) => {
+                const url = new URL(window.location.href);
+                url.searchParams.set('page', page);
+                return `/courses/${url.search}`;
+              }}
+              breakLabel="..."
+              nextLabel={
+                <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">
+                  <img
+                    src={arrow}
+                    alt=""
+                    style={{ width: '40%', height: 'auto', transform: 'rotate(90deg)' }}
+                  />
+                </span>
+              }
+              pageCount={query.page.total}
+              previousLabel={
+                <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">
+                  <img
+                    src={arrow}
+                    alt=""
+                    style={{ width: '40%', height: 'auto', transform: 'rotate(-90deg)' }}
+                  />
+                </span>
+              }
+              initialPage={0}
+              marginPagesDisplayed={1}
+              containerClassName="tw-flex tw-items-center font-kalameh-num"
+              pageClassName="tw-mx-1 tw-grid"
+              activeClassName="tw-mx-1 tw-grid"
+              activeLinkClassName="pagination-page-item-active tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-grid tw-place-items-center tw-rounded-xl"
+              pageLinkClassName="pagination-page-item tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-grid tw-place-items-center tw-rounded-xl"
+            />
+          ) : (
+            <ReactPaginate
+              onPageChange={({ selected }) => {
+                const url = new URL(window.location);
+                url.searchParams.set('page', selected + 1);
+                history.push(`./${url.search}`);
+              }}
+              // hrefBuilder={(page) => (page >= 1 && page <= total ? `/home/${page}` : '#')}
+              hrefBuilder={(page) => {
+                const url = new URL(window.location.href);
+                url.searchParams.set('page', page);
+                return `/courses/${category.name}/${url.search}`;
+              }}
+              breakLabel="..."
+              nextLabel={
+                <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">
+                  <img
+                    src={arrow}
+                    alt=""
+                    style={{ width: '40%', height: 'auto', transform: 'rotate(90deg)' }}
+                  />
+                </span>
+              }
+              pageCount={total}
+              previousLabel={
+                <span className="tw-grid tw-mx-1 tw-place-items-center tw-rounded-xl tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold pagination-page-item">
+                  <img
+                    src={arrow}
+                    alt=""
+                    style={{ width: '40%', height: 'auto', transform: 'rotate(-90deg)' }}
+                  />
+                </span>
+              }
+              initialPage={0}
+              marginPagesDisplayed={1}
+              containerClassName="tw-flex tw-items-center font-kalameh-num"
+              pageClassName="tw-mx-1 tw-grid"
+              activeClassName="tw-mx-1 tw-grid"
+              activeLinkClassName="pagination-page-item-active tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-grid tw-place-items-center tw-rounded-xl"
+              pageLinkClassName="pagination-page-item tw-text-sm tw-font-medium 2xl:tw-text-xl 2xl:tw-font-semibold tw-grid tw-place-items-center tw-rounded-xl"
+            />
+          )}
         </div>
       </div>
       <div>
