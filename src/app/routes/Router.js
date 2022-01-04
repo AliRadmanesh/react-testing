@@ -54,11 +54,20 @@ function AppRouter() {
           <Route exact path="/unauthenticated" component={Unauthenticated} />
           <Route exact path="/courses" component={Search} />
           <Route exact path="/compare" component={Compare} />
-          <Route
-            path={['/jobs', '/jobs/:slug']}
-            component={window.location.search === '' ? Jobs : JobSearch}
-          />
-          <Route exact path="/jobs/search" component={JobSearch} />
+          {/* <Route
+            path={['/jobs', '/jobs/:slug', '/jobs/search']}
+            component={
+              // eslint-disable-next-line no-nested-ternary
+              window.location.href.includes('/search')
+                ? JobSearch
+                : window.location.search === ''
+                ? Jobs
+                : JobSearch
+            }
+          /> */}
+          {/* <Route exact path="/jobs/search" component={JobSearch} /> */}
+          <Route exact path="/jobs" component={Jobs} />
+          <Route exact path={['/jobs/search', '/jobs/:slug']} component={JobSearch} />
           <Route exact path="/job/:slug" component={Job} />
           <Route exact path="/auth" component={Authentication} />
           <Route exact path="/login/password" component={LoginPassword} />

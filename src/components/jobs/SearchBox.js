@@ -24,6 +24,7 @@ const customStyle = {
     // borderColor: state.isHovered ? 'transparent' : 'transparent',
     transition: 'box-shadow .3s ease-in',
     boxShadow: state.isFocused ? '0 0 0 2px #118ab2' : '0 0 0 2px transparent',
+    opacity: 1,
   }),
 
   input: (provided, state) => ({
@@ -31,8 +32,23 @@ const customStyle = {
     border: 'none',
     boxShadow: 'none',
   }),
+
   indicatorSeparator: (state) => ({
     display: 'none',
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    opacity: 1,
+  }),
+  menu: (style) => ({
+    ...style,
+    backgroundColor: 'rgba(255,255,255,1)',
+    opacity: 1,
+  }),
+  menuList: (style) => ({
+    ...style,
+    backgroundColor: 'rgba(255,255,255,1)',
+    opacity: 1,
   }),
 };
 
@@ -171,11 +187,13 @@ export default function SearchBox() {
     }
     url.searchParams.set('page', 1);
 
-    history.push(
-      `/jobs${url.searchParams.get('q') && category.name === '' ? '/search' : ''}${
-        category.name !== '' ? `/${replaceString(category.name, ' ', '-')}` : ''
-      }/${url.search}`,
-    );
+    if (url.search === '?page=1') history.push(`/jobs/search/${url.search}`);
+    else
+      history.push(
+        `/jobs${url.searchParams.get('q') && category.name === '' ? '/search' : ''}${
+          category.name !== '' ? `/${replaceString(category.name, ' ', '-')}` : ''
+        }/${url.search}`,
+      );
   };
 
   useEffect(() => {
