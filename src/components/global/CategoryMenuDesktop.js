@@ -16,7 +16,7 @@ export default function CategoryMenuDesktop() {
 
   const handleClick = (click) => {
     if (
-      document.querySelector('.desktop-categories-container').style.display === 'block' &&
+      document.querySelector('.desktop-categories-container')?.style.display === 'block' &&
       click.target.className.includes('category-menu')
     ) {
       dispatch(showCategoryDesktopMenu(false));
