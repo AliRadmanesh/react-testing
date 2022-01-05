@@ -19,7 +19,9 @@ export default function Comments() {
   } = useSelector((state) => state.course);
 
   useEffect(() => {
-    dispatch(getCourseComments(parseInt(window.location.href.split('ka')[1], 10), sort, current));
+    dispatch(
+      getCourseComments(parseInt(window.location.pathname.split('ka')[1], 10), sort, current),
+    );
   }, [current, sort]);
 
   if (loading) return <Loading />;

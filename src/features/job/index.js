@@ -16,7 +16,7 @@ import './job.css';
 import { getJobData } from '../../app/redux/actions/jobActions';
 
 export default function Job() {
-  const [id, setId] = useState(window.location.href.split('ka')[1]);
+  const [id, setId] = useState(window.location.pathname.split('ka')[1]);
 
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.job);

@@ -19,7 +19,7 @@ import './course.css';
 export default function Course() {
   const [scroll, setScroll] = useState(window.scrollY);
 
-  const [id, setId] = useState(window.location.href.split('ka')[1]);
+  const [id, setId] = useState(window.location.pathname.split('ka')[1]);
   const {
     data: {
       title,
