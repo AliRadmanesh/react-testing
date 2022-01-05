@@ -70,9 +70,9 @@ export default function Course() {
   }, []);
 
   useEffect(() => {
-    dispatch(getCourseData(window.location.href.split('ka')[1]));
+    dispatch(getCourseData(window.location.pathname.split('ka')[1]));
     dispatch(hideSuggest());
-  }, [window.location.href.split('ka')[1]]);
+  }, [window.location.pathname.split('ka')[1]]);
 
   const affiliateCourse = async () => {
     try {

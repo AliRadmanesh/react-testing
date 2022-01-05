@@ -28,8 +28,9 @@ export default function Job() {
   }, []);
 
   useEffect(() => {
-    dispatch(getJobData(window.location.href.split('ka')[1]));
-  }, [window.location.href.split('ka')[1]]);
+    console.log(window.location.pathname);
+    dispatch(getJobData(window.location.pathname.split('ka')[1]));
+  }, [window.location.pathname.split('ka')[1]]);
 
   useEffect(() => {}, [status]);
 
