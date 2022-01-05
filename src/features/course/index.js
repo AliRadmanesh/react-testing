@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import Layout from '../../common/Layout/detail';
 import instance from '../../app/instance';
 
@@ -18,8 +17,6 @@ import './course.css';
 
 export default function Course() {
   const [scroll, setScroll] = useState(window.scrollY);
-
-  const [id, setId] = useState(window.location.pathname.split('ka')[1]);
   const {
     data: {
       title,
@@ -53,15 +50,13 @@ export default function Course() {
       page: { current },
     },
   } = useSelector((state) => state.course);
-  let price = 0;
-  if (prices !== null) {
-    price = prices.original.price;
-  }
   const dispatch = useDispatch();
-  const history = useHistory();
+
+  const lastIndexofKa = window.location.href.lastIndexOf('ka');
+  const courseId = window.location.href.substring(lastIndexofKa + 2);
 
   useEffect(() => {
-    dispatch(getCourseData(id));
+    dispatch(getCourseData(courseId));
     window.addEventListener('scroll', () => {
       setScroll(window.scrollY);
     });
@@ -70,13 +65,13 @@ export default function Course() {
   }, []);
 
   useEffect(() => {
-    dispatch(getCourseData(window.location.pathname.split('ka')[1]));
+    dispatch(getCourseData(courseId));
     dispatch(hideSuggest());
-  }, [window.location.pathname.split('ka')[1]]);
+  }, [window.location.pathname]);
 
   const affiliateCourse = async () => {
     try {
-      const res = await instance.post(`/api/v1/app/service/courses/${id}/affiliate`);
+      const res = await instance.post(`/api/v1/app/service/courses/${courseId}/affiliate`);
 
       if (res.status === 200) {
         // history.push(res.data.data.affiliate.url);
@@ -96,7 +91,7 @@ export default function Course() {
       window.localStorage.getItem('userToken') &&
       window.localStorage.getItem('userToken') !== ''
     ) {
-      affiliateCourse(id);
+      affiliateCourse(courseId);
     } else window.open(ref_url_discount || ref_url, '_blank');
   };
 
@@ -104,7 +99,7 @@ export default function Course() {
     <>
       <Layout>
         <Header
-          id={id}
+          id={courseId}
           image={cover}
           title={title}
           description_summary_string={description_summary_string}
@@ -132,7 +127,7 @@ export default function Course() {
         <div className="container 2xl:tw-py-16">
           <Recommended recommended_courses={recommended_courses} />
         </div>
-        <UserComment id={id} user_comment={user_comment} />
+        <UserComment id={courseId} user_comment={user_comment} />
         <Comments />
       </Layout>
       <div
