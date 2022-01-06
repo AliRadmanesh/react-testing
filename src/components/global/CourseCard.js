@@ -79,11 +79,11 @@ const CourseCard = ({ props }) => {
                       className="tw-ml-2"
                       style={{ width: '16px', height: '16px' }}
                     />
-                    <caption className="text-dark">آنلاین</caption>
+                    <span className="text-dark">آنلاین</span>
                   </div>
                 ) : (
                   <div className="tw-flex tw-items-center tw-ml-4">
-                    <caption className="text-dark font-kalameh-num">{type}</caption>
+                    <span className="text-dark font-kalameh-num">{type}</span>
                   </div>
                 )}
                 <div className="tw-flex tw-items-center">
@@ -93,7 +93,7 @@ const CourseCard = ({ props }) => {
                     className="tw-ml-2"
                     style={{ width: '16px', height: '16px' }}
                   />
-                  <caption className="text-dark font-kalameh-num">{average}</caption>
+                  <span className="text-dark font-kalameh-num">{average}</span>
                 </div>
               </div>
               <div className="lg:tw-flex lg:tw-items-center">

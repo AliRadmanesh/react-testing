@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import starFillIcon from '../../assets/icons/Star Fill.svg';
-import onlineIcon from '../../assets/icons/Online.svg';
 
 import { replaceString } from '../../common/Functions';
+
+import onlineIcon from '../../assets/icons/Online.svg';
+import starFillIcon from '../../assets/icons/Star Fill.svg';
 
 export default function CourseCard({ props }) {
   const {
@@ -44,11 +45,9 @@ export default function CourseCard({ props }) {
             </p>
           </div>
           <div>
-            <caption className="text-blue tw-block tw-text-left font-kalameh-num">{price}</caption>
+            <span className="text-blue tw-block tw-text-left font-kalameh-num">{price}</span>
             {discount && (
-              <caption className="text-blue tw-block tw-text-left font-kalameh-num">
-                {price}
-              </caption>
+              <span className="text-blue tw-block tw-text-left font-kalameh-num">{price}</span>
             )}
           </div>
         </div>
@@ -61,7 +60,7 @@ export default function CourseCard({ props }) {
                 className="tw-ml-2 icon"
                 style={{ width: '16px', height: '16px' }}
               />
-              <caption className="text-dark font-kalameh-num">{type}</caption>
+              <span className="text-dark font-kalameh-num">{type}</span>
             </div>
             <div className="tw-flex tw-items-center tw-mr-4">
               <img
@@ -70,7 +69,7 @@ export default function CourseCard({ props }) {
                 className="tw-ml-2 icon"
                 style={{ width: '16px', height: '16px' }}
               />
-              <caption className="text-dark font-kalameh-num">{average}</caption>
+              <span className="text-dark font-kalameh-num">{average}</span>
             </div>
           </div>
           <div>

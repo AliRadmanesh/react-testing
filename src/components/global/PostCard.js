@@ -38,9 +38,9 @@ function PostCard({ props }) {
             <p className="text-guide tw-truncate">{name}</p>
           </div>
           <div>
-            <caption className="text-blue tw-block tw-text-left font-kalameh-num">
+            <span className="text-blue tw-block tw-text-left font-kalameh-num">
               زمان مطالعه {estimated_time}
-            </caption>
+            </span>
           </div>
         </div>
         <div className="tw-flex tw-justify-between tw-items-end tw-mt-4">
@@ -52,17 +52,17 @@ function PostCard({ props }) {
                 className="tw-ml-2"
                 style={{ width: '16px', height: '16px' }}
               />
-              <caption className="text-dark font-kalameh-num">{created_at}</caption>
+              <span className="text-dark font-kalameh-num">{created_at}</span>
             </div>
-            <div className="tw-flex tw-items-center">
+            {/* <div className="tw-flex tw-items-center">
               <img
                 src={starFillIcon}
                 alt=""
                 className="tw-ml-2"
                 style={{ width: '16px', height: '16px' }}
               />
-              <caption className="text-dark font-kalameh-num">{rating}</caption>
-            </div>
+              <span className="text-dark font-kalameh-num">{rating}</span>
+            </div> */}
           </div>
           <div>
             <a href={link} target="_blank" rel="noreferrer">
