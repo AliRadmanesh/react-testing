@@ -55,13 +55,17 @@ export default function Course() {
   const lastIndexofKa = window.location.href.lastIndexOf('ka');
   const courseId = window.location.href.substring(lastIndexofKa + 2);
 
+  function scrollToTop() {
+    setScroll(window.scrollY);
+  }
+
   useEffect(() => {
     dispatch(getCourseData(courseId));
-    window.addEventListener('scroll', () => {
-      setScroll(window.scrollY);
-    });
+    window.addEventListener('scroll', scrollToTop);
     if (window.innerWidth < 768)
       document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
+
+    return () => window.removeEventListener('scroll', scrollToTop);
   }, []);
 
   useEffect(() => {

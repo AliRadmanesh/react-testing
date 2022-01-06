@@ -5,11 +5,15 @@ import arrow from '../../assets/icons/Right arrow white.svg';
 export default function ScrollToTop() {
   const [scroll, setScroll] = useState(window.scrollY);
 
+  function scrollToTop() {
+    setScroll(window.scrollY);
+  }
+
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setScroll(window.scrollY);
-    });
+    window.addEventListener('scroll', scrollToTop);
+    return () => window.removeEventListener('scroll', scrollToTop);
   }, []);
+
   return (
     <button
       className="tw-fixed tw-bottom-4 tw-p-4 bg-primary scroll-to-top-button"
