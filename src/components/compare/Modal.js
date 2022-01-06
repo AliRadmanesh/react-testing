@@ -142,7 +142,7 @@ function IsFreeDropdown() {
   const [text, setText] = useState(() => {
     switch (is_free) {
       case 0:
-        return 'دارای هزینه';
+        return 'همه';
       case 1:
         return 'رایگان';
       default:
@@ -189,11 +189,11 @@ function IsFreeDropdown() {
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
             dispatch(setModalFree(0));
-            setText('دارای هزینه');
+            setText('همه');
             // document.querySelector('.modal-free-dropdown').classList.remove('active');
           }}
         >
-          دارای هزینه
+          همه
         </div>
       </div>
     </div>
@@ -331,7 +331,9 @@ export default function Modal() {
     }
     if (search !== '') {
       const res = await instance.get(
-        `/api/v1/web/service/courses/search/?q=${search}&sortby=${sort}&is_free=${is_free}`,
+        `/api/v1/web/service/courses/search/?q=${search}&sortby=${sort}${
+          is_free > 0 ? `&is_free=${is_free}` : ''
+        }`,
       );
       if (res.status === 200 || res.status === 201) {
         setCourses(res.data.data.courses);

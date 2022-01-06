@@ -151,7 +151,7 @@ export default function MenuDesktop() {
                   </button>
                 ) : (
                   <Link
-                    to={`/courses/?q=${value}&is_free=0&sortby=1&page=1`}
+                    to={`/courses/?q=${value}&sortby=1&page=1`}
                     className="button-secondary"
                     style={{
                       background: 'transparent',

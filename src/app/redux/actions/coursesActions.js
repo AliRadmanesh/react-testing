@@ -61,7 +61,7 @@ export const setCoursesQuery =
     types.forEach((item, index) => {
       string += `&type[${index}]=${item.id}`;
     });
-    string += `&sortby=${sort}&is_free=${free}&page=${page}`;
+    string += `&sortby=${sort}${free > 0 ? `&is_free=${free}` : ''}&page=${page}`;
     dispatch({ type: SET_COURSES_QUERY, payload: string });
   };
 

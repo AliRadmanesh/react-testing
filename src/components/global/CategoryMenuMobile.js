@@ -66,7 +66,7 @@ export default function CategoryMenuMobile() {
                     <Link
                       to={`/courses/${replaceString(si.name, ' ', '-')}/?category[0]=${
                         si.id
-                      }&sortby=1&is_free=0&page=1`}
+                      }&sortby=1&page=1`}
                       key={si.id}
                       className="category-dropdown-item tw-py-4 tw-text-sm tw-font-normal tw-px-4 tw-block"
                       onClick={() => {

@@ -22,7 +22,7 @@ export default function CategoryCard({ name, courses, sub, image }) {
           <Link
             to={`/courses/${replaceString(ee.name, ' ', '-')}/?category[0]=${
               ee.id
-            }&sortby=1&is_free=0&page=1`}
+            }&sortby=1&page=1`}
             key={ee.id}
           >
             <p className="text-black font-kalameh tw-text-sm tw-font-normal 2xl:tw-text-base tw-mt-2">

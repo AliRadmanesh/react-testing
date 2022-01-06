@@ -139,7 +139,7 @@ function Footer() {
                   <Link
                     to={`/courses/${replaceString(category.name, ' ', '-')}/?category[0]=${
                       category.id
-                    }&sortby=1&is_free=0&page=1`}
+                    }&sortby=1&page=1`}
                   >
                     <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate text-primary-hover">
                       {category.name}

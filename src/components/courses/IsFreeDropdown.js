@@ -21,13 +21,13 @@ export default function IsFreeDropdown({ section }) {
   useEffect(() => {
     switch (is_free) {
       case 0:
-        setText('دارای هزینه');
+        setText('همه');
         break;
       case 1:
         setText('رایگان');
         break;
       default:
-        setText('دارای هزینه');
+        setText('همه');
     }
 
     document.addEventListener('click', handleClick);
@@ -39,20 +39,21 @@ export default function IsFreeDropdown({ section }) {
 
   useEffect(() => {
     switch (parseInt(new URL(window.location.href).searchParams.get('is_free'), 10)) {
-      case 0:
-        setText('دارای هزینه');
-        break;
       case 1:
         setText('رایگان');
         break;
       default:
-        setText('دارای هزینه');
+        setText('همه');
     }
-  }, [new URL(window.location.href).searchParams.get('is_free')]);
+  }, [new URL(window.location.href).searchParams]);
 
   const onClick = (value) => {
     const url = new URL(window.location);
-    url.searchParams.set('is_free', value);
+    if (value > 0) {
+      url.searchParams.set('is_free', value);
+    } else {
+      url.searchParams.delete('is_free');
+    }
     history.push(`./${url.search}`);
   };
 
@@ -86,11 +87,11 @@ export default function IsFreeDropdown({ section }) {
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
             onClick(0);
-            setText('دارای هزینه');
+            setText('همه');
             document.querySelector('.free-dropdown').classList.remove('active');
           }}
         >
-          دارای هزینه
+          همه
         </div>
       </div>
     </div>
