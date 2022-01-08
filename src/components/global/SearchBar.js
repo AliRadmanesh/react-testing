@@ -1,12 +1,27 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setQueryKeywords, hideSuggest } from '../../app/redux/actions/searchActions';
 import searchIcon from '../../assets/icons/Search.svg';
 
+import { displayMobileFilterMenu } from '../../app/redux/actions/coursesActions';
+
 export default function SearchBar({ onChange, classes }) {
   const { keywords } = useSelector((state) => state.search.query);
+  const [category, setCategory] = useState(null);
+  const [categoryName, setCategoryName] = useState('');
+
+  useEffect(() => {
+    if (new URL(window.location).searchParams.get('category[0]')) {
+      setCategory(new URL(window.location).searchParams.get('category[0]'));
+      setCategoryName(window.location.href.split('courses/')[1].split('/')[0]);
+    } else setCategory(null);
+  }, [window.location.href]);
+
+  // console.log(window.location.href.searchParams);
+
   const dispatch = useDispatch();
+
   return (
     <div
       className={`tw-grid tw-items-center tw-px-2 search-container tw-mb-4 tw-w-full tw-h-full ${classes}`}
@@ -26,10 +41,13 @@ export default function SearchBar({ onChange, classes }) {
       />
       {keywords !== '' ? (
         <Link
-          to={`/courses/search/?q=${keywords}&is_free=0&sortby=1&page=1`}
+          to={`/courses${categoryName ? `/${categoryName}` : ''}/?q=${keywords}&${
+            category !== null ? `category[0]=${category}` : ''
+          }&sortby=1&page=1`}
           className="tw-m-0 tw-p-2 tw-justify-self-end"
           onClick={() => {
             window.localStorage.setItem('query', keywords);
+            dispatch(displayMobileFilterMenu(false));
             dispatch(hideSuggest());
           }}
         >

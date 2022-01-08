@@ -39,7 +39,10 @@ export default function PageHeaderChill({ title, text = '', img = '' }) {
         <div className="container tw-flex tw-items-center tw-py-12 lg:tw-py-16 page-header-content-chill tw-w-auto tw-pl-6">
           {img && <img src={img} alt="" />}
           <div>
-            <p className="tw-font-extrabold page-header-title lg:tw-font-black font-kalameh text-white">
+            <p
+              className="tw-font-extrabold page-header-title lg:tw-font-black font-kalameh text-white"
+              style={{ marginBottom: '.5rem' }}
+            >
               {title}
             </p>
             <p

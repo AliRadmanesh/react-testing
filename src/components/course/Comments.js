@@ -19,9 +19,10 @@ export default function Comments() {
   } = useSelector((state) => state.course);
 
   useEffect(() => {
-    dispatch(
-      getCourseComments(parseInt(window.location.href.split('course/')[1], 10), sort, current),
-    );
+    const lastIndexofKa = window.location.href.lastIndexOf('ka');
+    const courseId = window.location.href.substring(lastIndexofKa + 2);
+
+    dispatch(getCourseComments(parseInt(courseId, 10), sort, current));
   }, [current, sort]);
 
   if (loading) return <Loading />;

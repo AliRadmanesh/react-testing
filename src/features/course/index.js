@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { useSelector, useDispatch } from 'react-redux';
 import Layout from '../../common/Layout/detail';
 import instance from '../../app/instance';
@@ -16,8 +17,6 @@ import './course.css';
 
 export default function Course() {
   const [scroll, setScroll] = useState(window.scrollY);
-
-  const [id, setId] = useState(window.location.href.split('course/')[1]);
   const {
     data: {
       title,
@@ -51,35 +50,60 @@ export default function Course() {
       page: { current },
     },
   } = useSelector((state) => state.course);
-  let price = 0;
-  if (prices !== null) {
-    price = prices.original.price;
-  }
   const dispatch = useDispatch();
 
+  const lastIndexofKa = window.location.href.lastIndexOf('ka');
+  const courseId = window.location.href.substring(lastIndexofKa + 2);
+
+  function scrollToTop() {
+    setScroll(window.scrollY);
+  }
+
   useEffect(() => {
-    dispatch(getCourseData(id));
-    window.addEventListener('scroll', () => {
-      setScroll(window.scrollY);
-    });
+    dispatch(getCourseData(courseId));
+    window.addEventListener('scroll', scrollToTop);
     if (window.innerWidth < 768)
       document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
+
+    return () => window.removeEventListener('scroll', scrollToTop);
   }, []);
 
   useEffect(() => {
-    dispatch(getCourseData(window.location.href.split('course/')[1]));
+    dispatch(getCourseData(courseId));
     dispatch(hideSuggest());
-  }, [window.location.href.split('course/')[1]]);
+  }, [window.location.pathname]);
+
+  const affiliateCourse = async () => {
+    try {
+      const res = await instance.post(`/api/v1/app/service/courses/${courseId}/affiliate`);
+
+      if (res.status === 200) {
+        // history.push(res.data.data.affiliate.url);
+        // window.location.href = res.data.data.affiliate.url;
+        window.open(res.data.data.affiliate.url || ref_url, '_blank');
+      } else {
+        toast.error(res.data.message);
+      }
+    } catch (error) {
+      const { status, message } = error.response;
+      toast.error(message);
+    }
+  };
 
   const openCourseLink = () => {
-    window.open(ref_url_discount || ref_url, '_blank');
+    if (
+      window.localStorage.getItem('userToken') &&
+      window.localStorage.getItem('userToken') !== ''
+    ) {
+      affiliateCourse(courseId);
+    } else window.open(ref_url_discount || ref_url, '_blank');
   };
 
   return (
     <>
       <Layout>
         <Header
-          id={id}
+          id={courseId}
           image={cover}
           title={title}
           description_summary_string={description_summary_string}
@@ -99,6 +123,7 @@ export default function Course() {
           cashback={cashback}
           ref_url={ref_url}
           ref_url_discount={ref_url_discount}
+          openCourseLink={openCourseLink}
         />
         <Author instructors={instructors[0]} />
         <About description={description} />
@@ -106,7 +131,7 @@ export default function Course() {
         <div className="container 2xl:tw-py-16">
           <Recommended recommended_courses={recommended_courses} />
         </div>
-        <UserComment id={id} user_comment={user_comment} />
+        <UserComment id={courseId} user_comment={user_comment} />
         <Comments />
       </Layout>
       <div

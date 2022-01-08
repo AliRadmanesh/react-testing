@@ -16,20 +16,21 @@ import './job.css';
 import { getJobData } from '../../app/redux/actions/jobActions';
 
 export default function Job() {
-  const [id, setId] = useState(window.location.href.split('job/')[1]);
+  const lastIndexofKa = window.location.href.lastIndexOf('ka');
+  const courseId = window.location.href.substring(lastIndexofKa + 2);
 
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.job);
 
   useEffect(() => {
-    dispatch(getJobData(id));
+    dispatch(getJobData(courseId));
     if (window.innerWidth < 768)
       document.querySelector('.scroll-to-top-button').style.bottom = '5rem';
   }, []);
 
   useEffect(() => {
-    dispatch(getJobData(window.location.href.split('job/')[1]));
-  }, [window.location.href.split('job/')[1]]);
+    dispatch(getJobData(courseId));
+  }, [window.location.href]);
 
   useEffect(() => {}, [status]);
 

@@ -13,6 +13,7 @@ import plusIcon from '../../assets/icons/Add Fill.svg';
 
 import OverView from '../../components/compare/OverView';
 import Modal from '../../components/compare/Modal';
+import Instructors from '../../components/compare/Instructors';
 
 import {
   setPrimary,
@@ -151,6 +152,7 @@ export default function Compare() {
               </div>
             </div>
             <div className="bg-white tw-my-4 tw-shadow tw-rounded-xl tw-p-4">
+              <Instructors />
               <div>
                 <p className="text-blue tw-mb-4 tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-text-bold tw-text-center md:tw-text-right">
                   ارائه‌دهنده

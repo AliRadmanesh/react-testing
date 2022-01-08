@@ -39,6 +39,7 @@ export default function Header({
   cashback,
   ref_url,
   ref_url_discount,
+  openCourseLink,
 }) {
   let realPrice = '';
   let discountPrice = '';
@@ -65,9 +66,9 @@ export default function Header({
     user: { authenticated },
   } = useSelector((state) => state.auth);
 
-  const openCourseLink = () => {
-    window.open(ref_url_discount || ref_url, '_blank');
-  };
+  // const openCourseLink = () => {
+  //   window.open(ref_url_discount || ref_url, '_blank');
+  // };
 
   const checkAndbookmarkCourse = () => {
     if (authenticated) {

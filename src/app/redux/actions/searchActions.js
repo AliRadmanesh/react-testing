@@ -144,7 +144,7 @@ export const setQueryString =
     types.map((item, index) => {
       string += `&type[${index}]=${item.id}`;
     });
-    string += `&sortby=${sort}&is_free=${free}&page=${page}`;
+    string += `&sortby=${sort}${free > 0 ? `&is_free=${free}` : ''}&page=${page}`;
     dispatch({ type: SET_QUERY_STRING, payload: string });
   };
 

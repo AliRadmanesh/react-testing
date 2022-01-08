@@ -1,6 +1,7 @@
 import toast from 'react-hot-toast';
 import { ACTIVE_PART, SET_POPUP, CLEAR_POPUP } from './types';
 import instance from '../../instance';
+import axios from '../../axios';
 
 export const setActivePart = (name) => (dispatch) => {
   dispatch({
@@ -116,7 +117,7 @@ export const getDashboardWallet = () => async (dispatch) => {
 
 export const getDashboardFavoritesLists = () => async (dispatch) => {
   try {
-    const res = await instance.get('/api/v1/web/content/courses/all-categories');
+    const res = await axios.get('/api/v1/web/content/courses/all-categories');
 
     if (res.status === 200) {
       dispatch({
@@ -133,7 +134,7 @@ export const getDashboardFavoritesLists = () => async (dispatch) => {
   }
 
   try {
-    const res = await instance.get('/api/v1/web/content/jobs/all-categories');
+    const res = await axios.get('/api/v1/web/content/jobs/all-categories');
 
     if (res.status === 200) {
       dispatch({

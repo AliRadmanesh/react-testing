@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import filterIcon from '../../assets/icons/Filter-White.svg';
 import { showJobsMobileMenu } from '../../app/redux/actions/jobsActions';
 
-export default function ScrollToTop() {
+export default function FilterMenuButton() {
   const { mobile } = useSelector((state) => state.jobs.search);
   const dispatch = useDispatch();
 

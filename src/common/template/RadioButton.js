@@ -14,7 +14,7 @@ export default function Checkbox({
   return (
     <div className={`template ${classes}`}>
       {/* eslint-disable-next-line */}
-      <label class="radio-container">
+      <label className="radio-container">
         <span>{text}</span>
         <input
           type="radio"
