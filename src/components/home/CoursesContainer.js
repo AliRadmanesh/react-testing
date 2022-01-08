@@ -41,7 +41,7 @@ const CoursesContainer = () => {
           spaceBetween={30}
           slidesPerView={1}
           className="mySwiper"
-          // centeredSlides={true}
+          centeredSlides={true}
           // loop={true}
           // watchSlidesVisibility={true}
         >

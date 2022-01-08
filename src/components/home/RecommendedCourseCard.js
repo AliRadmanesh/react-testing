@@ -4,7 +4,7 @@ import starFillIcon from '../../assets/icons/Star Fill.svg';
 import onlineIcon from '../../assets/icons/Online.svg';
 import offlineIcon from '../../assets/icons/Offline.svg';
 
-import { numberWithCommas } from '../../common/Functions';
+import { numberWithCommas, replaceString } from '../../common/Functions';
 
 function RecommendedPostCard({ props }) {
   const {
@@ -18,6 +18,8 @@ function RecommendedPostCard({ props }) {
     rating: { average, participants },
     is_free,
   } = props;
+
+  const linkString = replaceString(title, ' ', '-');
 
   return (
     <div className="tw-p-4 bg-white border-smooth card-box-shadow tw-my-4 font-iranyekan home-card">
@@ -47,10 +49,11 @@ function RecommendedPostCard({ props }) {
             />
             <p className="text-guide tw-truncate">{name}</p>
           </div>
-          <div className="tw-flex tw-justify-end">
-            {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
-            {price && (
-              <p className="text-blue font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
+          <div className="tw-flex tw-justify-end lg:tw-hidden">
+            {is_free === 1 ? (
+              <p className="tw-text-sm tw-font-medium text-success  font-kalameh-num ">رایگان</p>
+            ) : (
+              <p className="text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold  font-kalameh-num">
                 {numberWithCommas(price)}
               </p>
             )}
@@ -96,8 +99,18 @@ function RecommendedPostCard({ props }) {
             </div>
           </div>
           <div className="lg:tw-flex lg:tw-items-center">
-            <p className="tab text-blue tw-hidden lg:tw-block tw-ml-6 font-kalameh">{price}</p>
-            <Link to={`/course/${id}`}>
+            <p className="tab tw-hidden lg:tw-block tw-ml-6 font-kalameh-num">
+              {is_free === 1 ? (
+                <span className="tw-text-sm tw-font-medium text-success font-kalameh-num">
+                  رایگان
+                </span>
+              ) : (
+                <span className="text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold font-kalameh-num">
+                  {numberWithCommas(price)}
+                </span>
+              )}
+            </p>
+            <Link to={`/course/${linkString}-ka${id}`}>
               <button className="tw-mx-auto button-primary font-kalameh tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
                 مشاهده بیشتر
               </button>

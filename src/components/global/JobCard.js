@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { replaceString } from '../../common/Functions';
+
 export default function JobCard({ props }) {
   const {
     id,
@@ -13,8 +15,10 @@ export default function JobCard({ props }) {
     created_at,
   } = props;
 
+  const linkString = replaceString(title, ' ', '-');
+
   return (
-    <Link to={`/job/${id}`}>
+    <Link to={`/job/${linkString}-ka${id}`}>
       <div className="bg-white tw-flex tw-w-full tw-shadow-lg border-smooth font-kalameh-num">
         <img src={avatar} alt="" className="tw-m-4 tw-w-20 tw-h-20 2xl:tw-w-28 2xl:tw-h-28" />
         <div className="tw-flex tw-flex-col tw-justify-between tw-p-4 tw-overflow-hidden tw-w-full">

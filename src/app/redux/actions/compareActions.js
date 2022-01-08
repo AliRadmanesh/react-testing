@@ -31,9 +31,14 @@ export const getData = () => async (dispatch) => {
   const el1 = new URL(window.location).searchParams.get('primary');
   const el2 = new URL(window.location).searchParams.get('secondary');
 
+  const el1LastIndexOfKa = el1?.lastIndexOf('ka');
+  const el1CourseId = el1?.substring(el1LastIndexOfKa + 2);
+  const el2LastIndexOfKa = el2?.lastIndexOf('ka');
+  const el2CourseId = el2?.substring(el2LastIndexOfKa + 2);
+
   let query = '';
-  if (el1 !== null) query += `/${el1}`;
-  if (el2 !== null) query += `/${el2}`;
+  if (el1 !== null) query += `/${el1CourseId}`;
+  if (el2 !== null) query += `/${el2CourseId}`;
   const res = await instance.get(`/api/v1/web/service/courses/compare${query}`);
   if (res.status === 200 || res.status === 201) {
     if (res.data.data.courses[0]) {

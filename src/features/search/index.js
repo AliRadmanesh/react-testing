@@ -11,12 +11,12 @@ import instance from '../../app/instance';
 import Error404 from '../../components/search/Error404';
 import Layout from '../../common/Layout/chill';
 import SearchBar from '../../components/global/SearchBar';
-import CourseCard from '../../components/search/CourseCard';
+import CourseCard from '../../components/courses/CourseCard';
 import FilterMenuButton from '../../components/search/FilterMenuButton';
 import FilterMenuMobile from '../../components/search/FilterMenuMobile';
 import FilterMenuDesktop from '../../components/search/FilterMenuDesktop';
-import SortDropdown from '../../components/search/SortDropdown';
-import IsFreeDropdown from '../../components/search/IsFreeDropdown';
+import SortDropdown from '../../components/courses/SortDropdown';
+import IsFreeDropdown from '../../components/courses/IsFreeDropdown';
 import {
   searchQuery,
   setQuerySort,
@@ -156,7 +156,7 @@ export default function Search() {
                     id={item.id}
                     title={item.title}
                     description={item.description}
-                    price={item.price}
+                    prices={item.prices}
                     author={{ first_name: '', last_name: '', image: '' }}
                     rating={item.rating.average}
                     academy={item.academy}
@@ -176,6 +176,11 @@ export default function Search() {
                   url.searchParams.set('page', selected + 1);
                   history.push(`./${url.search}`);
                   window.scrollTo(0, 0);
+                }}
+                hrefBuilder={(page) => {
+                  const url = new URL(window.location.href);
+                  url.searchParams.set('page', page);
+                  return `/courses/${url.search}`;
                 }}
                 breakLabel="..."
                 nextLabel={

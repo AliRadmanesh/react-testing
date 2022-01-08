@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
+import { numberWithCommas, isObjEmpty } from '../../common/Functions';
+import { bookmarkCourse } from '../../app/redux/actions/courseActions';
+
 import compareIcon from '../../assets/icons/Comparison.svg';
 import bookmarkIcon from '../../assets/icons/Bookmark.svg';
 import bookmarkfillIcon from '../../assets/icons/Bookmark Fill.svg';
@@ -14,10 +17,6 @@ import starIcon from '../../assets/icons/Star Fill-Gray.svg';
 import timeIcon from '../../assets/icons/Time Fill-Gray.svg';
 import closeIcon from '../../assets/icons/Close Fill-Gray.svg';
 import tickIcon from '../../assets/icons/Tick Fill-Gray.svg';
-
-import { bookmarkCourse } from '../../app/redux/actions/courseActions';
-
-import { numberWithCommas } from '../../common/Functions';
 
 export default function Header({
   id,
@@ -40,10 +39,26 @@ export default function Header({
   cashback,
   ref_url,
   ref_url_discount,
+  openCourseLink,
 }) {
-  let price = 0;
-  if (prices !== null) {
-    price = numberWithCommas(prices.original.price);
+  let realPrice = '';
+  let discountPrice = '';
+  let courseDiscount = '';
+
+  if (!isObjEmpty(prices) && parseInt(is_free, 10) === 0) {
+    realPrice = `${numberWithCommas(prices.original.price)}`;
+
+    if (!isObjEmpty(discount)) {
+      if (discount.percentage && parseInt(discount.percentage, 10) > 0) {
+        discountPrice = `${numberWithCommas(
+          prices.original.price * (1 - parseInt(discount.percentage, 10) / 100),
+        )} تومان`;
+        courseDiscount = `${discount.percentage} %`;
+      } else {
+        discountPrice = `${numberWithCommas(prices.original.price - discount.amount)} تومان`;
+        courseDiscount = `${numberWithCommas(discount.amount)} تومان`;
+      }
+    }
   }
 
   const dispatch = useDispatch();
@@ -51,9 +66,9 @@ export default function Header({
     user: { authenticated },
   } = useSelector((state) => state.auth);
 
-  const openCourseLink = () => {
-    window.open(ref_url_discount || ref_url, '_blank');
-  };
+  // const openCourseLink = () => {
+  //   window.open(ref_url_discount || ref_url, '_blank');
+  // };
 
   const checkAndbookmarkCourse = () => {
     if (authenticated) {
@@ -103,14 +118,31 @@ export default function Header({
             </p>
           </div>
           <div>
-            <div className="tw-flex tw-justify-end font-kalameh-num tw-mt-4">
-              {is_free === 0 && (
-                <p className="font-kalameh-num text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold">
-                  {price} تومان
-                </p>
+            <div className="tw-flex tw-flex-col tw-items-end font-kalameh-num">
+              <div className="tw-flex tw-justify-end tw-items-center tw-mt-4">
+                {realPrice.length > 0 && (
+                  <p
+                    className={
+                      discountPrice.length > 0
+                        ? 'tw-ml-2 text-gray tw-font-normal tw-text-sm tw-line-through'
+                        : 'font-kalameh-num text-blue tw-text-base tw-font-bold 2xl:tw-text-lg 2xl:tw-font-semibold'
+                    }
+                  >
+                    {`${realPrice} ${discountPrice.length > 0 ? '' : ' تومان'}`}
+                  </p>
+                )}
+                {courseDiscount.length > 0 && (
+                  <p className="tw-text-xs lg:tw-text-sm tw-font-normal tw-px-2 tw-py-1 bg-error text-white tw-rounded-lg">
+                    {courseDiscount}
+                  </p>
+                )}
+                {parseInt(is_free, 10) === 1 && (
+                  <p className="tw-text-base tw-font-bold text-success">رایگان</p>
+                )}
+              </div>
+              {discountPrice.length > 0 && (
+                <p className="text-blue tw-font-bold tw-text-lg">{discountPrice}</p>
               )}
-              <p className="tw-text-sm tw-font-normal text-success">{discount}</p>
-              {is_free === 1 && <p className="tw-text-sm tw-font-medium text-success">رایگان</p>}
             </div>
             <div className="tw-flex tw-mt-2 tw-w-full tw-items-stretch md:tw-justify-end">
               <Link

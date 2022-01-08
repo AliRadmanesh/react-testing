@@ -5,6 +5,8 @@ import academyIcon from '../../assets/icons/School.svg';
 import starIcon from '../../assets/icons/Star Fill.svg';
 import clockIcon from '../../assets/icons/Time Fill.svg';
 
+import { replaceString } from '../../common/Functions';
+
 export default function CourseCard({
   id,
   image,
@@ -18,6 +20,8 @@ export default function CourseCard({
   is_free,
   discount,
 }) {
+  const linkString = replaceString(title, ' ', '-');
+
   return (
     <div className="course-card search-course-card bg-white font-kalameh-num tw-grid tw-p-4 tw-rounded-xl tw-shadow tw-w-full tw-items-center tw-gap-4 tw-mb-4">
       <div
@@ -31,7 +35,7 @@ export default function CourseCard({
       </div>
       <div className="tw-flex tw-flex-col tw-justify-between tw-h-full text-dark">
         <div className="tw-flex tw-items-center tw-justify-between tw-mb-4">
-          <Link to={`/course/${id}`}>
+          <Link to={`/course/${linkString}-ka${id}`}>
             <h1 className="course-card-title text-dark tw-font-bold tw-text-base 2xl:tw-text-xl 2xl:tw-font-semibold text-primary-hover">
               {title}
             </h1>
@@ -96,7 +100,7 @@ export default function CourseCard({
               </div>
             </div>
           </div>
-          <Link to={`/course/${id}`} className="button-primary">
+          <Link to={`/course/${linkString}-ka${id}`} className="button-primary">
             مشاهده بیشتر
           </Link>
         </div>

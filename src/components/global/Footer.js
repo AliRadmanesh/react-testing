@@ -11,6 +11,7 @@ import FB from '../../assets/svg/footer/FB.svg';
 import IG from '../../assets/svg/footer/IG.svg';
 import TW from '../../assets/svg/footer/TW.svg';
 import logo from '../../assets/images/logo/karsaz/logo-small.svg';
+import { replaceString } from '../../common/Functions';
 
 function Footer() {
   const top_categories = useSelector((state) => state.footer.top_categories);
@@ -135,7 +136,11 @@ function Footer() {
             <ul>
               {top_categories.map((category) => (
                 <li key={category.id}>
-                  <Link to={`/courses/?category[0]=${category.id}&sortby=1&is_free=0&page=1`}>
+                  <Link
+                    to={`/courses/${replaceString(category.name, ' ', '-')}/?category[0]=${
+                      category.id
+                    }&sortby=1&page=1`}
+                  >
                     <p className="tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate text-primary-hover">
                       {category.name}
                     </p>

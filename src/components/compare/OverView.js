@@ -64,15 +64,15 @@ export default function OverView() {
                 style={{ background: `url("${pcover}") center/cover no-repeat` }}
               />
               <div className="tw-flex tw-justify-between tw-items-center tw-my-4">
-                <p className="text-dark tw-text-base tw-font-bold 2xl:tw-text-xl 2xl:tw-font-semibold tw-max-w-3/5 tw-truncate">
+                <p className="text-dark tw-text-base tw-font-bold 2xl:tw-text-xl 2xl:tw-font-semibold tw-basis-4/5 tw-truncate tw-ml-4">
                   {ptitle}
                 </p>
                 {pisfree ? (
-                  <p className="text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold tw-max-w-3/5 tw-truncate">
+                  <p className="text-blue tw-text-sm tw-font-bold 2xl:tw-text-lg 2xl:tw-font-semibold tw-basis-1/5">
                     رایگان
                   </p>
                 ) : (
-                  <p className="text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold tw-max-w-3/5 tw-truncate">
+                  <p className="text-blue tw-text-sm tw-font-bold 2xl:tw-text-lg 2xl:tw-font-semibold tw-basis-1/5">
                     {pprice}
                   </p>
                 )}
@@ -139,15 +139,15 @@ export default function OverView() {
                 style={{ background: `url("${scover}") center/cover no-repeat` }}
               />
               <div className="tw-flex tw-justify-between tw-items-center tw-my-4">
-                <p className="text-dark tw-text-base tw-font-bold 2xl:tw-text-xl 2xl:tw-font-semibold tw-max-w-3/5 tw-truncate">
+                <p className="text-dark tw-text-base tw-font-bold 2xl:tw-text-xl 2xl:tw-font-semibold tw-basis-4/5 tw-truncate tw-ml-4">
                   {stitle}
                 </p>
                 {sisfree ? (
-                  <p className="text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold tw-max-w-3/5 tw-truncate">
+                  <p className="text-blue tw-text-sm tw-font-bold 2xl:tw-text-lg 2xl:tw-font-semibold tw-basis-1/5">
                     رایگان
                   </p>
                 ) : (
-                  <p className="text-blue tw-text-sm tw-font-medium 2xl:tw-text-lg 2xl:tw-font-semibold tw-max-w-3/5 tw-truncate">
+                  <p className="text-blue tw-text-sm tw-font-bold 2xl:tw-text-lg 2xl:tw-font-semibold tw-basis-1/5">
                     {sprice}
                   </p>
                 )}

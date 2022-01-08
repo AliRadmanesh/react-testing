@@ -16,19 +16,46 @@ import {
   setModalFree,
   showModal,
 } from '../../app/redux/actions/compareActions';
+import { isObjEmpty, numberWithCommas } from '../../common/Functions';
 
 const ModalCard = ({ props }) => {
   const {
     id,
     images: { cover },
     title,
-    price,
-    is_free,
+    prices,
     academy: { name, avatar },
     rating,
     type,
+    duration,
+    description,
+    is_free,
     discount,
   } = props;
+
+  let realPrice = '';
+  let discountPrice = '';
+  let courseDiscount = '';
+
+  // const realPrice = '';
+  // const discountPrice = '';
+  // const courseDiscount = '';
+
+  if (!isObjEmpty(prices) && parseInt(is_free, 10) === 0) {
+    realPrice = `${numberWithCommas(prices.original.price)}`;
+
+    if (!isObjEmpty(discount)) {
+      if (discount.percentage && parseInt(discount.percentage, 10) > 0) {
+        discountPrice = `${numberWithCommas(
+          prices.original.price * (1 - parseInt(discount.percentage, 10) / 100),
+        )} تومان`;
+        courseDiscount = `${discount.percentage} %`;
+      } else {
+        discountPrice = `${numberWithCommas(prices.original.price - discount.amount)} تومان`;
+        courseDiscount = `${numberWithCommas(discount.amount)} تومان`;
+      }
+    }
+  }
 
   const { dispatcher } = useSelector((state) => state.compare);
   const dispatch = useDispatch();
@@ -46,18 +73,7 @@ const ModalCard = ({ props }) => {
           background: `url("${cover}") center/cover no-repeat`,
           height: '166px',
         }}
-      >
-        {discount && (
-          <div
-            className="tw-absolute bg-error text-white tw-top-8 tw-left-8"
-            style={{
-              borderRadius: '12px 12px 0 12px',
-            }}
-          >
-            {discount}%
-          </div>
-        )}
-      </div>
+      />
       <p className="tw-text-sm text-dark tw-font-medium 2xl:tw-text-lg tw-truncate tw-mb-4">
         {title}
       </p>
@@ -66,17 +82,38 @@ const ModalCard = ({ props }) => {
           <img src={avatar} alt="" className="tw-ml-4 avatar tw-rounded-xl" />
           <p className="font-iranyekan-num text-dark tw-text-sm 2xl:tw-text-base">{name}</p>
         </div>
-        {is_free == 1 || price == 0 ? (
-          <p className="text-blue tw-text-sm 2xl:tw-text-base tw-font-semibold">رایگان</p>
-        ) : (
-          <p className="text-blue tw-text-sm 2xl:tw-text-base tw-font-semibold">{price}</p>
-        )}
+        <div className="tw-flex tw-flex-col tw-items-end">
+          <div className="tw-flex tw-items-center">
+            {realPrice.length > 0 && (
+              <p
+                className={`tw-block ${
+                  discountPrice.length > 0
+                    ? 'tw-ml-2 text-gray tw-font-normal tw-text-sm tw-line-through'
+                    : 'text-blue tw-font-semibold tw-text-lg'
+                }`}
+              >
+                {`${realPrice} ${discountPrice.length > 0 ? '' : ' تومان'}`}
+              </p>
+            )}
+            {courseDiscount.length > 0 && (
+              <p className="tw-text-xs tw-font-normal tw-block tw-px-2 tw-py-1 bg-error text-white tw-rounded-lg">
+                {courseDiscount}
+              </p>
+            )}
+            {parseInt(is_free, 10) === 1 && (
+              <p className="tw-text-base tw-font-bold tw-block text-success">رایگان</p>
+            )}
+          </div>
+          {discountPrice.length > 0 && (
+            <p className="text-blue tw-font-bold tw-text-lg">{discountPrice}</p>
+          )}
+        </div>
       </div>
       <div className="tw-flex tw-justify-between tw-items-center tw-mt-4">
         <div className="tw-flex tw-items-center">
           <p className="text-dark tw-text-sm 2xl:tw-text-base">{type.name}</p>
           <div className="tw-flex tw-justify-center tw-mr-4 tw-items-center">
-            <img src={starFillIcon} alt="" className="tw-ml-2 icon" />
+            <img src={starFillIcon} alt="" className="tw-ml-2 tw-w-4 2xl:tw-w-6" />
             <p className="text-dark tw-text-sm 2xl:tw-text-base">{rating.average}</p>
           </div>
         </div>
@@ -90,7 +127,7 @@ const ModalCard = ({ props }) => {
           className="button-secondary tw-flex tw-justify-center"
           style={{ padding: '.5rem' }}
         >
-          <img src={addFillIcon} alt="" className="tw-ml-2 icon" />
+          <img src={addFillIcon} alt="" className="tw-ml-2 tw-w-4 2xl:tw-w-6" />
           افزودن دوره
         </Link>
       </div>
@@ -100,23 +137,38 @@ const ModalCard = ({ props }) => {
 
 function IsFreeDropdown() {
   const { is_free } = useSelector((state) => state.compare.modal);
+  const dispatch = useDispatch();
+  const ref = useRef();
   const [text, setText] = useState(() => {
     switch (is_free) {
       case 0:
-        return 'دارای هزینه';
+        return 'همه';
       case 1:
         return 'رایگان';
       default:
         return 'مرتبط‌ترین';
     }
   });
-  const dispatch = useDispatch();
-  const ref = useRef();
+
+  const handleClick = (event) => {
+    if (!event.target.className.includes('modal-free-dropdown') && ref.current) {
+      ref.current.classList.remove('active');
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
+
   return (
     <div className="font-kalameh-num tw-relative tw-w-full tw-h-auto">
       <div
         ref={ref}
-        className="tw-flex items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
+        className="tw-flex items-center courses-dropdown modal-free-dropdown tw-justify-between tw-relative tw-p-4"
         onClick={(e) => e.target.classList.toggle('active')}
       >
         <p className="tw-text-sm tw-font-normal 2xl:tw-text-base">{text}</p>
@@ -128,7 +180,7 @@ function IsFreeDropdown() {
           onClick={() => {
             dispatch(setModalFree(1));
             setText('رایگان');
-            ref.current.classList.remove('active');
+            // document.querySelector('.modal-free-dropdown').classList.remove('active');
           }}
         >
           رایگان
@@ -137,11 +189,11 @@ function IsFreeDropdown() {
           className="courses-dropdown-item tw-text-sm tw-font-normal 2xl:tw-text-base"
           onClick={() => {
             dispatch(setModalFree(0));
-            setText('دارای هزینه');
-            ref.current.classList.remove('active');
+            setText('همه');
+            // document.querySelector('.modal-free-dropdown').classList.remove('active');
           }}
         >
-          دارای هزینه
+          همه
         </div>
       </div>
     </div>
@@ -164,11 +216,26 @@ function SortDropdown() {
   });
   const dispatch = useDispatch();
   const ref = useRef();
+
+  const handleClick = (event) => {
+    if (!event.target.className.includes('modal-sort-dropdown') && ref.current) {
+      ref.current.classList.remove('active');
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
+
   return (
     <div className="font-kalameh-num tw-relative tw-w-full tw-h-auto">
       <div
         ref={ref}
-        className="tw-flex items-center courses-dropdown tw-justify-between tw-relative tw-p-4"
+        className="tw-flex items-center courses-dropdown modal-sort-dropdown tw-justify-between tw-relative tw-p-4"
         onClick={(e) => e.target.classList.toggle('active')}
       >
         <p className="tw-text-sm tw-font-normal 2xl:tw-text-base">{text}</p>
@@ -264,7 +331,9 @@ export default function Modal() {
     }
     if (search !== '') {
       const res = await instance.get(
-        `/api/v1/web/service/courses/search/?q=${search}&sortby=${sort}&is_free=${is_free}`,
+        `/api/v1/web/service/courses/search/?q=${search}&sortby=${sort}${
+          is_free > 0 ? `&is_free=${is_free}` : ''
+        }`,
       );
       if (res.status === 200 || res.status === 201) {
         setCourses(res.data.data.courses);
@@ -306,11 +375,11 @@ export default function Modal() {
       >
         <div className="tw-flex tw-px-4 tw-items-center tw-justify-between tw-py-4 font-kalameh-num md:tw-hidden">
           <p className="tw-text-base tw-font-normal text-dark">افزوردن دوره به لیست</p>
-          <button onClick={() => dispatch(showModal(false))} className="tw-p-0 icon">
+          <button onClick={() => dispatch(showModal(false))} className="tw-p-0 tw-w-4 2xl:tw-w-6">
             <img src={closeIcon} alt="" />
           </button>
         </div>
-        <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-justify-between tw-items-center tw-border-b-2 tw-border-gray-200 tw-py-4 tw-mx-4">
+        <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 tw-justify-between tw-items-center tw-border-b-2 tw-border-gray-200 tw-py-4 tw-mx-4">
           <div className="tw-mb-4 lg:tw-mb-0">
             <SearchBar />
           </div>

@@ -38,6 +38,8 @@ import Main from '../../features/dashboard/main';
 import Unauthenticated from '../../features/unauthenticated';
 
 function AppRouter() {
+  const { category } = useSelector((state) => state.jobs.search);
+
   return (
     <div className="App">
       <Router basename="/">
@@ -47,15 +49,26 @@ function AppRouter() {
           <Route exact path="/faq" component={FAQ} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/courses" component={CourseList} />
-          <Route exact path="/course/:id" component={Course} />
-          <Route exact path="/404" component={Page404} />
+          <Route exact path="/courses/:slug" component={CourseList} />
+          <Route exact path="/course/:slug" component={Course} />
           <Route exact path="/unauthenticated" component={Unauthenticated} />
-          <Route exact path="/courses/search" component={Search} />
+          <Route exact path="/courses" component={Search} />
           <Route exact path="/compare" component={Compare} />
+          {/* <Route
+            path={['/jobs', '/jobs/:slug', '/jobs/search']}
+            component={
+              // eslint-disable-next-line no-nested-ternary
+              window.location.href.includes('/search')
+                ? JobSearch
+                : window.location.search === ''
+                ? Jobs
+                : JobSearch
+            }
+          /> */}
+          {/* <Route exact path="/jobs/search" component={JobSearch} /> */}
           <Route exact path="/jobs" component={Jobs} />
-          <Route exact path="/jobs/search" component={JobSearch} />
-          <Route exact path="/job/:id" component={Job} />
+          <Route exact path={['/jobs/search', '/jobs/:slug']} component={JobSearch} />
+          <Route exact path="/job/:slug" component={Job} />
           <Route exact path="/auth" component={Authentication} />
           <Route exact path="/login/password" component={LoginPassword} />
           <Route exact path="/login/code" component={LoginCode} />
@@ -73,6 +86,7 @@ function AppRouter() {
           <Route exact path="/dashboard/purchases" component={Purchases} />
           <Route exact path="/dashboard/transactions" component={Transactions} />
           <Route exact path="/dashboard/wallet" component={Wallet} />
+          <Route component={Page404} />
         </Switch>
       </Router>
     </div>

@@ -13,7 +13,7 @@ const initialState = {
     topics_summary: '',
     topics_summary_string: '',
     discount: null,
-    is_free: 1,
+    is_free: 0,
     prices: null,
     cashback: null,
     academy: {

@@ -104,7 +104,7 @@ export const setSearchContent = (options) => (dispatch) => {
 export const searchQuery = (query) => async (dispatch) => {
   let proceed = false;
   try {
-    const res = await instance.get(`api/v1/web/service/courses/search/${query}`);
+    const res = await instance.get(`/api/v1/web/service/courses/search/${query}`);
     if (res.status === 200 || res.status === 201) {
       dispatch({ type: SET_QUERY_STATUS, payload: 200 });
       dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
@@ -144,7 +144,7 @@ export const setQueryString =
     types.map((item, index) => {
       string += `&type[${index}]=${item.id}`;
     });
-    string += `&sortby=${sort}&is_free=${free}&page=${page}`;
+    string += `&sortby=${sort}${free > 0 ? `&is_free=${free}` : ''}&page=${page}`;
     dispatch({ type: SET_QUERY_STRING, payload: string });
   };
 

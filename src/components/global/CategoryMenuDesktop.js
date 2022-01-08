@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { showCategoryDesktopMenu, getMenuCategories } from '../../app/redux/actions/headerActions';
 import { setCategoryId } from '../../app/redux/actions/coursesActions';
 
+import { replaceString } from '../../common/Functions';
+
 export default function CategoryMenuDesktop() {
   const [active, setActive] = useState(1);
   const [total, setTotal] = useState(3);
@@ -11,8 +13,12 @@ export default function CategoryMenuDesktop() {
   const [width, setWidth] = useState(0);
   const dispatch = useDispatch();
   const { categoryDesktop, categories } = useSelector((state) => state.header);
+
   const handleClick = (click) => {
-    if (click.target.className.includes('category-menu')) {
+    if (
+      document.querySelector('.desktop-categories-container')?.style.display === 'block' &&
+      click.target.className.includes('category-menu')
+    ) {
       dispatch(showCategoryDesktopMenu(false));
     }
   };
@@ -31,7 +37,10 @@ export default function CategoryMenuDesktop() {
   }, []);
 
   return (
-    <div style={{ display: categoryDesktop ? 'block' : 'none' }}>
+    <div
+      className="desktop-categories-container"
+      style={{ display: categoryDesktop ? 'block' : 'none' }}
+    >
       <div
         className="desktop-category-menu-container container text-black tw-fixed tw-w-full tw-h-screen tw-top-0 font-kalameh tw-hidden lg:tw-block"
         style={{ zIndex: '8888', background: 'rgba(0,0,0,.5)' }}
@@ -104,7 +113,9 @@ export default function CategoryMenuDesktop() {
                 return (
                   <Link
                     key={si.id}
-                    to={`/courses/?category[0]=${si.id}&sortby=1&is_free=0&page=1`}
+                    to={`/courses/${replaceString(si.name, ' ', '-')}/?category[0]=${
+                      si.id
+                    }&sortby=1&page=1`}
                     className="header-category-item tw-py-4 tw-text-sm tw-font-normal 2xl:tw-text-lg"
                     onClick={() => {
                       dispatch(setCategoryId(si.id));

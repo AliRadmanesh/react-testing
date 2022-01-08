@@ -13,7 +13,7 @@ export default function Checkbox({
   return (
     <div className={`template ${classes}`}>
       {/* eslint-disable-next-line */}
-      <label class="checkbox-container">
+      <label className="checkbox-container">
         <span>
           {text} <span style={{ color: '#acacac' }}>{secondText}</span>
         </span>
