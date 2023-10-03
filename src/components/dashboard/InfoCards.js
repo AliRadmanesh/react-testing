@@ -6,7 +6,7 @@ import giftPaleIcon from '../../assets/icons/Dashboard/gift-pale.svg';
 import { numberWithCommas } from '../../common/Functions';
 
 // eslint-disable-next-line arrow-body-style
-export const WalletCard = ({ wallet }) => {
+export function WalletCard({ wallet }) {
   return (
     <div className="bg-primary-light tw-p-4 tw-flex tw-justify-between font-kalameh-num tw-items-center tw-rounded-xl">
       <div>
@@ -21,10 +21,10 @@ export const WalletCard = ({ wallet }) => {
       <img alt="" src={walletPaleIcon} className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" />
     </div>
   );
-};
+}
 
 // eslint-disable-next-line arrow-body-style
-export const BookmarksCard = ({ bookmarks }) => {
+export function BookmarksCard({ bookmarks }) {
   return (
     <div className="bg-warning-light tw-p-4 tw-flex tw-justify-between font-kalameh-num tw-items-center tw-rounded-xl">
       <div>
@@ -38,10 +38,10 @@ export const BookmarksCard = ({ bookmarks }) => {
       <img alt="" src={bookmarkPaleIcon} className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" />
     </div>
   );
-};
+}
 
 // eslint-disable-next-line arrow-body-style
-export const CartCard = ({ purchases }) => {
+export function CartCard({ purchases }) {
   return (
     <div className="bg-success-light tw-p-4 tw-flex tw-justify-between font-kalameh-num tw-items-center tw-rounded-xl">
       <div>
@@ -59,10 +59,10 @@ export const CartCard = ({ purchases }) => {
       <img alt="" className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" src={cartPaleIcon} />
     </div>
   );
-};
+}
 
 // eslint-disable-next-line arrow-body-style
-export const AmountCard = ({ cashback }) => {
+export function AmountCard({ cashback }) {
   return (
     <div className="bg-warning-light tw-p-4 tw-flex tw-justify-between font-kalameh-num tw-items-center tw-rounded-xl">
       <div>
@@ -77,4 +77,4 @@ export const AmountCard = ({ cashback }) => {
       <img alt="" src={giftPaleIcon} className="tw-w-8 2xl:tw-w-16 tw-h-8 2xl:tw-h-16" />
     </div>
   );
-};
+}

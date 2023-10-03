@@ -42,7 +42,7 @@ export default function LoginPassword() {
           }
         }
       } catch (error) {
-        const { data, status } = error?.response;
+        const { data, status } = error?.response ?? {};
         if (status === 422 && data.message.mobile) toast.error(data.message.mobile[0]);
         if (status === 422 && data.message.device_name) toast.error(data.message.device_name[0]);
         if (status === 422 && data.message.password) toast.error(data.message.password[0]);

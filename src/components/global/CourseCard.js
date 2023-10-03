@@ -6,7 +6,7 @@ import onlineIcon from '../../assets/icons/Online.svg';
 import starFillIcon from '../../assets/icons/Star Fill.svg';
 import { numberWithCommas, replaceString } from '../../common/Functions';
 
-const CourseCard = ({ props }) => {
+function CourseCard({ props }) {
   const {
     id,
     type,
@@ -118,6 +118,6 @@ const CourseCard = ({ props }) => {
       </div>
     </div>
   );
-};
+}
 
 export default CourseCard;

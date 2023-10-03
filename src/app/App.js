@@ -6,11 +6,7 @@ import '../assets/fonts/fonts.css';
 import '../sass/main.scss';
 
 function App() {
-  return (
-    <>
-      <AppRouter />
-    </>
-  );
+  return <AppRouter />;
 }
 
 export default App;

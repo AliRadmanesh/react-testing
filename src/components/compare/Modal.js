@@ -18,7 +18,7 @@ import {
 } from '../../app/redux/actions/compareActions';
 import { isObjEmpty, numberWithCommas } from '../../common/Functions';
 
-const ModalCard = ({ props }) => {
+function ModalCard({ props }) {
   const {
     id,
     images: { cover },
@@ -133,7 +133,7 @@ const ModalCard = ({ props }) => {
       </div>
     </div>
   );
-};
+}
 
 function IsFreeDropdown() {
   const { is_free } = useSelector((state) => state.compare.modal);

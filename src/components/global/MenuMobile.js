@@ -11,7 +11,7 @@ import close from '../../assets/icons/Close-Gray.svg';
 import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from './HeaderUserSection';
 
-const MenuMobile = () => {
+function MenuMobile() {
   // const [show, doShow] = useState(false);
   const { showNav } = useSelector((state) => state.header);
   const [value, setValue] = useState('');
@@ -158,6 +158,6 @@ const MenuMobile = () => {
       </div>
     </div>
   );
-};
+}
 
 export default MenuMobile;

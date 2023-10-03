@@ -111,21 +111,20 @@ export default function Form() {
   };
 
   return (
-    <>
-      <div className="tw-p-2 md:tw-p-4 border-smooth bg-white tw-order-last lg:tw-order-first">
-        <div className="tw-flex tw-items-center tw-mb-4">
-          <img src={messageIcon} alt="" className="icon tw-ml-4" />
-          <div>
-            <p className="tw-text-base text-dark 2xl:tw-text-xl font-kalameh-num tw-font-semibold">
-              تماس با ما
-            </p>
-            <p className="font-kalameh-num tw-text-xs 2xl:tw-text-lg">با ما در ارتباط باشید.</p>
-          </div>
+    <div className="tw-p-2 md:tw-p-4 border-smooth bg-white tw-order-last lg:tw-order-first">
+      <div className="tw-flex tw-items-center tw-mb-4">
+        <img src={messageIcon} alt="" className="icon tw-ml-4" />
+        <div>
+          <p className="tw-text-base text-dark 2xl:tw-text-xl font-kalameh-num tw-font-semibold">
+            تماس با ما
+          </p>
+          <p className="font-kalameh-num tw-text-xs 2xl:tw-text-lg">با ما در ارتباط باشید.</p>
         </div>
-        <form onSubmit={onSubmit} noValidate>
-          <div className="tw-h-auto tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-4 font-iranyekan-num">
-            <div>
-              {/* <label
+      </div>
+      <form onSubmit={onSubmit} noValidate>
+        <div className="tw-h-auto tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-4 font-iranyekan-num">
+          <div>
+            {/* <label
               htmlFor="name"
               className="tw-text-base 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold tw-flex tw-flex-col"
             >
@@ -139,158 +138,155 @@ export default function Form() {
                 onChange={(e) => setName(e.target.value)}
               />
             </label> */}
-              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
-                نام
-              </p>
-              <TextInput
-                classes="tw-w-full font-kalameh-num"
-                placeholder="نام و نام خانوادگی خود را وارد کنید."
-                defaultValue={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                  setNameState('');
-                }}
-                message={nameMessage}
-                state={nameState}
-                onBlur={(e) => {
-                  checkValue(e, setNameState);
-                  if (name) setNameMessage(initialText);
-                }}
-              />
-            </div>
-            <div>
-              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
-                ایمیل
-              </p>
-              <EmailInput
-                classes="tw-w-full font-kalameh-num"
-                placeholder="برای مثال info@karsaz.app"
-                defaultValue={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  setEmailState('');
-                }}
-                message={emailMessage}
-                state={emailState}
-                onBlur={(e) => {
-                  checkEmail(e, setEmailState);
-                  if (email) setEmailMessage(initialText);
-                }}
-              />
-            </div>
-            <div>
-              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
-                موضوع
-              </p>
-              <TextInput
-                classes="tw-w-full font-kalameh-num"
-                placeholder="برای مثال همکاری"
-                defaultValue={title}
-                onChange={(e) => {
-                  setTitle(e.target.value);
-                  setTitleState('');
-                }}
-                message={titleMessage}
-                state={titleState}
-                onBlur={(e) => {
-                  checkValue(e, setTitleState);
-                  if (title) setTitleMessage(initialText);
-                }}
-              />
-            </div>
-            <div>
-              <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
-                دپارتمان
-              </p>
-              <div style={{ marginBottom: '1rem' }} className="template font-kalameh-num">
-                <div
-                  role="none"
-                  className={`dropdown ${departmentState}`}
-                  style={{ display: 'flex', justifyContent: 'space-between', borderRadius: '12px' }}
-                  onClick={() => doShowItems(!showItems)}
-                >
-                  <p style={{ cursor: 'default' }}>
-                    {dropdownText || (
-                      <span style={{ color: '#878787', opacity: '.7' }}>
-                        یک گزینه را انتخاب کنید
-                      </span>
-                    )}
-                  </p>
-                  <img src={icon} alt="" />
-                </div>
-                <div className="dropdown-container">
-                  <div
-                    className="dropdown-items"
-                    style={{
-                      display: showItems ? 'block' : 'none',
-                      width: dropdownWidth,
-                      position: 'absolute',
-                    }}
-                  >
-                    {options.map((item) => (
-                      <div
-                        role="none"
-                        key="item"
-                        className="dropdown-item"
-                        onClick={() => {
-                          setDepartment(item.id);
-                          setDepartmentState('success');
-                          doShowItems(false);
-                          setDropdownText(item.title);
-                          if (department) setDepartmentMessage('');
-                        }}
-                      >
-                        {item.title}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <p
-                  className="template-dropdown-message font-iranyekan-num"
-                  style={{
-                    color:
-                      (!departmentState && '#2c2c2c') ||
-                      (departmentState === 'error' && '#B21111') ||
-                      (departmentState === 'warning' && '#B26F11') ||
-                      (departmentState === 'success' && '#11B262'),
-                    visibility: departmentState ? 'visible' : 'hidden',
-                    marginTop: '.5rem',
-                    marginRight: '.5rem',
-                  }}
-                >
-                  {departmentMessage}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="tw-flex tw-flex-col tw-w-full font-iranyekan-num">
             <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
-              پیام
+              نام
             </p>
-            <TextArea
+            <TextInput
               classes="tw-w-full font-kalameh-num"
-              placeholder="پیام خود را در اینجا برای ما بنویسید..."
-              defaultValue={description}
+              placeholder="نام و نام خانوادگی خود را وارد کنید."
+              defaultValue={name}
               onChange={(e) => {
-                setDescription(e.target.value);
-                setDescriptionState('');
+                setName(e.target.value);
+                setNameState('');
               }}
-              message={descriptionMessage}
-              state={descriptionState}
+              message={nameMessage}
+              state={nameState}
               onBlur={(e) => {
-                checkValue(e, setDescriptionState);
-                if (description) setDescriptionMessage(initialText);
+                checkValue(e, setNameState);
+                if (name) setNameMessage(initialText);
               }}
             />
           </div>
-          <div className="tw-flex tw-justify-center md:tw-justify-end">
-            <button type="submit" className="button-primary button-padding tw-w-full md:tw-w-auto">
-              ارسال پیام
-            </button>
+          <div>
+            <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
+              ایمیل
+            </p>
+            <EmailInput
+              classes="tw-w-full font-kalameh-num"
+              placeholder="برای مثال info@karsaz.app"
+              defaultValue={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setEmailState('');
+              }}
+              message={emailMessage}
+              state={emailState}
+              onBlur={(e) => {
+                checkEmail(e, setEmailState);
+                if (email) setEmailMessage(initialText);
+              }}
+            />
           </div>
-        </form>
-      </div>
-    </>
+          <div>
+            <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
+              موضوع
+            </p>
+            <TextInput
+              classes="tw-w-full font-kalameh-num"
+              placeholder="برای مثال همکاری"
+              defaultValue={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+                setTitleState('');
+              }}
+              message={titleMessage}
+              state={titleState}
+              onBlur={(e) => {
+                checkValue(e, setTitleState);
+                if (title) setTitleMessage(initialText);
+              }}
+            />
+          </div>
+          <div>
+            <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
+              دپارتمان
+            </p>
+            <div style={{ marginBottom: '1rem' }} className="template font-kalameh-num">
+              <div
+                role="none"
+                className={`dropdown ${departmentState}`}
+                style={{ display: 'flex', justifyContent: 'space-between', borderRadius: '12px' }}
+                onClick={() => doShowItems(!showItems)}
+              >
+                <p style={{ cursor: 'default' }}>
+                  {dropdownText || (
+                    <span style={{ color: '#878787', opacity: '.7' }}>یک گزینه را انتخاب کنید</span>
+                  )}
+                </p>
+                <img src={icon} alt="" />
+              </div>
+              <div className="dropdown-container">
+                <div
+                  className="dropdown-items"
+                  style={{
+                    display: showItems ? 'block' : 'none',
+                    width: dropdownWidth,
+                    position: 'absolute',
+                  }}
+                >
+                  {options.map((item) => (
+                    <div
+                      role="none"
+                      key="item"
+                      className="dropdown-item"
+                      onClick={() => {
+                        setDepartment(item.id);
+                        setDepartmentState('success');
+                        doShowItems(false);
+                        setDropdownText(item.title);
+                        if (department) setDepartmentMessage('');
+                      }}
+                    >
+                      {item.title}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <p
+                className="template-dropdown-message font-iranyekan-num"
+                style={{
+                  color:
+                    (!departmentState && '#2c2c2c') ||
+                    (departmentState === 'error' && '#B21111') ||
+                    (departmentState === 'warning' && '#B26F11') ||
+                    (departmentState === 'success' && '#11B262'),
+                  visibility: departmentState ? 'visible' : 'hidden',
+                  marginTop: '.5rem',
+                  marginRight: '.5rem',
+                }}
+              >
+                {departmentMessage}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="tw-flex tw-flex-col tw-w-full font-iranyekan-num">
+          <p className="tw-text-base tw-mb-2 2xl:tw-text-lg tw-font-normal 2xl:tw-font-semibold font-kalameh-num">
+            پیام
+          </p>
+          <TextArea
+            classes="tw-w-full font-kalameh-num"
+            placeholder="پیام خود را در اینجا برای ما بنویسید..."
+            defaultValue={description}
+            onChange={(e) => {
+              setDescription(e.target.value);
+              setDescriptionState('');
+            }}
+            message={descriptionMessage}
+            state={descriptionState}
+            onBlur={(e) => {
+              checkValue(e, setDescriptionState);
+              if (description) setDescriptionMessage(initialText);
+            }}
+          />
+        </div>
+        <div className="tw-flex tw-justify-center md:tw-justify-end">
+          <button type="submit" className="button-primary button-padding tw-w-full md:tw-w-auto">
+            ارسال پیام
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

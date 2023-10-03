@@ -52,7 +52,7 @@ const customStyle = {
   }),
 };
 
-const CategoryDropdown = () => {
+function CategoryDropdown() {
   const dispatch = useDispatch();
   const {
     search: { categories, category },
@@ -86,9 +86,9 @@ const CategoryDropdown = () => {
       // styles={customSelectStyle}
     />
   );
-};
+}
 
-const LocationDropdown = () => {
+function LocationDropdown() {
   const dispatch = useDispatch();
   const {
     search: { locations, location },
@@ -148,7 +148,7 @@ const LocationDropdown = () => {
       value={location.id !== null && { value: location.id, label: location.name }}
     />
   );
-};
+}
 
 export default function SearchBox() {
   const [text, setText] = useState(new URL(window.location).searchParams.get('q'));

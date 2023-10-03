@@ -10,7 +10,7 @@ import {
   removeDashboardFavoritesInterestsJobs,
 } from '../../../app/redux/actions/dashboardActions';
 
-const FavtoriteItem = ({ props, section }) => {
+function FavtoriteItem({ props, section }) {
   const [selected, setSelected] = useState(false);
   const { name, sub, image, id } = props;
 
@@ -78,33 +78,31 @@ const FavtoriteItem = ({ props, section }) => {
       }
       case 'jobs': {
         return (
-          <>
-            <div
-              role="none"
-              className="tw-inline-grid tw-relative tw-place-items-center lg:tw-h-24 tw-h-16 tw-cursor-pointer tw-rounded-xl"
-              style={{
-                background: selected ? '#118AB2' : 'rgba(0,0,0,.75)',
-                transition: 'all .5s ease-in-out',
-              }}
-              onClick={onClick}
-            >
-              {/* <img
+          <div
+            role="none"
+            className="tw-inline-grid tw-relative tw-place-items-center lg:tw-h-24 tw-h-16 tw-cursor-pointer tw-rounded-xl"
+            style={{
+              background: selected ? '#118AB2' : 'rgba(0,0,0,.75)',
+              transition: 'all .5s ease-in-out',
+            }}
+            onClick={onClick}
+          >
+            {/* <img
                 src={image}
                 alt=""
                 className="tw-absolute tw-right-4"
                 style={{ width: '36px', height: '36px', top: '50%', transform: 'translateY(-50%)' }}
               /> */}
-              <p
-                className="text-white font-kalameh-num tw-text-xs tw-font-normal 2xl:tw-text-base"
-                style={{
-                  color: '#eee',
-                  transition: 'all .5s ease-in-out',
-                }}
-              >
-                {name}
-              </p>
-            </div>
-          </>
+            <p
+              className="text-white font-kalameh-num tw-text-xs tw-font-normal 2xl:tw-text-base"
+              style={{
+                color: '#eee',
+                transition: 'all .5s ease-in-out',
+              }}
+            >
+              {name}
+            </p>
+          </div>
         );
       }
       default:
@@ -113,6 +111,6 @@ const FavtoriteItem = ({ props, section }) => {
   };
 
   return <>{renderFavItems()}</>;
-};
+}
 
 export default FavtoriteItem;

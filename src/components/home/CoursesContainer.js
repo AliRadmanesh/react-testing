@@ -10,7 +10,7 @@ import CourseCard from '../global/CourseCard';
 
 SwiperCore.use([Pagination]);
 
-const CoursesContainer = () => {
+function CoursesContainer() {
   const recommended_courses = useSelector((state) => state.home.data.recommended_courses);
 
   const pagination = {
@@ -54,6 +54,6 @@ const CoursesContainer = () => {
       </div>
     </div>
   );
-};
+}
 
 export default CoursesContainer;

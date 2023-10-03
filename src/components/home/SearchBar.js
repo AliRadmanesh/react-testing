@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import searchWhiteIcon from '../../assets/icons/Search White.svg';
 import { setQueryKeywords } from '../../app/redux/actions/searchActions';
 
-const SearchBar = () => {
+function SearchBar() {
   const [value, setValue] = useState('');
   const top_search = useSelector((state) => state.home.data.top_search);
   const history = useHistory();
@@ -85,6 +85,6 @@ const SearchBar = () => {
       </div>
     </div>
   );
-};
+}
 
 export default SearchBar;

@@ -11,7 +11,7 @@ import 'swiper/swiper.min.css';
 
 SwiperCore.use([Pagination]);
 
-const RecentPostsContainer = () => {
+function RecentPostsContainer() {
   const recent_posts = useSelector((state) => state.home.data.recent_posts);
 
   const pagination = {
@@ -88,6 +88,6 @@ const RecentPostsContainer = () => {
       </div>
     </div>
   );
-};
+}
 
 export default RecentPostsContainer;

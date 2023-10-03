@@ -11,7 +11,7 @@ import 'swiper/swiper.min.css';
 
 SwiperCore.use([Pagination]);
 
-const RecentPostsContainer = ({ recommended_courses }) => {
+function RecentPostsContainer({ recommended_courses }) {
   const pagination = {
     clickable: true,
   };
@@ -84,6 +84,6 @@ const RecentPostsContainer = ({ recommended_courses }) => {
       </div>
     </div>
   );
-};
+}
 
 export default RecentPostsContainer;

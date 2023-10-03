@@ -14,7 +14,7 @@ import {
 import viewIcon from '../../assets/icons/View.svg';
 import dontViewIcon from "../../assets/icons/don't view.svg";
 
-export const LoginContainer = () => {
+export function LoginContainer() {
   const {
     login: { stage },
   } = useSelector((state) => state.auth);
@@ -40,9 +40,9 @@ export const LoginContainer = () => {
       {stage === 4 && <CodeSubmitLogin />}
     </div>
   );
-};
+}
 
-export const ForgetPassContainer = () => {
+export function ForgetPassContainer() {
   const {
     retrieve: { stage },
   } = useSelector((state) => state.auth);
@@ -53,9 +53,9 @@ export const ForgetPassContainer = () => {
       {stage === 3 && <ForgetPassNewPass />}
     </div>
   );
-};
+}
 
-export const SignupContainer = () => {
+export function SignupContainer() {
   const {
     signup: { stage },
   } = useSelector((state) => state.auth);
@@ -66,9 +66,9 @@ export const SignupContainer = () => {
       {stage === 3 && <InfoCompletionSignup />}
     </div>
   );
-};
+}
 
-const LoginLanding = () => {
+function LoginLanding() {
   const dispatch = useDispatch();
 
   return (
@@ -100,9 +100,9 @@ const LoginLanding = () => {
       </p>
     </div>
   );
-};
+}
 
-const PhonePassLogin = () => {
+function PhonePassLogin() {
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = (event) => {
@@ -190,9 +190,9 @@ const PhonePassLogin = () => {
       </div>
     </form>
   );
-};
+}
 
-const PhoneCodeLogin = () => {
+function PhoneCodeLogin() {
   const onSubmit = (event) => {
     event.preventDefault();
   };
@@ -231,9 +231,9 @@ const PhoneCodeLogin = () => {
       </div>
     </form>
   );
-};
+}
 
-const CodeSubmitLogin = () => {
+function CodeSubmitLogin() {
   const onSubmit = (event) => {
     event.preventDefault();
   };
@@ -261,9 +261,9 @@ const CodeSubmitLogin = () => {
       </div>
     </form>
   );
-};
+}
 
-const ForgetPassPhone = () => {
+function ForgetPassPhone() {
   const dispatch = useDispatch();
   const onSubmit = (event) => {
     event.preventDefault();
@@ -304,9 +304,9 @@ const ForgetPassPhone = () => {
       </div>
     </form>
   );
-};
+}
 
-const ForgetPassCode = () => {
+function ForgetPassCode() {
   const dispatch = useDispatch();
   const onSubmit = (event) => {
     event.preventDefault();
@@ -337,9 +337,9 @@ const ForgetPassCode = () => {
       </div>
     </form>
   );
-};
+}
 
-const ForgetPassNewPass = () => {
+function ForgetPassNewPass() {
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = (event) => {
@@ -412,9 +412,9 @@ const ForgetPassNewPass = () => {
       </div>
     </form>
   );
-};
+}
 
-const SignupLanding = () => {
+function SignupLanding() {
   const dispatch = useDispatch();
   const onSubmit = (event) => {
     event.preventDefault();
@@ -452,9 +452,9 @@ const SignupLanding = () => {
       </div>
     </form>
   );
-};
+}
 
-const CodeSubmitSignup = () => {
+function CodeSubmitSignup() {
   const dispatch = useDispatch();
   const onSubmit = (event) => {
     event.preventDefault();
@@ -482,9 +482,9 @@ const CodeSubmitSignup = () => {
       </div>
     </form>
   );
-};
+}
 
-const InfoCompletionSignup = () => {
+function InfoCompletionSignup() {
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = (event) => {
@@ -568,4 +568,4 @@ const InfoCompletionSignup = () => {
       </div>
     </form>
   );
-};
+}

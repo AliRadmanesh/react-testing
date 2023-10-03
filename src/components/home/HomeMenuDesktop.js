@@ -10,7 +10,7 @@ import { showCategoryDesktopMenu } from '../../app/redux/actions/headerActions';
 import { autoSuggest, hideSuggest } from '../../app/redux/actions/searchActions';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
-const MenuDesktop = () => {
+function MenuDesktop() {
   const [scrollY, setScrollY] = useState(0);
   const [show, doShow] = useState(false);
   const [width, setWidth] = useState('160px');
@@ -195,6 +195,6 @@ const MenuDesktop = () => {
       <CategoryMenuDesktop />
     </>
   );
-};
+}
 
 export default MenuDesktop;

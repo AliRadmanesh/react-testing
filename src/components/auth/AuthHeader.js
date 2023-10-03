@@ -68,7 +68,7 @@ export default function Header() {
                 className="button-secondary border-white tw-flex tw-flex-row tw-items-center"
               >
                 <div className="hoverer tw-z-0 tw-relative">
-                  <p ckassName="text font-kalameh tw-block">بازگشت به صفحه اصلی</p>
+                  <p className="text font-kalameh tw-block">بازگشت به صفحه اصلی</p>
                 </div>
                 <div className="tw-z-10">
                   <img src={backArrowIcon} alt="" className="primary tw-mr-4" />

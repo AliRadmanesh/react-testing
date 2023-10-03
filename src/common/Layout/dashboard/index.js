@@ -28,32 +28,30 @@ export default function Layout({ children }) {
     return <Redirect to="/auth" />;
   return (
     <div className="bg-light">
-      <>
-        <PopUp />
-        <Toaster
-          containerClassName="font-kalameh-num"
-          toastOptions={{
-            success: {
-              style: {
-                background: '#11b262',
-                color: '#fefefe',
-              },
+      <PopUp />
+      <Toaster
+        containerClassName="font-kalameh-num"
+        toastOptions={{
+          success: {
+            style: {
+              background: '#11b262',
+              color: '#fefefe',
             },
-            error: {
-              style: {
-                background: '#b21111',
-                color: '#fefefe',
-              },
+          },
+          error: {
+            style: {
+              background: '#b21111',
+              color: '#fefefe',
             },
-          }}
-        />
-        {/* <MenuMobile /> */}
-        <MobileHeader />
-        <MenuDesktop />
-        <UserMenu />
-        <CategoryMenuDesktop />
-        <CategoryMenuMobile />
-      </>
+          },
+        }}
+      />
+      {/* <MenuMobile /> */}
+      <MobileHeader />
+      <MenuDesktop />
+      <UserMenu />
+      <CategoryMenuDesktop />
+      <CategoryMenuMobile />
       <div
         className="tw-fixed tw-w-full tw-top-0 tw-right-0"
         style={{ display: showMobileNav ? 'block' : 'none', zIndex: '9999' }}

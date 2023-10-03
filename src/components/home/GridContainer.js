@@ -4,7 +4,7 @@ import studentIcon from '../../assets/icons/Student.svg';
 import slideIcon from '../../assets/icons/Slide.svg';
 import schoolIcon from '../../assets/icons/School.svg';
 
-const GridContainer = () => {
+function GridContainer() {
   // const dispatch = useDispatch()
   const { users, academies, courses } = useSelector((state) => state.home.data.stat);
   // const {users, academies, courses} = useSelector(state => state.homeReducer.data.stat)
@@ -68,6 +68,6 @@ const GridContainer = () => {
       </div>
     </div>
   );
-};
+}
 
 export default GridContainer;

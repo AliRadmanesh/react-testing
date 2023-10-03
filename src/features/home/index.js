@@ -19,7 +19,7 @@ import HomeColleagues from '../../components/home/HomeColleagues';
 import ApplicationAd from '../../components/home/ApplicationAd';
 import './home.css';
 
-const Home = () => {
+function Home() {
   const { user_recommended_courses, user_recommended_jobs } = useSelector(
     (state) => state.home.data,
   );
@@ -65,6 +65,6 @@ const Home = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default Home;

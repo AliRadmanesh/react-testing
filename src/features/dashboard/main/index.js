@@ -12,7 +12,7 @@ import {
 
 import { Modal } from '../notifications';
 
-const TableItem = ({ props }) => {
+function TableItem({ props }) {
   const temp = 'to prevent prettier brackets removal';
   const date = new Date().toLocaleDateString('fa-IR');
 
@@ -35,9 +35,9 @@ const TableItem = ({ props }) => {
       <p className="text-gray tw-truncate tw-text-left">{created_at}</p>
     </div>
   );
-};
+}
 
-const Table = () => {
+function Table() {
   const {
     dashboard: { notifications },
   } = useSelector((state) => state.dashboard);
@@ -53,7 +53,7 @@ const Table = () => {
       ))}
     </div>
   );
-};
+}
 
 export default function Main() {
   const {

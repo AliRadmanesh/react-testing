@@ -13,7 +13,7 @@ import {
 
 import closeIcon from '../../../assets/icons/Close Fill Light.svg';
 
-export const Modal = () => {
+export function Modal() {
   const {
     modal: { show, data },
   } = useSelector((state) => state.dashboard);
@@ -21,69 +21,67 @@ export const Modal = () => {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <div
+      className="tw-fixed tw-top-0 tw-right-0 tw-h-full tw-w-full modal-box-container tw-p-4"
+      style={{
+        zIndex: '9999',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        display: show ? 'grid' : 'none',
+        placeItems: 'center',
+      }}
+    >
       <div
-        className="tw-fixed tw-top-0 tw-right-0 tw-h-full tw-w-full modal-box-container tw-p-4"
-        style={{
-          zIndex: '9999',
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          display: show ? 'grid' : 'none',
-          placeItems: 'center',
-        }}
+        style={{ zIndex: '999999' }}
+        className="tw-relative tw-w-full md:tw-w-5/6 xl:tw-w-3/4 2xl:tw-w-2/3"
       >
-        <div
-          style={{ zIndex: '999999' }}
-          className="tw-relative tw-w-full md:tw-w-5/6 xl:tw-w-3/4 2xl:tw-w-2/3"
+        <button
+          className="tw-p-0 tw-mb-2 tw-block tw-w-auto"
+          onClick={() => dispatch(closeDashboardModal())}
         >
-          <button
-            className="tw-p-0 tw-mb-2 tw-block tw-w-auto"
-            onClick={() => dispatch(closeDashboardModal())}
-          >
-            <img src={closeIcon} alt="" />
-          </button>
-          <div className="tw-rounded-xl bg-light font-kalameh-num text-dark tw-p-4">
-            <div>
-              <div className="tw-flex tw-justify-between tw-items-center">
-                <p className="tw-text-base 2xl:tw-text-xl tw-font-medium 2xl:tw-font-semibold">
-                  {data.notification.title}
-                </p>
-                <p className="tw-text-xs 2xl:tw-text-base tw-font-normal text-gray">
-                  {data.created_at}
-                </p>
-              </div>
-              <p className="tw-text-sm tw-font-normal 2xl:tw-text-lg">{data.notification.body}</p>
+          <img src={closeIcon} alt="" />
+        </button>
+        <div className="tw-rounded-xl bg-light font-kalameh-num text-dark tw-p-4">
+          <div>
+            <div className="tw-flex tw-justify-between tw-items-center">
+              <p className="tw-text-base 2xl:tw-text-xl tw-font-medium 2xl:tw-font-semibold">
+                {data.notification.title}
+              </p>
+              <p className="tw-text-xs 2xl:tw-text-base tw-font-normal text-gray">
+                {data.created_at}
+              </p>
             </div>
-            <div className="tw-flex tw-justify-center">
-              {data.data.type === '1' && data.data.link_url && (
-                <Link
-                  className="button-primary tw-p-4"
-                  to={{ pathname: data.data.link_url }}
-                  target="_blank"
-                >
-                  {data.data.link_title}
-                </Link>
-              )}
-              {data.data.type === '2' && (
-                <Link
-                  to={`/course/${data.data.id}`}
-                  target="_blank"
-                  className="button-primary tw-p-4"
-                >
-                  جزئیات
-                </Link>
-              )}
-              {data.data.type === '3' && (
-                <Link to={`/job/${data.data.id}`} target="_blank" className="button-primary tw-p-4">
-                  جزئیات
-                </Link>
-              )}
-            </div>
+            <p className="tw-text-sm tw-font-normal 2xl:tw-text-lg">{data.notification.body}</p>
+          </div>
+          <div className="tw-flex tw-justify-center">
+            {data.data.type === '1' && data.data.link_url && (
+              <Link
+                className="button-primary tw-p-4"
+                to={{ pathname: data.data.link_url }}
+                target="_blank"
+              >
+                {data.data.link_title}
+              </Link>
+            )}
+            {data.data.type === '2' && (
+              <Link
+                to={`/course/${data.data.id}`}
+                target="_blank"
+                className="button-primary tw-p-4"
+              >
+                جزئیات
+              </Link>
+            )}
+            {data.data.type === '3' && (
+              <Link to={`/job/${data.data.id}`} target="_blank" className="button-primary tw-p-4">
+                جزئیات
+              </Link>
+            )}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
-};
+}
 
 export default function Notifications() {
   const [section, setSection] = useState(1);
@@ -159,7 +157,7 @@ export default function Notifications() {
                 <td
                   style={{ borderRadius: '0 12px 12px 0' }}
                   className="text-primary-hover tw-cursor-pointer"
-                  role="none"
+                  // role="none"
                   onClick={() => {
                     dispatch(changeNotifViewStatus(item));
                     dispatch(showDashboardModal(item));
@@ -199,7 +197,7 @@ export default function Notifications() {
                 <td
                   style={{ borderRadius: '0 12px 12px 0' }}
                   className="text-primary-hover tw-cursor-pointer"
-                  role="none"
+                  // role="none"
                   onClick={() => {
                     dispatch(changeNotifViewStatus(item));
                     dispatch(showDashboardModal(item));

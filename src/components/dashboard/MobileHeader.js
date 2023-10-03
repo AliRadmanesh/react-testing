@@ -12,7 +12,7 @@ import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from '../global/HeaderUserSection';
 import NavigationMobile from './NavigationMobile';
 
-const MenuHeader = () => {
+function MenuHeader() {
   // const [show, doShow] = useState(false);
   const { showNav } = useSelector((state) => state.header);
   const [value, setValue] = useState('');
@@ -89,6 +89,6 @@ const MenuHeader = () => {
       </div>
     </div>
   );
-};
+}
 
 export default MenuHeader;
