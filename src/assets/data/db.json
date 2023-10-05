@@ -1,0 +1,122 @@
+{
+  "code": 200,
+  "data": {
+    "recommended_courses": [
+      {
+        "id": 1203,
+        "title": "آموزش برنامه نویسی C++ سی پلاس پلاس",
+        "description": "++C یک زبان برنامه‌نویسی همه‌منظوره و عمومی است که هم‌اکنون در سطح وسیعی از علم کامپیوتر استفاده می‌شود و مفاهیم شی‌گرایی، وراثت و چندریختی را بیان می‌کند.",
+        "images": {
+          "cover": "https://karsaz.storage.iran.liara.space/course-images/c-plus-plus.svg"
+        },
+        "academy": {
+          "id": 1,
+          "name": "Faradars",
+          "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+        },
+        "type": "غیرحضوری",
+        "rating": {
+          "average": 4,
+          "participants": 12
+        },
+        "price": 419000,
+        "is_free": 0
+      },
+      {
+        "id": 1204,
+        "title": "آموزش برنامه نویسی پایتون + مثال های عملی در Python",
+        "description": "پایتون یک زبان برنامه‌نویسی همه‌ منظوره و سطح بالا است که به گویش انسان نزدیک است و به صورت پیشرفته از شی‌گرایی استفاده کرد، به همین دلیل به سهولت در برنامه‌نویسی، شناخته شده است. این زبان یکی از زبان‌های شی‌گرا محسوب می‌شود و از مدل‌های مختلف برنامه‌نویسی، از جمله برنامه‌نویسی دستوری و تابع‌محور پشتیبانی می‌کند.",
+        "images": {
+          "cover": "https://karsaz.storage.iran.liara.space/course-images/python.svg"
+        },
+        "academy": {
+          "id": 1,
+          "name": "Faradars",
+          "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+        },
+        "type": "غیرحضوری",
+        "rating": {
+          "average": 4.5,
+          "participants": 87
+        },
+        "price": 319000,
+        "is_free": 0
+      },
+      {
+        "id": 1205,
+        "title": "آموزش برنامه نویسی جاوا Java",
+        "description": "Java یک زبان برنامه‌نویسی شی‌گرا است که توسط شرکت Sun Microsystems در دهه ۱۹۹۰ معرفی شد و در حال حاضر توسط شرکت Oracle Corporation پشتیبانی می‌شود. از جاوا برای توسعه برنامه‌های کاربردی وب، برنامه‌های موبایل، سیستم‌های تحت شبکه و… استفاده می‌شود. با توجه به اینکه Java دارای دستورالعمل‌های ساده و قابل فهم است، برای شروع به یادگیری برنامه‌نویسی، مناسب است.",
+        "images": {
+          "cover": "https://karsaz.storage.iran.liara.space/course-images/java.svg"
+        },
+        "academy": {
+          "id": 1,
+          "name": "Faradars",
+          "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+        },
+        "type": "غیرحضوری",
+        "rating": {
+          "average": 4.2,
+          "participants": 65
+        },
+        "price": 378000,
+        "is_free": 0
+      },
+      {
+        "id": 1206,
+        "title": "آموزش گیت Git، گیت هاب و گیت لب (رایگان)",
+        "description": "Git یک نرم‌افزار کنترل نسخه است که به‌عنوان یک سیستم متن‌باز در دسترس است. این نرم‌افزار می‌تواند نسخه‌های مختلفی از یک پروژه را در بین چندین توسعه‌دهنده مدیریت کند. با استفاده از Git، تغییراتی که در کد منبع ایجاد می‌کنید را می‌توانید ردیابی کنید، برگردانید، و با دیگران به‌اشتراک بگذارید.",
+        "images": {
+          "cover": "https://karsaz.storage.iran.liara.space/course-images/git.svg"
+        },
+        "academy": {
+          "id": 1,
+          "name": "Faradars",
+          "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+        },
+        "type": "غیرحضوری",
+        "rating": {
+          "average": 4.3,
+          "participants": 44
+        },
+        "price": 298000,
+        "is_free": 0
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "برنامه نویسی",
+        "image": "https://karsaz.storage.iran.liara.space/categories-images/programming.svg",
+        "courses": 5,
+        "sub": []
+      },
+      {
+        "id": 2,
+        "name": "هوش مصنوعی",
+        "image": "https://karsaz.storage.iran.liara.space/categories-images/ai.svg",
+        "courses": 3,
+        "sub": []
+      },
+      {
+        "id": 3,
+        "name": "آمار و داده کاوی",
+        "image": "https://karsaz.storage.iran.liara.space/categories-images/statistics.svg",
+        "courses": 4,
+        "sub": []
+      },
+      {
+        "id": 4,
+        "name": "طراحی و گرافیک",
+        "image": "https://karsaz.storage.iran.liara.space/categories-images/graphic.svg",
+        "courses": 2,
+        "sub": []
+      }
+    ],
+    "user_recommended_courses": [],
+    "user_recommended_jobs": [],
+    "recent_posts": [],
+    "top_search": [],
+    "stat": { "users": 1467, "courses": 27, "academies": 3 }
+  }
+}
