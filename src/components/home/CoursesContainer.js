@@ -30,7 +30,7 @@ function CoursesContainer() {
   }, []);
 
   return (
-    <div className="tw-py-16 tw-my-16 container">
+    <div className="tw-my-20 container">
       <p className="text-blue tw-text-center tw-mb-8 2xl:tw-mb-12 tw-font-extrabold 2xl:tw-font-black font-kalameh home-section-title">
         دوره‌های پیشنهادی کارساز
       </p>

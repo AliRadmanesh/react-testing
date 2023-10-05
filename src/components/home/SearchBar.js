@@ -66,7 +66,7 @@ function SearchBar() {
         </div>
       </form>
 
-      <div className="tw-py-4 tw-mb-4 tw-w-full tw-max-w-screen-sm tw-mx-auto">
+      {/* <div className="tw-py-4 tw-mb-4 tw-w-full tw-max-w-screen-sm tw-mx-auto">
         <p className="text-black font-iranyekan-num tw-text-sm tw-font-medium 2xl:tw-text-xl tw-mb-2 ">
           بیشترین کلمات جستجو شده
         </p>
@@ -82,7 +82,7 @@ function SearchBar() {
             </Link>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

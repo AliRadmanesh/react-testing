@@ -87,7 +87,7 @@ function Footer() {
                   </p>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/categories">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
                     دسته‌بندی
@@ -107,7 +107,7 @@ function Footer() {
                     وبلاگ
                   </p>
                 </a>
-              </li>
+              </li> */}
               <li>
                 <Link to="/about">
                   <p className="text-primary-hover tw-text-sm tw-font-normal text-black font-kalameh-num 2xl:tw-text-lg tw-truncate">
@@ -131,7 +131,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h4 className="text-blue tw-mb-2">برترین دسته‌ها</h4>
             <ul>
               {top_categories.map((category) => (
@@ -148,7 +148,7 @@ function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="tw-px-8 tw-flex tw-flex-col tw-justify-between md:tw-justify-start">

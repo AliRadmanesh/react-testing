@@ -134,7 +134,7 @@ function MenuMobile() {
               &rsaquo;
             </span>
           </button>
-          <Link to="/jobs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
+          {/* <Link to="/jobs" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             فرصت‌های شغلی
           </Link>
           <a
@@ -144,7 +144,7 @@ function MenuMobile() {
             className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num"
           >
             وبلاگ
-          </a>
+          </a> */}
           <Link to="/about" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             درباره ما
           </Link>

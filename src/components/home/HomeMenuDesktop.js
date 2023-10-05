@@ -78,7 +78,7 @@ function MenuDesktop() {
               دسته‌بندی &nbsp; &nbsp;
               <img src={arrow} alt="" className="inline-block" />
             </button>
-            <Link
+            {/* <Link
               to="/jobs"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
@@ -91,7 +91,7 @@ function MenuDesktop() {
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               وبلاگ
-            </a>
+            </a> */}
             <Link
               to="/about"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
