@@ -3,21 +3,21 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { showCategoryDesktopMenu } from '../../app/redux/actions/headerActions';
 import logotype from '../../assets/images/logo/karsaz/logotype.png';
-import searchIcon from '../../assets/icons/Search.svg';
+// import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from './HeaderUserSection';
 
 import { autoSuggest, hideSuggest } from '../../app/redux/actions/searchActions';
-import { setCoursesQuery } from '../../app/redux/actions/coursesActions';
+// import { setCoursesQuery } from '../../app/redux/actions/coursesActions';
 import arrow from '../../assets/icons/Arrow Down Gray.svg';
 
 export default function MenuDesktop() {
   const ref = useRef();
-  const [show, doShow] = useState(false);
+  // const [show, doShow] = useState(false);
   const [width, setWidth] = useState('160px');
-  const [value, setValue] = useState('');
+  // const [value, setValue] = useState('');
   const dispatch = useDispatch();
   const { categoryDesktop } = useSelector((state) => state.header);
-  const { list, show: showSuggests } = useSelector((state) => state.search.suggest);
+  // const { list, show: showSuggests } = useSelector((state) => state.search.suggest);
 
   const handleSuggests = (event) => {
     if (
@@ -73,7 +73,7 @@ export default function MenuDesktop() {
               دسته‌بندی &nbsp; &nbsp;
               <img src={arrow} alt="" className="inline-block" />
             </button>
-            <Link
+            {/* <Link
               to="/jobs"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
@@ -86,7 +86,7 @@ export default function MenuDesktop() {
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
             >
               وبلاگ
-            </a>
+            </a> */}
             <Link
               to="/about"
               className="tw-text-sm tw-font-medium font-kalameh 2xl:tw-text-lg 2xl:tw-font-semibold text-black tw-transition-colors tw-duration-200 tw-ease-in-out text-primary-hover tw-ml-4 lg:tw-ml-8"
@@ -107,7 +107,7 @@ export default function MenuDesktop() {
             </Link>
           </div>
           <div className="tw-flex tw-align-middle tw-items-center tw-justify-items-center">
-            <div className="tw-relative">
+            {/* <div className="tw-relative">
               <div
                 id="page-header-desktop-search"
                 className="page-header-desktop-search tw-flex tw-flex-row tw-items-center tw-py-1 border-smooth tw-ml-4"
@@ -183,7 +183,7 @@ export default function MenuDesktop() {
                     </Link>
                   ))}
               </div>
-            </div>
+            </div> */}
             <HeaderUserSection />
           </div>
         </div>

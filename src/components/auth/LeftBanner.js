@@ -8,18 +8,19 @@ import authConnect from '../../assets/illustrations/auth-connect.svg';
 import authPlus from '../../assets/illustrations/auth-plus.svg';
 
 export default function LeftBanner({ stage }) {
-  const [data, setData] = useState({ users: null, academies: null, courses: null });
+  const data = { users: 1467, academies: 3, courses: 27 };
+  // const [data, setData] = useState({ users: 1467, academies: 3, courses: 27 });
 
-  useEffect(() => {
-    axios
-      .get('/api/v1/web/service/login-stat')
-      .then((res) => {
-        if (res.status === 200) {
-          setData(res.data.data.stat);
-        }
-      })
-      .catch(() => toast.error('خطا در برقراری ارتباط برای دریافت اطلاعات'));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get('/api/v1/web/service/login-stat')
+  //     .then((res) => {
+  //       if (res.status === 200) {
+  //         setData(res.data.data.stat);
+  //       }
+  //     })
+  //     .catch(() => toast.error('خطا در برقراری ارتباط برای دریافت اطلاعات'));
+  // }, []);
 
   if (stage === 5)
     return (

@@ -17,12 +17,12 @@ function Footer() {
   const top_categories = useSelector((state) => state.footer.top_categories);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (top_categories.length === 0) {
-      dispatch(getTopCategories());
-    }
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   if (top_categories.length === 0) {
+  //     dispatch(getTopCategories());
+  //   }
+  //   // eslint-disable-next-line
+  // }, []);
 
   return (
     <footer className="tw-mb-16 md:tw-mb-8 bg-light">
@@ -187,7 +187,7 @@ function Footer() {
         >
           {/* <img src={TW} alt="" /> */}
           <a
-            href="https://www.instagram.com/karsaz.app/"
+            href="https://www.instagram.com/karsazapp.ir/"
             target="_blank"
             rel="noreferrer"
             className="tw-ml-4"

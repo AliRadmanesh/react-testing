@@ -163,7 +163,7 @@ export default function Form() {
             </p>
             <EmailInput
               classes="tw-w-full font-kalameh-num"
-              placeholder="برای مثال info@karsaz.app"
+              placeholder="برای مثال info@karsazapp.ir"
               defaultValue={email}
               onChange={(e) => {
                 setEmail(e.target.value);

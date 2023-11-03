@@ -112,7 +112,7 @@ function MenuDesktop() {
             </Link>
           </div>
           <div className="tw-flex tw-align-middle tw-items-center tw-justify-items-center">
-            <div className="tw-relative">
+            {/* <div className="tw-relative">
               <div
                 id="page-header-desktop-search"
                 className="page-header-desktop-search tw-flex tw-flex-row tw-items-center tw-py-1 border-smooth tw-ml-4"
@@ -186,7 +186,7 @@ function MenuDesktop() {
                     </Link>
                   ))}
               </div>
-            </div>
+            </div> */}
             <HeaderUserSection />
           </div>
         </div>

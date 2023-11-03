@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { showCategoryDesktopMenu, getMenuCategories } from '../../app/redux/actions/headerActions';
-import { setCategoryId } from '../../app/redux/actions/coursesActions';
+// import { setCategoryId } from '../../app/redux/actions/coursesActions';
 
-import { replaceString } from '../../common/Functions';
+// import { replaceString } from '../../common/Functions';
 
 export default function CategoryMenuDesktop() {
   const [active, setActive] = useState(1);
-  const [total, setTotal] = useState(3);
-  const [right, setRight] = useState(0);
+  // const [total, setTotal] = useState(3);
+  // const [right, setRight] = useState(0);
   const [width, setWidth] = useState(0);
   const dispatch = useDispatch();
   const { categoryDesktop, categories } = useSelector((state) => state.header);
@@ -101,7 +101,7 @@ export default function CategoryMenuDesktop() {
             /> */}
           </div>
           {/* CONTENT */}
-          {categories.map((ci) => (
+          {/* {categories.map((ci) => (
             <div
               key={ci.id}
               className="tw-px-4 tw-flex-wrap tw-w-auto tw-h-auto"
@@ -128,7 +128,7 @@ export default function CategoryMenuDesktop() {
                 );
               })}
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

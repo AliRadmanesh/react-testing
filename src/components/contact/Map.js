@@ -71,7 +71,7 @@ export default function ContactMap() {
                 <span className="text-gray tw-font-normal tw-text-xs lg:tw-text-lg">۰۲۱</span>
                 &nbsp;
                 <span className="text-blue tw-text-base tw-font-semibold 2xl:tw-text-lg">
-                  ۷۷۳۱۳۱۸۸
+                  ۶۶۰۶۲۹۴۹
                 </span>
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function ContactMap() {
               <p className="tw-text-base 2xl:tw-text-xl tw-font-semibold text-black tw-mb-2">
                 ایمیل
               </p>
-              <p className="tw-text-xs tw-font-noraml 2xl:tw-text-lg">info@karsaz.app</p>
+              <p className="tw-text-xs tw-font-noraml 2xl:tw-text-lg">info@karsazapp.ir</p>
             </div>
           </div>
         </div>

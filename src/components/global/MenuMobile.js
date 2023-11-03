@@ -8,18 +8,18 @@ import { showCategoryMobileMenu, showMenu } from '../../app/redux/actions/header
 import bars from '../../assets/icons/bars.svg';
 import logotype from '../../assets/images/logo/karsaz/logotype.png';
 import close from '../../assets/icons/Close-Gray.svg';
-import searchIcon from '../../assets/icons/Search.svg';
+// import searchIcon from '../../assets/icons/Search.svg';
 import HeaderUserSection from './HeaderUserSection';
 
 function MenuMobile() {
   // const [show, doShow] = useState(false);
   const { showNav } = useSelector((state) => state.header);
-  const [value, setValue] = useState('');
+  // const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-  };
+  // const handleSearch = (e) => {
+  //   e.preventDefault();
+  // };
 
   useEffect(() => {
     if (showNav) dispatch(showMenu(false));
@@ -82,7 +82,7 @@ function MenuMobile() {
             </div>
             <HeaderUserSection />
           </div>
-          <div>
+          {/* <div>
             <form
               onSubmit={handleSearch}
               className="tw-grid tw-items-center mobile-menu-search-container tw-mb-4 tw-w-full"
@@ -116,7 +116,7 @@ function MenuMobile() {
                 <img src={searchIcon} alt="جستجو" />
               )}
             </form>
-          </div>
+          </div> */}
           <Link to="/" className="tw-text-sm tw-font-medium tw-my-4 font-kalameh-num">
             خانه
           </Link>

@@ -7,7 +7,7 @@ import instance from '../../app/instance';
 import About from '../../components/course/About';
 import Author from '../../components/course/Author';
 import Chapters from '../../components/course/Chapters';
-import Comments from '../../components/course/Comments';
+// import Comments from '../../components/course/Comments';
 import Header from '../../components/course/Header';
 import Recommended from '../../components/course/Recommended';
 import UserComment from '../../components/course/UserComment';
@@ -45,10 +45,10 @@ export default function Course() {
       ref_url,
       ref_url_discount,
     },
-    comments: {
-      sort,
-      page: { current },
-    },
+    // comments: {
+    //   sort,
+    //   page: { current },
+    // },
   } = useSelector((state) => state.course);
   const dispatch = useDispatch();
 
@@ -73,30 +73,31 @@ export default function Course() {
     dispatch(hideSuggest());
   }, [window.location.pathname]);
 
-  const affiliateCourse = async () => {
-    try {
-      const res = await instance.post(`/api/v1/app/service/courses/${courseId}/affiliate`);
+  // const affiliateCourse = async () => {
+  //   try {
+  //     const res = await instance.post(`/api/v1/app/service/courses/${courseId}/affiliate`);
 
-      if (res.status === 200) {
-        // history.push(res.data.data.affiliate.url);
-        // window.location.href = res.data.data.affiliate.url;
-        window.open(res.data.data.affiliate.url || ref_url, '_blank');
-      } else {
-        toast.error(res.data.message);
-      }
-    } catch (error) {
-      const { status, message } = error.response;
-      toast.error(message);
-    }
-  };
+  //     if (res.status === 200) {
+  //       // history.push(res.data.data.affiliate.url);
+  //       // window.location.href = res.data.data.affiliate.url;
+  //       window.open(res.data.data.affiliate.url || ref_url, '_blank');
+  //     } else {
+  //       toast.error(res.data.message);
+  //     }
+  //   } catch (error) {
+  //     const { status, message } = error.response;
+  //     toast.error(message);
+  //   }
+  // };
 
   const openCourseLink = () => {
-    if (
-      window.localStorage.getItem('userToken') &&
-      window.localStorage.getItem('userToken') !== ''
-    ) {
-      affiliateCourse(courseId);
-    } else window.open(ref_url_discount || ref_url, '_blank');
+    toast.error('برای خرید آموزش‌ها باید وارد شوید یا ثبت‌نام کنید!');
+    // if (
+    //   window.localStorage.getItem('userToken') &&
+    //   window.localStorage.getItem('userToken') !== ''
+    // ) {
+    //   affiliateCourse(courseId);
+    // } else window.open(ref_url_discount || ref_url, '_blank');
   };
 
   return (
@@ -125,14 +126,14 @@ export default function Course() {
           ref_url_discount={ref_url_discount}
           openCourseLink={openCourseLink}
         />
-        <Author instructors={instructors[0]} />
+        {/* <Author instructors={instructors[0]} /> */}
         <About description={description} />
         <Chapters topics={topics} topics_summary={topics_summary} />
-        <div className="container 2xl:tw-py-16">
+        {/* <div className="container 2xl:tw-py-16">
           <Recommended recommended_courses={recommended_courses} />
-        </div>
+        </div> */}
         <UserComment id={courseId} user_comment={user_comment} />
-        <Comments />
+        {/* <Comments /> */}
       </Layout>
       <div
         className="tw-sticky tw-flex md:tw-hidden tw-justify-center tw-w-full tw-right-0 tw-px-4"

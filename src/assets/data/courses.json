@@ -1,0 +1,291 @@
+{
+  "courses": [
+    {
+      "id": 1203,
+      "title": "آموزش برنامه نویسی C++ سی پلاس پلاس",
+      "images": {
+        "cover": "https://karsaz.storage.iran.liara.space/course-images/c-plus-plus.svg"
+      },
+      "academy": {
+        "id": 1,
+        "name": "Faradars",
+        "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+      },
+      "type": {
+        "type": "0",
+        "name": "غیرحضوری"
+      },
+      "rating": {
+        "average": 4,
+        "participants": 12
+      },
+      "price": 419000,
+      "is_free": 0,
+      "description": "<div><p><strong>سی‌پلاس‌پلاس چیست؟&nbsp;</strong></p><p>++C یک زبان برنامه‌نویسی همه‌منظوره و عمومی است که هم‌اکنون در سطح وسیعی از علم کامپیوتر استفاده می‌شود و مفاهیم شی‌گرایی، وراثت و چندریختی را بیان می‌کند.&nbsp;</p><p><strong>اهمیت یادگیری برنامه‌نویسی سی‌پلاس‌پلاس چیست؟&nbsp;</strong></p><p>یادگیری یک زبان برنامه‌نویسی دید ما را به علم کامپیوتر بسیار گسترده‌تر می‌کند. از طرفی برنامه‌نویسی نحوه فکر کردن را به ما می‌آموزد. عمومیت زبان C++ در میان زبان‌های برنامه‌نویسی بسیار بالا است و می‌تواند به عنوان اولین زبان نیز یاد گرفته شود و به پیش‌نیاز دیگر احتیاج نباشد.</p><p>تمام نرم‌افزارهایی که به صورت روزمره در ویندوز با آن‌ها&nbsp;کار می‌کنیم توسط زبان مادر سی و سی‌پلاس‌پلاس نوشته شده‌اند و در صنعت خودروسازی، فضایی، معماری، بانکی، کنسول بازی و... کاربرد دارند. هدف این فرادرس، آموزشC++  در دو بخش معرفی دستورات و ساختمان داده و بیان مفاهیم شی‌گرایی است. &nbsp;</p><p><strong>در این فرادرس چه چیزی یاد می‌گیریم؟&nbsp;</strong></p><p>زبان C++ در دو قسمت آموزش داده می‌شود. در قسمت اول (همین مجموعه) دستورات و ساختمان داده‌ها معرفی می‌شود و در قسمت دوم، مفاهیم شی‌گرایی آموزش داده خواهد شد که در این <a href='https://faradars.org/courses/fvcp95042-advanced-c-plus-pluc-object-oriented-programming' rel='noopener noreferrer' target='_blank'>لینک (+)</a> در دسترس است.</p><p>در این فرادرس انواع داده‌ها، انواع عملگرها، دستورات cin و cout، ساختارهای تصمیم و تکرار را ارائه خواهیم کرد. در ادامه تابع، آرایه، اشاره‌گر، رشته، نوع شمارشی، استراکچر، یونیون و فایل را بررسی&nbsp;و در انتها چند مثال را حل خواهیم کرد.</p></div>",
+      "description_summary": "++C یک زبان برنامه‌نویسی همه‌منظوره و عمومی است که هم‌اکنون در سطح وسیعی از علم کامپیوتر استفاده می‌شود و مفاهیم شی‌گرایی، وراثت و چندریختی را بیان می‌کند.",
+      "description_summary_string": "++C یک زبان برنامه‌نویسی همه‌منظوره و عمومی است که هم‌اکنون در سطح وسیعی از علم کامپیوتر استفاده می‌شود و مفاهیم شی‌گرایی، وراثت و چندریختی را بیان می‌کند.",
+      "topics": "<ul style='list-style-type:square'><li style='text-align:justify'>درس اول: انواع داده ها،&nbsp;انواع عملگرها،&nbsp;دستورات cin و cout<ul style='list-style-type:disc'><li style='text-align:justify'>دستور cin و cout و مفاهیم انواع داده ها و عملگرها</li></ul></li><li style='text-align:justify'>درس دوم: ساختارهای تصمیم (if, Switch)<ul style='list-style-type:disc'><li style='text-align:justify'>دستور if</li><li style='text-align:justify'>دستور Switch</li></ul></li><li style='text-align:justify'>درس سوم: ساختارهای تکرار (for, while, do while)<ul style='list-style-type:disc'><li style='text-align:justify'>دستور for</li><li style='text-align:justify'>دستور while</li><li style='text-align:justify'>دستور do while</li><li style='text-align:justify'>حلقه های تو در تو</li></ul></li><li style='text-align:justify'>درس چهارم: تابع<ul style='list-style-type:disc'><li style='text-align:justify'>مفاهیم اولیه تابع</li><li style='text-align:justify'>مفهوم Global</li><li style='text-align:justify'>تابع با مقدار پیش فرض</li><li style='text-align:justify'>تابع Inline</li><li style='text-align:justify'>فراخوانی با مقدار و با ارجاع</li><li style='text-align:justify'>سر بارگذاری تابع (Function Overloading)</li><li style='text-align:justify'>قالب (Template)</li><li style='text-align:justify'>تابع بازگشتی</li><li style='text-align:justify'>مفهوم Namespace</li></ul></li><li style='text-align:justify'>درس پنجم: آرایه<ul style='list-style-type:disc'><li style='text-align:justify'>آرایه یک بعدی</li><li style='text-align:justify'>آرایه و تابع</li><li style='text-align:justify'>جستجوی خطی</li><li style='text-align:justify'>مرتب سازی حبابی</li><li style='text-align:justify'>جستجوی دودویی</li><li style='text-align:justify'>محاسبه میانگین، میانه و مد</li><li style='text-align:justify'>آرایه و استاتیک</li><li style='text-align:justify'>آرایه 2 بعدی</li></ul></li><li style='text-align:justify'>درس ششم: اشاره گر<ul style='list-style-type:disc'><li style='text-align:justify'>اشاره گر</li><li style='text-align:justify'>اشاره گر به اشاره گر</li><li style='text-align:justify'>اشاره گر و آرایه ها</li><li style='text-align:justify'>آرایه ای از اشاره گرها به آرایه</li><li style='text-align:justify'>اشاره گر به آرایه 2 بعدی</li><li style='text-align:justify'>اشاره گر به آرایه 3 بعدی</li><li style='text-align:justify'>اشاره گر به تابع</li><li style='text-align:justify'>آرایه ای از اشاره گرها به توابع</li><li style='text-align:justify'>اشاره گر به تابع به عنوان پارامتر تابع دیگر</li><li style='text-align:justify'>پاس کردن آرگومان ها از طریق اشاره گر</li><li style='text-align:justify'>اشاره گر Void</li><li style='text-align:justify'>دستور New, Delete</li><li style='text-align:justify'>آرایه پویا</li><li style='text-align:justify'>درج آرایه در داخل آرایه</li><li style='text-align:justify'>مرتب سازی انتخابی (Selection Sort)</li><li style='text-align:justify'>ادغام دو آرایه مرتب</li><li style='text-align:justify'>مرجع (Reference)</li><li style='text-align:justify'>محاسبه ریشه های معادله درجه 2</li></ul></li><li style='text-align:justify'>درس هفتم: رشته<ul style='list-style-type:disc'><li style='text-align:justify'>توابع کار با رشته</li><li style='text-align:justify'>cin.get, cin.putback, cin.peek cin.ignore, atoi, atof,atoll, islower, toupper, isalpha,isdigit, isalnum, strcpy strncpy, strcat, strncat, strcmp, strchr,strtok, strstr, strtol strtod, strtoul, strspn, strcspn, memset, memcpy, memcmp, memmove, strlen</li><li style='text-align:justify'>آرایه ای از رشته ها</li><li style='text-align:justify'>مرتب سازی رشته ها</li></ul></li><li style='text-align:justify'>درس هشتم: نوع شمارشی،&nbsp;استراکچر، یونیون<ul style='list-style-type:disc'><li style='text-align:justify'>نوع شمارشی</li><li style='text-align:justify'>استراکچر&nbsp;(Structure)</li><li style='text-align:justify'>آرایه از استراکچر</li><li style='text-align:justify'>اشاره گر به استراکچر</li><li style='text-align:justify'>ارسال استراکچر به تابع</li><li style='text-align:justify'>تابع با خروجی استراکچر</li><li style='text-align:justify'>ارسال استراکچر به تابع (به عنوان مرجع)</li><li style='text-align:justify'>ارسال استراکچر به تابع (به عنوان اشاره گر)</li><li style='text-align:justify'>کپی کردن استراکچر</li><li style='text-align:justify'>حل 5 مثال</li><li style='text-align:justify'>یونیون&nbsp;(Union)</li></ul></li><li style='text-align:justify'>درس نهم: فایل<ul style='list-style-type:disc'><li style='text-align:justify'>مفاهیم اولیه</li><li style='text-align:justify'>خواندن و نوشتن در فایل باینری</li><li style='text-align:justify'>خواندن و نوشتن رشته</li><li style='text-align:justify'>دستور Append</li><li style='text-align:justify'>دستور Read, Write</li><li style='text-align:justify'>دستورهای tellq,&nbsp;tellp, seekq,&nbsp;seekp</li></ul></li><li style='text-align:justify'>درس دهم: حل چند مثال<ul style='list-style-type:disc'><li style='text-align:justify'>مرتب سازی درجی</li><li style='text-align:justify'>مرتب سازی انتخابی</li><li style='text-align:justify'>مرتب سازی ادغامی</li><li style='text-align:justify'>برج هانوی</li><li style='text-align:justify'>لیست پیوندی</li><li style='text-align:justify'>درخت جستجوی دودویی</li><li style='text-align:justify'>بازی Tic-tac-toe</li><li style='text-align:justify'>بازی Snake</li></ul></li></ul>",
+      "topics_summary": "",
+      "topics_summary_string": "",
+      "discount": null,
+      "prices": null,
+      "cashback": null,
+      "start_datetime": null,
+      "end_datetime": null,
+      "duration_hours": 12,
+      "duration_minutes": 0,
+      "episodes": null,
+      "payment_type": 0,
+      "ref_url": "",
+      "ref_url_discount": null,
+      "instructors": [
+        {
+          "id": 1,
+          "first_name": "",
+          "last_name": "",
+          "position": null,
+          "description": "",
+          "academy_description": null,
+          "image": ""
+        }
+      ],
+      "recommended_courses": [],
+      "is_purchased": false,
+      "is_bookmarked": false,
+      "user_comment": {
+        "id": null,
+        "content": null,
+        "rating": 0,
+        "like": {
+          "like": null,
+          "dislike": null,
+          "user_like": null,
+          "user_dislike": null
+        },
+        "is_participant": 0,
+        "is_anonymous": 0,
+        "created_at": "",
+        "user": {
+          "profile": {
+            "first_name": "",
+            "last_name": "",
+            "image": ""
+          }
+        }
+      }
+    },
+    {
+      "id": 1204,
+      "title": "آموزش برنامه نویسی پایتون + مثال های عملی در Python",
+      "images": {
+        "cover": "https://karsaz.storage.iran.liara.space/course-images/python.svg"
+      },
+      "academy": {
+        "id": 1,
+        "name": "Faradars",
+        "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+      },
+      "type": "غیرحضوری",
+      "rating": {
+        "average": 4.5,
+        "participants": 87
+      },
+      "price": 319000,
+      "is_free": 0,
+      "description": "<div><p><strong>پایتون چیست؟&nbsp;</strong></p><p>پایتون یک زبان برنامه‌نویسی همه‌ منظوره و&nbsp;سطح بالا است که به گویش انسان نزدیک است و به صورت پیشرفته از شی‌گرایی استفاده کرد، به همین دلیل به سهولت در برنامه‌نویسی، شناخته شده است.&nbsp;این زبان&nbsp;یکی از زبان‌های شی‌گرا محسوب می‌شود و&nbsp;از مدل‌های مختلف برنامه‌نویسی، از جمله&nbsp;برنامه‌نویسی دستوری و تابع‌محور پشتیبانی می‌کند.&nbsp;</p><p><strong>اهمیت یادگیری برنامه‌نویسی پایتون (Python) چیست؟</strong></p><p>پایتون یک زبان برنامه‌نویسی اوپن سورس است که فریم‌ورک‌ها و&nbsp;کتابخانه‌های فراوانی را&nbsp;نیز در اختیار کاربر قرار می‌دهد تا با توجه به نیاز خود از آن‌ها&nbsp;استفاده کند. از پایتون برای اهداف مختلفی مانند توسعه وب، تجزیه‌وتحلیل داده‌ها، یادگیری ماشین، هوش مصنوعی، محاسبات علمی و… استفاده می‌شود.</p><p><strong>در این فرادرس چه چیزی و چگونه یاد می‌گیریم؟&nbsp;</strong></p><p>این آموزش با این فرض تهیه شده است که مخاطب هیچ دانش و تجربه قبلی در زمینه برنامه‌نویسی پایتون نداشته و در طول آموزش با این زبان آشنا می‌شود. مفاهیم این آموزش با تشریح مبانی نظری و سپس با پیاده‌سازی مثال‌های عملی، تدریس می‌شود. در پایان این آموزش، مخاطب می‌تواند به زبان پایتون برنامه‌نویسی کند.</p><p>&nbsp;</p></div>",
+      "description_summary": "پایتون یک زبان برنامه‌نویسی همه‌ منظوره و سطح بالا است که به گویش انسان نزدیک است و به صورت پیشرفته از شی‌گرایی استفاده کرد، به همین دلیل به سهولت در برنامه‌نویسی، شناخته شده است. این زبان یکی از زبان‌های شی‌گرا محسوب می‌شود و از مدل‌های مختلف برنامه‌نویسی، از جمله برنامه‌نویسی دستوری و تابع‌محور پشتیبانی می‌کند.",
+      "description_summary_string": "پایتون یک زبان برنامه‌نویسی همه‌ منظوره و سطح بالا است که به گویش انسان نزدیک است و به صورت پیشرفته از شی‌گرایی استفاده کرد، به همین دلیل به سهولت در برنامه‌نویسی، شناخته شده است. این زبان یکی از زبان‌های شی‌گرا محسوب می‌شود و از مدل‌های مختلف برنامه‌نویسی، از جمله برنامه‌نویسی دستوری و تابع‌محور پشتیبانی می‌کند.",
+      "topics": "<ul style='list-style-type:square'><li style='text-align:justify'>درس اول: انواع داده ها،&nbsp;انواع عملگرها،&nbsp;دستورات cin و cout<ul style='list-style-type:disc'><li style='text-align:justify'>دستور cin و cout و مفاهیم انواع داده ها و عملگرها</li></ul></li><li style='text-align:justify'>درس دوم: ساختارهای تصمیم (if, Switch)<ul style='list-style-type:disc'><li style='text-align:justify'>دستور if</li><li style='text-align:justify'>دستور Switch</li></ul></li><li style='text-align:justify'>درس سوم: ساختارهای تکرار (for, while, do while)<ul style='list-style-type:disc'><li style='text-align:justify'>دستور for</li><li style='text-align:justify'>دستور while</li><li style='text-align:justify'>دستور do while</li><li style='text-align:justify'>حلقه های تو در تو</li></ul></li><li style='text-align:justify'>درس چهارم: تابع<ul style='list-style-type:disc'><li style='text-align:justify'>مفاهیم اولیه تابع</li><li style='text-align:justify'>مفهوم Global</li><li style='text-align:justify'>تابع با مقدار پیش فرض</li><li style='text-align:justify'>تابع Inline</li><li style='text-align:justify'>فراخوانی با مقدار و با ارجاع</li><li style='text-align:justify'>سر بارگذاری تابع (Function Overloading)</li><li style='text-align:justify'>قالب (Template)</li><li style='text-align:justify'>تابع بازگشتی</li><li style='text-align:justify'>مفهوم Namespace</li></ul></li><li style='text-align:justify'>درس پنجم: آرایه<ul style='list-style-type:disc'><li style='text-align:justify'>آرایه یک بعدی</li><li style='text-align:justify'>آرایه و تابع</li><li style='text-align:justify'>جستجوی خطی</li><li style='text-align:justify'>مرتب سازی حبابی</li><li style='text-align:justify'>جستجوی دودویی</li><li style='text-align:justify'>محاسبه میانگین، میانه و مد</li><li style='text-align:justify'>آرایه و استاتیک</li><li style='text-align:justify'>آرایه 2 بعدی</li></ul></li><li style='text-align:justify'>درس ششم: اشاره گر<ul style='list-style-type:disc'><li style='text-align:justify'>اشاره گر</li><li style='text-align:justify'>اشاره گر به اشاره گر</li><li style='text-align:justify'>اشاره گر و آرایه ها</li><li style='text-align:justify'>آرایه ای از اشاره گرها به آرایه</li><li style='text-align:justify'>اشاره گر به آرایه 2 بعدی</li><li style='text-align:justify'>اشاره گر به آرایه 3 بعدی</li><li style='text-align:justify'>اشاره گر به تابع</li><li style='text-align:justify'>آرایه ای از اشاره گرها به توابع</li><li style='text-align:justify'>اشاره گر به تابع به عنوان پارامتر تابع دیگر</li><li style='text-align:justify'>پاس کردن آرگومان ها از طریق اشاره گر</li><li style='text-align:justify'>اشاره گر Void</li><li style='text-align:justify'>دستور New, Delete</li><li style='text-align:justify'>آرایه پویا</li><li style='text-align:justify'>درج آرایه در داخل آرایه</li><li style='text-align:justify'>مرتب سازی انتخابی (Selection Sort)</li><li style='text-align:justify'>ادغام دو آرایه مرتب</li><li style='text-align:justify'>مرجع (Reference)</li><li style='text-align:justify'>محاسبه ریشه های معادله درجه 2</li></ul></li><li style='text-align:justify'>درس هفتم: رشته<ul style='list-style-type:disc'><li style='text-align:justify'>توابع کار با رشته</li><li style='text-align:justify'>cin.get, cin.putback, cin.peek cin.ignore, atoi, atof,atoll, islower, toupper, isalpha,isdigit, isalnum, strcpy strncpy, strcat, strncat, strcmp, strchr,strtok, strstr, strtol strtod, strtoul, strspn, strcspn, memset, memcpy, memcmp, memmove, strlen</li><li style='text-align:justify'>آرایه ای از رشته ها</li><li style='text-align:justify'>مرتب سازی رشته ها</li></ul></li><li style='text-align:justify'>درس هشتم: نوع شمارشی،&nbsp;استراکچر، یونیون<ul style='list-style-type:disc'><li style='text-align:justify'>نوع شمارشی</li><li style='text-align:justify'>استراکچر&nbsp;(Structure)</li><li style='text-align:justify'>آرایه از استراکچر</li><li style='text-align:justify'>اشاره گر به استراکچر</li><li style='text-align:justify'>ارسال استراکچر به تابع</li><li style='text-align:justify'>تابع با خروجی استراکچر</li><li style='text-align:justify'>ارسال استراکچر به تابع (به عنوان مرجع)</li><li style='text-align:justify'>ارسال استراکچر به تابع (به عنوان اشاره گر)</li><li style='text-align:justify'>کپی کردن استراکچر</li><li style='text-align:justify'>حل 5 مثال</li><li style='text-align:justify'>یونیون&nbsp;(Union)</li></ul></li><li style='text-align:justify'>درس نهم: فایل<ul style='list-style-type:disc'><li style='text-align:justify'>مفاهیم اولیه</li><li style='text-align:justify'>خواندن و نوشتن در فایل باینری</li><li style='text-align:justify'>خواندن و نوشتن رشته</li><li style='text-align:justify'>دستور Append</li><li style='text-align:justify'>دستور Read, Write</li><li style='text-align:justify'>دستورهای tellq,&nbsp;tellp, seekq,&nbsp;seekp</li></ul></li><li style='text-align:justify'>درس دهم: حل چند مثال<ul style='list-style-type:disc'><li style='text-align:justify'>مرتب سازی درجی</li><li style='text-align:justify'>مرتب سازی انتخابی</li><li style='text-align:justify'>مرتب سازی ادغامی</li><li style='text-align:justify'>برج هانوی</li><li style='text-align:justify'>لیست پیوندی</li><li style='text-align:justify'>درخت جستجوی دودویی</li><li style='text-align:justify'>بازی Tic-tac-toe</li><li style='text-align:justify'>بازی Snake</li></ul></li></ul>",
+      "topics_summary": "",
+      "topics_summary_string": "",
+      "discount": null,
+      "prices": null,
+      "cashback": null,
+      "start_datetime": null,
+      "end_datetime": null,
+      "duration_hours": 8,
+      "duration_minutes": 30,
+      "episodes": null,
+      "payment_type": 0,
+      "ref_url": "",
+      "ref_url_discount": null,
+      "instructors": [
+        {
+          "id": 1,
+          "first_name": "",
+          "last_name": "",
+          "position": null,
+          "description": "",
+          "academy_description": null,
+          "image": ""
+        }
+      ],
+      "recommended_courses": [],
+      "is_purchased": false,
+      "is_bookmarked": false,
+      "user_comment": {
+        "id": null,
+        "content": null,
+        "rating": 0,
+        "like": {
+          "like": null,
+          "dislike": null,
+          "user_like": null,
+          "user_dislike": null
+        },
+        "is_participant": 0,
+        "is_anonymous": 0,
+        "created_at": "",
+        "user": {
+          "profile": {
+            "first_name": "",
+            "last_name": "",
+            "image": ""
+          }
+        }
+      }
+    },
+    {
+      "id": 1205,
+      "title": "آموزش برنامه نویسی جاوا Java",
+      "images": {
+        "cover": "https://karsaz.storage.iran.liara.space/course-images/java.svg"
+      },
+      "academy": {
+        "id": 1,
+        "name": "Faradars",
+        "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+      },
+      "type": "غیرحضوری",
+      "rating": {
+        "average": 4.2,
+        "participants": 65
+      },
+      "price": 378000,
+      "is_free": 0,
+      "description": "<div><p><strong>جاوا (Java) چیست؟&nbsp;</strong></p><p>Java یک زبان برنامه‌نویسی شی‌گرا است که توسط شرکت Sun Microsystems در دهه ۱۹۹۰ معرفی شد و در حال حاضر توسط شرکت Oracle Corporation پشتیبانی می‌شود. از جاوا برای توسعه برنامه‌های کاربردی وب، برنامه‌های موبایل، سیستم‌های تحت شبکه و… استفاده می‌شود. با توجه به اینکه Java دارای دستورالعمل‌های ساده و قابل فهم است، برای شروع به یادگیری برنامه‌نویسی، مناسب است.</p><p><strong>اهمیت یادگیری برنامه‌نویسی جاوا (Java) چیست؟</strong></p><p>جاوا یکی از پرکاربردترین زبان‌های برنامه‌نویسی است که در فضای بانکی، ارتباطات، بازی‌های رایانه‌ای و… استفاده می‌شود. این زبان برنامه‌نویسی دارای مجموعه وسیعی از کتابخانه‌ها و ابزارهای برنامه‌نویسی است که می‌توانید از آن‌ها برای توسعه برنامه‌های خود استفاده کنید.<br>&nbsp;<br>برنامه‌های نوشته‌شده با جاوا قابلیت اجرا بر روی سیستم‌های مختلف را دارند، به این معنی که برنامه‌های نوشته‌شده در یک سیستم، بدون نیاز به تغییر، می‌توانند بر روی سیستم‌های دیگری نیز اجرا شوند. علاوه بر این، Java یک زبان برنامه‌نویسی امن است، به همین دلیل، برای توسعه برنامه‌هایی که با اطلاعات حساس سروکار دارند، بسیار مناسب است.</p><p><br><strong>در این فرادرس چه چیزی و چگونه یاد می‌گیریم؟&nbsp;</strong></p><p>این فرادرس، در طی ۲۳ درس، مخاطب را به صورت کامل با زبان برنامه‌نویسی جاوا&nbsp;و امکانات مختلف آن آشنا می‌کند. در این مجموعه آموزشی، همه مباحث با بیان و تشریح مبانی نظری و سپس با پیاده‌سازی گام‌به‌گام مثال‌های عملی آموزش داده می‌شوند و از این نظر، در ایجاد یک دانش عمیق در زمینه برنامه‌نویسی، بسیار کارآمد است.&nbsp;</p><p>به طور خاص، در این مجموعه آموزشی، از نسخه ۸ جاوا و از محیط NetBeans IDE (نسخه ۸.۰.۲) برای پیاده‌سازی پروژه‌ها و برنامه‌ها استفاده شده است و مباحث مربوط به برنامه‌نویسی شی‌گرا (به همراه مبانی نظری) و برنامه‌نویسی رابط‌های گرافیکی (طراحی و برنامه‌نویسی GUI) نیز مورد بحث و بررسی قرار گرفته‌اند.</p><p>یکی از ویژگی‌های مهم این آموزش، ایجاد امکان آشنایی با متدهای برنامه‌نویسی پیشرفته (به ویژه برنامه‌نویسی شی‌گرا و مفاهیم اساسی مربوط به آن) است. چرا که در کنار مباحث عملی مطرح‌شده در این آموزش، مبانی نظری، مفهومی و تئوری روش‌های برنامه‌سازی پیشرفته نیز، مورد بحث و بررسی واقع شده‌اند، که این موضوع می‌تواند مخاطبان این آموزش را، در درک عمیق‌تر مفاهیم مربوط به برنامه‌نویسی پیشرفته و به ویژه برنامه‌نویسی شی‌گرا، یاری کند.</p></div>",
+      "description_summary": "Java یک زبان برنامه‌نویسی شی‌گرا است که توسط شرکت Sun Microsystems در دهه ۱۹۹۰ معرفی شد و در حال حاضر توسط شرکت Oracle Corporation پشتیبانی می‌شود. از جاوا برای توسعه برنامه‌های کاربردی وب، برنامه‌های موبایل، سیستم‌های تحت شبکه و… استفاده می‌شود. با توجه به اینکه Java دارای دستورالعمل‌های ساده و قابل فهم است، برای شروع به یادگیری برنامه‌نویسی، مناسب است.",
+      "description_summary_string": "Java یک زبان برنامه‌نویسی شی‌گرا است که توسط شرکت Sun Microsystems در دهه ۱۹۹۰ معرفی شد و در حال حاضر توسط شرکت Oracle Corporation پشتیبانی می‌شود. از جاوا برای توسعه برنامه‌های کاربردی وب، برنامه‌های موبایل، سیستم‌های تحت شبکه و… استفاده می‌شود. با توجه به اینکه Java دارای دستورالعمل‌های ساده و قابل فهم است، برای شروع به یادگیری برنامه‌نویسی، مناسب است.",
+      "topics": "<ul style='list-style-type:square'><li style='text-align:justify'>درس اول: انواع داده ها،&nbsp;انواع عملگرها،&nbsp;دستورات cin و cout<ul style='list-style-type:disc'><li style='text-align:justify'>دستور cin و cout و مفاهیم انواع داده ها و عملگرها</li></ul></li><li style='text-align:justify'>درس دوم: ساختارهای تصمیم (if, Switch)<ul style='list-style-type:disc'><li style='text-align:justify'>دستور if</li><li style='text-align:justify'>دستور Switch</li></ul></li><li style='text-align:justify'>درس سوم: ساختارهای تکرار (for, while, do while)<ul style='list-style-type:disc'><li style='text-align:justify'>دستور for</li><li style='text-align:justify'>دستور while</li><li style='text-align:justify'>دستور do while</li><li style='text-align:justify'>حلقه های تو در تو</li></ul></li><li style='text-align:justify'>درس چهارم: تابع<ul style='list-style-type:disc'><li style='text-align:justify'>مفاهیم اولیه تابع</li><li style='text-align:justify'>مفهوم Global</li><li style='text-align:justify'>تابع با مقدار پیش فرض</li><li style='text-align:justify'>تابع Inline</li><li style='text-align:justify'>فراخوانی با مقدار و با ارجاع</li><li style='text-align:justify'>سر بارگذاری تابع (Function Overloading)</li><li style='text-align:justify'>قالب (Template)</li><li style='text-align:justify'>تابع بازگشتی</li><li style='text-align:justify'>مفهوم Namespace</li></ul></li><li style='text-align:justify'>درس پنجم: آرایه<ul style='list-style-type:disc'><li style='text-align:justify'>آرایه یک بعدی</li><li style='text-align:justify'>آرایه و تابع</li><li style='text-align:justify'>جستجوی خطی</li><li style='text-align:justify'>مرتب سازی حبابی</li><li style='text-align:justify'>جستجوی دودویی</li><li style='text-align:justify'>محاسبه میانگین، میانه و مد</li><li style='text-align:justify'>آرایه و استاتیک</li><li style='text-align:justify'>آرایه 2 بعدی</li></ul></li><li style='text-align:justify'>درس ششم: اشاره گر<ul style='list-style-type:disc'><li style='text-align:justify'>اشاره گر</li><li style='text-align:justify'>اشاره گر به اشاره گر</li><li style='text-align:justify'>اشاره گر و آرایه ها</li><li style='text-align:justify'>آرایه ای از اشاره گرها به آرایه</li><li style='text-align:justify'>اشاره گر به آرایه 2 بعدی</li><li style='text-align:justify'>اشاره گر به آرایه 3 بعدی</li><li style='text-align:justify'>اشاره گر به تابع</li><li style='text-align:justify'>آرایه ای از اشاره گرها به توابع</li><li style='text-align:justify'>اشاره گر به تابع به عنوان پارامتر تابع دیگر</li><li style='text-align:justify'>پاس کردن آرگومان ها از طریق اشاره گر</li><li style='text-align:justify'>اشاره گر Void</li><li style='text-align:justify'>دستور New, Delete</li><li style='text-align:justify'>آرایه پویا</li><li style='text-align:justify'>درج آرایه در داخل آرایه</li><li style='text-align:justify'>مرتب سازی انتخابی (Selection Sort)</li><li style='text-align:justify'>ادغام دو آرایه مرتب</li><li style='text-align:justify'>مرجع (Reference)</li><li style='text-align:justify'>محاسبه ریشه های معادله درجه 2</li></ul></li><li style='text-align:justify'>درس هفتم: رشته<ul style='list-style-type:disc'><li style='text-align:justify'>توابع کار با رشته</li><li style='text-align:justify'>cin.get, cin.putback, cin.peek cin.ignore, atoi, atof,atoll, islower, toupper, isalpha,isdigit, isalnum, strcpy strncpy, strcat, strncat, strcmp, strchr,strtok, strstr, strtol strtod, strtoul, strspn, strcspn, memset, memcpy, memcmp, memmove, strlen</li><li style='text-align:justify'>آرایه ای از رشته ها</li><li style='text-align:justify'>مرتب سازی رشته ها</li></ul></li><li style='text-align:justify'>درس هشتم: نوع شمارشی،&nbsp;استراکچر، یونیون<ul style='list-style-type:disc'><li style='text-align:justify'>نوع شمارشی</li><li style='text-align:justify'>استراکچر&nbsp;(Structure)</li><li style='text-align:justify'>آرایه از استراکچر</li><li style='text-align:justify'>اشاره گر به استراکچر</li><li style='text-align:justify'>ارسال استراکچر به تابع</li><li style='text-align:justify'>تابع با خروجی استراکچر</li><li style='text-align:justify'>ارسال استراکچر به تابع (به عنوان مرجع)</li><li style='text-align:justify'>ارسال استراکچر به تابع (به عنوان اشاره گر)</li><li style='text-align:justify'>کپی کردن استراکچر</li><li style='text-align:justify'>حل 5 مثال</li><li style='text-align:justify'>یونیون&nbsp;(Union)</li></ul></li><li style='text-align:justify'>درس نهم: فایل<ul style='list-style-type:disc'><li style='text-align:justify'>مفاهیم اولیه</li><li style='text-align:justify'>خواندن و نوشتن در فایل باینری</li><li style='text-align:justify'>خواندن و نوشتن رشته</li><li style='text-align:justify'>دستور Append</li><li style='text-align:justify'>دستور Read, Write</li><li style='text-align:justify'>دستورهای tellq,&nbsp;tellp, seekq,&nbsp;seekp</li></ul></li><li style='text-align:justify'>درس دهم: حل چند مثال<ul style='list-style-type:disc'><li style='text-align:justify'>مرتب سازی درجی</li><li style='text-align:justify'>مرتب سازی انتخابی</li><li style='text-align:justify'>مرتب سازی ادغامی</li><li style='text-align:justify'>برج هانوی</li><li style='text-align:justify'>لیست پیوندی</li><li style='text-align:justify'>درخت جستجوی دودویی</li><li style='text-align:justify'>بازی Tic-tac-toe</li><li style='text-align:justify'>بازی Snake</li></ul></li></ul>",
+      "topics_summary": "",
+      "topics_summary_string": "",
+      "discount": null,
+      "prices": null,
+      "cashback": null,
+      "start_datetime": null,
+      "end_datetime": null,
+      "duration_hours": 13,
+      "duration_minutes": 45,
+      "episodes": null,
+      "payment_type": 0,
+      "ref_url": "",
+      "ref_url_discount": null,
+      "instructors": [
+        {
+          "id": 1,
+          "first_name": "",
+          "last_name": "",
+          "position": null,
+          "description": "",
+          "academy_description": null,
+          "image": ""
+        }
+      ],
+      "recommended_courses": [],
+      "is_purchased": false,
+      "is_bookmarked": false,
+      "user_comment": {
+        "id": null,
+        "content": null,
+        "rating": 0,
+        "like": {
+          "like": null,
+          "dislike": null,
+          "user_like": null,
+          "user_dislike": null
+        },
+        "is_participant": 0,
+        "is_anonymous": 0,
+        "created_at": "",
+        "user": {
+          "profile": {
+            "first_name": "",
+            "last_name": "",
+            "image": ""
+          }
+        }
+      }
+    },
+    {
+      "id": 1206,
+      "title": "آموزش گیت Git، گیت هاب و گیت لب (رایگان)",
+      "images": {
+        "cover": "https://karsaz.storage.iran.liara.space/course-images/git.svg"
+      },
+      "academy": {
+        "id": 1,
+        "name": "Faradars",
+        "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+      },
+      "type": "غیرحضوری",
+      "rating": {
+        "average": 4.3,
+        "participants": 44
+      },
+      "price": 298000,
+      "is_free": 0,
+      "description": "<div><p style='text-align:justify'><strong>Git ،GitHub و GitLab چیست؟</strong></p><p style='text-align:justify'>Git یک نرم‌افزار کنترل نسخه است که به‌عنوان یک سیستم متن‌باز در دسترس است. این نرم‌افزار می‌تواند نسخه‌های مختلفی از یک پروژه را در بین چندین توسعه‌دهنده مدیریت کند. با استفاده از Git، تغییراتی که در کد منبع ایجاد می‌کنید را می‌توانید ردیابی کنید، برگردانید، و با دیگران به‌اشتراک بگذارید.</p><p style='text-align:justify'>GitHub&nbsp;امکان استفاده از Git را فراهم می‌کند. در GitHub توسعه‌دهندگان می‌توانند کدهای خود را آپلود کنند، تغییراتی که در آن ایجاد شده‌اند را ردیابی کنند، اشکال‌زدایی کنند و با دیگران به‌اشتراک بگذارند.&nbsp;GitLab مانند GitHub یک سامانه مدیریت نسخه کد است که به شما این امکان را می‌دهد تا بتوانید نسخه‌های مختلف پروژه‌های خود را مدیریت کنید.</p><p style='text-align:justify'><strong>اهمیت یادگیری Git چیست؟</strong></p><p style='text-align:justify'>گیت (Git) مشهورترین و پرکاربردترین سیستم کنترل نسخه یا ورژن کنترل، در جهان است. درست است که بدون گیت می‌شود برنامه‌نویسی کرد ولی می توان با اطمینان، مدعی شد که هیچ برنامه بزرگی در جهان بدون استفاده از یک ورژن کنترل، نوشته نشده است و همچنان می‌شود گفت که گیت، محبوب‌ترین و پر استفاده‌ترین ورژن کنترل حال حاضر جهان است.</p><p style='text-align:justify'><strong>در این فرادرس چه چیزی یاد می‌گیریم؟</strong></p><p style='text-align:justify'>در این آموزش بعد از معرفی گیت به سراغ کاربردهای ابتدایی آن رفته و سپس با بحث در مورد شاخه‌ها، مرج کردن (Merge) و نحوه مشارکت در یک پروژه گیت، به سمت بحث‌های پیشرفته‌تر حرکت می‌کنیم. دقیقا چیزی که شما مستقیما برای همکاری در یک تیم و در گیت‌هاب (GitHub) و گیت لب (GitLab) نیاز دارید.</p><p>&nbsp;</p></div>",
+      "description_summary": "Git یک نرم‌افزار کنترل نسخه است که به‌عنوان یک سیستم متن‌باز در دسترس است. این نرم‌افزار می‌تواند نسخه‌های مختلفی از یک پروژه را در بین چندین توسعه‌دهنده مدیریت کند. با استفاده از Git، تغییراتی که در کد منبع ایجاد می‌کنید را می‌توانید ردیابی کنید، برگردانید، و با دیگران به‌اشتراک بگذارید.",
+      "description_summary_string": "Git یک نرم‌افزار کنترل نسخه است که به‌عنوان یک سیستم متن‌باز در دسترس است. این نرم‌افزار می‌تواند نسخه‌های مختلفی از یک پروژه را در بین چندین توسعه‌دهنده مدیریت کند. با استفاده از Git، تغییراتی که در کد منبع ایجاد می‌کنید را می‌توانید ردیابی کنید، برگردانید، و با دیگران به‌اشتراک بگذارید.",
+      "topics": "<ul style='list-style-type:square'><li style='text-align:justify'>درس اول: انواع داده ها،&nbsp;انواع عملگرها،&nbsp;دستورات cin و cout<ul style='list-style-type:disc'><li style='text-align:justify'>دستور cin و cout و مفاهیم انواع داده ها و عملگرها</li></ul></li><li style='text-align:justify'>درس دوم: ساختارهای تصمیم (if, Switch)<ul style='list-style-type:disc'><li style='text-align:justify'>دستور if</li><li style='text-align:justify'>دستور Switch</li></ul></li><li style='text-align:justify'>درس سوم: ساختارهای تکرار (for, while, do while)<ul style='list-style-type:disc'><li style='text-align:justify'>دستور for</li><li style='text-align:justify'>دستور while</li><li style='text-align:justify'>دستور do while</li><li style='text-align:justify'>حلقه های تو در تو</li></ul></li><li style='text-align:justify'>درس چهارم: تابع<ul style='list-style-type:disc'><li style='text-align:justify'>مفاهیم اولیه تابع</li><li style='text-align:justify'>مفهوم Global</li><li style='text-align:justify'>تابع با مقدار پیش فرض</li><li style='text-align:justify'>تابع Inline</li><li style='text-align:justify'>فراخوانی با مقدار و با ارجاع</li><li style='text-align:justify'>سر بارگذاری تابع (Function Overloading)</li><li style='text-align:justify'>قالب (Template)</li><li style='text-align:justify'>تابع بازگشتی</li><li style='text-align:justify'>مفهوم Namespace</li></ul></li><li style='text-align:justify'>درس پنجم: آرایه<ul style='list-style-type:disc'><li style='text-align:justify'>آرایه یک بعدی</li><li style='text-align:justify'>آرایه و تابع</li><li style='text-align:justify'>جستجوی خطی</li><li style='text-align:justify'>مرتب سازی حبابی</li><li style='text-align:justify'>جستجوی دودویی</li><li style='text-align:justify'>محاسبه میانگین، میانه و مد</li><li style='text-align:justify'>آرایه و استاتیک</li><li style='text-align:justify'>آرایه 2 بعدی</li></ul></li><li style='text-align:justify'>درس ششم: اشاره گر<ul style='list-style-type:disc'><li style='text-align:justify'>اشاره گر</li><li style='text-align:justify'>اشاره گر به اشاره گر</li><li style='text-align:justify'>اشاره گر و آرایه ها</li><li style='text-align:justify'>آرایه ای از اشاره گرها به آرایه</li><li style='text-align:justify'>اشاره گر به آرایه 2 بعدی</li><li style='text-align:justify'>اشاره گر به آرایه 3 بعدی</li><li style='text-align:justify'>اشاره گر به تابع</li><li style='text-align:justify'>آرایه ای از اشاره گرها به توابع</li><li style='text-align:justify'>اشاره گر به تابع به عنوان پارامتر تابع دیگر</li><li style='text-align:justify'>پاس کردن آرگومان ها از طریق اشاره گر</li><li style='text-align:justify'>اشاره گر Void</li><li style='text-align:justify'>دستور New, Delete</li><li style='text-align:justify'>آرایه پویا</li><li style='text-align:justify'>درج آرایه در داخل آرایه</li><li style='text-align:justify'>مرتب سازی انتخابی (Selection Sort)</li><li style='text-align:justify'>ادغام دو آرایه مرتب</li><li style='text-align:justify'>مرجع (Reference)</li><li style='text-align:justify'>محاسبه ریشه های معادله درجه 2</li></ul></li><li style='text-align:justify'>درس هفتم: رشته<ul style='list-style-type:disc'><li style='text-align:justify'>توابع کار با رشته</li><li style='text-align:justify'>cin.get, cin.putback, cin.peek cin.ignore, atoi, atof,atoll, islower, toupper, isalpha,isdigit, isalnum, strcpy strncpy, strcat, strncat, strcmp, strchr,strtok, strstr, strtol strtod, strtoul, strspn, strcspn, memset, memcpy, memcmp, memmove, strlen</li><li style='text-align:justify'>آرایه ای از رشته ها</li><li style='text-align:justify'>مرتب سازی رشته ها</li></ul></li><li style='text-align:justify'>درس هشتم: نوع شمارشی،&nbsp;استراکچر، یونیون<ul style='list-style-type:disc'><li style='text-align:justify'>نوع شمارشی</li><li style='text-align:justify'>استراکچر&nbsp;(Structure)</li><li style='text-align:justify'>آرایه از استراکچر</li><li style='text-align:justify'>اشاره گر به استراکچر</li><li style='text-align:justify'>ارسال استراکچر به تابع</li><li style='text-align:justify'>تابع با خروجی استراکچر</li><li style='text-align:justify'>ارسال استراکچر به تابع (به عنوان مرجع)</li><li style='text-align:justify'>ارسال استراکچر به تابع (به عنوان اشاره گر)</li><li style='text-align:justify'>کپی کردن استراکچر</li><li style='text-align:justify'>حل 5 مثال</li><li style='text-align:justify'>یونیون&nbsp;(Union)</li></ul></li><li style='text-align:justify'>درس نهم: فایل<ul style='list-style-type:disc'><li style='text-align:justify'>مفاهیم اولیه</li><li style='text-align:justify'>خواندن و نوشتن در فایل باینری</li><li style='text-align:justify'>خواندن و نوشتن رشته</li><li style='text-align:justify'>دستور Append</li><li style='text-align:justify'>دستور Read, Write</li><li style='text-align:justify'>دستورهای tellq,&nbsp;tellp, seekq,&nbsp;seekp</li></ul></li><li style='text-align:justify'>درس دهم: حل چند مثال<ul style='list-style-type:disc'><li style='text-align:justify'>مرتب سازی درجی</li><li style='text-align:justify'>مرتب سازی انتخابی</li><li style='text-align:justify'>مرتب سازی ادغامی</li><li style='text-align:justify'>برج هانوی</li><li style='text-align:justify'>لیست پیوندی</li><li style='text-align:justify'>درخت جستجوی دودویی</li><li style='text-align:justify'>بازی Tic-tac-toe</li><li style='text-align:justify'>بازی Snake</li></ul></li></ul>",
+      "topics_summary": "",
+      "topics_summary_string": "",
+      "discount": null,
+      "prices": null,
+      "cashback": null,
+      "start_datetime": null,
+      "end_datetime": null,
+      "duration_hours": 13,
+      "duration_minutes": 45,
+      "episodes": null,
+      "payment_type": 0,
+      "ref_url": "",
+      "ref_url_discount": null,
+      "instructors": [
+        {
+          "id": 1,
+          "first_name": "",
+          "last_name": "",
+          "position": null,
+          "description": "",
+          "academy_description": null,
+          "image": ""
+        }
+      ],
+      "recommended_courses": [],
+      "is_purchased": false,
+      "is_bookmarked": false,
+      "user_comment": {
+        "id": null,
+        "content": null,
+        "rating": 0,
+        "like": {
+          "like": null,
+          "dislike": null,
+          "user_like": null,
+          "user_dislike": null
+        },
+        "is_participant": 0,
+        "is_anonymous": 0,
+        "created_at": "",
+        "user": {
+          "profile": {
+            "first_name": "",
+            "last_name": "",
+            "image": ""
+          }
+        }
+      }
+    }
+  ]
+}

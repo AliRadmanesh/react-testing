@@ -93,13 +93,13 @@ export default function Header({
                 {title}
               </p>
               <div className="tw-hidden md:tw-flex tw-items-center tw-mr-4">
-                <Link
+                {/* <Link
                   title="مقایسه کردن"
                   to={`/compare?primary=${window.location.href.split('course/')[1]}`}
                   className="tw-bg-transparent tw-p-2"
                 >
                   <img src={compareIcon} alt="" className="tw-w-8" />
-                </Link>
+                </Link> */}
                 <button
                   title="نشان کردن"
                   className="tw-bg-transparent tw-p-2"

@@ -67,7 +67,7 @@ export default function UserComment({ id }) {
   }, []);
 
   return (
-    <div className="container tw-my-4 2xl:tw-my-8">
+    <div className="container tw-my-16 2xl:tw-my-8">
       <p className="text-blue tw-text-center font-kalameh-num tw-text-xl tw-font-extrabold lg:tw-font-bold 2xl:tw-text-3xl 2xl:tw-font-black">
         دیدگاه شما
       </p>

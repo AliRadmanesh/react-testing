@@ -8,8 +8,8 @@ import LeftBanner from '../../components/auth/LeftBanner';
 export default function Authentication() {
   const history = useHistory();
   const stage = 1;
-  const [phone, setPhone] = useState(null);
-  const [state, setState] = useState(null);
+  const [phone, setPhone] = useState('');
+  const [state, setState] = useState('');
 
   const regex = /09[0-9]{9}$/i;
 
@@ -23,29 +23,29 @@ export default function Authentication() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    if (!regex.test(phone)) {
-      toast.error('لطفا شماره موبایل خود را به درستی وارد کنید.');
-    } else {
-      try {
-        const data = {
-          mobile: phone,
-        };
-        const res = await axios.post('/api/v1/web/service/auth/mobile/check', data);
-        if (res.status === 200 || res.status === 201) {
-          window.localStorage.setItem('userPhone', phone);
-          history.push('/login/password');
-        }
-      } catch (error) {
-        const { status, data } = error.response;
-        if (status === 422) toast.error(data.message);
-        else if (status === 404) {
-          // toast.error('کاربری با این شماره یافت نشد.');
-          window.localStorage.setItem('tempToken', data.data.token);
-          window.localStorage.setItem('userPhone', phone);
-          history.push('/register/code');
-        } else toast.error('عملیات ورود ناموفق بود.');
-      }
-    }
+    // if (!regex.test(phone)) {
+    //   toast.error('لطفا شماره موبایل خود را به درستی وارد کنید.');
+    // } else {
+    //   try {
+    //     const data = {
+    //       mobile: phone,
+    //     };
+    //     const res = await axios.post('/api/v1/web/service/auth/mobile/check', data);
+    //     if (res.status === 200 || res.status === 201) {
+    //       window.localStorage.setItem('userPhone', phone);
+    //       history.push('/login/password');
+    //     }
+    //   } catch (error) {
+    //     const { status, data } = error.response;
+    //     if (status === 422) toast.error(data.message);
+    //     else if (status === 404) {
+    //       // toast.error('کاربری با این شماره یافت نشد.');
+    //       window.localStorage.setItem('tempToken', data.data.token);
+    //       window.localStorage.setItem('userPhone', phone);
+    //       history.push('/register/code');
+    //     } else toast.error('عملیات ورود ناموفق بود.');
+    //   }
+    // }
   };
 
   return (

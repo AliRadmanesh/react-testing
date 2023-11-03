@@ -58,7 +58,7 @@ export default function CategoryMenuMobile() {
                 </div>
                 <img src={arrow} alt="" className="tw-w-4" />
               </div>
-              <div className="category-dropdown-items tw-relative tw-w-full">
+              {/* <div className="category-dropdown-items tw-relative tw-w-full">
                 {ci.sub.map((si) => {
                   const url = new URL(window.location);
                   url.searchParams.set('category[0]', si.id);
@@ -79,7 +79,7 @@ export default function CategoryMenuMobile() {
                     </Link>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

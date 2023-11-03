@@ -2,6 +2,8 @@ import toast from 'react-hot-toast';
 import { GET_COURSE_COMMENTS } from './types';
 import instance from '../../instance';
 
+const axios = require('axios');
+
 // 'GET_COURSE_DATA'
 // 'COURSE_BOOKMARK'
 // 'CREATE_COMMENT'
@@ -38,8 +40,12 @@ export const getCourseComments =
 
 export const getCourseData = (id) => async (dispatch) => {
   try {
-    const res = await instance.get(`api/v1/web/service/courses/${id}`);
-    dispatch({ type: 'GET_COURSE_DATA', payload: res.data.data.course });
+    // const res = await instance.get(`api/v1/web/service/courses/${id}`);
+    const res = await axios.get('https://api.npoint.io/4c1914e948df5f2c971c');
+    const { courses } = res.data;
+    const course = courses?.find((item) => Number(item?.id) === Number(id));
+    console.log({ res, courses, course });
+    dispatch({ type: 'GET_COURSE_DATA', payload: course });
   } catch (error) {
     toast.error(error);
   }
