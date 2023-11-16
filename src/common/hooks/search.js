@@ -15,7 +15,7 @@ import {
   addQueryTypeFilter,
 } from '../../app/redux/actions/searchActions';
 // import instance from '../../app/instance';
-import { getSearchContent } from '../../app/redux/actions/coursesActions';
+// import { getSearchContent } from '../../app/redux/actions/coursesActions';
 
 export function useFilters() {
   // const [courses, setCourses] = useState([]);
