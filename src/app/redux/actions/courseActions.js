@@ -44,7 +44,6 @@ export const getCourseData = (id) => async (dispatch) => {
     const res = await axios.get('https://api.npoint.io/4c1914e948df5f2c971c');
     const { courses } = res.data;
     const course = courses?.find((item) => Number(item?.id) === Number(id));
-    console.log({ res, courses, course });
     dispatch({ type: 'GET_COURSE_DATA', payload: course });
   } catch (error) {
     toast.error(error);

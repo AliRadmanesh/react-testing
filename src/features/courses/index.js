@@ -77,17 +77,17 @@ export default function Courses() {
     }
   };
 
-  const getSearchOptions = async () => {
-    try {
-      const res = await instance.get('/api/v1/web/content/courses/search-content');
-      if (res.status === 200) {
-        dispatch(setSearchContent(res.data.data));
-        setOptions();
-      }
-    } catch (err) {
-      toast.error(err);
-    }
-  };
+  // const getSearchOptions = async () => {
+  //   try {
+  //     const res = await instance.get('/api/v1/web/content/courses/search-content');
+  //     if (res.status === 200) {
+  //       dispatch(setSearchContent(res.data.data));
+  //       setOptions();
+  //     }
+  //   } catch (err) {
+  //     toast.error(err);
+  //   }
+  // };
 
   useEffect(() => {
     setFilters();
@@ -97,13 +97,13 @@ export default function Courses() {
     // setCategory(new URL(window.location).searchParams.get('category[0]'));
     if (new URL(window.location.href).searchParams.get('q'))
       dispatch(searchQuery(new URL(window.location).search));
-    else dispatch(searchCourses(new URL(window.location).search));
-    if (options.academies.length === 0 || options.course_types.length === 0) {
-      getSearchOptions();
-    } else {
-      setOptions();
-      setFilters();
-    }
+    // else dispatch(searchCourses(new URL(window.location).search));
+    // if (options.academies.length === 0 || options.course_types.length === 0) {
+    //   getSearchOptions();
+    // } else {
+    //   setOptions();
+    //   setFilters();
+    // }
     window.scrollTo(0, 0);
   }, [window.location.search]);
 

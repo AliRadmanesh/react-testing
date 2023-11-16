@@ -25,8 +25,6 @@ function Home() {
   const { recommended_courses, categories } = useSelector((state) => state.home.data);
   const dispatch = useDispatch();
 
-  console.log({ recommended_courses, categories });
-
   // function fetchMockData() {
   //   return new Promise((resolve, reject) => {
   //     setTimeout(() => resolve(data), 2000);
@@ -35,9 +33,6 @@ function Home() {
 
   useEffect(() => {
     dispatch(getHomePageData());
-    // fetchMockData().then((response) => {
-    //   console.log(response);
-    // });
     // eslint-disbale-next-line
   }, []);
 

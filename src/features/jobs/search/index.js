@@ -116,27 +116,27 @@ export default function JobSearch() {
     setOptions();
   }, [locations, categories]);
 
-  useEffect(() => {
-    if (new URL(window.location).searchParams.get('q')) {
-      dispatch(searchJobsQuery(window.location.search));
-    } else {
-      dispatch(searchJobsNoQuery(window.location.search));
-    }
-    if (categories.length === 0 || locations.length === 0) {
-      dispatch(getJobsSearchOptions());
-    } else {
-      setOptions();
-    }
-    if (
-      filters.work_experiences.length === 0 ||
-      filters.salary_ranges.length === 0 ||
-      filters.contract_types.length === 0
-    ) {
-      dispatch(getJobsFilterOptions());
-    } else {
-      setFilters();
-    }
-  }, [window.location.search]);
+  // useEffect(() => {
+  //   if (new URL(window.location).searchParams.get('q')) {
+  //     dispatch(searchJobsQuery(window.location.search));
+  //   } else {
+  //     dispatch(searchJobsNoQuery(window.location.search));
+  //   }
+  //   if (categories.length === 0 || locations.length === 0) {
+  //     dispatch(getJobsSearchOptions());
+  //   } else {
+  //     setOptions();
+  //   }
+  //   if (
+  //     filters.work_experiences.length === 0 ||
+  //     filters.salary_ranges.length === 0 ||
+  //     filters.contract_types.length === 0
+  //   ) {
+  //     dispatch(getJobsFilterOptions());
+  //   } else {
+  //     setFilters();
+  //   }
+  // }, [window.location.search]);
 
   // useEffect(() => {
   //   document.addEventListener('click', () => {

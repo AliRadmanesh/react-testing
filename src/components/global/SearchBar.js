@@ -18,8 +18,6 @@ export default function SearchBar({ onChange, classes }) {
     } else setCategory(null);
   }, [window.location.href]);
 
-  // console.log(window.location.href.searchParams);
-
   const dispatch = useDispatch();
 
   return (

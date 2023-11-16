@@ -83,17 +83,17 @@ export default function Search() {
     }
   };
 
-  const getSearchOptions = async () => {
-    try {
-      const res = await instance.get('/api/v1/web/content/courses/search-content');
-      if (res.status === 200) {
-        dispatch(setQueryOptions(res.data.data));
-        setOptions();
-      }
-    } catch (err) {
-      toast.error(err);
-    }
-  };
+  // const getSearchOptions = async () => {
+  //   try {
+  //     const res = await instance.get('/api/v1/web/content/courses/search-content');
+  //     if (res.status === 200) {
+  //       dispatch(setQueryOptions(res.data.data));
+  //       setOptions();
+  //     }
+  //   } catch (err) {
+  //     toast.error(err);
+  //   }
+  // };
 
   useEffect(() => {
     setFilters();
@@ -103,7 +103,8 @@ export default function Search() {
     setUrlQuery(new URL(window.location).searchParams.get('q'));
     dispatch(searchQuery(new URL(window.location).search));
     if (options.academies.length === 0 || options.course_types.length === 0) {
-      getSearchOptions();
+      dispatch(searchQuery(new URL(window.location).search));
+      // getSearchOptions();
     } else {
       setOptions();
       setFilters();
@@ -155,16 +156,16 @@ export default function Search() {
                     key={item.id}
                     id={item.id}
                     title={item.title}
-                    description={item.description}
-                    prices={item.prices}
+                    description={item.description_summary}
+                    prices={item?.prices ?? []}
                     author={{ first_name: '', last_name: '', image: '' }}
                     rating={item.rating.average}
                     academy={item.academy}
-                    duration={item.duration}
+                    duration={`${item.duration_hours}:${item.duration_minutes}`}
                     type={item.type}
                     is_free={item.is_free}
                     image={item.images.cover}
-                    discount={item.discount}
+                    discount={item?.discount}
                   />
                 ))}
               </div>

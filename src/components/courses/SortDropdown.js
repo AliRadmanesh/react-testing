@@ -12,7 +12,6 @@ export default function SortDropdown() {
   const ref = useRef();
 
   const handleClick = (event) => {
-    // console.log(ref);
     if (!event.target.className.includes('sort-dropdown') && ref.current) {
       ref.current.classList.remove('active');
     }

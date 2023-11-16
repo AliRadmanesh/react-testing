@@ -104,16 +104,17 @@ export const setSearchContent = (options) => (dispatch) => {
 export const searchQuery = (query) => async (dispatch) => {
   let proceed = false;
   try {
-    const res = await instance.get(`/api/v1/web/service/courses/search/${query}`);
+    // const res = await instance.get(`/api/v1/web/service/courses/search/${query}`);
+    const res = await axios.get('https://api.npoint.io/4c1914e948df5f2c971c');
     if (res.status === 200 || res.status === 201) {
       dispatch({ type: SET_QUERY_STATUS, payload: 200 });
-      dispatch({ type: SEARCH_QUERY, payload: res.data.data.courses });
+      dispatch({ type: SEARCH_QUERY, payload: res.data.courses });
       dispatch({ type: SET_QUERY_PAGE_TOTAL, payload: res.data.meta.last_page });
       dispatch({ type: SET_QUERY_TOTAL_RESULTS, payload: res.data.meta.total });
     }
-    if (res.data.data.courses.length === 0) {
-      dispatch({ type: SET_QUERY_STATUS, payload: 200 });
-    }
+    // if (res.data.data.courses.length === 0) {
+    //   dispatch({ type: SET_QUERY_STATUS, payload: 200 });
+    // }
   } catch (error) {
     if (proceed) toast.error('خطا در اجرای عملیات جستجو');
     else proceed = true;

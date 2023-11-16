@@ -188,8 +188,6 @@ export default function Favorites() {
     const courseArr = [];
     courses.interested.list.map((item) => courseArr.push(item.id));
 
-    console.log(jobArr);
-
     try {
       const data = {
         favorite_course_categories: JSON.stringify(courseArr),
