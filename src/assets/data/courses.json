@@ -299,6 +299,231 @@
           }
         }
       }
+    },
+    {
+      "id": 1207,
+      "title": "آموزش هوش مصنوعی – مقدماتی",
+      "images": {
+        "cover": "https://karsaz.storage.iran.liara.space/course-images/ai-course.svg"
+      },
+      "academy": {
+        "id": 1,
+        "name": "فرادرس",
+        "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+      },
+      "type": "غیرحضوری",
+      "rating": {
+        "average": 4.6,
+        "participants": 435
+      },
+      "price": 568000,
+      "prices": {
+        "original": {
+          "price": 568000
+        }
+      },
+      "is_free": 0,
+      "description": "<div><p><strong>هوش مصنوعی چیست؟&nbsp;</strong></p><p>هوش مصنوعی مجموعه‌ای از تکنیک‌ها و الگوریتم‌های ریاضی و کامپیوتری است که برای تقلید هوش و یادگیری انسان‌ها طراحی شده‌اند؛&nbsp;به عبارت دیگر به هوشی که یک ماشین در شرایط مختلف می‌تواند از خود نشان دهد، هوش مصنوعی گفته می‌شود. در سال ۱۹۴۳ با اختراع کامپیوترهای الکترونیک، هوش مصنوعی دانشمندان را به چالشی بزرگ فراخواند.&nbsp;</p><p>ماشین هوشمند، ماشینی است که توانایی فکر کردن بدون نیاز به انسان را دارد. یکی از ویژگی‌هایی که ماشین‌های هوشمند باید داشته باشند، شناخت از وجود خود است که تاکنون ماشینی که این توانایی را به طور کامل داشته باشد به وجود نیامده است.&nbsp;دومین ویژگی شناخت محیط پیرامون است که این امکان در برخی از ماشین‌های هوشمند امروزی که با نام «ربات‌های امدادگر» شناخته می‌شوند، وجود دارد.&nbsp;ویژگی دیگر توانایی نشان دادن عکس‌العمل در مقابل کنش‌های حاصل از محیط است؛ این امکان در برخی از ماشین‌های هوشمند امروزی با نام «ربات‌های کاوشگر»&nbsp;وجود دارد.&nbsp;هوش انسانی قادر به مشاهده و تجزیه‌وتحلیل مسایل در جهت قضاوت و اخذ تصمیم است؛ در صورتی که هوش مصنوعی مبتنی بر قوانین و رویه‌هایی از قبل تعبیه‌شده بر روی کامپیوتر است. در نتیجه علی‌رغم وجود رایانه‌های بسیار کارا و قوی در عصر ما هنوز قادر به پیاده کردن هوشی نزدیک به هوش انسان در ایجاد هوش‌های مصنوعی نبوده‌ایم.</p><p><strong>اهمیت یادگیری هوش مصنوعی چیست؟</strong></p><p>هوش مصنوعی از علومی است که در دهه‌های گذشته پیشرفت شگرفی را در علم به وجود آورده است. پر واضح است که امروزه این پیشرفت به هیچ وجه در یک علم خاص محدود نبوده، بلکه تمامی علوم را در بر گرفته است. با استفاده از هوش مصنوعی، می‌توان برای کامپیوتر و دستگاه‌های الکترونیکی، قابلیت تفکر، شناخت الگو، تصمیم‌گیری و حل مسئله را ایجاد کرد. در حال حاضر در زمینه‌های مختلفی مانند پزشکی، بانکداری، خودروسازی، بازی‌های رایانه‌ای و حتی صنایع خدماتی، هوش مصنوعی به کار گرفته می‌شود.&nbsp;</p><p>از طرفی هوش مصنوعی به عنوان یکی از گرایش‌های رشته‌&nbsp;مهندسی کامپیوتر در مقاطع کارشناسی ارشد و دکتری است. همچنین هوش مصنوعی یکی از دورس مقطع کارشناسی مهندسی کامپیوتر و فناوری اطلاعات نیز هست.&nbsp;<br>&nbsp;</p><p><img alt='آموزش هوش مصنوعی' class='aligncenter size-medium wp-image-71544' src='http://faradars.org/wp-content/uploads/2015/08/111-400x225.jpg' style='height:225px;width:400px'></p><p><strong>در این فرادرس چه چیزی یاد می‌گیریم؟&nbsp;</strong></p><p>در این آموزش ابتدا با هوش مصنوعی و عامل هوشمند آشنا می‌شویم. پس از آن &nbsp;جستجوهای آگاهانه و ناآگاهانه و توابع هیوریستیک را بررسی و در نهایت به مسائل ارضای محدودیت و بازی‌ها می‌پردازیم.</p><p>طرح درس در این آموزش به نحوی در نظر گرفته شده است که هم برای دانشجویان مقطع کارشناسی و عموم علاقه‌مندان مفید باشد و هم افرادی که قصد شرکت در آزمون کارشناسی ارشد و یا آزمون دکتری را دارند، بتوانند از این فیلم‌های آموزشی استفاده نمایند.</p></div>",
+      "description_summary": "هوش مصنوعی مجموعه‌ای از تکنیک‌ها و الگوریتم‌های ریاضی و کامپیوتری است که برای تقلید هوش و یادگیری انسان‌ها طراحی شده‌اند؛ به عبارت دیگر به هوشی که یک ماشین در شرایط مختلف می‌تواند از خود نشان دهد، هوش مصنوعی گفته می‌شود. در سال ۱۹۴۳ با اختراع کامپیوترهای الکترونیک، هوش مصنوعی دانشمندان را به چالشی بزرگ فراخواند.",
+      "description_summary_string": "هوش مصنوعی مجموعه‌ای از تکنیک‌ها و الگوریتم‌های ریاضی و کامپیوتری است که برای تقلید هوش و یادگیری انسان‌ها طراحی شده‌اند؛ به عبارت دیگر به هوشی که یک ماشین در شرایط مختلف می‌تواند از خود نشان دهد، هوش مصنوعی گفته می‌شود. در سال ۱۹۴۳ با اختراع کامپیوترهای الکترونیک، هوش مصنوعی دانشمندان را به چالشی بزرگ فراخواند.",
+      "topics": "<ul style='list-style-type:square'><li style='text-align:justify'>درس یکم: هوش مصنوعی چیست؟<ul style='list-style-type:disc'><li style='text-align:justify'>تفکر -&nbsp;منطق در مقابل با رفتار&nbsp;-&nbsp;عمل</li><li style='text-align:justify'>موفقیت در مقایسه با استاندارد انسانی در مقابل با مفهوم ایده آل عقلانیت</li><li style='text-align:justify'>انسان چطور فکر می کند؟</li><li style='text-align:justify'>نیاز به تئوری های علمی در خصوص فعالیت های مغزی دارد.</li><li style='text-align:justify'>سیستمی که عاقلانه فکر می کند.</li><li style='text-align:justify'>سیستمی که عاقلانه رفتار می کند.</li></ul></li><li style='text-align:justify'>درس دوم: عامل هوشمند<ul style='list-style-type:disc'><li style='text-align:justify'>معرفی عامل و محیط</li><li style='text-align:justify'>مفهوم عقلانیت</li><li style='text-align:justify'>انواع محیط</li><li style='text-align:justify'>انواع عامل</li></ul></li><li style='text-align:justify'>درس سوم: جستجوهای ناآگاهانه<ul style='list-style-type:disc'><li style='text-align:justify'>عامل مبتنی بر حل مساله</li><li style='text-align:justify'>انواع مساله</li><li style='text-align:justify'>فرموله سازی مساله</li><li style='text-align:justify'>انواع جستجوهای ناآگاهانه</li></ul></li><li style='text-align:justify'>درس چهارم: جستجوهای آگاهانه<ul style='list-style-type:disc'><li style='text-align:justify'>استراتژی های آگاهانه<ul style='list-style-type:circle'><li style='text-align:justify'>جستجوی حریصانه</li><li style='text-align:justify'>جستجوی A</li></ul></li><li style='text-align:justify'>کیفیت توابع هیوریستیک&nbsp;(Heuristic)</li><li style='text-align:justify'>ابداع توابع هیوریستیک<ul style='list-style-type:circle'><li style='text-align:justify'>جستجوی محلی</li><li style='text-align:justify'>تپه نوردی</li><li style='text-align:justify'>SA</li><li style='text-align:justify'>پرتوی محلی</li><li style='text-align:justify'>ژنتیک</li></ul></li></ul></li><li style='text-align:justify'>درس پنجم: مسائل ارضای محدودیت<ul style='list-style-type:disc'><li style='text-align:justify'>تعریف مسائل ارضای محدودیت</li><li style='text-align:justify'>انواع مسائل ارضای محدودیت</li><li style='text-align:justify'>جستجوی عقب گرد</li><li style='text-align:justify'>بهبود جستجو</li></ul></li><li style='text-align:justify'>درس ششم: بازی ها<ul style='list-style-type:disc'><li style='text-align:justify'>تعریف و انواع بازی</li><li style='text-align:justify'>الگوریتم MiniMax</li><li style='text-align:justify'>هرس آلفا و بتا</li><li style='text-align:justify'>بازی در محیط بخشی قابل مشاهده</li></ul></li></ul>",
+      "topics_summary": "",
+      "topics_summary_string": "",
+      "discount": null,
+      "cashback": null,
+      "start_datetime": null,
+      "end_datetime": null,
+      "duration_hours": 6,
+      "duration_minutes": 34,
+      "episodes": null,
+      "payment_type": 0,
+      "ref_url": "",
+      "ref_url_discount": null,
+      "instructors": [
+        {
+          "id": 1,
+          "first_name": "",
+          "last_name": "",
+          "position": null,
+          "description": "",
+          "academy_description": null,
+          "image": ""
+        }
+      ],
+      "recommended_courses": [],
+      "is_purchased": false,
+      "is_bookmarked": false,
+      "user_comment": {
+        "id": null,
+        "content": null,
+        "rating": 0,
+        "like": {
+          "like": null,
+          "dislike": null,
+          "user_like": null,
+          "user_dislike": null
+        },
+        "is_participant": 0,
+        "is_anonymous": 0,
+        "created_at": "",
+        "user": {
+          "profile": {
+            "first_name": "",
+            "last_name": "",
+            "image": ""
+          }
+        }
+      }
+    },
+    {
+      "id": 1208,
+      "title": "آموزش نرم افزار اس پی اس اس SPSS",
+      "images": {
+        "cover": "https://karsaz.storage.iran.liara.space/course-images/spss-course.svg"
+      },
+      "academy": {
+        "id": 1,
+        "name": "فرادرس",
+        "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+      },
+      "type": "غیرحضوری",
+      "rating": {
+        "average": 4.4,
+        "participants": 221
+      },
+      "price": 342000,
+      "prices": {
+        "original": {
+          "price": 342000
+        }
+      },
+      "is_free": 0,
+      "description": "<div><p><br><strong>SPSS چیست؟</strong></p><p>SPSS یک نرم‌افزار آماری است که برای تجزیه‌وتحلیل داده‌ها و ایجاد گزارش‌های آماری استفاده می‌شود. این نرم‌افزار در دهه ۱۹۶۰ توسط شرکت IBM توسعه داده شد و با توجه به توانایی بالایی که در تحلیل داده‌های مختلف مانند داده‌های چندمتغیره، داده‌های دوگانه، داده‌های دسته‌ای و… دارد، هنوز هم یکی از محبوب‌ترین و پراستفاده‌ترین نرم‌افزارهای آماری است.</p><p><strong>اهمیت یادگیری SPSS چیست؟</strong></p><p>در زمینه‌های مختلف مانند روان‌شناسی، اقتصاد، مدیریت، مهندسی، علوم اجتماعی و...، نیازمند تجزیه‌وتحلیل داده و ارائه گزارش‌های آماری هستیم. استفاده از نرم‌افزارها و بسته‌های محاسبات آماری، کار محاسبات را برای محققین این حوزه ساده‌تر می‌کند.&nbsp;SPSS یکی از عمومی‌ترین و محبوب‌ترین این نرم‌افزار هاست که دارای محیطی ساده و کارآمد برای کار با داده‌هاست و می‌توان به راحتی داده‌های خود را وارد کرده، آن‌ها پردازش کنید و نتایج خود را به صورت گزارش آماری و نمودارهای مختلف ارائه دهید. همچنین، SPSS قابلیت تحلیل ویژگی‌های گروهی، رگرسیون، خوشه‌بندی، تحلیل عاملی، و دیگر روش‌های آماری را نیز داراست.</p><p><strong>در این فرادرس چه چیزی و چگونه یاد می‌گیریم؟&nbsp;</strong></p><p>با توجه به اینکه پرسشنامه به عنوان یک ابزار استاندارد برای جمع‌آوری اطلاعات و داده‌‌های آماری مورد اتفاق نظر پژوهشگران علوم اجتماعی قرار دارد. در این آموزش، برای تحلیل و خلاصه‌سازی اطلاعات حاصل از پرسشنامه به نرم‌افزار SPSS تکیه کرده و روش‌های نمایش اطلاعات (Visualization) و استنباط آماری را به کمک آن آموزش می‌دهیم.</p><p>&nbsp;معرفی متغیرها، ورود داده‌ها و همچنین محاسبه شاخص‌های آماری و رسم نمودارها، اهم موارد آموزشی این فرادرس را تشکیل می‌دهند. البته بررسی و تحلیل داده‌های پرسشنامه‌ای نیز در انتهای آموزش مورد بحث قرار می‌گیرد.</p></div>",
+      "description_summary": "SPSS یک نرم‌افزار آماری است که برای تجزیه‌وتحلیل داده‌ها و ایجاد گزارش‌های آماری استفاده می‌شود. این نرم‌افزار در دهه ۱۹۶۰ توسط شرکت IBM توسعه داده شد و با توجه به توانایی بالایی که در تحلیل داده‌های مختلف مانند داده‌های چندمتغیره، داده‌های دوگانه، داده‌های دسته‌ای و… دارد، هنوز هم یکی از محبوب‌ترین و پراستفاده‌ترین نرم‌افزارهای آماری است.",
+      "description_summary_string": "SPSS یک نرم‌افزار آماری است که برای تجزیه‌وتحلیل داده‌ها و ایجاد گزارش‌های آماری استفاده می‌شود. این نرم‌افزار در دهه ۱۹۶۰ توسط شرکت IBM توسعه داده شد و با توجه به توانایی بالایی که در تحلیل داده‌های مختلف مانند داده‌های چندمتغیره، داده‌های دوگانه، داده‌های دسته‌ای و… دارد، هنوز هم یکی از محبوب‌ترین و پراستفاده‌ترین نرم‌افزارهای آماری است.",
+      "topics": "<ul><li style='text-align:justify'>فصل یکم: آشنایی با مفاهیم اولیه آماری<ul><li style='text-align:justify'>درس ۱: آشنایی با اصطلاحات آماری</li><li style='text-align:justify'>درس ۲: مراحل اجرای یک تحقیق آماری</li><li style='text-align:justify'>درس ۳: روش‌های جمع‌آوری اطلاعات</li><li style='text-align:justify'>درس ۴: انواع متغیرها</li><li style='text-align:justify'>درس ۵: شاخص‌های آماری - بخش یکم</li><li style='text-align:justify'>درس ۶: شاخص‌های آماری - بخش دوم</li><li style='text-align:justify'>درس ۷: شاخص‌های آماری - بخش سوم</li><li style='text-align:justify'>درس ۸: شاخص‌های آماری - بخش چهارم</li><li style='text-align:justify'>درس ۹: شاخص‌های آماری - بخش پنجم</li><li style='text-align:justify'>درس ۱۰: جدول فراوانی - بخش یکم</li><li style='text-align:justify'>درس ۱۱: جدول فراوانی - بخش دوم</li><li style='text-align:justify'>درس ۱۲: جدول فراوانی دوطرفه</li><li style='text-align:justify'>درس ۱۳: پرسشنامه و خصوصیات آن</li><li style='text-align:justify'>درس ۱۴: پرسشنامه و انواع سوالات</li><li style='text-align:justify'>درس ۱۵: طیف لیکرت (Likert) و گاتمن (Gottmann)</li><li style='text-align:justify'>درس ۱۶: روش‌های مختلف ارزیابی پرسشنامه</li><li style='text-align:justify'>درس ۱۷: محاسبه ارزیابی پرسشنامه در اکسل</li></ul></li><li style='text-align:justify'>فصل دوم: آشنایی با رابط کاربری نرم‌افزار و انواع پنجره‌های آن<ul><li style='text-align:justify'>درس ۱۸: آشنایی با محیط SPSS</li><li style='text-align:justify'>درس ۱۹: متغیر و خصوصیات آن در SPSS</li><li style='text-align:justify'>درس ۲۰: اجرای فرمان‌های عمومی در SPSS به همراه ذخیره و بازیابی فایل</li><li style='text-align:justify'>درس ۲۱: مشخصات متغیرها و دستور Case Summary</li><li style='text-align:justify'>درس ۲۲: ویرایش مقادیر یا متغیرها</li><li style='text-align:justify'>درس ۲۳: پیش‌فرض‌های SPSS و تنظیمات آن - بخش یکم</li><li style='text-align:justify'>درس ۲۴: پیش‌فرض‌های SPSS و تنظیمات آن - بخش دوم</li></ul></li><li style='text-align:justify'>فصل سوم: دستورهای مربوط به استخراج آماره‌های توصیفی<ul><li style='text-align:justify'>درس ۲۵: محاسبه شاخص‌های آمار توصیفی با SPSS - جدول فراوانی و نمودار آن</li><li style='text-align:justify'>درس ۲۶: جدول فراوانی به کمک وزن‌دهی به مشاهدات</li><li style='text-align:justify'>درس ۲۷: جدول فراوانی به تفکیک متغیر طبقه‌ای - Split File</li><li style='text-align:justify'>درس ۲۸: انتخاب مشاهدات به کمک Select Case</li><li style='text-align:justify'>درس ۲۹: سوالات چندپاسخه (Multiple Response) و ثبت و ایجاد جدول فراوانی برای آن‌ها در SPSS</li><li style='text-align:justify'>درس ۳۰: جدول فراوانی دوطرفه - CrossTab</li><li style='text-align:justify'>درس ۳۱: نمودار فراوانی دوطرفه - CrossTab</li><li style='text-align:justify'>درس ۳۲: نمودار فراوانی دوطرفه - CrossTab به همراه متغیر لایه‌بندی و رسم نمودار ترکیبی</li><li style='text-align:justify'>درس ۳۳: متغیرهای محاسباتی و Recode</li><li style='text-align:justify'>درس ۳۴: متغیرهای محاسباتی و Visual Binning</li></ul></li><li style='text-align:justify'>فصل چهارم: ویرایش خروجی و تهیه گزارش‌های نموداری و رسم آن‌ها در SPSS<ul><li style='text-align:justify'>درس ۳۵: ارسال خروجی به نرم‌افزارهای بعدی - بخش یکم</li><li style='text-align:justify'>درس ۳۶: ارسال خروجی به نرم‌افزارهای بعدی - بخش دوم</li><li style='text-align:justify'>درس ۳۷: معرفی انواع نمودار</li><li style='text-align:justify'>درس ۳۸: رسم انواع نمودار در SPSS - بخش یکم</li><li style='text-align:justify'>درس ۳۹: رسم انواع نمودار در SPSS - بخش دوم</li><li style='text-align:justify'>درس ۴۰: رسم انواع نمودار در SPSS - بخش سوم</li></ul></li><li style='text-align:justify'>فصل پنجم: تحلیل یک پرسشنامه سنجش<ul><li style='text-align:justify'>درس ۴۱: معرفی پرسشنامه و گویه‌های آن</li></ul></li><li style='text-align:justify'>فصل ششم: تحلیل و استنباط آماری<ul><li style='text-align:justify'>درس ۴۲: استنباط آماری پرسشنامه</li><li style='text-align:justify'>درس ۴۳: استنباط آماری در مورد میانگین</li><li style='text-align:justify'>درس ۴۴: استنباط آماری و انتخاب آزمون مناسب</li></ul></li><li style='text-align:justify'>فصل هفتم: تحلیل داده‌های یک پرسشنامه<ul><li style='text-align:justify'>درس ۴۵: تحلیل پرسشنامه آزمایشی</li><li style='text-align:justify'>درس ۴۶: توصیف متغیرهای پرسشنامه و جدول فراوانی</li><li style='text-align:justify'>درس ۴۷: رسم نمودار و جدول فراوانی ترکیبی - درصدی</li><li style='text-align:justify'>درس ۴۸: سازگاری درونی پرسشنامه در گویه و ساختن سازه‌ها</li><li style='text-align:justify'>درس ۴۹: آزمون مربوط به سازه‌ها - پارامتری</li><li style='text-align:justify'>درس ۵۰: آزمون مربوط به سازه‌ها - ناپارامتری</li></ul></li></ul>",
+      "topics_summary": "",
+      "topics_summary_string": "",
+      "discount": null,
+      "cashback": null,
+      "start_datetime": null,
+      "end_datetime": null,
+      "duration_hours": 6,
+      "duration_minutes": 34,
+      "episodes": null,
+      "payment_type": 0,
+      "ref_url": "",
+      "ref_url_discount": null,
+      "instructors": [
+        {
+          "id": 1,
+          "first_name": "",
+          "last_name": "",
+          "position": null,
+          "description": "",
+          "academy_description": null,
+          "image": ""
+        }
+      ],
+      "recommended_courses": [],
+      "is_purchased": false,
+      "is_bookmarked": false,
+      "user_comment": {
+        "id": null,
+        "content": null,
+        "rating": 0,
+        "like": {
+          "like": null,
+          "dislike": null,
+          "user_like": null,
+          "user_dislike": null
+        },
+        "is_participant": 0,
+        "is_anonymous": 0,
+        "created_at": "",
+        "user": {
+          "profile": {
+            "first_name": "",
+            "last_name": "",
+            "image": ""
+          }
+        }
+      }
+    },
+    {
+      "id": 1209,
+      "title": "آموزش مقدماتی فیگما – اصول طراحی رابط کاربری UI با Figma",
+      "images": {
+        "cover": "https://karsaz.storage.iran.liara.space/course-images/figma-course.svg"
+      },
+      "academy": {
+        "id": 1,
+        "name": "فرادرس",
+        "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+      },
+      "type": "غیرحضوری",
+      "rating": {
+        "average": 4.7,
+        "participants": 869
+      },
+      "price": 475000,
+      "prices": {
+        "original": {
+          "price": 475000
+        }
+      },
+      "is_free": 0,
+      "description": "<div><p style='text-align:justify'><strong>فیگما چیست؟</strong></p><p style='text-align:justify'>فیگما (Figma) انقلاب و طوفانی را در برنامه‌های ویرایش گرافیکی به وجود آورده است. فیگما یک برنامه ویرایش گرافیکی و طراحی رابط کاربری مبتنی بر وب است. به وسیله این نرم‌افزار می‌توانید رابط‌های کاربری بسیار جذاب برای سایت‌ها و اپلیکیشن‌ها، طراحی نمونه‌های اولیه، ساخت پست‌های شبکه‌های اجتماعی و موارد دیگر تولید کنید. فیگما دارای پلاگین‌های متعددی برای انجام راحت‌تر و سریع‌تر کارها است.</p><p style='text-align:justify'><strong>اهمیت یادگیری طراحی رابط کاربری با فیگما چیست؟</strong></p><p style='text-align:justify'>از آنجا که مهمترین ویژگی هر محصول، قابل استفاده بودن آن است، طی چند دهه گذشته، کسب‌ و کارها بر روی تجربیاتی که در اختیار مشتری قرار می‌دهند، تمرکز کرده‌اند. از سایت‌های کوچکی مثل فروشگاه وسایل کوچک آنلاین گرفته تا سایت‌های&nbsp;بزرگی مانند آمازون همگی در حال تمرکز بر روی رابط کاربری هستند.&nbsp;</p><p style='text-align:justify'>برای اینکه بهترین تجربه ممکن را در اختیار کاربران خود قرار دهید، باید ابزار مورد نیاز را در اختیار آن‌ها بگذارید و این مساله جایی است که طراحی رابط کاربری وارد میدان می‌شود. دلیل مهم بودن UI یا همان رابط کاربری این است که می‌تواند توانایی شما برای ارائه یک تجربه به یادماندنی برای کاربر را تعیین کند و در حال حاضر فیگما یکی از محبوب‌ترین و قدرتمندترین ابزارهای طراحی رابط کاربری و وب سایت محسوب می‌شود. با یادگیری فیگما، طراحان می‌توانند طرح‌های خود را با کیفیت بالا و با سرعت بیشتری طراحی کنند.</p><p style='text-align:justify'><strong>در این فرادرس چه چیزی یاد می‌گیریم؟</strong></p><p style='text-align:justify'>هدف از این آموزش این است که مخاطب بتواند با مفاهیم اصلی فیگما در قالب پروژه آشنا شده و پس از پایان آموزش وارد بازار کار شود. در ابتدا محیط و ابزارهای فیگما توضیح داده می‌شود و بعد از آن تمام ابزارها در قالب یک پروژه مورد استفاده قرار می‌گیرند و در نهایت نحوه خروجی گرفتن از پروژه توضیح داده می‌شود.</p><p style='text-align:justify'>&nbsp;</p></div>",
+      "description_summary": "فیگما (Figma) انقلاب و طوفانی را در برنامه‌های ویرایش گرافیکی به وجود آورده است. فیگما یک برنامه ویرایش گرافیکی و طراحی رابط کاربری مبتنی بر وب است. به وسیله این نرم‌افزار می‌توانید رابط‌های کاربری بسیار جذاب برای سایت‌ها و اپلیکیشن‌ها، طراحی نمونه‌های اولیه، ساخت پست‌های شبکه‌های اجتماعی و موارد دیگر تولید کنید. فیگما دارای پلاگین‌های متعددی برای انجام راحت‌تر و سریع‌تر کارها است.",
+      "description_summary_string": "فیگما (Figma) انقلاب و طوفانی را در برنامه‌های ویرایش گرافیکی به وجود آورده است. فیگما یک برنامه ویرایش گرافیکی و طراحی رابط کاربری مبتنی بر وب است. به وسیله این نرم‌افزار می‌توانید رابط‌های کاربری بسیار جذاب برای سایت‌ها و اپلیکیشن‌ها، طراحی نمونه‌های اولیه، ساخت پست‌های شبکه‌های اجتماعی و موارد دیگر تولید کنید. فیگما دارای پلاگین‌های متعددی برای انجام راحت‌تر و سریع‌تر کارها است.",
+      "topics": "<ul><li style='text-align:justify'>فصل یکم: رابط کاربری و تجربه کاربری (UI / UX)<ul><li style='text-align:justify'>درس یکم: تعریف رابطه کاربری و تجربه کاربری</li><li style='text-align:justify'>درس دوم: تفکر طراحی و مراحل آن</li><li style='text-align:justify'>درس سوم: تفکر خارج از چارچوب و جایگاه علم در تفکر طراحی</li><li style='text-align:justify'>درس چهارم: روانشناسی رنگ‌ها – رنگ قرمز</li><li style='text-align:justify'>درس پنجم: رنگ‌های آبی، سبز و زرد</li><li style='text-align:justify'>درس ششم: رنگ‌های نارنجی، صورتی، قهوه‌ای و بنفش</li><li style='text-align:justify'>درس هفتم: رنگ‌های سفید، سیاه و خاکستری</li><li style='text-align:justify'>درس هشتم: منابع مورد نیاز طراحان</li></ul></li><li style='text-align:justify'>فصل دوم: شروع کار با فیگما<ul><li style='text-align:justify'>درس نهم: نصب فیگما</li><li style='text-align:justify'>درس دهم: آشنایی با محیط فیگما</li></ul></li><li style='text-align:justify'>فصل سوم: طراحی با فیگما<ul><li style='text-align:justify'>درس یازدهم: صفحه، لایه‌ها و فریم (Frame)</li><li style='text-align:justify'>درس دوازدهم: معرفی نوار ابزار فیگما</li><li style='text-align:justify'>درس سیزدهم: ترسیم شکل و پنل طراحی (Design Panel)</li><li style='text-align:justify'>درس چهاردهم: ابزار Pen و Pencil</li><li style='text-align:justify'>درس پانزدهم: متن و تنظیمات آن در فیگما</li><li style='text-align:justify'>درس شانزدهم: Boolean operation و Mask</li><li style='text-align:justify'>درس هفدهم: کامپوننت (Component)</li><li style='text-align:justify'>درس هجدهم: Responsive و Grid</li><li style='text-align:justify'>درس نوزدهم: Auto Layout</li><li style='text-align:justify'>درس بیستم: افزونه‌ها (Plugins)</li><li style='text-align:justify'>درس بیست‌ویکم: کلیدهای میانبر (Shortcuts)</li></ul></li><li style='text-align:justify'>فصل چهارم: خروجی و نکات پایانی<ul><li style='text-align:justify'>درس بیست‌ودوم: انواع خروجی در فیگما</li><li style='text-align:justify'>درس بیست‌وسوم: نکات پایانی</li></ul></li></ul>",
+      "topics_summary": "",
+      "topics_summary_string": "",
+      "discount": null,
+      "cashback": null,
+      "start_datetime": null,
+      "end_datetime": null,
+      "duration_hours": 5,
+      "duration_minutes": 9,
+      "episodes": null,
+      "payment_type": 0,
+      "ref_url": "",
+      "ref_url_discount": null,
+      "instructors": [
+        {
+          "id": 1,
+          "first_name": "",
+          "last_name": "",
+          "position": null,
+          "description": "",
+          "academy_description": null,
+          "image": ""
+        }
+      ],
+      "recommended_courses": [],
+      "is_purchased": false,
+      "is_bookmarked": false,
+      "user_comment": {
+        "id": null,
+        "content": null,
+        "rating": 0,
+        "like": {
+          "like": null,
+          "dislike": null,
+          "user_like": null,
+          "user_dislike": null
+        },
+        "is_participant": 0,
+        "is_anonymous": 0,
+        "created_at": "",
+        "user": {
+          "profile": {
+            "first_name": "",
+            "last_name": "",
+            "image": ""
+          }
+        }
+      }
     }
   ]
 }

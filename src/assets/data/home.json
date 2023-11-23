@@ -81,6 +81,26 @@
         },
         "price": 298000,
         "is_free": 0
+      },
+      {
+        "id": 1207,
+        "title": "آموزش هوش مصنوعی – مقدماتی",
+        "description": "هوش مصنوعی مجموعه‌ای از تکنیک‌ها و الگوریتم‌های ریاضی و کامپیوتری است که برای تقلید هوش و یادگیری انسان‌ها طراحی شده‌اند؛ به عبارت دیگر به هوشی که یک ماشین در شرایط مختلف می‌تواند از خود نشان دهد، هوش مصنوعی گفته می‌شود. در سال ۱۹۴۳ با اختراع کامپیوترهای الکترونیک، هوش مصنوعی دانشمندان را به چالشی بزرگ فراخواند.",
+        "images": {
+          "cover": "https://karsaz.storage.iran.liara.space/course-images/ai-course.svg"
+        },
+        "academy": {
+          "id": 1,
+          "name": "فرادرس",
+          "avatar": "https://karsaz.storage.iran.liara.space/course-images/faradars.svg"
+        },
+        "type": "غیرحضوری",
+        "rating": {
+          "average": 4.6,
+          "participants": 435
+        },
+        "price": 568000,
+        "is_free": 0
       }
     ],
     "categories": [
@@ -117,6 +137,6 @@
     "user_recommended_jobs": [],
     "recent_posts": [],
     "top_search": [],
-    "stat": { "users": 1467, "courses": 27, "academies": 3 }
+    "stat": { "users": 1467, "courses": 47, "academies": 13 }
   }
 }
