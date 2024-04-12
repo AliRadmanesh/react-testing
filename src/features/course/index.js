@@ -60,7 +60,7 @@ export default function Course() {
   }
 
   useEffect(() => {
-    dispatch(getCourseData(courseId));
+    // dispatch(getCourseData(courseId));
     window.addEventListener('scroll', scrollToTop);
     if (window.innerWidth < 768)
       document.querySelector('.scroll-to-top-button').style.bottom = '5rem';

@@ -26,19 +26,19 @@ export const setCoursesCategory = (id) => (dispatch) => {
   });
 };
 
-// export const getSearchContent = () => async (dispatch) => {
-//   try {
-//     const res = await axios.get('/api/v1/web/content/courses/search-content');
-//     if (res.data.code === 200) {
-//       dispatch({
-//         type: GET_COURSES_SEARCH_DATA,
-//         payload: res.data.data,
-//       });
-//     }
-//   } catch (err) {
-//     toast.error(err);
-//   }
-// };
+export const getSearchContent = () => async (dispatch) => {
+  try {
+    const res = await axios.get('/api/v1/web/content/courses/search-content');
+    if (res.data.code === 200) {
+      dispatch({
+        type: GET_COURSES_SEARCH_DATA,
+        payload: res.data.data,
+      });
+    }
+  } catch (err) {
+    toast.error(err);
+  }
+};
 
 export const setSearchContent = (options) => (dispatch) => {
   dispatch({

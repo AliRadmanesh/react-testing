@@ -75,39 +75,40 @@ export const showCategoryMobileMenu = (bool) => (dispatch) => {
 };
 
 export const getMenuCategories = () => async (dispatch) => {
-  // try {
-  // const res = await instance.get('/api/v1/web/content/courses/menu-categories');
+  try {
+    const res = await instance.get('/api/v1/web/content/courses/menu-categories');
 
-  // if (res.status === 201 || res.status === 200) {
-  dispatch({
-    type: GET_MENU_CATEGORIES,
-    payload: [
-      {
-        id: 0,
-        name: 'برنامه نویسی',
-        image: 'https://karsaz.storage.iran.liara.space/categories-images/programming.svg',
-      },
-      {
-        id: 1,
-        name: 'هوش مصنوعی',
-        image: 'https://karsaz.storage.iran.liara.space/categories-images/ai.svg',
-      },
-      {
-        id: 2,
-        name: 'آمار و داده کاوی',
-        image: 'https://karsaz.storage.iran.liara.space/categories-images/statistics.svg',
-      },
-      {
-        id: 3,
-        name: 'طراحی و گرافیک',
-        image: 'https://karsaz.storage.iran.liara.space/categories-images/graphic.svg',
-      },
-    ],
-  });
-  //   } else {
-  //     toast.error(res.message);
-  //   }
-  // } catch (error) {
-  //   toast.error('خطا در برقراری ارتباط برای دریافت دسته‌بندی منو');
-  // }
+    if (res.status === 201 || res.status === 200) {
+      dispatch({
+        type: GET_MENU_CATEGORIES,
+        payload: res.data.data.categories,
+        // [
+        //   {
+        //     id: 0,
+        //     name: 'برنامه نویسی',
+        //     image: 'https://karsaz.storage.iran.liara.space/categories-images/programming.svg',
+        //   },
+        //   {
+        //     id: 1,
+        //     name: 'هوش مصنوعی',
+        //     image: 'https://karsaz.storage.iran.liara.space/categories-images/ai.svg',
+        //   },
+        //   {
+        //     id: 2,
+        //     name: 'آمار و داده کاوی',
+        //     image: 'https://karsaz.storage.iran.liara.space/categories-images/statistics.svg',
+        //   },
+        //   {
+        //     id: 3,
+        //     name: 'طراحی و گرافیک',
+        //     image: 'https://karsaz.storage.iran.liara.space/categories-images/graphic.svg',
+        //   },
+        // ],
+      });
+    } else {
+      toast.error(res.message);
+    }
+  } catch (error) {
+    toast.error('خطا در برقراری ارتباط برای دریافت دسته‌بندی منو');
+  }
 };
