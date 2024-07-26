@@ -15,7 +15,7 @@ import {
   addQueryTypeFilter,
 } from '../../app/redux/actions/searchActions';
 // import instance from '../../app/instance';
-import { getSearchContent } from '../../app/redux/actions/coursesActions';
+// import { getSearchContent } from '../../app/redux/actions/coursesActions';
 
 export function useFilters() {
   // const [courses, setCourses] = useState([]);
@@ -48,10 +48,10 @@ export function useQuery() {
   const { sort, is_free, academies, types } = filters;
   const { current, total } = page;
 
-  useEffect(() => {
-    // dispatch(searchQuery(window.location.href.split('q=')[1]));
-    dispatch(getSearchContent());
-  }, []);
+  // useEffect(() => {
+  //   // dispatch(searchQuery(window.location.href.split('q=')[1]));
+  //   dispatch(getSearchContent());
+  // }, []);
 
   useEffect(() => {
     url.searchParams.set('is_free', is_free);
